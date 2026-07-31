@@ -12,10 +12,9 @@ import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
@@ -83,7 +82,7 @@ public class DTPFCalculator {
      */
     private void determineEBFParams(Material material) {
         ArrayList<GTRecipe> foundEBFRecipes = new ArrayList<>();
-        ItemStack input = MaterialLibAPI.getStack(material, Materials2Shapes.dust, 1);
+        ItemStack input = MaterialLibAPI.getStack(material, Shapes.dust, 1);
         if (customInput != null) {
             input = customInput;
         }
@@ -98,13 +97,12 @@ public class DTPFCalculator {
             if (recipe.mFluidInputs.length == 0) {
                 ebfDuration = (long) Math.max(1, recipe.mDuration * 0.3);
                 ebfEUpertick = recipe.mEUt;
-            } else if (recipe.mFluidInputs[0].isFluidEqual(
-                    MaterialLibAPI
-                            .getFluidStack(Materials2Materials.Radon, Materials2FluidShapes.fluidGas, (int) (1000L)))) {
-                                ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
-                                ebfEUpertick = recipe.mEUt;
-                                break;
-                            }
+            } else if (recipe.mFluidInputs[0]
+                    .isFluidEqual(MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, (int) (1000L)))) {
+                        ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
+                        ebfEUpertick = recipe.mEUt;
+                        break;
+                    }
         }
         recipeDuration = ebfDuration;
     }
@@ -115,9 +113,8 @@ public class DTPFCalculator {
     private void determineFreezerParams(Material material) {
         // Find correct freezer recipe
         for (GTRecipe recipe : freezerRecipes) {
-            if (recipe.mInputs.length != 0 && GTUtility.areStacksEqual(
-                    GTOreDictUnificator.get(OrePrefixes.ingotHot, MU.materialOf(material), 1L),
-                    recipe.mInputs[0])) {
+            if (recipe.mInputs.length != 0 && GTUtility
+                    .areStacksEqual(GTOreDictUnificator.get(OrePrefixes.ingotHot, material, 1L), recipe.mInputs[0])) {
                 // There's only one freezer recipe per material
                 freezerDuration = recipe.mDuration;
                 freezerEUpertick = recipe.mEUt;

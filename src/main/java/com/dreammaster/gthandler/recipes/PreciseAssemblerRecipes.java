@@ -13,9 +13,8 @@ import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
@@ -27,19 +26,16 @@ public class PreciseAssemblerRecipes implements Runnable {
         if (TwilightForest.isModLoaded() && GalacticraftAmunRa.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator
-                                    .get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Glowstone), 64),
+                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Glowstone, 64),
                             GregtechItemList.QuadrupleCompressedGlowstone.get(8),
                             getModItem(TwilightForest.ID, "tile.TFSapling", 64, 6))
                     .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.saplings", 1, 1))
                     .fluidInputs(
+                            MaterialLibAPI
+                                    .getFluidStack(Materials.Hypogen, FluidShapes.fluidMolten, (int) (1 * STACKS)),
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Hypogen,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (1 * STACKS)),
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.NaquadahBasedLiquidFuelMkV,
-                                    Materials2FluidShapes.fluidLiquid,
+                                    Materials.NaquadahBasedLiquidFuelMkV,
+                                    FluidShapes.fluidLiquid,
                                     (int) (4000)))
                     .duration(30 * SECONDS).eut(TierEU.RECIPE_UHV).metadata(PRECISE_ASSEMBLER_CASING_TIER, 3)
                     .addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);

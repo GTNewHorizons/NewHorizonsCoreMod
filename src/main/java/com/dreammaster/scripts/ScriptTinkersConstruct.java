@@ -67,9 +67,8 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -1362,7 +1361,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.stick, (int) (2L)),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.stick, (int) (2L)),
                 null,
                 null,
                 "stickObsidian",
@@ -1473,15 +1472,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 Electric_Piston_HV.get(1L));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "materials", 1, 3),
-                MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.ingot, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Cobalt, Shapes.ingot, (int) (1L)));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Cobalt, Shapes.ingot, (int) (1L)),
                 getModItem(TinkerConstruct.ID, "materials", 1, 3));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "materials", 1, 5),
-                MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.ingot, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.ingot, (int) (1L)));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.ingot, (int) (1L)),
                 getModItem(TinkerConstruct.ID, "materials", 1, 5));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0),
@@ -1531,8 +1530,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 7));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 8));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "GlueBlock", 1, 0));
-        TConstructHelper.removeBasinRecipe(
-                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.PigIron), 1L));
+        TConstructHelper.removeBasinRecipe(GTOreDictUnificator.get(OrePrefixes.block, Materials.PigIron, 1L));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 2));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 4));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 5));
@@ -1542,25 +1540,19 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(GalaxySpace.ID, "phobosblocks", 1, 4));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "GravelOre", 1, 5));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 39));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.dust, (int) (1L)));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.dust, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Cobalt, Shapes.dust, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Steel, Shapes.dust, (int) (1L)));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 2));
         TConstructHelper.removeMeltingRecipe(new ItemStack(GregTechAPI.sBlockOres1, 1, 382));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 38));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.dust, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Ardite, Shapes.dust, (int) (1L)));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 29));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.nugget, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Ardite, Shapes.nugget, (int) (1L)));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 1));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 41));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.dust, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.dust, (int) (1L)));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 30));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.nugget, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.nugget, (int) (1L)));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 2));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10));
         TConstructHelper.removeTableRecipe(getModItem(BuildCraftCore.ID, "ironGearItem", 1, 0));
@@ -1568,24 +1560,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeTableRecipe(getModItem(Forestry.ID, "gearBronze", 1, 0));
         TConstructHelper.removeTableRecipe(getModItem(Forestry.ID, "gearCopper", 1, 0));
         TConstructHelper.removeTableRecipe(getModItem(Forestry.ID, "gearTin", 1, 0));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Platinum, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Invar, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Lead, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Platinum, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Nickel, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Silver, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Silver, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Electrum, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Invar, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Lead, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Lead, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Steel, Shapes.gearGt, (int) (1L)));
         TConstructHelper.removeTableRecipe(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 0));
         TConstructHelper.removeTableRecipe(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 1));
         TConstructHelper.removeTableRecipe(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 2));
@@ -1594,11 +1577,9 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(Minecraft.ID, "chainmail_chestplate", 1, 0));
         TConstructHelper.removeMeltingRecipe(getModItem(Minecraft.ID, "chainmail_leggings", 1, 0));
         TConstructHelper.removeMeltingRecipe(getModItem(Minecraft.ID, "chainmail_boots", 1, 0));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.nugget, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Cobalt, Shapes.nugget, (int) (1L)));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 3));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.ingot, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Cobalt, Shapes.ingot, (int) (1L)));
         TConstructHelper.removeMeltingRecipe(new ItemStack(GregTechAPI.sBlockMetal2, 1, 5));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 0));
         TConstructHelper.removeBasinRecipe(getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0));
@@ -1608,22 +1589,14 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1));
         TConstructHelper.removeTableRecipe(getModItem(Minecraft.ID, "golden_apple", 1, 0));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "gearCast", 1, 0));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeTableRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Invar, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Platinum, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Nickel, Materials2Shapes.gearGt, (int) (1L)));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Enderium, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Ardite, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeTableRecipe(MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Invar, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Electrum, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Platinum, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Nickel, Shapes.gearGt, (int) (1L)));
+        TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Enderium, Shapes.gearGt, (int) (1L)));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 29));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 30));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 4));
@@ -1643,40 +1616,39 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         "aluminum.molten",
                         144)
                 .add(
-                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.ingot, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.ingot, (int) (1)))
                 .withAmount(16)
                 .add(
-                        MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dustTiny, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dustTiny, (int) (1L)),
                         getModItem(TinkerConstruct.ID, "oreBerries", 1, 4))
-                .withAmount(36)
-                .add(MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dustSmall, (int) (1L)));
+                .withAmount(36).add(MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dustSmall, (int) (1L)));
         Smeltery.addMelting(
-                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (1L)),
                 GameRegistry.findBlock("minecraft", "sand"),
                 0,
                 800,
                 FluidRegistry.getFluidStack("glass.molten", 1000));
         Smeltery.addMelting(
-                MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Electrum, Shapes.ingot, (int) (1L)),
                 GameRegistry.findBlock("TConstruct", "MetalBlock"),
                 7,
                 400,
                 FluidRegistry.getFluidStack("electrum.molten", 144));
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.nugget, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.nugget, (int) (1L)),
                 FluidRegistry.getFluidStack("copper.molten", 16),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 27),
                 false,
                 20);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.nugget, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Tin, Shapes.nugget, (int) (1L)),
                 FluidRegistry.getFluidStack("tin.molten", 16),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 27),
                 false,
                 20);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.nugget, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.nugget, (int) (1)),
                 FluidRegistry.getFluidStack("iron.molten", 16),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 27),
                 false,
@@ -1688,19 +1660,19 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 false,
                 20);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.ingot, (int) (1L)),
                 FluidRegistry.getFluidStack("copper.molten", 144),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 0),
                 false,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Tin, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Tin, Shapes.ingot, (int) (1L)),
                 FluidRegistry.getFluidStack("tin.molten", 144),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 0),
                 false,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Bronze, Shapes.ingot, (int) (1L)),
                 FluidRegistry.getFluidStack("bronze.molten", 144),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 0),
                 false,
@@ -1741,55 +1713,55 @@ public class ScriptTinkersConstruct implements IScriptLoader {
 
         // Iron
         List<ItemStack> melterStacksIron = new ArrayList<>();
-        addOresForMaterial(Materials2Materials.Iron, melterStacksIron);
-        addOresForMaterial(Materials2Materials.BrownLimonite, melterStacksIron);
-        addOresForMaterial(Materials2Materials.YellowLimonite, melterStacksIron);
-        addOresForMaterial(Materials2Materials.BandedIron, melterStacksIron);
-        addOresForMaterial(Materials2Materials.GraniticMineralSand, melterStacksIron);
-        addOresForMaterial(Materials2Materials.Magnetite, melterStacksIron);
-        addOresForMaterial(Materials2Materials.Pyrite, melterStacksIron);
+        addOresForMaterial(Materials.Iron, melterStacksIron);
+        addOresForMaterial(Materials.BrownLimonite, melterStacksIron);
+        addOresForMaterial(Materials.YellowLimonite, melterStacksIron);
+        addOresForMaterial(Materials.BandedIron, melterStacksIron);
+        addOresForMaterial(Materials.GraniticMineralSand, melterStacksIron);
+        addOresForMaterial(Materials.Magnetite, melterStacksIron);
+        addOresForMaterial(Materials.Pyrite, melterStacksIron);
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Iron"), 100, 144)
-                .smelteryGroup(OrePrefixes.ore, Materials2Materials.Iron).add(melterStacksIron);
+                .smelteryGroup(OrePrefixes.ore, Materials.Iron).add(melterStacksIron);
 
         // Copper
         List<ItemStack> melterStacksCopper = new ArrayList<>();
-        addOresForMaterial(Materials2Materials.Copper, melterStacksCopper);
-        addOresForMaterial(Materials2Materials.Malachite, melterStacksCopper);
-        addOresForMaterial(Materials2Materials.Tetrahedrite, melterStacksCopper);
-        addOresForMaterial(Materials2Materials.Chalcopyrite, melterStacksCopper);
+        addOresForMaterial(Materials.Copper, melterStacksCopper);
+        addOresForMaterial(Materials.Malachite, melterStacksCopper);
+        addOresForMaterial(Materials.Tetrahedrite, melterStacksCopper);
+        addOresForMaterial(Materials.Chalcopyrite, melterStacksCopper);
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Copper"), 50, 144)
-                .smelteryGroup(OrePrefixes.ore, Materials2Materials.Copper).add(melterStacksCopper);
+                .smelteryGroup(OrePrefixes.ore, Materials.Copper).add(melterStacksCopper);
 
         // Tin
         List<ItemStack> melterStacksTin = new ArrayList<>();
-        addOresForMaterial(Materials2Materials.Tin, melterStacksTin);
+        addOresForMaterial(Materials.Tin, melterStacksTin);
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 0, 144)
-                .smelteryGroup(OrePrefixes.ore, Materials2Materials.Tin).add(melterStacksTin);
+                .smelteryGroup(OrePrefixes.ore, Materials.Tin).add(melterStacksTin);
 
         // Cassiterite
         List<ItemStack> melterStacksCassiterite = new ArrayList<>();
-        addOresForMaterial(Materials2Materials.Cassiterite, melterStacksCassiterite);
-        addOresForMaterial(Materials2Materials.CassiteriteSand, melterStacksCassiterite);
+        addOresForMaterial(Materials.Cassiterite, melterStacksCassiterite);
+        addOresForMaterial(Materials.CassiteriteSand, melterStacksCassiterite);
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Tin"), 200, 288)
-                .smelteryGroup(OrePrefixes.ore, Materials2Materials.Cassiterite).add(melterStacksCassiterite);
+                .smelteryGroup(OrePrefixes.ore, Materials.Cassiterite).add(melterStacksCassiterite);
 
         // Gold
         List<ItemStack> melterStacksGold = new ArrayList<>();
-        addOresForMaterial(Materials2Materials.Gold, melterStacksGold);
+        addOresForMaterial(Materials.Gold, melterStacksGold);
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Gold"), 200, 144)
-                .smelteryGroup(OrePrefixes.ore, Materials2Materials.Gold).add(melterStacksGold);
+                .smelteryGroup(OrePrefixes.ore, Materials.Gold).add(melterStacksGold);
 
         // Aluminum
         List<ItemStack> melterStacksAluminum = new ArrayList<>();
-        addOresForMaterial(Materials2Materials.Aluminium, melterStacksAluminum);
+        addOresForMaterial(Materials.Aluminium, melterStacksAluminum);
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Aluminum"), 50, 144)
-                .smelteryGroup(OrePrefixes.ore, Materials2Materials.Aluminium).add(melterStacksAluminum);
+                .smelteryGroup(OrePrefixes.ore, Materials.Aluminium).add(melterStacksAluminum);
 
         // Emerald
         List<ItemStack> melterStacksEmerald = new ArrayList<>();
-        addOresForMaterial(Materials2Materials.Emerald, melterStacksEmerald);
+        addOresForMaterial(Materials.Emerald, melterStacksEmerald);
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Emerald"), 225, 640)
-                .smelteryGroup(OrePrefixes.ore, Materials2Materials.Emerald).add(melterStacksEmerald);
+                .smelteryGroup(OrePrefixes.ore, Materials.Emerald).add(melterStacksEmerald);
 
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Steel"), 100, 576).add(
                 ItemList.Shape_Empty.get(1L),
@@ -1857,13 +1829,13 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 NHItemList.MoldBoots.get());
         TConstructHelper.getMeltingAdder(FluidType.getFluidType("Glue"), 125, 144)
                 .add(
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.ingot, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Rubber, Materials2Shapes.plate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Rubber, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Rubber, Shapes.ingot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Rubber, Shapes.plate, (int) (1L)))
                 .withAmount(576).add(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10)).withAmount(288)
                 .add(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8));
         Smeltery.addMelting(
-                MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Cobalt, Shapes.ingot, (int) (1L)),
                 GameRegistry.findBlock("TConstruct", "GravelOre"),
                 5,
                 650,
@@ -1881,7 +1853,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 500,
                 FluidRegistry.getFluidStack("aluminum.molten", 144));
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (1L)),
                 FluidRegistry.getFluidStack("steel.molten", 144),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 0),
                 false,
@@ -2127,15 +2099,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
     }
 
     private void addOresForMaterial(Material material, List<ItemStack> stacks) {
-        stacks.add(GTOreDictUnificator.get(OrePrefixes.rawOre, MU.materialOf(material), 1L));
-        stacks.add(GTOreDictUnificator.get(OrePrefixes.ore, MU.materialOf(material), 1L));
-        stacks.add(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, MU.materialOf(material), 1L));
-        stacks.add(GTOreDictUnificator.get(OrePrefixes.oreEndstone, MU.materialOf(material), 1L));
+        stacks.add(GTOreDictUnificator.get(OrePrefixes.rawOre, material, 1L));
+        stacks.add(GTOreDictUnificator.get(OrePrefixes.ore, material, 1L));
+        stacks.add(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, material, 1L));
+        stacks.add(GTOreDictUnificator.get(OrePrefixes.oreEndstone, material, 1L));
         if (GTMod.proxy.enableBlackGraniteOres) {
-            stacks.add(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, MU.materialOf(material), 1L));
+            stacks.add(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, material, 1L));
         }
         if (GTMod.proxy.enableRedGraniteOres) {
-            stacks.add(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, MU.materialOf(material), 1L));
+            stacks.add(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, material, 1L));
         }
     }
 

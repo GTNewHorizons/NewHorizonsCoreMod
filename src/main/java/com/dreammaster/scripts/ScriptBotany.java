@@ -21,8 +21,8 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptBotany implements IScriptLoader {
 
@@ -41,7 +41,7 @@ public class ScriptBotany implements IScriptLoader {
         addShapelessRecipe(getModItem(Botany.ID, "database", 1, 0), getModItem(Botany.ID, "database", 1, 0));
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelWood", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 "craftingToolHardHammer",
                 null,
                 "craftingToolFile",
@@ -96,21 +96,21 @@ public class ScriptBotany implements IScriptLoader {
                 "stickWood");
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dustSmall, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Ash, Shapes.dustSmall, (int) (1L)));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ash, Shapes.dustSmall, (int) (1L)),
                 getModItem(Botany.ID, "misc", 1, 0));
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 1),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.dustSmall, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.dustSmall, (int) (1L)));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.dustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.dustSmall, (int) (1L)),
                 getModItem(Botany.ID, "misc", 1, 1));
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 3),
-                MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.dustSmall, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dustSmall, (int) (1L)));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.dustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dustSmall, (int) (1L)),
                 getModItem(Botany.ID, "misc", 1, 3));
 
         ForestryHelper.removeCarpenterRecipe(getModItem(Botany.ID, "database", 1, 0));
@@ -123,11 +123,11 @@ public class ScriptBotany implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'd',
                 "itemCasingGold",
                 'e',
@@ -135,11 +135,11 @@ public class ScriptBotany implements IScriptLoader {
                 'f',
                 "itemCasingGold",
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay", 4, 0), getModItem(Forestry.ID, "thermionicTubes", 1, 0))
@@ -287,8 +287,8 @@ public class ScriptBotany implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.stick, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (4L)))
                 .itemOutputs(getModItem(Botany.ID, "soilMeter", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);

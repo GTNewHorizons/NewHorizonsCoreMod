@@ -34,10 +34,10 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -83,8 +83,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0));
 
         GTModHandler.addSmeltingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Ichorium), 1L),
-                MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.ingot, (int) (2L)));
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (2L)));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0))
@@ -102,42 +102,32 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI
-                                        .getStack(Materials2Materials.NetherStar, Materials2Shapes.lens, (int) (1))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.NetherStar, Shapes.lens, (int) (1))),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI
-                                        .getStack(Materials2Materials.Dilithium, Materials2Shapes.lens, (int) (1))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Dilithium, Shapes.lens, (int) (1))),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI
-                                        .getStack(Materials2Materials.InfusedOrder, Materials2Shapes.lens, (int) (1))),
+                        GTUtility
+                                .copyAmount(0, MaterialLibAPI.getStack(Materials.InfusedOrder, Shapes.lens, (int) (1))),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI.getStack(Materials2Materials.Glass, Materials2Shapes.lens, (int) (1))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Glass, Shapes.lens, (int) (1))),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
@@ -837,15 +827,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 8,
                 new AspectList().add(Aspect.CRAFT, 32).add(Aspect.TOOL, 32).add(Aspect.ORDER, 16).add(Aspect.MAGIC, 16)
                         .add(Aspect.ENERGY, 8),
-                MU.craftIngredient(OrePrefixes.block, Materials2Materials.Thaumium),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Iron),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.ReinforcedGlass),
+                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Iron),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.ReinforcedGlass),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.ReinforcedGlass),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold));
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.ReinforcedGlass),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Gold));
         TCHelper.setResearchAspects(
                 "REPAIRER",
                 new AspectList().add(Aspect.TOOL, 15).add(Aspect.CRAFT, 12).add(Aspect.ORDER, 9).add(Aspect.ENERGY, 6)
@@ -954,14 +944,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.MOTION, 30).add(Aspect.ORDER, 20).add(Aspect.MAGIC, 15).add(Aspect.AIR, 25)
                         .add(Aspect.ENERGY, 10),
                 getModItem(Thaumcraft.ID, "blockLifter", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Obsidian),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Iron),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Obsidian),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Iron),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Iron),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Obsidian),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Iron),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Iron),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Obsidian),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Iron),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Iron));
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Iron));
         TCHelper.setResearchAspects(
                 "LEVITATOR_LOCOMOTIVE",
                 new AspectList().add(Aspect.MOTION, 15).add(Aspect.ORDER, 15).add(Aspect.MECHANISM, 12)
@@ -1048,13 +1038,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.HUNGER, 32).add(Aspect.MAN, 8).add(Aspect.SOUL, 16).add(Aspect.DARKNESS, 24)
                         .add(Aspect.WEAPON, 16),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0),
                 getModItem(Minecraft.ID, "porkchop", 1, 0),
                 getModItem(Minecraft.ID, "fish", 1, 0),
                 getModItem(Minecraft.ID, "nether_wart", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
                 getModItem(Minecraft.ID, "bone", 1, 0),
                 getModItem(Minecraft.ID, "beef", 1, 0),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
@@ -1136,12 +1126,12 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.AIR, 48).add(Aspect.TRAVEL, 24).add(Aspect.MOTION, 32)
                         .add(Aspect.FLIGHT, 24),
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0),
-                MU.craftIngredient(OrePrefixes.rotor, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Thaumium),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.EnderPearl),
-                MU.craftIngredient(OrePrefixes.rotor, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.EnderPearl),
+                MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Thaumium),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.EnderPearl));
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.EnderPearl));
         TCHelper.setResearchAspects(
                 "FOCUS_FLIGHT",
                 new AspectList().add(Aspect.MOTION, 15).add(Aspect.AIR, 12).add(Aspect.MAGIC, 9).add(Aspect.FLIGHT, 6)
@@ -1206,13 +1196,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.GREED, 16),
                 getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.SteelMagnetic),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.SteelMagnetic),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.SteelMagnetic),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz));
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.SteelMagnetic),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz));
         TCHelper.setResearchAspects(
                 "FOCUS_TELEKINESIS",
                 new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.MOTION, 15).add(Aspect.MAGIC, 12)
@@ -1226,14 +1216,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.MAGIC, 32).add(Aspect.DARKNESS, 32)
                         .add(Aspect.VOID, 32).add(Aspect.TAINT, 16).add(Aspect.EXCHANGE, 16),
                 getModItem(Thaumcraft.ID, "FocusTrade", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz));
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz));
         TCHelper.setResearchAspects(
                 "FOCUS_DISLOCATION",
                 new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.EXCHANGE, 15).add(Aspect.MAGIC, 12)
@@ -1248,11 +1238,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "FocusPech", 1, 0),
                 getModItem(Minecraft.ID, "golden_apple", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.RoseGold),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Minecraft.ID, "golden_carrot", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.RoseGold),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14));
         TCHelper.setResearchAspects(
                 "FOCUS_HEAL",
@@ -1270,16 +1260,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.MAGIC, 64).add(Aspect.AURA, 64).add(Aspect.VOID, 64),
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
                 getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
                 getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0));
         TCHelper.setResearchAspects(
                 "ENCHANTER",
@@ -1308,13 +1298,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.EXCHANGE, 16).add(Aspect.MAN, 8),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Gold),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.NetherQuartz),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Diamond));
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Diamond));
         TCHelper.setResearchAspects(
                 "XP_TALISMAN",
                 new AspectList().add(Aspect.GREED, 15).add(Aspect.MAGIC, 12).add(Aspect.MAN, 9).add(Aspect.AURA, 6)
@@ -1579,7 +1569,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.MAN, 32).add(Aspect.LIGHT, 32).add(Aspect.SOUL, 64).add(Aspect.ELDRITCH, 16)
                         .add(Aspect.ORDER, 16),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7));
@@ -1617,7 +1607,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.addResearchPage("ICHORIUM", new ResearchPage("ttresearch.page.ICHORIUM.0"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORIUM",
-                MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (1L)),
                 new AspectList().add(Aspect.AIR, 125).add(Aspect.WATER, 125).add(Aspect.FIRE, 125)
                         .add(Aspect.EARTH, 125).add(Aspect.ORDER, 125).add(Aspect.ENTROPY, 125),
                 "abc",
@@ -1645,8 +1635,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "ICHORIUM",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                MaterialLibAPI
-                                        .getStack(Materials2Materials.Ichorium, Materials2Shapes.ingot, (int) (1L)))));
+                                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (1L)))));
         TCHelper.setResearchAspects(
                 "ICHORIUM",
                 new AspectList().add(Aspect.METAL, 15).add(Aspect.CRAFT, 15).add(Aspect.TOOL, 12).add(Aspect.MAGIC, 9)
@@ -1710,13 +1699,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.DEATH, 16),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10),
-                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Gold),
+                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Gold),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(Minecraft.ID, "fish", 1, 0),
                 getModItem(Minecraft.ID, "dye", 1, 3),
                 getModItem(Minecraft.ID, "leaves", 1, 3),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
-                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Gold));
+                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Gold));
         TCHelper.setResearchAspects(
                 "CAT_AMULET",
                 new AspectList().add(Aspect.MIND, 15).add(Aspect.ORDER, 15).add(Aspect.DARKNESS, 12)
@@ -1736,7 +1725,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(Thaumcraft.ID, "TrunkSpawner", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond));
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond));
         TCHelper.setResearchAspects(
                 "ICHOR_POUCH",
                 new AspectList().add(Aspect.VOID, 15).add(Aspect.CLOTH, 15).add(Aspect.ELDRITCH, 12).add(Aspect.MAN, 9)
@@ -1867,12 +1856,12 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.MAGIC, 64).add(Aspect.WEAPON, 64)
                         .add(Aspect.DARKNESS, 64).add(Aspect.WEATHER, 32),
                 getModItem(Thaumcraft.ID, "FocusShock", 1, 0),
-                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Ichorium),
                 getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Emerald),
                 getModItem(Thaumcraft.ID, "PrimalArrow", 1, 2), // Water arrow
                 getModItem(Thaumcraft.ID, "PrimalArrow", 1, 2), // Water arrow
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUS_SHADOWBEAM",
@@ -1886,11 +1875,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 12,
                 new AspectList().add(Aspect.AURA, 64).add(Aspect.MIND, 64).add(Aspect.MAGIC, 64).add(Aspect.TAINT, 32),
                 getModItem(Minecraft.ID, "experience_bottle", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(ThaumicTinkerer.ID, "enchanter", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.EnderPearl),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.EnderPearl),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Emerald),
                 getModItem(ThaumicTinkerer.ID, "xpTalisman", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUS_XP_DRAIN",
@@ -1905,13 +1894,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.WATER, 64).add(Aspect.AURA, 64).add(Aspect.MIND, 64).add(Aspect.FLESH, 64)
                         .add(Aspect.HUNGER, 64).add(Aspect.LIGHT, 64).add(Aspect.ARMOR, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothHelm", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.EnderEye),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.EnderEye),
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0),
                 getModItem(Minecraft.ID, "potion", 1, 8262),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(Minecraft.ID, "fish", 1, wildcard),
                 getModItem(Minecraft.ID, "cake", 1, 0),
@@ -1930,13 +1919,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.AIR, 64).add(Aspect.ELDRITCH, 64).add(Aspect.LIGHT, 64)
                         .add(Aspect.ORDER, 64).add(Aspect.SENSES, 64).add(Aspect.ARMOR, 64).add(Aspect.FLIGHT, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothChest", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0),
                 getModItem(Thaumcraft.ID, "PrimalArrow", 1, 0), // Air Arrow
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Ichorium),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(Thaumcraft.ID, "PrimalArrow", 1, 0), // Air Arrow
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
@@ -1956,13 +1945,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.FIRE, 64).add(Aspect.GREED, 64)
                         .add(Aspect.LIGHT, 64).add(Aspect.ENERGY, 64).add(Aspect.HEAL, 64).add(Aspect.ARMOR, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothLegs", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "focusSmelt", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0),
                 getModItem(Minecraft.ID, "potion", 1, 8259),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(ThaumicTinkerer.ID, "brightNitor", 1, 0),
                 getModItem(Minecraft.ID, "fire_charge", 1, 0),
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
@@ -1981,7 +1970,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.PLANT, 64).add(Aspect.TRAVEL, 64).add(Aspect.LIGHT, 64)
                         .add(Aspect.MOTION, 64).add(Aspect.MINE, 64).add(Aspect.EARTH, 64).add(Aspect.ARMOR, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothBoots", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemBootsThaumium", 1, 0),
                 createItemStack(
                         ThaumicTinkerer.ID,
@@ -1991,8 +1980,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"terra\"}]}}"),
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0),
                 getModItem(Botania.ID, "manaResource", 1, 22),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5),
                 getModItem(Minecraft.ID, "lead", 1, 0),
@@ -2016,7 +2005,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6));
         TCHelper.addInfusionCraftingRecipe(
                 "WARP_GATE",
@@ -2029,7 +2018,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6));
         TCHelper.setResearchAspects(
                 "WARP_GATE",
@@ -2046,7 +2035,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "focusEnderChest", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "skyPearl", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(ThaumicTinkerer.ID, "skyPearl", 1, 0));
         TCHelper.setResearchAspects(
                 "FOCUS_RECALL",
@@ -2160,14 +2149,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.HARVEST, 64).add(Aspect.CROP, 64).add(Aspect.MINE, 64).add(Aspect.EARTH, 64)
                         .add(Aspect.SENSES, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorPick", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "FocusFire", 1, 0),
                 getModItem(StevesCarts2.ID, "CartModule", 1, 9),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Emerald),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0),
                 getModItem(StevesCarts2.ID, "CartModule", 1, 9),
                 getModItem(Thaumcraft.ID, "FocusFire", 1, 0),
@@ -2186,14 +2175,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.TOOL, 64).add(Aspect.HARVEST, 64).add(Aspect.MINE, 64)
                         .add(Aspect.SENSES, 64).add(Aspect.EARTH, 64).add(Aspect.TRAP, 64).add(Aspect.ORDER, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorShovel", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0),
                 ItemList.Electric_Piston_HV.get(1L),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Emerald),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0),
                 ItemList.Electric_Piston_HV.get(1L),
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0),
@@ -2211,14 +2200,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.WATER, 64).add(Aspect.TREE, 64).add(Aspect.TOOL, 64).add(Aspect.CROP, 64)
                         .add(Aspect.HARVEST, 64).add(Aspect.MINE, 64).add(Aspect.SENSES, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorAxe", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0),
                 ItemList.Component_Sawblade_Diamond.get(1L),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Emerald),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0),
                 ItemList.Component_Sawblade_Diamond.get(1L),
                 getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0),
@@ -2236,14 +2225,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.AIR, 64).add(Aspect.HUNGER, 64).add(Aspect.ORDER, 64).add(Aspect.ENERGY, 64)
                         .add(Aspect.SOUL, 64).add(Aspect.WEAPON, 64).add(Aspect.CRYSTAL, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorSword", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "FocusFrost", 1, 0),
                 getModItem(ExtraUtilities.ID, "spike_base_diamond", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Emerald),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0),
                 getModItem(ExtraUtilities.ID, "spike_base_diamond", 1, 0),
                 getModItem(Thaumcraft.ID, "FocusFrost", 1, 0),
@@ -2281,14 +2270,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.ELDRITCH, 64).add(Aspect.MAGIC, 64).add(Aspect.VOID, 72)
                         .add(Aspect.DARKNESS, 48).add(Aspect.SOUL, 32),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(EnderStorage.ID, "enderChest", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 11),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 11),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 3),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Emerald));
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald));
         TCHelper.setResearchAspects(
                 "BLOCK_TALISMAN",
                 new AspectList().add(Aspect.VOID, 15).add(Aspect.DARKNESS, 12).add(Aspect.ELDRITCH, 9)
@@ -2302,14 +2291,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.MIND, 64).add(Aspect.CRAFT, 72).add(Aspect.MAGIC, 64)
                         .add(Aspect.CRYSTAL, 48).add(Aspect.ELDRITCH, 32),
                 getModItem(ThaumicTinkerer.ID, "blockTalisman", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(Minecraft.ID, "dropper", 1, 0),
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Emerald));
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald));
         TCHelper.setResearchAspects(
                 "PLACEMENT_MIRROR",
                 new AspectList().add(Aspect.MIND, 15).add(Aspect.CRAFT, 12).add(Aspect.MAGIC, 9).add(Aspect.CRYSTAL, 6)

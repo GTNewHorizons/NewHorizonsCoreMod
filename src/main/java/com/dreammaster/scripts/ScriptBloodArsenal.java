@@ -34,9 +34,9 @@ import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptBloodArsenal implements IScriptLoader {
 
@@ -624,7 +624,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodArsenal.ID, "blood_diamond", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, (int) (1L)),
                 4,
                 12000,
                 20,
@@ -735,8 +735,8 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 6, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (1)))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 1, 0))

@@ -62,9 +62,10 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
+import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
@@ -486,19 +487,19 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "screwSteel");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.stick, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.screw, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (4)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (1)))
                 .circuit(3).itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 1)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (4)),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.stick, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1)),
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.screw, (int) (1)))
-                .circuit(5).fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(1000))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (4)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (1)))
+                .circuit(5).fluidInputs(MaterialUtils.fluid(Materials.Water, 1000))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         addShapedRecipe(
@@ -685,9 +686,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "screwEnderPearl",
                 ItemList.Conveyor_Module_LV.get(1L),
                 "screwEnderPearl",
-                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.gearGtSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.gearGtSmall, (int) (1L)),
                 "pipeMediumBrass",
-                MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.gearGtSmall, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.gearGtSmall, (int) (1L)));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 6),
                 "craftingToolWrench",
@@ -696,9 +697,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "screwEnderPearl",
                 ItemList.Electric_Pump_LV.get(1L),
                 "screwEnderPearl",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 ItemList.Electric_Pump_LV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L));
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0),
                 "plateIron",
@@ -719,13 +720,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "chestMini", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 "craftingToolSaw",
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 "itemFlint",
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 null,
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderCollector", 1, 0),
@@ -907,9 +908,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
                         createItemStack(ExtraUtilities.ID, "divisionSigil", 0, 0, "{stable:1b}"),
-                        GTOreDictUnificator.get(OrePrefixes.gem, MU.materialOf(Materials2Materials.Diamond), 1L))
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2)).nbtSensitive().duration(42 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -981,13 +982,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'd',
                         getModItem(ExtraUtilities.ID, "chandelier", 1, 0),
                         'e',
-                        MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.stick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, (int) (1L)),
                         'f',
                         getModItem(ExtraUtilities.ID, "chandelier", 1, 0),
                         'g',
                         getModItem(ExtraUtilities.ID, "chandelier", 1, 0),
                         'h',
-                        MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.stick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, (int) (1L)),
                         'i',
                         getModItem(ExtraUtilities.ID, "chandelier", 1, 0)));
         EnderConstructorRecipesHandler.registerRecipe(
@@ -1003,11 +1004,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'c',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 0),
                         'd',
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
                         'e',
                         getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 8),
                         'f',
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
                         'g',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 0),
                         'h',
@@ -1023,15 +1024,15 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'a',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12),
                         'b',
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
                         'c',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12),
                         'd',
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
                         'e',
-                        MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.ingot, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.ingot, (int) (1L)),
                         'f',
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
                         'g',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12),
                         'h',
@@ -1127,19 +1128,19 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "quartz_block", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (4L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
@@ -1151,7 +1152,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Glowstone, Materials2Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Glowstone, Shapes.plate, (int) (4L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
@@ -1187,13 +1188,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 10),
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.dust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (4L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (2L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "chestMini", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1223,7 +1224,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 5, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.gemFlawed, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemFlawed, (int) (1L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "chandelier", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1268,8 +1269,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6), ItemList.Plank_Oak.get(4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "trading_post", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.plate, (int) (2L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (2L)))
                 .circuit(2).itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
@@ -1294,7 +1294,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.plate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.plate, (int) (2L)),
                         getModItem(ExtraUtilities.ID, "pipes", 1, 11))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 14)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
@@ -1307,7 +1307,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (4L)),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1326,28 +1326,28 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.wireFine, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, (int) (4L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.wireFine, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, (int) (4L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.wireFine, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, (int) (4L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.wireFine, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, (int) (4L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "golden_lasso", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0))
@@ -1384,8 +1384,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         1,
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
-                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Iridium),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Tritanium),
+                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Iridium),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Tritanium),
                 EngravedGoldChip.get(1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
@@ -1397,7 +1397,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 EngravedGoldChip.get(1),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Tritanium));
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Tritanium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1),
@@ -1432,8 +1432,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.METAL, 50).add(Aspect.GREED, 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.foil, Materials2Materials.RoseGold),
-                MU.craftIngredient(OrePrefixes.foil, Materials2Materials.RoseGold));
+                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.RoseGold),
+                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.RoseGold));
         new ResearchItem(
                 "EXURINGS",
                 "ARTIFICE",

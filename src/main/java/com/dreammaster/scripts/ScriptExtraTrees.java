@@ -26,8 +26,8 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptExtraTrees implements IScriptLoader {
 
@@ -67,9 +67,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "misc", 1, 3));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 1),
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, (int) (1L)),
                 "plankWood",
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, (int) (1L)),
                 getModItem(Forestry.ID, "factory2", 1, 2),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
                 getModItem(Forestry.ID, "factory2", 1, 2),
@@ -78,9 +78,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "misc", 1, 3));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 2),
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, (int) (1L)),
                 "slabWood",
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, (int) (1L)),
                 getModItem(Forestry.ID, "factory2", 1, 2),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
                 getModItem(Forestry.ID, "factory2", 1, 2),
@@ -4081,23 +4081,23 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'b',
                 "itemCasingGold",
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
                 'e',
                 "circuitAdvanced",
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'h',
                 "itemCasingGold",
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1440),
@@ -4107,23 +4107,23 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'b',
                 "itemCasingGold",
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
                 'e',
                 "circuitAdvanced",
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'h',
                 "itemCasingGold",
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
 
     }
 

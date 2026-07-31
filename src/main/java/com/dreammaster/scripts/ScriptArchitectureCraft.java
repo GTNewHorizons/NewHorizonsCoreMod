@@ -10,8 +10,8 @@ import java.util.List;
 
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptArchitectureCraft implements IScriptLoader {
 
@@ -90,7 +90,7 @@ public class ScriptArchitectureCraft implements IScriptLoader {
         addShapelessRecipe(getModItem(ArchitectureCraft.ID, "sawblade", 1), "toolHeadBuzzSawAnyIron");
 
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.toolHeadBuzzSaw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.toolHeadBuzzSaw, (int) (1L)),
                 getModItem(ArchitectureCraft.ID, "sawblade", 1));
     }
 }

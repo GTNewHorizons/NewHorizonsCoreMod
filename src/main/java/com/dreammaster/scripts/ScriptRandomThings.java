@@ -34,8 +34,8 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptRandomThings implements IScriptLoader {
 
@@ -159,15 +159,15 @@ public class ScriptRandomThings implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "enderCollector", 1, 0));
         addShapedRecipe(
                 getModItem(RandomThings.ID, "dyeingMachine", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 getModItem(Minecraft.ID, "crafting_table", 1, 0),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
                 ItemList.Hull_LV.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)));
         addShapelessRecipe(
                 getModItem(RandomThings.ID, "playerinterface", 1, 0),
                 getModItem(RemoteIO.ID, "tile.remote_interface", 1, 0),
@@ -186,7 +186,7 @@ public class ScriptRandomThings implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "emerald", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.Lapis, Materials2Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, (int) (4L)))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 0)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 16, 0)).circuit(1)
@@ -228,13 +228,13 @@ public class ScriptRandomThings implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(RandomThings.ID, "ingredient", 1, 4),
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.stick, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.stick, (int) (1L)))
                 .itemOutputs(getModItem(RandomThings.ID, "spectreKey", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 1000)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (1L)),
                         getModItem(RandomThings.ID, "ingredient", 1, 3))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 4)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_HV).specialValue(2500).addTo(blastFurnaceRecipes);

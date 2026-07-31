@@ -14,8 +14,8 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Superconductors;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptGraviSuite implements IScriptLoader {
 
@@ -59,7 +59,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1),
                 ItemList.Reactor_Coolant_NaK_3.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.CallistoIce, Materials2Shapes.plate, (int) (1)),
+                MaterialLibAPI.getStack(Materials.CallistoIce, Shapes.plate, (int) (1)),
                 ItemList.Reactor_Coolant_NaK_3.get(1L),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0),
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),
@@ -70,7 +70,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1),
                 ItemList.Reactor_Coolant_He_3.get(1L),
-                MaterialLibAPI.getStack(Materials2Materials.CallistoIce, Materials2Shapes.plate, (int) (1)),
+                MaterialLibAPI.getStack(Materials.CallistoIce, Shapes.plate, (int) (1)),
                 ItemList.Reactor_Coolant_He_3.get(1L),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0),
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),

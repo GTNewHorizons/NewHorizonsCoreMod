@@ -16,8 +16,8 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.material.MaterialParts;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -147,13 +147,13 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.ORDER, 32).add(Aspect.ENERGY, 48).add(Aspect.TRAP, 32),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10),
                 getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Olivine),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Olivine),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium));
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.Olivine),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.Olivine),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "vortexStabilizer",
                 new AspectList().add(Aspect.AURA, 21).add(Aspect.HUNGER, 18).add(Aspect.MECHANISM, 15)
@@ -168,17 +168,17 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.ENERGY, 32).add(Aspect.SENSES, 16).add(Aspect.MAGIC, 24),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
                 getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
                 getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 8),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber));
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber));
         TCHelper.setResearchAspects(
                 "recombinator",
                 new AspectList().add(Aspect.AURA, 21).add(Aspect.EXCHANGE, 18).add(Aspect.CRAFT, 15)

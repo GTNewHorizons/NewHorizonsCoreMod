@@ -16,8 +16,8 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.recipe.Scanning;
 
@@ -28,7 +28,7 @@ public class BW_Recipe_Loader implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyAlloyIngotT4.get())
                 .itemOutputs(
                         NHItemList.HeavyDutyPlateTier4.get(),
-                        MaterialLibAPI.getStack(Materials2Materials.Ruridit, Materials2Shapes.dustTiny, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.Ruridit, Shapes.dustTiny, (int) (4)))
                 .metadata(GTRecipeConstants.ADDITIVE_AMOUNT, 32).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(implosionRecipes);
 
@@ -40,7 +40,7 @@ public class BW_Recipe_Loader implements Runnable {
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0),
                         NHItemList.IceCompressedPlate.get(3),
                         NHItemList.IceCompressedPlate.get(3),
-                        MaterialLibAPI.getStack(Materials2Materials.Ruridit, Materials2Shapes.bolt, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.Ruridit, Shapes.bolt, (int) (4)))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 36))
                 .itemOutputs(NHItemList.HeavyDutyAlloyIngotT4.get()).eut(TierEU.RECIPE_LuV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);

@@ -64,9 +64,9 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
@@ -501,7 +501,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'a',
                 "plateInfinity",
                 'b',
-                TGregUtils.newItemStack(MU.materialOf(Materials2Materials.Neutronium), PartTypes.LargePlate, 1),
+                TGregUtils.newItemStack(Materials.Neutronium, PartTypes.LargePlate, 1),
                 'c',
                 getModItem(BloodArsenal.ID, "blood_infused_pickaxe_diamond", 1, wildcard),
                 'd',
@@ -905,13 +905,11 @@ public class ScriptAvaritia implements IScriptLoader {
                 'u',
                 ItemList.Universal_Collapser_ExoFoundry.get(1L),
                 'x',
-                MaterialLibAPI.getStack(Materials2Materials.Universium, Materials2Shapes.plateSuperdense, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Universium, Shapes.plateSuperdense, (int) (1)),
                 'y',
-                MaterialLibAPI
-                        .getStack(Materials2Materials.BlackDwarfMatter, Materials2Shapes.plateSuperdense, (int) (1)),
+                MaterialLibAPI.getStack(Materials.BlackDwarfMatter, Shapes.plateSuperdense, (int) (1)),
                 'z',
-                MaterialLibAPI
-                        .getStack(Materials2Materials.WhiteDwarfMatter, Materials2Shapes.plateSuperdense, (int) (1)));
+                MaterialLibAPI.getStack(Materials.WhiteDwarfMatter, Shapes.plateSuperdense, (int) (1)));
         // Neutronium Compressor Multi Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),
@@ -931,12 +929,11 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(Avaritia.ID, "Resource", 1, 1),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.plateSuperdense, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.plateSuperdense, (int) (1)),
                 'e',
                 ItemList.Electric_Piston_UV.get(1L),
                 'f',
-                MaterialLibAPI
-                        .getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.plateSuperdense, (int) (1)),
+                MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.plateSuperdense, (int) (1)),
                 'g',
                 ItemList.Conveyor_Module_UV.get(1L),
                 'h',
@@ -951,7 +948,7 @@ public class ScriptAvaritia implements IScriptLoader {
         CompressorManager.addRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 5),
                 64,
-                MaterialLibAPI.getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.dust, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dust, (int) (1L)));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource_Block", 1, 0), ItemList.Shape_Mold_Ingot.get(0L))
@@ -980,7 +977,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (4L)),
                         BlockList.StainlessSteelBars.get())
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(formingPressRecipes);
@@ -996,7 +993,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 new AspectList().add(Aspect.MAGIC, 512).add(Aspect.MIND, 128).add(Aspect.SENSES, 96)
                         .add(DarkAspects.LUST, 96).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 64)
                         .add(Lucrum.ULTRA_DEATH, 128),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Infinity),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Infinity),
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 6),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 6),
@@ -1021,12 +1018,12 @@ public class ScriptAvaritia implements IScriptLoader {
     private void registerTinkerPartsRecipes() {
         List<TinkerMaterialWrapper> materials = Arrays.asList(
                 new TinkerMaterialWrapper(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 1),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1),
                         TinkerTools.MaterialID.Iron,
                         3 * MINUTES + 20 * SECONDS + 8 * TICKS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.ingot, (int) (1)),
                         TinkerTools.MaterialID.Obsidian,
                         1 * MINUTES + 11 * SECONDS + 12 * TICKS,
                         TierEU.RECIPE_MV),
@@ -1036,32 +1033,32 @@ public class ScriptAvaritia implements IScriptLoader {
                         1 * MINUTES + 38 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Cobalt, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Cobalt, Shapes.ingot, (int) (1)),
                         TinkerTools.MaterialID.Cobalt,
                         10 * MINUTES + 40 * SECONDS,
                         TierEU.RECIPE_MV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Manyullyn, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.ingot, (int) (1)),
                         TinkerTools.MaterialID.Manyullyn,
                         16 * MINUTES,
                         TierEU.RECIPE_MV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.ingot, (int) (1)),
                         TinkerTools.MaterialID.Copper,
                         2 * MINUTES + 24 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Bronze, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Bronze, Shapes.ingot, (int) (1)),
                         TinkerTools.MaterialID.Bronze,
                         6 * MINUTES + 24 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Alumite, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Alumite, Shapes.ingot, (int) (1)),
                         TinkerTools.MaterialID.Alumite,
                         7 * MINUTES + 20 * SECONDS + 8 * TICKS,
                         TierEU.RECIPE_MV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (1)),
                         TinkerTools.MaterialID.Steel,
                         5 * MINUTES + 20 * SECONDS,
                         TierEU.RECIPE_LV),
@@ -1076,7 +1073,7 @@ public class ScriptAvaritia implements IScriptLoader {
                         1 * MINUTES + 20 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.ingot, (int) (1)),
                         ExtraUtils.tcon_bedrock_material_id,
                         1 * HOURS + 40 * MINUTES,
                         TierEU.RECIPE_MV),
@@ -1091,13 +1088,12 @@ public class ScriptAvaritia implements IScriptLoader {
                         24 * MINUTES,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.ingot, (int) (1)),
                         Tonkers.neutroniumId,
                         40 * SECONDS,
                         TierEU.RECIPE_ZPM),
                 new TinkerMaterialWrapper(
-                        MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.ingot, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Infinity, Shapes.ingot, (int) (1)),
                         Tonkers.infinityMetalId,
                         10 * MINUTES + 40 * SECONDS,
                         TierEU.RECIPE_ZPM));

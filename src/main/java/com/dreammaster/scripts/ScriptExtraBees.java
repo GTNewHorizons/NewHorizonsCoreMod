@@ -27,9 +27,8 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -87,11 +86,11 @@ public class ScriptExtraBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
                 'c',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'd',
                 "itemCasingGold",
                 'e',
@@ -99,11 +98,11 @@ public class ScriptExtraBees implements IScriptLoader {
                 'f',
                 "itemCasingGold",
                 'g',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
                 'i',
-                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
@@ -115,19 +114,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, (int) (1L)),
                 'e',
                 getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, (int) (1L)),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12));
         RecipeManagers.carpenterManager.addRecipe(
@@ -147,7 +146,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'd',
                 getModItem(Forestry.ID, "frameProven", 1, 0),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.WoodSealed), 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L),
                 'f',
                 getModItem(Forestry.ID, "frameProven", 1, 0),
                 'g',
@@ -219,7 +218,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Silver), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'd',
@@ -231,7 +230,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Silver), 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1));
         RecipeManagers.carpenterManager.addRecipe(
@@ -245,7 +244,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Redstone, Shapes.plate, (int) (1L)),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'd',
@@ -257,7 +256,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Redstone, Materials2Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Redstone, Shapes.plate, (int) (1L)),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3));
         RecipeManagers.carpenterManager.addRecipe(
@@ -275,15 +274,15 @@ public class ScriptExtraBees implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Aluminium), 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'e',
                 ItemList.Hull_HV.get(1L),
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Aluminium), 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Aluminium), 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0));
         RecipeManagers.carpenterManager.addRecipe(
@@ -315,7 +314,7 @@ public class ScriptExtraBees implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("for.honey", 1000),
-                MaterialLibAPI.getStack(Materials2Materials.WoodSealed, Materials2Shapes.gearGt, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.gearGt, (int) (1L)),
                 getModItem(ExtraBees.ID, "misc", 1, 0),
                 "abc",
                 "def",
@@ -382,8 +381,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 100);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 1))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.dustTiny, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Diamond, Shapes.dustTiny, (int) (1L)))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         new ResearchItem(
@@ -406,19 +404,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 "screwIron",
                 'b',
-                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
                 'c',
                 "screwIron",
                 'd',
-                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
                 'e',
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
                 'g',
                 "screwIron",
                 'h',
-                MaterialLibAPI.getStack(Materials2Materials.Clay, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
                 'i',
                 "screwIron");
         TCHelper.addResearchPage(

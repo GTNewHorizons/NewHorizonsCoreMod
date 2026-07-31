@@ -9,8 +9,7 @@ import com.dreammaster.item.NHItemList;
 import ggfab.GGItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -36,9 +35,8 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 NHItemList.MoldLeggings,
                 NHItemList.MoldBoots,
                 NHItemList.MarshmallowForm).forEach(
-                        item -> GTOreDictUnificator.addItemData(
-                                item.get(),
-                                new ItemData(MU.materialOf(Materials2Materials.Steel), 4 * GTValues.M)));
+                        item -> GTOreDictUnificator
+                                .addItemData(item.get(), new ItemData(Materials.Steel, 4 * GTValues.M)));
         // GT5 Shapes and Molds
         Stream.of(
                 ItemList.Shape_Empty,
@@ -101,17 +99,14 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 ItemList.Shape_Extruder_Rotor,
                 ItemList.Shape_Extruder_Turbine_Blade,
                 ItemList.Shape_Extruder_ToolHeadDrill).forEach(
-                        item -> GTOreDictUnificator.addItemData(
-                                item.get(1L),
-                                new ItemData(MU.materialOf(Materials2Materials.Steel), 4 * GTValues.M)));
+                        item -> GTOreDictUnificator
+                                .addItemData(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
         // GT++ Pellet Shape
-        GTOreDictUnificator.addItemData(
-                GregtechItemList.Pellet_Mold.get(1L),
-                new ItemData(MU.materialOf(Materials2Materials.Steel), 4 * GTValues.M));
+        GTOreDictUnificator
+                .addItemData(GregtechItemList.Pellet_Mold.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M));
         // Boat Shape
-        GTOreDictUnificator.addItemData(
-                NHItemList.ExtruderShapeBoat.get(1),
-                new ItemData(MU.materialOf(Materials2Materials.Steel), 4 * GTValues.M));
+        GTOreDictUnificator
+                .addItemData(NHItemList.ExtruderShapeBoat.get(1), new ItemData(Materials.Steel, 4 * GTValues.M));
         // GGfab Single use molds
         Stream.of(
                 GGItemList.SingleUseFileMold,
@@ -122,9 +117,8 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 GGItemList.SingleUseSoftMalletMold,
                 GGItemList.SingleUseScrewdriverMold,
                 GGItemList.SingleUseSawMold).forEach(
-                        item -> GTOreDictUnificator.addItemData(
-                                item.get(1L),
-                                new ItemData(MU.materialOf(Materials2Materials.Steel), 4 * GTValues.M)));
+                        item -> GTOreDictUnificator
+                                .addItemData(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
 
     }
 }

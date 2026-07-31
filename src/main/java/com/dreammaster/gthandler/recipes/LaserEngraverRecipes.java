@@ -23,10 +23,10 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -38,142 +38,120 @@ public class LaserEngraverRecipes implements Runnable {
         // Energised tesseract
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tesseract.get(1), GregtechItemList.Laser_Lens_Special.get(0))
                 .itemOutputs(ItemList.EnergisedTesseract.get(1))
-                .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.ExcitedDTEC,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (100)))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, (int) (100)))
                 .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(laserEngraverRecipes);
 
         // Mysterious crystal upgrading
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.plate, (int) (9L)),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.plate, (int) (9L)),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.MysteriousCrystal.get()).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.plate, (int) (9L)),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.plate, (int) (9L)),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.MysteriousCrystal.get()).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                NHItemList.MysteriousCrystal.get(3),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.MysteriousCrystal.get(3),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.MysteriousCrystalGemFlawless.get()).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_ZPM).addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                NHItemList.MysteriousCrystal.get(3),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.MysteriousCrystal.get(3),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.MysteriousCrystalGemFlawless.get()).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_ZPM).addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                NHItemList.MysteriousCrystalGemFlawless.get(3),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.lens, (int) (1))))
-                .itemOutputs(NHItemList.MysteriousCrystalGemExquisite.get()).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LuV).addTo(laserEngraverRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(
-                NHItemList.MysteriousCrystalGemFlawless.get(3),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.MysteriousCrystalGemFlawless.get(3),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.MysteriousCrystalGemExquisite.get()).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Mytryl, Materials2Shapes.plate, (int) (9L)),
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI.getStack(Materials2Materials.Topaz, Materials2Shapes.lens, (int) (1))))
+                        NHItemList.MysteriousCrystalGemFlawless.get(3),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, (int) (1))))
+                .itemOutputs(NHItemList.MysteriousCrystalGemExquisite.get()).requiresCleanRoom().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials.Mytryl, Shapes.plate, (int) (9L)),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Topaz, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Mytryl, Materials2Shapes.plate, (int) (9L)),
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI.getStack(Materials2Materials.Amber, Materials2Shapes.lens, (int) (1))))
+                        MaterialLibAPI.getStack(Materials.Mytryl, Shapes.plate, (int) (9L)),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Amber, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.MytrylCrystal.get()).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer2.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer2.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(1L)).requiresCleanRoom().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer3.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer3.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(4L)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer4.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer4.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(8L)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer5.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer5.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(16L)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer2.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer2.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NOR.get(1L)).requiresCleanRoom().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer3.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer3.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NOR.get(4L)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer4.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer4.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NOR.get(8L)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer5.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.EnderEye, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer5.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NOR.get(16L)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(WaferEngravingRecipes);
 
@@ -182,25 +160,24 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemOutputs(NHItemList.WaferTier3.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Wafer_SoC2.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Wafer_SoC2.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.NetherStar, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.RawPicoWafer.get()).requiresCleanRoom().duration(5 * MINUTES)
                 .eut((GTValues.V[8] - (GTValues.V[8] / 10))).addTo(laserEngraverRecipes);
 
         // Optical Boule
         GTValues.RA.stdBuilder().itemInputs(
                 ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
-                MaterialLibAPI.getStack(Materials2Materials.MagnetoResonatic, Materials2Shapes.lens, (int) (0)), // Magneto
-                                                                                                                 // resonatic
-                                                                                                                 // lens
-                MaterialLibAPI.getStack(Materials2Materials.Fayalite, Materials2Shapes.lens, (int) (0)), // Fayalite
-                                                                                                         // lens
+                MaterialLibAPI.getStack(Materials.MagnetoResonatic, Shapes.lens, (int) (0)), // Magneto
+                                                                                             // resonatic
+                                                                                             // lens
+                MaterialLibAPI.getStack(Materials.Fayalite, Shapes.lens, (int) (0)), // Fayalite
+                                                                                     // lens
                 NHItemList.MysteriousCrystalLens.get(0)).itemOutputs(ItemList.Circuit_Silicon_Ingot6.get(1L))
-                .fluidInputs(MU.materialOf(Materials2Materials.UUMatter).getFluid(16000L)).duration(30 * SECONDS)
-                .eut(7_864_320).requiresCleanRoom().addTo(laserEngraverRecipes);
+                .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 16000L)).duration(30 * SECONDS).eut(7_864_320)
+                .requiresCleanRoom().addTo(laserEngraverRecipes);
 
         Fluid oganesson = FluidRegistry.getFluid("oganesson") != null ? FluidRegistry.getFluid("oganesson")
                 : FluidRegistry.getFluid("radon");
@@ -209,33 +186,25 @@ public class LaserEngraverRecipes implements Runnable {
             // Photonically Enhanced Wafer
             GTValues.RA.stdBuilder().itemInputs(
                     ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
-                    GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Glowstone), 1),
+                    GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Glowstone, 1),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 0, 0) // Solar Light Splitter
-            ).itemOutputs(ItemList.Circuit_Silicon_Wafer7.get(1L)).fluidInputs(
-                    MaterialLibAPI
-                            .getFluidStack(Materials2Materials.Tin, Materials2FluidShapes.fluidPlasma, (int) (1000L)),
-                    new FluidStack(oganesson, 4000))
-                    .fluidOutputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Tin,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (1000L)))
+            ).itemOutputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(Materials.Tin, FluidShapes.fluidPlasma, (int) (1000L)),
+                            new FluidStack(oganesson, 4000))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Tin, FluidShapes.fluidMolten, (int) (1000L)))
                     .duration(10 * SECONDS).eut(7_864_320).requiresCleanRoom().addTo(laserEngraverRecipes);
 
         }
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.lens, (int) (1))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Diamond, Shapes.lens, (int) (1))),
                         ItemList.Circuit_Chip_CrystalSoC2.get(1L))
                 .itemOutputs(ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.BiohMediumSterilized,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (50L)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.BiohMediumSterilized, FluidShapes.fluidLiquid, (int) (50L)))
                 .duration(60 * SECONDS).eut(160_000).requiresCleanRoom().addTo(laserEngraverRecipes);
 
         // GC/GS Wafer
@@ -255,37 +224,31 @@ public class LaserEngraverRecipes implements Runnable {
 
         // Optical to Wafer Buff Recipes
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer6.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.NetherStar, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer6.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.NetherStar, Shapes.lens, (int) (1))))
                 .itemOutputs(NHItemList.RawPicoWafer.get(16)).requiresCleanRoom().duration(5 * MINUTES).eut(1887440)
                 .addTo(WaferEngravingRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer6.get(1L),
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.lens, (int) (1))))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Emerald, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_SoC2.get(32)).requiresCleanRoom().duration(45 * 20)
                 .eut(TierEU.RECIPE_ZPM).addTo(WaferEngravingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Silicon_Wafer6.get(1L),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI.getStack(Materials2Materials.Sapphire, Materials2Shapes.lens, (int) (1))))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer6.get(1L),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Sapphire, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_QPIC.get(16)).requiresCleanRoom().duration(120 * 20).eut(1887440)
                 .addTo(WaferEngravingRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer6.get(1L),
-                        GTUtility.copyAmount(
-                                0,
-                                MaterialLibAPI.getStack(Materials2Materials.Ruby, Materials2Shapes.lens, (int) (1))))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Ruby, Shapes.lens, (int) (1))))
                 .itemOutputs(ItemList.Circuit_Wafer_NPIC.get(32)).requiresCleanRoom().duration(60 * 20)
                 .eut(TierEU.RECIPE_UV).addTo(WaferEngravingRecipes);
 
@@ -298,20 +261,14 @@ public class LaserEngraverRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(
                 getModItem(Botania.ID, "livingrock", 1, 0),
                 getModItem(Botania.ID, "bifrostPerm", 1, 0),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.BotaniaDragonstone, Materials2Shapes.lens, (int) (1))))
+                GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.BotaniaDragonstone, Shapes.lens, (int) (1))))
                 .itemOutputs(getModItem(Botania.ID, "shimmerrock", 1, 0)).duration(2 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(
                 getModItem(Botania.ID, "dreamwood", 1, 1),
                 getModItem(Botania.ID, "bifrostPerm", 1, 0),
-                GTUtility.copyAmount(
-                        0,
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.BotaniaDragonstone, Materials2Shapes.lens, (int) (1))))
+                GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.BotaniaDragonstone, Shapes.lens, (int) (1))))
                 .itemOutputs(getModItem(Botania.ID, "shimmerwoodPlanks", 1, 0)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
@@ -319,57 +276,35 @@ public class LaserEngraverRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.DimensionallyTranscendentResidue,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.DimensionallyTranscendentResidue,
+                                FluidShapes.fluidLiquid,
                                 (int) (100L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Protomatter,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (100L)))
+                        MaterialLibAPI.getFluidStack(Materials.Protomatter, FluidShapes.fluidLiquid, (int) (100L)))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
 
-        GTValues.RA.stdBuilder().fluidInputs(
-                MaterialLibAPI
-                        .getFluidStack(Materials2Materials.SpaceTime, Materials2FluidShapes.fluidMolten, (int) (100L)))
+        GTValues.RA.stdBuilder()
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, (int) (100L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Protomatter,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1000L)))
+                        MaterialLibAPI.getFluidStack(Materials.Protomatter, FluidShapes.fluidLiquid, (int) (1000L)))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.PrimordialMatter,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (100L)))
+                        MaterialLibAPI.getFluidStack(Materials.PrimordialMatter, FluidShapes.fluidLiquid, (int) (100L)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UXV)
                 .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Protomatter,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (10000L)))
+                        MaterialLibAPI.getFluidStack(Materials.Protomatter, FluidShapes.fluidLiquid, (int) (10000L)))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
 
         // Bootstrap antimatter recipe
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI
-                        .getStack(Materials2Materials.hotprotohalkonite, Materials2Shapes.plateSuperdense, (int) (1)))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Protomatter,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (100L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.hotprotohalkonite, Shapes.plateSuperdense, (int) (1)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Protomatter, FluidShapes.fluidLiquid, (int) (100L)))
                 .duration(10000 * SECONDS).eut(TierEU.RECIPE_UIV)
-                .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Antimatter,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1L)))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Antimatter, FluidShapes.fluidLiquid, (int) (1L)))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
 
         // APIC+ laser cutting recipes
@@ -380,13 +315,13 @@ public class LaserEngraverRecipes implements Runnable {
                         NHItemList.ChromaticLens.get(0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (30L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .itemOutputs(
                         ItemList.Circuit_Chip_APIC.get(1),
-                        MaterialLibAPI.getStack(Materials2Materials.SeaweedAsh, Materials2Shapes.dust, (int) (2)))
+                        MaterialLibAPI.getStack(Materials.SeaweedAsh, Shapes.dust, (int) (2)))
                 .outputChances(10000, 6700).requiresCleanRoom().addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
@@ -395,8 +330,8 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (15L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Circuit_Chip_APIC.get(2))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
@@ -407,8 +342,8 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (20L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_UMV).itemOutputs(ItemList.Circuit_Chip_ZPIC.get(2))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
@@ -419,8 +354,8 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (25L)))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).itemOutputs(ItemList.Circuit_Chip_YPIC.get(2))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);

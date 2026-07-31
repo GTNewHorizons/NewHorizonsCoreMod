@@ -19,9 +19,9 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
 
 public class CuttingMachineRecipes implements Runnable {
@@ -102,7 +102,7 @@ public class CuttingMachineRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Bioware.get(1L))
                 .itemOutputs(ItemList.Circuit_Parts_Chip_Bioware.get(16L), ItemList.Circuit_Chip_Biocell.get(16L))
-                .fluidInputs(MU.materialOf(Materials2Materials.UUMatter).getFluid(8_000L)).duration(15 * SECONDS)
+                .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 8_000L)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(cutterRecipes);
         if (IndustrialCraft2.isModLoaded()) {
 
@@ -118,19 +118,15 @@ public class CuttingMachineRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_FPIC.get(1))
                 .itemOutputs(ItemList.Circuit_Chip_FPIC.get(2))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Lubricant,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (250L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (250L)))
                 .requiresCleanRoom().duration(45 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_FPIC.get(1))
                 .itemOutputs(ItemList.Circuit_Chip_FPIC.get(2))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.dimensionallyshiftedsuperfluid,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.dimensionallyshiftedsuperfluid,
+                                FluidShapes.fluidLiquid,
                                 (int) (10L)))
                 .requiresCleanRoom().duration(18 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(cutterRecipes);
 
@@ -139,7 +135,7 @@ public class CuttingMachineRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
                     .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
-                    .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(100L)).duration(10 * SECONDS).eut(4)
+                    .fluidInputs(MaterialUtils.fluid(Materials.Water, 100L)).duration(10 * SECONDS).eut(4)
                     .addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
@@ -151,10 +147,7 @@ public class CuttingMachineRecipes implements Runnable {
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
                     .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Lubricant,
-                                    Materials2FluidShapes.fluidLiquid,
-                                    (int) (25L)))
+                            MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (25L)))
                     .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
@@ -162,15 +155,15 @@ public class CuttingMachineRecipes implements Runnable {
                     .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.dimensionallyshiftedsuperfluid,
-                                    Materials2FluidShapes.fluidLiquid,
+                                    Materials.dimensionallyshiftedsuperfluid,
+                                    FluidShapes.fluidLiquid,
                                     (int) (5)))
                     .duration(2 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
                     .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
-                    .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(100L)).duration(10 * SECONDS).eut(4)
+                    .fluidInputs(MaterialUtils.fluid(Materials.Water, 100L)).duration(10 * SECONDS).eut(4)
                     .addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
@@ -182,10 +175,7 @@ public class CuttingMachineRecipes implements Runnable {
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
                     .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Lubricant,
-                                    Materials2FluidShapes.fluidLiquid,
-                                    (int) (25L)))
+                            MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (25L)))
                     .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
@@ -193,15 +183,15 @@ public class CuttingMachineRecipes implements Runnable {
                     .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.dimensionallyshiftedsuperfluid,
-                                    Materials2FluidShapes.fluidLiquid,
+                                    Materials.dimensionallyshiftedsuperfluid,
+                                    FluidShapes.fluidLiquid,
                                     (int) (5)))
                     .duration(2 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
                     .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
-                    .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(100L)).duration(10 * SECONDS).eut(4)
+                    .fluidInputs(MaterialUtils.fluid(Materials.Water, 100L)).duration(10 * SECONDS).eut(4)
                     .addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
@@ -213,18 +203,15 @@ public class CuttingMachineRecipes implements Runnable {
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
                     .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Lubricant,
-                                    Materials2FluidShapes.fluidLiquid,
-                                    (int) (25L)))
+                            MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (25L)))
                     .duration(5 * SECONDS).eut(4).addTo(cutterRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
                     .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.dimensionallyshiftedsuperfluid,
-                                    Materials2FluidShapes.fluidLiquid,
+                                    Materials.dimensionallyshiftedsuperfluid,
+                                    FluidShapes.fluidLiquid,
                                     (int) (5)))
                     .duration(2 * SECONDS).eut(4).addTo(cutterRecipes);
 
@@ -249,25 +236,21 @@ public class CuttingMachineRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
                 .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(16))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Grade7PurifiedWater,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1000L)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.Grade7PurifiedWater, FluidShapes.fluidLiquid, (int) (1000L)))
                 .duration(wafer_duration_ticks).eut(wafer_eu_per_tick).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
                 .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(24))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.Grade8PurifiedWater,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1000L)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, (int) (1000L)))
                 .duration(wafer_duration_ticks / 2).eut(wafer_eu_per_tick).addTo(cutterRecipes);
 
         if (Chisel.isModLoaded()) {
             // Floor Carpet
             for (int meta = 0; meta < 16; ++meta) {
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
-                        .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4L))
+                        .fluidInputs(MaterialUtils.fluid(Materials.Water, 4L))
                         .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS).eut(7)
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
@@ -276,16 +259,13 @@ public class CuttingMachineRecipes implements Runnable {
                         .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(
-                                MaterialLibAPI.getFluidStack(
-                                        Materials2Materials.Lubricant,
-                                        Materials2FluidShapes.fluidLiquid,
-                                        (int) (1L)))
+                                MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (1L)))
                         .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(50).eut(7).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(
                                 MaterialLibAPI.getFluidStack(
-                                        Materials2Materials.dimensionallyshiftedsuperfluid,
-                                        Materials2FluidShapes.fluidLiquid,
+                                        Materials.dimensionallyshiftedsuperfluid,
+                                        FluidShapes.fluidLiquid,
                                         (int) (1L)))
                         .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(20).eut(7).addTo(cutterRecipes);
             }

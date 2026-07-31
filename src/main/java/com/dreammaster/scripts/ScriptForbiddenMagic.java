@@ -38,9 +38,9 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -174,7 +174,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         ThaumcraftApi.addCrucibleRecipe(
                 "VINTEUM",
-                MaterialLibAPI.getStack(Materials2Materials.Vinteum, Materials2Shapes.nugget, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Vinteum, Shapes.nugget, (int) (1L)),
                 "nuggetThaumium",
                 new AspectList().add(Aspect.EXCHANGE, 4).add(Aspect.ORDER, 2).add(Aspect.CRYSTAL, 2));
         TCHelper.addInfusionCraftingRecipe(
@@ -184,13 +184,13 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new AspectList().add(Aspect.TREE, 64).add(Aspect.MAGIC, 48).add(Aspect.PLANT, 32).add(Aspect.TOOL, 24)
                         .add(Aspect.VOID, 24),
                 getModItem(Witchery.ID, "ingredient", 1, 82),
-                MU.craftIngredient(OrePrefixes.gem, Materials2Materials.Vinteum),
+                MaterialParts.craftIngredient(OrePrefixes.gem, Materials.Vinteum),
                 getModItem(Witchery.ID, "witchsapling", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 34),
                 getModItem(Witchery.ID, "witchsapling", 1, 1),
                 getModItem(Witchery.ID, "ingredient", 1, 36),
                 getModItem(Witchery.ID, "witchsapling", 1, 2),
-                MU.craftIngredient(OrePrefixes.gem, Materials2Materials.Vinteum),
+                MaterialParts.craftIngredient(OrePrefixes.gem, Materials.Vinteum),
                 getModItem(Witchery.ID, "witchsapling", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 34),
                 getModItem(Witchery.ID, "witchsapling", 1, 1),
@@ -213,7 +213,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         .add(Aspect.FIRE, 48).add(Aspect.TOOL, 8),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 6),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Soularium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Soularium),
                 getModItem(Minecraft.ID, "skull", 1, 1),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3),
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
@@ -221,7 +221,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Soularium));
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Soularium));
         TCHelper.setResearchAspects(
                 "ROD_infernal",
                 new AspectList().add(DarkAspects.NETHER, 15).add(Aspect.FIRE, 12).add(Aspect.WATER, 9)
@@ -413,15 +413,15 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new AspectList().add(Aspect.MAGIC, 256).add(Aspect.ORDER, 64).add(Aspect.METAL, 64)
                         .add(DarkAspects.PRIDE, 20).add(TCAspects.STRONTIO.getAspect(), 10),
                 getModItem(ForbiddenMagic.ID, "WandCaps", 1, 3),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Steeleaf),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Steeleaf),
                 getModItem(Botania.ID, "manaResource", 1, 4),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Emerald),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 getModItem(Botania.ID, "manaResource", 1, 4),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Steeleaf),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Steeleaf),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.addResearchPage("CAP_terrasteel", new ResearchPage("derp.research_page.CAP_terrasteel"));
         TCHelper.addResearchPage(
@@ -483,15 +483,12 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -4,
                 2,
                 3,
-                MaterialLibAPI.getStack(Materials2Materials.Vinteum, Materials2Shapes.gem, (int) (1)))
+                MaterialLibAPI.getStack(Materials.Vinteum, Shapes.gem, (int) (1)))
                         .setPages(
                                 new ResearchPage("derp.research_page.VINTEUM"),
                                 new ResearchPage(
                                         TCHelper.findCrucibleRecipe(
-                                                MaterialLibAPI.getStack(
-                                                        Materials2Materials.Vinteum,
-                                                        Materials2Shapes.nugget,
-                                                        (int) (1L)))))
+                                                MaterialLibAPI.getStack(Materials.Vinteum, Shapes.nugget, (int) (1L)))))
                         .setConcealed().setParents("JOURNEY", "THAUMIUM", "GT_ADVANCEDMETALLURGY")
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("VINTEUM", 1);
@@ -755,14 +752,14 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new AspectList().add(Aspect.WEAPON, 32).add(DarkAspects.NETHER, 24).add(Aspect.ENERGY, 16)
                         .add(Aspect.MECHANISM, 8),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0),
-                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.BloodInfusedIron),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.InfusedFire),
+                MaterialParts.craftIngredient(OrePrefixes.stick, Materials.BloodInfusedIron),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.InfusedFire),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1),
-                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.BloodInfusedIron),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.InfusedFire),
+                MaterialParts.craftIngredient(OrePrefixes.stick, Materials.BloodInfusedIron),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.InfusedFire),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1),
-                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.BloodInfusedIron),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.InfusedFire),
+                MaterialParts.craftIngredient(OrePrefixes.stick, Materials.BloodInfusedIron),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.InfusedFire),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
         TCHelper.setResearchAspects(
                 "FORK",
@@ -782,7 +779,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
                 getModItem(Minecraft.ID, "skull", 1, 1),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Ruby),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Ruby),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
                 getModItem(Minecraft.ID, "skull", 1, 2),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
@@ -805,7 +802,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 12),
                 getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 11),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 12),
@@ -833,7 +830,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new AspectList().add(DarkAspects.WRATH, 32).add(Aspect.MECHANISM, 32).add(Aspect.BEAST, 64)
                         .add(Aspect.METAL, 48).add(Aspect.ELDRITCH, 16).add(Aspect.UNDEAD, 16).add(Aspect.MAGIC, 32),
                 getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0),
-                MU.craftIngredient(OrePrefixes.block, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Thaumium),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0),
@@ -867,11 +864,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Ruby),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Ruby),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1));
@@ -884,11 +881,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Ruby),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Ruby),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1));
@@ -901,11 +898,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Ruby),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Ruby),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1));
@@ -918,11 +915,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Diamond),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Ruby),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Ruby),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1));
@@ -941,12 +938,12 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 0),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 0),
                 getModItem(Minecraft.ID, "slime_ball", 1, 0),
                 getModItem(Minecraft.ID, "slime_ball", 1, 0),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Sapphire),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Sapphire),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4));
         TCHelper.setResearchAspects(
                 "TAINTSHOVEL",
@@ -962,12 +959,12 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amber),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amber),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2),
                 getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
-                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Amethyst),
+                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Amethyst),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "TAINTPICK",
@@ -1023,13 +1020,13 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 ItemList.QuantumEye.get(1L),
                 ItemList.Gravistar.get(1L),
                 ItemList.QuantumEye.get(1L),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0));
         TCHelper.setResearchAspects(
@@ -1206,15 +1203,15 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         .add(Aspect.EXCHANGE, 8).add(Aspect.METAL, 8),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 1),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
-                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium));
+                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium));
         TCHelper.addResearchPage(
                 "CAP_alchemical",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0))));

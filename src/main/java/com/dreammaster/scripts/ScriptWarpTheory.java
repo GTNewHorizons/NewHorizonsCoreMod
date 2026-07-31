@@ -28,9 +28,9 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -103,9 +103,9 @@ public class ScriptWarpTheory implements IScriptLoader {
                 'b',
                 new ItemStack(Items.potionitem), // Water bottle
                 'p',
-                MaterialLibAPI.getStack(Materials2Materials.InfusedEntropy, Materials2Shapes.dust, (int) (1)), // Perditio
-                                                                                                               // crystal
-                                                                                                               // dust
+                MaterialLibAPI.getStack(Materials.InfusedEntropy, Shapes.dust, (int) (1)), // Perditio
+                                                                                           // crystal
+                                                                                           // dust
                 'g',
                 new ItemStack(Items.ghast_tear));
         TCHelper.addResearchPage(
@@ -151,13 +151,13 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "resource", 1, 5),
                 getModItem(CropsNH.ID, "berry", 1, 2),
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0),
-                MU.craftIngredient(OrePrefixes.cell, Materials2Materials.lifeessence),
+                MaterialParts.craftIngredient(OrePrefixes.cell, Materials.lifeessence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 36),
                 getModItem(ThaumicBases.ID, "resource", 1, 5),
                 getModItem(CropsNH.ID, "berry", 1, 2),
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0),
-                MU.craftIngredient(OrePrefixes.cell, Materials2Materials.lifeessence),
+                MaterialParts.craftIngredient(OrePrefixes.cell, Materials.lifeessence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 36));
         TCHelper.addResearchPage(
@@ -184,15 +184,15 @@ public class ScriptWarpTheory implements IScriptLoader {
                 new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.EXCHANGE, 32).add(Aspect.MAGIC, 16)
                         .add(Aspect.HEAL, 16),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.Diamond),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
-                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.Diamond),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10));
         TCHelper.addResearchPage(
                 "PURETEAR",
@@ -209,19 +209,19 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.MAGIC, 64).add(Aspect.EXCHANGE, 32),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
                 getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Gold),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Thaumium),
                 getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
-                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Thaumium),
+                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Diamond),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
-                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
-                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium));
+                MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Ichorium),
+                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Gold),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "warptheory.amulet",
                 new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.AURA, 15).add(Aspect.ENERGY, 12)
@@ -244,10 +244,10 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0),
                 getModItem(OpenBlocks.ID, "sprinkler", 1, 0),
-                MU.craftIngredient(OrePrefixes.pipeTiny, Materials2Materials.Neutronium),
+                MaterialParts.craftIngredient(OrePrefixes.pipeTiny, Materials.Neutronium),
                 getModItem(OpenBlocks.ID, "xpshower", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
-                MU.craftIngredient(OrePrefixes.plateSuperdense, Materials2Materials.Ichorium));
+                MaterialParts.craftIngredient(OrePrefixes.plateSuperdense, Materials.Ichorium));
         TCHelper.setResearchAspects(
                 "warptheory.portableshower",
                 new AspectList().add(TCAspects.AEQUALITAS.getAspect(), 5).add(TCAspects.PRIMORDIUM.getAspect(), 5)

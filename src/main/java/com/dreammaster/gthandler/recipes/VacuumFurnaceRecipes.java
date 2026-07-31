@@ -11,9 +11,9 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.material.MU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialUtils;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.fluids.GTPPFluids;
@@ -32,35 +32,31 @@ public class VacuumFurnaceRecipes implements Runnable {
                             GTBees.combs.getStackForType(CombType.INDIUM, 64))
                     .circuit(2)
                     .itemOutputs(
-                            MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Zinc, Materials2Shapes.dust, (int) (52L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (56L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Germanium, Materials2Shapes.dust, (int) (15)))
+                            MaterialLibAPI.getStack(Materials.Zinc, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Zinc, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Zinc, Shapes.dust, (int) (52L)),
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (56L)),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Germanium, Shapes.dust, (int) (15)))
                     .fluidInputs(new FluidStack(GTPPFluids.SphaleriteFlotationFroth, 4000))
-                    .fluidOutputs(
-                            new FluidStack(GTPPFluids.RedMud, 2000),
-                            MU.materialOf(Materials2Materials.Water).getFluid(2000))
+                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), MaterialUtils.fluid(Materials.Water, 2000))
                     .eut((int) TierEU.RECIPE_LuV).metadata(COIL_HEAT, 5500).duration(2 * MINUTES)
                     .addTo(vacuumFurnaceRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.INDIUM, 40)).circuit(2)
                     .itemOutputs(
-                            MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (52L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (64L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (56L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Cadmium, Materials2Shapes.dust, (int) (50L)),
-                            MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (30L)))
+                            MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, (int) (52L)),
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, (int) (56L)),
+                            MaterialLibAPI.getStack(Materials.Cadmium, Shapes.dust, (int) (50L)),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, (int) (30L)))
                     .fluidInputs(new FluidStack(GTPPFluids.ChalcopyriteFlotationFroth, 4000))
-                    .fluidOutputs(
-                            new FluidStack(GTPPFluids.RedMud, 2000),
-                            MU.materialOf(Materials2Materials.Water).getFluid(2000))
+                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), MaterialUtils.fluid(Materials.Water, 2000))
                     .eut((int) TierEU.RECIPE_IV).metadata(COIL_HEAT, 4500).duration(2 * MINUTES)
                     .addTo(vacuumFurnaceRecipes);
         }

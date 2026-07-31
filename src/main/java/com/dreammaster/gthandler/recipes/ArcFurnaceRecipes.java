@@ -18,16 +18,16 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2FluidShapes;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ArcFurnaceRecipes implements Runnable {
 
     @Override
     public void run() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.nugget, (int) (2L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.nugget, (int) (2L)))
                 .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 0))
@@ -38,47 +38,40 @@ public class ArcFurnaceRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1))
                 .itemOutputs(
                         new ItemStack(Blocks.glass, 2),
-                        MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dustTiny, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, (int) (1)))
                 .duration(1 * SECONDS).eut(TierEU.RECIPE_MV).addTo(UniversalArcFurnace);
 
         // Awful dimensionally transcendent residue recipe for mk5 fusion pre-dtpf (mostly a meme)
         GTValues.RA.stdBuilder().itemInputs(ItemRefer.Radioactive_Waste.get(64))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials2Materials.ExcitedDTEC,
-                                Materials2FluidShapes.fluidLiquid,
-                                (int) (1000L)))
+                        MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, (int) (1000L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials2Materials.DimensionallyTranscendentResidue,
-                                Materials2FluidShapes.fluidLiquid,
+                                Materials.DimensionallyTranscendentResidue,
+                                FluidShapes.fluidLiquid,
                                 (int) (50L)))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV / 2).addTo(arcFurnaceRecipes);
 
         if (GalacticraftAmunRa.isModLoaded()) {
             // Zero Point Module recycling
 
-            GTValues.RA.stdBuilder().itemInputs(ItemList.ZPM.get(1)).itemOutputs(
-                    MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.dust, (int) (8L)),
-                    MaterialLibAPI.getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.dust, (int) (32L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Firestone, Materials2Shapes.plate, (int) (32L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Dilithium, Materials2Shapes.dust, (int) (32L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.itemCasing, (int) (16L)),
-                    MaterialLibAPI.getStack(Materials2Materials.Ardite, Materials2Shapes.plateDense, (int) (64L)),
-                    getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4, 3),
-                    NHItemList.ChaoticDust.get(2),
-                    getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 26))
+            GTValues.RA.stdBuilder().itemInputs(ItemList.ZPM.get(1))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.dust, (int) (8L)),
+                            MaterialLibAPI.getStack(Materials.DraconiumAwakened, Shapes.dust, (int) (32L)),
+                            MaterialLibAPI.getStack(Materials.Firestone, Shapes.plate, (int) (32L)),
+                            MaterialLibAPI.getStack(Materials.Dilithium, Shapes.dust, (int) (32L)),
+                            MaterialLibAPI.getStack(Materials.Ichorium, Shapes.itemCasing, (int) (16L)),
+                            MaterialLibAPI.getStack(Materials.Ardite, Shapes.plateDense, (int) (64L)),
+                            getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4, 3),
+                            NHItemList.ChaoticDust.get(2),
+                            getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 26))
                     .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 500, 250)
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.CelestialTungsten,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (144)))
+                            MaterialLibAPI
+                                    .getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidMolten, (int) (144)))
                     .fluidOutputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials2Materials.Tungsten,
-                                    Materials2FluidShapes.fluidMolten,
-                                    (int) (144)))
+                            MaterialLibAPI.getFluidStack(Materials.Tungsten, FluidShapes.fluidMolten, (int) (144)))
                     .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(arcFurnaceRecipes);
         }
     }

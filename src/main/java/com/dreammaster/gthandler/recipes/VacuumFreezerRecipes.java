@@ -12,8 +12,8 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class VacuumFreezerRecipes implements Runnable {
 
@@ -24,289 +24,208 @@ public class VacuumFreezerRecipes implements Runnable {
                 .itemOutputs(NHItemList.Marshmallow.get()).duration(40 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Neutronium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Neutronium, Shapes.ingot, (int) (1L)))
                 .duration(1 * MINUTES + 2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.ingot, (int) (1L)))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.ingot, (int) (1L)))
                 .duration(55 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.StellarAlloy, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.StellarAlloy, Shapes.ingot, (int) (1L)))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Tritanium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Tritanium, Shapes.ingot, (int) (1L)))
                 .duration(48 * SECONDS + 9 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Oriharukon, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Oriharukon, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Oriharukon, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Oriharukon, Shapes.ingot, (int) (1L)))
                 .duration(30 * SECONDS + 3 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.MelodicAlloy, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.MelodicAlloy, Shapes.ingot, (int) (1L)))
                 .duration(36 * SECONDS + 19 * TICKS).eut(TierEU.RECIPE_IV / 2).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI
-                        .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.ingot, (int) (1L)))
                 .duration(29 * SECONDS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Iridium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Iridium, Shapes.ingot, (int) (1L)))
                 .duration(28 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Osmiridium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Osmiridium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Osmiridium, Shapes.ingot, (int) (1L)))
                 .duration(28 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.CrystallineAlloy, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.CrystallineAlloy, Shapes.ingot, (int) (1L)))
                 .duration(28 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Osmium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Osmium, Shapes.ingot, (int) (1L)))
                 .duration(28 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Tungsten, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Tungsten, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Tungsten, Shapes.ingot, (int) (1L)))
                 .duration(27 * SECONDS + 9 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Tantalum, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Tantalum, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Tantalum, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Tantalum, Shapes.ingot, (int) (1L)))
                 .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.EnderiumBase, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.EnderiumBase, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.EnderiumBase, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.EnderiumBase, Shapes.ingot, (int) (1L)))
                 .duration(20 * SECONDS + 2 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.HSSS, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.HSSS, Shapes.ingot, (int) (1L)))
                 .duration(19 * SECONDS + 7 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Enderium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Enderium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Enderium, Shapes.ingot, (int) (1L)))
                 .duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.ingot, (int) (1L)))
                 .duration(17 * SECONDS + 17 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.TPVAlloy, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.TPVAlloy, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.TPVAlloy, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.TPVAlloy, Shapes.ingot, (int) (1L)))
                 .duration(16 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.ingot, (int) (1L)))
                 .duration(16 * SECONDS + 1 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.VividAlloy, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.VividAlloy, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.VividAlloy, Shapes.ingot, (int) (1L)))
                 .duration(16 * SECONDS + 1 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Palladium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Palladium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Palladium, Shapes.ingot, (int) (1L)))
                 .duration(15 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Draconium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Draconium, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.HSSG, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.HSSG, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.HSSG, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.HSSG, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.ingot, (int) (1L)))
-                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Quantium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Quantium, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.ingot, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Naquadria, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Naquadria, Shapes.ingot, (int) (1L)))
+                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
         if (Avaritia.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(
-                    MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.ingotHot, (int) (1L)))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(MaterialLibAPI.getStack(Materials.Infinity, Shapes.ingotHot, (int) (1L)))
                     .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 6)).duration(14 * SECONDS + 14 * TICKS)
                     .eut(TierEU.RECIPE_UHV).addTo(vacuumFreezerRecipes);
 
         }
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.InfinityCatalyst, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_UV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Adamantium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Adamantium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Adamantium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Adamantium, Shapes.ingot, (int) (1L)))
+                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.DeepIron, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.DeepIron, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.DeepIron, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.DeepIron, Materials2Shapes.ingot, (int) (1L)))
-                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.BlackPlutonium, Materials2Shapes.ingot, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.DraconiumAwakened, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.DraconiumAwakened, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_LuV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.MysteriousCrystal, Materials2Shapes.ingot, (int) (1L)))
-                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.ingot, (int) (1L)))
+                .itemInputs(MaterialLibAPI.getStack(Materials.ElectrumFlux, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.ElectrumFlux, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.TungstenCarbide, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.TungstenCarbide, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Trinium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Trinium, Shapes.ingot, (int) (1L)))
+                .duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.TungstenCarbide, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.TungstenCarbide, Shapes.ingot, (int) (1L)))
                 .duration(14 * SECONDS + 11 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.HSSE, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.HSSE, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.HSSE, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.HSSE, Shapes.ingot, (int) (1L)))
                 .duration(12 * SECONDS + 3 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.ingot, (int) (1L)))
                 .duration(10 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Nichrome, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Nichrome, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Nichrome, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Nichrome, Shapes.ingot, (int) (1L)))
                 .duration(8 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI.getStack(Materials2Materials.VanadiumGallium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.VanadiumGallium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.VanadiumGallium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.VanadiumGallium, Shapes.ingot, (int) (1L)))
                 .duration(8 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                MaterialLibAPI
-                        .getStack(Materials2Materials.YttriumBariumCuprate, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.YttriumBariumCuprate, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.ingot, (int) (1L)))
                 .duration(7 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Desh, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Desh, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Desh, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Desh, Shapes.ingot, (int) (1L)))
                 .duration(7 * SECONDS + 7 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.ingotHot, (int) (1L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.ingot, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Titanium, Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Titanium, Shapes.ingot, (int) (1L)))
                 .duration(7 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_HV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HotNetherrackBrick.get())

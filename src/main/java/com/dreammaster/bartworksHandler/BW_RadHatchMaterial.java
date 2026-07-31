@@ -10,8 +10,8 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import com.ruling_0.materiallib.api.Shape;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.GTMaterialProperties;
 import gregtech.api.material.MaterialAtomics;
 import gregtech.api.util.recipe.Sievert;
@@ -28,14 +28,14 @@ public class BW_RadHatchMaterial {
             Integer radiation = material.getProperty(GTMaterialProperties.RADIATION_LEVEL);
             if (radiation == null || radiation <= 0) continue;
 
-            if (material == Materials2Materials.Thorium || material == Materials2Materials.Thorium232
-                    || material == Materials2Materials.Californium) {
+            if (material == Materials.Thorium || material == Materials.Thorium232
+                    || material == Materials.Californium) {
                 continue;
             }
 
             int level = (int) MaterialAtomics.protons(material);
-            addRod(material, Materials2Shapes.stick, level, 1);
-            addRod(material, Materials2Shapes.stickLong, level, 2);
+            addRod(material, Shapes.stick, level, 1);
+            addRod(material, Shapes.stickLong, level, 2);
         }
     }
 
