@@ -27,7 +27,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
 import ggfab.GGItemList;
-import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
@@ -1804,7 +1803,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Arrays.asList(
                         MaterialLibAPI.getFluidStack(Materials2Materials.MutatedLivingSolder, Materials2FluidShapes.fluidMolten, (int) (16 * INGOTS)),
                         MU.materialOf(Materials2Materials.UUMatter).getFluid(8000),
-                        GGMaterial.preciousMetalAlloy.getMolten(8 * INGOTS)),
+                        MaterialLibAPI.getFluidStack(Materials2Materials.PreciousMetalsAlloy, Materials2FluidShapes.fluidMolten, (int) (8 * INGOTS))),
                 CircuitComponent.PicoCircuit,
                 250 * SECONDS,
                 TierEU.RECIPE_MAX,
@@ -1827,7 +1826,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Arrays.asList(
                         MaterialLibAPI.getFluidStack(Materials2Materials.MutatedLivingSolder, Materials2FluidShapes.fluidMolten, (int) (32 * INGOTS)),
                         MU.materialOf(Materials2Materials.UUMatter).getFluid(24000),
-                        GGMaterial.preciousMetalAlloy.getMolten(16 * INGOTS)),
+                        MaterialLibAPI.getFluidStack(Materials2Materials.PreciousMetalsAlloy, Materials2FluidShapes.fluidMolten, (int) (16 * INGOTS))),
                 CircuitComponent.QuantumCircuit,
                 500 * SECONDS,
                 TierEU.RECIPE_MAX,

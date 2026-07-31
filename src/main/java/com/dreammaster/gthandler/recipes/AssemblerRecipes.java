@@ -88,7 +88,6 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
-import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.GTMod;
 import gregtech.api.enums.Circuits;
@@ -2959,7 +2958,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Machine_EV_Compressor.get(1),
                         Circuits.IV.get(2),
                         ItemList.Electric_Piston_EV.get(2),
-                        GGMaterial.incoloy903.get(OrePrefixes.plate, 4))
+                        MaterialLibAPI.getStack(Materials2Materials.Incoloy903, Materials2Shapes.plate, (int) (4)))
                 .itemOutputs(ItemList.Machine_Multi_IndustrialCompressor.get(1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
@@ -3477,7 +3476,7 @@ public class AssemblerRecipes implements Runnable {
         // Electric Compressor Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GGMaterial.incoloy903.get(OrePrefixes.plate, 4),
+                        MaterialLibAPI.getStack(Materials2Materials.Incoloy903, Materials2Shapes.plate, (int) (4)),
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.plate, (int) (2)),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Titanium), 1))
                 .itemOutputs(ItemList.Compressor_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS)
@@ -3486,9 +3485,10 @@ public class AssemblerRecipes implements Runnable {
         // Compression Pipe Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GGMaterial.incoloy903.get(OrePrefixes.plate, 4),
+                        MaterialLibAPI.getStack(Materials2Materials.Incoloy903, Materials2Shapes.plate, (int) (4)),
                         MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.gearGt, (int) (1)),
-                        GGMaterial.incoloy903.get(OrePrefixes.pipeSmall, 4))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Incoloy903), 4))
                 .itemOutputs(ItemList.Compressor_Pipe_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
@@ -5099,8 +5099,8 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GGMaterial.hikarium.get(OrePrefixes.foil, 4),
-                        GGMaterial.artheriumSn.get(OrePrefixes.foil, 1),
+                        MaterialLibAPI.getStack(Materials2Materials.Hikarium, Materials2Shapes.foil, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.ArtheriumSn, Materials2Shapes.foil, (int) (1)),
                         Superconductors.LuV.getWireGt01(1))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_InductorXSMD.get(32L))
                 .fluidInputs(
@@ -5353,14 +5353,14 @@ public class AssemblerRecipes implements Runnable {
                                 (int) (1440)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GGMaterial.extremelyUnstableNaquadah.get(OrePrefixes.bolt, 4),
-                        MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.foil, (int) (4)),
-                        ItemList.Gravistar.get(1L),
-                        getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0),
-                        MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.plate, (int) (2)))
-                .circuit(1).itemOutputs(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 6))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI
+                        .getStack(Materials2Materials.ExtremelyUnstableNaquadah, Materials2Shapes.bolt, (int) (4)),
+                MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.foil, (int) (4)),
+                ItemList.Gravistar.get(1L),
+                getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1, 0),
+                MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.plate, (int) (2))).circuit(1)
+                .itemOutputs(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 6))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Neutronium,

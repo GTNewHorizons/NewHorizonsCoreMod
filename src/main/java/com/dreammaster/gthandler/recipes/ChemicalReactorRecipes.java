@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static goodgenerator.items.GGMaterial.indiumPhosphate;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Forestry;
@@ -791,7 +790,8 @@ public class ChemicalReactorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            indiumPhosphate.get(OrePrefixes.dust, 12),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.IndiumPhosphate, Materials2Shapes.dust, (int) (12)),
                             MaterialLibAPI.getStack(Materials2Materials.Calcium, Materials2Shapes.dust, (int) (3)),
                             GTBees.combs.getStackForType(CombType.INDIUM, 8))
                     .circuit(2)

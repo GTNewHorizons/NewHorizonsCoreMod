@@ -22,7 +22,6 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
@@ -789,7 +788,11 @@ public class CentrifugeRecipes implements Runnable {
                             MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.dust, (int) (1L)))
                     .outputChances(10000, 11).duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
             GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.INDIUM, 8)).circuit(2)
-                    .fluidInputs(GGMaterial.thoriumBasedLiquidFuelDepleted.getFluidOrGas(1000))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.ThoriumBasedLiquidFuelDepleted,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (1000)))
                     .itemOutputs(
                             MaterialLibAPI.getStack(Materials2Materials.Thorium232, Materials2Shapes.dust, (int) (64)),
                             MaterialLibAPI.getStack(Materials2Materials.Thorium232, Materials2Shapes.dust, (int) (16)),

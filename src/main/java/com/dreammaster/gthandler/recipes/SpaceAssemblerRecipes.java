@@ -23,7 +23,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
@@ -76,7 +75,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 Materials2Materials.Plutonium,
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (64 * 144)),
-                        GGMaterial.atomicSeparationCatalyst.getMolten(64 * 144),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.AtomicSeparationCatalyst,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (64 * 144)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Tartarite,
                                 Materials2FluidShapes.fluidMolten,
@@ -134,43 +136,41 @@ public class SpaceAssemblerRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.screw, (int) (4L)),
                 MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.wireFine, (int) (4L)),
                 CustomItemList.DATApipe.get(1L),
-                GGMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw, 4),
-                GGMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 4)).fluidInputs(new FluidStack(solderUEV, 288))
-                .itemOutputs(ItemList.Optically_Perfected_CPU.get(1L)).metadata(IGRecipeMaps.MODULE_TIER, 1)
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                MaterialLibAPI
+                        .getStack(Materials2Materials.AtomicSeparationCatalyst, Materials2Shapes.screw, (int) (4)),
+                MaterialLibAPI.getStack(Materials2Materials.PreciousMetalsAlloy, Materials2Shapes.screw, (int) (4)))
+                .fluidInputs(new FluidStack(solderUEV, 288)).itemOutputs(ItemList.Optically_Perfected_CPU.get(1L))
+                .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(20 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Chip_Optical.get(4L),
-                        ItemList.Optical_Cpu_Containment_Housing.get(4L),
-                        MaterialLibAPI.getStack(
-                                Materials2Materials.Longasssuperconductornameforuhvwire,
-                                Materials2Shapes.screw,
-                                (int) (8L)),
-                        MaterialLibAPI.getStack(Materials2Materials.TengamAttuned, Materials2Shapes.screw, (int) (8L)),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.wireFine, (int) (8L)),
-                        CustomItemList.DATApipe.get(4L),
-                        GGMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 8),
-                        // Enriched Naquadah Alloy screw
-                        GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8))
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Circuit_Chip_Optical.get(4L),
+                ItemList.Optical_Cpu_Containment_Housing.get(4L),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.Longasssuperconductornameforuhvwire,
+                        Materials2Shapes.screw,
+                        (int) (8L)),
+                MaterialLibAPI.getStack(Materials2Materials.TengamAttuned, Materials2Shapes.screw, (int) (8L)),
+                MaterialLibAPI.getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.wireFine, (int) (8L)),
+                CustomItemList.DATApipe.get(4L),
+                MaterialLibAPI.getStack(Materials2Materials.PreciousMetalsAlloy, Materials2Shapes.screw, (int) (8)),
+                // Enriched Naquadah Alloy screw
+                MaterialLibAPI.getStack(Materials2Materials.EnrichedNaquadahAlloy, Materials2Shapes.screw, (int) (8)))
                 .fluidInputs(new FluidStack(solderUEV, 576)).itemOutputs(ItemList.Optically_Perfected_CPU.get(4L))
                 .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(20 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Chip_Optical.get(16L),
-                        ItemList.Optical_Cpu_Containment_Housing.get(16L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CelestialTungsten, Materials2Shapes.screw, (int) (16)),
-                        MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.screw, (int) (16L)),
-                        MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.wireFine, (int) (16L)),
-                        CustomItemList.DATApipe.get(16L),
-                        // Enriched Naquadah Alloy screw
-                        GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
-                        // Shirabon screw
-                        GGMaterial.shirabon.get(OrePrefixes.screw, 16))
+        GTValues.RA.stdBuilder().itemInputs(
+                ItemList.Circuit_Chip_Optical.get(16L),
+                ItemList.Optical_Cpu_Containment_Housing.get(16L),
+                MaterialLibAPI.getStack(Materials2Materials.CelestialTungsten, Materials2Shapes.screw, (int) (16)),
+                MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.screw, (int) (16L)),
+                MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.wireFine, (int) (16L)),
+                CustomItemList.DATApipe.get(16L),
+                // Enriched Naquadah Alloy screw
+                MaterialLibAPI.getStack(Materials2Materials.EnrichedNaquadahAlloy, Materials2Shapes.screw, (int) (16)),
+                // Shirabon screw
+                MaterialLibAPI.getStack(Materials2Materials.Shirabon, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(new FluidStack(solderUEV, 1152)).itemOutputs(ItemList.Optically_Perfected_CPU.get(16L))
                 .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(20 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);

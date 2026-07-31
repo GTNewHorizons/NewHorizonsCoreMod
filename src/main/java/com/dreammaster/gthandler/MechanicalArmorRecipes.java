@@ -31,7 +31,6 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
-import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
@@ -514,7 +513,7 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
                         ItemList.Armor_Chip_T2.get(1),
-                        GGMaterial.marM200.get(OrePrefixes.spring, 4),
+                        MaterialLibAPI.getStack(Materials2Materials.MARM200Steel, Materials2Shapes.spring, (int) (4)),
                         ItemList.Electric_Piston_IV.get(4),
                         ItemList.Sensor_IV.get(1),
                         Circuits.ZPM.get(1))
@@ -571,7 +570,10 @@ public class MechanicalArmorRecipes {
                         ItemList.Emitter_ZPM.get(4),
                         ItemList.Field_Generator_ZPM.get(2))
                 .fluidInputs(
-                        GGMaterial.artheriumSn.getMolten(INGOTS * 20),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.ArtheriumSn,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 20)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Neutronium,
                                 Materials2FluidShapes.fluidMolten,

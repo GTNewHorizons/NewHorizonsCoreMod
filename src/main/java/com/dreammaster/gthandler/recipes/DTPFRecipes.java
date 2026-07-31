@@ -16,7 +16,6 @@ import com.dreammaster.gthandler.DTPFCalculator;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
@@ -786,7 +785,7 @@ public class DTPFRecipes implements Runnable {
                 GTValues.RA.stdBuilder().itemInputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.stick, (int) (12L)),
-                        GGMaterial.tairitsu.get(OrePrefixes.stick, 12),
+                        MaterialLibAPI.getStack(Materials2Materials.Tairitsu, Materials2Shapes.stick, (int) (12)),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.TranscendentMetal, Materials2Shapes.stick, (int) (8L)),
                         MaterialLibAPI.getStack(Materials2Materials.Botmium, Materials2Shapes.plate, (int) (24)),
@@ -811,7 +810,7 @@ public class DTPFRecipes implements Runnable {
                         MaterialLibAPI
                                 .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.stick, (int) (8L)),
                         MaterialLibAPI.getStack(Materials2Materials.Octiron, Materials2Shapes.stick, (int) (8)),
-                        GGMaterial.tairitsu.get(OrePrefixes.stick, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.Tairitsu, Materials2Shapes.stick, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.Sunnarium, Materials2Shapes.stick, (int) (8L)),
                         MaterialLibAPI.getStack(Materials2Materials.AbyssalAlloy, Materials2Shapes.plate, (int) (24)),
                         MaterialLibAPI.getStack(Materials2Materials.Botmium, Materials2Shapes.screw, (int) (16)),
@@ -847,7 +846,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2Materials.CosmicNeutronium,
                                             Materials2FluidShapes.fluidMolten,
                                             (int) (16384 * 144)),
-                                    GGMaterial.tairitsu.getMolten(16384 * 144),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.Tairitsu,
+                                            Materials2FluidShapes.fluidMolten,
+                                            (int) (16384 * 144)),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.CelestialTungsten,
                                             Materials2FluidShapes.fluidMolten,
@@ -875,7 +877,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2Materials.CosmicNeutronium,
                                             Materials2FluidShapes.fluidMolten,
                                             (int) (16384 * 144)),
-                                    GGMaterial.tairitsu.getMolten(16384 * 144),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.Tairitsu,
+                                            Materials2FluidShapes.fluidMolten,
+                                            (int) (16384 * 144)),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.CelestialTungsten,
                                             Materials2FluidShapes.fluidMolten,

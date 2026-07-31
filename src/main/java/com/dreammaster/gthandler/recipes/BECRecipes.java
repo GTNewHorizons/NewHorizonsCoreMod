@@ -19,7 +19,6 @@ import com.dreammaster.scripts.IngredientFactory;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
-import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.CondensateType;
@@ -342,7 +341,7 @@ public class BECRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.Mellion, Materials2Shapes.stickLong, (int) (64L)),
                         MaterialLibAPI.getStack(Materials2Materials.Hexanite, Materials2Shapes.stickLong, (int) (64L)),
                         MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.stickLong, (int) (64L)),
-                        GGMaterial.shirabon.get(OrePrefixes.stickLong, 64),
+                        MaterialLibAPI.getStack(Materials2Materials.Shirabon, Materials2Shapes.stickLong, (int) (64)),
                         MaterialLibAPI.getStack(
                                 Materials2Materials.WhiteDwarfMatter,
                                 Materials2Shapes.stickLong,
@@ -515,7 +514,10 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Rhugnor, Materials2Shapes.plateSuperdense, (int) (64)),
-                GGMaterial.metastableOganesson.get(OrePrefixes.plateSuperdense, 64),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.MetastableOganesson,
+                        Materials2Shapes.plateSuperdense,
+                        (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Hexanite, Materials2Shapes.plateSuperdense, (int) (64)), };
 
         final ItemStack[] superconductor = new ItemStack[] {
