@@ -31,6 +31,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.scripts.IngredientFactory;
+import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
@@ -52,9 +53,14 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator.registerOre(name, stack);
     }
 
-    private static void registerOre(OrePrefixes prefix, Object material, ItemStack stack) {
+    private static void registerOre(OrePrefixes prefix, Material material, ItemStack stack) {
         if (IngredientFactory.isMissingItem(stack)) return;
         GTOreDictUnificator.registerOre(prefix, material, stack);
+    }
+
+    private static void registerOre(OrePrefixes prefix, String materialName, ItemStack stack) {
+        if (IngredientFactory.isMissingItem(stack)) return;
+        GTOreDictUnificator.registerOre(prefix.oreDictName(materialName), stack);
     }
 
     @Override
