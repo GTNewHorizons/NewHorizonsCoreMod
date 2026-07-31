@@ -22,36 +22,46 @@ public class GT_CustomLoader {
 
     public enum AdvancedGTMaterials {
 
-        LuV(Circuits.LuV.getIngredient(), OrePrefixes.wireGt02.get(Materials2Materials.YttriumBariumCuprate),
-                Materials2Materials.VanadiumGallium, OrePrefixes.wireGt02.get(Materials2Materials.HSSG),
-                OrePrefixes.gemExquisite.get(Materials2Materials.Diamond), gregtech.api.enums.ItemList.Gravistar,
-                "blockGlassLuV", Materials2Materials.RhodiumPlatedPalladium, Materials2Materials.Enderium),
+        LuV(Circuits.LuV.getIngredient(),
+                MU.craftIngredient(OrePrefixes.wireGt02, Materials2Materials.YttriumBariumCuprate),
+                Materials2Materials.VanadiumGallium, MU.craftIngredient(OrePrefixes.wireGt02, Materials2Materials.HSSG),
+                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
+                gregtech.api.enums.ItemList.Gravistar, "blockGlassLuV", Materials2Materials.RhodiumPlatedPalladium,
+                Materials2Materials.Enderium),
 
-        ZPM(Circuits.ZPM.getIngredient(), OrePrefixes.wireGt04.get(Materials2Materials.YttriumBariumCuprate),
-                Materials2Materials.Naquadah, OrePrefixes.wireGt02.get(Materials2Materials.Naquadah),
-                OrePrefixes.gemExquisite.get(Materials2Materials.GarnetYellow), NHItemList.MysteriousCrystal.get(),
-                "blockGlassZPM", Materials2Materials.Iridium, Materials2Materials.Naquadah),
+        ZPM(Circuits.ZPM.getIngredient(),
+                MU.craftIngredient(OrePrefixes.wireGt04, Materials2Materials.YttriumBariumCuprate),
+                Materials2Materials.Naquadah, MU.craftIngredient(OrePrefixes.wireGt02, Materials2Materials.Naquadah),
+                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.GarnetYellow),
+                NHItemList.MysteriousCrystal.get(), "blockGlassZPM", Materials2Materials.Iridium,
+                Materials2Materials.Naquadah),
 
-        UV(Circuits.UV.getIngredient(), OrePrefixes.wireGt08.get(Materials2Materials.YttriumBariumCuprate),
-                Materials2Materials.ElectrumFlux, OrePrefixes.wireGt02.get(Materials2Materials.NaquadahAlloy),
-                OrePrefixes.gemExquisite.get(Materials2Materials.GarnetRed), new ItemStack(Blocks.dragon_egg, 1),
-                "blockGlassUV", Materials2Materials.Osmium, Materials2Materials.Neutronium),
+        UV(Circuits.UV.getIngredient(),
+                MU.craftIngredient(OrePrefixes.wireGt08, Materials2Materials.YttriumBariumCuprate),
+                Materials2Materials.ElectrumFlux,
+                MU.craftIngredient(OrePrefixes.wireGt02, Materials2Materials.NaquadahAlloy),
+                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.GarnetRed),
+                new ItemStack(Blocks.dragon_egg, 1), "blockGlassUV", Materials2Materials.Osmium,
+                Materials2Materials.Neutronium),
 
-        UHV(Circuits.UHV.getIngredient(), OrePrefixes.wireGt16.get(Materials2Materials.YttriumBariumCuprate),
-                Materials2Materials.Bedrockium, OrePrefixes.wireGt02.get(Materials2Materials.Bedrockium), null, null,
-                "blockGlassUHV", Materials2Materials.Neutronium, Materials2Materials.Neutronium),
+        UHV(Circuits.UHV.getIngredient(),
+                MU.craftIngredient(OrePrefixes.wireGt16, Materials2Materials.YttriumBariumCuprate),
+                Materials2Materials.Bedrockium,
+                MU.craftIngredient(OrePrefixes.wireGt02, Materials2Materials.Bedrockium), null, null, "blockGlassUHV",
+                Materials2Materials.Neutronium, Materials2Materials.Neutronium),
 
-        UEV(Circuits.UEV.getIngredient(), OrePrefixes.wireGt04.get(Materials2Materials.Bedrockium),
-                Materials2Materials.Draconium, OrePrefixes.wireGt02.get(Materials2Materials.Draconium), null, null,
-                "blockGlassUEV", Materials2Materials.Bedrockium, Materials2Materials.Infinity),
+        UEV(Circuits.UEV.getIngredient(), MU.craftIngredient(OrePrefixes.wireGt04, Materials2Materials.Bedrockium),
+                Materials2Materials.Draconium, MU.craftIngredient(OrePrefixes.wireGt02, Materials2Materials.Draconium),
+                null, null, "blockGlassUEV", Materials2Materials.Bedrockium, Materials2Materials.Infinity),
 
-        UIV(Circuits.UIV.getIngredient(), OrePrefixes.wireGt08.get(Materials2Materials.Bedrockium),
-                Materials2Materials.NetherStar, OrePrefixes.wireGt02.get(Materials2Materials.NetherStar), null, null,
-                "blockGlassUIV", Materials2Materials.CosmicNeutronium, Materials2Materials.TranscendentMetal),
+        UIV(Circuits.UIV.getIngredient(), MU.craftIngredient(OrePrefixes.wireGt08, Materials2Materials.Bedrockium),
+                Materials2Materials.NetherStar,
+                MU.craftIngredient(OrePrefixes.wireGt02, Materials2Materials.NetherStar), null, null, "blockGlassUIV",
+                Materials2Materials.CosmicNeutronium, Materials2Materials.TranscendentMetal),
 
-        UMV(Circuits.UMV.getIngredient(), OrePrefixes.wireGt16.get(Materials2Materials.Bedrockium),
-                Materials2Materials.Quantium, OrePrefixes.wireGt02.get(Materials2Materials.Quantium), null, null,
-                "blockGlassUMV", Materials2Materials.TranscendentMetal, Materials2Materials.SpaceTime);
+        UMV(Circuits.UMV.getIngredient(), MU.craftIngredient(OrePrefixes.wireGt16, Materials2Materials.Bedrockium),
+                Materials2Materials.Quantium, MU.craftIngredient(OrePrefixes.wireGt02, Materials2Materials.Quantium),
+                null, null, "blockGlassUMV", Materials2Materials.TranscendentMetal, Materials2Materials.SpaceTime);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;
