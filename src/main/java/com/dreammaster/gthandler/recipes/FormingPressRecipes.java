@@ -22,12 +22,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
@@ -384,7 +384,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 2L),
                             NHItemList.EtchedLowVoltageWiring.get())
                     .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(formingPressRecipes);
@@ -419,8 +419,9 @@ public class FormingPressRecipes implements Runnable {
 
         // Flora
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BlankMusicDisc.get(1), new ItemStack(Blocks.red_flower, 9, 1))
-                .fluidInputs(Materials.Ice.getFluid(BUCKETS)).itemOutputs(NHItemList.FloraDisc.get(1))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Ice).getFluid(BUCKETS))
+                .itemOutputs(NHItemList.FloraDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
 
         // Absolute Zero
         GTValues.RA.stdBuilder()
@@ -428,15 +429,16 @@ public class FormingPressRecipes implements Runnable {
                         NHItemList.BlankMusicDisc.get(1),
                         MaterialLibAPI.getStack(Materials2Materials.CallistoIce, Materials2Shapes.dust, (int) (9L)),
                         MaterialLibAPI.getStack(Materials2Materials.Ledox, Materials2Shapes.dust, (int) (9L)))
-                .fluidInputs(Materials.Ice.getSolid(256_000)).itemOutputs(NHItemList.AbsoluteZeroDisc.get(1))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(formingPressRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Ice).getSolid(256_000))
+                .itemOutputs(NHItemList.AbsoluteZeroDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(formingPressRecipes);
 
         // Sweet Dreams
         if (UniversalSingularities.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(
                     MaterialLibAPI
                             .getStack(Materials2Materials.PolyvinylChloride, Materials2Shapes.plateDense, (int) (1L)),
-                    GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Gold, 64L),
+                    GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Gold), 64L),
                     new ItemStack(Blocks.grass, 64),
                     new ItemStack(Blocks.sand, 64),
                     getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 64, 3),

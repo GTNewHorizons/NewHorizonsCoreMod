@@ -22,10 +22,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.material.MU;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ForgeHammerRecipes implements Runnable {
 
@@ -51,8 +53,10 @@ public class ForgeHammerRecipes implements Runnable {
 
         // Uncompressed coal variants
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCharcoal.get(1))
-                .itemOutputs(Materials.Charcoal.getBlocks(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.get(1)).itemOutputs(Materials.Coal.getBlocks(9))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Charcoal), 9))
+                .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.get(1))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Coal), 9))
                 .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.get(1))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);

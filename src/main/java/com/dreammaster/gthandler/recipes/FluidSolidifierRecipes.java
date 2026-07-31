@@ -22,11 +22,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import bartworks.common.loaders.ItemRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class FluidSolidifierRecipes implements Runnable {
@@ -798,8 +799,8 @@ public class FluidSolidifierRecipes implements Runnable {
         if (!Avaritia.isModLoaded()) {
             return;
         }
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(Materials.CosmicNeutronium.getBlocks(1))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L)).itemOutputs(
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.CosmicNeutronium), 1))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.CosmicNeutronium,

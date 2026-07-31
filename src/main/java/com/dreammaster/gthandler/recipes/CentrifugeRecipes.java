@@ -33,6 +33,7 @@ import gregtech.api.enums.materials2.Materials2CellShapes;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
@@ -46,7 +47,7 @@ public class CentrifugeRecipes implements Runnable {
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
                         MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.dust, (int) (4L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (4L)))
                 .outputChances(8000, 10000, 10000)
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -59,7 +60,7 @@ public class CentrifugeRecipes implements Runnable {
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
                         MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.dust, (int) (8L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 8L))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (8L)))
                 .outputChances(9000, 10000, 10000)
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -72,7 +73,7 @@ public class CentrifugeRecipes implements Runnable {
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
                         MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.dust, (int) (12L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 12L))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (12L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Pollution,
@@ -84,7 +85,7 @@ public class CentrifugeRecipes implements Runnable {
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
                         MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 16L))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (16L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Pollution,
@@ -96,7 +97,7 @@ public class CentrifugeRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.BandedIron, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (3L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 2L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (2L)),
                         MaterialLibAPI.getStack(Materials2Materials.Rutile, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.Quicklime, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.SodiumOxide, Materials2Shapes.dust, (int) (1L)))
@@ -106,8 +107,8 @@ public class CentrifugeRecipes implements Runnable {
                                 Materials2Materials.RedMud,
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (1000L)))
-                .fluidOutputs(Materials.Water.getFluid(500L)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(centrifugeRecipes);
+                .fluidOutputs(MU.materialOf(Materials2Materials.Water).getFluid(500L)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.fire_charge, 1, 0))
                 .itemOutputs(
@@ -131,7 +132,7 @@ public class CentrifugeRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.BandedIron, Materials2Shapes.dust, (int) (9L)),
                         MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (9L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 9L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (9L)),
                         MaterialLibAPI.getStack(Materials2Materials.Ruby, Materials2Shapes.dust, (int) (4L)),
                         MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.dust, (int) (4L)),
                         MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.dust, (int) (4L)))
@@ -281,7 +282,8 @@ public class CentrifugeRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.dust, (int) (4L)),
                         MaterialLibAPI.getStack(Materials2Materials.Jade, Materials2Shapes.dust, (int) (4L)),
                         MaterialLibAPI.getStack(Materials2Materials.Diamond, Materials2Shapes.dust, (int) (4L)))
-                .outputChances(5000, 3000, 1000, 750, 500, 250).fluidOutputs(Materials.Helium3.getGas(1800L))
+                .outputChances(5000, 3000, 1000, 750, 500, 250)
+                .fluidOutputs(MU.materialOf(Materials2Materials.Helium3).getGas(1800L))
                 .duration(3 * MINUTES + 36 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MercuryCoreDust.get(36))
@@ -708,7 +710,8 @@ public class CentrifugeRecipes implements Runnable {
             // Centrifuge
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.RawRubber, Materials2Shapes.dust, (int) (2L)))
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Glue,
@@ -717,7 +720,8 @@ public class CentrifugeRecipes implements Runnable {
                     .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.slime_ball, 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.RawRubber, Materials2Shapes.dust, (int) (2L)))
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Glue,
@@ -735,7 +739,8 @@ public class CentrifugeRecipes implements Runnable {
                     .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 8L))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.RawRubber, Materials2Shapes.dust, (int) (8L)))
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Glue,
@@ -744,7 +749,8 @@ public class CentrifugeRecipes implements Runnable {
                     .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 8L))
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.RawRubber, Materials2Shapes.dust, (int) (8L)))
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Glue,
@@ -755,7 +761,7 @@ public class CentrifugeRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0))
                     .itemOutputs(
                             new ItemStack(Blocks.dirt, 1, 32767),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 1L),
+                            MaterialLibAPI.getStack(Materials2Materials.RawRubber, Materials2Shapes.dust, (int) (1L)),
                             getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
                     .outputChances(10000, 10000, 1000)
                     .fluidOutputs(

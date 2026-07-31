@@ -33,12 +33,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -52,12 +52,12 @@ public class ChemicalBathRecipes implements Runnable {
         // tanned leather
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.leather, 2, 0))
                 .itemOutputs(getModItem(Backpack.ID, "tannedLeather", 1, 0))
-                .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(chemicalBathRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.PhosphoricAcidGT5U).getFluid(250)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.ArtificialLeather.get(2))
                 .itemOutputs(getModItem(Backpack.ID, "tannedLeather", 1, 0))
-                .fluidInputs(Materials.PhosphoricAcid.getFluid(250)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(chemicalBathRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.PhosphoricAcidGT5U).getFluid(250)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
 
         // Chlorine cleaning of pistons
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sticky_piston, 1, 0))
@@ -86,7 +86,12 @@ public class ChemicalBathRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)))
                 .itemOutputs(ItemList.Circuit_Board_Basic.get(2)).duration(100 * TICKS).eut(8)
-                .fluidInputs(Materials.Polyethylene.getMolten(36)).addTo(chemicalBathRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Plastic,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (36)))
+                .addTo(chemicalBathRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1)))
@@ -147,15 +152,19 @@ public class ChemicalBathRecipes implements Runnable {
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
         // Cooling Hot SiliconSG MV
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.SiliconSG, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.SiliconSG, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.SiliconSolarGrade, Materials2Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.SiliconSolarGrade, Materials2Shapes.ingot, (int) (1L)))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 250))
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MysteriousCrystalGemExquisite.get())
-                .itemOutputs(NHItemList.MysteriousCrystalLens.get()).fluidInputs(Materials.UUMatter.getFluid(144))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(chemicalBathRecipes);
+                .itemOutputs(NHItemList.MysteriousCrystalLens.get())
+                .fluidInputs(MU.materialOf(Materials2Materials.UUMatter).getFluid(144)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(chemicalBathRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_GlassFiber.get(1L)).itemOutputs(
                 MaterialLibAPI.getStack(Materials2Materials.EpoxidFiberReinforced, Materials2Shapes.plate, (int) (1)))
@@ -310,7 +319,8 @@ public class ChemicalBathRecipes implements Runnable {
                             getModItem(Forestry.ID, "mulch", 8, 0),
                             getModItem(Forestry.ID, "mulch", 4, 0),
                             getModItem(Forestry.ID, "mulch", 4, 0))
-                    .outputChances(10000, 3300, 2000).fluidInputs(Materials.Water.getFluid(750L)).duration(25 * SECONDS)
+                    .outputChances(10000, 3300, 2000)
+                    .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(750L)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
         }
 
@@ -348,7 +358,12 @@ public class ChemicalBathRecipes implements Runnable {
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1),
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1),
                             getModItem(EnderIO.ID, "itemMaterial", 2, 1))
-                    .outputChances(10000, 10000, 10000).fluidInputs(Materials.RubberSilicone.getMolten(144L))
+                    .outputChances(10000, 10000, 10000)
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.Silicone,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (144L)))
                     .duration(10 * SECONDS).eut(2).addTo(chemicalBathRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 2))
                     .itemOutputs(
@@ -445,26 +460,30 @@ public class ChemicalBathRecipes implements Runnable {
                     .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
         }
         if (OpenModularTurrets.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.WoodSealed), 1L))
                     .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierOne", 1, 0))
                     .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(chemicalBathRecipes);
             GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L))
+                    .itemInputs(
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.ElectricalSteel), 1L))
                     .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierTwo", 1, 0))
                     .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.DarkSteel), 1L))
                     .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierThree", 1, 0))
                     .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_MV / 2).addTo(chemicalBathRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.EnergeticAlloy, 1L))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.EnergeticAlloy), 1L))
                     .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierFour", 1, 0))
                     .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.VibrantAlloy, 1L))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.VibrantAlloy), 1L))
                     .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierFive", 1, 0))
                     .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_HV / 2).addTo(chemicalBathRecipes);
