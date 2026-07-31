@@ -75,7 +75,6 @@ import com.google.common.base.Stopwatch;
 import com.gtnewhorizon.gtnhlib.config.ConfigException;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 
-import bartworks.system.material.WerkstoffLoader;
 import betterquesting.api.storage.BQ_Settings;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -98,8 +97,8 @@ import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.materials.Materials;
 import gregtech.api.util.GTModHandler;
 import gregtech.common.items.MetaGeneratedItem01;
 import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
@@ -375,14 +374,10 @@ public class MainRegistry {
         BacteriaRegistry.runAllPostinit();
 
         LOGGER.debug("Nerf Platinum Metal Cauldron Cleaning");
-        MetaGeneratedItem01
-                .registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
-        MetaGeneratedItem01
-                .registerCauldronCleaningFor(Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
-        MetaGeneratedItem01
-                .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
-        MetaGeneratedItem01
-                .registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
+        MetaGeneratedItem01.registerCauldronCleaningFor(Materials.Platinum, Materials.PlatinumMetallicPowder);
+        MetaGeneratedItem01.registerCauldronCleaningFor(Materials.Osmium, Materials.RarestMetalResidue);
+        MetaGeneratedItem01.registerCauldronCleaningFor(Materials.Iridium, Materials.IridiumMetalResidue);
+        MetaGeneratedItem01.registerCauldronCleaningFor(Materials.Palladium, Materials.PalladiumMetallicPowder);
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
