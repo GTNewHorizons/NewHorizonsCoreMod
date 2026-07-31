@@ -34,10 +34,10 @@ import com.dreammaster.scripts.IngredientFactory;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTLog;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -66,85 +66,172 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre("ingotBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0));
         registerOre("blockBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0));
 
-        registerOre(OrePrefixes.log, Materials.Wood, getModItem(BiomesOPlenty.ID, "logs4", 1, 3));
+        registerOre(
+                OrePrefixes.log,
+                MU.materialOf(Materials2Materials.Wood),
+                getModItem(BiomesOPlenty.ID, "logs4", 1, 3));
         registerOre("cropCarrot", getModItem(BiomesOPlenty.ID, "food", 1, 2));
 
-        registerOre(OrePrefixes.compressed, Materials.Mytryl, NHItemList.MytrylCompressedPlate.get());
-        registerOre(OrePrefixes.block, Materials.Mytryl, BlockList.Mytryl.get());
+        registerOre(
+                OrePrefixes.compressed,
+                MU.materialOf(Materials2Materials.Mytryl),
+                NHItemList.MytrylCompressedPlate.get());
+        registerOre(OrePrefixes.block, MU.materialOf(Materials2Materials.Mytryl), BlockList.Mytryl.get());
         registerOre("blockCallistoIce", BlockList.CallistoColdIce.get());
-        registerOre(OrePrefixes.compressed, Materials.CallistoIce, NHItemList.CallistoIceCompressedPlate.get());
+        registerOre(
+                OrePrefixes.compressed,
+                MU.materialOf(Materials2Materials.CallistoIce),
+                NHItemList.CallistoIceCompressedPlate.get());
         registerOre("blockLedox", BlockList.Ledox.get());
-        registerOre(OrePrefixes.compressed, Materials.Ledox, NHItemList.LedoxCompressedPlate.get());
-        registerOre(OrePrefixes.stick, Materials.Stone, NHItemList.CobbleStoneRod.get());
-        registerOre(OrePrefixes.plate, Materials.Stone, NHItemList.StonePlate.get());
+        registerOre(
+                OrePrefixes.compressed,
+                MU.materialOf(Materials2Materials.Ledox),
+                NHItemList.LedoxCompressedPlate.get());
+        registerOre(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), NHItemList.CobbleStoneRod.get());
+        registerOre(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), NHItemList.StonePlate.get());
         registerOre("stickSandstone", NHItemList.SandStoneRod.get());
         registerOre("lensReinforcedGlass", NHItemList.ReinforcedGlassLense.get());
         registerOre("plateReinforcedGlass", NHItemList.ReinforcedGlassPlate.get());
         registerOre("blockQuantium", BlockList.Quantinum.get());
-        registerOre(OrePrefixes.compressed, Materials.Quantium, NHItemList.QuantinumCompressedPlate.get());
-        registerOre(OrePrefixes.block, Materials.MysteriousCrystal, BlockList.MysteriousCrystalBlock.get());
         registerOre(
                 OrePrefixes.compressed,
-                Materials.MysteriousCrystal,
+                MU.materialOf(Materials2Materials.Quantium),
+                NHItemList.QuantinumCompressedPlate.get());
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.MysteriousCrystal),
+                BlockList.MysteriousCrystalBlock.get());
+        registerOre(
+                OrePrefixes.compressed,
+                MU.materialOf(Materials2Materials.MysteriousCrystal),
                 NHItemList.MysteriousCrystalCompressedPlate.get());
-        registerOre(OrePrefixes.block, Materials.BlackPlutonium, BlockList.BlackPlutonium.get());
-        registerOre(OrePrefixes.dust, Materials.CertusQuartzCharged, NHItemList.ChargedCertusQuartzDust.get(1));
-        registerOre(OrePrefixes.plate, Materials.CertusQuartzCharged, NHItemList.ChargedCertusQuartzPlate.get(1));
-        registerOre(OrePrefixes.stick, Materials.CertusQuartzCharged, NHItemList.ChargedCertusQuartzRod.get(1));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.BlackPlutonium),
+                BlockList.BlackPlutonium.get());
+        registerOre(
+                OrePrefixes.dust,
+                MU.materialOf(Materials2Materials.ChargedCertusQuartz),
+                NHItemList.ChargedCertusQuartzDust.get(1));
+        registerOre(
+                OrePrefixes.plate,
+                MU.materialOf(Materials2Materials.ChargedCertusQuartz),
+                NHItemList.ChargedCertusQuartzPlate.get(1));
+        registerOre(
+                OrePrefixes.stick,
+                MU.materialOf(Materials2Materials.ChargedCertusQuartz),
+                NHItemList.ChargedCertusQuartzRod.get(1));
         registerOre(
                 OrePrefixes.crystal,
-                Materials.CertusQuartzCharged,
+                MU.materialOf(Materials2Materials.ChargedCertusQuartz),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
         registerOre(
                 OrePrefixes.gem,
-                Materials.CertusQuartzCharged,
+                MU.materialOf(Materials2Materials.ChargedCertusQuartz),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
         registerOre("dustCokeOvenBrick", NHItemList.CokeOvenBrickDust.get(1));
         registerOre("ingotCokeOvenBrick", NHItemList.CokeOvenBrick.get(1));
         registerOre("leather", NHItemList.ArtificialLeather.get(1));
         registerOre("itemLeather", NHItemList.ArtificialLeather.get(1));
 
-        registerOre(OrePrefixes.stickLong, Materials.Obsidian, NHItemList.LongObsidianRod.get());
+        registerOre(
+                OrePrefixes.stickLong,
+                MU.materialOf(Materials2Materials.Obsidian),
+                NHItemList.LongObsidianRod.get());
 
-        registerOre(OrePrefixes.bars, Materials.Aluminium, BlockList.AluminiumBars.get());
-        registerOre(OrePrefixes.bars, Materials.Chrome, BlockList.ChromeBars.get());
-        registerOre(OrePrefixes.bars, Materials.Iridium, BlockList.IridiumBars.get());
-        registerOre(OrePrefixes.bars, Materials.Neutronium, BlockList.NeutroniumBars.get());
-        registerOre(OrePrefixes.bars, Materials.Osmium, BlockList.OsmiumBars.get());
-        registerOre(OrePrefixes.bars, Materials.Soularium, getModItem(EnderIO.ID, "blockSoulariumBars", 1, 0));
-        registerOre(OrePrefixes.bars, Materials.StainlessSteel, BlockList.StainlessSteelBars.get());
-        registerOre(OrePrefixes.bars, Materials.Steel, BlockList.SteelBars.get());
-        registerOre(OrePrefixes.bars, Materials.Titanium, BlockList.TitaniumBars.get());
-        registerOre(OrePrefixes.bars, Materials.TungstenSteel, BlockList.TungstenSteelBars.get());
+        registerOre(OrePrefixes.bars, MU.materialOf(Materials2Materials.Aluminium), BlockList.AluminiumBars.get());
+        registerOre(OrePrefixes.bars, MU.materialOf(Materials2Materials.Chrome), BlockList.ChromeBars.get());
+        registerOre(OrePrefixes.bars, MU.materialOf(Materials2Materials.Iridium), BlockList.IridiumBars.get());
+        registerOre(OrePrefixes.bars, MU.materialOf(Materials2Materials.Neutronium), BlockList.NeutroniumBars.get());
+        registerOre(OrePrefixes.bars, MU.materialOf(Materials2Materials.Osmium), BlockList.OsmiumBars.get());
+        registerOre(
+                OrePrefixes.bars,
+                MU.materialOf(Materials2Materials.Soularium),
+                getModItem(EnderIO.ID, "blockSoulariumBars", 1, 0));
+        registerOre(
+                OrePrefixes.bars,
+                MU.materialOf(Materials2Materials.StainlessSteel),
+                BlockList.StainlessSteelBars.get());
+        registerOre(OrePrefixes.bars, MU.materialOf(Materials2Materials.Steel), BlockList.SteelBars.get());
+        registerOre(OrePrefixes.bars, MU.materialOf(Materials2Materials.Titanium), BlockList.TitaniumBars.get());
+        registerOre(
+                OrePrefixes.bars,
+                MU.materialOf(Materials2Materials.TungstenSteel),
+                BlockList.TungstenSteelBars.get());
 
         registerOre(
                 OrePrefixes.rawOre,
-                Materials.MeteoricIron,
+                MU.materialOf(Materials2Materials.MeteoricIron),
                 getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1));
-        registerOre(OrePrefixes.ore, Materials.Desh, getModItem(GalacticraftMars.ID, "tile.mars", 1, 2));
-        registerOre(OrePrefixes.stick, Materials.Desh, getModItem(GalacticraftMars.ID, "item.null", 1, 1));
-        registerOre(OrePrefixes.ore, Materials.Ilmenite, getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 4));
+        registerOre(
+                OrePrefixes.ore,
+                MU.materialOf(Materials2Materials.Desh),
+                getModItem(GalacticraftMars.ID, "tile.mars", 1, 2));
+        registerOre(
+                OrePrefixes.stick,
+                MU.materialOf(Materials2Materials.Desh),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 1));
+        registerOre(
+                OrePrefixes.ore,
+                MU.materialOf(Materials2Materials.Ilmenite),
+                getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 4));
         registerOre(
                 OrePrefixes.block,
-                Materials.MeteoricIron,
+                MU.materialOf(Materials2Materials.MeteoricIron),
                 getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 12));
 
-        registerOre(OrePrefixes.ingot, Materials.Endium, getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1, 0));
-        registerOre(OrePrefixes.block, Materials.Endium, getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0));
+        registerOre(
+                OrePrefixes.ingot,
+                MU.materialOf(Materials2Materials.HeeEndium),
+                getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1, 0));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.HeeEndium),
+                getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0));
 
         registerOre("oreAdamantium", getModItem(GalaxySpace.ID, "oberonblocks", 1, 3));
         registerOre("oreCobalt", getModItem(GalaxySpace.ID, "phobosblocks", 1, 4));
 
-        registerOre(OrePrefixes.block, Materials.Lead, getModItem(GalaxySpace.ID, "metalsblock", 1, 0));
-        registerOre(OrePrefixes.block, Materials.Adamantium, getModItem(GalaxySpace.ID, "metalsblock", 1, 1));
-        registerOre(OrePrefixes.block, Materials.Cobalt, getModItem(GalaxySpace.ID, "metalsblock", 1, 2));
-        registerOre(OrePrefixes.block, Materials.Magnesium, getModItem(GalaxySpace.ID, "metalsblock", 1, 3));
-        registerOre(OrePrefixes.block, Materials.Mithril, getModItem(GalaxySpace.ID, "metalsblock", 1, 4));
-        registerOre(OrePrefixes.block, Materials.Nickel, getModItem(GalaxySpace.ID, "metalsblock", 1, 5));
-        registerOre(OrePrefixes.block, Materials.Oriharukon, getModItem(GalaxySpace.ID, "metalsblock", 1, 6));
-        registerOre(OrePrefixes.block, Materials.Platinum, getModItem(GalaxySpace.ID, "metalsblock", 1, 7));
-        registerOre(OrePrefixes.block, Materials.Tungsten, getModItem(GalaxySpace.ID, "metalsblock", 1, 8));
-        registerOre(OrePrefixes.block, Materials.Copper, getModItem(GalaxySpace.ID, "metalsblock", 1, 9));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Lead),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 0));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Adamantium),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 1));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Cobalt),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 2));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Magnesium),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 3));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Mithril),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 4));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Nickel),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 5));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Oriharukon),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 6));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Platinum),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 7));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Tungsten),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 8));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Copper),
+                getModItem(GalaxySpace.ID, "metalsblock", 1, 9));
 
         registerOre("chestSteel", getModItem(IronChests.ID, "BlockIronChest", 1, 4));
 
@@ -153,7 +240,10 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre("cropBarley", getModItem(Natura.ID, "barleyFood", 1, 0));
 
         registerOre("craftingToolShears", getModItem(ExtraUtilities.ID, "shears", 1, 32767));
-        registerOre(OrePrefixes.block, Materials.Unstable, getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Unstable),
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5));
 
         registerOre("logWood", getModItem(ForbiddenMagic.ID, "TaintLog", 1, 32767));
         registerOre("plankWood", getModItem(ForbiddenMagic.ID, "TaintPlank", 1, 32767));
@@ -189,32 +279,62 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre("foodSalt", MaterialLibAPI.getStack(Materials2Materials.Salt, Materials2Shapes.dust, (int) (1L)));
         registerOre(
                 OrePrefixes.block,
-                Materials.Salt,
+                MU.materialOf(Materials2Materials.Salt),
                 getModItem(PamsHarvestCraft.ID, "spamcompressedsaltBlockalt", 1, 0));
 
-        registerOre(OrePrefixes.dust, Materials.Wheat, getModItem(PamsHarvestCraft.ID, "flourItem", 1, 0));
+        registerOre(
+                OrePrefixes.dust,
+                MU.materialOf(Materials2Materials.Wheat),
+                getModItem(PamsHarvestCraft.ID, "flourItem", 1, 0));
 
         registerOre("beeComp", getModItem(Computronics.ID, "computronics.partsForestry", 1, 0));
 
         registerOre("craftingToolShears", getModItem(Railcraft.ID, "tool.steel.shears", 1, 0));
 
-        registerOre(OrePrefixes.block, Materials.Reinforced, getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 0));
-        registerOre(OrePrefixes.block, Materials.Galgadorian, getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 1));
         registerOre(
                 OrePrefixes.block,
-                Materials.GalgadorianEnhanced,
+                MU.materialOf(Materials2Materials.Reinforced),
+                getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 0));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Galgadorian),
+                getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 1));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.EnhancedGalgadorian),
                 getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 2));
 
-        registerOre(OrePrefixes.nugget, Materials.Void, getModItem(Thaumcraft.ID, "ItemNugget", 1, 7));
-        registerOre(OrePrefixes.block, Materials.Amber, getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0));
+        registerOre(
+                OrePrefixes.nugget,
+                MU.materialOf(Materials2Materials.Void),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 7));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Amber),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0));
 
-        registerOre(OrePrefixes.ingot, Materials.Bedrockium, getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0));
+        registerOre(
+                OrePrefixes.ingot,
+                MU.materialOf(Materials2Materials.Bedrockium),
+                getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0));
 
-        registerOre(OrePrefixes.block, Materials.Shadow, getModItem(TaintedMagic.ID, "BlockShadowmetal", 1, 0));
-        registerOre(OrePrefixes.ingot, Materials.Shadow, getModItem(TaintedMagic.ID, "ItemMaterial", 1, 0));
+        registerOre(
+                OrePrefixes.block,
+                MU.materialOf(Materials2Materials.Shadow),
+                getModItem(TaintedMagic.ID, "BlockShadowmetal", 1, 0));
+        registerOre(
+                OrePrefixes.ingot,
+                MU.materialOf(Materials2Materials.Shadow),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 0));
 
-        registerOre(OrePrefixes.ingot, Materials.Ichorium, getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 2));
-        registerOre(OrePrefixes.nugget, Materials.Ichorium, getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 3));
+        registerOre(
+                OrePrefixes.ingot,
+                MU.materialOf(Materials2Materials.Ichorium),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 2));
+        registerOre(
+                OrePrefixes.nugget,
+                MU.materialOf(Materials2Materials.Ichorium),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 3));
         registerOre(OrePrefixes.paneGlass, getModItem(TinkerConstruct.ID, "GlassPane", 1, 0));
         registerOre(OrePrefixes.ingot, "SearedBrick", getModItem(TinkerConstruct.ID, "materials", 1, 2));
 
@@ -224,12 +344,15 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 "dyeLime",
                 MaterialLibAPI.getStack(Materials2Materials.Soapstone, Materials2Shapes.dust, (int) (1L)));
 
-        registerOre(OrePrefixes.log, Materials.Wood, getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
+        registerOre(
+                OrePrefixes.log,
+                MU.materialOf(Materials2Materials.Wood),
+                getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
 
         // oreDict UMV - MAX circuits
-        registerOre(OrePrefixes.circuit, Materials.UMV, NHItemList.PikoCircuit.get());
-        registerOre(OrePrefixes.circuit, Materials.UXV, NHItemList.QuantumCircuit.get());
-        registerOre(OrePrefixes.circuit, Materials.MAX, NHItemList.PlanckCircuit.get());
+        registerOre(OrePrefixes.circuit, "UMV", NHItemList.PikoCircuit.get());
+        registerOre(OrePrefixes.circuit, "UXV", NHItemList.QuantumCircuit.get());
+        registerOre(OrePrefixes.circuit, "MAX", NHItemList.PlanckCircuit.get());
         GTOreDictUnificator.addToBlacklist(NHItemList.PikoCircuit.get());
         GTOreDictUnificator.addToBlacklist(NHItemList.QuantumCircuit.get());
         GTOreDictUnificator.addToBlacklist(NHItemList.PlanckCircuit.get());

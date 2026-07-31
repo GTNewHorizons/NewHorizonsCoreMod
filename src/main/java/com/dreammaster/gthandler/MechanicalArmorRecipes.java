@@ -45,6 +45,7 @@ import gregtech.api.enums.TieredItems;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -137,9 +138,9 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.ZPM2.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Infinity, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Infinity), 16),
                         ItemList.Field_Generator_UHV.get(2),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Neutronium, 1))
+                        GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Neutronium), 1))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Silver,
@@ -244,7 +245,8 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         ItemList.Armor_Frame_Nimble.get(1),
                         ItemList.Electric_Piston_ZPM.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PrismaticNaquadah, 8),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.prismaticnaquadah, Materials2Shapes.plate, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.Americium, Materials2Shapes.foil, (int) (64)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -314,7 +316,7 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.plate, (int) (4)),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Electrum, 2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Electrum), 2),
                         Circuits.HV.get(1))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(

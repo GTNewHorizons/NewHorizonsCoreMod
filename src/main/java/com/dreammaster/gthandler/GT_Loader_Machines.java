@@ -13,6 +13,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.Material;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
@@ -23,16 +25,19 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.TieredItems;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.material.MU;
 import gregtech.api.metatileentity.implementations.MTEBasicMachineWithRecipe;
 import gregtech.api.util.GTModHandler;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class GT_Loader_Machines {
 
-    private Materials LuVMat2;
+    private Material LuVMat2;
 
     public void run() {
-        LuVMat2 = Materials.get("Rhodium-PlatedPalladium");
+        LuVMat2 = Materials2Materials.RhodiumPlatedPalladium;
         registerAlloySmelter();
         registerMatterAmplifier();
         registerAssemblingMachine();
@@ -70,7 +75,7 @@ public class GT_Loader_Machines {
 
     public void recipes() {
 
-        Materials LuVMat2 = Materials.get("Rhodium-PlatedPalladium");
+        Material LuVMat2 = Materials2Materials.RhodiumPlatedPalladium;
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Hull_UEV.get(1L),
@@ -378,7 +383,8 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorLuV.get(1L),
                 GTModHandler.RecipeBits.BITSD,
-                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_LuV, 'R', OrePrefixes.rotor.get(LuVMat2), 'P',
+                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_LuV, 'R',
+                        MU.craftIngredient(OrePrefixes.rotor, LuVMat2), 'P',
                         OrePrefixes.pipeMedium.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_LuV, 'C',
                         Circuits.LuV.getIngredient(), 'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium) });
 
@@ -597,7 +603,7 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.MixerLuV.get(1L),
                 GTModHandler.RecipeBits.BITSD,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(LuVMat2), 'M',
+                new Object[] { "GRG", "GMG", "CBC", 'R', MU.craftIngredient(OrePrefixes.rotor, LuVMat2), 'M',
                         ItemList.Electric_Motor_LuV, 'B', ItemList.Hull_LuV, 'C', Circuits.LuV.getIngredient(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
 
@@ -1099,10 +1105,18 @@ public class GT_Loader_Machines {
 
         for (int aTier = 10; aTier < 15; aTier++) {
             GTValues.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).circuit(1).itemOutputs(inHatches[aTier - 10])
-                    .fluidInputs(Materials.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.RadoxPoly,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) ((long) (2.25 * Math.pow(2, (aTier - 9))))))
                     .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).circuit(2).itemOutputs(outHatches[aTier - 10])
-                    .fluidInputs(Materials.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.RadoxPoly,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) ((long) (2.25 * Math.pow(2, (aTier - 9))))))
                     .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
         }
 
@@ -2319,7 +2333,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.OreWashingPlantLuV.get(1L),
                 new Object[] { "RGR", "CEC", "WMW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'R',
-                        OrePrefixes.rotor.get(LuVMat2), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                        MU.craftIngredient(OrePrefixes.rotor, LuVMat2), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G', MTEBasicMachineWithRecipe.X.PUMP },
                 6);
@@ -2669,8 +2683,9 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ArcFurnaceLuV.get(1L),
                 new Object[] { "WGW", "CMC", "PPP", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        OrePrefixes.plateDouble.get(LuVMat2), 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
-                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), 'G',
+                        MU.craftIngredient(OrePrefixes.plateDouble, LuVMat2), 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), 'G',
                         OrePrefixes.cell.get(Materials.Graphite) },
                 6);
 
