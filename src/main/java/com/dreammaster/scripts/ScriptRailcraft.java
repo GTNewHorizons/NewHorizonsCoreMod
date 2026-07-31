@@ -54,6 +54,7 @@ import gregtech.api.enums.materials2.Materials2CellShapes;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
@@ -903,7 +904,7 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 4),
                 "paneGlass",
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.Steel), 1L),
                 "paneGlass",
                 ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Railcraft.ID, "detector", 1, 8),
@@ -920,12 +921,12 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 8),
                 ItemList.Electric_Pump_LV.get(1L),
                 "paneGlass",
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.Steel), 1L),
                 "paneGlass");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 6),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Gold), 1L),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
@@ -942,7 +943,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 10),
                 "plateRedAlloy",
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Gold), 1L),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 1, 8),
@@ -966,18 +967,18 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 0),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Copper), 1L),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
                 "plateRedAlloy",
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Copper), 1L),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 4),
                 "plateBronze",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Gold), 1L),
                 "plateBronze",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
@@ -2091,7 +2092,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.stick, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1))
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 1))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 1L, 14))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -2103,7 +2104,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2))
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 2))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 2L, 14))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -2115,7 +2116,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.stick, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 4))
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 4))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 4L, 14))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -2127,7 +2128,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.stick, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 8))
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 8))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 8L, 14))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -2165,8 +2166,12 @@ public class ScriptRailcraft implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8))
                 .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1)))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0))
                 .itemOutputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0)).duration(5 * SECONDS).eut(24)
                 .addTo(hammerRecipes);

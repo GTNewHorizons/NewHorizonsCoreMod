@@ -18,12 +18,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials2.Materials2Shapes;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
@@ -54,9 +52,14 @@ public class ScriptOpenComputers implements IScriptLoader {
                         ItemList.Automation_ChestBuffer_LV.get(1L),
                         getModItem(OpenComputers.ID, "item", 1, 61),
                         getModItem(OpenComputers.ID, "item", 1, 77),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.plate, (int) (2)),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
-                .circuit(1).itemOutputs(getTransposer(2, 2_560)).fluidInputs(Materials.Polyethylene.getMolten(72L))
+                .circuit(1).itemOutputs(getTransposer(2, 2_560))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Plastic,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (72L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_HV.get(1L))
