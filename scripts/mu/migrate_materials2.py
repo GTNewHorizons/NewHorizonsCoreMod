@@ -4,7 +4,7 @@
 Field inventories are read from GT5-Unofficial's `gregtech/api/enums/materials` package, but the
 emitted spellings are the `Materials2*` ones the pinned GT5U build still exposes.
 
-Three passes, selectable with `--passes`:
+Four passes, selectable with `--passes`:
 
   `staticimports`
       Drops `import static gregtech.api.enums.{Materials,OrePrefixes}.<X>;` and re-qualifies the
@@ -43,7 +43,10 @@ Everything else -- variables in place of a literal prefix/material, `addItemData
 property reads such as `mFluid`/`mName` -- does not match these patterns and is left alone.
 
 Usage: migrate_materials2.py <file-or-dir> [<file-or-dir> ...] [--apply] [--passes a,b]
-                             [--report OUT.json]
+                             [--mods bartworks,gtnhlanth,goodgenerator,gtplusplus] [--report OUT.json]
+
+`--mods` narrows the `foreign` pass to the holders one mod owns, so each mod's call sites can be
+rewritten and committed on their own even where several share a file.
 
 Without --apply this is a dry run: prints a per-file summary of what would change and why call
 sites were skipped. Import lines are added for whichever of MaterialLibAPI/MU/Materials2Materials/
