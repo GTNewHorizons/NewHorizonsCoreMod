@@ -24,7 +24,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Botania:1.13.25-GTNH:dev")
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.9.4:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
-    compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersGregworks:GTNH-1.0.27-mu.7+96f4afb333:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.8.13:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.4.31-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.11.30:dev") { transitive = false }

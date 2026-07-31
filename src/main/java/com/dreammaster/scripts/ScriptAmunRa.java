@@ -358,7 +358,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new ItemStack(simpleItem, 32, 3),
                         ItemList.Field_Generator_UV.get(4),
                         new Object[] { Circuits.UV.getIngredient(), 2 },
-                        new Object[] { OrePrefixes.gearGt.get("EnrichedNaquadahAlloy"), 1 },
+                        new Object[] { OrePrefixes.gearGt.oreDictName("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(machines3, 1, 1)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(assemblerRecipes);
@@ -387,7 +387,7 @@ public class ScriptAmunRa implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plate, (int) (16)),
-                        new Object[] { OrePrefixes.gearGt.get("EnrichedNaquadahAlloy"), 4 },
+                        new Object[] { OrePrefixes.gearGt.oreDictName("EnrichedNaquadahAlloy"), 4 },
                         new ItemStack(baseItem, 4, 27),
                         new Object[] { Circuits.UHV.getIngredient(), 2 },
                         ItemList.Sensor_UHV.get(1),
@@ -400,7 +400,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new ItemStack(simpleItem, 16, 3),
                         GameRegistry.findItemStack(GoodGenerator.ID, "radiationProtectionPlate", 4),
                         new Object[] { Circuits.UV.getIngredient(), 1 },
-                        new Object[] { OrePrefixes.gearGtSmall.get("EnrichedNaquadahAlloy"), 1 },
+                        new Object[] { OrePrefixes.gearGtSmall.oreDictName("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(baseItem, 1, 30)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(assemblerRecipes);

@@ -19,7 +19,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OreDictNames;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -850,7 +849,8 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_HV_MV, 'M',
                         ItemList.Battery_Charger_4by4_MV, 'B', ItemList.Battery_RE_MV_Lithium, 'C',
-                        OrePrefixes.cableGt16.get(Materials.AnyCopper), 'X', Circuits.MV.getIngredient() });
+                        MaterialParts.namedIngredient(OrePrefixes.cableGt16, MaterialFacades.AnyCopper), 'X',
+                        Circuits.MV.getIngredient() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_HV.get(1L),
@@ -930,8 +930,9 @@ public class GT_Loader_Machines {
                 ItemList.NameRemover.get(1L),
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "SsS", "VMV", "SXS", 'M', ItemList.Hull_ULV, 'V',
-                        OrePrefixes.gearGtSmall.get(Materials.AnyBronze), 'S', OrePrefixes.screw.get(Materials.AnyIron),
-                        'X', OreDictNames.craftingPiston });
+                        MaterialParts.namedIngredient(OrePrefixes.gearGtSmall, MaterialFacades.AnyBronze), 'S',
+                        MaterialParts.namedIngredient(OrePrefixes.screw, MaterialFacades.AnyIron), 'X',
+                        OreDictNames.craftingPiston });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerLuV.get(1L),
@@ -1049,16 +1050,17 @@ public class GT_Loader_Machines {
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Tin), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Tin), 'S',
-                        OrePrefixes.spring.get(Materials.AnyCopper), 'X',
-                        OrePrefixes.cableGt08.get(Materials.AnyCopper), 'O',
+                        MaterialParts.namedIngredient(OrePrefixes.spring, MaterialFacades.AnyCopper), 'X',
+                        MaterialParts.namedIngredient(OrePrefixes.cableGt08, MaterialFacades.AnyCopper), 'O',
                         MaterialParts.craftIngredient(OrePrefixes.cell, Materials.Lubricant), 'P',
                         ItemList.Electric_Pump_LV, 'T', GregtechItemList.Transformer_HA_MV_LV.get(1) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_HV_MV.get(1L),
                 GTModHandler.RecipeBits.BITSD,
-                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.AnyCopper), 'C',
-                        OrePrefixes.cableGt16.get(Materials.AnyCopper), 'S',
+                new Object[] { "XOC", "STA", "POC", 'A',
+                        MaterialParts.namedIngredient(OrePrefixes.springSmall, MaterialFacades.AnyCopper), 'C',
+                        MaterialParts.namedIngredient(OrePrefixes.cableGt16, MaterialFacades.AnyCopper), 'S',
                         MaterialParts.craftIngredient(OrePrefixes.spring, Materials.Gold), 'X',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt08, Materials.Gold), 'O',
                         MaterialParts.craftIngredient(OrePrefixes.cell, Materials.Lubricant), 'P',

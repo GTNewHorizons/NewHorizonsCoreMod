@@ -47,7 +47,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.fluids.GTPPFluids;
-import gtPlusPlus.core.material.Particle;
+import gtPlusPlus.core.item.chemistry.Particle;
 
 public class MixerRecipes implements Runnable {
 

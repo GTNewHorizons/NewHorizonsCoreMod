@@ -29,7 +29,7 @@ import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
-import gtPlusPlus.core.material.Particle;
+import gtPlusPlus.core.item.chemistry.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class DTPFRecipes implements Runnable {

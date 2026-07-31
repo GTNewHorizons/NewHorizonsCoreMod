@@ -55,7 +55,6 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.CellShapes;
@@ -63,6 +62,7 @@ import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -141,7 +141,9 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polybenzimidazole, 8L),
                         MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.itemCasing, (int) (4L)),
-                        new Object[] { OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L },
+                        new Object[] {
+                                MaterialParts.namedIngredient(OrePrefixes.foil, MaterialFacades.AnySyntheticRubber),
+                                64L },
                         MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.bolt, (int) (32L)))
                 .fluidInputs(
                         MaterialLibAPI
@@ -160,7 +162,9 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polybenzimidazole, 16),
                         MaterialLibAPI.getStack(Materials.ElectrumFlux, Shapes.itemCasing, (int) (16L)),
-                        new Object[] { OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L },
+                        new Object[] {
+                                MaterialParts.namedIngredient(OrePrefixes.foil, MaterialFacades.AnySyntheticRubber),
+                                64L },
                         MaterialLibAPI.getStack(Materials.HSSS, Shapes.bolt, (int) (32L)))
                 .fluidInputs(
                         MaterialLibAPI
@@ -586,7 +590,9 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Circuit_Chip_Ram.get(64L), ItemList.Circuit_Chip_NPIC.get(64L),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Draconium, 64),
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorUHV, 64),
-                            new Object[] { OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L },
+                            new Object[] {
+                                    MaterialParts.namedIngredient(OrePrefixes.foil, MaterialFacades.AnySyntheticRubber),
+                                    64L },
                             MaterialLibAPI.getStack(Materials.Polybenzimidazole, Shapes.foil, (int) (64)) },
                     new FluidStack[] {
                             MaterialLibAPI
@@ -809,7 +815,9 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Circuit_Chip_Ram.get(64L), ItemList.Circuit_Chip_NPIC.get(64L),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Draconium, 64),
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorUHV, 64),
-                            new Object[] { OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L },
+                            new Object[] {
+                                    MaterialParts.namedIngredient(OrePrefixes.foil, MaterialFacades.AnySyntheticRubber),
+                                    64L },
                             MaterialLibAPI.getStack(Materials.Polybenzimidazole, Shapes.foil, (int) (64)) },
                     new FluidStack[] { new FluidStack(FluidRegistry.getFluid("molten.mutatedlivingsolder"), 3_744),
                             MaterialLibAPI.getFluidStack(Materials.Naquadria, FluidShapes.fluidMolten, (int) (4_032L)),
