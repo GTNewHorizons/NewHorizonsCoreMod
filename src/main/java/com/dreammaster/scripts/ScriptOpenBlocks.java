@@ -45,6 +45,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -164,7 +165,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateEnderPearl",
                 "plateSteel",
                 "gearGtSmallSteel",
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Aluminium), 1L),
                 "gearGtSmallSteel",
                 "plateSteel",
                 "plateSteel",
@@ -324,7 +325,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "pipeSmallSteel");
         addShapelessRecipe(
                 getModItem(OpenBlocks.ID, "scaffolding", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L));
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "generic", 1, 9),
                 getModItem(ProjectBlue.ID, "miniatureLamp", 1, 14),
@@ -479,7 +480,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Aluminium), 1),
                         MaterialLibAPI.getStack(Materials2Materials.EnderPearl, Materials2Shapes.plate, (int) (1)),
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.plate, (int) (4)),
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.gearGtSmall, (int) (1)))
