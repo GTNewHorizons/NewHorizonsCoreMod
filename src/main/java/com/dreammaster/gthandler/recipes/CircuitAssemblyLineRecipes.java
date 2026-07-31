@@ -12,9 +12,6 @@ import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtPlusPlus.core.material.MaterialMisc.MUTATED_LIVING_SOLDER;
-import static gtPlusPlus.core.material.MaterialsAlloy.INDALLOY_140;
-import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
@@ -907,7 +904,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_NanocomponentCentralProcessingUnits.get(2),
                         Superconductors.ZPM.getWireGt16(64))
                 .itemOutputs(NHItemList.HighEnergyFlowCircuit.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(2 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (2 * INGOTS)))
                 .special(ItemList.CircuitImprint_HighEnergyFlowCircuit.get(0)).eut(TierEU.RECIPE_IV)
                 .duration(24 * MINUTES).addTo(circuitAssemblyLineRecipes);
 
@@ -919,7 +920,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Electrum), 8),
                         MaterialLibAPI.getStack(Materials2Materials.Platinum, Materials2Shapes.bolt, (int) (64)))
                 .itemOutputs(ItemList.Circuit_Nanoprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * HALF_INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * HALF_INGOTS)))
                 .special(ItemList.CircuitImprint_NanoProcessor.get(0)).eut(9600).duration(30 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -936,7 +941,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 8))
                 .itemOutputs(ItemList.Circuit_Crystalprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * HALF_INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * HALF_INGOTS)))
                 .special(ItemList.CircuitImprint_CrystalProcessor.get(0)).eut(9600).duration(1 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -951,7 +960,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 16))
                 .itemOutputs(ItemList.Circuit_Crystalcomputer.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_CrystalAssembly.get(0)).eut(9600).duration(2 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -966,7 +979,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 32))
                 .itemOutputs(ItemList.Circuit_Ultimatecrystalcomputer.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_CrystalSupercomputer.get(0)).eut(9_600).duration(4 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -980,7 +997,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_RandomAccessMemoryChips.get(32),
                         Superconductors.LuV.getWireGt16(16))
                 .itemOutputs(ItemList.Circuit_Crystalmainframe.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(2 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (2 * INGOTS)))
                 .special(ItemList.CircuitImprint_CrystalMainframe.get(0)).eut(TierEU.RECIPE_LuV).duration(8 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -992,7 +1013,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.Platinum), 16),
                         MaterialLibAPI.getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.bolt, (int) (64)))
                 .itemOutputs(ItemList.Circuit_Quantumprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * HALF_INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * HALF_INGOTS)))
                 .special(ItemList.CircuitImprint_QuantumProcessor.get(0)).eut(38_400).duration(30 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1007,7 +1032,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.YttriumBariumCuprate), 8))
                 .itemOutputs(ItemList.Circuit_Neuroprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * HALF_INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * HALF_INGOTS)))
                 .special(ItemList.CircuitImprint_WetwareProcessor.get(0)).eut(38_400).duration(2 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1022,7 +1051,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.YttriumBariumCuprate), 16))
                 .itemOutputs(ItemList.Circuit_Wetwarecomputer.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_WetwareAssembly.get(0)).eut(38_400).duration(3 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1037,7 +1070,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.YttriumBariumCuprate), 24))
                 .itemOutputs(ItemList.Circuit_Wetwaresupercomputer.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_WetwareSupercomputer.get(0)).eut(38_400).duration(6 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1052,7 +1089,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.YttriumBariumCuprate), 8))
                 .itemOutputs(ItemList.Circuit_Neuroprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * HALF_INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * HALF_INGOTS)))
                 .special(ItemList.CircuitImprint_WetwareProcessor.get(0)).eut(153_600).duration(15 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1067,7 +1108,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.YttriumBariumCuprate), 16))
                 .itemOutputs(ItemList.Circuit_Wetwarecomputer.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_WetwareAssembly.get(0)).eut(153_600).duration(22 * SECONDS + 4 * TICKS)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1078,7 +1123,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 8),
                 MaterialLibAPI.getStack(Materials2Materials.YttriumBariumCuprate, Materials2Shapes.bolt, (int) (64)))
                 .itemOutputs(ItemList.Circuit_Crystalprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * HALF_INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * HALF_INGOTS)))
                 .special(ItemList.CircuitImprint_CrystalProcessor.get(0)).eut(153_600).duration(30 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1093,7 +1142,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.YttriumBariumCuprate), 24))
                 .itemOutputs(ItemList.Circuit_Wetwaresupercomputer.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_WetwareSupercomputer.get(0)).eut(153_600).duration(45 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1108,7 +1161,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 16))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * HALF_INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * HALF_INGOTS)))
                 .special(ItemList.CircuitImprint_BiowareProcessor.get(0)).eut(153_600).duration(3 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1123,7 +1180,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 24))
                 .itemOutputs(ItemList.Circuit_Biowarecomputer.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_BiowareAssembly.get(0)).eut(153_600).duration(4 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1138,7 +1199,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 16))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * HALF_INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * HALF_INGOTS)))
                 .special(ItemList.CircuitImprint_BiowareProcessor.get(0)).eut(614_400)
                 .duration(22 * SECONDS + 4 * TICKS).addTo(circuitAssemblyLineRecipes);
 
@@ -1150,7 +1215,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.YttriumBariumCuprate), 8),
                 MaterialLibAPI.getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.bolt, (int) (64)))
                 .itemOutputs(ItemList.Circuit_Neuroprocessor.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_WetwareProcessor.get(0)).eut(614_400).duration(30 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1165,7 +1234,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 24))
                 .itemOutputs(ItemList.Circuit_Biowarecomputer.get(16))
-                .fluidInputs(INDALLOY_140.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_BiowareAssembly.get(0)).eut(614_400).duration(30 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1179,7 +1252,11 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         tectech.thing.CustomItemList.DATApipe.get(64),
                         MaterialLibAPI.getStack(Materials2Materials.EnrichedHolmium, Materials2Shapes.bolt, (int) (64)))
                 .itemOutputs(ItemList.Circuit_OpticalProcessor.get(4))
-                .fluidInputs(MUTATED_LIVING_SOLDER.getFluidStack(2 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.MutatedLivingSolder,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (2 * INGOTS)))
                 .special(ItemList.CircuitImprint_OpticalProcessor.get(0)).eut(614_400).duration(4 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1190,9 +1267,13 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_LivingBioChips.get(1),
                         GTOreDictUnificator
                                 .get(OrePrefixes.wireGt04, MU.materialOf(Materials2Materials.NiobiumTitanium), 16),
-                        CHRONOMATIC_GLASS.getBolt(64))
+                        MaterialLibAPI.getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.bolt, (int) (64)))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(16))
-                .fluidInputs(MUTATED_LIVING_SOLDER.getFluidStack(1 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.MutatedLivingSolder,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (1 * INGOTS)))
                 .special(ItemList.CircuitImprint_BiowareProcessor.get(0)).eut(2_457_600).duration(45 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
     }

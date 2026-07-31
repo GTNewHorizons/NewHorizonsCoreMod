@@ -170,27 +170,44 @@ def load_legacy_material_map(material_fields):
     return mapping
 
 
-# Source token of a foreign material holder -> (import path, how its fields resolve, owning mod).
+# Source token of a foreign material holder -> (the `import static` prefix its fields could be
+# imported through, the class import that backs the token, how its fields resolve, owning mod).
+BW = "bartworks.system.material.WerkstoffLoader"
+LANTH = "gtnhlanth.common.register"
+GTPP = "gtPlusPlus.core.material"
 FOREIGN_HOLDERS = {
-    "WerkstoffLoader": ("bartworks.system.material.WerkstoffLoader", "werkstoff", "bartworks"),
-    "WerkstoffMaterialPool": ("gtnhlanth.common.register.WerkstoffMaterialPool", "werkstoff", "gtnhlanth"),
-    "BotWerkstoffMaterialPool": (
-        "gtnhlanth.common.register.BotWerkstoffMaterialPool",
+    "WerkstoffLoader": (BW, BW, "werkstoff", "bartworks"),
+    "WerkstoffMaterialPool": (
+        f"{LANTH}.WerkstoffMaterialPool",
+        f"{LANTH}.WerkstoffMaterialPool",
         "werkstoff",
         "gtnhlanth",
     ),
-    "GGMaterial": ("goodgenerator.items.GGMaterial", "werkstoff", "goodgenerator"),
-    "MaterialsAlloy": ("gtPlusPlus.core.material.MaterialsAlloy", "gtpp", "gtplusplus"),
-    "MaterialMisc": ("gtPlusPlus.core.material.MaterialMisc", "gtpp", "gtplusplus"),
-    "MaterialsOres": ("gtPlusPlus.core.material.MaterialsOres", "gtpp", "gtplusplus"),
+    "BotWerkstoffMaterialPool": (
+        f"{LANTH}.BotWerkstoffMaterialPool",
+        f"{LANTH}.BotWerkstoffMaterialPool",
+        "werkstoff",
+        "gtnhlanth",
+    ),
+    "GGMaterial": (
+        "goodgenerator.items.GGMaterial",
+        "goodgenerator.items.GGMaterial",
+        "werkstoff",
+        "goodgenerator",
+    ),
+    "MaterialsAlloy": (f"{GTPP}.MaterialsAlloy", f"{GTPP}.MaterialsAlloy", "gtpp", "gtplusplus"),
+    "MaterialMisc": (f"{GTPP}.MaterialMisc", f"{GTPP}.MaterialMisc", "gtpp", "gtplusplus"),
+    "MaterialsOres": (f"{GTPP}.MaterialsOres", f"{GTPP}.MaterialsOres", "gtpp", "gtplusplus"),
     "MaterialsElements.STANDALONE": (
-        "gtPlusPlus.core.material.MaterialsElements.STANDALONE",
+        f"{GTPP}.MaterialsElements.STANDALONE",
+        f"{GTPP}.MaterialsElements",
         "gtpp",
         "gtplusplus",
     ),
+    "MaterialsElements.getInstance()": (None, f"{GTPP}.MaterialsElements", "gtpp", "gtplusplus"),
 }
 # Narrowed by --mods so one mod's holders can be migrated and committed on their own.
-SELECTED_MODS = {mod for _, _, mod in FOREIGN_HOLDERS.values()}
+SELECTED_MODS = {mod for *_, mod in FOREIGN_HOLDERS.values()}
 
 # GT++'s `Material` exposed one accessor per prefix instead of taking the prefix as an argument.
 GTPP_GETTERS = {
@@ -258,14 +275,19 @@ def load_gtpp_material_map():
     field after that same string, so the identifier falls out of `sanitize`.
     """
     declaration = re.compile(r"Material (\w+) = new Material\(\s*\n?\s*\"([^\"]*)\"")
+    nested_class = re.compile(r"\n    (?:public |static |final )*class (\w+) \{")
     mapping = {}
-    for holder, (path, source, _mod) in FOREIGN_HOLDERS.items():
+    for holder, (_static_prefix, class_import, source, _mod) in FOREIGN_HOLDERS.items():
         if source != "gtpp":
             continue
-        source_class, _, nested = path.split(".", 3)[3].partition(".")
-        text = git_show(f"{GTPP_MATERIAL_DIR_REF}/{source_class}.java")
-        if nested:
+        text = git_show(f"{GTPP_MATERIAL_DIR_REF}/{class_import.rsplit('.', 1)[1]}.java")
+        # A nested holder owns its own class body; a top-level one owns everything before the first.
+        nested = holder.partition(".")[2].rstrip("()")
+        if nested and nested != "getInstance":
             text = text[text.index(f"class {nested} {{") :]
+        else:
+            first = nested_class.search(text)
+            text = text[: first.start()] if first else text
         for field, name in declaration.findall(text):
             mapping[f"{holder}.{field}"] = sanitize(name)
     return mapping
@@ -519,7 +541,7 @@ def process_itemdata_get(text: str, m: re.Match, uses, skip_log):
 
 
 FOREIGN_HOLDER_ALTERNATION = "|".join(
-    sorted((h.replace(".", r"\.") for h in FOREIGN_HOLDERS), key=len, reverse=True)
+    sorted((re.escape(h) for h in FOREIGN_HOLDERS), key=len, reverse=True)
 )
 FOREIGN_HOLDER_RE = re.compile(r"\b(" + FOREIGN_HOLDER_ALTERNATION + r")\.(\w+)\.(\w+)\(")
 FOREIGN_NULLARY_RE = re.compile(r"^(" + FOREIGN_HOLDER_ALTERNATION + r")\.(\w+)\.(\w+)\(\)$")
@@ -562,7 +584,7 @@ def process_foreign_call(text: str, m: re.Match, uses, skip_log):
     close_idx = find_matching_paren(text, open_idx)
     args = split_top_level_args(text[open_idx + 1 : close_idx])
     snippet = text[start : close_idx + 1][:120]
-    if FOREIGN_HOLDERS[holder][2] not in SELECTED_MODS:
+    if FOREIGN_HOLDERS[holder][3] not in SELECTED_MODS:
         return None
     material = FOREIGN_MATERIAL_MAP.get(f"{holder}.{field}")
     if material is None:
@@ -604,7 +626,7 @@ def process_foreign_fluidstack(text: str, start: int, uses, skip_log):
     if not inner or inner.group(3) not in ("getFluid", "getPlasma"):
         return None
     holder, field, getter = inner.group(1), inner.group(2), inner.group(3)
-    if FOREIGN_HOLDERS[holder][2] not in SELECTED_MODS:
+    if FOREIGN_HOLDERS[holder][3] not in SELECTED_MODS:
         return None
     material = FOREIGN_MATERIAL_MAP.get(f"{holder}.{field}")
     if material is None:
@@ -620,7 +642,9 @@ def process_foreign_fluidstack(text: str, start: int, uses, skip_log):
 def apply_foreign_static_import_pass(text: str):
     """Drops `import static <holder>.<FIELD>;` and re-qualifies the references it covered."""
     holders_by_path = {
-        path: holder for holder, (path, _, mod) in FOREIGN_HOLDERS.items() if mod in SELECTED_MODS
+        static_prefix: holder
+        for holder, (static_prefix, _, _, mod) in FOREIGN_HOLDERS.items()
+        if static_prefix and mod in SELECTED_MODS
     }
     lines = text.split("\n")
     kept = []
@@ -652,12 +676,11 @@ def apply_foreign_static_import_pass(text: str):
 def drop_foreign_imports(text: str):
     body = "\n".join(l for l in text.split("\n") if not l.lstrip().startswith("import "))
     drop = set()
-    for holder, (path, _, mod) in FOREIGN_HOLDERS.items():
+    for holder, (_static_prefix, class_import, _source, mod) in FOREIGN_HOLDERS.items():
         if mod not in SELECTED_MODS:
             continue
-        root = holder.split(".")[0]
-        if not re.search(r"\b" + root + r"\b", body):
-            drop.add(f"import {path.rsplit('.', 1)[0] if '.' in holder else path};")
+        if not re.search(r"\b" + holder.split(".")[0] + r"\b", body):
+            drop.add(f"import {class_import};")
     return "\n".join(l for l in text.split("\n") if l.strip() not in drop)
 
 
@@ -819,7 +842,7 @@ def main():
 
     if args.mods:
         global SELECTED_MODS
-        known = {mod for _, _, mod in FOREIGN_HOLDERS.values()}
+        known = {mod for *_, mod in FOREIGN_HOLDERS.values()}
         SELECTED_MODS = {m.strip() for m in args.mods.split(",") if m.strip()}
         if SELECTED_MODS - known:
             sys.exit(f"unknown mod(s): {', '.join(sorted(SELECTED_MODS - known))}")

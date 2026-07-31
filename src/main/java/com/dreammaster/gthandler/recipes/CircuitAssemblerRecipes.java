@@ -41,8 +41,6 @@ import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialMisc;
-import gtPlusPlus.core.material.MaterialsElements;
 
 public class CircuitAssemblerRecipes implements Runnable {
 
@@ -787,7 +785,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Chip_Bioware.get(6),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.NiobiumTitanium, Materials2Shapes.wireFine, (int) (64)),
-                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getBolt(48))
+                        MaterialLibAPI.getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.bolt, (int) (48)))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(1)).fluidInputs(new FluidStack(solderUEV, 4 * INGOTS))
                 .requiresCleanRoom().duration(15 * SECONDS).eut(2457600).addTo(circuitAssemblerRecipes);
 
@@ -828,8 +826,12 @@ public class CircuitAssemblerRecipes implements Runnable {
                         tectech.thing.CustomItemList.DATApipe.get(24),
                         MaterialLibAPI.getStack(Materials2Materials.EnrichedHolmium, Materials2Shapes.bolt, (int) (64)))
                 .itemOutputs(ItemList.Circuit_OpticalProcessor.get(1L))
-                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8 * INGOTS)).requiresCleanRoom()
-                .duration(80 * SECONDS).eut(614400).addTo(circuitAssemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.MutatedLivingSolder,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (8 * INGOTS)))
+                .requiresCleanRoom().duration(80 * SECONDS).eut(614400).addTo(circuitAssemblerRecipes);
     }
 
     @Override

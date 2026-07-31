@@ -36,7 +36,6 @@ import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsElements;
 import gtnhintergalactic.recipe.IGRecipeMaps;
 import tectech.thing.CustomItemList;
 import tectech.thing.casing.TTCasingsContainer;
@@ -163,7 +162,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Chip_Optical.get(16L),
                         ItemList.Optical_Cpu_Containment_Housing.get(16L),
-                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.CelestialTungsten, Materials2Shapes.screw, (int) (16)),
                         MaterialLibAPI.getStack(Materials2Materials.SpaceTime, Materials2Shapes.screw, (int) (16L)),
                         MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.wireFine, (int) (16L)),
                         CustomItemList.DATApipe.get(16L),

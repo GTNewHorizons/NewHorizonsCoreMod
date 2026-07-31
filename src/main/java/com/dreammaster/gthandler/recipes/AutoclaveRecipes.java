@@ -23,7 +23,6 @@ import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
-import gtPlusPlus.core.material.MaterialsElements;
 
 public class AutoclaveRecipes implements Runnable {
 
@@ -137,7 +136,9 @@ public class AutoclaveRecipes implements Runnable {
         }
 
         GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Circuit_Silicon_Wafer6.get(1L), MaterialsElements.STANDALONE.HYPOGEN.getDust(1))
+                .itemInputs(
+                        ItemList.Circuit_Silicon_Wafer6.get(1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Hypogen, Materials2Shapes.dust, (int) (1)))
                 .itemOutputs(ItemList.Circuit_Wafer_Bioware.get(1L)).outputChances(10000)
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(

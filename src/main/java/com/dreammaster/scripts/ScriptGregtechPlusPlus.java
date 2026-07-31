@@ -40,7 +40,6 @@ import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.aspects.Aspect;
@@ -143,8 +142,8 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Slowing Frame
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialsAlloy.TUMBAGA.getLongRod(4),
-                        MaterialsAlloy.TUMBAGA.getRod(4),
+                        MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stickLong, (int) (4)),
+                        MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stick, (int) (4)),
                         MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.foil, (int) (1)),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
@@ -329,23 +328,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialsAlloy.TUMBAGA.getLongRod(1),
+                MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stickLong, (int) (1)),
                 'b',
-                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stick, (int) (1)),
                 'c',
-                MaterialsAlloy.TUMBAGA.getLongRod(1),
+                MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stickLong, (int) (1)),
                 'd',
-                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stick, (int) (1)),
                 'e',
                 MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.foil, (int) (1L)),
                 'f',
-                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stick, (int) (1)),
                 'g',
-                MaterialsAlloy.TUMBAGA.getLongRod(1),
+                MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stickLong, (int) (1)),
                 'h',
-                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stick, (int) (1)),
                 'i',
-                MaterialsAlloy.TUMBAGA.getLongRod(1));
+                MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.stickLong, (int) (1)));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),

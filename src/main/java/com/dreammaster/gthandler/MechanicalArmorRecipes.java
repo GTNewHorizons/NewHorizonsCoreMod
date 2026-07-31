@@ -46,7 +46,6 @@ import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class MechanicalArmorRecipes {
 
@@ -481,7 +480,11 @@ public class MechanicalArmorRecipes {
                         Superconductors.IV.getWireGt01(8),
                         ItemList.Field_Generator_IV.get(1),
                         ItemList.Sensor_IV.get(1))
-                .fluidInputs(MaterialsAlloy.STELLITE.getFluidStack(INGOTS * 8))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Stellite,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 8)))
                 .itemOutputs(ItemList.Augment_Jetpack_PerfectHover.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 

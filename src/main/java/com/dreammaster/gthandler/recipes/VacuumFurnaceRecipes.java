@@ -17,7 +17,6 @@ import gregtech.api.material.MU;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.fluids.GTPPFluids;
-import gtPlusPlus.core.material.MaterialsElements;
 
 public class VacuumFurnaceRecipes implements Runnable {
 
@@ -41,7 +40,7 @@ public class VacuumFurnaceRecipes implements Runnable {
                             MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (64L)),
                             MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (64L)),
                             MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (64L)),
-                            MaterialsElements.getInstance().GERMANIUM.getDust(15))
+                            MaterialLibAPI.getStack(Materials2Materials.Germanium, Materials2Shapes.dust, (int) (15)))
                     .fluidInputs(new FluidStack(GTPPFluids.SphaleriteFlotationFroth, 4000))
                     .fluidOutputs(
                             new FluidStack(GTPPFluids.RedMud, 2000),

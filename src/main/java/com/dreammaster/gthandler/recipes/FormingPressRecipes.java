@@ -29,7 +29,6 @@ import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class FormingPressRecipes implements Runnable {
 
@@ -395,7 +394,7 @@ public class FormingPressRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Optical.get(1L),
-                        MaterialsAlloy.BOTMIUM.getFoil(1),
+                        MaterialLibAPI.getStack(Materials2Materials.Botmium, Materials2Shapes.foil, (int) (1)),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.NickelZincFerrite, Materials2Shapes.foil, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.foil, (int) (1L)),

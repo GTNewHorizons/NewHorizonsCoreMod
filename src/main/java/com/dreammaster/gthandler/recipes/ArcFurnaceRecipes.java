@@ -21,7 +21,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
-import gtPlusPlus.core.material.MaterialsElements;
 
 public class ArcFurnaceRecipes implements Runnable {
 
@@ -70,7 +69,11 @@ public class ArcFurnaceRecipes implements Runnable {
                     NHItemList.ChaoticDust.get(2),
                     getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 26))
                     .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 500, 250)
-                    .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.CelestialTungsten,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (144)))
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Tungsten,

@@ -49,7 +49,6 @@ import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsElements;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
@@ -368,7 +367,11 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.RadoxPoly, Materials2Shapes.itemCasing, (int) (8)),
                         ItemList.UHTResistantMesh.get(64))
                 .itemOutputs(ItemList.DroneCase.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.CelestialTungsten,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (2304)))
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder() // femtocontroller
                 .itemInputs(
@@ -396,7 +399,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         ItemList.Large_Fluid_Cell_Neutronium.get(1),
                         ItemList.RodNaquadah32.get(32),
-                        MaterialsElements.STANDALONE.HYPOGEN.getPlate(4),
+                        MaterialLibAPI.getStack(Materials2Materials.Hypogen, Materials2Shapes.plate, (int) (4)),
                         ItemList.neutroniumHeatCapacitor.get(1),
                         ItemList.UIV_Coil.get(16),
                         getModItem(BiomesOPlenty.ID, "misc", 1, 4),

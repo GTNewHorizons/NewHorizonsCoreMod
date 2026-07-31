@@ -5,38 +5,45 @@ import static bartworks.common.loaders.RadioHatchMaterialLoader.radioHatchMateri
 import static gregtech.api.util.GTRecipeConstants.MASS;
 import static gregtech.api.util.GTRecipeConstants.SIEVERT;
 
-import gregtech.api.enums.GTValues;
-import gregtech.api.util.recipe.Sievert;
-import gtPlusPlus.core.material.Material;
-import gtPlusPlus.core.material.MaterialsElements;
+import com.ruling_0.materiallib.api.Material;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+import com.ruling_0.materiallib.api.Shape;
 
+import gregtech.api.enums.GTValues;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.GTMaterialProperties;
+import gregtech.api.material.MaterialAtomics;
+import gregtech.api.util.recipe.Sievert;
+
+/// Radiation hatch entries for the radioactive materials that originate in gtPlusPlus. BartWorks
+/// registers the werkstoff-backed and GT-native ones itself, so Thorium, Thorium 232 and Californium
+/// are skipped here to avoid a second entry.
 public class BW_RadHatchMaterial {
 
     public static void runRadHatchAdder() {
+        for (Material material : MaterialLibAPI.getMaterials()) {
+            if (material.getProperty(GTMaterialProperties.GTPP_STATE) == null) continue;
 
-        for (Material material : Material.mMaterialMap) {
-            if (material == null || material.vRadiationLevel <= 0) {
+            Integer radiation = material.getProperty(GTMaterialProperties.RADIATION_LEVEL);
+            if (radiation == null || radiation <= 0) continue;
+
+            if (material == Materials2Materials.Thorium || material == Materials2Materials.Thorium232
+                    || material == Materials2Materials.Californium) {
                 continue;
             }
 
-            // already generated in BW
-            if (material == MaterialsElements.getInstance().THORIUM
-                    || material == MaterialsElements.getInstance().THORIUM232
-                    || material == MaterialsElements.getInstance().CALIFORNIUM) {
-                continue;
-            }
-
-            int level = (int) material.getProtons();
-            if (material.getRod(1) != null) {
-                radioHatchMaterialAdder(material.getRod(1), level, (byte) 1);
-                GTValues.RA.stdBuilder().itemInputs(material.getRod(1)).duration(0).eut(0)
-                        .metadata(SIEVERT, new Sievert(level)).metadata(MASS, 1).fake().addTo(radioHatchFakeRecipes);
-            }
-            if (material.getLongRod(1) != null) {
-                radioHatchMaterialAdder(material.getLongRod(1), level, (byte) 2);
-                GTValues.RA.stdBuilder().itemInputs(material.getLongRod(1)).duration(0).eut(0)
-                        .metadata(SIEVERT, new Sievert(level)).metadata(MASS, 2).fake().addTo(radioHatchFakeRecipes);
-            }
+            int level = (int) MaterialAtomics.protons(material);
+            addRod(material, Materials2Shapes.stick, level, 1);
+            addRod(material, Materials2Shapes.stickLong, level, 2);
         }
+    }
+
+    private static void addRod(Material material, Shape shape, int level, int mass) {
+        if (!material.hasShape(shape)) return;
+
+        radioHatchMaterialAdder(MaterialLibAPI.getStack(material, shape, 1), level, (byte) mass);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(material, shape, 1)).duration(0).eut(0)
+                .metadata(SIEVERT, new Sievert(level)).metadata(MASS, mass).fake().addTo(radioHatchFakeRecipes);
     }
 }
