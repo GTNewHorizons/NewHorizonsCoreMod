@@ -28,13 +28,13 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtnhintergalactic.recipe.IGRecipeMaps;
@@ -60,14 +60,14 @@ public class SpaceAssemblerRecipes implements Runnable {
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         ItemList.Emitter_UHV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.protohalkonite, Materials2Shapes.plate, (int) (8)),
                         ItemList.EnergisedTesseract.get(1),
                         ItemList.EnergisedTesseract.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.protohalkonite, Materials2Shapes.plate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials2Materials.protohalkonite, Materials2Shapes.plate, (int) (8)),
                         ItemList.EnergisedTesseract.get(1),
                         ItemList.EnergisedTesseract.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.protohalkonite, Materials2Shapes.plate, (int) (8)),
                         ItemList.Emitter_UHV.get(1),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
@@ -82,7 +82,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 Materials2Materials.Tartarite,
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (64 * 144)),
-                        Materials.SuperconductorUVBase.getMolten(64 * 144))
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Longasssuperconductornameforuvwire,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (64 * 144)))
                 .itemOutputs(ItemList.Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                 .duration(120 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -92,20 +95,23 @@ public class SpaceAssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.plateDense, (int) (16)),
                         MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.plateDense, (int) (16)),
                         ItemList.Sensor_UHV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.protohalkonite, Materials2Shapes.plate, (int) (8)),
                         ItemList.Tesseract.get(1),
                         ItemList.Tesseract.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.protohalkonite, Materials2Shapes.plate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials2Materials.protohalkonite, Materials2Shapes.plate, (int) (8)),
                         ItemList.Tesseract.get(1),
                         ItemList.Tesseract.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.protohalkonite, Materials2Shapes.plate, (int) (8)),
                         ItemList.Sensor_UHV.get(1),
                         MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.plateDense, (int) (16)),
                         MaterialLibAPI.getStack(Materials2Materials.Naquadria, Materials2Shapes.plateDense, (int) (16)),
                         ItemList.Sensor_UHV.get(1))
                 .fluidInputs(
-                        Materials.SuperconductorUHVBase.getMolten(64 * 144),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Longasssuperconductornameforuhvwire,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (64 * 144)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Osmiridium,
                                 Materials2FluidShapes.fluidMolten,
@@ -138,7 +144,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Chip_Optical.get(4L),
                         ItemList.Optical_Cpu_Containment_Housing.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.SuperconductorUHVBase, 8L),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.Longasssuperconductornameforuhvwire,
+                                Materials2Shapes.screw,
+                                (int) (8L)),
                         MaterialLibAPI.getStack(Materials2Materials.TengamAttuned, Materials2Shapes.screw, (int) (8L)),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.wireFine, (int) (8L)),
@@ -239,7 +248,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(32L),
                         ItemList.Circuit_Parts_ResistorXSMD.get(32L),
                         ItemList.Circuit_Parts_TransistorXSMD.get(32L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SpaceTime, 12L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.SpaceTime), 12L))
                 .fluidInputs(new FluidStack(solderUEV, 1440)).itemOutputs(ItemList.Energy_Cluster.get(1))
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -294,10 +304,16 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Wrap_OpticalSMDCapacitors.get(8),
                         ItemList.Wrap_OpticalSMDResistors.get(8),
                         ItemList.Wrap_OpticalSMDTransistors.get(8),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.MHDCSM, 2))
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.MagnetohydrodynamicallyConstrainedStarMatter,
+                                Materials2Shapes.bolt,
+                                (int) (2)))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        Materials.MagMatter.getMolten(576),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Magmatter,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (576)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Eternity,
                                 Materials2FluidShapes.fluidMolten,
@@ -427,7 +443,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                     ItemList.EnergisedTesseract.get(1))
                     .fluidInputs(
                             new FluidStack(solderUEV, 2304),
-                            Materials.DimensionallyShiftedSuperfluid.getFluid(4000))
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.dimensionallyshiftedsuperfluid,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (4000)))
                     .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2)
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
@@ -451,8 +470,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                     ItemList.Field_Generator_UXV.get(1L),
                     filledUMVCell,
                     new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                    Materials.MagMatter.getNanite(4),
-                    Materials.Eternity.getNanite(4))
+                    GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Magmatter), 4),
+                    GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Eternity), 4))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Eternity,
@@ -468,9 +487,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                             getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 12, 60),
                             ItemList.Quantum_Chest_IV.get(8L),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                            GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Infinity), 4L),
                             getModItem(Avaritia.ID, "Resource", 4, 5),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.block, MU.materialOf(Materials2Materials.CosmicNeutronium), 12L))
                     .fluidInputs(new FluidStack(solderUEV, 2304))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
@@ -487,8 +507,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Magmatter), 4),
+                            GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Eternity), 4))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.Eternity,
@@ -504,9 +525,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                             getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                             getModItem(AE2FluidCraft.ID, "fluid_part", 12, 7),
                             ItemList.Quantum_Tank_IV.get(8L),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                            GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Infinity), 4L),
                             getModItem(Avaritia.ID, "Resource", 4, 5),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.block, MU.materialOf(Materials2Materials.CosmicNeutronium), 12L))
                     .fluidInputs(new FluidStack(solderUEV, 2304))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0))
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
@@ -514,14 +536,14 @@ public class SpaceAssemblerRecipes implements Runnable {
 
             // ME Essentia Digital Singularity Storage Cell
             if (ThaumicEnergistics.isModLoaded()) {
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(EternalSingularity.ID, "eternal_singularity", 1),
-                                getModItem(ThaumicEnergistics.ID, "storage.component", 12, 8),
-                                getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 8, 0),
-                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
-                                getModItem(Avaritia.ID, "Resource", 4, 5),
-                                GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
+                GTValues.RA.stdBuilder().itemInputs(
+                        getModItem(EternalSingularity.ID, "eternal_singularity", 1),
+                        getModItem(ThaumicEnergistics.ID, "storage.component", 12, 8),
+                        getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 8, 0),
+                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Infinity), 4L),
+                        getModItem(Avaritia.ID, "Resource", 4, 5),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.block, MU.materialOf(Materials2Materials.CosmicNeutronium), 12L))
                         .fluidInputs(new FluidStack(solderUEV, 2304))
                         .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10))
                         .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
@@ -532,7 +554,8 @@ public class SpaceAssemblerRecipes implements Runnable {
         if (Avaritia.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(
                     ItemList.CompressorUV.get(1),
-                    GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L),
+                    GTOreDictUnificator
+                            .get(OrePrefixes.block, MU.materialOf(Materials2Materials.CosmicNeutronium), 12L),
                     MaterialLibAPI
                             .getStack(Materials2Materials.Bedrockium, Materials2Shapes.plateSuperdense, (int) (2L)),
                     MaterialLibAPI
