@@ -56,8 +56,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OreDictNames;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
@@ -1602,7 +1602,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.removeRecipeByOutput(getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 3));
             GTModHandler.addCraftingRecipe(
                     getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 3),
-                    new Object[] { "OCO", "XWX", "OCO", 'C', Superconductors.LuV.getWireGt12Ingredient(), 'X',
+                    new Object[] { "OCO", "XWX", "OCO", 'C',
+                            MaterialParts.namedIngredient(OrePrefixes.wireGt12, MaterialFacades.SuperconductorLuV), 'X',
                             getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 2), 'O',
                             getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1), 'W',
                             ItemList.Transformer_LuV_IV.get(1, o) });

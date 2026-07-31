@@ -13,9 +13,11 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Superconductors;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptGraviSuite implements IScriptLoader {
 
@@ -36,9 +38,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
-                Superconductors.IV.getWireGt01(1),
-                Superconductors.IV.getWireGt01(1),
-                Superconductors.IV.getWireGt01(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorIV, 1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorIV, 1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorIV, 1),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0));
@@ -47,9 +49,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
-                Superconductors.LuV.getWireGt12(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt12, MaterialFacades.SuperconductorLuV, 1),
                 "plateRhodium-PlatedPalladium",
-                Superconductors.LuV.getWireGt12(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt12, MaterialFacades.SuperconductorLuV, 1),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0));
