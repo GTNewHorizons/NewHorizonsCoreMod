@@ -32,12 +32,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
@@ -65,19 +65,27 @@ public class ChemicalReactorRecipes implements Runnable {
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         // Rock Salt
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.PotassiumHydroxide.getDust(3)).circuit(2)
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.dust, MU.materialOf(Materials2Materials.PotassiumHydroxideGT5U), 3))
+                .circuit(2)
                 .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.RockSalt, Materials2Shapes.dust, (int) (2)))
-                .fluidInputs(Materials.HydrochloricAcid.getFluid(1000)).fluidOutputs(Materials.Water.getFluid(1000))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
+                .fluidInputs(MU.materialOf(Materials2Materials.HydrochloricAcidGT5U).getFluid(1000))
+                .fluidOutputs(MU.materialOf(Materials2Materials.Water).getFluid(1000)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
 
         // NaAlO2 + 2H2O = Al(OH)3 + NaOH
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (4)))
-                .circuit(1).itemOutputs(Materials.Aluminiumhydroxide.getDust(4), Materials.SodiumHydroxide.getDust(3))
-                .fluidInputs(Materials.Water.getFluid(2000L)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
-                .addTo(UniversalChemical);
+                .circuit(1)
+                .itemOutputs(
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.AluminiumHydroxide, Materials2Shapes.dust, (int) (4)),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 3))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(2000L))
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -105,7 +113,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 1),
+                        MaterialLibAPI.getStack(Materials2Materials.Plastic, Materials2Shapes.plate, (int) (1)),
                         MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.foil, (int) (4)))
                 .itemOutputs(ItemList.Circuit_Board_Plastic.get(1L))
                 .fluidInputs(
@@ -340,7 +348,7 @@ public class ChemicalReactorRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MutatedEgg.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 64))
+                        MaterialLibAPI.getStack(Materials2Materials.HeeEndium, Materials2Shapes.dust, (int) (64)))
                 .itemOutputs(NHItemList.EnderEgg.get()).fluidInputs(FluidRegistry.getFluidStack("ender", 1000))
                 .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 
@@ -424,7 +432,7 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dustTiny, (int) (1)),
                         MaterialLibAPI.getStack(Materials2Materials.Lithium, Materials2Shapes.dustTiny, (int) (1)))
-                .fluidInputs(Materials.Water.getFluid(1000L))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(1000L))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SaltWater,
@@ -436,7 +444,7 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dust, (int) (1)),
                         MaterialLibAPI.getStack(Materials2Materials.Lithium, Materials2Shapes.dust, (int) (1)))
-                .fluidInputs(Materials.Water.getFluid(9000L))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(9000L))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SaltWater,
@@ -526,38 +534,39 @@ public class ChemicalReactorRecipes implements Runnable {
     public static void singleBlockOnly() {
         // 6HF + Al(OH)3 + 3NaOH = Na3AlF6 + 6H2O
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 4L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 9L),
+                MaterialLibAPI.getStack(Materials2Materials.AluminiumHydroxide, Materials2Shapes.dust, (int) (4L)))
                 .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Cryolite, Materials2Shapes.dust, (int) (10L)))
-                .fluidInputs(Materials.HydrofluoricAcid.getFluid(6000L)).fluidOutputs(Materials.Water.getFluid(6000L))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.HydrofluoricAcidGT5U).getFluid(6000L))
+                .fluidOutputs(MU.materialOf(Materials2Materials.Water).getFluid(6000L)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Bauxite, Materials2Shapes.dust, (int) (4L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 12L))
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (16L)))
-                .fluidInputs(Materials.Water.getFluid(1000L)).duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
-                .addTo(chemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(1000L))
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(chemicalReactorRecipes);
 
     }
 
     public static void multiBlockOnly() {
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 28L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 63L))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.AluminiumHydroxide, Materials2Shapes.dust, (int) (28L)),
+                GTOreDictUnificator.get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 63L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Cryolite, Materials2Shapes.dust, (int) (64L)),
                         MaterialLibAPI.getStack(Materials2Materials.Cryolite, Materials2Shapes.dust, (int) (6L)))
-                .fluidInputs(Materials.HydrofluoricAcid.getFluid(42000L)).fluidOutputs(Materials.Water.getFluid(42000L))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.HydrofluoricAcidGT5U).getFluid(42000L))
+                .fluidOutputs(MU.materialOf(Materials2Materials.Water).getFluid(42000L)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -569,7 +578,7 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(2000L))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(2000L))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Hydrogen,
@@ -588,123 +597,134 @@ public class ChemicalReactorRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Bauxite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Mica, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Zeolite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Tanzanite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Lazurite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Sodalite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Biotite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Glauconite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Lepidolite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.GlauconiteSand, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Vermiculite, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(4000L)).fluidOutputs().duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).fluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(
                 NHItemList.RawPicoWafer.get(),
@@ -723,12 +743,13 @@ public class ChemicalReactorRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dust, (int) (16L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L))
+                        GTOreDictUnificator
+                                .get(OrePrefixes.dust, MU.materialOf(Materials2Materials.SodiumHydroxideGT5U), 48L))
                 .circuit(24)
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.SodiumAluminate, Materials2Shapes.dust, (int) (64L)))
-                .fluidInputs(Materials.Water.getFluid(16000L))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(16000L))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Hydrogen,
@@ -745,9 +766,14 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Wafer_Bioware.get(1L),
                         MaterialLibAPI.getStack(Materials2Materials.Tartarite, Materials2Shapes.dust, (int) (2)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 1),
+                        MaterialLibAPI.getStack(Materials2Materials.RadoxPoly, Materials2Shapes.dust, (int) (1)),
                         NHItemList.TCetiESeaweedExtract.get(1))
-                .itemOutputs(ItemList.Circuit_Wafer_APIC.get(1L)).fluidInputs(Materials.DTR.getFluid(1000L))
+                .itemOutputs(ItemList.Circuit_Wafer_APIC.get(1L))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.DimensionallyTranscendentResidue,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1000L)))
                 .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(multiblockChemicalReactorRecipes);
 
@@ -783,8 +809,12 @@ public class ChemicalReactorRecipes implements Runnable {
                     .itemOutputs(
                             MaterialLibAPI
                                     .getStack(Materials2Materials.Indium, Materials2Shapes.crushedPurified, (int) (12)))
-                    .fluidInputs(Materials.PhthalicAcid.getFluid(2688)).duration(14 * SECONDS + 8 * TICKS)
-                    .eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.phtalicacid,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (2688)))
+                    .duration(14 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(Roquesit.get(OrePrefixes.dust, 4), GTBees.combs.getStackForType(CombType.INDIUM, 4))
@@ -792,8 +822,12 @@ public class ChemicalReactorRecipes implements Runnable {
                             MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (1)),
                             MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (3)),
                             MaterialLibAPI.getStack(Materials2Materials.Sulfur, Materials2Shapes.dust, (int) (2)))
-                    .fluidInputs(Materials.PhthalicAcid.getFluid(90)).duration(3 * SECONDS + 4 * TICKS)
-                    .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.phtalicacid,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (90)))
+                    .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
         }
     }
 

@@ -88,6 +88,7 @@ IMPORT_M2MATERIALS = "import gregtech.api.enums.materials2.Materials2Materials;"
 IMPORT_M2SHAPES = "import gregtech.api.enums.materials2.Materials2Shapes;"
 IMPORT_M2FLUIDSHAPES = "import gregtech.api.enums.materials2.Materials2FluidShapes;"
 IMPORT_M2CELLSHAPES = "import gregtech.api.enums.materials2.Materials2CellShapes;"
+IMPORT_UNIFICATOR = "import gregtech.api.util.GTOreDictUnificator;"
 IMPORT_LEGACY_MATERIALS = "import gregtech.api.enums.Materials;"
 IMPORT_LEGACY_OREPREFIXES = "import gregtech.api.enums.OrePrefixes;"
 
@@ -98,6 +99,8 @@ USE_IMPORTS = [
     ("shapes", IMPORT_M2SHAPES),
     ("fluidshapes", IMPORT_M2FLUIDSHAPES),
     ("cellshapes", IMPORT_M2CELLSHAPES),
+    ("oreprefixes", IMPORT_LEGACY_OREPREFIXES),
+    ("unificator", IMPORT_UNIFICATOR),
 ]
 
 STATIC_IMPORT_RE = re.compile(r"^import static gregtech\.api\.enums\.Materials\.(\w+);$")
@@ -274,7 +277,7 @@ def split_top_level_args(arg_text: str):
 LITERAL_OREPREFIX_RE = re.compile(r"^OrePrefixes\.(\w+)$")
 LITERAL_MATERIAL_RE = re.compile(r"^Materials\.(\w+)$")
 
-UNIFICATOR_GET_RE = re.compile(r"\bGTOreDictUnificator\.get\(")
+UNIFICATOR_GET_RE = re.compile(r"\bGTOreDictUnificator\s*\.\s*get\(")
 MATERIALS_GETTER_RE = re.compile(r"\bMaterials\.(\w+)\.(" + "|".join(ALL_GETTERS) + r")\(")
 ITEMDATA_GET_RE = re.compile(r"\bOrePrefixes\.(\w+)\.get\(")
 
@@ -312,6 +315,8 @@ def build_legacy_material_ref(material: str, uses):
 
 
 def build_unificator_call(prefix: str, material: str, amount_text: str, uses):
+    uses.add("oreprefixes")
+    uses.add("unificator")
     return (
         f"GTOreDictUnificator.get(OrePrefixes.{prefix}, "
         f"{build_legacy_material_ref(material, uses)}, {amount_text})"

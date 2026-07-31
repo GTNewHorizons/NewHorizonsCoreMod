@@ -21,12 +21,12 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
@@ -67,7 +67,7 @@ public class DTPFRecipes implements Runnable {
 
                 DTPFCalculator neutronium = new DTPFCalculator().setBaseParallel(base_quantity)
                         .setCustomEBFinputItem(NHItemList.RawNeutronium.get())
-                        .calculateGenericEBFBasedRecipe(Materials.Neutronium);
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.Neutronium);
 
                 // Tier 4
                 GTValues.RA.stdBuilder()
@@ -81,7 +81,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_4_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(neutronium.getResidueAmount(3)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (neutronium.getResidueAmount(3))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Neutronium,
                                         Materials2FluidShapes.fluidMolten,
@@ -101,7 +104,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_3_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(neutronium.getResidueAmount(2)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (neutronium.getResidueAmount(2))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Neutronium,
                                         Materials2FluidShapes.fluidMolten,
@@ -121,7 +127,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_2_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(neutronium.getResidueAmount(1)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (neutronium.getResidueAmount(1))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Neutronium,
                                         Materials2FluidShapes.fluidMolten,
@@ -141,7 +150,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_1_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(neutronium.getResidueAmount(0)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (neutronium.getResidueAmount(0))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Neutronium,
                                         Materials2FluidShapes.fluidMolten,
@@ -162,7 +174,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
 
                 DTPFCalculator cosmic_neutronium = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .calculateGenericEBFBasedRecipe(Materials.CosmicNeutronium);
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.CosmicNeutronium);
 
                 // Tier 4 - Normal
                 GTValues.RA.stdBuilder().circuit(4)
@@ -176,7 +188,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_4_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(cosmic_neutronium.getResidueAmount(3)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (cosmic_neutronium.getResidueAmount(3))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.CosmicNeutronium,
                                         Materials2FluidShapes.fluidMolten,
@@ -196,7 +211,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_3_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(cosmic_neutronium.getResidueAmount(2)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (cosmic_neutronium.getResidueAmount(2))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.CosmicNeutronium,
                                         Materials2FluidShapes.fluidMolten,
@@ -216,7 +234,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_2_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(cosmic_neutronium.getResidueAmount(1)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (cosmic_neutronium.getResidueAmount(1))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.CosmicNeutronium,
                                         Materials2FluidShapes.fluidMolten,
@@ -236,7 +257,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_1_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(cosmic_neutronium.getResidueAmount(0)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (cosmic_neutronium.getResidueAmount(0))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.CosmicNeutronium,
                                         Materials2FluidShapes.fluidMolten,
@@ -252,7 +276,7 @@ public class DTPFRecipes implements Runnable {
 
                     DTPFCalculator cosmic_neutronium_bee = new DTPFCalculator().setBaseParallel(base_quantity)
                             .setCatalystDiscount(15).setProcessingTimeDiscount(50)
-                            .calculateGenericEBFBasedRecipe(Materials.CosmicNeutronium);
+                            .calculateGenericEBFBasedRecipe(Materials2Materials.CosmicNeutronium);
 
                     // Tier 4 - Combs
                     GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM))
@@ -267,7 +291,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2FluidShapes.fluidMolten,
                                             (int) (tier_4_bee_quantity)))
                             .fluidOutputs(
-                                    Materials.DTR.getFluid(cosmic_neutronium_bee.getResidueAmount(3)),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (cosmic_neutronium_bee.getResidueAmount(3))),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.CosmicNeutronium,
                                             Materials2FluidShapes.fluidMolten,
@@ -288,7 +315,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2FluidShapes.fluidMolten,
                                             (int) (tier_3_bee_quantity)))
                             .fluidOutputs(
-                                    Materials.DTR.getFluid(cosmic_neutronium_bee.getResidueAmount(2)),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (cosmic_neutronium_bee.getResidueAmount(2))),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.CosmicNeutronium,
                                             Materials2FluidShapes.fluidMolten,
@@ -309,7 +339,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2FluidShapes.fluidMolten,
                                             (int) (tier_2_bee_quantity)))
                             .fluidOutputs(
-                                    Materials.DTR.getFluid(cosmic_neutronium_bee.getResidueAmount(1)),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (cosmic_neutronium_bee.getResidueAmount(1))),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.CosmicNeutronium,
                                             Materials2FluidShapes.fluidMolten,
@@ -330,7 +363,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2FluidShapes.fluidMolten,
                                             (int) (tier_1_quantity)))
                             .fluidOutputs(
-                                    Materials.DTR.getFluid(cosmic_neutronium_bee.getResidueAmount(0)),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (cosmic_neutronium_bee.getResidueAmount(0))),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.CosmicNeutronium,
                                             Materials2FluidShapes.fluidMolten,
@@ -353,7 +389,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
 
                 DTPFCalculator bedrockium = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .calculateGenericEBFBasedRecipe(Materials.Bedrockium);
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.Bedrockium);
 
                 // Tier 4
                 GTValues.RA.stdBuilder()
@@ -367,7 +403,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_4_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(bedrockium.getResidueAmount(3)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (bedrockium.getResidueAmount(3))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Bedrockium,
                                         Materials2FluidShapes.fluidMolten,
@@ -387,7 +426,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_3_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(bedrockium.getResidueAmount(2)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (bedrockium.getResidueAmount(2))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Bedrockium,
                                         Materials2FluidShapes.fluidMolten,
@@ -407,7 +449,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_2_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(bedrockium.getResidueAmount(1)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (bedrockium.getResidueAmount(1))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Bedrockium,
                                         Materials2FluidShapes.fluidMolten,
@@ -427,7 +472,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_1_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(bedrockium.getResidueAmount(0)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (bedrockium.getResidueAmount(0))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Bedrockium,
                                         Materials2FluidShapes.fluidMolten,
@@ -457,7 +505,10 @@ public class DTPFRecipes implements Runnable {
                                         (int) (1000)))
                         .fluidOutputs(
                                 new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 5760 * 2),
-                                Materials.DTR.getFluid(2000L))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (2000L)))
                         .duration(1 * MINUTES + 15 * SECONDS).eut(2_000_000_000).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -479,7 +530,10 @@ public class DTPFRecipes implements Runnable {
                                         (int) (1000)))
                         .fluidOutputs(
                                 new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 5760),
-                                Materials.DTR.getFluid(1000L))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (1000L)))
                         .duration(1 * MINUTES + 15 * SECONDS).eut(1_600_000_000).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -501,7 +555,10 @@ public class DTPFRecipes implements Runnable {
                                         (int) (1000)))
                         .fluidOutputs(
                                 new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 2880),
-                                Materials.DTR.getFluid(1000L / 2))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (1000L / 2)))
                         .duration(1 * MINUTES + 15 * SECONDS).eut(1_200_000_000).metadata(COIL_HEAT, hypogen_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -524,7 +581,10 @@ public class DTPFRecipes implements Runnable {
                                         (int) (1000)))
                         .fluidOutputs(
                                 new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 1584),
-                                Materials.DTR.getFluid(1000L / 4))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (1000L / 4)))
                         .duration(1 * MINUTES + 15 * SECONDS).eut(800_000_000).metadata(COIL_HEAT, infinity_heat)
                         .addTo(plasmaForgeRecipes);
             }
@@ -555,7 +615,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_4_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(chromatic_glass.getResidueAmount(3)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (chromatic_glass.getResidueAmount(3))),
                                 new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_4_quantity))
                         .duration(chromatic_glass.getDuration(3)).eut(chromatic_glass.getEUt(3))
                         .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
@@ -572,7 +635,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_3_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(chromatic_glass.getResidueAmount(2)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (chromatic_glass.getResidueAmount(2))),
                                 new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_3_quantity))
                         .duration(chromatic_glass.getDuration(2)).eut(chromatic_glass.getEUt(2))
                         .metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
@@ -589,7 +655,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_2_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(chromatic_glass.getResidueAmount(1)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (chromatic_glass.getResidueAmount(1))),
                                 new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_2_quantity))
                         .duration(chromatic_glass.getDuration(1)).eut(chromatic_glass.getEUt(1))
                         .metadata(COIL_HEAT, infinity_heat).addTo(plasmaForgeRecipes);
@@ -606,7 +675,10 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidMolten,
                                         (int) (tier_1_quantity)))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(chromatic_glass.getResidueAmount(0)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (chromatic_glass.getResidueAmount(0))),
                                 new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_1_quantity))
                         .duration(chromatic_glass.getDuration(0)).eut(chromatic_glass.getEUt(0))
                         .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
@@ -621,7 +693,10 @@ public class DTPFRecipes implements Runnable {
                                 ItemList.EnergisedTesseract.get(1),
                                 GregtechItemList.Compressed_Fusion_Reactor.get(0))
                         .fluidInputs(
-                                Materials.DTR.getFluid(5000L),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (5000L)),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Infinity,
                                         Materials2FluidShapes.fluidMolten,
@@ -637,7 +712,10 @@ public class DTPFRecipes implements Runnable {
                 // V1
                 GTValues.RA.stdBuilder().itemInputs(ItemList.EnergisedTesseract.get(1))
                         .fluidInputs(
-                                Materials.DTR.getFluid(10000L),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (10000L)),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.Infinity,
                                         Materials2FluidShapes.fluidMolten,
@@ -668,8 +746,13 @@ public class DTPFRecipes implements Runnable {
                                         Materials2Materials.ExcitedDTSC,
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (1000)))
-                        .fluidOutputs(Materials.DTR.getFluid(2000)).duration(40 * SECONDS).eut(512_000_000)
-                        .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                        .fluidOutputs(
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (2000)))
+                        .duration(40 * SECONDS).eut(512_000_000).metadata(COIL_HEAT, eternal_heat)
+                        .addTo(plasmaForgeRecipes);
 
                 // V2
                 GTValues.RA.stdBuilder().itemInputs(
@@ -687,8 +770,13 @@ public class DTPFRecipes implements Runnable {
                                         Materials2Materials.ExcitedDTEC,
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (1000)))
-                        .fluidOutputs(Materials.DTR.getFluid(1000)).duration(40 * SECONDS).eut(128_000_000)
-                        .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                        .fluidOutputs(
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (1000)))
+                        .duration(40 * SECONDS).eut(128_000_000).metadata(COIL_HEAT, eternal_heat)
+                        .addTo(plasmaForgeRecipes);
 
                 // V1
                 GTValues.RA.stdBuilder().itemInputs(
@@ -705,18 +793,23 @@ public class DTPFRecipes implements Runnable {
                                         Materials2Materials.ExcitedDTRC,
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (1000)))
-                        .fluidOutputs(Materials.DTR.getFluid(1000 / 2)).duration(40 * SECONDS).eut(32_000_000)
-                        .metadata(COIL_HEAT, infinity_heat).addTo(plasmaForgeRecipes);
+                        .fluidOutputs(
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (1000 / 2)))
+                        .duration(40 * SECONDS).eut(32_000_000).metadata(COIL_HEAT, infinity_heat)
+                        .addTo(plasmaForgeRecipes);
             }
 
             if (Avaritia.isModLoaded()) {
                 if (GalacticraftAmunRa.isModLoaded()) {
                     // TODO: remove for 2.10
-                    GTValues.RA.stdBuilder()
-                            .itemInputs(
-                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 16),
-                                    getModItem(Avaritia.ID, "Resource", 16, 8),
-                                    GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
+                    GTValues.RA.stdBuilder().itemInputs(
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.block, MU.materialOf(Materials2Materials.TranscendentMetal), 16),
+                            getModItem(Avaritia.ID, "Resource", 16, 8),
+                            GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
                             .fluidInputs(
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.ExcitedDTEC,
@@ -729,14 +822,19 @@ public class DTPFRecipes implements Runnable {
                                     GGMaterial.tairitsu.getMolten(16384 * 144),
                                     MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
                             .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14))
-                            .duration(80 * SECONDS).fluidOutputs(Materials.DTR.getFluid(1797693L))
+                            .duration(80 * SECONDS)
+                            .fluidOutputs(
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (1797693L)))
                             .eut(TierEU.RECIPE_UMV).metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
                     // Dark Matter
-                    GTValues.RA.stdBuilder()
-                            .itemInputs(
-                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 16),
-                                    getModItem(Avaritia.ID, "Resource", 16, 8),
-                                    ItemList.StableBosonContainmentUnit.get(0))
+                    GTValues.RA.stdBuilder().itemInputs(
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.block, MU.materialOf(Materials2Materials.TranscendentMetal), 16),
+                            getModItem(Avaritia.ID, "Resource", 16, 8),
+                            ItemList.StableBosonContainmentUnit.get(0))
                             .fluidInputs(
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.ExcitedDTEC,
@@ -749,7 +847,12 @@ public class DTPFRecipes implements Runnable {
                                     GGMaterial.tairitsu.getMolten(16384 * 144),
                                     MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
                             .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14))
-                            .duration(80 * SECONDS).fluidOutputs(Materials.DTR.getFluid(1797693L))
+                            .duration(80 * SECONDS)
+                            .fluidOutputs(
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (1797693L)))
                             .eut(TierEU.RECIPE_UMV).metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
                 }
 
@@ -771,7 +874,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2FluidShapes.fluidLiquid,
                                             (int) (infinity.getCatalystAmount(4))))
                             .fluidOutputs(
-                                    Materials.DTR.getFluid(infinity.getResidueAmount(4)),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (infinity.getResidueAmount(4))),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.Infinity,
                                             Materials2FluidShapes.fluidMolten,
@@ -787,7 +893,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2FluidShapes.fluidLiquid,
                                             (int) (infinity.getCatalystAmount(3))))
                             .fluidOutputs(
-                                    Materials.DTR.getFluid(infinity.getResidueAmount(3)),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (infinity.getResidueAmount(3))),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.Infinity,
                                             Materials2FluidShapes.fluidMolten,
@@ -803,7 +912,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2FluidShapes.fluidLiquid,
                                             (int) (infinity.getCatalystAmount(2) / 64)))
                             .fluidOutputs(
-                                    Materials.DTR.getFluid(infinity.getResidueAmount(2) / 64),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (infinity.getResidueAmount(2) / 64)),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.Infinity,
                                             Materials2FluidShapes.fluidMolten,
@@ -819,7 +931,10 @@ public class DTPFRecipes implements Runnable {
                                             Materials2FluidShapes.fluidLiquid,
                                             (int) (infinity.getCatalystAmount(2))))
                             .fluidOutputs(
-                                    Materials.DTR.getFluid(infinity.getResidueAmount(2)),
+                                    MaterialLibAPI.getFluidStack(
+                                            Materials2Materials.DimensionallyTranscendentResidue,
+                                            Materials2FluidShapes.fluidLiquid,
+                                            (int) (infinity.getResidueAmount(2))),
                                     MaterialLibAPI.getFluidStack(
                                             Materials2Materials.Infinity,
                                             Materials2FluidShapes.fluidMolten,
@@ -845,7 +960,10 @@ public class DTPFRecipes implements Runnable {
                                                 Materials2FluidShapes.fluidLiquid,
                                                 (int) (infinity_bee.getCatalystAmount(4))))
                                 .fluidOutputs(
-                                        Materials.DTR.getFluid(infinity_bee.getResidueAmount(4)),
+                                        MaterialLibAPI.getFluidStack(
+                                                Materials2Materials.DimensionallyTranscendentResidue,
+                                                Materials2FluidShapes.fluidLiquid,
+                                                (int) (infinity_bee.getResidueAmount(4))),
                                         MaterialLibAPI.getFluidStack(
                                                 Materials2Materials.Infinity,
                                                 Materials2FluidShapes.fluidMolten,
@@ -865,7 +983,10 @@ public class DTPFRecipes implements Runnable {
                                                 Materials2FluidShapes.fluidLiquid,
                                                 (int) (infinity_bee.getCatalystAmount(3))))
                                 .fluidOutputs(
-                                        Materials.DTR.getFluid(infinity_bee.getResidueAmount(3)),
+                                        MaterialLibAPI.getFluidStack(
+                                                Materials2Materials.DimensionallyTranscendentResidue,
+                                                Materials2FluidShapes.fluidLiquid,
+                                                (int) (infinity_bee.getResidueAmount(3))),
                                         MaterialLibAPI.getFluidStack(
                                                 Materials2Materials.Infinity,
                                                 Materials2FluidShapes.fluidMolten,
@@ -885,7 +1006,10 @@ public class DTPFRecipes implements Runnable {
                                                 Materials2FluidShapes.fluidLiquid,
                                                 (int) (infinity_bee.getCatalystAmount(2))))
                                 .fluidOutputs(
-                                        Materials.DTR.getFluid(infinity_bee.getResidueAmount(2)),
+                                        MaterialLibAPI.getFluidStack(
+                                                Materials2Materials.DimensionallyTranscendentResidue,
+                                                Materials2FluidShapes.fluidLiquid,
+                                                (int) (infinity_bee.getResidueAmount(2))),
                                         MaterialLibAPI.getFluidStack(
                                                 Materials2Materials.Infinity,
                                                 Materials2FluidShapes.fluidMolten,
@@ -905,7 +1029,10 @@ public class DTPFRecipes implements Runnable {
                                                 Materials2FluidShapes.fluidLiquid,
                                                 (int) (infinity_bee.getCatalystAmount(2) / 64)))
                                 .fluidOutputs(
-                                        Materials.DTR.getFluid(infinity_bee.getResidueAmount(2) / 64),
+                                        MaterialLibAPI.getFluidStack(
+                                                Materials2Materials.DimensionallyTranscendentResidue,
+                                                Materials2FluidShapes.fluidLiquid,
+                                                (int) (infinity_bee.getResidueAmount(2) / 64)),
                                         MaterialLibAPI.getFluidStack(
                                                 Materials2Materials.Infinity,
                                                 Materials2FluidShapes.fluidMolten,
@@ -930,7 +1057,8 @@ public class DTPFRecipes implements Runnable {
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
 
                 DTPFCalculator baseLuV = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .calculateGenericEBFBasedRecipe(Materials.SuperconductorLuVBase);
+                        .calculateGenericEBFBasedRecipe(
+                                Materials2Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid);
 
                 // Tier 4
                 GTValues.RA.stdBuilder().circuit(6)
@@ -964,8 +1092,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseLuV.getCatalystAmount(3))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseLuV.getResidueAmount(3)),
-                                Materials.SuperconductorLuVBase.getMolten(tier_4_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseLuV.getResidueAmount(3))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_4_quantity)))
                         .duration(baseLuV.getDuration(3)).eut(baseLuV.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1001,8 +1135,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseLuV.getCatalystAmount(2))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseLuV.getResidueAmount(2)),
-                                Materials.SuperconductorLuVBase.getMolten(tier_3_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseLuV.getResidueAmount(2))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_3_quantity)))
                         .duration(baseLuV.getDuration(2)).eut(baseLuV.getEUt(2)).metadata(COIL_HEAT, hypogen_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1038,8 +1178,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseLuV.getCatalystAmount(1))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseLuV.getResidueAmount(1)),
-                                Materials.SuperconductorLuVBase.getMolten(tier_2_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseLuV.getResidueAmount(1))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_2_quantity)))
                         .duration(baseLuV.getDuration(1)).eut(baseLuV.getEUt(1)).metadata(COIL_HEAT, infinity_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1075,8 +1221,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseLuV.getCatalystAmount(0))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseLuV.getResidueAmount(0)),
-                                Materials.SuperconductorLuVBase.getMolten(tier_1_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseLuV.getResidueAmount(0))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_1_quantity)))
                         .duration(baseLuV.getDuration(0)).eut(baseLuV.getEUt(0)).metadata(COIL_HEAT, awakened_heat)
                         .addTo(plasmaForgeRecipes);
             }
@@ -1093,7 +1245,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
 
                 DTPFCalculator baseZPM = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .calculateGenericEBFBasedRecipe(Materials.SuperconductorZPMBase);
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.Tetranaquadahdiindiumhexaplatiumosminid);
 
                 // Tier 4
                 GTValues.RA.stdBuilder()
@@ -1119,8 +1271,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseZPM.getCatalystAmount(3))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseZPM.getResidueAmount(3)),
-                                Materials.SuperconductorZPMBase.getMolten(tier_4_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseZPM.getResidueAmount(3))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Tetranaquadahdiindiumhexaplatiumosminid,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_4_quantity)))
                         .duration(baseZPM.getDuration(3)).eut(baseZPM.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1148,8 +1306,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseZPM.getCatalystAmount(2))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseZPM.getResidueAmount(2)),
-                                Materials.SuperconductorZPMBase.getMolten(tier_3_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseZPM.getResidueAmount(2))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Tetranaquadahdiindiumhexaplatiumosminid,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_3_quantity)))
                         .duration(baseZPM.getDuration(2)).eut(baseZPM.getEUt(2)).metadata(COIL_HEAT, hypogen_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1177,8 +1341,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseZPM.getCatalystAmount(1))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseZPM.getResidueAmount(1)),
-                                Materials.SuperconductorZPMBase.getMolten(tier_2_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseZPM.getResidueAmount(1))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Tetranaquadahdiindiumhexaplatiumosminid,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_2_quantity)))
                         .duration(baseZPM.getDuration(1)).eut(baseZPM.getEUt(1)).metadata(COIL_HEAT, infinity_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1206,8 +1376,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseZPM.getCatalystAmount(0))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseZPM.getResidueAmount(0)),
-                                Materials.SuperconductorZPMBase.getMolten(tier_1_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseZPM.getResidueAmount(0))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Tetranaquadahdiindiumhexaplatiumosminid,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_1_quantity)))
                         .duration(baseZPM.getDuration(0)).eut(baseZPM.getEUt(0)).metadata(COIL_HEAT, awakened_heat)
                         .addTo(plasmaForgeRecipes);
             }
@@ -1224,7 +1400,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
 
                 DTPFCalculator baseUV = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .calculateGenericEBFBasedRecipe(Materials.SuperconductorUVBase);
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.Longasssuperconductornameforuvwire);
 
                 // Tier 4
                 GTValues.RA.stdBuilder()
@@ -1250,8 +1426,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseUV.getCatalystAmount(3))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUV.getResidueAmount(3)),
-                                Materials.SuperconductorUVBase.getMolten(tier_4_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUV.getResidueAmount(3))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Longasssuperconductornameforuvwire,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_4_quantity)))
                         .duration(baseUV.getDuration(3)).eut(baseUV.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1279,8 +1461,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseUV.getCatalystAmount(2))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUV.getResidueAmount(2)),
-                                Materials.SuperconductorUVBase.getMolten(tier_3_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUV.getResidueAmount(2))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Longasssuperconductornameforuvwire,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_3_quantity)))
                         .duration(baseUV.getDuration(2)).eut(baseUV.getEUt(2)).metadata(COIL_HEAT, hypogen_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1308,8 +1496,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseUV.getCatalystAmount(1))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUV.getResidueAmount(1)),
-                                Materials.SuperconductorUVBase.getMolten(tier_2_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUV.getResidueAmount(1))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Longasssuperconductornameforuvwire,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_2_quantity)))
                         .duration(baseUV.getDuration(1)).eut(baseUV.getEUt(1)).metadata(COIL_HEAT, infinity_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1337,8 +1531,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseUV.getCatalystAmount(0))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUV.getResidueAmount(0)),
-                                Materials.SuperconductorUVBase.getMolten(tier_1_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUV.getResidueAmount(0))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Longasssuperconductornameforuvwire,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_1_quantity)))
                         .duration(baseUV.getDuration(0)).eut(baseUV.getEUt(0)).metadata(COIL_HEAT, awakened_heat)
                         .addTo(plasmaForgeRecipes);
             }
@@ -1355,7 +1555,8 @@ public class DTPFRecipes implements Runnable {
                 long tier_5_quantity = tier_4_quantity * tier_up_multiplier;
 
                 DTPFCalculator baseUHV = new DTPFCalculator().setBaseParallel(base_quantity).setLowestCatalystTier(1)
-                        .setHighestCatalystTier(4).calculateGenericEBFBasedRecipe(Materials.SuperconductorUHVBase);
+                        .setHighestCatalystTier(4)
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.Longasssuperconductornameforuhvwire);
 
                 // Tier 5
                 GTValues.RA.stdBuilder()
@@ -1381,8 +1582,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseUHV.getCatalystAmount(4))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUHV.getResidueAmount(4)),
-                                Materials.SuperconductorUHVBase.getMolten(tier_5_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUHV.getResidueAmount(4))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Longasssuperconductornameforuhvwire,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_5_quantity)))
                         .duration(baseUHV.getDuration(4)).eut(baseUHV.getEUt(4)).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1410,8 +1617,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseUHV.getCatalystAmount(3))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUHV.getResidueAmount(3)),
-                                Materials.SuperconductorUHVBase.getMolten(tier_4_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUHV.getResidueAmount(3))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Longasssuperconductornameforuhvwire,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_4_quantity)))
                         .duration(baseUHV.getDuration(3)).eut(baseUHV.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1439,8 +1652,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseUHV.getCatalystAmount(2))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUHV.getResidueAmount(2)),
-                                Materials.SuperconductorUHVBase.getMolten(tier_3_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUHV.getResidueAmount(2))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Longasssuperconductornameforuhvwire,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_3_quantity)))
                         .duration(baseUHV.getDuration(2)).eut(baseUHV.getEUt(2)).metadata(COIL_HEAT, hypogen_heat)
                         .addTo(plasmaForgeRecipes);
 
@@ -1468,8 +1687,14 @@ public class DTPFRecipes implements Runnable {
                                         Materials2FluidShapes.fluidLiquid,
                                         (int) (baseUHV.getCatalystAmount(1))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUHV.getResidueAmount(1)),
-                                Materials.SuperconductorUHVBase.getMolten(tier_2_quantity))
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUHV.getResidueAmount(1))),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.Longasssuperconductornameforuhvwire,
+                                        Materials2FluidShapes.fluidMolten,
+                                        (int) (tier_2_quantity)))
                         .duration(baseUHV.getDuration(1)).eut(baseUHV.getEUt(1)).metadata(COIL_HEAT, infinity_heat)
                         .addTo(plasmaForgeRecipes);
             }
@@ -1485,7 +1710,8 @@ public class DTPFRecipes implements Runnable {
                 long tier_5_quantity = tier_4_quantity * tier_up_multiplier;
 
                 DTPFCalculator baseUEV = new DTPFCalculator().setBaseParallel(base_quantity).setLowestCatalystTier(2)
-                        .setHighestCatalystTier(4).calculateGenericEBFBasedRecipe(Materials.SuperconductorUEVBase);
+                        .setHighestCatalystTier(4)
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.SuperconductorUEVBase);
 
                 // Tier 5
                 GTValues.RA.stdBuilder().fluidInputs(
@@ -1508,7 +1734,10 @@ public class DTPFRecipes implements Runnable {
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (baseUEV.getCatalystAmount(4))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUEV.getResidueAmount(4)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUEV.getResidueAmount(4))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.SuperconductorUEVBase,
                                         Materials2FluidShapes.fluidMolten,
@@ -1537,7 +1766,10 @@ public class DTPFRecipes implements Runnable {
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (baseUEV.getCatalystAmount(3))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUEV.getResidueAmount(3)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUEV.getResidueAmount(3))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.SuperconductorUEVBase,
                                         Materials2FluidShapes.fluidMolten,
@@ -1566,7 +1798,10 @@ public class DTPFRecipes implements Runnable {
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (baseUEV.getCatalystAmount(2))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUEV.getResidueAmount(2)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUEV.getResidueAmount(2))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.SuperconductorUEVBase,
                                         Materials2FluidShapes.fluidMolten,
@@ -1586,11 +1821,15 @@ public class DTPFRecipes implements Runnable {
                 long tier_5_quantity = tier_4_quantity * tier_up_multiplier;
 
                 DTPFCalculator baseUIV = new DTPFCalculator().setBaseParallel(base_quantity).setLowestCatalystTier(2)
-                        .setHighestCatalystTier(4).calculateGenericEBFBasedRecipe(Materials.SuperconductorUIVBase);
+                        .setHighestCatalystTier(4)
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.SuperconductorUIVBase);
 
                 // Tier 5
                 GTValues.RA.stdBuilder().fluidInputs(
-                        Materials.RadoxPolymer.getMolten(4L * tier_5_quantity / 25),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.RadoxPoly,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (4L * tier_5_quantity / 25)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.TranscendentMetal,
                                 Materials2FluidShapes.fluidMolten,
@@ -1606,7 +1845,10 @@ public class DTPFRecipes implements Runnable {
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (baseUIV.getCatalystAmount(4))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUIV.getResidueAmount(4)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUIV.getResidueAmount(4))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.SuperconductorUIVBase,
                                         Materials2FluidShapes.fluidMolten,
@@ -1616,7 +1858,10 @@ public class DTPFRecipes implements Runnable {
 
                 // Tier 4
                 GTValues.RA.stdBuilder().fluidInputs(
-                        Materials.RadoxPolymer.getMolten(4L * tier_4_quantity / 25),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.RadoxPoly,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (4L * tier_4_quantity / 25)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.TranscendentMetal,
                                 Materials2FluidShapes.fluidMolten,
@@ -1632,7 +1877,10 @@ public class DTPFRecipes implements Runnable {
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (baseUIV.getCatalystAmount(3))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUIV.getResidueAmount(3)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUIV.getResidueAmount(3))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.SuperconductorUIVBase,
                                         Materials2FluidShapes.fluidMolten,
@@ -1642,7 +1890,10 @@ public class DTPFRecipes implements Runnable {
 
                 // Tier 3
                 GTValues.RA.stdBuilder().fluidInputs(
-                        Materials.RadoxPolymer.getMolten(4L * tier_3_quantity / 25),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.RadoxPoly,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (4L * tier_3_quantity / 25)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.TranscendentMetal,
                                 Materials2FluidShapes.fluidMolten,
@@ -1658,7 +1909,10 @@ public class DTPFRecipes implements Runnable {
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (baseUIV.getCatalystAmount(2))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUIV.getResidueAmount(2)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUIV.getResidueAmount(2))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.SuperconductorUIVBase,
                                         Materials2FluidShapes.fluidMolten,
@@ -1677,7 +1931,8 @@ public class DTPFRecipes implements Runnable {
                 long tier_5_quantity = tier_4_quantity * tier_up_multiplier;
 
                 DTPFCalculator baseUMV = new DTPFCalculator().setBaseParallel(base_quantity).setLowestCatalystTier(3)
-                        .setHighestCatalystTier(4).calculateGenericEBFBasedRecipe(Materials.SuperconductorUMVBase);
+                        .setHighestCatalystTier(4)
+                        .calculateGenericEBFBasedRecipe(Materials2Materials.SuperconductorUMVBase);
 
                 // Tier 5
                 GTValues.RA.stdBuilder().fluidInputs(
@@ -1698,7 +1953,10 @@ public class DTPFRecipes implements Runnable {
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (baseUMV.getCatalystAmount(4))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUMV.getResidueAmount(4)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUMV.getResidueAmount(4))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.SuperconductorUMVBase,
                                         Materials2FluidShapes.fluidMolten,
@@ -1725,7 +1983,10 @@ public class DTPFRecipes implements Runnable {
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (baseUMV.getCatalystAmount(3))))
                         .fluidOutputs(
-                                Materials.DTR.getFluid(baseUMV.getResidueAmount(3)),
+                                MaterialLibAPI.getFluidStack(
+                                        Materials2Materials.DimensionallyTranscendentResidue,
+                                        Materials2FluidShapes.fluidLiquid,
+                                        (int) (baseUMV.getResidueAmount(3))),
                                 MaterialLibAPI.getFluidStack(
                                         Materials2Materials.SuperconductorUMVBase,
                                         Materials2FluidShapes.fluidMolten,
@@ -1745,7 +2006,8 @@ public class DTPFRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(ItemList.Tesseract.get(32), GTOreDictUnificator.get("blockCosmicNeutronium", 40))
                     .itemOutputs(
-                            Materials.TranscendentMetal.getBlocks(40),
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.block, MU.materialOf(Materials2Materials.TranscendentMetal), 40),
                             MaterialLibAPI
                                     .getStack(Materials2Materials.TranscendentMetal, Materials2Shapes.dust, (int) (24)))
                     .fluidInputs(
@@ -1767,7 +2029,10 @@ public class DTPFRecipes implements Runnable {
                                     Materials2FluidShapes.fluidLiquid,
                                     (int) (transcendent_metal.getCatalystAmount(4))))
                     .fluidOutputs(
-                            Materials.DTR.getFluid(transcendent_metal.getResidueAmount(4)),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.DimensionallyTranscendentResidue,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (transcendent_metal.getResidueAmount(4))),
                             MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144 * 20 * 9))
                     .duration(transcendent_metal.getDuration(4)).eut(transcendent_metal.getEUt(4))
                     .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
@@ -1818,7 +2083,10 @@ public class DTPFRecipes implements Runnable {
                                     Materials2FluidShapes.fluidLiquid,
                                     (int) (quantum.getCatalystAmount(3))))
                     .fluidOutputs(
-                            Materials.DTR.getFluid(quantum.getResidueAmount(3)),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.DimensionallyTranscendentResidue,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (quantum.getResidueAmount(3))),
                             MaterialsAlloy.QUANTUM.getFluidStack(144 * 320))
                     .duration(quantum.getDuration(3)).eut(quantum.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
                     .addTo(plasmaForgeRecipes);
@@ -1850,7 +2118,10 @@ public class DTPFRecipes implements Runnable {
                                     Materials2FluidShapes.fluidLiquid,
                                     (int) (quantum.getCatalystAmount(4))))
                     .fluidOutputs(
-                            Materials.DTR.getFluid(quantum.getResidueAmount(4)),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.DimensionallyTranscendentResidue,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (quantum.getResidueAmount(4))),
                             MaterialsAlloy.QUANTUM.getFluidStack(144 * 640))
                     .duration(quantum.getDuration(4)).eut(quantum.getEUt(4)).metadata(COIL_HEAT, eternal_heat)
                     .addTo(plasmaForgeRecipes);
@@ -1862,15 +2133,27 @@ public class DTPFRecipes implements Runnable {
                             MaterialLibAPI
                                     .getStack(Materials2Materials.DarkIron, Materials2Shapes.plateDense, (int) (1L)),
                             MaterialLibAPI.getStack(Materials2Materials.Dilithium, Materials2Shapes.gem, (int) (32)),
-                            Materials.Universium.getNanite(1))
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Universium), 1))
                     .itemOutputs(ItemList.Timepiece.get(3))
                     .fluidInputs(
-                            Materials.Time.getMolten(18432L * 8),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.temporalFluid,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (18432L * 8)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.ExcitedDTSC,
                                     Materials2FluidShapes.fluidLiquid,
                                     (int) (100000L)))
-                    .fluidOutputs(Materials.DTR.getFluid(100000L * 2), Materials.Space.getMolten(18432L * 8))
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.DimensionallyTranscendentResidue,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (100000L * 2)),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.spatialFluid,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (18432L * 8)))
                     .duration(80 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500).addTo(plasmaForgeRecipes);
 
             // Time to Space
@@ -1881,7 +2164,10 @@ public class DTPFRecipes implements Runnable {
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(16)).itemOutputs(ItemList.Tesseract.get(1))
                     .fluidInputs(
-                            Materials.Time.getMolten(9216L * 64),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.temporalFluid,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (9216L * 64)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.SpaceTime,
                                     Materials2FluidShapes.fluidMolten,
@@ -1890,7 +2176,15 @@ public class DTPFRecipes implements Runnable {
                                     Materials2Materials.ExcitedDTSC,
                                     Materials2FluidShapes.fluidLiquid,
                                     (int) (1000L)))
-                    .fluidOutputs(Materials.DTR.getFluid(1000L * 2), Materials.Space.getMolten(9216L * 64))
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.DimensionallyTranscendentResidue,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (1000L * 2)),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.spatialFluid,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (9216L * 64)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500).addTo(plasmaForgeRecipes);
 
             // Space to Time
@@ -1900,7 +2194,10 @@ public class DTPFRecipes implements Runnable {
                     ItemList.EnergisedTesseract.get(2),
                     ItemList.Timepiece.get(16)).itemOutputs(ItemList.Tesseract.get(1))
                     .fluidInputs(
-                            Materials.Space.getMolten(9216L * 64),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.spatialFluid,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (9216L * 64)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.SpaceTime,
                                     Materials2FluidShapes.fluidMolten,
@@ -1909,7 +2206,15 @@ public class DTPFRecipes implements Runnable {
                                     Materials2Materials.ExcitedDTSC,
                                     Materials2FluidShapes.fluidLiquid,
                                     (int) (1000L)))
-                    .fluidOutputs(Materials.DTR.getFluid(1000L * 2), Materials.Time.getMolten(9216L * 64))
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.DimensionallyTranscendentResidue,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (1000L * 2)),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.temporalFluid,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (9216L * 64)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500).addTo(plasmaForgeRecipes);
 
             // Quantum anomaly
@@ -1929,8 +2234,12 @@ public class DTPFRecipes implements Runnable {
                                     Materials2FluidShapes.fluidMolten,
                                     (int) (144)))
                     .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
-                    .fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
-                    .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.DimensionallyTranscendentResidue,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (92)))
+                    .eut((int) TierEU.RECIPE_UIV).metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
             // TODO: remove this old recipe Quantum anomaly
             GTValues.RA.stdBuilder()
@@ -1949,8 +2258,12 @@ public class DTPFRecipes implements Runnable {
                                     Materials2FluidShapes.fluidMolten,
                                     (int) (144)))
                     .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
-                    .fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
-                    .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.DimensionallyTranscendentResidue,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (92)))
+                    .eut((int) TierEU.RECIPE_UIV).metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
         }
     }

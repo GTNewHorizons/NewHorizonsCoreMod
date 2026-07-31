@@ -17,7 +17,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
@@ -50,8 +49,12 @@ public class ArcFurnaceRecipes implements Runnable {
                                 Materials2Materials.ExcitedDTEC,
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (1000L)))
-                .fluidOutputs(Materials.DTR.getFluid(50L)).duration(15 * SECONDS).eut(TierEU.RECIPE_UEV / 2)
-                .addTo(arcFurnaceRecipes);
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.DimensionallyTranscendentResidue,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (50L)))
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV / 2).addTo(arcFurnaceRecipes);
 
         if (GalacticraftAmunRa.isModLoaded()) {
             // Zero Point Module recycling

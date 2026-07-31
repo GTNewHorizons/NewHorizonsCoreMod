@@ -10,13 +10,13 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2CellShapes;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ElectrolyzerRecipes implements Runnable {
@@ -31,24 +31,24 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.dust, (int) (1L)),
                             MaterialLibAPI.getStack(Materials2Materials.Helium, Materials2CellShapes.cell, (int) (1)))
-                    .fluidOutputs(Materials.Helium3.getGas(100)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(electrolyzerRecipes);
+                    .fluidOutputs(MU.materialOf(Materials2Materials.Helium3).getGas(100)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(electrolyzerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(ItemList.Cell_Empty.get(1), getModItem(TwilightForest.ID, "tile.AuroraPillar", 1, 0))
                     .itemOutputs(
                             MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.dust, (int) (1L)),
                             MaterialLibAPI.getStack(Materials2Materials.Helium, Materials2CellShapes.cell, (int) (1)))
-                    .fluidOutputs(Materials.Helium3.getGas(200)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(electrolyzerRecipes);
+                    .fluidOutputs(MU.materialOf(Materials2Materials.Helium3).getGas(200)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(electrolyzerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(ItemList.Cell_Empty.get(1), getModItem(TwilightForest.ID, "tile.AuroraSlab", 2, 0))
                     .itemOutputs(
                             MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.dust, (int) (1L)),
                             MaterialLibAPI.getStack(Materials2Materials.Helium, Materials2CellShapes.cell, (int) (1)))
-                    .fluidOutputs(Materials.Helium3.getGas(50)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(electrolyzerRecipes);
+                    .fluidOutputs(MU.materialOf(Materials2Materials.Helium3).getGas(50)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(electrolyzerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -57,13 +57,14 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.dust, (int) (1L)),
                             MaterialLibAPI.getStack(Materials2Materials.Helium, Materials2CellShapes.cell, (int) (1)))
-                    .fluidOutputs(Materials.Helium3.getGas(100)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(electrolyzerRecipes);
+                    .fluidOutputs(MU.materialOf(Materials2Materials.Helium3).getGas(100)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(electrolyzerRecipes);
         }
         // Ore Processing related to alumina and silicon dioxide
         // Alumina
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)))
                 .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dust, (int) (2L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -100,7 +101,7 @@ public class ElectrolyzerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Brick, Materials2Shapes.dust, (int) (17L)))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (12L)))
                 .duration(54 * SECONDS + 12 * TICKS).eut(10).addTo(electrolyzerRecipes);
         // Jade
@@ -109,7 +110,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Jade, Materials2Shapes.dust, (int) (20L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Sodium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (12L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -123,7 +124,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Almandine, Materials2Shapes.dust, (int) (20L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (9L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -138,7 +139,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.Kaolinite, Materials2Shapes.dust, (int) (17L)),
                         ItemList.Cell_Empty.get(2L))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (6L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (2L)))
                 .fluidOutputs(
@@ -152,7 +153,7 @@ public class ElectrolyzerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Kyanite, Materials2Shapes.dust, (int) (8L)))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (3L)))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(electrolyzerRecipes);
         // Spodumene
@@ -161,7 +162,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Spodumene, Materials2Shapes.dust, (int) (20L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Lithium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (12L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -176,7 +177,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.BlueTopaz, Materials2Shapes.dust, (int) (13L)),
                         ItemList.Cell_Empty.get(3L))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (3L)),
                         MaterialLibAPI.getStack(Materials2Materials.Hydrogen, Materials2CellShapes.cell, (int) (2L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (1L)))
@@ -193,7 +194,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.Topaz, Materials2Shapes.dust, (int) (13L)),
                         ItemList.Cell_Empty.get(3L))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (3L)),
                         MaterialLibAPI.getStack(Materials2Materials.Hydrogen, Materials2CellShapes.cell, (int) (2L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (1L)))
@@ -210,17 +211,17 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Sodium, Materials2Shapes.dust, (int) (2L)),
                         MaterialLibAPI.getStack(Materials2Materials.Lithium, Materials2Shapes.dust, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (6L)))
-                .fluidOutputs(Materials.Water.getFluid(2000L)).duration(8 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(electrolyzerRecipes);
+                .fluidOutputs(MU.materialOf(Materials2Materials.Water).getFluid(2000L)).duration(8 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
         // Emerald
 
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Emerald, Materials2Shapes.dust, (int) (29L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Beryllium, Materials2Shapes.dust, (int) (3L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (18L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -234,7 +235,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Grossular, Materials2Shapes.dust, (int) (20L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Calcium, Materials2Shapes.dust, (int) (3L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (9L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -248,7 +249,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Pyrope, Materials2Shapes.dust, (int) (20L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Magnesia, Materials2Shapes.dust, (int) (6L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (9L)))
                 .duration(20 * SECONDS).eut(90).addTo(electrolyzerRecipes);
         // Ruby
@@ -257,7 +258,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Ruby, Materials2Shapes.dust, (int) (6L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Chrome, Materials2Shapes.dust, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L))
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)))
                 .duration(7 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_MV / 2).addTo(electrolyzerRecipes);
         // Spessartine
 
@@ -266,7 +267,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.Spessartine, Materials2Shapes.dust, (int) (20L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Manganese, Materials2Shapes.dust, (int) (3L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (9L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -282,7 +283,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         ItemList.Cell_Empty.get(5L))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Calcium, Materials2Shapes.dust, (int) (4L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (15L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (18L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (5L)))
                 .fluidOutputs(
@@ -297,7 +298,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials2Materials.PotassiumFeldspar, Materials2Shapes.dust, (int) (26L)))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (18L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -314,7 +315,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dust, (int) (2L)),
                         MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (6L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (15L)),
                         MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (6L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (11L)))
                 .fluidOutputs(
@@ -330,7 +331,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI
                                 .getStack(Materials2Materials.PotassiumFeldspar, Materials2Shapes.dust, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L))
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)))
                 .duration(6 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(electrolyzerRecipes);
         // Pollucite
 
@@ -340,11 +341,11 @@ public class ElectrolyzerRecipes implements Runnable {
                         ItemList.Cell_Empty.get(1L))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Caesium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (12L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (1L)))
-                .fluidOutputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
-                .addTo(electrolyzerRecipes);
+                .fluidOutputs(MU.materialOf(Materials2Materials.Water).getFluid(2000L))
+                .duration(10 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
         // Lepidolite
 
         GTValues.RA.stdBuilder()
@@ -354,7 +355,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.Lithium, Materials2Shapes.dust, (int) (3L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (10L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (4L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -371,7 +372,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (10L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (6L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -388,7 +389,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (10L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (6L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -405,9 +406,9 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
                         MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (3L)),
-                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Water, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.cell, MU.materialOf(Materials2Materials.Water), 4L))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Oxygen,
@@ -421,7 +422,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.Magnesium, Materials2Shapes.dust, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (5L)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
@@ -437,7 +438,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         ItemList.Cell_Empty.get(1L))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 20L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (20L)),
                         MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (4L)),
                         MaterialLibAPI.getStack(Materials2Materials.Hydrogen, Materials2CellShapes.cell, (int) (1L)))
@@ -505,12 +506,12 @@ public class ElectrolyzerRecipes implements Runnable {
                         ItemList.Cell_Empty.get(8L))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (10L)),
                         MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (4L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (6L)),
                         MaterialLibAPI.getStack(Materials2Materials.Hydrogen, Materials2CellShapes.cell, (int) (2L)))
-                .fluidOutputs(Materials.Water.getFluid(4000L)).duration(21 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(electrolyzerRecipes);
+                .fluidOutputs(MU.materialOf(Materials2Materials.Water).getFluid(4000L)).duration(21 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
         // Mica
 
         GTValues.RA.stdBuilder()
@@ -519,7 +520,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         ItemList.Cell_Empty.get(11L))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (15L)),
                         MaterialLibAPI.getStack(Materials2Materials.Silicon, Materials2Shapes.dust, (int) (6L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (11L)))
                 .fluidOutputs(
@@ -536,7 +537,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         ItemList.Cell_Empty.get(11L))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Potassium, Materials2Shapes.dust, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
+                        MaterialLibAPI.getStack(Materials2Materials.Alumina, Materials2Shapes.dust, (int) (15L)),
                         MaterialLibAPI.getStack(Materials2Materials.SiliconDioxide, Materials2Shapes.dust, (int) (12L)),
                         MaterialLibAPI.getStack(Materials2Materials.Oxygen, Materials2CellShapes.cell, (int) (11L)))
                 .fluidOutputs(

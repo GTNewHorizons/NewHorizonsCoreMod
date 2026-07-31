@@ -18,7 +18,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
@@ -100,7 +99,11 @@ public class FluidExtractorRecipes implements Runnable {
 
         if (GalacticraftAmunRa.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.wood1", 8, 1))
-                    .fluidOutputs(Materials.LumipodExtract.getFluid(250))
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.BrightLumipodExtract,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (250)))
 
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(fluidExtractionRecipes);
         }

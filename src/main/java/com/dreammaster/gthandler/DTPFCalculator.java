@@ -8,12 +8,14 @@ import java.util.Collection;
 
 import net.minecraft.item.ItemStack;
 
+import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
@@ -52,7 +54,7 @@ public class DTPFCalculator {
      * 
      * @param material The material to generate dtpf recipes for
      */
-    public DTPFCalculator calculateGenericEBFBasedRecipe(Materials material) {
+    public DTPFCalculator calculateGenericEBFBasedRecipe(Material material) {
         determineEBFParams(material);
         determineFreezerParams(material);
         calculateBaseDTPFPowerConsumption();
@@ -79,9 +81,9 @@ public class DTPFCalculator {
     /**
      * Finds the material's respective EBF recipe and calculates what it would look like when using Oganesson.
      */
-    private void determineEBFParams(Materials material) {
+    private void determineEBFParams(Material material) {
         ArrayList<GTRecipe> foundEBFRecipes = new ArrayList<>();
-        ItemStack input = material.getDust(1);
+        ItemStack input = MaterialLibAPI.getStack(material, Materials2Shapes.dust, 1);
         if (customInput != null) {
             input = customInput;
         }
@@ -110,11 +112,12 @@ public class DTPFCalculator {
     /**
      * Finds the material's respective vacuum freezer recipe.
      */
-    private void determineFreezerParams(Materials material) {
+    private void determineFreezerParams(Material material) {
         // Find correct freezer recipe
         for (GTRecipe recipe : freezerRecipes) {
-            if (recipe.mInputs.length != 0 && GTUtility
-                    .areStacksEqual(GTOreDictUnificator.get(OrePrefixes.ingotHot, material, 1L), recipe.mInputs[0])) {
+            if (recipe.mInputs.length != 0 && GTUtility.areStacksEqual(
+                    GTOreDictUnificator.get(OrePrefixes.ingotHot, MU.materialOf(material), 1L),
+                    recipe.mInputs[0])) {
                 // There's only one freezer recipe per material
                 freezerDuration = recipe.mDuration;
                 freezerEUpertick = recipe.mEUt;
