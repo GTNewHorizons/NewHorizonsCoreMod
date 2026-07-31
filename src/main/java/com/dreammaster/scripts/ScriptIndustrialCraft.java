@@ -55,6 +55,7 @@ import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials2.Materials2CellShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -629,7 +630,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwIron",
                 "craftingToolSaw",
                 "pipeSmallSteel",
-                Materials.Empty.getCells(1),
+                GTOreDictUnificator.get(OrePrefixes.cell, MU.materialOf(Materials2Materials.Empty), 1),
                 "screwIron",
                 getModItem(Minecraft.ID, "stone_button", 1, 0),
                 "circuitBasic");
@@ -1099,31 +1100,31 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_MV_LV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Tin), 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_HV_MV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Copper, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Copper), 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_EV_HV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, MU.materialOf(Materials2Materials.Gold), 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_IV_EV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Steel, 2L))
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, MU.materialOf(Materials2Materials.Steel), 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 6)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.SteelMagnetic, Materials2Shapes.stick, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 16L))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Copper), 16L))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1134,19 +1135,19 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Wood, 3L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Wood), 3L),
                         MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.screw, (int) (1L)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemTreetap", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Wood, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockScaffold", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Iron), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockIronScaffold", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1172,7 +1173,9 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRemote", 1, 0)).duration(1 * MINUTES).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(Circuits.LV.get(1), GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Silver, 2L))
+                .itemInputs(
+                        Circuits.LV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, MU.materialOf(Materials2Materials.Silver), 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1 * MINUTES).eut(4)
                 .addTo(assemblerRecipes);
@@ -1282,8 +1285,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTOreDictUnificator.addItemData(
                 ItemList.Block_ReinforcedConcrete.get(1L),
                 new ItemData(
-                        new ItemData(Materials.Steel, 2 * GTValues.M),
-                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+                        new ItemData(MU.materialOf(Materials2Materials.Steel), 2 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Concrete), 1 * GTValues.M)));
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0),
@@ -1305,14 +1308,14 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Mercury, Materials2CellShapes.cell, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 8L))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Copper), 8L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 8, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Helium, Materials2CellShapes.cell, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 16L))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Copper), 16L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 16, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
@@ -1335,25 +1338,23 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0))
                 .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, missing, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, missing, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, missing, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Rubber), missing, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Copper), missing, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Silver), missing, 1L))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RubberSilicone, missing, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, missing, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, missing, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Silicone), missing, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Copper), missing, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Silver), missing, 1L))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, missing, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, missing, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, missing, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator
+                        .get(OrePrefixes.plate, MU.materialOf(Materials2Materials.StyreneButadieneRubber), missing, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Copper), missing, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Silver), missing, 1L))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BioChunk.get(1))
@@ -1383,55 +1384,59 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, MU.materialOf(Materials2Materials.Steel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0)).duration(1)
                 .eut(TierEU.RECIPE_MV / 2).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Steel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2, 0)).duration(4)
                 .eut(TierEU.RECIPE_MV / 2).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 4, 0)).duration(8)
                 .eut(TierEU.RECIPE_MV / 2).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.Steel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0)).duration(16)
                 .eut(TierEU.RECIPE_MV / 2).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeHuge, MU.materialOf(Materials2Materials.Steel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0))
                 .duration(1 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_MV / 2).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.StainlessSteel, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.pipeTiny, MU.materialOf(Materials2Materials.StainlessSteel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0)).duration(4).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.StainlessSteel, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.StainlessSteel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0)).duration(8)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.StainlessSteel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 32, 0)).duration(16)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.StainlessSteel, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.StainlessSteel), 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0))
                 .duration(1 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
@@ -1490,31 +1495,39 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "iron_boots", 1, 0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemStaticBoots", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(polarizerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Steel), 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2, 0))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 4, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.Steel), 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0))
                 .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeHuge, MU.materialOf(Materials2Materials.Steel), 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.StainlessSteel, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.pipeTiny, MU.materialOf(Materials2Materials.StainlessSteel), 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.StainlessSteel, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.StainlessSteel), 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0))
                 .duration(12 * SECONDS + 10 * TICKS).eut(96).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.StainlessSteel), 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 32, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.StainlessSteel, 1L))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.pipeLarge, MU.materialOf(Materials2Materials.StainlessSteel), 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0))
                 .duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV / 2).addTo(wiremillRecipes);
         GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("ic2hotcoolant", 1000))

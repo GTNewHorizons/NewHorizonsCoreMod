@@ -31,7 +31,6 @@ import forestry.api.recipes.RecipeManagers;
 import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
@@ -39,6 +38,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -75,7 +75,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 BlockList.SteelBars.get(),
                 BlockList.SteelBars.get(),
                 BlockList.SteelBars.get(),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CastIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.CastIron), 1),
                 BlockList.SteelBars.get(),
                 BlockList.SteelBars.get(),
                 BlockList.SteelBars.get(),
@@ -97,7 +97,10 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                                 Materials2Materials.Eternity,
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (9216)),
-                        Materials.Time.getMolten(18432))
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.temporalFluid,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (18432)))
                 .metadata(QFT_CATALYST, GregtechItemList.TemporalHarmonyCatalyst.get(0)).metadata(QFT_FOCUS_TIER, 4)
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(quantumForceTransformerRecipes);
         addForestryRecipes();
@@ -172,7 +175,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stickLong, (int) (4)),
                         MaterialLibAPI.getStack(Materials2Materials.BlueSteel, Materials2Shapes.stick, (int) (4)),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
+                        GTOreDictUnificator.get(OrePrefixes.gem, MU.materialOf(Materials2Materials.NetherStar), 1),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(

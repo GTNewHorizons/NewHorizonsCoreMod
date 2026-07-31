@@ -328,7 +328,7 @@ def process_unificator_get(text: str, start: int, uses, skip_log):
     open_idx = text.index("(", start)
     close_idx = find_matching_paren(text, open_idx)
     args = split_top_level_args(text[open_idx + 1 : close_idx])
-    if len(args) != 3:
+    if len(args) < 2:
         return None
     prefix_m = LITERAL_OREPREFIX_RE.match(args[0])
     material_m = LITERAL_MATERIAL_RE.match(args[1])
@@ -341,8 +341,9 @@ def process_unificator_get(text: str, start: int, uses, skip_log):
         skip_log.append(("never-ported-material", legacy, prefix, snippet))
         return None
     classified = classify_prefix(prefix)
-    if classified is None or not material_has_shape(material, prefix):
-        # Only the material token moves; the ore-dictionary lookup itself is unchanged.
+    # The replacement-stack and no-invalid-amounts overloads have no MaterialLib equivalent, so they keep
+    # the ore-dictionary lookup and only move the material token, as the non-cutover pairs do.
+    if len(args) != 3 or classified is None or not material_has_shape(material, prefix):
         mat_start = open_idx + 1 + text[open_idx + 1 : close_idx].index(args[1])
         return mat_start, mat_start + len(args[1]), build_legacy_material_ref(material, uses)
     kind, field = classified

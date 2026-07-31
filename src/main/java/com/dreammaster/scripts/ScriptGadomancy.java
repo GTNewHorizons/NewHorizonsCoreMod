@@ -16,6 +16,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
@@ -25,6 +26,8 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
+import gregtech.api.enums.materials2.Materials2Materials;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -75,8 +78,12 @@ public class ScriptGadomancy implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1)))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
 
         TCHelper.removeInfusionRecipe(getModItem(Gadomancy.ID, "itemSilverwoodGolemPlacer", 1, 8));
         TCHelper.removeInfusionRecipe(

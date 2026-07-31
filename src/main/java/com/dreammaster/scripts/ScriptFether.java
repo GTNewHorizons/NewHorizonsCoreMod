@@ -19,11 +19,11 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTRecipeBuilder;
 
 public class ScriptFether implements IScriptLoader {
@@ -175,8 +175,9 @@ public class ScriptFether implements IScriptLoader {
                 getModItem(Fether.ID, "glow_flower", 1, 0));
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
-                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0)).fluidInputs(Materials.Water.getFluid(5))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
+                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(5)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
                 .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
@@ -194,8 +195,12 @@ public class ScriptFether implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
                 .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1)))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         // Stripped Logs
         GTValues.RA.stdBuilder()
