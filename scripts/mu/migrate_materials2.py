@@ -425,8 +425,35 @@ def apply_static_import_pass(text: str):
     pattern = re.compile(r"(?<![\w.])(" + "|".join(sorted(names, key=len, reverse=True)) + r")\b")
     out = []
     for line in body.split("\n"):
-        out.append(line if line.lstrip().startswith("import ") else pattern.sub(r"Materials.\1", line))
+        if line.lstrip().startswith("import "):
+            out.append(line)
+        else:
+            out.append("".join(
+                span if quoted else pattern.sub(r"Materials.\1", span)
+                for span, quoted in split_literals(line)
+            ))
     return "\n".join(out), len(names)
+
+
+def split_literals(line: str):
+    """Splits a line into (text, is_string_or_char_literal) spans."""
+    spans = []
+    i = 0
+    start = 0
+    n = len(line)
+    while i < n:
+        if line[i] in "\"'":
+            quote = line[i]
+            spans.append((line[start:i], False))
+            j = i + 1
+            while j < n and line[j] != quote:
+                j += 2 if line[j] == "\\" else 1
+            spans.append((line[i : j + 1], True))
+            i = start = j + 1
+        else:
+            i += 1
+    spans.append((line[start:], False))
+    return spans
 
 
 def collect_edits(text: str, passes, uses, skip_log):
