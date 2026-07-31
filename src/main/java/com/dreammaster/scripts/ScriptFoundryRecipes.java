@@ -25,7 +25,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
@@ -165,7 +164,10 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                                 Materials2Materials.Manyullyn,
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (INGOTS * 100)),
-                        GGMaterial.preciousMetalAlloy.getMolten(INGOTS * 20) },
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.PreciousMetalsAlloy,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 20)) },
                 ItemList.Extra_Casting_Basins_ExoFoundry.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UEV);
@@ -193,7 +195,10 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                                 Materials2Materials.Holmium,
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (INGOTS * 40)),
-                        GGMaterial.enrichedNaquadahAlloy.getMolten(INGOTS * 10) },
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.EnrichedNaquadahAlloy,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 10)) },
                 ItemList.Streamlined_Casters_ExoFoundry.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UEV);
@@ -296,7 +301,10 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                                 Materials2Materials.dimensionallyshiftedsuperfluid,
                                 Materials2FluidShapes.fluidLiquid,
                                 (int) (300000)),
-                        GGMaterial.shirabon.getMolten(INGOTS * 40))
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Shirabon,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 40)))
                 .itemOutputs(ItemList.Efficient_Overclocking_ExoFoundry.get(1)).duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_UMV).addTo(AssemblyLine);
 
@@ -316,7 +324,11 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         new Object[] { Circuits.UIV.getIngredient(), 8 }, ItemList.Sensor_UIV.get(4),
                         ItemList.Emitter_UIV.get(4),
                         MaterialLibAPI.getStack(Materials2Materials.Rhugnor, Materials2Shapes.gearGt, (int) (4)) },
-                new FluidStack[] { GGMaterial.metastableOganesson.getMolten(INGOTS * 40),
+                new FluidStack[] {
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.MetastableOganesson,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 40)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Mellion,
                                 Materials2FluidShapes.fluidMolten,
@@ -395,8 +407,14 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                                 Materials2Materials.MutatedLivingSolder,
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (INGOTS * 64)),
-                        GGMaterial.preciousMetalAlloy.getMolten(INGOTS * 32),
-                        GGMaterial.metastableOganesson.getMolten(INGOTS * 20),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.PreciousMetalsAlloy,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 32)),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.MetastableOganesson,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 20)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Dragonblood,
                                 Materials2FluidShapes.fluidMolten,

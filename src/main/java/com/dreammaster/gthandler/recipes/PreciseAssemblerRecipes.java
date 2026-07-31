@@ -10,7 +10,6 @@ import static gregtech.api.util.GTRecipeConstants.PRECISE_ASSEMBLER_CASING_TIER;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
-import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -38,7 +37,10 @@ public class PreciseAssemblerRecipes implements Runnable {
                                     Materials2Materials.Hypogen,
                                     Materials2FluidShapes.fluidMolten,
                                     (int) (1 * STACKS)),
-                            GGMaterial.naquadahBasedFuelMkV.getFluidOrGas(4000))
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.NaquadahBasedLiquidFuelMkV,
+                                    Materials2FluidShapes.fluidLiquid,
+                                    (int) (4000)))
                     .duration(30 * SECONDS).eut(TierEU.RECIPE_UHV).metadata(PRECISE_ASSEMBLER_CASING_TIER, 3)
                     .addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
         }

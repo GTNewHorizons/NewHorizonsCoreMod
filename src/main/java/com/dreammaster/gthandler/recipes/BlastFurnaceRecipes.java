@@ -20,10 +20,8 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
@@ -1395,7 +1393,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer7.get(1),
                         MaterialLibAPI.getStack(Materials2Materials.Eternity, Materials2Shapes.dust, (int) (4L)),
-                        GGMaterial.shirabon.get(OrePrefixes.dust, 4))
+                        MaterialLibAPI.getStack(Materials2Materials.Shirabon, Materials2Shapes.dust, (int) (4)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Infinity,

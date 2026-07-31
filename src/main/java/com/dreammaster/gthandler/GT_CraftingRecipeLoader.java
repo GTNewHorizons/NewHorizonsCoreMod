@@ -47,7 +47,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.CircuitComponents;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.Dyes;
@@ -856,14 +855,15 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Machine_Multi_IndustrialCompressor.get(1),
                 GTModHandler.RecipeBits.BITS,
                 new Object[] { "BCB", "EAE", "CCC", 'A', ItemList.Machine_EV_Compressor, 'C',
-                        GGMaterial.incoloy903.get(OrePrefixes.plate), 'E', Circuits.IV.getIngredient(), 'B',
-                        ItemList.Electric_Piston_EV });
+                        MaterialLibAPI.getStack(Materials2Materials.Incoloy903, Materials2Shapes.plate, (int) (1)), 'E',
+                        Circuits.IV.getIngredient(), 'B', ItemList.Electric_Piston_EV });
 
         // Electric Compressor Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Casing.get(1),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "PhP", "SFS", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
+                new Object[] { "PhP", "SFS", "PwP", 'P',
+                        MaterialLibAPI.getStack(Materials2Materials.Incoloy903, Materials2Shapes.plate, (int) (1)), 'F',
                         MU.craftIngredient(OrePrefixes.frameGt, Materials2Materials.Titanium), 'S',
                         MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Steel) });
 
@@ -871,9 +871,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Pipe_Casing.get(1),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "PQP", "QFQ", "PQP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
-                        GGMaterial.incoloy903.get(OrePrefixes.pipeSmall), 'F',
-                        MU.craftIngredient(OrePrefixes.gearGt, Materials2Materials.Titanium) });
+                new Object[] { "PQP", "QFQ", "PQP", 'P',
+                        MaterialLibAPI.getStack(Materials2Materials.Incoloy903, Materials2Shapes.plate, (int) (1)), 'Q',
+                        GTOreDictUnificator
+                                .get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Incoloy903), 1),
+                        'F', MU.craftIngredient(OrePrefixes.gearGt, Materials2Materials.Titanium) });
 
         // Industrial Precision Lathe
         GTModHandler.addCraftingRecipe(
