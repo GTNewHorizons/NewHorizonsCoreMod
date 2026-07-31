@@ -11,12 +11,9 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class VacuumFreezerRecipes implements Runnable {
 
@@ -140,8 +137,10 @@ public class VacuumFreezerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.ingot, (int) (1L)))
                 .duration(17 * SECONDS + 17 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.TPV, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.TPV, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials2Materials.TPVAlloy, Materials2Shapes.ingotHot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.TPVAlloy, Materials2Shapes.ingot, (int) (1L)))
                 .duration(16 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_EV).addTo(vacuumFreezerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(

@@ -10,8 +10,11 @@ import static gregtech.api.util.GTRecipeConstants.PRECISE_ASSEMBLER_CASING_TIER;
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.material.MU;
+import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
@@ -23,7 +26,8 @@ public class PreciseAssemblerRecipes implements Runnable {
         if (TwilightForest.isModLoaded() && GalacticraftAmunRa.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            Materials.Glowstone.getNanite(64),
+                            GTOreDictUnificator
+                                    .get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Glowstone), 64),
                             GregtechItemList.QuadrupleCompressedGlowstone.get(8),
                             getModItem(TwilightForest.ID, "tile.TFSapling", 64, 6))
                     .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.saplings", 1, 1))

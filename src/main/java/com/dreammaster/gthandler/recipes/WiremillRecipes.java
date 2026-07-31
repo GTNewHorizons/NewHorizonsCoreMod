@@ -13,10 +13,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTRecipeRegistrator;
 
 public class WiremillRecipes implements Runnable {
@@ -39,7 +39,7 @@ public class WiremillRecipes implements Runnable {
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
 
-        GTRecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
+        GTRecipeRegistrator.registerWiremillRecipes(MU.materialOf(Materials2Materials.NetherStar), 200, 4);
 
         if (Natura.isModLoaded()) {
 
