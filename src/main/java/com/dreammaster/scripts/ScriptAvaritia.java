@@ -67,7 +67,9 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.recipe.RecipeCategories;
+import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
 import tconstruct.smeltery.TinkerSmeltery;
 import tconstruct.tools.TinkerTools;
@@ -500,7 +502,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'a',
                 "plateInfinity",
                 'b',
-                TGregUtils.newItemStack(Materials.Neutronium, PartTypes.LargePlate, 1),
+                TGregUtils.newItemStack(MU.materialOf(Materials2Materials.Neutronium), PartTypes.LargePlate, 1),
                 'c',
                 getModItem(BloodArsenal.ID, "blood_infused_pickaxe_diamond", 1, wildcard),
                 'd',
@@ -1020,7 +1022,7 @@ public class ScriptAvaritia implements IScriptLoader {
     private void registerTinkerPartsRecipes() {
         List<TinkerMaterialWrapper> materials = Arrays.asList(
                 new TinkerMaterialWrapper(
-                        Materials.Iron.getIngots(1),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 1),
                         TinkerTools.MaterialID.Iron,
                         3 * MINUTES + 20 * SECONDS + 8 * TICKS,
                         TierEU.RECIPE_LV),

@@ -2,12 +2,6 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Materials.Diamond;
-import static gregtech.api.enums.Materials.HV;
-import static gregtech.api.enums.Materials.IV;
-import static gregtech.api.enums.Materials.Thaumium;
-import static gregtech.api.enums.Materials.Titanium;
-import static gregtech.api.enums.Materials.TungstenSteel;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
@@ -21,9 +15,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.OrePrefixes.circuit;
-import static gregtech.api.enums.OrePrefixes.plate;
-import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
@@ -656,15 +647,15 @@ public class ScriptEMT implements IScriptLoader {
                         102,
                         "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Titanium\"},GT.ItemCharge:400000L}"),
                 getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard),
-                plate.get(Diamond),
-                circuit.get(HV),
-                plate.get(Diamond),
-                screw.get(Thaumium),
-                plate.get(Diamond),
-                screw.get(Thaumium),
-                plate.get(Diamond),
-                circuit.get(HV),
-                plate.get(Diamond));
+                OrePrefixes.plate.get(Materials.Diamond),
+                OrePrefixes.circuit.get(Materials.HV),
+                OrePrefixes.plate.get(Materials.Diamond),
+                OrePrefixes.screw.get(Materials.Thaumium),
+                OrePrefixes.plate.get(Materials.Diamond),
+                OrePrefixes.screw.get(Materials.Thaumium),
+                OrePrefixes.plate.get(Materials.Diamond),
+                OrePrefixes.circuit.get(Materials.HV),
+                OrePrefixes.plate.get(Materials.Diamond));
         TCHelper.addResearchPage(
                 "DiamondOmnitool",
                 new ResearchPage(
@@ -831,14 +822,14 @@ public class ScriptEMT implements IScriptLoader {
                         1,
                         102,
                         "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Aluminium\"},GT.ItemCharge:400000L}"),
-                screw.get(Titanium),
-                plate.get(Thaumium),
-                circuit.get(IV),
-                plate.get(TungstenSteel),
-                screw.get(Titanium),
-                plate.get(Thaumium),
-                circuit.get(IV),
-                plate.get(TungstenSteel));
+                OrePrefixes.screw.get(Materials.Titanium),
+                OrePrefixes.plate.get(Materials.Thaumium),
+                OrePrefixes.circuit.get(Materials.IV),
+                OrePrefixes.plate.get(Materials.TungstenSteel),
+                OrePrefixes.screw.get(Materials.Titanium),
+                OrePrefixes.plate.get(Materials.Thaumium),
+                OrePrefixes.circuit.get(Materials.IV),
+                OrePrefixes.plate.get(Materials.TungstenSteel));
         TCHelper.addResearchPage(
                 "ThaumiumDrill",
                 new ResearchPage(

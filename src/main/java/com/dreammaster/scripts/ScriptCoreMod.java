@@ -62,13 +62,13 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -110,7 +110,7 @@ public class ScriptCoreMod implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(NHItemList.SandStoneRod.get(), "craftingToolFile", "sandstone", "craftingToolSaw");
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1),
                 "craftingToolFile",
                 "cobblestone",
                 "craftingToolSaw");
@@ -401,7 +401,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.RawRubber, Materials2Shapes.dust, (int) (1L)),
                 null,
                 null,
                 null,
@@ -769,43 +769,43 @@ public class ScriptCoreMod implements IScriptLoader {
         GTOreDictUnificator.addItemData(
                 BlockList.BronzePlatedReinforcedStone.get(),
                 new ItemData(
-                        new ItemData(Materials.Bronze, 6 * GTValues.M),
-                        new ItemData(Materials.Steel, 3 * GTValues.M),
-                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+                        new ItemData(MU.materialOf(Materials2Materials.Bronze), 6 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Steel), 3 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Concrete), 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
                 BlockList.SteelPlatedReinforcedStone.get(),
                 new ItemData(
-                        new ItemData(Materials.Steel, 8 * GTValues.M),
-                        new ItemData(Materials.Aluminium, 1 * GTValues.M),
-                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+                        new ItemData(MU.materialOf(Materials2Materials.Steel), 8 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Aluminium), 1 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Concrete), 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
                 BlockList.TitaniumPlatedReinforcedStone.get(),
                 new ItemData(
-                        new ItemData(Materials.Titanium, 6 * GTValues.M),
-                        new ItemData(Materials.Platinum, 1 * GTValues.M),
-                        new ItemData(Materials.Steel, 2 * GTValues.M),
-                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+                        new ItemData(MU.materialOf(Materials2Materials.Titanium), 6 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Platinum), 1 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Steel), 2 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Concrete), 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
                 BlockList.TungstensteelPlatedReinforcedStone.get(),
                 new ItemData(
-                        new ItemData(Materials.TungstenSteel, 6 * GTValues.M),
-                        new ItemData(Materials.Iridium, 1 * GTValues.M),
-                        new ItemData(Materials.Steel, 2 * GTValues.M),
-                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+                        new ItemData(MU.materialOf(Materials2Materials.TungstenSteel), 6 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Iridium), 1 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Steel), 2 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Concrete), 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
                 BlockList.NaquadahPlatedReinforcedStone.get(),
                 new ItemData(
-                        new ItemData(Materials.Naquadah, 6 * GTValues.M),
-                        new ItemData(Materials.Osmium, 1 * GTValues.M),
-                        new ItemData(Materials.Steel, 2 * GTValues.M),
-                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+                        new ItemData(MU.materialOf(Materials2Materials.Naquadah), 6 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Osmium), 1 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Steel), 2 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Concrete), 1 * GTValues.M)));
         GTOreDictUnificator.addItemData(
                 BlockList.NeutroniumPlatedReinforcedStone.get(),
                 new ItemData(
-                        new ItemData(Materials.Neutronium, 6 * GTValues.M),
-                        new ItemData(Materials.Naquadria, 1 * GTValues.M),
-                        new ItemData(Materials.Steel, 2 * GTValues.M),
-                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+                        new ItemData(MU.materialOf(Materials2Materials.Neutronium), 6 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Naquadria), 1 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Steel), 2 * GTValues.M),
+                        new ItemData(MU.materialOf(Materials2Materials.Concrete), 1 * GTValues.M)));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -817,7 +817,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.BioOrganicMesh.get()).duration(40 * SECONDS).eut(2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Charcoal), 1L),
                         NHItemList.CompressedBioBall.get(8))
                 .itemOutputs(NHItemList.BioChunk.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_MV / 2)
                 .addTo(assemblerRecipes);
@@ -944,8 +944,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(10)).duration(12 * SECONDS)
-                .eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (10)))
+                .duration(12 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -985,7 +989,10 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)),
+                        GTUtility.copyAmount(
+                                0,
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.FoolsRuby, Materials2Shapes.lens, (int) (1L))),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);
@@ -1322,7 +1329,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1),
                         MaterialLibAPI.getStack(Materials2Materials.Stone, Materials2Shapes.dustSmall, (int) (2L)))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, wildcard))
@@ -1359,8 +1366,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.plate, (int) (2)))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1)))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.plate, (int) (2)))
                 .fluidInputs(
@@ -1371,8 +1382,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .duration(11 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.plate, (int) (2)))
-                .fluidInputs(Materials.Water.getFluid(20)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(cutterRecipes);
+                .fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(20)).duration(22 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.plate, (int) (2)))
                 .fluidInputs(GTModHandler.getDistilledWater(15)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)

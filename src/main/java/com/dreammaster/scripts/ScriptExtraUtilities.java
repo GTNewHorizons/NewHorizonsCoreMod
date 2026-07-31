@@ -3,8 +3,6 @@ package com.dreammaster.scripts;
 import static com.dreammaster.item.NHItemList.EngravedGoldChip;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Materials.Iridium;
-import static gregtech.api.enums.Materials.Tritanium;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -24,8 +22,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
-import static gregtech.api.enums.OrePrefixes.ring;
-import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
@@ -69,6 +65,7 @@ import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
@@ -502,7 +499,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.stick, (int) (1)),
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.ring, (int) (1)),
                         MaterialLibAPI.getStack(Materials2Materials.Steel, Materials2Shapes.screw, (int) (1)))
-                .circuit(5).fluidInputs(Materials.Water.getFluid(1000))
+                .circuit(5).fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(1000))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         addShapedRecipe(
@@ -700,9 +697,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "screwEnderPearl",
                 ItemList.Electric_Pump_LV.get(1L),
                 "screwEnderPearl",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L),
                 ItemList.Electric_Pump_LV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L));
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0),
                 "plateIron",
@@ -911,9 +908,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, MU.materialOf(Materials2Materials.Iron), 1L),
                         createItemStack(ExtraUtilities.ID, "divisionSigil", 0, 0, "{stable:1b}"),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.gem, MU.materialOf(Materials2Materials.Diamond), 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2)).nbtSensitive().duration(42 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1131,7 +1128,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "quartz_block", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L))
+                        MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (1L)))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
@@ -1388,8 +1385,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         1,
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
-                ring.get(Iridium),
-                screw.get(Tritanium),
+                OrePrefixes.ring.get(Materials.Iridium),
+                OrePrefixes.screw.get(Materials.Tritanium),
                 EngravedGoldChip.get(1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
@@ -1401,7 +1398,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 EngravedGoldChip.get(1),
-                screw.get(Tritanium));
+                OrePrefixes.screw.get(Materials.Tritanium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1),

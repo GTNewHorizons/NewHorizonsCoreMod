@@ -32,13 +32,13 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import vazkii.botania.common.item.ModItems;
@@ -84,7 +84,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         getModItem(IronChests.ID, "BlockIronChest", 1, 6),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                         ItemList.Electric_Piston_HV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, MU.materialOf(Materials2Materials.Obsidian), 1),
                         MaterialLibAPI.getStack(Materials2Materials.Nichrome, Materials2Shapes.stick, (int) (1)))
                 .circuit(1).itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -246,7 +246,10 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                             ItemList.Timepiece.get(1))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15))
                     .fluidInputs(
-                            Materials.MHDCSM.getMolten(288),
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.MagnetohydrodynamicallyConstrainedStarMatter,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (288)),
                             MaterialLibAPI.getFluidStack(
                                     Materials2Materials.ExcitedDTSC,
                                     Materials2FluidShapes.fluidLiquid,

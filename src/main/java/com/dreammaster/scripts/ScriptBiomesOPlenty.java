@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Materials.Saltpeter;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
@@ -50,13 +49,13 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import biomesoplenty.api.content.BOPCBlocks;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -136,7 +135,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (1L)),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
@@ -555,17 +554,22 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "foliage", 1, 7)).eut(TierEU.RECIPE_HV).duration(10)
                 .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.potato, 16), Saltpeter.getDust(4))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.potato, 16),
+                        MaterialLibAPI.getStack(Materials2Materials.Saltpeter, Materials2Shapes.dust, (int) (4)))
                 .itemOutputs(new ItemStack(Items.poisonous_potato, 16))
                 .fluidInputs(FluidRegistry.getFluidStack("poison", 200)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
-        ChiselHelper.addVariationFromStack("topaz", GTOreDictUnificator.get(OrePrefixes.block, Materials.Topaz, 1L));
+        ChiselHelper.addVariationFromStack(
+                "topaz",
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Topaz), 1L));
         ChiselHelper.addVariationFromStack("topaz", getModItem(BiomesOPlenty.ID, "gemOre", 1, 7));
 
         ChiselHelper.addVariationFromStack(
                 "tanzanite",
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Tanzanite, 1L));
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Tanzanite), 1L));
         ChiselHelper.addVariationFromStack("tanzanite", getModItem(BiomesOPlenty.ID, "gemOre", 1, 9));
 
         // Fence and Fence Gate recipes:
