@@ -17,10 +17,10 @@ import com.gtnewhorizons.postea.api.ItemStackReplacementManager;
 import com.gtnewhorizons.postea.api.TileEntityReplacementManager;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class TiCoLoader {
@@ -60,7 +60,7 @@ public class TiCoLoader {
     }
 
     private static void convertAluminumBrassBlock() {
-        ItemStack brassBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.Brass, 1L);
+        ItemStack brassBlock = GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Brass), 1L);
         // also applies a corresponding block transform.
         ItemStackReplacementManager.addSimpleReplacement("TConstruct:MetalBlock", 7, brassBlock, false);
     }
