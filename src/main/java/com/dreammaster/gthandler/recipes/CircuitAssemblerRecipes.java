@@ -31,9 +31,9 @@ import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.SubstituteFluidStack;
@@ -82,7 +82,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_UHPIC.get(4L),
                         ItemList.Circuit_Chip_QuantumCPU.get(2L),
                         ItemList.Circuit_Chip_NanoCPU.get(2L),
-                        Superconductors.ZPM.getWireGt01(64))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorZPM, 64))
                 .itemOutputs(NHItemList.HighEnergyFlowCircuit.get()).fluidInputs(new FluidStack(solderIndalloy, 288))
                 .requiresCleanRoom().duration(2 * MINUTES).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
 
@@ -650,7 +650,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorASMD.get(48),
                         ItemList.Circuit_Parts_CapacitorASMD.get(64),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        Superconductors.LuV.getWireGt01(64))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorLuV, 64))
                 .itemOutputs(ItemList.Circuit_Crystalmainframe.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 8 * INGOTS)).requiresCleanRoom()
                 .duration(2 * MINUTES + 40 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);

@@ -19,9 +19,9 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTOreDictUnificator;
@@ -855,7 +855,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_UltraHighPowerICs.get(4),
                         ItemList.Wrap_QBitProcessingUnits.get(2),
                         ItemList.Wrap_NanocomponentCentralProcessingUnits.get(2),
-                        Superconductors.ZPM.getWireGt16(64))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorZPM, 64))
                 .itemOutputs(NHItemList.HighEnergyFlowCircuit.get(16))
                 .fluidInputs(
                         MaterialLibAPI
@@ -935,7 +935,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         ItemList.Wrap_AdvancedSMDInductors.get(8),
                         ItemList.Wrap_AdvancedSMDCapacitors.get(16),
                         ItemList.Wrap_RandomAccessMemoryChips.get(32),
-                        Superconductors.LuV.getWireGt16(16))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorLuV, 16))
                 .itemOutputs(ItemList.Circuit_Crystalmainframe.get(16))
                 .fluidInputs(
                         MaterialLibAPI

@@ -26,8 +26,8 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.NaniteTier;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
@@ -430,12 +430,17 @@ public class BECRecipes implements Runnable {
         final ItemStack[] superconductor = new ItemStack[] {
                 GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedAlloy, 64),
                 GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedstoneAlloy, 64),
-                Superconductors.MV.getWireGt16(64), Superconductors.HV.getWireGt16(64),
-                Superconductors.EV.getWireGt16(64), Superconductors.IV.getWireGt16(64),
-                Superconductors.LuV.getWireGt16(64), Superconductors.ZPM.getWireGt16(64),
-                Superconductors.UV.getWireGt16(64), Superconductors.UHV.getWireGt16(64),
-                Superconductors.UEV.getWireGt16(64), Superconductors.UIV.getWireGt16(64),
-                Superconductors.UMV.getWireGt16(64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorMV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorHV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorEV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorIV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorLuV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorZPM, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUHV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUEV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUIV, 64),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUMV, 64),
                 GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Infinity, 64),
                 GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SpaceTime, 64), };
 
