@@ -45,11 +45,11 @@ import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.tools.TinkerTools;
@@ -1205,7 +1205,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, MU.materialOf(Materials2Materials.Stone), 4),
                         getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infoTablet", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

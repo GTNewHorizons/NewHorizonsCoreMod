@@ -7,8 +7,8 @@ emitted spellings are the `Materials2*` ones the pinned GT5U build still exposes
 Three passes, selectable with `--passes`:
 
   `staticimports`
-      Drops `import static gregtech.api.enums.Materials.<X>;` and re-qualifies the bare `<X>`
-      references it covered, so the stack pass can see them.
+      Drops `import static gregtech.api.enums.{Materials,OrePrefixes}.<X>;` and re-qualifies the
+      bare `<X>` references they covered, so the other passes can see them.
 
   `stacks`
       1. `GTOreDictUnificator.get(OrePrefixes.P, Materials.M, amount)` (3-arg only)
@@ -100,10 +100,11 @@ USE_IMPORTS = [
     ("fluidshapes", IMPORT_M2FLUIDSHAPES),
     ("cellshapes", IMPORT_M2CELLSHAPES),
     ("oreprefixes", IMPORT_LEGACY_OREPREFIXES),
+    ("legacymaterials", IMPORT_LEGACY_MATERIALS),
     ("unificator", IMPORT_UNIFICATOR),
 ]
 
-STATIC_IMPORT_RE = re.compile(r"^import static gregtech\.api\.enums\.Materials\.(\w+);$")
+STATIC_IMPORT_RE = re.compile(r"^import static gregtech\.api\.enums\.(Materials|OrePrefixes)\.(\w+);$")
 
 
 def load_ml_materials():
@@ -411,28 +412,35 @@ def process_itemdata_get(text: str, m: re.Match, uses, skip_log):
 
 def apply_static_import_pass(text: str):
     lines = text.split("\n")
-    names = []
+    names = {"Materials": [], "OrePrefixes": []}
     kept = []
     for line in lines:
         m = STATIC_IMPORT_RE.match(line.strip())
         if m:
-            names.append(m.group(1))
+            names[m.group(1)].append(m.group(2))
         else:
             kept.append(line)
-    if not names:
+    total = sum(len(v) for v in names.values())
+    if not total:
         return text, 0
-    body = "\n".join(kept)
-    pattern = re.compile(r"(?<![\w.])(" + "|".join(sorted(names, key=len, reverse=True)) + r")\b")
+    patterns = [
+        (holder, re.compile(r"(?<![\w.])(" + "|".join(sorted(v, key=len, reverse=True)) + r")\b"))
+        for holder, v in names.items()
+        if v
+    ]
     out = []
-    for line in body.split("\n"):
+    for line in "\n".join(kept).split("\n"):
         if line.lstrip().startswith("import "):
             out.append(line)
-        else:
-            out.append("".join(
-                span if quoted else pattern.sub(r"Materials.\1", span)
-                for span, quoted in split_literals(line)
-            ))
-    return "\n".join(out), len(names)
+            continue
+        spans = []
+        for span, quoted in split_literals(line):
+            for holder, pattern in patterns:
+                if not quoted:
+                    span = pattern.sub(holder + r".\1", span)
+            spans.append(span)
+        out.append("".join(spans))
+    return "\n".join(out), total
 
 
 def split_literals(line: str):
@@ -518,6 +526,9 @@ def rewrite_file(path: Path, apply: bool, passes):
     qualified = 0
     if "staticimports" in passes:
         text, qualified = apply_static_import_pass(text)
+        if qualified:
+            uses.add("legacymaterials")
+            uses.add("oreprefixes")
 
     edits = collect_edits(text, passes, uses, skip_log)
     for start, end, replacement in reversed(edits):

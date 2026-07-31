@@ -38,6 +38,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import cpw.mods.fml.common.Optional;
@@ -58,6 +59,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
@@ -85,9 +87,9 @@ public class ScriptAmunRa implements IScriptLoader {
                 RandomThings.ID);
     }
 
-    private static ItemStack[] createOreVariants(Materials material, int amount) {
+    private static ItemStack[] createOreVariants(Material material, int amount) {
         List<ItemStack> variants = new ArrayList<>();
-        Collections.addAll(variants, OreMixes.getOreVariants(material, amount));
+        Collections.addAll(variants, OreMixes.getOreVariants(MU.materialOf(material), amount));
 
         // still add the following variants, in case the ores got obtained by meteor / void miner / space miner
 
@@ -109,9 +111,9 @@ public class ScriptAmunRa implements IScriptLoader {
         return variants.toArray(new ItemStack[0]);
     }
 
-    private static void addOrePrefixVariants(List<ItemStack> variants, OrePrefixes prefix, Materials material,
+    private static void addOrePrefixVariants(List<ItemStack> variants, OrePrefixes prefix, Material material,
             int amount) {
-        ItemStack ore = GTOreDictUnificator.get(prefix, material, 1L);
+        ItemStack ore = GTOreDictUnificator.get(prefix, MU.materialOf(material), 1L);
         if (!GTUtility.isStackValid(ore)) {
             return;
         }
@@ -420,7 +422,10 @@ public class ScriptAmunRa implements IScriptLoader {
          * Mixer *
          *********/
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.Carbon.getNanite(4), Materials.Neutronium.getNanite(1))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Carbon), 4),
+                        GTOreDictUnificator.get(OrePrefixes.nanite, MU.materialOf(Materials2Materials.Neutronium), 1))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Infinity,
@@ -558,9 +563,12 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { createOreVariants(Materials.Samarium, 64), createOreVariants(Materials.Tartarite, 64),
-                        createOreVariants(Materials.Cadmium, 64), createOreVariants(Materials.Caesium, 64),
-                        createOreVariants(Materials.Lanthanum, 64), createOreVariants(Materials.Cerium, 64),
+                new Object[] { createOreVariants(Materials2Materials.Samarium, 64),
+                        createOreVariants(Materials2Materials.Tartarite, 64),
+                        createOreVariants(Materials2Materials.Cadmium, 64),
+                        createOreVariants(Materials2Materials.Caesium, 64),
+                        createOreVariants(Materials2Materials.Lanthanum, 64),
+                        createOreVariants(Materials2Materials.Cerium, 64),
 
                         MaterialLibAPI.getStack(Materials2Materials.Bedrockium, Materials2Shapes.ingot, (int) (64)),
                         MaterialLibAPI
@@ -588,7 +596,11 @@ public class ScriptAmunRa implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.Kevlar, Materials2Shapes.plate, (int) (7)),
                         MaterialLibAPI.getStack(Materials2Materials.Kevlar, Materials2Shapes.plate, (int) (7)),
                         new Object[] { OrePrefixes.screw.get(Materials.Neutronium), 12 })
-                .fluidInputs(Materials.RadoxPolymer.getMolten(4 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.RadoxPoly,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (4 * INGOTS)))
                 .itemOutputs(NHItemList.HeavyDutyAlloyIngotT9.get())
                 .metadata(GTRecipeConstants.RESEARCH_ITEM, NHItemList.HeavyDutyPlateTier8.get())
                 .metadata(SCANNING, new Scanning(2 * MINUTES + 20 * SECONDS, TierEU.RECIPE_UV)).duration(15 * SECONDS)
@@ -631,14 +643,19 @@ public class ScriptAmunRa implements IScriptLoader {
         // Slab (efficient)
         final int eut = isRock ? 7 : 4;
 
-        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1))
+        GTValues.RA.stdBuilder().itemInputs(input)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1)))
                 .itemOutputs(slab).duration(10 * TICKS).eut(eut).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(
                 MaterialLibAPI
                         .getFluidStack(Materials2Materials.Lubricant, Materials2FluidShapes.fluidLiquid, (int) (1)))
                 .itemOutputs(slab).duration(1 * SECONDS + 5 * TICKS).eut(eut).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.Water.getFluid(4)).itemOutputs(slab)
-                .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(MU.materialOf(Materials2Materials.Water).getFluid(4))
+                .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3))
                 .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
     }

@@ -13,11 +13,11 @@ import java.util.List;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -120,7 +120,7 @@ public class ScriptCatWalk implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Steel), 1L),
                         getModItem(CatWalks.ID, "steelgrate", 1, 0))
                 .itemOutputs(getModItem(CatWalks.ID, "scaffold", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -156,21 +156,22 @@ public class ScriptCatWalk implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "steelgrate", 1, 0),
-                new ItemData(Materials.Steel, 2 * GTValues.M / 9)); // GTValues.M equals one dust or ingot
+                new ItemData(MU.materialOf(Materials2Materials.Steel), 2 * GTValues.M / 9)); // GTValues.M equals one
+                                                                                             // dust or ingot
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "support_column", 1, 0),
-                new ItemData(Materials.Steel, 6 * GTValues.M / 9));
+                new ItemData(MU.materialOf(Materials2Materials.Steel), 6 * GTValues.M / 9));
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "scaffold", 1, 0),
-                new ItemData(Materials.Steel, 20 * GTValues.M / 9));
+                new ItemData(MU.materialOf(Materials2Materials.Steel), 20 * GTValues.M / 9));
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "scaffold", 1, 1),
-                new ItemData(Materials.Steel, 20 * GTValues.M / 9));
+                new ItemData(MU.materialOf(Materials2Materials.Steel), 20 * GTValues.M / 9));
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "catwalk_unlit", 1, 0),
-                new ItemData(Materials.Steel, GTValues.M / 9));
+                new ItemData(MU.materialOf(Materials2Materials.Steel), GTValues.M / 9));
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "cagedLadder_north_unlit", 1, 0),
-                new ItemData(Materials.Steel, GTValues.M / 9));
+                new ItemData(MU.materialOf(Materials2Materials.Steel), GTValues.M / 9));
     }
 }

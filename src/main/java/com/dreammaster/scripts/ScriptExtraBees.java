@@ -25,10 +25,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -152,7 +152,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'd',
                 getModItem(Forestry.ID, "frameProven", 1, 0),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.WoodSealed), 1L),
                 'f',
                 getModItem(Forestry.ID, "frameProven", 1, 0),
                 'g',
@@ -224,7 +224,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Silver), 1L),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'd',
@@ -236,7 +236,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Silver), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1));
         RecipeManagers.carpenterManager.addRecipe(
@@ -280,15 +280,15 @@ public class ScriptExtraBees implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Aluminium), 1L),
                 'e',
                 ItemList.Hull_HV.get(1L),
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Aluminium), 1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, MU.materialOf(Materials2Materials.Aluminium), 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0));
         RecipeManagers.carpenterManager.addRecipe(

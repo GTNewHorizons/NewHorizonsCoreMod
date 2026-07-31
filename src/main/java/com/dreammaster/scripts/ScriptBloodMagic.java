@@ -67,6 +67,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2CellShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
@@ -150,8 +151,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 18),
                 getModItem(Witchery.ID, "ingredient", 1, 18),
                 getModItem(Witchery.ID, "ingredient", 1, 18),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 1L),
+                MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials2Materials.DarkAsh, Materials2Shapes.dust, (int) (1L)),
                 MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dust, (int) (1L)),
                 MaterialLibAPI.getStack(Materials2Materials.Ash, Materials2Shapes.dust, (int) (1L)),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1));
@@ -646,17 +647,17 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new AspectList().add(Aspect.CRAFT, 24).add(Aspect.TOOL, 24).add(Aspect.MAGIC, 18).add(Aspect.LIFE, 12)
                         .add(Aspect.FIRE, 12),
                 getModItem(Minecraft.ID, "brewing_stand", 1, 0),
-                Materials.LifeEssence.getCells(1),
+                MaterialLibAPI.getStack(Materials2Materials.lifeessence, Materials2CellShapes.cell, (int) (1)),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                Materials.LifeEssence.getCells(1),
+                MaterialLibAPI.getStack(Materials2Materials.lifeessence, Materials2CellShapes.cell, (int) (1)),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                Materials.LifeEssence.getCells(1),
+                MaterialLibAPI.getStack(Materials2Materials.lifeessence, Materials2CellShapes.cell, (int) (1)),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                Materials.LifeEssence.getCells(1),
+                MaterialLibAPI.getStack(Materials2Materials.lifeessence, Materials2CellShapes.cell, (int) (1)),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                Materials.LifeEssence.getCells(1),
+                MaterialLibAPI.getStack(Materials2Materials.lifeessence, Materials2CellShapes.cell, (int) (1)),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                Materials.LifeEssence.getCells(1),
+                MaterialLibAPI.getStack(Materials2Materials.lifeessence, Materials2CellShapes.cell, (int) (1)),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0));
         TCHelper.addResearchPage(
                 "ALCHEMICCHEMSTRYSET",
@@ -2663,7 +2664,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -10,
                 2,
                 3,
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Ichorium), 1L))
                         .setParents("INFUSION", "CRYSTALCLUSTER").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.ICHORIUMBLOCK.1"),
@@ -2671,7 +2672,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ICHORIUMBLOCK",
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Ichorium), 1L),
                 12,
                 new AspectList().add(Aspect.LIFE, 64).add(Aspect.HUNGER, 48).add(Aspect.MAGIC, 32)
                         .add(DarkAspects.NETHER, 24).add(Aspect.ELDRITCH, 16).add(DarkAspects.PRIDE, 16)
@@ -2689,7 +2690,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ICHORIUMBLOCK",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))));
+                                GTOreDictUnificator
+                                        .get(OrePrefixes.block, MU.materialOf(Materials2Materials.Ichorium), 1L))));
         ThaumcraftApi.addWarpToResearch("ICHORIUMBLOCK", 3);
         new ResearchItem(
                 "GLYPHSTONE",
@@ -3437,7 +3439,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'g',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                         'h',
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.TungstenSteel), 1L),
                         'i',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8)));
         GameRegistry.addRecipe(
@@ -4279,8 +4282,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                Materials.LifeEssence.getCells(1),
-                Materials.Empty.getCells(1),
+                MaterialLibAPI.getStack(Materials2Materials.lifeessence, Materials2CellShapes.cell, (int) (1)),
+                GTOreDictUnificator.get(OrePrefixes.cell, MU.materialOf(Materials2Materials.Empty), 1),
                 1,
                 1000,
                 20,
@@ -4408,7 +4411,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 BlockList.BloodyIchorium.get(),
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Ichorium), 1L),
                 5,
                 50000,
                 20,

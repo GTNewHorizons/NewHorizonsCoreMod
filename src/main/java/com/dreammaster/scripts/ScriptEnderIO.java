@@ -53,12 +53,12 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -586,7 +586,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 BlockList.SteelBars.get(),
                 "itemCasingSteel",
                 BlockList.SteelBars.get(),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.ElectricalSteel), 1L),
                 BlockList.SteelBars.get(),
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
@@ -597,7 +597,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0),
                 "plateDarkSteel",
                 getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.DarkSteel), 1L),
                 getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0),
                 "plateDarkSteel",
                 ItemList.Electric_Pump_MV.get(1L),
@@ -1378,7 +1378,8 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.EndSteel, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.ClayCompound, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials2Materials.CrudeSteel, Materials2Shapes.plate, (int) (1L)))
                 .circuit(5).itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(
@@ -1460,7 +1461,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Wood), 1L),
                         getModItem(EnderIO.ID, "itemMaterial", 4, 1))
                 .itemOutputs(getModItem(EnderIO.ID, "itemFusedQuartzFrame", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -1481,121 +1482,121 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.RedAlloy), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.RedstoneAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Gold), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.ConductiveIron, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Aluminium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Aluminium), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.EnergeticAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Osmium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Osmium), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ClayCompound, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.RedAlloy), 1L),
+                        MaterialLibAPI.getStack(Materials2Materials.CrudeSteel, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Zinc, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Zinc), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SolderingAlloy, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.SolderingAlloy), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Aluminium, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Nickel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Nickel), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Gold, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 1),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.AnnealedCopper), 1),
                         MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).duration(5 * SECONDS).eut(96)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Electrum, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Electrum), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Silver, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(160)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackSteel, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.BlackSteel), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.Electrum, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(192)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.TungstenSteel, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.plate, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.TungstenSteel), 1L),
+                MaterialLibAPI.getStack(Materials2Materials.EnergeticSilver, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS).eut(320)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.HSSG, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.HSSG), 1L),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 8))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.NiobiumTitanium, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.plate, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.NiobiumTitanium), 1L),
+                MaterialLibAPI.getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Naquadah, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.Naquadah), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 10))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackPlutonium, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.wireGt01, MU.materialOf(Materials2Materials.BlackPlutonium), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 11))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Copper, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Copper), 1L),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.ElectricalSteel, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 0))
@@ -1603,51 +1604,51 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Steel), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.DarkSteel, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polytetrafluoroethylene, 1L),
-                        MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator
+                        .get(OrePrefixes.pipeTiny, MU.materialOf(Materials2Materials.Polytetrafluoroethylene), 1L),
+                MaterialLibAPI.getStack(Materials2Materials.VibrantAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.plate, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator
+                        .get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Polytetrafluoroethylene), 1L),
+                MaterialLibAPI.getStack(Materials2Materials.CrystallineAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.plate, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator
+                        .get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Polytetrafluoroethylene), 1L),
+                MaterialLibAPI.getStack(Materials2Materials.CrystallinePinkSlime, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polybenzimidazole, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Polybenzimidazole), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.MelodicAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 5))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polybenzimidazole, 1L),
+                        GTOreDictUnificator
+                                .get(OrePrefixes.pipeMedium, MU.materialOf(Materials2Materials.Polybenzimidazole), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.StellarAlloy, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 6))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Electrum, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, MU.materialOf(Materials2Materials.Electrum), 1L),
                         MaterialLibAPI.getStack(Materials2Materials.PulsatingIron, Materials2Shapes.plate, (int) (1L)))
                 .itemOutputs(getModItem(EnderIO.ID, "itemItemConduit", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS)
@@ -1715,8 +1716,12 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1))
-                .fluidInputs(Materials.RubberSilicone.getMolten(144)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV / 2)
-                .addTo(assemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Silicone,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (144)))
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1))
                 .fluidInputs(
@@ -1821,7 +1826,8 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         // Bulk crystals
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 64))
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, MU.materialOf(Materials2Materials.Diamond), 64))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 64, 5))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -1830,7 +1836,8 @@ public class ScriptEnderIO implements IScriptLoader {
                                 (int) (8192)))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Emerald, 64))
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, MU.materialOf(Materials2Materials.Emerald), 64))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 64, 6))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(

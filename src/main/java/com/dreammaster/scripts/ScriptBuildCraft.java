@@ -39,11 +39,11 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -100,26 +100,26 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "gearInvar");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipestructurecobblestone", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
                 getModItem(Minecraft.ID, "gravel", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1));
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowercobblestone", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
                 "wireGt01Tin",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1));
+                GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Stone), 1));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0),
                 getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0),
