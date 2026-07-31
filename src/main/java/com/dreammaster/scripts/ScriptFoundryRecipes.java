@@ -27,7 +27,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
@@ -413,9 +412,12 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 new Object[] {
                         GTOreDictUnificator
                                 .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.CosmicNeutronium), 1),
-                        WerkstoffLoader.HDCS.get(OrePrefixes.plate, 32), ItemList.Optically_Compatible_Memory.get(6),
-                        ItemRefer.HiC_T4.get(4), new Object[] { Circuits.UEV.getIngredient(), 1 },
-                        ItemList.Emitter_UHV.get(1),
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.HighDurabilityCompoundSteel,
+                                Materials2Shapes.plate,
+                                (int) (32)),
+                        ItemList.Optically_Compatible_Memory.get(6), ItemRefer.HiC_T4.get(4),
+                        new Object[] { Circuits.UEV.getIngredient(), 1 }, ItemList.Emitter_UHV.get(1),
                         MaterialLibAPI.getStack(Materials2Materials.TengamAttuned, Materials2Shapes.screw, (int) (6)),
                         ItemList.NuclearStar.get(1) },
                 new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 4),

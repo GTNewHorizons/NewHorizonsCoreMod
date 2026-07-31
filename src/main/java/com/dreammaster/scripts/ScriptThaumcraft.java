@@ -1,7 +1,5 @@
 package com.dreammaster.scripts;
 
-import static bartworks.system.material.WerkstoffLoader.Fluorspar;
-import static bartworks.system.material.WerkstoffLoader.RedZircon;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Backpack;
@@ -2404,11 +2402,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6), RedZircon.get(OrePrefixes.lens, 0))
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
+                        MaterialLibAPI.getStack(Materials2Materials.RedZircon, Materials2Shapes.lens, (int) (0)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6), Fluorspar.get(OrePrefixes.lens, 0))
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
+                        MaterialLibAPI.getStack(Materials2Materials.Fluorspar, Materials2Shapes.lens, (int) (0)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()

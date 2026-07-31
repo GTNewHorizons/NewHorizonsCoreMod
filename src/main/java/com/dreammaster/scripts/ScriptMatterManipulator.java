@@ -30,7 +30,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import appeng.api.AEApi;
 import appeng.api.util.AEColor;
-import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -319,10 +318,13 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .addTo(RecipeMaps.benderRecipes);
 
         // Lens MK2
-        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, WerkstoffLoader.RedZircon.get(OrePrefixes.lens, 1))
+        GTValues.RA.stdBuilder()
+                .metadata(
+                        RESEARCH_ITEM,
+                        MaterialLibAPI.getStack(Materials2Materials.RedZircon, Materials2Shapes.lens, (int) (1)))
                 .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_LuV))
                 .itemInputs(
-                        WerkstoffLoader.RedZircon.get(OrePrefixes.lens, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.RedZircon, Materials2Shapes.lens, (int) (2)),
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.ring, (int) (4)),
                         ItemList.Field_Generator_LuV.get(1),
                         ItemList.Electric_Motor_LuV.get(2),
@@ -432,10 +434,13 @@ public class ScriptMatterManipulator implements IScriptLoader {
                 .addTo(RecipeMaps.benderRecipes);
 
         // Lens MK3
-        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 1))
+        GTValues.RA.stdBuilder()
+                .metadata(
+                        RESEARCH_ITEM,
+                        MaterialLibAPI.getStack(Materials2Materials.MagnetoResonatic, Materials2Shapes.lens, (int) (1)))
                 .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_ZPM))
                 .itemInputs(
-                        WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 2),
+                        MaterialLibAPI.getStack(Materials2Materials.MagnetoResonatic, Materials2Shapes.lens, (int) (2)),
                         MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.ring, (int) (4)),
                         ItemList.Field_Generator_ZPM.get(1),
                         ItemList.Electric_Piston_ZPM.get(2),

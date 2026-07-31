@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static bartworks.system.material.WerkstoffLoader.Roquesit;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static goodgenerator.items.GGMaterial.indiumPhosphate;
 import static gregtech.api.enums.Mods.Botania;
@@ -817,7 +816,9 @@ public class ChemicalReactorRecipes implements Runnable {
                     .duration(14 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(Roquesit.get(OrePrefixes.dust, 4), GTBees.combs.getStackForType(CombType.INDIUM, 4))
+                    .itemInputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Roquesite, Materials2Shapes.dust, (int) (4)),
+                            GTBees.combs.getStackForType(CombType.INDIUM, 4))
                     .itemOutputs(
                             MaterialLibAPI.getStack(Materials2Materials.Copper, Materials2Shapes.dust, (int) (1)),
                             MaterialLibAPI.getStack(Materials2Materials.Indium, Materials2Shapes.dust, (int) (3)),

@@ -52,7 +52,6 @@ import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
-import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.CircuitComponents;
@@ -1033,8 +1032,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier5.get(),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.screw),
-                        'P', MU.craftIngredient(OrePrefixes.plate, Materials2Materials.FierySteel), 'O',
+                new Object[] { "XdX", "POP", "PPP", 'X', MaterialLibAPI
+                        .getStack(Materials2Materials.RhodiumPlatedPalladium, Materials2Shapes.screw, (int) (1)), 'P',
+                        MU.craftIngredient(OrePrefixes.plate, Materials2Materials.FierySteel), 'O',
                         NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier6.get(),

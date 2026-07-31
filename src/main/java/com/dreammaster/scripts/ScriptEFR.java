@@ -87,7 +87,6 @@ import com.google.common.collect.ImmutableList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
-import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import forestry.core.fluids.Fluids;
@@ -1432,7 +1431,9 @@ public class ScriptEFR implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.Epidote, Materials2Shapes.dust, (int) (9L)), // gt
                         MaterialLibAPI.getStack(Materials2Materials.Cordierite, Materials2Shapes.dust, (int) (9L)),
                         MaterialLibAPI.getStack(Materials2Materials.Cobaltite, Materials2Shapes.dust, (int) (6L)), // gt
-                        GTOreDictUnificator.get(WerkstoffLoader.Bismuthinit.get(OrePrefixes.dust, 4)), // bart
+                        GTOreDictUnificator.get(
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Bismuthinite, Materials2Shapes.dust, (int) (4))), // bart
                         MaterialLibAPI.getStack(Materials2Materials.Datolite, Materials2Shapes.dust, (int) (4L)),
                         GTOreDictUnificator.get(MaterialsOres.TITANITE.getDust(4))) // gt++
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);

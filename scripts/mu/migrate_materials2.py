@@ -20,6 +20,14 @@ Three passes, selectable with `--passes`:
   `itemdata`
       `OrePrefixes.P.get(Materials.M)` -> `MU.craftIngredient(OrePrefixes.P, Materials2Materials.M)`
 
+  `foreign`
+      The same rewrites for the material holders the other mods used to own: BartWorks'
+      `WerkstoffLoader`, gtnhlanth's `WerkstoffMaterialPool`, GoodGenerator's `GGMaterial` and
+      GT++'s `MaterialsAlloy`/`MaterialsElements.STANDALONE`/`MaterialMisc`/`MaterialsOres`.
+      Werkstoff-backed fields resolve through the werkstoff id each field carried; GT++ fields
+      resolve through the display name their `new Material(...)` declaration carried. Both maps are
+      derived, not hand-written, so a field the dumps do not cover is reported rather than guessed.
+
 A (material, shape) pair becomes a `MaterialLibAPI.getStack`/`getFluidStack` call only when
 `ml-materials.json` lists that shape for that material. Otherwise the call routes back through
 `MU.materialOf(Materials2Materials.M)`, keeping the legacy ore-dictionary lookup for prefixes
@@ -57,6 +65,7 @@ ML_MATERIALS_JSON = GT5U_ROOT / "scripts/mu/dumps/ml-materials.json"
 WERKSTOFF_FIELDS_JSON = GT5U_ROOT / "scripts/mu/dumps/werkstoff-fields.json"
 MATERIALS_DIR = GT5U_ROOT / "src/main/java/gregtech/api/enums/materials"
 MATERIALS_INIT_REF = "origin/master:src/main/java/gregtech/loaders/materials/MaterialsInit.java"
+GTPP_MATERIAL_DIR_REF = "master:src/main/java/gtPlusPlus/core/material"
 
 HARD_EXCLUDE_PREFIXES = {"solid"}
 
@@ -109,8 +118,9 @@ STATIC_IMPORT_RE = re.compile(r"^import static gregtech\.api\.enums\.(Materials|
 
 
 def load_ml_materials():
+    """The dump keyed by the identifier `Materials` exposes, which is what call sites name."""
     data = json.loads(ML_MATERIALS_JSON.read_text(encoding="utf-8"))
-    return {m["name"]: m for m in data}
+    return {sanitize(m["name"]): m for m in data}
 
 
 def load_shape_fields(class_name):
@@ -160,12 +170,108 @@ def load_legacy_material_map(material_fields):
     return mapping
 
 
+# Source token of a foreign material holder -> (import path, how its fields resolve, owning mod).
+FOREIGN_HOLDERS = {
+    "WerkstoffLoader": ("bartworks.system.material.WerkstoffLoader", "werkstoff", "bartworks"),
+    "WerkstoffMaterialPool": ("gtnhlanth.common.register.WerkstoffMaterialPool", "werkstoff", "gtnhlanth"),
+    "BotWerkstoffMaterialPool": (
+        "gtnhlanth.common.register.BotWerkstoffMaterialPool",
+        "werkstoff",
+        "gtnhlanth",
+    ),
+    "GGMaterial": ("goodgenerator.items.GGMaterial", "werkstoff", "goodgenerator"),
+    "MaterialsAlloy": ("gtPlusPlus.core.material.MaterialsAlloy", "gtpp", "gtplusplus"),
+    "MaterialMisc": ("gtPlusPlus.core.material.MaterialMisc", "gtpp", "gtplusplus"),
+    "MaterialsOres": ("gtPlusPlus.core.material.MaterialsOres", "gtpp", "gtplusplus"),
+    "MaterialsElements.STANDALONE": (
+        "gtPlusPlus.core.material.MaterialsElements.STANDALONE",
+        "gtpp",
+        "gtplusplus",
+    ),
+}
+# Narrowed by --mods so one mod's holders can be migrated and committed on their own.
+SELECTED_MODS = {mod for _, _, mod in FOREIGN_HOLDERS.values()}
+
+# GT++'s `Material` exposed one accessor per prefix instead of taking the prefix as an argument.
+GTPP_GETTERS = {
+    "getBlock": "block",
+    "getBolt": "bolt",
+    "getCell": "cell",
+    "getDust": "dust",
+    "getFineWire": "wireFine",
+    "getFoil": "foil",
+    "getFrameBox": "frameGt",
+    "getGear": "gearGt",
+    "getGearSmall": "gearGtSmall",
+    "getHotIngot": "ingotHot",
+    "getIngot": "ingot",
+    "getLongRod": "stickLong",
+    "getNugget": "nugget",
+    "getPlasmaCell": "cellPlasma",
+    "getPlate": "plate",
+    "getPlateDense": "plateDense",
+    "getPlateDouble": "plateDouble",
+    "getPlateSuperdense": "plateSuperdense",
+    "getRing": "ring",
+    "getRod": "stick",
+    "getRotor": "rotor",
+    "getScrew": "screw",
+    "getSmallDust": "dustSmall",
+    "getTinyDust": "dustTiny",
+}
+
 ML_MATERIALS = load_ml_materials()
 ITEM_SHAPE_FIELDS = load_shape_fields("Shapes")
 CELL_SHAPE_FIELDS = load_shape_fields("CellShapes")
 FLUID_SHAPE_FIELDS = load_shape_fields("FluidShapes")
 MATERIAL_FIELDS = load_material_fields()
 LEGACY_MATERIAL_MAP = load_legacy_material_map(MATERIAL_FIELDS)
+
+
+def git_show(ref):
+    return subprocess.run(
+        ["git", "-C", str(GT5U_ROOT), "show", ref], capture_output=True, check=True
+    ).stdout.decode("utf-8")
+
+
+def load_werkstoff_material_map():
+    """`<holder>.<field>` -> unified identifier, keyed by the werkstoff id each field carried."""
+    by_id = {}
+    for material in ML_MATERIALS.values():
+        werkstoff = material.get("werkstoff")
+        for werkstoff_id in (werkstoff or {}).get("ids", []):
+            by_id[werkstoff_id] = material["name"]
+    mapping = {}
+    for entry in json.loads(WERKSTOFF_FIELDS_JSON.read_text(encoding="utf-8")):
+        name = by_id.get(entry["id"])
+        if name is None:
+            continue
+        holder = entry["class"].rsplit(".", 1)[1]
+        mapping[f"{holder}.{entry['field']}"] = sanitize(name)
+    return mapping
+
+
+def load_gtpp_material_map():
+    """`<holder>.<field>` -> unified identifier, keyed by the declared display name.
+
+    GT++ declared each material as `new Material("Some Name", ...)`, and the unified class names its
+    field after that same string, so the identifier falls out of `sanitize`.
+    """
+    declaration = re.compile(r"Material (\w+) = new Material\(\s*\n?\s*\"([^\"]*)\"")
+    mapping = {}
+    for holder, (path, source, _mod) in FOREIGN_HOLDERS.items():
+        if source != "gtpp":
+            continue
+        source_class, _, nested = path.split(".", 3)[3].partition(".")
+        text = git_show(f"{GTPP_MATERIAL_DIR_REF}/{source_class}.java")
+        if nested:
+            text = text[text.index(f"class {nested} {{") :]
+        for field, name in declaration.findall(text):
+            mapping[f"{holder}.{field}"] = sanitize(name)
+    return mapping
+
+
+FOREIGN_MATERIAL_MAP = {**load_werkstoff_material_map(), **load_gtpp_material_map()}
 
 
 def classify_prefix(prefix: str):
@@ -412,6 +518,149 @@ def process_itemdata_get(text: str, m: re.Match, uses, skip_log):
     return start, close_idx + 1, replacement
 
 
+FOREIGN_HOLDER_ALTERNATION = "|".join(
+    sorted((h.replace(".", r"\.") for h in FOREIGN_HOLDERS), key=len, reverse=True)
+)
+FOREIGN_HOLDER_RE = re.compile(r"\b(" + FOREIGN_HOLDER_ALTERNATION + r")\.(\w+)\.(\w+)\(")
+FOREIGN_NULLARY_RE = re.compile(r"^(" + FOREIGN_HOLDER_ALTERNATION + r")\.(\w+)\.(\w+)\(\)$")
+NEW_FLUIDSTACK_RE = re.compile(r"\bnew FluidStack\(")
+FOREIGN_STATIC_IMPORT_RE = re.compile(r"^import static ([\w.]+)\.(\w+);$")
+
+
+def foreign_fluid_shape(material: str, getter: str):
+    """The FluidShapes field a foreign fluid accessor resolved to, or None if the dump has no fluid.
+
+    `getFluidOrGas` took whichever of the liquid/gas slots the werkstoff filled. GT++'s
+    `getFluidStack`/`getFluid` took the one fluid its `Material` registered, which the dump names
+    under `gtpp.fluidName`.
+    """
+    entry = ML_MATERIALS.get(material)
+    if entry is None:
+        return None
+    fluids = entry.get("fluids", {})
+    if getter == "getMolten":
+        return "fluidMolten" if fluids.get("molten") else None
+    if getter == "getPlasma":
+        return "fluidPlasma" if fluids.get("plasma") else None
+    if getter == "getFluidOrGas":
+        if fluids.get("fluid"):
+            return "fluidLiquid"
+        return "fluidGas" if fluids.get("gas") else None
+    fluid_name = (entry.get("gtpp") or {}).get("fluidName")
+    slots = {"solid": "fluidSolid", "fluid": "fluidLiquid", "gas": "fluidGas", "molten": "fluidMolten"}
+    for slot, field in slots.items():
+        registered = fluids.get(slot)
+        if registered and registered["name"] == fluid_name:
+            return field
+    return None
+
+
+def process_foreign_call(text: str, m: re.Match, uses, skip_log):
+    holder, field, getter = m.group(1), m.group(2), m.group(3)
+    start = m.start()
+    open_idx = m.end() - 1
+    close_idx = find_matching_paren(text, open_idx)
+    args = split_top_level_args(text[open_idx + 1 : close_idx])
+    snippet = text[start : close_idx + 1][:120]
+    if FOREIGN_HOLDERS[holder][2] not in SELECTED_MODS:
+        return None
+    material = FOREIGN_MATERIAL_MAP.get(f"{holder}.{field}")
+    if material is None:
+        skip_log.append(("unmapped-foreign-field", f"{holder}.{field}", getter, snippet))
+        return None
+
+    if getter in ("get", "getComponentByPrefix") and 1 <= len(args) <= 2:
+        prefix_m = LITERAL_OREPREFIX_RE.match(args[0])
+        if not prefix_m:
+            return None
+        prefix, amount = prefix_m.group(1), args[1] if len(args) == 2 else "1"
+    elif getter in GTPP_GETTERS and len(args) == 1:
+        prefix, amount = GTPP_GETTERS[getter], args[0]
+    elif getter in ("getFluidOrGas", "getMolten", "getFluidStack") and len(args) == 1:
+        shape = foreign_fluid_shape(material, getter)
+        if shape is None:
+            skip_log.append(("no-fluid-slot", f"{holder}.{field}", getter, snippet))
+            return None
+        return start, close_idx + 1, build_fluid_call(material, shape, args[0], uses)
+    else:
+        skip_log.append(("unhandled-foreign-getter", f"{holder}.{field}", getter, snippet))
+        return None
+
+    classified = classify_prefix(prefix)
+    if classified is None or not material_has_shape(material, prefix):
+        return start, close_idx + 1, build_unificator_call(prefix, material, amount, uses)
+    kind, shape = classified
+    return start, close_idx + 1, build_stack_call(material, kind, shape, amount, uses)
+
+
+def process_foreign_fluidstack(text: str, start: int, uses, skip_log):
+    """`new FluidStack(<holder>.<field>.getFluid(), n)`, GT++'s only zero-argument fluid accessor."""
+    open_idx = text.index("(", start)
+    close_idx = find_matching_paren(text, open_idx)
+    args = split_top_level_args(text[open_idx + 1 : close_idx])
+    if len(args) != 2:
+        return None
+    inner = FOREIGN_NULLARY_RE.match(args[0])
+    if not inner or inner.group(3) not in ("getFluid", "getPlasma"):
+        return None
+    holder, field, getter = inner.group(1), inner.group(2), inner.group(3)
+    if FOREIGN_HOLDERS[holder][2] not in SELECTED_MODS:
+        return None
+    material = FOREIGN_MATERIAL_MAP.get(f"{holder}.{field}")
+    if material is None:
+        skip_log.append(("unmapped-foreign-field", f"{holder}.{field}", getter, args[0]))
+        return None
+    shape = foreign_fluid_shape(material, getter)
+    if shape is None:
+        skip_log.append(("no-fluid-slot", f"{holder}.{field}", getter, args[0]))
+        return None
+    return start, close_idx + 1, build_fluid_call(material, shape, args[1], uses)
+
+
+def apply_foreign_static_import_pass(text: str):
+    """Drops `import static <holder>.<FIELD>;` and re-qualifies the references it covered."""
+    holders_by_path = {
+        path: holder for holder, (path, _, mod) in FOREIGN_HOLDERS.items() if mod in SELECTED_MODS
+    }
+    lines = text.split("\n")
+    kept = []
+    qualify = {}
+    for line in lines:
+        m = FOREIGN_STATIC_IMPORT_RE.match(line.strip())
+        holder = holders_by_path.get(m.group(1)) if m else None
+        if holder is None:
+            kept.append(line)
+        else:
+            qualify[m.group(2)] = holder
+    if not qualify:
+        return text, 0
+    pattern = re.compile(r"(?<![\w.])(" + "|".join(sorted(qualify, key=len, reverse=True)) + r")\b")
+    out = []
+    for line in kept:
+        if line.lstrip().startswith("import "):
+            out.append(line)
+            continue
+        out.append(
+            "".join(
+                span if quoted else pattern.sub(lambda mm: f"{qualify[mm.group(1)]}.{mm.group(1)}", span)
+                for span, quoted in split_literals(line)
+            )
+        )
+    return "\n".join(out), len(qualify)
+
+
+def drop_foreign_imports(text: str):
+    body = "\n".join(l for l in text.split("\n") if not l.lstrip().startswith("import "))
+    drop = set()
+    for holder, (path, _, mod) in FOREIGN_HOLDERS.items():
+        if mod not in SELECTED_MODS:
+            continue
+        root = holder.split(".")[0]
+        if not re.search(r"\b" + root + r"\b", body):
+            drop.add(f"import {path.rsplit('.', 1)[0] if '.' in holder else path};")
+    return "\n".join(l for l in text.split("\n") if l.strip() not in drop)
+
+
 def apply_static_import_pass(text: str):
     lines = text.split("\n")
     names = {"Materials": [], "OrePrefixes": []}
@@ -482,6 +731,15 @@ def collect_edits(text: str, passes, uses, skip_log):
             result = process_itemdata_get(text, m, uses, skip_log)
             if result:
                 edits.append(result)
+    if "foreign" in passes:
+        for m in NEW_FLUIDSTACK_RE.finditer(text):
+            result = process_foreign_fluidstack(text, m.start(), uses, skip_log)
+            if result:
+                edits.append(result)
+        for m in FOREIGN_HOLDER_RE.finditer(text):
+            result = process_foreign_call(text, m, uses, skip_log)
+            if result:
+                edits.append(result)
     edits.sort(key=lambda e: e[0])
     pruned = []
     for edit in edits:
@@ -531,6 +789,9 @@ def rewrite_file(path: Path, apply: bool, passes):
         if qualified:
             uses.add("legacymaterials")
             uses.add("oreprefixes")
+    if "foreign" in passes:
+        text, foreign_qualified = apply_foreign_static_import_pass(text)
+        qualified += foreign_qualified
 
     edits = collect_edits(text, passes, uses, skip_log)
     for start, end, replacement in reversed(edits):
@@ -538,6 +799,8 @@ def rewrite_file(path: Path, apply: bool, passes):
 
     if edits or qualified:
         text = fix_imports(text, uses)
+    if "foreign" in passes:
+        text = drop_foreign_imports(text)
 
     if apply and text != original:
         path.write_text(text, encoding="utf-8")
@@ -550,11 +813,19 @@ def main():
     parser.add_argument("paths", nargs="+")
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--passes", default="staticimports,stacks")
+    parser.add_argument("--mods", default=None, help="comma-separated holder owners for --passes foreign")
     parser.add_argument("--report", type=Path, default=None)
     args = parser.parse_args()
 
+    if args.mods:
+        global SELECTED_MODS
+        known = {mod for _, _, mod in FOREIGN_HOLDERS.values()}
+        SELECTED_MODS = {m.strip() for m in args.mods.split(",") if m.strip()}
+        if SELECTED_MODS - known:
+            sys.exit(f"unknown mod(s): {', '.join(sorted(SELECTED_MODS - known))}")
+
     passes = {p.strip() for p in args.passes.split(",") if p.strip()}
-    unknown = passes - {"staticimports", "stacks", "itemdata"}
+    unknown = passes - {"staticimports", "stacks", "itemdata", "foreign"}
     if unknown:
         sys.exit(f"unknown pass(es): {', '.join(sorted(unknown))}")
 

@@ -20,7 +20,6 @@ import com.dreammaster.scripts.IngredientFactory;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
-import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
@@ -185,7 +184,10 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI
                         .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.plateSuperdense, (int) (64)),
-                WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.plateSuperdense, 64),
+                MaterialLibAPI.getStack(
+                        Materials2Materials.RhodiumPlatedPalladium,
+                        Materials2Shapes.plateSuperdense,
+                        (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.plateSuperdense, (int) (64)),
@@ -210,7 +212,7 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI
                         .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.plateSuperdense, (int) (64)),
-                WerkstoffLoader.Ruridit.get(OrePrefixes.plateSuperdense, 64),
+                MaterialLibAPI.getStack(Materials2Materials.Ruridit, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Europium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.plateSuperdense, (int) (64)),
@@ -436,7 +438,8 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials2Materials.StainlessSteel, Materials2Shapes.stickLong, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Titanium, Materials2Shapes.stickLong, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.stickLong, (int) (64)),
-                WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.stickLong, 64),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.RhodiumPlatedPalladium, Materials2Shapes.stickLong, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Iridium, Materials2Shapes.stickLong, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Osmium, Materials2Shapes.stickLong, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Neutronium, Materials2Shapes.stickLong, (int) (64)),

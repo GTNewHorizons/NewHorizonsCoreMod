@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static bartworks.system.material.WerkstoffLoader.Californium;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
@@ -54,7 +53,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import appeng.api.AEApi;
 import bartworks.common.loaders.ItemRegistry;
-import bartworks.system.material.WerkstoffLoader;
 import ggfab.GGItemList;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
@@ -1208,8 +1206,9 @@ public class AssemblingLineRecipes implements Runnable {
                                     .getStack(Materials2Materials.Neutronium, Materials2Shapes.stickLong, (int) (64L)),
                             MaterialLibAPI
                                     .getStack(Materials2Materials.Osmiridium, Materials2Shapes.stickLong, (int) (64L)),
-                            Californium.get(OrePrefixes.stickLong, 64), MaterialsAlloy.QUANTUM.getLongRod(64),
-                            MaterialsElements.STANDALONE.HYPOGEN.getLongRod(64),
+                            MaterialLibAPI
+                                    .getStack(Materials2Materials.Californium, Materials2Shapes.stickLong, (int) (64)),
+                            MaterialsAlloy.QUANTUM.getLongRod(64), MaterialsElements.STANDALONE.HYPOGEN.getLongRod(64),
                             MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getLongRod(64),
                             GGMaterial.tairitsu.get(OrePrefixes.stickLong, 64),
                             MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getLongRod(64),
@@ -1369,10 +1368,10 @@ public class AssemblingLineRecipes implements Runnable {
                             MaterialLibAPI
                                     .getStack(Materials2Materials.Osmiridium, Materials2Shapes.stickLong, (int) (64L)),
                             GTOreDictUnificator.get("stickLongShirabon", 64),
-                            new ItemStack(WerkstoffLoader.items.get(OrePrefixes.stickLong), 64, 39),
+                            MaterialLibAPI.getStack(Materials2Materials.Californium, Materials2Shapes.stickLong, 64),
                             MaterialsAlloy.QUANTUM.getLongRod(64), MaterialsElements.STANDALONE.HYPOGEN.getLongRod(64),
                             MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getLongRod(64),
-                            new ItemStack(WerkstoffLoader.items.get(OrePrefixes.stickLong), 64, 10106),
+                            MaterialLibAPI.getStack(Materials2Materials.Tairitsu, Materials2Shapes.stickLong, 64),
                             MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getLongRod(64),
 
                             MaterialLibAPI.getStack(
