@@ -2,8 +2,6 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Materials.Diamond;
-import static gregtech.api.enums.Materials.Ichorium;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
@@ -18,8 +16,6 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
-import static gregtech.api.enums.OrePrefixes.gemExquisite;
-import static gregtech.api.enums.OrePrefixes.ingot;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -39,8 +35,10 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -86,7 +84,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0));
 
         GTModHandler.addSmeltingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Ichorium), 1L),
                 MaterialLibAPI.getStack(Materials2Materials.Ichorium, Materials2Shapes.ingot, (int) (2L)));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
@@ -103,8 +101,12 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(20 * TICKS)
-                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1)))
+                .duration(20 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(
@@ -1980,7 +1982,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.PLANT, 64).add(Aspect.TRAVEL, 64).add(Aspect.LIGHT, 64)
                         .add(Aspect.MOTION, 64).add(Aspect.MINE, 64).add(Aspect.EARTH, 64).add(Aspect.ARMOR, 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothBoots", 1, 0),
-                ingot.get(Ichorium),
+                OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemBootsThaumium", 1, 0),
                 createItemStack(
                         ThaumicTinkerer.ID,
@@ -1990,8 +1992,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         "{mainAspect:{Aspects:[0:{amount:1,key:\"terra\"}]}}"),
                 getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0),
                 getModItem(Botania.ID, "manaResource", 1, 22),
-                gemExquisite.get(Diamond),
-                ingot.get(Ichorium),
+                OrePrefixes.gemExquisite.get(Materials.Diamond),
+                OrePrefixes.ingot.get(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5),
                 getModItem(Minecraft.ID, "lead", 1, 0),

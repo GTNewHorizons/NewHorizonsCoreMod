@@ -16,10 +16,10 @@ import com.cubefury.vendingmachine.items.VMItems;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -60,7 +60,8 @@ public class ScriptVendingMachine implements IScriptLoader {
                 ironPlate,
                 "foilIron",
                 ironPlate);
-        GTOreDictUnificator.addItemData(VMItems.casing, new ItemData(Materials.Iron, 7 * GTValues.M));
+        GTOreDictUnificator
+                .addItemData(VMItems.casing, new ItemData(MU.materialOf(Materials2Materials.Iron), 7 * GTValues.M));
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),

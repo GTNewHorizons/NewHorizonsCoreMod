@@ -49,6 +49,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
@@ -1178,7 +1179,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "HELLISHMETAL",
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1),
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.HellishMetal), 1),
                 1,
                 new AspectList().add(Aspect.FIRE, 8),
                 MaterialsElements.getInstance().RHODIUM.getBlock(1),
@@ -1190,7 +1191,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "HELLISHMETAL",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1))));
+                                GTOreDictUnificator
+                                        .get(OrePrefixes.block, MU.materialOf(Materials2Materials.HellishMetal), 1))));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1202,7 +1204,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                                 Materials2Materials.Thaumium,
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (8 * 144)))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.HellishMetal), 1))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(electrolyzerNonCellRecipes);
 
         GTValues.RA.stdBuilder()

@@ -77,6 +77,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -172,8 +173,9 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .circuit(2).itemOutputs(getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-        ChiselHelper
-                .addVariationFromStack("thaumium", GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L));
+        ChiselHelper.addVariationFromStack(
+                "thaumium",
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Thaumium), 1L));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Amber, Materials2Shapes.dust, (int) (1L)))
@@ -2359,8 +2361,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(2)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.dimensionallyshiftedsuperfluid,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (2)))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
@@ -2377,10 +2383,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                                 MaterialLibAPI.getStack(Materials2Materials.Jasper, Materials2Shapes.lens, (int) (1L))))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Spinel, 1L)))
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
+                GTUtility.copyAmount(
+                        0,
+                        MaterialLibAPI.getStack(Materials2Materials.FoolsRuby, Materials2Shapes.lens, (int) (1L))))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder().itemInputs(
@@ -4272,7 +4279,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketFired", 1, 0),
                 getModItem(Minecraft.ID, "bucket", 1, 0),
                 getModItem(Forestry.ID, "canEmpty", 1, 0),
-                Materials.Empty.getCells(1));
+                GTOreDictUnificator.get(OrePrefixes.cell, MU.materialOf(Materials2Materials.Empty), 1));
         TCHelper.addResearchPage(
                 "CORELIQUID",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5))));
