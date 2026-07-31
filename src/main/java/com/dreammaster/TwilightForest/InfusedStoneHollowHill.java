@@ -2,19 +2,19 @@ package com.dreammaster.TwilightForest;
 
 import java.util.Random;
 
-import gregtech.api.enums.Materials;
+import gregtech.api.enums.materials2.Materials2Materials;
 import twilightforest.world.TFGenCaveStalactite;
 
 public class InfusedStoneHollowHill {
 
-    static final TFGenCaveStalactite aer = new GregtechStalactite(Materials.InfusedAir, 0.7F, 8, 1);
-    static final TFGenCaveStalactite aqua = new GregtechStalactite(Materials.InfusedWater, 0.7F, 8, 1);
-    static final TFGenCaveStalactite ignis = new GregtechStalactite(Materials.InfusedFire, 0.7F, 8, 1);
-    static final TFGenCaveStalactite ordo = new GregtechStalactite(Materials.InfusedOrder, 0.7F, 8, 1);
-    static final TFGenCaveStalactite perditio = new GregtechStalactite(Materials.InfusedEntropy, 0.7F, 8, 1);
-    static final TFGenCaveStalactite terra = new GregtechStalactite(Materials.InfusedEarth, 0.7F, 8, 1);
-    static final TFGenCaveStalactite amber = new GregtechStalactite(Materials.Amber, 0.8F, 12, 1);
-    static final TFGenCaveStalactite cinnabar = new GregtechStalactite(Materials.Cinnabar, 0.8F, 8, 1);
+    static final TFGenCaveStalactite aer = new GregtechStalactite(Materials2Materials.InfusedAir, 0.7F, 8, 1);
+    static final TFGenCaveStalactite aqua = new GregtechStalactite(Materials2Materials.InfusedWater, 0.7F, 8, 1);
+    static final TFGenCaveStalactite ignis = new GregtechStalactite(Materials2Materials.InfusedFire, 0.7F, 8, 1);
+    static final TFGenCaveStalactite ordo = new GregtechStalactite(Materials2Materials.InfusedOrder, 0.7F, 8, 1);
+    static final TFGenCaveStalactite perditio = new GregtechStalactite(Materials2Materials.InfusedEntropy, 0.7F, 8, 1);
+    static final TFGenCaveStalactite terra = new GregtechStalactite(Materials2Materials.InfusedEarth, 0.7F, 8, 1);
+    static final TFGenCaveStalactite amber = new GregtechStalactite(Materials2Materials.Amber, 0.8F, 12, 1);
+    static final TFGenCaveStalactite cinnabar = new GregtechStalactite(Materials2Materials.Cinnabar, 0.8F, 8, 1);
 
     static TFGenCaveStalactite makeStalactite(Random rand) {
         if (rand.nextInt(2) == 0) {

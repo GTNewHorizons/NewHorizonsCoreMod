@@ -23,8 +23,6 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
-import static gregtech.api.enums.OrePrefixes.pipeMedium;
-import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
 import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
@@ -911,8 +909,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier5.get(),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.RhodiumPlatedPalladium.get(screw), 'P',
-                        OrePrefixes.plate.get(Materials.FierySteel), 'O', NHItemList.ReinforcedGlassLense.get() });
+                new Object[] { "XdX", "POP", "PPP", 'X', WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.screw),
+                        'P', OrePrefixes.plate.get(Materials.FierySteel), 'O', NHItemList.ReinforcedGlassLense.get() });
         GTModHandler.addCraftingRecipe(
                 NHItemList.RawOrbTier6.get(),
                 GTModHandler.RecipeBits.BITS,
@@ -964,7 +962,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         'B', CokeOvenBrick.get().splitStack(1),
                         'H', getModItem(Minecraft.ID, "hopper", 1, 0),
                         'C', getModItem(Minecraft.ID, "chest", 1, 0),
-                        'P', pipeMedium.get(Materials.Bronze)
+                        'P', OrePrefixes.pipeMedium.get(Materials.Bronze)
                         // spotless:on
                 });
 

@@ -102,10 +102,10 @@ import com.dreammaster.main.MainRegistry;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -453,13 +453,19 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 2));
         GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "blockCustomOre", 1, 7));
         GTModHandler.removeFurnaceSmelting(getModItem(BiomesOPlenty.ID, "gemOre", 1, 14));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBasalt, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(
+                GTOreDictUnificator.get(OrePrefixes.oreBasalt, MU.materialOf(Materials2Materials.Amber), 1L));
+        GTModHandler.removeFurnaceSmelting(
+                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, MU.materialOf(Materials2Materials.Amber), 1L));
+        GTModHandler.removeFurnaceSmelting(
+                GTOreDictUnificator.get(OrePrefixes.oreEndstone, MU.materialOf(Materials2Materials.Amber), 1L));
         GTModHandler.removeFurnaceSmelting(new ItemStack(sBlockOres1, 1, 514));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreMarble, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(
+                GTOreDictUnificator.get(OrePrefixes.oreMarble, MU.materialOf(Materials2Materials.Amber), 1L));
+        GTModHandler.removeFurnaceSmelting(
+                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, MU.materialOf(Materials2Materials.Amber), 1L));
+        GTModHandler.removeFurnaceSmelting(
+                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, MU.materialOf(Materials2Materials.Amber), 1L));
         GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "ItemShard", 1, 6));
         GTModHandler.removeFurnaceSmelting(
                 MaterialLibAPI.getStack(Materials2Materials.Obsidian, Materials2Shapes.plate, (int) (1L)));
@@ -3032,10 +3038,10 @@ public class RecipeRemover {
         removeRecipeShapelessDelayed("dustCoal"/* ERRORSTACK <- itemcount */, "blockCoal");
         removeRecipeShapelessDelayed(
                 getModItem(Minecraft.ID, "coal", 9, 1),
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Charcoal), 1L));
         removeRecipeShapelessDelayed(
                 MaterialLibAPI.getStack(Materials2Materials.Charcoal, Materials2Shapes.dust, (int) (9L)),
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Charcoal), 1L));
         removeRecipeShapelessDelayed(getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0));
         removeRecipeShapelessDelayed(
                 getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0),
