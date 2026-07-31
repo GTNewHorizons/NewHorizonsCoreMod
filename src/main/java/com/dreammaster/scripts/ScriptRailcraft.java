@@ -46,7 +46,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -2076,18 +2075,24 @@ public class ScriptRailcraft implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 1, 14),
 
-                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.Iron), 'S', ItemList.IC2_Resin.get(1L) });
+                new Object[] { "PPP", "IhI", "PSP", 'P',
+                        MU.craftIngredient(OrePrefixes.plank, Materials2Materials.Wood), 'I',
+                        MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Iron), 'S',
+                        ItemList.IC2_Resin.get(1L) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 2, 14),
 
-                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.Iron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
+                new Object[] { "PPP", "IhI", "PSP", 'P',
+                        MU.craftIngredient(OrePrefixes.plank, Materials2Materials.Wood), 'I',
+                        MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Iron), 'S',
+                        MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Rubber) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 4, 14),
 
-                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.CastIron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
+                new Object[] { "PPP", "IhI", "PSP", 'P',
+                        MU.craftIngredient(OrePrefixes.plank, Materials2Materials.Wood), 'I',
+                        MU.craftIngredient(OrePrefixes.stick, Materials2Materials.CastIron), 'S',
+                        MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Rubber) });
 
         GTValues.RA.stdBuilder()
                 .itemInputs(

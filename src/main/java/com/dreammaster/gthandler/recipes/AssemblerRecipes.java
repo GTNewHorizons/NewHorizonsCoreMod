@@ -110,7 +110,6 @@ import gregtech.GTMod;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
@@ -1125,12 +1124,10 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(4).itemOutputs(ItemList.Casing_Tank_10.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new OreDictItemStack(OrePrefixes.gem.get(Materials.Diamond).toString(), 1),
-                        Circuits.LV.get(4))
-                .itemOutputs(NHItemList.TwilightCrystal.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(
+                new OreDictItemStack(MU.craftIngredient(OrePrefixes.gem, Materials2Materials.Diamond).toString(), 1),
+                Circuits.LV.get(4)).itemOutputs(NHItemList.TwilightCrystal.get()).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2875,7 +2872,8 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(Circuits.LuV.getIngredient(), 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.TungstenSteel), 3),
+                        GTOreDictUnificator
+                                .get(MU.craftIngredient(OrePrefixes.plate, Materials2Materials.TungstenSteel), 3),
                         ItemList.Field_Generator_EV.get(1),
                         ItemList.Automation_ChestBuffer_LuV.get(1L))
                 .itemOutputs(ItemList.Quantum_Chest_LV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2884,7 +2882,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(Circuits.ZPM.getIngredient(), 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.HSSG), 3),
+                        GTOreDictUnificator.get(MU.craftIngredient(OrePrefixes.plate, Materials2Materials.HSSG), 3),
                         ItemList.Field_Generator_IV.get(1),
                         ItemList.Automation_ChestBuffer_ZPM.get(1L))
                 .itemOutputs(ItemList.Quantum_Chest_MV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2893,7 +2891,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(Circuits.UV.getIngredient(), 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.HSSS), 3),
+                        GTOreDictUnificator.get(MU.craftIngredient(OrePrefixes.plate, Materials2Materials.HSSS), 3),
                         ItemList.Field_Generator_LuV.get(1),
                         ItemList.Automation_ChestBuffer_UV.get(1L))
                 .itemOutputs(ItemList.Quantum_Chest_HV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2902,7 +2900,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(Circuits.UHV.getIngredient(), 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Europium), 3),
+                        GTOreDictUnificator.get(MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Europium), 3),
                         ItemList.Field_Generator_ZPM.get(1),
                         ItemList.Automation_ChestBuffer_UHV.get(1L))
                 .itemOutputs(ItemList.Quantum_Chest_EV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2911,7 +2909,8 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(Circuits.UEV.getIngredient(), 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Americium), 3),
+                        GTOreDictUnificator
+                                .get(MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Americium), 3),
                         ItemList.Field_Generator_UV.get(1),
                         ItemList.Automation_ChestBuffer_UEV.get(1L))
                 .itemOutputs(ItemList.Quantum_Chest_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)

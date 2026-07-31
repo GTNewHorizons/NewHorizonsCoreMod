@@ -28,11 +28,11 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.SubstituteFluidStack;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -252,13 +252,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 DiffusionCore,
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 CoalescenceCore,
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",

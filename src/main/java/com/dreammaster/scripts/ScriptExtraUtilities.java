@@ -59,7 +59,6 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -1385,8 +1384,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         1,
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
-                OrePrefixes.ring.get(Materials.Iridium),
-                OrePrefixes.screw.get(Materials.Tritanium),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Iridium),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Tritanium),
                 EngravedGoldChip.get(1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
@@ -1398,7 +1397,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 EngravedGoldChip.get(1),
-                OrePrefixes.screw.get(Materials.Tritanium));
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Tritanium));
         TCHelper.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1),
@@ -1433,8 +1432,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.METAL, 50).add(Aspect.GREED, 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.foil.get(Materials.RoseGold),
-                OrePrefixes.foil.get(Materials.RoseGold));
+                MU.craftIngredient(OrePrefixes.foil, Materials2Materials.RoseGold),
+                MU.craftIngredient(OrePrefixes.foil, Materials2Materials.RoseGold));
         new ResearchItem(
                 "EXURINGS",
                 "ARTIFICE",

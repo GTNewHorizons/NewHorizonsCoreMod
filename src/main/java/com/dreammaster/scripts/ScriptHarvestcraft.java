@@ -33,12 +33,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.common.items.MetaGeneratedTool01;
 
@@ -384,8 +384,10 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(PamsHarvestCraft.ID, "cuttingboardItem", 1, 0),
                 GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
-                new Object[] { "PPf", "PP ", "SBh", 'S', OrePrefixes.stick.get(Materials.StainlessSteel), 'P',
-                        OrePrefixes.plate.get(Materials.StainlessSteel), 'B', OrePrefixes.plate.get(Materials.Wood) });
+                new Object[] { "PPf", "PP ", "SBh", 'S',
+                        MU.craftIngredient(OrePrefixes.stick, Materials2Materials.StainlessSteel), 'P',
+                        MU.craftIngredient(OrePrefixes.plate, Materials2Materials.StainlessSteel), 'B',
+                        MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Wood) });
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "mortarandpestleItem", 1, 0),
                 "craftingToolHardHammer",

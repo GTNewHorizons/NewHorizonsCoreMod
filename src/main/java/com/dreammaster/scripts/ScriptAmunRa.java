@@ -50,7 +50,6 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OreMixes;
 import gregtech.api.enums.OrePrefixes;
@@ -470,7 +469,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new Object[] { ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
                         ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
                         NHItemList.HeavyDutyRocketEngineTier4.get(64),
-                        new Object[] { OrePrefixes.pipeHuge.get(Materials.Infinity), 8 },
+                        new Object[] { MU.craftIngredient(OrePrefixes.pipeHuge, Materials2Materials.Infinity), 8 },
                         ItemList.Electric_Pump_UHV.get(16), new Object[] { Circuits.UHV.getIngredient(), 8 },
                         new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] {
@@ -595,7 +594,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         NHItemList.HeavyDutyPlateTier8.get(),
                         MaterialLibAPI.getStack(Materials2Materials.Kevlar, Materials2Shapes.plate, (int) (7)),
                         MaterialLibAPI.getStack(Materials2Materials.Kevlar, Materials2Shapes.plate, (int) (7)),
-                        new Object[] { OrePrefixes.screw.get(Materials.Neutronium), 12 })
+                        new Object[] { MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Neutronium), 12 })
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.RadoxPoly,

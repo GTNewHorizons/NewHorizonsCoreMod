@@ -21,12 +21,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.material.MU;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -223,7 +223,7 @@ public class ScriptGadomancy implements IScriptLoader {
                 new AspectList().add(Aspect.ELDRITCH, 48).add(Aspect.AURA, 64).add(Aspect.MECHANISM, 48)
                         .add(Aspect.MAGIC, 32).add(Aspect.DARKNESS, 16).add(Aspect.EXCHANGE, 24).add(Aspect.MOTION, 8),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5),
-                OrePrefixes.plateDense.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plateDense, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
@@ -245,13 +245,13 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
-                OrePrefixes.ring.get(Materials.Void),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
-                OrePrefixes.plate.get(Materials.Void),
-                OrePrefixes.ring.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6));
         TCHelper.setResearchAspects(
                 "GADOMANCY.NODE_MANIPULATOR",
@@ -268,15 +268,15 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 8),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                OrePrefixes.stick.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0),
-                OrePrefixes.stick.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                OrePrefixes.stick.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0),
-                OrePrefixes.stick.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6));
         TCHelper.setResearchAspects(
                 "GADOMANCY.INFUSIONCLAW",
@@ -434,13 +434,13 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
-                OrePrefixes.ring.get(Materials.Void),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
-                OrePrefixes.plate.get(Materials.Void),
-                OrePrefixes.ring.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5));
         TCHelper.setResearchAspects(
                 "GADOMANCY.E_PORTAL_CREATOR",

@@ -37,7 +37,6 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.Superconductors;
 import gregtech.api.enums.TierEU;
@@ -306,7 +305,8 @@ public class MechanicalArmorRecipes {
         if (Forestry.isModLoaded()) {
             GTModHandler.addCraftingRecipe(
                     ItemList.ModificationTable.get(1L),
-                    new Object[] { "PCP", "RWR", "PHP", 'P', OrePrefixes.plate.get(Materials.EnergeticAlloy), 'C',
+                    new Object[] { "PCP", "RWR", "PHP", 'P',
+                            MU.craftIngredient(OrePrefixes.plate, Materials2Materials.EnergeticAlloy), 'C',
                             ItemList.Cover_Screen, 'R', ItemList.Robot_Arm_HV, 'W',
                             getModItem(Forestry.ID, "factory2", 1, 2, missing), 'H', ItemList.Hull_HV });
         }
@@ -367,7 +367,8 @@ public class MechanicalArmorRecipes {
                         getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0, missing), 'L',
                         getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0, missing), 'B',
                         getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing), 'P',
-                        OrePrefixes.plate.get(Materials.Lead), 'R', ItemList.Armor_Chip_T1.get(1) });
+                        MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Lead), 'R',
+                        ItemList.Armor_Chip_T1.get(1) });
 
         if (GalacticraftMars.isModLoaded() && GalacticraftCore.isModLoaded() && GalaxySpace.isModLoaded()) {
             GTModHandler.addCraftingRecipe(
@@ -385,7 +386,8 @@ public class MechanicalArmorRecipes {
                 new Object[] { "TST", "PRP", "FCF", 'S',
                         getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing), 'P',
                         ItemList.Electric_Pump_HV.get(1), 'F', new ItemStack(Items.fish, 1, 3), 'C',
-                        Circuits.HV.getIngredient(), 'T', OrePrefixes.pipeSmall.get(Materials.StainlessSteel), 'R',
+                        Circuits.HV.getIngredient(), 'T',
+                        MU.craftIngredient(OrePrefixes.pipeSmall, Materials2Materials.StainlessSteel), 'R',
                         ItemList.Armor_Chip_T1.get(1) });
 
         if (Forestry.isModLoaded()) {
@@ -403,18 +405,18 @@ public class MechanicalArmorRecipes {
                 ItemList.Augment_NightVision.get(1),
                 new Object[] { "PGP", "ORO", "PCP", 'G',
                         getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, WILDCARD, missing), 'P',
-                        OrePrefixes.plate.get(Materials.StainlessSteel), 'O',
-                        OrePrefixes.stick.get(Materials.StainlessSteel), 'C', Circuits.HV.getIngredient(), 'R',
-                        ItemList.Armor_Chip_T1.get(1) });
+                        MU.craftIngredient(OrePrefixes.plate, Materials2Materials.StainlessSteel), 'O',
+                        MU.craftIngredient(OrePrefixes.stick, Materials2Materials.StainlessSteel), 'C',
+                        Circuits.HV.getIngredient(), 'R', ItemList.Armor_Chip_T1.get(1) });
 
         if (HoloInventory.isModLoaded()) {
             GTModHandler.addCraftingRecipe(
                     ItemList.Augment_HoloInventory.get(1),
                     new Object[] { "PGP", "ORO", "PCP", 'G',
                             getModItem(HoloInventory.ID, "Hologlasses", 1, WILDCARD, missing), 'P',
-                            OrePrefixes.plate.get(Materials.StainlessSteel), 'O',
-                            OrePrefixes.stick.get(Materials.StainlessSteel), 'C', Circuits.HV.getIngredient(), 'R',
-                            ItemList.Armor_Chip_T1.get(1) });
+                            MU.craftIngredient(OrePrefixes.plate, Materials2Materials.StainlessSteel), 'O',
+                            MU.craftIngredient(OrePrefixes.stick, Materials2Materials.StainlessSteel), 'C',
+                            Circuits.HV.getIngredient(), 'R', ItemList.Armor_Chip_T1.get(1) });
         }
 
         if (GraviSuite.isModLoaded()) {
@@ -422,9 +424,9 @@ public class MechanicalArmorRecipes {
                     ItemList.Augment_Jetpack.get(1),
                     new Object[] { "PJP", "ORO", "PCP", 'J',
                             getModItem(GraviSuite.ID, "advJetpack", 1, WILDCARD, missing), 'P',
-                            OrePrefixes.plate.get(Materials.TungstenSteel), 'O',
-                            OrePrefixes.stick.get(Materials.TungstenSteel), 'C', Circuits.EV.getIngredient(), 'R',
-                            ItemList.Armor_Chip_T1.get(1) });
+                            MU.craftIngredient(OrePrefixes.plate, Materials2Materials.TungstenSteel), 'O',
+                            MU.craftIngredient(OrePrefixes.stick, Materials2Materials.TungstenSteel), 'C',
+                            Circuits.EV.getIngredient(), 'R', ItemList.Armor_Chip_T1.get(1) });
         }
 
         GTModHandler.addCraftingRecipe(
@@ -437,14 +439,16 @@ public class MechanicalArmorRecipes {
         GTModHandler.addCraftingRecipe(
                 ItemList.Augment_FallProtection.get(1),
                 new Object[] { "FWF", "PRP", "FWF", 'P', ItemList.Electric_Piston_HV.get(1), 'W',
-                        new ItemStack(Blocks.wool, 1, WILDCARD), 'F', OrePrefixes.frameGt.get(Materials.Electrum), 'R',
+                        new ItemStack(Blocks.wool, 1, WILDCARD), 'F',
+                        MU.craftIngredient(OrePrefixes.frameGt, Materials2Materials.Electrum), 'R',
                         ItemList.Armor_Chip_T1.get(1) });
 
         // T2 Augments
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Augment_OmniMovement.get(1),
-                new Object[] { "TCT", "CRC", "TCT", 'T', OrePrefixes.plate.get(Materials.TungstenSteel), 'C',
+                new Object[] { "TCT", "CRC", "TCT", 'T',
+                        MU.craftIngredient(OrePrefixes.plate, Materials2Materials.TungstenSteel), 'C',
                         ItemList.Conveyor_Module_HV.get(1), 'R', ItemList.Armor_Chip_T2.get(1) });
 
         if (PamsHarvestCraft.isModLoaded()) {
@@ -454,15 +458,18 @@ public class MechanicalArmorRecipes {
                             getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), 'P',
                             ItemList.Electric_Piston_IV.get(1), 'B',
                             getModItem(TinkerConstruct.ID, "slime.pad", 1, 0, missing), 'C',
-                            Circuits.IV.getIngredient(), 'S', OrePrefixes.screw.get(Materials.TungstenSteel), 'R',
+                            Circuits.IV.getIngredient(), 'S',
+                            MU.craftIngredient(OrePrefixes.screw, Materials2Materials.TungstenSteel), 'R',
                             ItemList.Armor_Chip_T2.get(1) });
         }
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Augment_SpeedBoost.get(1),
-                new Object[] { "VDV", "MRM", "CDC", 'V', OrePrefixes.plate.get(Materials.VibrantAlloy), 'D',
-                        OrePrefixes.plate.get(Materials.DarkSteel), 'M', ItemList.Electric_Motor_IV.get(1), 'C',
-                        Circuits.IV.getIngredient(), 'R', ItemList.Armor_Chip_T2.get(1) });
+                new Object[] { "VDV", "MRM", "CDC", 'V',
+                        MU.craftIngredient(OrePrefixes.plate, Materials2Materials.VibrantAlloy), 'D',
+                        MU.craftIngredient(OrePrefixes.plate, Materials2Materials.DarkSteel), 'M',
+                        ItemList.Electric_Motor_IV.get(1), 'C', Circuits.IV.getIngredient(), 'R',
+                        ItemList.Armor_Chip_T2.get(1) });
 
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
