@@ -39,7 +39,6 @@ import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTModHandler.RecipeBits;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptAE2FC implements IScriptLoader {
@@ -171,8 +170,10 @@ public class ScriptAE2FC implements IScriptLoader {
                 0);
         final ItemStack AE2FC_ENERGY_CARD = getModItem(AE2FluidCraft.ID, "energy_card", 1, 0);
 
-        final ItemStack nitinolPlate = MaterialsAlloy.NITINOL_60.getPlate(2);
-        final ItemStack zeronPlate = MaterialsAlloy.ZERON_100.getPlate(2);
+        final ItemStack nitinolPlate = MaterialLibAPI
+                .getStack(Materials2Materials.Nitinol60, Materials2Shapes.plate, (int) (2));
+        final ItemStack zeronPlate = MaterialLibAPI
+                .getStack(Materials2Materials.Zeron100, Materials2Shapes.plate, (int) (2));
 
         // AE2FC_FLUID_STORAGE_HOUSING
         GTModHandler.addCraftingRecipe(

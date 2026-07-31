@@ -24,12 +24,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
-import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
-import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
-import static gtPlusPlus.core.material.MaterialsAlloy.LEAGRISIUM;
-import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
-import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
-import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -802,13 +796,18 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Machine_Multi_IndustrialLaserEngraver.get(1),
                 GTModHandler.RecipeBits.BITS,
                 new Object[] { "CFC", "EAE", "CEC", 'A', ItemList.Machine_IV_LaserEngraver, 'F',
-                        Circuits.LuV.getIngredient(), 'C', NITINOL_60.getPlate(1), 'E', ItemList.Emitter_IV });
+                        Circuits.LuV.getIngredient(), 'C',
+                        MaterialLibAPI.getStack(Materials2Materials.Nitinol60, Materials2Shapes.plate, (int) (1)), 'E',
+                        ItemList.Emitter_IV });
 
         // Laser Containment Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Laser.get(1),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "PhP", "PFP", "PwP", 'P', STELLITE.getPlate(1), 'F', NITINOL_60.getFrameBox(1) });
+                new Object[] { "PhP", "PFP", "PwP", 'P',
+                        MaterialLibAPI.getStack(Materials2Materials.Stellite, Materials2Shapes.plate, (int) (1)), 'F',
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Nitinol60), 1) });
 
         // Dissection Apparatus
         GTModHandler.addCraftingRecipe(
@@ -830,21 +829,27 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Machine_Mass_Solidifier.get(1),
                 GTModHandler.RecipeBits.BITS,
                 new Object[] { "CFC", "EAE", "CFC", 'A', ItemList.Machine_IV_FluidSolidifier, 'E',
-                        ItemList.Electric_Pump_IV, 'F', Circuits.LuV.getIngredient(), 'C', INCONEL_792.getPlate(1) });
+                        ItemList.Electric_Pump_IV, 'F', Circuits.LuV.getIngredient(), 'C',
+                        MaterialLibAPI.getStack(Materials2Materials.Inconel792, Materials2Shapes.plate, (int) (1)) });
 
         // Solidifier Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Fluid_Solidifier.get(1),
                 GTModHandler.RecipeBits.BITS,
-                new Object[] { "PhP", "TFT", "PwP", 'P', INCONEL_792.getPlate(1), 'F', AQUATIC_STEEL.getFrameBox(1),
-                        'T', TALONITE.getPlate(1) });
+                new Object[] { "PhP", "TFT", "PwP", 'P',
+                        MaterialLibAPI.getStack(Materials2Materials.Inconel792, Materials2Shapes.plate, (int) (1)), 'F',
+                        GTOreDictUnificator
+                                .get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.WatertightSteel), 1),
+                        'T',
+                        MaterialLibAPI.getStack(Materials2Materials.Talonite, Materials2Shapes.plate, (int) (1)) });
 
         // Solidifier Radiator Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Radiator_Fluid_Solidifier.get(2),
                 GTModHandler.RecipeBits.BITS,
                 new Object[] { "BBB", "BPB", "BKB", 'P', ItemList.Casing_Fluid_Solidifier, 'K',
-                        ItemList.Electric_Pump_IV, 'B', LEAGRISIUM.getPlate(1) });
+                        ItemList.Electric_Pump_IV, 'B',
+                        MaterialLibAPI.getStack(Materials2Materials.Grisium, Materials2Shapes.plate, (int) (1)) });
 
         // Large Electric Compressor
         GTModHandler.addCraftingRecipe(

@@ -33,7 +33,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.recipe.RecipeCategories;
-import gtPlusPlus.core.material.MaterialsElements;
 
 public class MaceratorRecipes implements Runnable {
 
@@ -95,16 +94,19 @@ public class MaceratorRecipes implements Runnable {
                 .addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.ChromaticGemExquisite.get())
-                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(8)).duration(16 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.dust, (int) (8)))
+                .duration(16 * SECONDS).eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.ChromaticGemFlawless.get())
-                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(4)).duration(8 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.dust, (int) (4)))
+                .duration(8 * SECONDS).eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.ChromaticGem.get())
-                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(2)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.dust, (int) (2)))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials2Materials.Calcium, Materials2Shapes.ingot, (int) (1)))

@@ -8,7 +8,6 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.NANITE_TIERS;
-import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.HYPOGEN;
 import static kekztech.common.Blocks.lscLapotronicEnergyUnit;
 import static tectech.thing.CustomItemList.Godforge_SingularityShieldingCasing;
 
@@ -36,7 +35,6 @@ import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import tectech.recipe.TecTechRecipeMaps;
 import tectech.thing.CustomItemList;
@@ -170,10 +168,11 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials2Materials.Samarium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI
                         .getStack(Materials2Materials.TengamPurified, Materials2Shapes.plateSuperdense, (int) (64)),
-                MaterialsElements.STANDALONE.HYPOGEN.getPlateSuperdense(64),
+                MaterialLibAPI.getStack(Materials2Materials.Hypogen, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Quantium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Magmatter, Materials2Shapes.plateSuperdense, (int) (64)),
-                MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlateSuperdense(64), };
+                MaterialLibAPI
+                        .getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.plateSuperdense, (int) (64)), };
 
         final ItemStack[] material2 = new ItemStack[] {
                 MaterialLibAPI.getStack(Materials2Materials.CastIron, Materials2Shapes.plateSuperdense, (int) (64)),
@@ -217,8 +216,8 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Draconium, Materials2Shapes.plateSuperdense, (int) (64)),
-                MaterialsElements.STANDALONE.RHUGNOR.getPlateSuperdense(64),
-                MaterialsElements.STANDALONE.DRAGON_METAL.getPlateSuperdense(64),
+                MaterialLibAPI.getStack(Materials2Materials.Rhugnor, Materials2Shapes.plateSuperdense, (int) (64)),
+                MaterialLibAPI.getStack(Materials2Materials.Dragonblood, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Universium, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.plateSuperdense, (int) (64)), };
 
@@ -334,7 +333,7 @@ public class BECRecipes implements Runnable {
                                 Materials2Materials.TranscendentMetal,
                                 Materials2Shapes.stickLong,
                                 (int) (64L)),
-                        HYPOGEN.getLongRod(64),
+                        MaterialLibAPI.getStack(Materials2Materials.Hypogen, Materials2Shapes.stickLong, (int) (64)),
                         MaterialLibAPI.getStack(
                                 Materials2Materials.SuperconductorUMVBase,
                                 Materials2Shapes.stickLong,
@@ -465,7 +464,8 @@ public class BECRecipes implements Runnable {
                         (int) (64)),
                 MaterialLibAPI
                         .getStack(Materials2Materials.CosmicNeutronium, Materials2Shapes.plateSuperdense, (int) (64)),
-                MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlateSuperdense(64),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(
                         Materials2Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid,
                         Materials2Shapes.plateSuperdense,
@@ -514,7 +514,7 @@ public class BECRecipes implements Runnable {
                         .getStack(Materials2Materials.NaquadahEnriched, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.ElectrumFlux, Materials2Shapes.plateSuperdense, (int) (64)),
                 MaterialLibAPI.getStack(Materials2Materials.Tritanium, Materials2Shapes.plateSuperdense, (int) (64)),
-                MaterialsElements.STANDALONE.RHUGNOR.getPlateSuperdense(64),
+                MaterialLibAPI.getStack(Materials2Materials.Rhugnor, Materials2Shapes.plateSuperdense, (int) (64)),
                 GGMaterial.metastableOganesson.get(OrePrefixes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials2Materials.Hexanite, Materials2Shapes.plateSuperdense, (int) (64)), };
 

@@ -36,7 +36,6 @@ import gregtech.api.recipe.metadata.SolarFactoryRecipeDataKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeBuilder;
 import gregtech.api.util.recipe.SolarFactoryRecipeData;
-import gtPlusPlus.core.material.MaterialsElements;
 
 // Recipe metadata values represent the minimum tier and the amount of wafers respectively.
 
@@ -453,7 +452,11 @@ public class SolarFactoryRecipes implements Runnable {
                             getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 5),
                             getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 5))
                     .itemOutputs(getModItem(SuperSolarPanels.ID, "solarsplitter", 8, 0))
-                    .fluidInputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getFluidStack(2304))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials2Materials.ChromaticGlass,
+                                    Materials2FluidShapes.fluidMolten,
+                                    (int) (2304)))
                     .metadata(data, new SolarFactoryRecipeData(0, 0, 3)).duration(20 * TICKS).eut(TierEU.RECIPE_UHV),
 
             GTValues.RA.stdBuilder().itemInputs(

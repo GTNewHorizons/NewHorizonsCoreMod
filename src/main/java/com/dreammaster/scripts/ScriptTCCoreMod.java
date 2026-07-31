@@ -51,7 +51,6 @@ import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsElements;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1181,7 +1180,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.HellishMetal), 1),
                 1,
                 new AspectList().add(Aspect.FIRE, 8),
-                MaterialsElements.getInstance().RHODIUM.getBlock(1),
+                GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Rhodium), 1),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6),
                 MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Thaumium),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6),
@@ -1195,7 +1194,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialsElements.getInstance().RHODIUM.getBlock(1),
+                        GTOreDictUnificator.get(OrePrefixes.block, MU.materialOf(Materials2Materials.Rhodium), 1),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 8, 6),
                         MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.dust, (int) (8)))
                 .fluidInputs(
@@ -1209,7 +1208,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialsElements.getInstance().RHODIUM.getDust(64),
+                        MaterialLibAPI.getStack(Materials2Materials.Rhodium, Materials2Shapes.dust, (int) (64)),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 64, 6),
                         MaterialLibAPI.getStack(Materials2Materials.InfusedFire, Materials2Shapes.dust, (int) (64)))
                 .fluidInputs(

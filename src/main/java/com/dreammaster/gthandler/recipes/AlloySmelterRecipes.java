@@ -25,7 +25,6 @@ import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.material.MU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class AlloySmelterRecipes implements Runnable {
 
@@ -166,8 +165,9 @@ public class AlloySmelterRecipes implements Runnable {
         int[][] tumbagaCombos = { { 0, 2 }, { 0, 3 }, { 1, 2 }, { 1, 3 } };
         for (int[] pair : tumbagaCombos) {
             GTValues.RA.stdBuilder().itemInputs(tumbagaInputs[pair[0]], tumbagaInputs[pair[1]])
-                    .itemOutputs(MaterialsAlloy.TUMBAGA.getIngot(10)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(alloySmelterRecipes);
+                    .itemOutputs(
+                            MaterialLibAPI.getStack(Materials2Materials.Tumbaga, Materials2Shapes.ingot, (int) (10)))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         }
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard), new ItemStack(Items.clay_ball))

@@ -72,7 +72,6 @@ import gregtech.api.material.GTMaterialFlag;
 import gregtech.api.material.MU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class ScriptProjectRed implements IScriptLoader {
 
@@ -1608,7 +1607,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                             Circuits.MV.get(1),
-                            MaterialsAlloy.POTIN.getPlate(1),
+                            MaterialLibAPI.getStack(Materials2Materials.Potin, Materials2Shapes.plate, (int) (1)),
                             GTOreDictUnificator
                                     .get(OrePrefixes.wireGt02, MU.materialOf(Materials2Materials.RedAlloy), 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20),

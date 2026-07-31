@@ -25,7 +25,6 @@ import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -49,7 +48,6 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.fluids.GTPPFluids;
-import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
 
 public class MixerRecipes implements Runnable {
@@ -709,8 +707,9 @@ public class MixerRecipes implements Runnable {
                         MaterialLibAPI
                                 .getStack(Materials2Materials.DraconiumAwakened, Materials2Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials2Materials.Infinity, Materials2Shapes.dust, (int) (5L)),
-                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getDust(1),
-                        MaterialsElements.STANDALONE.ADVANCED_NITINOL.getDust(1))
+                        MaterialLibAPI
+                                .getStack(Materials2Materials.CelestialTungsten, Materials2Shapes.dust, (int) (1)),
+                        MaterialLibAPI.getStack(Materials2Materials.AdvancedNitinol, Materials2Shapes.dust, (int) (1)))
                 .circuit(2)
                 .itemOutputs(
                         MaterialLibAPI.getStack(
@@ -730,8 +729,8 @@ public class MixerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials2Materials.RadoxPoly, Materials2Shapes.dust, (int) (4L)),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.TranscendentMetal, Materials2Shapes.dust, (int) (10L)),
-                        MaterialsElements.STANDALONE.RHUGNOR.getDust(6),
-                        CHRONOMATIC_GLASS.getDust(5))
+                        MaterialLibAPI.getStack(Materials2Materials.Rhugnor, Materials2Shapes.dust, (int) (6)),
+                        MaterialLibAPI.getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.dust, (int) (5)))
                 .circuit(2)
                 .itemOutputs(
                         MaterialLibAPI.getStack(

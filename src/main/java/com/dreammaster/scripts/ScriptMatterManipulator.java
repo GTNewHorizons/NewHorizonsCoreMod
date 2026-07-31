@@ -44,8 +44,6 @@ import gregtech.api.material.MU;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.recipe.Scanning;
-import gtPlusPlus.core.material.MaterialsAlloy;
-import gtPlusPlus.core.material.MaterialsElements;
 import tectech.recipe.TTRecipeAdder;
 import tectech.thing.CustomItemList;
 
@@ -184,7 +182,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         Superconductors.IV.getWireGt02(6),
                         new Object[] { Circuits.IV.getIngredient(), 2 },
                         MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.screw, (int) (16)))
-                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8))
+                .circuit(5)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 8)))
                 .itemOutputs(MMItemList.PowerCore1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
 
@@ -198,7 +201,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI
                                 .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.screw, (int) (16)))
-                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .circuit(5)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)))
                 .itemOutputs(MMItemList.ComputerCore1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.circuitAssemblerRecipes);
 
@@ -211,7 +219,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI
                                 .getStack(Materials2Materials.TungstenSteel, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.TungstenSteel, Materials2Shapes.screw, (int) (16)))
-                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .circuit(5)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)))
                 .itemOutputs(MMItemList.TeleporterCore1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
 
@@ -230,7 +243,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         ItemList.Field_Generator_IV.get(1),
                         ItemList.Electric_Piston_IV.get(2),
                         ItemList.Electric_Motor_IV.get(2))
-                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 4))
+                .circuit(5)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 4)))
                 .itemOutputs(MMItemList.Lens1.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
 
@@ -243,7 +261,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MMItemList.PowerCore1.get(1),
                         MMItemList.Frame1.get(1),
                         MMItemList.AEDownlink.get(1))
-                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .circuit(5)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)))
                 .itemOutputs(MMItemList.MK1.get(1)).eut((int) TierEU.RECIPE_IV).duration(30 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
     }
@@ -260,7 +283,10 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         new Object[] { Circuits.LuV.getIngredient(), 2 },
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
-                        MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 8)),
                         new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000))
                 .itemOutputs(MMItemList.PowerCore2.get(1)).duration(1 * MINUTES).eut((int) TierEU.RECIPE_LuV)
                 .addTo(AssemblyLine);
@@ -278,7 +304,10 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
-                        MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)),
                         new FluidStack(FluidRegistry.getFluid("ic2coolant"), 32000))
                 .itemOutputs(MMItemList.ComputerCore2.get(1)).duration(1 * MINUTES).eut((int) TierEU.RECIPE_LuV)
                 .addTo(AssemblyLine);
@@ -298,7 +327,10 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.HSSS, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
-                        MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Quantium,
                                 Materials2FluidShapes.fluidMolten,
@@ -329,8 +361,13 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         ItemList.Field_Generator_LuV.get(1),
                         ItemList.Electric_Motor_LuV.get(2),
                         ItemList.Electric_Piston_LuV.get(2))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 4)).itemOutputs(MMItemList.Lens2.get(1))
-                .duration(1 * MINUTES).eut((int) TierEU.RECIPE_LuV).addTo(AssemblyLine);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 4)))
+                .itemOutputs(MMItemList.Lens2.get(1)).duration(1 * MINUTES).eut((int) TierEU.RECIPE_LuV)
+                .addTo(AssemblyLine);
 
         // Manipulator MK2
         GTValues.RA.stdBuilder()
@@ -341,7 +378,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MMItemList.PowerCore2.get(1),
                         MMItemList.Frame2.get(1),
                         MMItemList.AEDownlink.get(1))
-                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .circuit(5)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)))
                 .itemOutputs(MMItemList.MK2.get(1)).eut((int) TierEU.RECIPE_LuV).duration(30 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
     }
@@ -359,7 +401,10 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         new Object[] { Circuits.ZPM.getIngredient(), 2 },
                         MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
-                        MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SuperCoolant,
                                 Materials2FluidShapes.fluidLiquid,
@@ -383,7 +428,10 @@ public class ScriptMatterManipulator implements IScriptLoader {
                                 .getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.NaquadahAlloy, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
-                        MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 32),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 32)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SuperCoolant,
                                 Materials2FluidShapes.fluidLiquid,
@@ -410,7 +458,10 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.itemCasing, (int) (8)),
                         MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.screw, (int) (16)))
                 .fluidInputs(
-                        MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16),
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.MysteriousCrystal,
                                 Materials2FluidShapes.fluidMolten,
@@ -445,7 +496,11 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         ItemList.Field_Generator_ZPM.get(1),
                         ItemList.Electric_Piston_ZPM.get(2),
                         ItemList.Electric_Motor_ZPM.get(2))
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)))
                 .itemOutputs(MMItemList.Lens3.get(1)).duration(1 * MINUTES).eut((int) TierEU.RECIPE_ZPM)
                 .addTo(AssemblyLine);
 
@@ -459,7 +514,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         ItemList.Conveyor_Module_IV.get(2),
                         ItemList.Electric_Pump_IV.get(2),
                         new Object[] { Circuits.IV.getIngredient(), 1 })
-                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 8))
+                .circuit(5)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 8)))
                 .itemOutputs(MMItemList.AEDownlink.get(1)).eut((int) TierEU.RECIPE_IV).duration(20 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
 
@@ -477,7 +537,11 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         ItemList.Conveyor_Module_ZPM.get(2),
                         ItemList.Electric_Pump_ZPM.get(2),
                         new Object[] { Circuits.UV.getIngredient(), 4 })
-                .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 32))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 32)))
                 .itemOutputs(MMItemList.QuantumDownlink.get(1)).duration(1 * MINUTES).eut((int) TierEU.RECIPE_ZPM)
                 .addTo(AssemblyLine);
 
@@ -491,7 +555,12 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MMItemList.Frame3.get(1),
                         MMItemList.AEDownlink.get(1),
                         MMItemList.QuantumDownlink.get(1))
-                .circuit(5).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 16))
+                .circuit(5)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 16)))
                 .itemOutputs(MMItemList.MK3.get(1)).eut((int) TierEU.RECIPE_ZPM).duration(30 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);
     }
@@ -511,7 +580,11 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         ItemList.Robot_Arm_UV.get(1),
                         AEApi.instance().definitions().materials().blankPattern().maybeStack(64).get(),
                         new Object[] { Circuits.UV.getIngredient(), 4 } },
-                new FluidStack[] { MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 32),
+                new FluidStack[] {
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 32)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Naquadria,
                                 Materials2FluidShapes.fluidMolten,
@@ -535,7 +608,11 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         AEApi.instance().definitions().materials().cardSuperSpeed().maybeStack(2).get(),
                         CustomItemList.dataOut_Hatch.get(1), CustomItemList.DATApipe.get(32),
                         new Object[] { Circuits.UHV.getIngredient(), 2 } },
-                new FluidStack[] { MaterialsAlloy.INDALLOY_140.getFluidStack(INGOTS * 64),
+                new FluidStack[] {
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (INGOTS * 64)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Naquadria,
                                 Materials2FluidShapes.fluidMolten,
@@ -633,9 +710,14 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         AEApi.instance().definitions().parts().cableDense().stack(AEColor.Transparent, 16),
                         AEApi.instance().definitions().parts().p2PTunnelGregtech().maybeStack(4).get(),
                         CustomItemList.Machine_Multi_Transformer.get(1),
-                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlate(8), ItemList.Circuit_Chip_QPIC.get(4),
-                        CustomItemList.LASERpipe.get(64), ItemList.Reactor_Coolant_Sp_6.get(1), },
-                new FluidStack[] { MaterialsAlloy.INDALLOY_140.getFluidStack(144 * 64),
+                        MaterialLibAPI.getStack(Materials2Materials.ChromaticGlass, Materials2Shapes.plate, (int) (8)),
+                        ItemList.Circuit_Chip_QPIC.get(4), CustomItemList.LASERpipe.get(64),
+                        ItemList.Reactor_Coolant_Sp_6.get(1), },
+                new FluidStack[] {
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Indalloy140,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (144 * 64)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.CosmicNeutronium,
                                 Materials2FluidShapes.fluidMolten,

@@ -106,7 +106,6 @@ import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialsOres;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1435,7 +1434,9 @@ public class ScriptEFR implements IScriptLoader {
                                 MaterialLibAPI
                                         .getStack(Materials2Materials.Bismuthinite, Materials2Shapes.dust, (int) (4))), // bart
                         MaterialLibAPI.getStack(Materials2Materials.Datolite, Materials2Shapes.dust, (int) (4L)),
-                        GTOreDictUnificator.get(MaterialsOres.TITANITE.getDust(4))) // gt++
+                        GTOreDictUnificator.get(
+                                MaterialLibAPI
+                                        .getStack(Materials2Materials.Titanite, Materials2Shapes.dust, (int) (4)))) // gt++
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         // Totem of Undying

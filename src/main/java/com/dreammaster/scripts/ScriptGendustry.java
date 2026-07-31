@@ -29,7 +29,6 @@ import gregtech.api.enums.materials2.Materials2Shapes;
 import gregtech.api.util.GTModHandler;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
-import gtPlusPlus.core.material.MaterialsElements;
 
 public class ScriptGendustry implements IScriptLoader {
 
@@ -222,7 +221,7 @@ public class ScriptGendustry implements IScriptLoader {
                 'f',
                 getModItem(Gendustry.ID, "MutagenTank", 1, 0),
                 'g',
-                MaterialsElements.getInstance().RUTHENIUM.getPlate(1),
+                MaterialLibAPI.getStack(Materials2Materials.Ruthenium, Materials2Shapes.plate, (int) (1)),
                 'h',
                 getModItem(ExtraBees.ID, "alveary", 1, 6),
                 'i',
