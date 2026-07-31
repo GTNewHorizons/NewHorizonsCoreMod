@@ -30,7 +30,6 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
@@ -198,7 +197,7 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         ItemList.Armor_Frame_Light.get(1),
                         ItemList.Electric_Piston_IV.get(1),
-                        WerkstoffLoader.Rhodium.get(OrePrefixes.plate, 8),
+                        MaterialLibAPI.getStack(Materials2Materials.Rhodium, Materials2Shapes.plate, (int) (8)),
                         MaterialLibAPI
                                 .getStack(Materials2Materials.Polybenzimidazole, Materials2Shapes.foil, (int) (32)))
                 .fluidInputs(
@@ -354,7 +353,10 @@ public class MechanicalArmorRecipes {
                                 Materials2Materials.Sunnarium,
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (INGOTS * 4)),
-                        WerkstoffLoader.Krypton.getFluidOrGas(BUCKETS * 2))
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.Krypton,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (BUCKETS * 2)))
                 .itemOutputs(ItemList.Armor_Chip_T3.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .metadata(PRECISE_ASSEMBLER_CASING_TIER, 1).addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
 

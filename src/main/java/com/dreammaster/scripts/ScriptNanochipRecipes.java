@@ -26,7 +26,6 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
-import bartworks.system.material.WerkstoffLoader;
 import ggfab.GGItemList;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
@@ -108,8 +107,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24), // Nether Star
                                                                                                        // Singularity
                         ItemList.Field_Generator_UHV.get(1) },
-                new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(128 * INGOTS),
-                        WerkstoffLoader.Oganesson.getFluidOrGas(16000),
+                new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(128 * INGOTS), MaterialLibAPI
+                        .getFluidStack(Materials2Materials.Oganesson, Materials2FluidShapes.fluidLiquid, (int) (16000)),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.SuperconductorUEVBase,
                                 Materials2FluidShapes.fluidMolten,
@@ -174,13 +173,11 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .eut(TierEU.RECIPE_UHV).addTo(formingPressRecipes);
 
         // Nanochip Mesh Interface Casing
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Iridium), 8),
-                        WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.foil, 48),
-                        MaterialLibAPI
-                                .getStack(Materials2Materials.Adamantium, Materials2Shapes.plateSuperdense, (int) (4)),
-                        ItemList.VacuumConveyorPipe.get(8))
+        GTValues.RA.stdBuilder().itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MU.materialOf(Materials2Materials.Iridium), 8),
+                MaterialLibAPI.getStack(Materials2Materials.RhodiumPlatedPalladium, Materials2Shapes.foil, (int) (48)),
+                MaterialLibAPI.getStack(Materials2Materials.Adamantium, Materials2Shapes.plateSuperdense, (int) (4)),
+                ItemList.VacuumConveyorPipe.get(8))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.BlackPlutonium,
@@ -1663,7 +1660,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(10 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials2Materials.Radon, Materials2FluidShapes.fluidGas, (int) (10 * INGOTS)),
                         MaterialLibAPI.getFluidStack(Materials2Materials.SuperCoolant, Materials2FluidShapes.fluidLiquid, (int) (10000)),
-                        WerkstoffLoader.Oganesson.getFluidOrGas(500)),
+                        MaterialLibAPI.getFluidStack(Materials2Materials.Oganesson, Materials2FluidShapes.fluidLiquid, (int) (500))),
                 CircuitComponent.OpticalAssembly,
                 20 * SECONDS,
                 TierEU.RECIPE_UIV,
@@ -1689,7 +1686,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(20 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials2Materials.Radon, Materials2FluidShapes.fluidGas, (int) (20 * INGOTS)),
                         MaterialLibAPI.getFluidStack(Materials2Materials.SuperCoolant, Materials2FluidShapes.fluidLiquid, (int) (20000)),
-                        WerkstoffLoader.Oganesson.getFluidOrGas(1000)),
+                        MaterialLibAPI.getFluidStack(Materials2Materials.Oganesson, Materials2FluidShapes.fluidLiquid, (int) (1000))),
                 CircuitComponent.OpticalComputer,
                 200 * SECONDS,
                 TierEU.RECIPE_UIV,
@@ -1714,7 +1711,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(40 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials2Materials.Radon, Materials2FluidShapes.fluidGas, (int) (40 * INGOTS)),
                         MaterialLibAPI.getFluidStack(Materials2Materials.SuperCoolant, Materials2FluidShapes.fluidLiquid, (int) (40000)),
-                        WerkstoffLoader.Oganesson.getFluidOrGas(2000)),
+                        MaterialLibAPI.getFluidStack(Materials2Materials.Oganesson, Materials2FluidShapes.fluidLiquid, (int) (2000))),
                 CircuitComponent.OpticalMainframe,
                 300 * SECONDS,
                 TierEU.RECIPE_UMV,

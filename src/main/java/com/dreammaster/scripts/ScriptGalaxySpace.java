@@ -36,7 +36,6 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
@@ -342,10 +341,10 @@ public class ScriptGalaxySpace implements IScriptLoader {
                                 Materials2FluidShapes.fluidMolten,
                                 (int) (1152)))
                 .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        BlockList.NeutroniumPlatedReinforcedStone.get(),
-                        WerkstoffLoader.HDCS.get(OrePrefixes.plate, 8))
+        GTValues.RA.stdBuilder().itemInputs(
+                BlockList.NeutroniumPlatedReinforcedStone.get(),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.HighDurabilityCompoundSteel, Materials2Shapes.plate, (int) (8)))
                 .itemOutputs(ItemList.UltraHighStrengthConcrete.get(1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
@@ -417,7 +416,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials2Materials.Carbon, Materials2Shapes.dust, (int) (1)),
                         GTOreDictUnificator.get("dustHafnia", 1))
-                .itemOutputs(WerkstoffLoader.HafniumCarbide.get(OrePrefixes.dust))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(Materials2Materials.HafniumCarbide, Materials2Shapes.dust, (int) (1)))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Oxygen,
@@ -429,13 +429,27 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get("dustTantalumCarbide", 4),
-                        WerkstoffLoader.HafniumCarbide.get(OrePrefixes.dust))
-                .circuit(1).itemOutputs(WerkstoffLoader.TantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust, 5))
+                        MaterialLibAPI.getStack(Materials2Materials.HafniumCarbide, Materials2Shapes.dust, (int) (1)))
+                .circuit(1)
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.TantalumCarbideHafniumCarbideMixture,
+                                Materials2Shapes.dust,
+                                (int) (5)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(mixerRecipes);
 
         // Plasma Arc Furnace
-        GTValues.RA.stdBuilder().itemInputs(WerkstoffLoader.TantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust))
-                .itemOutputs(WerkstoffLoader.TantalumHafniumCarbide.get(OrePrefixes.ingot, 1))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.TantalumCarbideHafniumCarbideMixture,
+                                Materials2Shapes.dust,
+                                (int) (1)))
+                .itemOutputs(
+                        MaterialLibAPI.getStack(
+                                Materials2Materials.TantalumHafniumCarbide,
+                                Materials2Shapes.ingot,
+                                (int) (1)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Nitrogen,
@@ -449,8 +463,12 @@ public class ScriptGalaxySpace implements IScriptLoader {
         // Vacuum Freezer
         GTValues.RA.stdBuilder().fluidInputs(
                 MaterialLibAPI.getFluidStack(Materials2Materials.Helium, Materials2FluidShapes.fluidGas, (int) (1000)))
-                .fluidOutputs(WerkstoffLoader.LiquidHelium.getFluidOrGas(1000)).duration(1 * MINUTES + 30 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(vacuumFreezerRecipes);
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.LiquidHelium,
+                                Materials2FluidShapes.fluidLiquid,
+                                (int) (1000)))
+                .duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(vacuumFreezerRecipes);
 
         // Autoclave
         GTValues.RA.stdBuilder().itemInputs(
@@ -465,8 +483,12 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfNanoparticles.get(1))
                 .itemOutputs(ItemList.TaHfCNanofibers.get(5))
-                .fluidInputs(WerkstoffLoader.TantalumHafniumCarbide.getMolten(576)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(
+                                Materials2Materials.TantalumHafniumCarbide,
+                                Materials2FluidShapes.fluidMolten,
+                                (int) (576)))
+                .duration(50 * SECONDS).eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.NtNanoparticles.get(1)).itemOutputs(ItemList.NtNanofibers.get(5))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -553,7 +575,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getGSItem("plutoglowstone", 1, 0))
                 .itemOutputs(getGSItem("item.GlowstoneDusts", 4, 4)).duration(15 * SECONDS).eut(2)
                 .addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(WerkstoffLoader.TantalumHafniumCarbide.get(OrePrefixes.dust))
+        GTValues.RA.stdBuilder().itemInputs(
+                MaterialLibAPI.getStack(Materials2Materials.TantalumHafniumCarbide, Materials2Shapes.dust, (int) (1)))
                 .itemOutputs(ItemList.TaHfNanoparticles.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()

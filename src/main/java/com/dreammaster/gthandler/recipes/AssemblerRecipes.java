@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static bartworks.system.material.WerkstoffLoader.RhodiumPlatedPalladium;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static com.gtnewhorizon.gtnhlib.util.ItemUtil.copyAmount;
 import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
@@ -103,7 +102,6 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
-import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.GTMod;
@@ -901,7 +899,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Motor_LuV.get(4L),
                         ItemList.Electric_Pump_LuV.get(4L),
                         ItemList.Conveyor_Module_LuV.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.gearGt, RhodiumPlatedPalladium.getBridgeMaterial(), 4L))
+                        MaterialLibAPI.getStack(Materials2Materials.RhodiumPlatedPalladium, Materials2Shapes.gearGt, 4))
                 .circuit(2).itemOutputs(ItemList.OreDrill3.get(1L))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
@@ -3078,7 +3076,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.BlockIndustrialWaterPlantCasing.get(1),
-                        WerkstoffLoader.Ruridit.get(OrePrefixes.bolt, 16))
+                        MaterialLibAPI.getStack(Materials2Materials.Ruridit, Materials2Shapes.bolt, (int) (16)))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Concrete,
@@ -3263,8 +3261,10 @@ public class AssemblerRecipes implements Runnable {
                 .addTo(assemblerRecipes);
 
         // Spinmatron Centrifuge Casings
-        GTValues.RA.stdBuilder()
-                .itemInputs(GregtechItemList.Casing_Centrifuge1.get(1), WerkstoffLoader.HDCS.get(OrePrefixes.plate, 6))
+        GTValues.RA.stdBuilder().itemInputs(
+                GregtechItemList.Casing_Centrifuge1.get(1),
+                MaterialLibAPI
+                        .getStack(Materials2Materials.HighDurabilityCompoundSteel, Materials2Shapes.plate, (int) (6)))
                 .itemOutputs(ItemList.Spinmatron_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
@@ -7375,11 +7375,10 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(13).itemOutputs(getModItem(JABBA.ID, "upgradeStructural", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "barrel", 1, 0),
-                        RhodiumPlatedPalladium.get(OrePrefixes.plate, 2),
-                        RhodiumPlatedPalladium.get(OrePrefixes.stick, 2))
+        GTValues.RA.stdBuilder().itemInputs(
+                getModItem(JABBA.ID, "barrel", 1, 0),
+                MaterialLibAPI.getStack(Materials2Materials.RhodiumPlatedPalladium, Materials2Shapes.plate, (int) (2)),
+                MaterialLibAPI.getStack(Materials2Materials.RhodiumPlatedPalladium, Materials2Shapes.stick, (int) (2)))
                 .circuit(13).itemOutputs(getModItem(JABBA.ID, "upgradeStructural", 1, 9)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 

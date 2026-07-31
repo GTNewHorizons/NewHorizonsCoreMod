@@ -19,7 +19,6 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
@@ -195,8 +194,11 @@ public class LaserEngraverRecipes implements Runnable {
         // Optical Boule
         GTValues.RA.stdBuilder().itemInputs(
                 ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
-                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
-                WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
+                MaterialLibAPI.getStack(Materials2Materials.MagnetoResonatic, Materials2Shapes.lens, (int) (0)), // Magneto
+                                                                                                                 // resonatic
+                                                                                                                 // lens
+                MaterialLibAPI.getStack(Materials2Materials.Fayalite, Materials2Shapes.lens, (int) (0)), // Fayalite
+                                                                                                         // lens
                 NHItemList.MysteriousCrystalLens.get(0)).itemOutputs(ItemList.Circuit_Silicon_Ingot6.get(1L))
                 .fluidInputs(MU.materialOf(Materials2Materials.UUMatter).getFluid(16000L)).duration(30 * SECONDS)
                 .eut(7_864_320).requiresCleanRoom().addTo(laserEngraverRecipes);
