@@ -20,9 +20,10 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.material.MU;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -1300,15 +1301,15 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.ORDER, 32).add(Aspect.MAGIC, 24).add(Aspect.GREED, 16),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2),
                 getModItem(Thaumcraft.ID, "blockTable", 1, 15),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Amber),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Amber),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold));
         TCHelper.addResearchPage(
                 "ReplicatorGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "replicator", 1, 0))));
@@ -1371,13 +1372,13 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.FLIGHT, 32).add(Aspect.MAGIC, 16),
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, wildcard),
                 getModItem(Thaumcraft.ID, "FocusFire", 1, 0),
-                OrePrefixes.plate.get(Materials.Firestone),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Firestone),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
-                OrePrefixes.plate.get(Materials.Firestone),
-                OrePrefixes.plate.get(Materials.Firestone),
-                OrePrefixes.plate.get(Materials.Firestone),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Firestone),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Firestone),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Firestone),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
-                OrePrefixes.plate.get(Materials.Firestone));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Firestone));
         TCHelper.addResearchPage(
                 "MeteorbootsGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "bootsMeteor", 1, 0))));
@@ -1435,11 +1436,11 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
-                OrePrefixes.ingot.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
-                OrePrefixes.ingot.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
-                OrePrefixes.ingot.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
                 getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0));
         TCHelper.addResearchPage(
@@ -1467,13 +1468,13 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
                 getModItem(Minecraft.ID, "netherbrick", 1, 0),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
-                OrePrefixes.plate.get(Materials.Titanium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Titanium),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
                 getModItem(Minecraft.ID, "netherbrick", 1, 0),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
                 getModItem(Minecraft.ID, "brick", 1, 0),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
-                OrePrefixes.plate.get(Materials.Titanium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Titanium),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0),
                 getModItem(Minecraft.ID, "brick", 1, 0));
         TCHelper.addResearchPage(
@@ -1502,7 +1503,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Minecraft.ID, "netherbrick", 1, 0),
                 getModItem(Minecraft.ID, "lava_bucket", 1, 0),
                 ItemList.Casing_Coil_TungstenSteel.get(1L),
-                OrePrefixes.plate.get(Materials.Titanium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Titanium),
                 ItemList.Casing_Coil_TungstenSteel.get(1L),
                 getModItem(Minecraft.ID, "lava_bucket", 1, 0),
                 getModItem(Minecraft.ID, "netherbrick", 1, 0),
@@ -1510,7 +1511,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Minecraft.ID, "brick", 1, 0),
                 getModItem(Minecraft.ID, "lava_bucket", 1, 0),
                 ItemList.Casing_Coil_TungstenSteel.get(1L),
-                OrePrefixes.plate.get(Materials.Titanium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Titanium),
                 ItemList.Casing_Coil_TungstenSteel.get(1L),
                 getModItem(Minecraft.ID, "lava_bucket", 1, 0),
                 getModItem(Minecraft.ID, "brick", 1, 0));
@@ -1568,11 +1569,11 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.ENERGY, 32).add(Aspect.AIR, 16).add(Aspect.ORDER, 16),
                 getModItem(ThaumicExploration.ID, "sojournerCapUncharged", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Diamond));
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Diamond));
         TCHelper.addResearchPage(
                 "CAP_SOJOURNER",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "sojournerCap", 1, 0))));
@@ -1655,13 +1656,13 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(DarkAspects.PRIDE, 24).add(Aspect.ARMOR, 32).add(Aspect.MAGIC, 16),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 ItemList.Electric_Piston_LV.get(1L),
-                OrePrefixes.springSmall.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.springSmall.get(Materials.Thaumium),
-                OrePrefixes.lens.get(Materials.Diamond),
-                OrePrefixes.springSmall.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.springSmall.get(Materials.Thaumium));
+                MU.craftIngredient(OrePrefixes.springSmall, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.springSmall, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.springSmall, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.springSmall, Materials2Materials.Thaumium));
         TCHelper.addResearchPage(
                 "StabilizerbeltGTNH",
                 new ResearchPage(
@@ -1754,7 +1755,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 new AspectList().add(Aspect.HUNGER, 64).add(Aspect.CLOTH, 48).add(Aspect.CROP, 24).add(Aspect.HEAL, 24)
                         .add(Aspect.EXCHANGE, 32).add(Aspect.ORDER, 16),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                OrePrefixes.gemExquisite.get(Materials.Ruby),
+                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Ruby),
                 getModItem(PamsHarvestCraft.ID, "heartybreakfastItem", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "rainbowcurryItem", 1, 0),
                 getModItem(PamsHarvestCraft.ID, "supremepizzaItem", 1, 0),
@@ -1876,13 +1877,13 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 getModItem(Botania.ID, "cocoon", 1, 0),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 9),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 17),
-                OrePrefixes.frameGt.get(Materials.Shadow),
+                MU.craftIngredient(OrePrefixes.frameGt, Materials2Materials.Shadow),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 9),
                 getModItem(Botania.ID, "cocoon", 1, 0),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 9),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 16),
-                OrePrefixes.frameGt.get(Materials.Shadow),
+                MU.craftIngredient(OrePrefixes.frameGt, Materials2Materials.Shadow),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 9));
         TCHelper.addResearchPage(
@@ -1991,7 +1992,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 8,
                 new AspectList().add(Aspect.MAGIC, 32).add(Aspect.TRAP, 32).add(Aspect.AURA, 24).add(Aspect.CRYSTAL, 16)
                         .add(Aspect.TREE, 8).add(Aspect.ELDRITCH, 8),
-                OrePrefixes.stick.get(Materials.Amber),
+                MU.craftIngredient(OrePrefixes.stick, Materials2Materials.Amber),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),

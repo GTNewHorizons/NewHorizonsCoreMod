@@ -26,9 +26,10 @@ import com.dreammaster.block.BlockList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials2.Materials2Materials;
+import gregtech.api.material.MU;
 import gregtech.api.objects.ItemData;
 
 public class ScriptIndustrialApiary implements IScriptLoader {
@@ -60,8 +61,10 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemStack AlvearySieve = getModItem(Forestry.ID, "alveary", 1, 7);
         final ItemStack EnhancedCircuitBoard = getModItem(Forestry.ID, "chipsets", 1, 1);
 
-        final ItemData SmallSteelGear = (ItemData) OrePrefixes.gearGtSmall.get(Materials.Steel);
-        final ItemData SmallStainlessGear = (ItemData) OrePrefixes.gearGtSmall.get(Materials.StainlessSteel);
+        final ItemData SmallSteelGear = (ItemData) MU
+                .craftIngredient(OrePrefixes.gearGtSmall, Materials2Materials.Steel);
+        final ItemData SmallStainlessGear = (ItemData) MU
+                .craftIngredient(OrePrefixes.gearGtSmall, Materials2Materials.StainlessSteel);
 
         final ItemStack UpgradeFrame = ItemList.IndustrialApiary_Upgrade_Frame.get(1);
         final ItemStack IndustrialApiaryUpgrade_PRODUCTION = ItemList.IndustrialApiary_Upgrade_PRODUCTION.get(1);
@@ -83,7 +86,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final Block Cactus = Blocks.cactus;
         final Item WaterBucket = Items.water_bucket;
         final ItemStack SteelBars = BlockList.SteelBars.get();
-        final ItemData TitaniumRotor = (ItemData) OrePrefixes.rotor.get(Materials.Titanium);
+        final ItemData TitaniumRotor = (ItemData) MU.craftIngredient(OrePrefixes.rotor, Materials2Materials.Titanium);
         final Block Snow = Blocks.snow;
         final Item FermentedSpiderEye = Items.fermented_spider_eye;
         final String RubberPlate = "plateAnyRubber";

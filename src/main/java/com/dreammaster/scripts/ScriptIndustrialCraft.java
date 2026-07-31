@@ -47,7 +47,6 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -561,12 +560,12 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemTreetapElectric", 1, 0),
                 "craftingToolScrewdriver",
                 "stickLongSteel",
-                OrePrefixes.toolHeadDrill.get(Materials.Steel),
+                MU.craftIngredient(OrePrefixes.toolHeadDrill, Materials2Materials.Steel),
                 "stickLongSteel",
                 ItemList.Electric_Pump_LV,
                 "batteryBasic",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3),
-                OrePrefixes.cableGt01.get(Materials.Tin),
+                MU.craftIngredient(OrePrefixes.cableGt01, Materials2Materials.Tin),
                 "screwSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, 0),

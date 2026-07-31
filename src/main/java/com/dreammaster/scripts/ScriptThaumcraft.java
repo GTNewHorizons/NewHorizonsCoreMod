@@ -70,7 +70,6 @@ import fox.spiteful.forbidden.DarkAspects;
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -660,11 +659,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.AURA, 18).add(Aspect.ENERGY, 30).add(Aspect.MAGIC, 18),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 5),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Silver),
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Silver),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Silver),
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Silver),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Silver));
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Silver));
         TCHelper.addResearchPage(
                 "CAP_silver",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 4))));
@@ -705,11 +704,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.AURA, 25).add(Aspect.ENERGY, 40).add(Aspect.MAGIC, 25),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.dust.get(Materials.Thaumium));
+                MU.craftIngredient(OrePrefixes.dust, Materials2Materials.Thaumium));
         TCHelper.addResearchPage(
                 "CAP_thaumium",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 2))));
@@ -1289,7 +1288,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 5,
                 new AspectList().add(Aspect.MIND, 15).add(Aspect.ORDER, 25).add(Aspect.EARTH, 30).add(Aspect.ARMOR, 25)
                         .add(Aspect.MAGIC, 10),
-                OrePrefixes.lens.get(Materials.NetherStar),
+                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.NetherStar),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 getModItem(Botania.ID, "quartz", 1, 1),
@@ -1309,7 +1308,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 6,
                 new AspectList().add(Aspect.ELDRITCH, 40).add(Aspect.TRAVEL, 30).add(Aspect.ENTROPY, 20)
                         .add(Aspect.EXCHANGE, 10).add(Aspect.MAGIC, 5),
-                OrePrefixes.lens.get(Materials.EnderPearl),
+                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.EnderPearl),
                 getModItem(Botania.ID, "quartz", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
@@ -1330,7 +1329,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 7,
                 new AspectList().add(Aspect.AIR, 30).add(Aspect.FIRE, 40).add(Aspect.BEAST, 20).add(Aspect.ENTROPY, 10)
                         .add(Aspect.MAGIC, 5),
-                OrePrefixes.lens.get(Materials.Firestone),
+                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Firestone),
                 getModItem(Botania.ID, "quartz", 1, 4),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
@@ -1489,10 +1488,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.AURA, 10).add(Aspect.EXCHANGE, 15).add(Aspect.MAGIC, 20)
                         .add(Aspect.ORDER, 5),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 1),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                OrePrefixes.gemFlawless.get(Materials.Diamond));
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond));
         TCHelper.setResearchAspects(
                 "WANDPED",
                 new AspectList().add(Aspect.AURA, 12).add(Aspect.ENERGY, 9).add(Aspect.MAGIC, 3)
@@ -1507,11 +1506,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
-                OrePrefixes.gemExquisite.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
-                OrePrefixes.gemExquisite.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemExquisite, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6));
         TCHelper.setResearchAspects(
                 "VISAMULET",
@@ -2197,9 +2196,9 @@ public class ScriptThaumcraft implements IScriptLoader {
                 2,
                 new AspectList().add(Aspect.VOID, 7).add(Aspect.MAGIC, 7).add(Aspect.ENTROPY, 7).add(Aspect.WATER, 7),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
-                OrePrefixes.plate.get(Materials.Obsidian),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Obsidian),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                OrePrefixes.plate.get(Materials.EnderEye),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.EnderEye),
                 getModItem(Thaumcraft.ID, "ItemNugget", 1, 5));
         TCHelper.addResearchPage(
                 "JARVOID",
@@ -3013,10 +3012,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 5,
                 new AspectList().add(Aspect.PLANT, 20).add(Aspect.LIGHT, 10).add(Aspect.LIFE, 20).add(Aspect.CROP, 10),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(Minecraft.ID, "dye", 1, 15),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(Minecraft.ID, "dye", 1, 15),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.setResearchAspects(
@@ -3029,10 +3028,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 5,
                 new AspectList().add(Aspect.BEAST, 20).add(Aspect.LIGHT, 10).add(Aspect.LIFE, 20).add(Aspect.HEAL, 10),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(Minecraft.ID, "wheat", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(Minecraft.ID, "golden_carrot", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1));
         TCHelper.setResearchAspects(
@@ -3327,11 +3326,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.ELDRITCH, 5),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                OrePrefixes.gemFlawless.get(Materials.Amber),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Amber));
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber));
         TCHelper.setResearchAspects(
                 "RUNICARMOR",
                 new AspectList().add(Aspect.MIND, 15).add(Aspect.ARMOR, 12).add(Aspect.AIR, 9).add(Aspect.ENERGY, 9)
@@ -3385,13 +3384,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.ELDRITCH, 20),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                OrePrefixes.gemFlawless.get(Materials.Amber),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Amber));
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber));
         TCHelper.addInfusionCraftingRecipe(
                 "RUNICEMERGENCY",
                 getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 1),
@@ -3420,7 +3419,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.ELDRITCH, 35),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                OrePrefixes.gemFlawless.get(Materials.Amber),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
@@ -3428,7 +3427,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Amber));
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber));
         TCHelper.addInfusionCraftingRecipe(
                 "RUNICKINETIC",
                 getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 1),
@@ -3457,14 +3456,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.ENERGY, 32).add(Aspect.VOID, 32),
                 ItemList.Electric_Piston_MV.get(1L),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.lens.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemShovelThaumium", 1, 0),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                OrePrefixes.lens.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.lens, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0));
         TCHelper.setResearchAspects(
                 "ARCANEBORE",
@@ -3502,10 +3501,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 3,
                 new AspectList().add(Aspect.FIRE, 20).add(Aspect.MINE, 20).add(Aspect.SENSES, 20).add(Aspect.GREED, 20),
                 getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Ruby),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Ruby),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1));
         TCHelper.setResearchAspects(
@@ -3520,10 +3519,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.WATER, 10).add(Aspect.TREE, 20).add(Aspect.CRAFT, 20)
                         .add(Aspect.MOTION, 20),
                 getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Sapphire),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Sapphire),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
@@ -3538,10 +3537,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.AIR, 20).add(Aspect.MOTION, 20).add(Aspect.ENERGY, 20)
                         .add(Aspect.WEAPON, 20),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.GarnetYellow),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.GarnetYellow),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0));
         TCHelper.setResearchAspects(
@@ -3555,10 +3554,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 3,
                 new AspectList().add(Aspect.CRAFT, 20).add(Aspect.EARTH, 20).add(Aspect.MINE, 10).add(Aspect.MAGIC, 20),
                 getModItem(Thaumcraft.ID, "ItemShovelThaumium", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Emerald),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Emerald),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3));
         TCHelper.setResearchAspects(
@@ -3573,10 +3572,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.HARVEST, 10).add(Aspect.PLANT, 20).add(Aspect.EARTH, 20)
                         .add(Aspect.CROP, 20),
                 getModItem(Thaumcraft.ID, "ItemHoeThaumium", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Amber),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Amber),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 4));
         TCHelper.setResearchAspects(
@@ -3591,14 +3590,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.TRAVEL, 32).add(Aspect.MECHANISM, 64).add(Aspect.ENERGY, 32)
                         .add(Aspect.FLIGHT, 32).add(Aspect.ARMOR, 16),
                 getModItem(Minecraft.ID, "leather_chestplate", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
-                OrePrefixes.plate.get(Materials.Aluminium),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Aluminium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.plate.get(Materials.Aluminium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Aluminium),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6));
         TCHelper.setResearchAspects(
@@ -3615,12 +3614,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Minecraft.ID, "feather", 1, 0),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.plate.get(Materials.Aluminium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Aluminium),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Aluminium),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Aluminium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(TwilightForest.ID, "item.tfFeather", 1, 0));
         TCHelper.setResearchAspects(
                 "HOVERGIRDLE",
@@ -3643,14 +3642,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.TRAVEL, 32).add(Aspect.EXCHANGE, 24).add(Aspect.DARKNESS, 16)
                         .add(Aspect.ELDRITCH, 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
-                OrePrefixes.plate.get(Materials.VibrantAlloy),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.VibrantAlloy),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.screw.get(Materials.Thaumium));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.VibrantAlloy),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.VibrantAlloy),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium));
         TCHelper.addResearchPage(
                 "MIRROR",
                 new ResearchPage(
@@ -3671,13 +3670,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.ELDRITCH, 16).add(Aspect.ENERGY, 8),
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 0),
                 getModItem(Minecraft.ID, "compass", 1, 0),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.screw.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
                 getModItem(Minecraft.ID, "map", 1, 0),
-                OrePrefixes.screw.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 0),
-                OrePrefixes.screw.get(Materials.Thaumium));
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "MIRRORHAND",
                 new AspectList().add(Aspect.TRAVEL, 18).add(Aspect.TOOL, 15).add(Aspect.CRYSTAL, 12)
@@ -3691,14 +3690,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.WATER, 24).add(Aspect.TRAVEL, 32).add(Aspect.EXCHANGE, 16)
                         .add(Aspect.CRYSTAL, 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10),
-                OrePrefixes.plate.get(Materials.Tantalum),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Steel),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Tantalum),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Steel),
-                OrePrefixes.screw.get(Materials.Thaumium));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Tantalum),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Steel),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Tantalum),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Steel),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "MIRRORESSENTIA",
                 new AspectList().add(Aspect.MAGIC, 15).add(Aspect.TRAVEL, 12).add(Aspect.CRYSTAL, 9)
@@ -3734,14 +3733,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 4,
                 new AspectList().add(Aspect.METAL, 32).add(Aspect.MAGIC, 32).add(Aspect.ARMOR, 32).add(Aspect.LIFE, 16),
                 getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Emerald),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Emerald),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold));
         TCHelper.setResearchAspects(
                 "ARMORFORTRESS",
                 new AspectList().add(Aspect.CRAFT, 15).add(Aspect.METAL, 12).add(Aspect.ARMOR, 9)
@@ -3753,16 +3752,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 4,
                 new AspectList().add(Aspect.METAL, 32).add(Aspect.MAGIC, 32).add(Aspect.ARMOR, 40).add(Aspect.MIND, 16),
                 getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium));
         TCHelper.addInfusionCraftingRecipe(
                 "ARMORFORTRESS",
                 getModItem(Thaumcraft.ID, "ItemLeggingsFortress", 1, 0),
@@ -3771,13 +3770,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.EARTH, 16),
                 getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Thaumium),
-                OrePrefixes.plate.get(Materials.Gold));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold));
         TCHelper.setResearchAspects(
                 "HELMGOGGLES",
                 new AspectList().add(Aspect.ARMOR, 15).add(Aspect.SENSES, 12).add(Aspect.AURA, 9)
@@ -3994,14 +3993,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.TRAVEL, 16).add(Aspect.MOTION, 16).add(Aspect.SOUL, 16)
                         .add(Aspect.VOID, 32),
                 getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0),
-                OrePrefixes.plate.get(Materials.StainlessSteel),
-                OrePrefixes.ring.get(Materials.StainlessSteel),
-                OrePrefixes.screw.get(Materials.StainlessSteel),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.StainlessSteel),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.StainlessSteel),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.StainlessSteel),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 1),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
-                OrePrefixes.screw.get(Materials.StainlessSteel),
-                OrePrefixes.ring.get(Materials.StainlessSteel));
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.StainlessSteel),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.StainlessSteel));
         TCHelper.setResearchAspects(
                 "TRAVELTRUNK",
                 new AspectList().add(Aspect.SOUL, 12).add(Aspect.VOID, 12).add(Aspect.TREE, 9).add(Aspect.TRAVEL, 6)
@@ -4198,7 +4197,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
                 getModItem(Minecraft.ID, "wheat_seeds", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemHoeThaumium", 1, 0),
-                OrePrefixes.plate.get(Materials.Gold));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold));
         TCHelper.addResearchPage(
                 "COREHARVEST",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3))));
@@ -4217,9 +4216,9 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.WEAPON, 20).add(Aspect.TRAP, 20).add(Aspect.ARMOR, 20),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
-                OrePrefixes.plate.get(Materials.Obsidian),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Obsidian),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0),
-                OrePrefixes.plate.get(Materials.Gold));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold));
         TCHelper.addResearchPage(
                 "COREGUARD",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4))));
@@ -5159,13 +5158,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.WATER, 16).add(Aspect.EXCHANGE, 16).add(Aspect.MAGIC, 16)
                         .add(Aspect.VOID, 16),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 4),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0));
         TCHelper.setResearchAspects(
                 "ESSENTIARESERVOIR",
@@ -5233,13 +5232,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.setResearchAspects(
                 "ARMORVOIDFORTRESS",
@@ -5256,13 +5255,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.addInfusionCraftingRecipe(
                 "ARMORVOIDFORTRESS",
@@ -5273,13 +5272,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7));
         TCHelper.addInfusionCraftingRecipe(
                 "SANITYCHECK",
@@ -5289,13 +5288,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.HEAL, 16),
                 getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0),
                 getModItem(Thaumcraft.ID, "blockMirror", 1, 0),
-                OrePrefixes.screw.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
-                OrePrefixes.screw.get(Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
-                OrePrefixes.screw.get(Materials.Thaumium));
+                MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "SANITYCHECK",
                 new AspectList().add(Aspect.SENSES, 12).add(Aspect.MIND, 12).add(Aspect.ELDRITCH, 12)
@@ -5310,11 +5309,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17),
-                OrePrefixes.plate.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Gold),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 17));
         TCHelper.setResearchAspects(
                 "OCULUS",

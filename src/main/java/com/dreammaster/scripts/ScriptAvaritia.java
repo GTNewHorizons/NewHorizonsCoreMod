@@ -61,7 +61,6 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -997,7 +996,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 new AspectList().add(Aspect.MAGIC, 512).add(Aspect.MIND, 128).add(Aspect.SENSES, 96)
                         .add(DarkAspects.LUST, 96).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 64)
                         .add(Lucrum.ULTRA_DEATH, 128),
-                OrePrefixes.plate.get(Materials.Infinity),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Infinity),
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 6),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 6),

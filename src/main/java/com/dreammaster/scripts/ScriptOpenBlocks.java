@@ -39,7 +39,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -716,11 +715,11 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 new AspectList().add(Aspect.ELDRITCH, 75).add(Aspect.BEAST, 50).add(Aspect.LIFE, 50)
                         .add(Aspect.MAN, 25),
                 getModItem(Minecraft.ID, "egg", 1, 0),
-                OrePrefixes.plateDense.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plateDense, Materials2Materials.Gold),
                 getModItem(Minecraft.ID, "skull", 1, 3),
-                OrePrefixes.plateDense.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plateDense, Materials2Materials.Gold),
                 getModItem(Minecraft.ID, "skull", 1, 3),
-                OrePrefixes.plateDense.get(Materials.Gold),
+                MU.craftIngredient(OrePrefixes.plateDense, Materials2Materials.Gold),
                 getModItem(Minecraft.ID, "skull", 1, 3));
         TCHelper.addResearchPage(
                 "GOLDENEGG",

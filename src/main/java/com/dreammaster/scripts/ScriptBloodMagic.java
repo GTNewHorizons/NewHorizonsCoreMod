@@ -60,7 +60,6 @@ import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
@@ -504,14 +503,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.AURA, 16).add(Aspect.HUNGER, 8).add(Aspect.EARTH, 8),
                 getModItem(BloodMagic.ID, "Altar", 1, 0),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
-                OrePrefixes.stickLong.get(Materials.BloodInfusedIron),
-                OrePrefixes.stickLong.get(Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.stickLong, Materials2Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.stickLong, Materials2Materials.BloodInfusedIron),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 251),
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 251),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
-                OrePrefixes.stickLong.get(Materials.BloodInfusedIron),
-                OrePrefixes.stickLong.get(Materials.BloodInfusedIron));
+                MU.craftIngredient(OrePrefixes.stickLong, Materials2Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.stickLong, Materials2Materials.BloodInfusedIron));
         TCHelper.addResearchPage(
                 "LIFEINFUSER",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "life_infuser", 1, 0))));
@@ -1092,7 +1091,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 1),
                 getModItem(TinkerConstruct.ID, "materials", 1, 7),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2));
         TCHelper.addResearchPage(
                 "BMLAVACRYSTAL",
@@ -1173,15 +1172,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
-                OrePrefixes.cell.get(Materials.Helium),
+                MU.craftIngredient(OrePrefixes.cell, Materials2Materials.Helium),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
-                OrePrefixes.cell.get(Materials.Helium),
+                MU.craftIngredient(OrePrefixes.cell, Materials2Materials.Helium),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
-                OrePrefixes.cell.get(Materials.Helium),
+                MU.craftIngredient(OrePrefixes.cell, Materials2Materials.Helium),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
-                OrePrefixes.cell.get(Materials.Helium),
+                MU.craftIngredient(OrePrefixes.cell, Materials2Materials.Helium),
                 getModItem(BloodMagic.ID, "aether", 1, 0));
         TCHelper.addResearchPage(
                 "AIRSIGIL",
@@ -1267,7 +1266,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.METAL, 16),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0),
-                OrePrefixes.plate.get(Materials.Void),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void),
                 getModItem(Minecraft.ID, "bucket", 1, 0),
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0),
                 getModItem(Minecraft.ID, "bucket", 1, 0),
@@ -1277,7 +1276,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Minecraft.ID, "bucket", 1, 0),
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0),
                 getModItem(Minecraft.ID, "bucket", 1, 0),
-                OrePrefixes.plate.get(Materials.Void));
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Void));
         TCHelper.addResearchPage(
                 "VOIDSIGIL",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "voidSigil", 1, 0))));
@@ -1998,13 +1997,13 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
-                OrePrefixes.plate.get(Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.BloodInfusedIron),
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
                 getModItem(Minecraft.ID, "blaze_rod", 1, 0),
-                OrePrefixes.plate.get(Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.BloodInfusedIron),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0));
         TCHelper.addResearchPage(
@@ -2064,16 +2063,16 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(TCAspects.ELECTRUM.getAspect(), 24).add(Aspect.AURA, 16).add(Aspect.MIND, 12)
                         .add(Aspect.MAGIC, 6),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
-                OrePrefixes.block.get(Materials.NeodymiumMagnetic),
+                MU.craftIngredient(OrePrefixes.block, Materials2Materials.NeodymiumMagnetic),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
-                OrePrefixes.block.get(Materials.NeodymiumMagnetic),
+                MU.craftIngredient(OrePrefixes.block, Materials2Materials.NeodymiumMagnetic),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
-                OrePrefixes.block.get(Materials.NeodymiumMagnetic),
+                MU.craftIngredient(OrePrefixes.block, Materials2Materials.NeodymiumMagnetic),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
-                OrePrefixes.block.get(Materials.NeodymiumMagnetic),
+                MU.craftIngredient(OrePrefixes.block, Materials2Materials.NeodymiumMagnetic),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0));
         TCHelper.addResearchPage(
@@ -2158,13 +2157,13 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "seerSigil", 1, 0),
                 getModItem(Witchery.ID, "chalkritual", 1, 0),
                 getModItem(BloodMagic.ID, "waterScribeTool", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(BloodMagic.ID, "fireScribeTool", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Emerald),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Emerald),
                 getModItem(BloodMagic.ID, "earthScribeTool", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Diamond),
                 getModItem(BloodMagic.ID, "airScribeTool", 1, 0),
-                OrePrefixes.gemFlawless.get(Materials.Emerald));
+                MU.craftIngredient(OrePrefixes.gemFlawless, Materials2Materials.Emerald));
         TCHelper.addResearchPage(
                 "RITUALDIVINER",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0))));
@@ -2679,11 +2678,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(DarkAspects.NETHER, 24).add(Aspect.ELDRITCH, 16).add(DarkAspects.PRIDE, 16)
                         .add(Aspect.EARTH, 8),
                 BlockList.Mytryl.get(),
-                OrePrefixes.ingot.get(Materials.Ichorium),
+                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
                 getModItem(BloodMagic.ID, "standardBindingAgent", 1, 0),
-                OrePrefixes.ingot.get(Materials.Ichorium),
+                MU.craftIngredient(OrePrefixes.ingot, Materials2Materials.Ichorium),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 29),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0),
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 4));
@@ -3022,12 +3021,12 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0),
                 getModItem(EnderStorage.ID, "enderChest", 1, 0),
                 ItemList.Gravistar.get(1L),
-                OrePrefixes.plate.get(Materials.Endium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.HeeEndium),
                 ItemList.QuantumEye.get(1L),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 ItemList.QuantumEye.get(1L),
-                OrePrefixes.plate.get(Materials.Endium),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.HeeEndium),
                 ItemList.Gravistar.get(1L));
         TCHelper.addResearchPage(
                 "ENDERSIGIL",
@@ -3249,15 +3248,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0),
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0),
-                OrePrefixes.plate.get(Materials.BloodInfusedIron),
-                OrePrefixes.ring.get(Materials.BloodInfusedIron),
-                OrePrefixes.plate.get(Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.BloodInfusedIron),
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0),
                 getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0),
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0),
-                OrePrefixes.plate.get(Materials.BloodInfusedIron),
-                OrePrefixes.ring.get(Materials.BloodInfusedIron),
-                OrePrefixes.plate.get(Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.ring, Materials2Materials.BloodInfusedIron),
+                MU.craftIngredient(OrePrefixes.plate, Materials2Materials.BloodInfusedIron),
                 getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0));
         TCHelper.addResearchPage(
                 "CAP_blood_iron",

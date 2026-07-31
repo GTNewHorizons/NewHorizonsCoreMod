@@ -26,7 +26,6 @@ import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2CellShapes;
@@ -661,7 +660,9 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(9000, 3000, 2000, 1500, 1000, 750).duration(1 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust.get(Materials.DeepIron), 4L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(MU.craftIngredient(OrePrefixes.dust, Materials2Materials.DeepIron), 4L))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials2Materials.Iron, Materials2Shapes.dust, (int) (3L)),
                         MaterialLibAPI.getStack(Materials2Materials.Trinium, Materials2Shapes.dust, (int) (1L)))
