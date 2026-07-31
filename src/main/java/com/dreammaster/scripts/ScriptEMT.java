@@ -36,7 +36,6 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
@@ -649,13 +648,13 @@ public class ScriptEMT implements IScriptLoader {
                         "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Titanium\"},GT.ItemCharge:400000L}"),
                 getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Diamond),
-                OrePrefixes.circuit.get(Materials.HV),
+                Circuits.HV.getIngredient(),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Diamond),
                 MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Diamond),
                 MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Thaumium),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Diamond),
-                OrePrefixes.circuit.get(Materials.HV),
+                Circuits.HV.getIngredient(),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Diamond));
         TCHelper.addResearchPage(
                 "DiamondOmnitool",
@@ -825,11 +824,11 @@ public class ScriptEMT implements IScriptLoader {
                         "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,Mode:0b,SecondaryMaterial:\"Aluminium\"},GT.ItemCharge:400000L}"),
                 MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Titanium),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
-                OrePrefixes.circuit.get(Materials.IV),
+                Circuits.IV.getIngredient(),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.TungstenSteel),
                 MU.craftIngredient(OrePrefixes.screw, Materials2Materials.Titanium),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.Thaumium),
-                OrePrefixes.circuit.get(Materials.IV),
+                Circuits.IV.getIngredient(),
                 MU.craftIngredient(OrePrefixes.plate, Materials2Materials.TungstenSteel));
         TCHelper.addResearchPage(
                 "ThaumiumDrill",
