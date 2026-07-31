@@ -1,18 +1,5 @@
-import com.gtnewhorizons.retrofuturagradle.minecraft.RunMinecraftTask
-
 plugins {
     id("com.gtnewhorizons.gtnhconvention")
-}
-
-// Forwarded for headless census boots (RunMinecraftTask does not copy arbitrary -D flags from the
-// Gradle JVM); mirrors the same block in GT5-Unofficial's build.gradle.kts.
-tasks.named<RunMinecraftTask>("runServer").configure {
-    if (System.getProperty("gt.dumpMaterialData") != null) {
-        jvmArgs("-Dgt.dumpMaterialData=true")
-    }
-    System.getProperty("fml.queryResult")?.let {
-        jvmArgs("-Dfml.queryResult=$it")
-    }
 }
 
 tasks.test.configure {
