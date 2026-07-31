@@ -33,13 +33,13 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials2.Materials2FluidShapes;
 import gregtech.api.enums.materials2.Materials2Materials;
 import gregtech.api.enums.materials2.Materials2Shapes;
+import gregtech.api.material.MU;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
@@ -201,7 +201,7 @@ public class ScriptTwilightForest implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(TwilightForest.ID, "tile.TFWoodSlab", 4, i),
-                            GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                            GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 4L))
                     .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 4, 0))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
@@ -212,7 +212,7 @@ public class ScriptTwilightForest implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(TwilightForest.ID, "tile.TFWoodSlab", 4, i),
-                            GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                            GTOreDictUnificator.get(OrePrefixes.stick, MU.materialOf(Materials2Materials.Wood), 4L))
                     .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 6, 0))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
@@ -368,7 +368,7 @@ public class ScriptTwilightForest implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0), NHItemList.StonePlate.get(16))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0))
                 .fluidInputs(
-                        Materials.Helium3.getGas(1600),
+                        MU.materialOf(Materials2Materials.Helium3).getGas(1600),
                         MaterialLibAPI.getFluidStack(
                                 Materials2Materials.Helium,
                                 Materials2FluidShapes.fluidGas,
