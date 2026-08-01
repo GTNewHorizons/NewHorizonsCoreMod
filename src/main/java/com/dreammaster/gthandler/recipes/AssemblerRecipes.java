@@ -107,6 +107,7 @@ import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaGeneratedTool01;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
@@ -5826,9 +5827,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Color_06.get(1L),
                         ItemList.Color_11.get(1L),
                         ItemList.Color_13.get(1L))
-                .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 95))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000L)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 95)).fluidInputs(GTUtility.getWater(1000L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         // Interweb
 
         GTValues.RA.stdBuilder()
@@ -5989,7 +5989,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(OpenComputers.ID, "item", 1, 94), ItemList.Color_00.get(3L))
                 .circuit(2).itemOutputs(getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(GTUtility.getWater(1000L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -5997,8 +5997,8 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1, WILDCARD),
                         ItemList.Color_00.get(3L))
                 .circuit(2).itemOutputs(getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000L)).duration(7 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .fluidInputs(GTUtility.getWater(1000L)).duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
         // Color Ink Cartridge
 
         GTValues.RA.stdBuilder()
@@ -6008,7 +6008,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Color_11.get(1L),
                         ItemList.Color_13.get(1L))
                 .circuit(2).itemOutputs(getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidInputs(GTUtility.getWater(1000L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -6018,8 +6018,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Color_11.get(1L),
                         ItemList.Color_13.get(1L))
                 .circuit(2).itemOutputs(getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000L)).duration(7 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .fluidInputs(GTUtility.getWater(1000L)).duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
         // Open Security
         // Magnetic Card Reader
 
@@ -7016,9 +7016,8 @@ public class AssemblerRecipes implements Runnable {
         // Lavastone
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone, 4)).circuit(24)
-                .itemOutputs(getModItem(Chisel.ID, "lavastone", 8, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Lava, 1000L)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Chisel.ID, "lavastone", 8, 0)).fluidInputs(GTUtility.getLava(1000L))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
         // Paperwall
 
         GTValues.RA.stdBuilder()
@@ -7085,9 +7084,8 @@ public class AssemblerRecipes implements Runnable {
         // Waterstone
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone, 4)).circuit(24)
-                .itemOutputs(getModItem(Chisel.ID, "waterstone", 8, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000L)).duration(5 * SECONDS).eut(24)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Chisel.ID, "waterstone", 8, 0)).fluidInputs(GTUtility.getWater(1000L))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         // Hempcrete Sand
         GTValues.RA.stdBuilder()
@@ -8573,7 +8571,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(Minecraft.ID, "stone", 64, 0),
                         getModItem(Minecraft.ID, "grass", 64, 0),
                         getModItem(Minecraft.ID, "sapling", 1, 0))
-                .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.Water, 10000))
+                .circuit(17).fluidInputs(GTUtility.getWater(10000))
                 .itemOutputs(new ItemStack(ModBlocks.blocks.get("Ow"), 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Twilight Forest
@@ -8584,7 +8582,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "stone", 64, 0),
                             getModItem(Minecraft.ID, "grass", 64, 0),
                             getModItem(TwilightForest.ID, "tile.TFSapling", 1, 1))
-                    .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.Water, 10000))
+                    .circuit(17).fluidInputs(GTUtility.getWater(10000))
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("TF"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
@@ -8596,7 +8594,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "netherrack", 64, 0),
                             getModItem(Minecraft.ID, "soul_sand", 64, 0),
                             getModItem(BiomesOPlenty.ID, "ash", 64, 0))
-                    .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.Lava, 10000))
+                    .circuit(17).fluidInputs(GTUtility.getLava(10000))
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("Ne"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
@@ -8740,7 +8738,7 @@ public class AssemblerRecipes implements Runnable {
                                 getModItem(GalaxySpace.ID, "europagrunt", 64, 0),
                                 getModItem(GalaxySpace.ID, "europagrunt", 64, 1),
                                 GTOreDictUnificator.get(orePrefix, Materials.Manganese, 64L))
-                        .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.Water, 10000))
+                        .circuit(17).fluidInputs(GTUtility.getWater(10000))
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("Eu"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
             }
@@ -8751,7 +8749,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "dirt", 64, 2),
                             getModItem(Minecraft.ID, "stone", 64, 0),
                             ItemList.Generator_Naquadah_Mark_I.get(1))
-                    .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.Lava, 10000))
+                    .circuit(17).fluidInputs(GTUtility.getLava(10000))
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("Rb"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
             // T4 Planets
@@ -9034,10 +9032,10 @@ public class AssemblerRecipes implements Runnable {
                                 getModItem(Minecraft.ID, "grass", 64, 0),
                                 getModItem(Minecraft.ID, "stone", 64, 0),
                                 GTOreDictUnificator.get(orePrefix, Materials.Dilithium, 64))
-                        .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.Water, 10000)) // There
-                                                                                              // isn't
-                                                                                              // actually
-                                                                                              // water on
+                        .circuit(17).fluidInputs(GTUtility.getWater(10000)) // There
+                                                                            // isn't
+                                                                            // actually
+                                                                            // water on
                         // Neper, but it
                         // fits
                         // the grass
@@ -9052,10 +9050,10 @@ public class AssemblerRecipes implements Runnable {
                                 getModItem(GalacticraftAmunRa.ID, "tile.baseGrass", 64, 0),
                                 getModItem(GalacticraftAmunRa.ID, "tile.saplings", 1, 0),
                                 GTOreDictUnificator.get(orePrefix, Materials.Naquadria, 64))
-                        .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.Water, 10000)) // Same as
-                                                                                              // Neper (but
-                                                                                              // the grass
-                                                                                              // is
+                        .circuit(17).fluidInputs(GTUtility.getWater(10000)) // Same as
+                                                                            // Neper (but
+                                                                            // the grass
+                                                                            // is
                         // red)
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("Mh"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
@@ -9068,7 +9066,7 @@ public class AssemblerRecipes implements Runnable {
                                 getModItem(GalacticraftAmunRa.ID, "tile.baseFalling", 64, 0), // Obsidian Sand
                                 getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 9), // Obsidian Brick
                                 GTOreDictUnificator.get(orePrefix, Materials.CosmicNeutronium, 64))
-                        .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.Lava, 10000))
+                        .circuit(17).fluidInputs(GTUtility.getLava(10000))
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("Ho"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             }

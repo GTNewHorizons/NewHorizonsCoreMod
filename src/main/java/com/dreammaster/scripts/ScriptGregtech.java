@@ -58,7 +58,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -1242,8 +1241,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumHydroxideGT5U, 3)).circuit(1)
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (5L)))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.NitricAcid, FluidShapes.fluidLiquid, (int) (5000)))
-                .fluidOutputs(MaterialUtils.gas(Materials.Water, 16000)).duration(10).eut(TierEU.RECIPE_LV)
-                .addTo(UniversalChemical);
+                .fluidOutputs(GTModHandler.getSteam(16000)).duration(10).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Ardite, Shapes.ingot, (int) (1L)),

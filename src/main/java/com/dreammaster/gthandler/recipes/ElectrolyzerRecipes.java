@@ -18,6 +18,7 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class ElectrolyzerRecipes implements Runnable {
 
@@ -168,7 +169,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Lithium, Shapes.dust, (int) (1L)),
                         MaterialLibAPI.getStack(Materials.Alumina, Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, (int) (6L)))
-                .fluidOutputs(MaterialUtils.fluid(Materials.Water, 2000L)).duration(8 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidOutputs(GTUtility.getWater(2000L)).duration(8 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(electrolyzerRecipes);
         // Emerald
 
@@ -267,8 +268,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Alumina, Shapes.dust, (int) (5L)),
                         MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, (int) (12L)),
                         MaterialLibAPI.getStack(Materials.Oxygen, CellShapes.cell, (int) (1L)))
-                .fluidOutputs(MaterialUtils.fluid(Materials.Water, 2000L)).duration(10 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
+                .fluidOutputs(GTUtility.getWater(2000L)).duration(10 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
+                .addTo(electrolyzerRecipes);
         // Lepidolite
 
         GTValues.RA.stdBuilder()
@@ -394,7 +395,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Silicon, Shapes.dust, (int) (4L)),
                         MaterialLibAPI.getStack(Materials.Oxygen, CellShapes.cell, (int) (6L)),
                         MaterialLibAPI.getStack(Materials.Hydrogen, CellShapes.cell, (int) (2L)))
-                .fluidOutputs(MaterialUtils.fluid(Materials.Water, 4000L)).duration(21 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidOutputs(GTUtility.getWater(4000L)).duration(21 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(electrolyzerRecipes);
         // Mica
 

@@ -23,6 +23,7 @@ import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTUtility;
 
 public class CuttingMachineRecipes implements Runnable {
 
@@ -134,9 +135,8 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
-                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0))
-                    .fluidInputs(MaterialUtils.fluid(Materials.Water, 100L)).duration(10 * SECONDS).eut(4)
-                    .addTo(cutterRecipes);
+                    .itemOutputs(getModItem(ZTones.ID, "lampf", 4, 0)).fluidInputs(GTUtility.getWater(100L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16))
@@ -162,9 +162,8 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
-                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0))
-                    .fluidInputs(MaterialUtils.fluid(Materials.Water, 100L)).duration(10 * SECONDS).eut(4)
-                    .addTo(cutterRecipes);
+                    .itemOutputs(getModItem(ZTones.ID, "lampt", 4, 0)).fluidInputs(GTUtility.getWater(100L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 24))
@@ -190,9 +189,8 @@ public class CuttingMachineRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
-                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0))
-                    .fluidInputs(MaterialUtils.fluid(Materials.Water, 100L)).duration(10 * SECONDS).eut(4)
-                    .addTo(cutterRecipes);
+                    .itemOutputs(getModItem(ZTones.ID, "lampb", 4, 0)).fluidInputs(GTUtility.getWater(100L))
+                    .duration(10 * SECONDS).eut(4).addTo(cutterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 23))
@@ -250,9 +248,8 @@ public class CuttingMachineRecipes implements Runnable {
             // Floor Carpet
             for (int meta = 0; meta < 16; ++meta) {
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
-                        .fluidInputs(MaterialUtils.fluid(Materials.Water, 4L))
-                        .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS).eut(7)
-                        .addTo(cutterRecipes);
+                        .fluidInputs(GTUtility.getWater(4L)).itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta))
+                        .duration(5 * SECONDS).eut(7).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(GTModHandler.getDistilledWater(3L))
                         .itemOutputs(getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS).eut(7)

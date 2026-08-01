@@ -65,8 +65,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -499,7 +499,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, (int) (1)),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (1)),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (1)))
-                .circuit(5).fluidInputs(MaterialUtils.fluid(Materials.Water, 1000))
+                .circuit(5).fluidInputs(GTUtility.getWater(1000))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         addShapedRecipe(

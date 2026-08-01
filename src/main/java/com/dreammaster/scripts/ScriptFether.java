@@ -23,8 +23,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTRecipeBuilder;
+import gregtech.api.util.GTUtility;
 
 public class ScriptFether implements IScriptLoader {
 
@@ -175,9 +175,8 @@ public class ScriptFether implements IScriptLoader {
                 getModItem(Fether.ID, "glow_flower", 1, 0));
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
-                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 5)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0)).fluidInputs(GTUtility.getWater(5))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
                 .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))

@@ -23,6 +23,7 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTUtility;
 
 public class AutoclaveRecipes implements Runnable {
 
@@ -44,7 +45,7 @@ public class AutoclaveRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderZoo.ID, "enderFragment", 4, 0)).circuit(1)
                 .itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(8000)
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 100)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                .fluidInputs(GTUtility.getWater(100)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderZoo.ID, "enderFragment", 4, 0)).circuit(2)
@@ -59,8 +60,8 @@ public class AutoclaveRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.dust, (int) (1L)))
                 .circuit(1).itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(8000)
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
+                .fluidInputs(GTUtility.getWater(100)).duration(1 * MINUTES + 15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.dust, (int) (1L)))
                 .circuit(2).itemOutputs(new ItemStack(Items.ender_pearl, 1, 0)).outputChances(9000)
@@ -79,7 +80,7 @@ public class AutoclaveRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dust, (int) (2)))
                 .itemOutputs(ItemList.GalliumArsenideCrystal.get(1L)).outputChances(8000)
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 200L)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
+                .fluidInputs(GTUtility.getWater(200L)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dust, (int) (2)))

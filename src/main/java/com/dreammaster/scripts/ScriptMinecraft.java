@@ -60,10 +60,10 @@ import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class ScriptMinecraft implements IScriptLoader {
 
@@ -208,9 +208,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "heatsand", 1, 0), getModItem(Natura.ID, "soil.tainted", 4, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 1, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 1, 0)).fluidInputs(GTUtility.getWater(1000))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "miscResources", 6, 4)).circuit(6)
                 .itemOutputs(getModItem(Minecraft.ID, "skull", 1, 1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Thaumium, FluidShapes.fluidMolten, (int) (216)))
@@ -309,9 +308,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .circuit(6).itemOutputs(getModItem(Minecraft.ID, "ladder", 32, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "brick", 8, 0)).circuit(1)
-                .itemOutputs(getModItem(Minecraft.ID, "brick_block", 2, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 500)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(assemblerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "brick_block", 2, 0)).fluidInputs(GTUtility.getWater(500))
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L), ItemList.Plank_Oak.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0)).duration(5 * SECONDS).eut(4)
@@ -484,9 +482,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .circuit(1).itemOutputs(new ItemStack(Blocks.mycelium, 16)).duration(5 * SECONDS).eut(24)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0)).fluidInputs(GTUtility.getWater(4))
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0))
                 .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS).eut(4)
@@ -503,9 +500,8 @@ public class ScriptMinecraft implements IScriptLoader {
                                 (int) (1)))
                 .duration(6 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 4)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0)).fluidInputs(GTUtility.getWater(4))
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0))
                 .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS)
@@ -529,9 +525,8 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "sand", 4, wildcard),
                         getModItem(Minecraft.ID, "dirt", 1, wildcard),
                         getModItem(MagicBees.ID, "wax", 4, 1))
-                .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 4, 0))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(mixerRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 4, 0)).fluidInputs(GTUtility.getWater(1000))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "blaze_powder", 3, 0),

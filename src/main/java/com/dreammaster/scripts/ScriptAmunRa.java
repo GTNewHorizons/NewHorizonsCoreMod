@@ -59,7 +59,6 @@ import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
@@ -615,8 +614,8 @@ public class ScriptAmunRa implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(input)
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (1)))
                 .itemOutputs(slab).duration(1 * SECONDS + 5 * TICKS).eut(eut).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(MaterialUtils.fluid(Materials.Water, 4))
-                .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(GTUtility.getWater(4)).itemOutputs(slab)
+                .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3))
                 .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
     }

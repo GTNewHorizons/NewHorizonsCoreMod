@@ -27,8 +27,8 @@ import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTUtility;
 
 public class ScriptBiblioCraft implements IScriptLoader {
 
@@ -896,9 +896,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
         // --- Frame Sheet
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
-                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4)).fluidInputs(GTUtility.getWater(4))
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
@@ -921,9 +920,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
         // --- Frame Board
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
-                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4)).fluidInputs(GTUtility.getWater(4))
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
