@@ -68,7 +68,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -1291,8 +1290,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .duration(11 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (2)))
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 20)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(cutterRecipes);
+                .fluidInputs(GTUtility.getWater(20)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (2)))
                 .fluidInputs(GTModHandler.getDistilledWater(15)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)

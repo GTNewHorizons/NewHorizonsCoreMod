@@ -46,9 +46,9 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
@@ -381,7 +381,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, (int) (1)))
                 .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0)).outputChances(90_00)
-                .fluidInputs(MaterialUtils.fluid(Materials.Water, 1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_HV)
+                .fluidInputs(GTUtility.getWater(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, (int) (1)))

@@ -29,6 +29,7 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class FormingPressRecipes implements Runnable {
 
@@ -416,7 +417,7 @@ public class FormingPressRecipes implements Runnable {
 
         // Flora
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BlankMusicDisc.get(1), new ItemStack(Blocks.red_flower, 9, 1))
-                .fluidInputs(MaterialUtils.fluid(Materials.Ice, BUCKETS)).itemOutputs(NHItemList.FloraDisc.get(1))
+                .fluidInputs(GTUtility.getWater(BUCKETS)).itemOutputs(NHItemList.FloraDisc.get(1))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         // Absolute Zero

@@ -46,9 +46,9 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Sievert;
 import gregtech.loaders.postload.recipes.beamcrafter.BeamCrafterMetadata;
 
@@ -108,7 +108,7 @@ public class BacteriaRegistry {
                         MaterialLibAPI.getFluidStack(Materials.OilHeavy, FluidShapes.fluidLiquid, (int) (600)),
                         MaterialLibAPI.getFluidStack(Materials.Oil, FluidShapes.fluidLiquid, (int) (300)),
                         MaterialLibAPI.getFluidStack(Materials.Creosote, FluidShapes.fluidLiquid, (int) (1000)),
-                        MaterialUtils.fluid(Materials.Water, 1400),
+                        GTUtility.getWater(1400),
                         MaterialLibAPI
                                 .getFluidStack(Materials.FermentedBacterialSludge, FluidShapes.fluidLiquid, (int) (50)),
                         MaterialLibAPI.getFluidStack(Materials.FermentedBiomass, FluidShapes.fluidLiquid, (int) (50)),
@@ -450,8 +450,8 @@ public class BacteriaRegistry {
 
         GTValues.RA.stdBuilder().itemInputs(BioCultureEnum.getPetriDish(null), getModItem(Genetics.ID, "misc", 1, 4))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.BinniGrowthMedium.bioCulture))
-                .outputChances(50_00).fluidInputs(MaterialUtils.fluid(Materials.Water, 4000))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);
+                .outputChances(50_00).fluidInputs(GTUtility.getWater(4000)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(BioCultureEnum.getPetriDish(null), getModItem(Genetics.ID, "misc", 1, 4))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.BinniGrowthMedium.bioCulture))

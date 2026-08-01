@@ -33,6 +33,7 @@ import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 
@@ -85,7 +86,7 @@ public class CentrifugeRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.SodiumOxide, Shapes.dust, (int) (1L)))
                 .outputChances(10000, 10000, 9000, 7500, 5000, 2500)
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RedMud, FluidShapes.fluidLiquid, (int) (1000L)))
-                .fluidOutputs(MaterialUtils.fluid(Materials.Water, 500L)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
+                .fluidOutputs(GTUtility.getWater(500L)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.fire_charge, 1, 0))

@@ -26,7 +26,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -102,7 +101,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     GTUtility.copyAmountUnsafe(729, GTOreDictUnificator.get(OrePrefixes.block, Materials.Diamond, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder().fluidInputs(MaterialUtils.fluid(Materials.Water, 2147483647L))
+            GTValues.RA.stdBuilder().fluidInputs(GTUtility.getWater(2147483647L))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 3))
                     .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputsUnsafe(

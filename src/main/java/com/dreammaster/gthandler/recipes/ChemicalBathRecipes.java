@@ -41,6 +41,7 @@ import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class ChemicalBathRecipes implements Runnable {
 
@@ -277,8 +278,8 @@ public class ChemicalBathRecipes implements Runnable {
                             getModItem(Forestry.ID, "mulch", 8, 0),
                             getModItem(Forestry.ID, "mulch", 4, 0),
                             getModItem(Forestry.ID, "mulch", 4, 0))
-                    .outputChances(10000, 3300, 2000).fluidInputs(MaterialUtils.fluid(Materials.Water, 750L))
-                    .duration(25 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
+                    .outputChances(10000, 3300, 2000).fluidInputs(GTUtility.getWater(750L)).duration(25 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
         }
 
         if (EnderIO.isModLoaded()) {

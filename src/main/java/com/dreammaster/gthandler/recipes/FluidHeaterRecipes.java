@@ -9,8 +9,6 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials.Materials;
-import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
 
 public class FluidHeaterRecipes implements Runnable {
@@ -18,7 +16,7 @@ public class FluidHeaterRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().fluidInputs(MaterialUtils.gas(Materials.Water, 3840))
+        GTValues.RA.stdBuilder().fluidInputs(GTModHandler.getSteam(3840))
                 .fluidOutputs(GTModHandler.getSuperHeatedSteam(3840)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(fluidHeaterRecipes);
         if (PamsHarvestCraft.isModLoaded()) {

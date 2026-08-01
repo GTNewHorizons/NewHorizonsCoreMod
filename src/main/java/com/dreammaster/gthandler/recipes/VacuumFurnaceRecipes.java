@@ -13,7 +13,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialUtils;
+import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.fluids.GTPPFluids;
@@ -42,7 +42,7 @@ public class VacuumFurnaceRecipes implements Runnable {
                             MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, (int) (64L)),
                             MaterialLibAPI.getStack(Materials.Germanium, Shapes.dust, (int) (15)))
                     .fluidInputs(new FluidStack(GTPPFluids.SphaleriteFlotationFroth, 4000))
-                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), MaterialUtils.fluid(Materials.Water, 2000))
+                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), GTUtility.getWater(2000))
                     .eut((int) TierEU.RECIPE_LuV).metadata(COIL_HEAT, 5500).duration(2 * MINUTES)
                     .addTo(vacuumFurnaceRecipes);
 
@@ -56,7 +56,7 @@ public class VacuumFurnaceRecipes implements Runnable {
                             MaterialLibAPI.getStack(Materials.Cadmium, Shapes.dust, (int) (50L)),
                             MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, (int) (30L)))
                     .fluidInputs(new FluidStack(GTPPFluids.ChalcopyriteFlotationFroth, 4000))
-                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), MaterialUtils.fluid(Materials.Water, 2000))
+                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), GTUtility.getWater(2000))
                     .eut((int) TierEU.RECIPE_IV).metadata(COIL_HEAT, 4500).duration(2 * MINUTES)
                     .addTo(vacuumFurnaceRecipes);
         }
