@@ -41,8 +41,8 @@ public class ScriptNatura implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Mods.Natura.ID, PamsHarvestCraft.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Mods.Natura, PamsHarvestCraft);
     }
 
     @Override

@@ -21,6 +21,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.Mods;
 import tconstruct.library.crafting.DryingRackRecipes;
 
 public class ScriptBackpack implements IScriptLoader {
@@ -31,8 +32,8 @@ public class ScriptBackpack implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Backpack.ID, ExtraUtilities.ID, PamsHarvestCraft.ID, TinkerConstruct.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Backpack, ExtraUtilities, PamsHarvestCraft, TinkerConstruct);
     }
 
     @Override

@@ -69,6 +69,7 @@ import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -94,36 +95,36 @@ public class ScriptThaumcraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                Botania.ID,
-                BuildCraftFactory.ID,
-                Chisel.ID,
-                ExtraUtilities.ID,
-                Fether.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GTNHTCWands.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                MalisisDoors.ID,
-                Natura.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                StevesCarts2.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID,
-                Witchery.ID);
+                Backpack,
+                BiomesOPlenty,
+                Botania,
+                BuildCraftFactory,
+                Chisel,
+                ExtraUtilities,
+                Fether,
+                ForbiddenMagic,
+                Forestry,
+                GalacticraftCore,
+                GalacticraftMars,
+                GTNHTCWands,
+                IguanaTweaksTinkerConstruct,
+                IndustrialCraft2,
+                MagicBees,
+                MalisisDoors,
+                Natura,
+                PamsHarvestCraft,
+                ProjectRedIntegration,
+                Railcraft,
+                RandomThings,
+                StevesCarts2,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct,
+                TwilightForest,
+                Witchery);
     }
 
     @Override

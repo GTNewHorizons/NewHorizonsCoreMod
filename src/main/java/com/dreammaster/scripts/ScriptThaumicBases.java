@@ -35,6 +35,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -55,19 +56,19 @@ public class ScriptThaumicBases implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                CarpentersBlocks.ID,
-                ExtraUtilities.ID,
-                ForbiddenMagic.ID,
-                IndustrialCraft2.ID,
-                IronTanks.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                ThaumicTinkerer.ID,
-                TinkersGregworks.ID,
-                TwilightForest.ID);
+                CarpentersBlocks,
+                ExtraUtilities,
+                ForbiddenMagic,
+                IndustrialCraft2,
+                IronTanks,
+                Railcraft,
+                Thaumcraft,
+                ThaumicBases,
+                ThaumicTinkerer,
+                TinkersGregworks,
+                TwilightForest);
     }
 
     @Override

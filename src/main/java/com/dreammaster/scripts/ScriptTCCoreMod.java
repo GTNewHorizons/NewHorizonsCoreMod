@@ -47,6 +47,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -71,35 +72,35 @@ public class ScriptTCCoreMod implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Automagy.ID,
-                Avaritia.ID,
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                DraconicEvolution.ID,
-                ElectroMagicTools.ID,
-                EnderStorage.ID,
-                EternalSingularity.ID,
-                ExtraUtilities.ID,
-                ForbiddenMagic.ID,
-                ForgeMicroblocks.ID,
-                HardcoreEnderExpansion.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                IronTanks.ID,
-                MagicBees.ID,
-                OpenBlocks.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIllumination.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBoots.ID,
-                ThaumicHorizons.ID,
-                ThaumicTinkerer.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID,
-                WitchingGadgets.ID);
+                Automagy,
+                Avaritia,
+                Backpack,
+                BiomesOPlenty,
+                DraconicEvolution,
+                ElectroMagicTools,
+                EnderStorage,
+                EternalSingularity,
+                ExtraUtilities,
+                ForbiddenMagic,
+                ForgeMicroblocks,
+                HardcoreEnderExpansion,
+                IndustrialCraft2,
+                IronChests,
+                IronTanks,
+                MagicBees,
+                OpenBlocks,
+                PamsHarvestCraft,
+                ProjectRedIllumination,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBoots,
+                ThaumicHorizons,
+                ThaumicTinkerer,
+                TinkerConstruct,
+                TwilightForest,
+                WitchingGadgets);
     }
 
     @Override

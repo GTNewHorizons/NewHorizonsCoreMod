@@ -18,7 +18,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
@@ -86,21 +85,21 @@ public class ScriptGalacticraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AE2FluidCraft.ID,
-                AppliedEnergistics2.ID,
-                BuildCraftTransport.ID,
-                CarpentersBlocks.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                GraviSuite.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIllumination.ID,
-                TinkersGregworks.ID);
+                AE2FluidCraft,
+                AppliedEnergistics2,
+                BuildCraftTransport,
+                CarpentersBlocks,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                GraviSuite,
+                IndustrialCraft2,
+                IronChests,
+                PamsHarvestCraft,
+                ProjectRedIllumination,
+                TinkersGregworks);
     }
 
     @Override

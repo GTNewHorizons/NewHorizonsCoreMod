@@ -46,6 +46,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -68,21 +69,21 @@ public class ScriptRailcraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BuildCraftFactory.ID,
-                EnderIO.ID,
-                Forestry.ID,
-                ForgeMicroblocks.ID,
-                IC2NuclearControl.ID,
-                IndustrialCraft2.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                StevesCarts2.ID,
-                Thaumcraft.ID);
+                Backpack,
+                BiomesOPlenty,
+                BuildCraftFactory,
+                EnderIO,
+                Forestry,
+                ForgeMicroblocks,
+                IC2NuclearControl,
+                IndustrialCraft2,
+                PamsHarvestCraft,
+                ProjectRedIntegration,
+                Railcraft,
+                StevesCarts2,
+                Thaumcraft);
     }
 
     @Override

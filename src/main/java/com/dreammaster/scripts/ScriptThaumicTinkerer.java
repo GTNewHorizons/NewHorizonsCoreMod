@@ -39,6 +39,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -63,21 +64,21 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Botania.ID,
-                ElectroMagicTools.ID,
-                EnderStorage.ID,
-                ExtraUtilities.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                PamsHarvestCraft.ID,
-                StevesCarts2.ID,
-                Thaumcraft.ID,
-                ThaumicTinkerer.ID);
+                AppliedEnergistics2,
+                Botania,
+                ElectroMagicTools,
+                EnderStorage,
+                ExtraUtilities,
+                ForbiddenMagic,
+                Forestry,
+                IndustrialCraft2,
+                MagicBees,
+                PamsHarvestCraft,
+                StevesCarts2,
+                Thaumcraft,
+                ThaumicTinkerer);
     }
 
     @Override

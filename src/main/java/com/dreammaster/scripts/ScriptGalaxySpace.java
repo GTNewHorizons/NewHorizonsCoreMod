@@ -41,6 +41,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -59,15 +60,15 @@ public class ScriptGalaxySpace implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BuildCraftBuilders.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                IndustrialCraft2.ID,
-                OpenComputers.ID,
-                TinkerConstruct.ID);
+                BuildCraftBuilders,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                IndustrialCraft2,
+                OpenComputers,
+                TinkerConstruct);
     }
 
     @Override
