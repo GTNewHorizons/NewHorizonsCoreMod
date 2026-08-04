@@ -1,12 +1,11 @@
 package com.dreammaster.client.util;
-import com.dreammaster.lib.Refstrings;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 import com.gtnewhorizon.gtnhlib.util.numberformatting.NumberFormatConfig;
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.FMLCommonHandler;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import cpw.mods.fml.client.config.GuiCheckBox;
+import net.minecraft.util.StatCollector;
+import com.dreammaster.config.CoreModConfig;
 
 public class ConfigGUI extends GuiScreen {
 
@@ -36,7 +35,10 @@ public class ConfigGUI extends GuiScreen {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         this.drawDefaultBackground();
-        this.drawCenteredString(this.fontRendererObj, "Mod Configurations", this.width / 2, 15, 0xFFFFFF);
+        this.drawCenteredString(this.fontRendererObj, StatCollector.translateToLocal("dreamcraft.configmenu.title"), this.width / 2, 15, 0xFFFFFF);
+        if (!CoreModConfig.Modules.WasConfigScreenShown) {
+            this.drawCenteredString(this.fontRendererObj, StatCollector.translateToLocal("dreamcraft.configmenu.firsttime"), this.width / 2, 25, 0x53E0E0);
+        }
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 }

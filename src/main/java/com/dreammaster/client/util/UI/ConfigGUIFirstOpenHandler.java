@@ -12,9 +12,9 @@ public class ConfigGUIFirstOpenHandler {
     @SubscribeEvent
     public void onGuiOpen(GuiOpenEvent event) {
         if (event.gui instanceof GuiSelectWorld && !CoreModConfig.Modules.WasConfigScreenShown) {
+            event.gui = new ConfigGUI(event.gui);
             CoreModConfig.Modules.WasConfigScreenShown = true;
             ConfigurationManager.save(CoreModConfig.Modules.class);
-            event.gui = new ConfigGUI(event.gui);
         }
     }
 }

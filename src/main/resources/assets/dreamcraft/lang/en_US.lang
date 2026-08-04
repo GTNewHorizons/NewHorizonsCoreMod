@@ -1834,7 +1834,11 @@ dreamcraft.welcome.open_to_lan=Connected to Open to LAN server. This is not offi
 
 dreamcraft.pausemenu.bug=Report a Bug
 dreamcraft.pausemenu.wiki=Open the Wiki
+dreamcraft.pausemenu.config=Common Configs
 dreamcraft.pausemenu.sharetolan.tooltip=§cOpen to LAN is buggy in GTNH§r\nInstead, set up a dedicated server for multiplayer\nCheck the wiki for instructions\nYou can run the server in parallel with the\ngame client on the same computer
+
+dreamcraft.configmenu.title=Common Mod Configurations
+dreamcraft.configmenu.firsttime=Before you begin your adventure, consider adjusting these configs to your liking
 
 dreamcraft.gui.sharetolan.message=§cOpen To LAN can break the GTNH questbook.§r Consider setting up a dedicated server
 
