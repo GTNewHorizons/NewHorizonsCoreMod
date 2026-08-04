@@ -7,7 +7,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.List;
 import java.util.Random;
 
-import com.dreammaster.client.util.UI.ConfigGUIFirstOpenHandler;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -28,6 +27,7 @@ import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.berriespp.BPPConverter;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.client.util.GTNHPauseScreen;
+import com.dreammaster.client.util.UI.ConfigGUIFirstOpenHandler;
 import com.dreammaster.command.CustomDropsCommand;
 import com.dreammaster.command.CustomFuelsCommand;
 import com.dreammaster.command.CustomToolTipsCommand;
@@ -276,7 +276,7 @@ public class MainRegistry {
         }
 
         if (event.getSide().isClient()) {
-            if(CoreModConfig.Modules.gtnhPauseMenuButtons) {
+            if (CoreModConfig.Modules.gtnhPauseMenuButtons) {
                 MinecraftForge.EVENT_BUS.register(new GTNHPauseScreen());
             }
             MinecraftForge.EVENT_BUS.register(new ConfigGUIFirstOpenHandler());
