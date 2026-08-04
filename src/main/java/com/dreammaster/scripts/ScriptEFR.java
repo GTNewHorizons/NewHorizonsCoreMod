@@ -544,7 +544,7 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -562,7 +562,7 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -580,7 +580,7 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -598,7 +598,7 @@ public class ScriptEFR implements IScriptLoader {
                 null,
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                 null,
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -616,7 +616,7 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -634,7 +634,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -652,7 +652,7 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -670,7 +670,7 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -688,7 +688,7 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
@@ -706,7 +706,7 @@ public class ScriptEFR implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                "craftingToolScrewDriver",
+                "craftingToolScrewdriver",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
