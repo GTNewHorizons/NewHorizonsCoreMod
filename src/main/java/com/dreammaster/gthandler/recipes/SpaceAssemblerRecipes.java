@@ -235,13 +235,39 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
                         ItemList.Circuit_Parts_ResistorXSMD.get(64L),
                         ItemList.Circuit_Parts_TransistorXSMD.get(64L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.MHDCSM, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Hexanite, 4L))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        Materials.WhiteDwarfMatter.getMolten(576),
-                        Materials.BlackDwarfMatter.getMolten(576))
+                        Materials.WhiteDwarfMatter.getMolten(144),
+                        Materials.RawStarMatter.getFluid(500))
                 .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+        // Alternate Really Ultimate Battery Recipe
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Board_Optical.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Hexanite, 64),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4L),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Circuit_Chip_QPIC.get(64L),
+                        ItemList.Wrap_OpticalSMDDiodes.get(8),
+                        ItemList.Wrap_OpticalSMDCapacitors.get(8),
+                        ItemList.Wrap_OpticalSMDResistors.get(8),
+                        ItemList.Wrap_OpticalSMDTransistors.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.MHDCSM, 2))
+                .fluidInputs(
+                        new FluidStack(solderUEV, 2880),
+                        Materials.MagMatter.getMolten(576),
+                        Materials.Eternity.getMolten(576))
+                .itemOutputs(ItemList.ZPM3.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3).duration(50 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
         if (OpenComputers.isModLoaded() && SuperSolarPanels.isModLoaded()) {
             // Optically Compatible Memory
@@ -383,8 +409,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            Materials.MagMatter.getNanite(1),
+                            Materials.Eternity.getNanite(1))
                     .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
@@ -415,8 +441,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            Materials.MagMatter.getNanite(1),
+                            Materials.Eternity.getNanite(1))
                     .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
