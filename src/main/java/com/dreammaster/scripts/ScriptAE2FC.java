@@ -729,7 +729,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemOutputs(AE2FC_TANK).duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Wireless Pattern Terminal
-        GTValues.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_TERM).itemOutputs(AE2FC_PATTERN_WIRELESS)
+        GTValues.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_PATTERN_TERM).itemOutputs(AE2FC_PATTERN_WIRELESS)
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Wireless Interface Terminal
