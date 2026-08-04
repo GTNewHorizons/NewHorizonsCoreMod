@@ -58,6 +58,10 @@ public final class CoreModConfig {
         @Config.Comment("Enables crafting recipes for Forestry stamps and Chunk Loader Coins on server")
         @Config.DefaultBoolean(false)
         public static boolean ForestryStampsAndChunkLoaderCoinsServerEnabled;
+
+        @Config.Comment("Set to false if you want the config screen to show up again when clicking world select (one time)")
+        @Config.DefaultBoolean(false)
+        public static boolean WasConfigScreenShown;
     }
 
     @Config(modid = Refstrings.MODID, configSubDirectory = Refstrings.COLLECTIONID, category = "ModFixes")
