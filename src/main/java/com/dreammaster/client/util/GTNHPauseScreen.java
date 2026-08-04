@@ -30,6 +30,7 @@ public class GTNHPauseScreen {
             "textures/icon/GTNH_256x256.png");
     private static final int BUG_BUTTON_ID = -161518;
     private static final int WIKI_BUTTON_ID = -8998561;
+    private static final int CONFIG_BUTTON_ID = -2778251;
 
     private HoverChecker shareToLANButtonHoverChecker;
 
@@ -37,11 +38,11 @@ public class GTNHPauseScreen {
     @SubscribeEvent
     public void onInitGui(GuiScreenEvent.InitGuiEvent.Post event) {
         if (!(event.gui instanceof GuiIngameMenu)) return;
-        final int buttonWidth = 80;
+        final int buttonWidth = 90;
         event.buttonList.add(
                 new GuiButton(
                         BUG_BUTTON_ID,
-                        event.gui.width / 2 - 100 - 10 - buttonWidth,
+                        event.gui.width / 2 - 100 - 15 - buttonWidth,
                         event.gui.height / 4 + 24 - 16,
                         buttonWidth,
                         20,
@@ -49,11 +50,19 @@ public class GTNHPauseScreen {
         event.buttonList.add(
                 new GuiButton(
                         WIKI_BUTTON_ID,
-                        event.gui.width / 2 - 100 - 10 - buttonWidth,
+                        event.gui.width / 2 - 100 - 15 - buttonWidth,
                         event.gui.height / 4 + 24 - 16 + 24,
                         buttonWidth,
                         20,
                         StatCollector.translateToLocal("dreamcraft.pausemenu.wiki")));
+        event.buttonList.add(
+                new GuiButton(
+                        CONFIG_BUTTON_ID,
+                        event.gui.width / 2 - 100 - 15 - buttonWidth,
+                        event.gui.height / 4 + 24 - 16 + 48,
+                        buttonWidth,
+                        20,
+                        StatCollector.translateToLocal("dreamcraft.pausemenu.config")));
         // TODO add credits page
 
         // find the Share To LAN button and attach a tooltip to it
@@ -76,7 +85,7 @@ public class GTNHPauseScreen {
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         event.gui.mc.getTextureManager().bindTexture(GTNH_LOGO);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        final int drawX = event.gui.width / 2 - 100 - 10 - 80 + (80 - 64) / 2;
+        final int drawX = event.gui.width / 2 - 100 - 15 - 90 + (80 - 64) / 2;
         final int drawY = event.gui.height / 4 + 24 - 16 - 64;
         Gui.func_146110_a(drawX, drawY, 0f, 0f, 64, 64, 64f, 64f);
         GL11.glPopMatrix();
@@ -92,6 +101,8 @@ public class GTNHPauseScreen {
             gtnh$openUrl(Refstrings.ISSUE_TRACKER_LINK);
         } else if (event.button.id == WIKI_BUTTON_ID) {
             gtnh$openUrl(gtnh$getWikiLink());
+        } else if (event.button.id == CONFIG_BUTTON_ID) {
+            Minecraft.getMinecraft().displayGuiScreen(new ConfigGUI(event.gui));
         }
     }
 
