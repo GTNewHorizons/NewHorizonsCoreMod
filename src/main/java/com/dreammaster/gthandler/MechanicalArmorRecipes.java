@@ -39,7 +39,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.TieredItems;
 import gregtech.api.enums.materials.FluidShapes;
-import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
@@ -116,7 +115,7 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Energy_Module.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, MaterialFacades.SuperconductorLuV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorLuV, 16),
                         ItemList.Field_Generator_ZPM.get(2))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(Materials.Tritanium, FluidShapes.fluidMolten, (int) (INGOTS * 10)))
@@ -295,7 +294,7 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plate, (int) (2)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorZPM, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 8),
                         ItemRefer.HiC_T2.get(8),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(4))
                 .fluidInputs(
@@ -424,7 +423,7 @@ public class MechanicalArmorRecipes {
                         ItemList.Armor_Chip_T2.get(1),
                         MaterialLibAPI.getStack(Materials.HSSS, Shapes.rotor, (int) (4)),
                         MaterialLibAPI.getStack(Materials.Iridium, Shapes.plate, (int) (4)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorIV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 8),
                         ItemList.Field_Generator_IV.get(1),
                         ItemList.Sensor_IV.get(1))
                 .fluidInputs(

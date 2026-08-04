@@ -1602,7 +1602,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             GTModHandler.addCraftingRecipe(
                     getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 3),
                     new Object[] { "OCO", "XWX", "OCO", 'C',
-                            MaterialParts.namedIngredient(OrePrefixes.wireGt12, MaterialFacades.SuperconductorLuV), 'X',
+                            MaterialParts.namedIngredient(OrePrefixes.wireGt12, Materials.SuperconductorLuV), 'X',
                             getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 2), 'O',
                             getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1), 'W',
                             ItemList.Transformer_LuV_IV.get(1, o) });

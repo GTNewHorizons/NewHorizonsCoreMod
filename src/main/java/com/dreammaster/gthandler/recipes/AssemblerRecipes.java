@@ -98,7 +98,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.TieredItems;
 import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.FluidShapes;
-import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
@@ -321,7 +320,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorLuV, 64),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 64),
                         NHItemList.MicaInsulatorFoil.get(48))
                 .itemOutputs(ItemList.Casing_Coil_Superconductor.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Trinium, FluidShapes.fluidMolten, (int) (1440L)))
@@ -329,7 +328,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorZPM, 32),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 32),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(4L))
                 .itemOutputs(ItemList.Casing_Coil_Superconductor.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Trinium, FluidShapes.fluidMolten, (int) (576L)))
@@ -337,7 +336,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorUV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUV, 16),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(4L))
                 .itemOutputs(ItemList.Casing_Coil_Superconductor.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Trinium, FluidShapes.fluidMolten, (int) (288L)))
@@ -345,7 +344,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorUHV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 8),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(2L))
                 .itemOutputs(ItemList.Casing_Coil_Superconductor.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Trinium, FluidShapes.fluidMolten, (int) (144L)))
@@ -353,7 +352,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorUEV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUEV, 4),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(2L))
                 .itemOutputs(ItemList.Casing_Coil_Superconductor.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Trinium, FluidShapes.fluidMolten, (int) (72L)))
@@ -361,7 +360,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorUIV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUIV, 2),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(1L))
                 .itemOutputs(ItemList.Casing_Coil_Superconductor.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Trinium, FluidShapes.fluidMolten, (int) (36L)))
@@ -369,7 +368,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorUMV, 1),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUMV, 1),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(1L))
                 .itemOutputs(ItemList.Casing_Coil_Superconductor.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Trinium, FluidShapes.fluidMolten, (int) (18L)))
@@ -1860,7 +1859,7 @@ public class AssemblerRecipes implements Runnable {
             // Gravitational Engine
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.wireGt12, MaterialFacades.SuperconductorLuV, 2),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorLuV, 2),
                             getModItem(IndustrialCraft2.ID, "blockMachine2", 4, 1),
                             ItemList.Transformer_LuV_IV.get(1),
                             getModItem(GraviSuite.ID, "itemSimpleItem", 2, 2))
@@ -1986,7 +1985,7 @@ public class AssemblerRecipes implements Runnable {
         // UHV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, MaterialFacades.SuperconductorUHV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Draconium, 1),
                         ItemList.Hull_MAX.get(1),
                         ItemList.Circuit_Chip_PPIC.get(2))
@@ -2290,7 +2289,7 @@ public class AssemblerRecipes implements Runnable {
         // 64A UHV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUHV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 2),
                         GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Draconium, 1),
                         MaterialLibAPI.getStack(Materials.Draconium, Shapes.spring, (int) (1)),
                         MaterialLibAPI.getStack(Materials.Neutronium, Shapes.springSmall, (int) (1)),
@@ -3170,7 +3169,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.IronMagnetic, Shapes.ring, (int) (8L)),
                         ItemList.IV_Coil.get(8L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorIV, 16))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorIV, 16))
                 .itemOutputs(ItemList.Electromagnet_Iron.get(1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Cobalt, FluidShapes.fluidMolten, (int) (1152)))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
@@ -3269,7 +3268,7 @@ public class AssemblerRecipes implements Runnable {
         // Superconductor Solenoid MV
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorMV, 6),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorMV, 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 2L),
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Aluminium, 1L),
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stickLong, (int) (8L)),
@@ -3284,7 +3283,7 @@ public class AssemblerRecipes implements Runnable {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorMV, 6),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorMV, 6),
                         GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 2L),
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Aluminium, 1L),
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stickLong, (int) (8L)),
@@ -3301,7 +3300,7 @@ public class AssemblerRecipes implements Runnable {
         // Superconductor Solenoid HV
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorHV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorHV, 8),
                         GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Silver, 2L),
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stickLong, (int) (8L)),
@@ -3316,7 +3315,7 @@ public class AssemblerRecipes implements Runnable {
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorHV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorHV, 8),
                         GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Silver, 2L),
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stickLong, (int) (8L)),
@@ -3333,7 +3332,7 @@ public class AssemblerRecipes implements Runnable {
         // Superconductor Solenoid EV
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorEV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorEV, 8),
                         GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
                         MaterialLibAPI.getStack(Materials.Permalloy, Shapes.stickLong, (int) (8)),
@@ -3348,7 +3347,7 @@ public class AssemblerRecipes implements Runnable {
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorEV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorEV, 8),
                         GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Aluminium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
                         MaterialLibAPI.getStack(Materials.Permalloy, Shapes.stickLong, (int) (8)),
@@ -3365,7 +3364,7 @@ public class AssemblerRecipes implements Runnable {
         // Superconductor Solenoid IV
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialFacades.SuperconductorIV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorIV, 8),
                         GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Tungsten, 2L),
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 1L),
                         MaterialLibAPI.getStack(Materials.Permalloy, Shapes.stickLong, (int) (8)),
@@ -4373,7 +4372,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Pikyonium64B, Shapes.foil, (int) (4)),
                         MaterialLibAPI
                                 .getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.foil, (int) (2L)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorLuV, 2))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(64L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, (int) (288)))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
@@ -4385,7 +4384,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.ArceusAlloy2B, Shapes.foil, (int) (2)),
                         MaterialLibAPI
                                 .getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.foil, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorLuV, 1))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_TransistorXSMD.get(32L))
                 .fluidInputs((MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, (int) (144L))))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
@@ -4397,7 +4396,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.CinobiteA243, Shapes.foil, (int) (2)),
                         MaterialLibAPI
                                 .getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.foil, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorLuV, 1))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_CapacitorXSMD.get(32L))
                 .fluidInputs((MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, (int) (144L))))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
@@ -4409,7 +4408,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.LafiumCompound, Shapes.foil, (int) (2)),
                         MaterialLibAPI
                                 .getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.foil, (int) (1L)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorLuV, 1))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_DiodeXSMD.get(64L))
                 .fluidInputs((MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, (int) (144L))))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
@@ -4419,7 +4418,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Hikarium, Shapes.foil, (int) (4)),
                         MaterialLibAPI.getStack(Materials.ArtheriumSn, Shapes.foil, (int) (1)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorLuV, 1))
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_InductorXSMD.get(32L))
                 .fluidInputs((MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, (int) (144L))))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
@@ -6515,8 +6514,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIVBase, 30L),
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.TranscendentMetal, 20L),
                         ItemList.Electric_Pump_UIV.get(1L))
-                .circuit(9)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorUIV, 30))
+                .circuit(9).itemOutputs(GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 30))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("liquid helium"), 34000))
                 .duration(2 * MINUTES + 40 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
 

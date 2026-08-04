@@ -55,7 +55,6 @@ import gregtech.api.enums.OreMixes;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
-import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
@@ -480,8 +479,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 10,
                 new Object[] { new ItemStack(advancedRadiationProtectionPlate, 64),
                         GameRegistry.findItemStack(GoodGenerator.ID, "FRF_Coil_2", 8),
-                        new Object[] {
-                                MaterialParts.namedIngredient(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUHV),
+                        new Object[] { MaterialParts.namedIngredient(OrePrefixes.wireGt16, Materials.SuperconductorUHV),
                                 8 },
                         ItemList.Emitter_UHV.get(16), ItemList.Field_Generator_UHV.get(8),
                         new ItemStack(baseItem, 4, 27) },

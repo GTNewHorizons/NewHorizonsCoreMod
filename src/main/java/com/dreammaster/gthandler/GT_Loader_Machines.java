@@ -115,7 +115,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "UCU", "FMF", "WCW", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_ZPM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        MaterialParts.namedIngredient(OrePrefixes.wireGt08, MaterialFacades.SuperconductorUHV), 'U',
+                        MaterialParts.namedIngredient(OrePrefixes.wireGt08, Materials.SuperconductorUHV), 'U',
                         MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Americium) });
 
         GTModHandler.addCraftingRecipe(
@@ -123,7 +123,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "UCU", "FMF", "WCW", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        MaterialParts.namedIngredient(OrePrefixes.wireGt12, MaterialFacades.SuperconductorUHV), 'U',
+                        MaterialParts.namedIngredient(OrePrefixes.wireGt12, Materials.SuperconductorUHV), 'U',
                         MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Americium) });
 
         GTModHandler.addCraftingRecipe(
@@ -683,7 +683,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_MAX, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.Draconium), 'B',
-                        MaterialParts.namedIngredient(OrePrefixes.wireGt04, MaterialFacades.SuperconductorUHV), 'K',
+                        MaterialParts.namedIngredient(OrePrefixes.wireGt04, Materials.SuperconductorUHV), 'K',
                         ItemList.Circuit_Chip_PPIC });
 
         GTModHandler.addCraftingRecipe(
@@ -905,7 +905,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_UEV_UHV, 'M',
                         ItemList.Battery_Charger_4by4_UHV, 'B', ItemList.ZPM2, 'C',
-                        MaterialParts.namedIngredient(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUHV), 'X',
+                        MaterialParts.namedIngredient(OrePrefixes.wireGt16, Materials.SuperconductorUHV), 'X',
                         Circuits.UHV.getIngredient() });
 
         GTModHandler.addCraftingRecipe(
@@ -1137,7 +1137,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Neutronium), 'C',
-                        MaterialParts.namedIngredient(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUHV), 'S',
+                        MaterialParts.namedIngredient(OrePrefixes.wireGt16, Materials.SuperconductorUHV), 'S',
                         MaterialParts.craftIngredient(OrePrefixes.spring, Materials.Draconium), 'X',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt08, Materials.Draconium), 'O',
                         ItemList.Reactor_Coolant_He_1, 'P', ItemList.Electric_Pump_MV, 'T',

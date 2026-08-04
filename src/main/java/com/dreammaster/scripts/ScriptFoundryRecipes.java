@@ -32,7 +32,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
-import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTOreDictUnificator;
@@ -174,7 +173,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 new Object[] { ItemList.Magnetic_Chassis_T1_ExoFoundry.get(1),
                         MaterialLibAPI.getStack(Materials.TengamAttuned, Shapes.plate, (int) (6)),
                         ItemList.Electromagnet_Samarium.get(1), ItemList.Cover_SolarPanel_UV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorUEV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 2),
                         ItemList.Energy_Cluster.get(1), },
                 // 4 : 2 : 1 magnet ratio
                 new FluidStack[] { MaterialLibAPI
@@ -306,7 +305,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 64,
                 new Object[] { ItemList.Machine_Mass_Solidifier.get(64), ItemList.Primary_Casing_ExoFoundry.get(16),
                         GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Infinity, 8),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, MaterialFacades.SuperconductorUEV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 8),
                         ItemList.Field_Generator_UEV.get(4), ItemList.Electric_Pump_UEV.get(8),
                         ItemList.FluidRegulator_UEV.get(8), new Object[] { Circuits.UIV.getIngredient(), 2 },
                         MaterialLibAPI.getStack(Materials.Netherite, Shapes.plateSuperdense, (int) (4)),
@@ -339,7 +338,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Netherite, 1),
                         ItemList.Optically_Perfected_CPU.get(6), ItemRefer.Advanced_Radiation_Protection_Plate.get(8),
                         MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, (int) (4)),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorUEV, 2) },
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 2) },
                 new FluidStack[] { MaterialLibAPI
                         .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, (int) (INGOTS * 4)),
                         new FluidStack(FluidRegistry.getFluid("oganesson"), 500),

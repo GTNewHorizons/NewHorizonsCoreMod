@@ -30,7 +30,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
-import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTOreDictUnificator;
@@ -290,7 +289,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     getModItem(OpenComputers.ID, "item", 1, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(4L),
-                    GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorUEV, 4),
+                    GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 4),
                     MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, (int) (8L)),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 1, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 288))
@@ -301,7 +300,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     getModItem(OpenComputers.ID, "item", 4, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(16L),
-                    GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorUIV, 4),
+                    GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 4),
                     MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, (int) (16L)),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 4, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 576))
@@ -312,7 +311,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     getModItem(OpenComputers.ID, "item", 16, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(64L),
-                    GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialFacades.SuperconductorUMV, 4),
+                    GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 4),
                     MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, (int) (32L)),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 16, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 1152))
