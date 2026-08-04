@@ -238,8 +238,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Hexanite, 4L))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        Materials.WhiteDwarfMatter.getMolten(576),
-                        Materials.BlackDwarfMatter.getMolten(576))
+                        Materials.WhiteDwarfMatter.getMolten(144),
+                        Materials.RawStarMatter.getFluid(500))
                 .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -409,8 +409,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            Materials.MagMatter.getNanite(1),
+                            Materials.Eternity.getNanite(1))
                     .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
@@ -441,8 +441,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            Materials.MagMatter.getNanite(1),
+                            Materials.Eternity.getNanite(1))
                     .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)

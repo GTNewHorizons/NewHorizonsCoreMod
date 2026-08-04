@@ -136,6 +136,7 @@ public class GT_CustomLoader {
     private static final GT_CraftingRecipeLoader CraftingRecipeLoader = new GT_CraftingRecipeLoader();
     private static final GT_Loader_OreDictionary OreDictionary = new GT_Loader_OreDictionary();
     private static final GT_Recipe_Remover Remover = new GT_Recipe_Remover();
+    private static final GT_Loader_Molds MoldLoader = new GT_Loader_Molds();
 
     public void run() {
         if (EnderIO.isModLoaded()) {
@@ -152,6 +153,7 @@ public class GT_CustomLoader {
         OreDictionary.run();
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
+        MoldLoader.run();
         MechanicalArmorRecipes.run();
     }
 }

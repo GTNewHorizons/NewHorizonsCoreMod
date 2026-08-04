@@ -9,7 +9,6 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.ClassNode;
 
-import com.dreammaster.coremod.transformers.ItemFocusWardingTransformer;
 import com.dreammaster.coremod.transformers.recipenukers.AdvancedSolarPanelTransformer;
 import com.dreammaster.coremod.transformers.recipenukers.BibliocraftTransformer;
 import com.dreammaster.coremod.transformers.recipenukers.GraviSuiteTransformer;
@@ -25,7 +24,6 @@ public class DreamClassTransformer implements IClassTransformer {
         registerTransformer(new AdvancedSolarPanelTransformer());
         registerTransformer(new BibliocraftTransformer());
         registerTransformer(new GraviSuiteTransformer());
-        registerTransformer(new ItemFocusWardingTransformer());
     }
 
     private void registerTransformer(IDreamTransformer transformer) {

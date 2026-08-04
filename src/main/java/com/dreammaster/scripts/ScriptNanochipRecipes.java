@@ -866,7 +866,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Quantum
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(48),
+                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(32),
                         CircuitComponent.ProcessedFrameboxHypogen.getFakeStack(2),
                         CircuitComponent.ScrewSixPhasedCopper.getFakeStack(4),
                         CircuitComponent.CasingCreon.getFakeStack(1))
@@ -1370,7 +1370,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedLivingBioChip, 1),
                         new CircuitComponentStack(CircuitComponent.ProcessedWireNiobiumTitanium, 16),
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltChromaticGlass, 4)),
-                Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(9)),
+                Arrays.asList(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(9)),
                 CircuitComponent.BiowareProcessor,
                 3 * SECONDS,
                 2_457_600, // UEV
@@ -1591,7 +1591,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.CasingEternity, 4),
                         new CircuitComponentStack(CircuitComponent.ProcessedFoilShirabon, 64)),
                 Arrays.asList(
-                        Materials.BoundlessCosmicSolder.getFluid(8 * INGOTS),
+                        Materials.BoundlessCosmicSolder.getFluid(1000),
                         Materials.RadoxPolymer.getMolten(16 * INGOTS),
                         Materials.PrimordialMatter.getFluid(1000),
                         Materials.ExcitedDTSC.getFluid(4000)),
@@ -1615,7 +1615,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltWhiteDwarfMatter, 32),
                         new CircuitComponentStack(CircuitComponent.ProcessedCoiledThermalSuperconductor, 8)),
                 Arrays.asList(
-                        Materials.BoundlessCosmicSolder.getFluid(32 * INGOTS),
+                        Materials.BoundlessCosmicSolder.getFluid(4000),
                         Materials.PrimordialMatter.getFluid(4000),
                         Materials.Space.getMolten(4000),
                         Materials.PhononMedium.getFluid(1000)),
