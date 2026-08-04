@@ -228,6 +228,7 @@ public class MainRegistry {
         // register final list with valid items to forge
         LOGGER.debug("LOAD Register Items");
         NHItemList.registerAll();
+        Items.paper.setHasSubtypes(true);
 
         LOGGER.debug("LOAD Register Blocks");
         BlockList.registerAll();

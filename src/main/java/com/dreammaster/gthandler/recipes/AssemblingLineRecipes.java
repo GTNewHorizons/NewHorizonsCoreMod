@@ -1753,7 +1753,7 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.IndustrialCentrifuge.get(64),
                         ItemList.SCSteamTurbine.get(4),
                         GregtechItemList.Hatch_Turbine_Rotor.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 4L },
                         MaterialsAlloy.PIKYONIUM.getRotor(4),
                         MaterialsAlloy.HELICOPTER.getRotor(4),
                         MaterialsAlloy.TRINIUM_REINFORCED_STEEL.getRotor(4),

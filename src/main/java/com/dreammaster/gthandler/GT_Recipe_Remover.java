@@ -224,10 +224,10 @@ public class GT_Recipe_Remover implements Runnable {
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "stamps", 1, 5), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "stamps", 1, 6), true, false, true);
 
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "engine", 1, 0), true, false, true);
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "engine", 1, 1), true, false, true);
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "engine", 1, 2), true, false, true);
-        GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "engine", 1, 4), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "engine", 1, 0), false, true, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "engine", 1, 1), false, true, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "engine", 1, 2), false, true, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Forestry.ID, "engine", 1, 4), false, true, true);
         // IC2
         GTModHandler.removeRecipeByOutputDelayed(ItemList.IC2_Energium_Dust.get(1L));
         GTModHandler.removeRecipeByOutputDelayed(ItemList.IC2_LapotronCrystal.get(1L));

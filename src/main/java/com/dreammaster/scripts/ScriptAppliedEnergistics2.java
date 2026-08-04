@@ -363,6 +363,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(components[i], getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1))
                     .itemOutputs(storage[i]).duration(20 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder().itemInputs(storage[i])
+                    .itemOutputs(components[i], getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1))
+                    .duration(1 * TICKS).eut(TierEU.RECIPE_EV).addTo(unpackagerRecipes);
         }
 
         // ME Block Container
@@ -2117,24 +2120,44 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 0))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 0))
+                .itemOutputs(
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
+                .duration(1 * TICKS).eut(TierEU.RECIPE_HV).addTo(unpackagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 1))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 1))
+                .itemOutputs(
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
+                .duration(1 * TICKS).eut(TierEU.RECIPE_HV).addTo(unpackagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 2))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 2))
+                .itemOutputs(
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
+                .duration(1 * TICKS).eut(TierEU.RECIPE_HV).addTo(unpackagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 3))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 3))
+                .itemOutputs(
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
+                .duration(1 * TICKS).eut(TierEU.RECIPE_HV).addTo(unpackagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
@@ -2171,6 +2194,12 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 281)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),

@@ -3117,7 +3117,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 'e',
-                getModItem(Thaumcraft.ID, "FocusWarding", 1, 0),
+                getModItem(Thaumcraft.ID, "FocusWarding", 0, 0),
                 'f',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 'g',

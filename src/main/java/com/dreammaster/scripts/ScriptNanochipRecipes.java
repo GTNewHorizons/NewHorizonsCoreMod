@@ -866,7 +866,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Quantum
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(48),
+                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(32),
                         CircuitComponent.ProcessedFrameboxHypogen.getFakeStack(2),
                         CircuitComponent.ScrewSixPhasedCopper.getFakeStack(4),
                         CircuitComponent.CasingCreon.getFakeStack(1))
