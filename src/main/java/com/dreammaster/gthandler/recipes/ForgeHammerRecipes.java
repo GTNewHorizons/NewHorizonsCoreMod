@@ -162,5 +162,12 @@ public class ForgeHammerRecipes implements Runnable {
                         MaterialLibAPI
                                 .getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, (int) (100L)))
                 .duration(chip_duration_ticks / 2).eut(chip_eu_per_tick).addTo(hammerRecipes);
+
+        // Charged certus quartz has no GregTech dust, so GregTech's generic crushed ore pass skips it; this mod
+        // owns the dust item and registers the grinding recipes for it here instead.
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.crushedCentrifuged, Materials.ChargedCertusQuartz, 1))
+                .itemOutputs(NHItemList.ChargedCertusQuartzDust.get(1)).duration(10 * TICKS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(hammerRecipes);
     }
 }

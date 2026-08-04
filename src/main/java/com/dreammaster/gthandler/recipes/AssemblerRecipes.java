@@ -89,6 +89,7 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
 import goodgenerator.loader.Loaders;
+import goodgenerator.util.ItemRefer;
 import gregtech.GTMod;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
@@ -10070,5 +10071,17 @@ public class AssemblerRecipes implements Runnable {
                                 FluidShapes.fluidMolten,
                                 (int) (10)))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+
+        // Reinforced glass has no GregTech plate; this mod owns the item, so the recipe lives here.
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.BorosilicateGlass, 1),
+                        NHItemList.ReinforcedGlassPlate.get(6),
+                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.ring, 32),
+                        ItemList.Field_Generator_HV.get(4))
+                .circuit(6)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Naquadria, FluidShapes.fluidMolten, 2 * INGOTS))
+                .itemOutputs(ItemRefer.Field_Restriction_Glass.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(assemblerRecipes);
     }
 }

@@ -29,10 +29,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.recipe.RecipeCategories;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class MaceratorRecipes implements Runnable {
 
@@ -912,5 +914,13 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.ChaoticDust.get(1))
                     .duration(50 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(maceratorRecipes);
         }
+
+        // The macerator half of the charged certus quartz crushed ore pass; see ForgeHammerRecipes.
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.crushedCentrifuged, Materials.ChargedCertusQuartz, 1))
+                .itemOutputs(
+                        NHItemList.ChargedCertusQuartzDust.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Barite, 1))
+                .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
     }
 }
