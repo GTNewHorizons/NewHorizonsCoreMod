@@ -275,7 +275,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         getModItem(OpenComputers.ID, "item", 64, 36),
                         ItemList.Electric_Motor_UHV.get(4),
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.CosmicNeutronium, 8),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 8),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 4),
                         ItemList.UHTResistantMesh.get(64))
                 .itemOutputs(ItemList.DroneCase.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304))
