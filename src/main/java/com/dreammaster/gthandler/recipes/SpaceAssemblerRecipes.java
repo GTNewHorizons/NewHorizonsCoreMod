@@ -498,5 +498,15 @@ public class SpaceAssemblerRecipes implements Runnable {
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(OpenComputers.ID, "case3", 1, 0),
+                        getModItem(OpenComputers.ID, "item", 2, 103),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L))
+                .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 69)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
     }
 }
