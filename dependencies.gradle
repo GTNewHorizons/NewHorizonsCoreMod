@@ -51,8 +51,7 @@ dependencies {
 
     // For testing Stargate Recipes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:SGCraft:1.4.13-GTNH:dev")
-
-    // For testing RC and Forestry recipes
+    // runtimeOnlyNonPublishable("com.github.GTNewHorizons:OpenComputers:1.12.55-GTNH:dev")
 
     //uncomment to test RC and Forestry recipes
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Railcraft:9.17.29:dev")
