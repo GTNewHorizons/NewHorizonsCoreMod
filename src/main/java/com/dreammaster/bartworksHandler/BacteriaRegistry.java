@@ -173,7 +173,7 @@ public class BacteriaRegistry {
     private void bacterialVatRecipes() {
         GTValues.RA.stdBuilder().itemInputs(AntimonyTrioxide.getDust(16), Osmium.getDust(16))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.XenoxeneXenoxsis.bioCulture))
-                .fluidInputs(Oil.getFluid(20)).fluidOutputs(Xenoxene.getFluid(20)).duration(3 * MINUTES)
+                .fluidInputs(Oil.getFluid(20)).fluidOutputs(Xenoxene.getFluid(30)).duration(2 * MINUTES)
                 .eut(TierEU.RECIPE_UEV).metadata(GLASS, 8)
                 .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), false)).addTo(bacterialVatRecipes);
 
