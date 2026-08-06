@@ -263,7 +263,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .circuit(1).itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 2), new OreDictItemStack("plankWood", 2))
-                .circuit(4).itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0)).duration(5 * SECONDS)
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
