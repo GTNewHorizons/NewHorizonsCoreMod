@@ -260,11 +260,11 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Minecraft.ID, "planks", 2, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0)).duration(15 * SECONDS).eut(TierEU.RECIPE_ULV)
-                .addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 2), new OreDictItemStack("plankWood", 2))
-                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .circuit(4).itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
