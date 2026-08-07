@@ -2549,8 +2549,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Hull_EV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4))
                 .circuit(2).itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         // UV Compressor
         GTValues.RA.stdBuilder().itemInputs(
