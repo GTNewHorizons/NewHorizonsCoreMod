@@ -2548,7 +2548,8 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
                         ItemList.Hull_EV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4))
-                .itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
+                .circuit(2).itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
         // UV Compressor
@@ -4708,7 +4709,7 @@ public class AssemblerRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12), // Pure fluix crystal
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16)) // glass cable
-                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
+                .circuit(3).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // ME IO Port
