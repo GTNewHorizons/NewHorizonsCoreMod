@@ -531,6 +531,22 @@ public class AssemblingLineRecipes implements Runnable {
                     ItemList.Hatch_Nanite.get(1),
                     30 * SECONDS,
                     (int) TierEU.RECIPE_UHV);
+
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Hatch_Nanite.get(1),
+                    256_000,
+                    256,
+                    (int) TierEU.RECIPE_UEV,
+                    16,
+                    new Object[] { ItemList.Hatch_Input_Bus_MAX.get(1), ItemList.Quantum_Chest_HV.get(1),
+                            ItemList.Field_Generator_UIV.get(4),
+                            getModItem(GalacticraftAmunRa.ID, "item.baseItem", 64, 28),
+                            ItemList.Naquarite_Universal_Insulator_Foil.get(16),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TranscendentMetal, 4) },
+                    new FluidStack[] { new FluidStack(solderUEV, 11_520) },
+                    ItemList.Hatch_Nanite_Singularity.get(1),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UIV);
         }
 
         // Bulk Catalyst Housing
