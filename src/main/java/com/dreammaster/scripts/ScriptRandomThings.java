@@ -31,6 +31,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -43,22 +44,22 @@ public class ScriptRandomThings implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Chisel.ID,
-                EnderIO.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                HardcoreEnderExpansion.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                ProjectRedIllumination.ID,
-                ProjectRedIntegration.ID,
-                RandomThings.ID,
-                RemoteIO.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID);
+                Chisel,
+                EnderIO,
+                ExtraUtilities,
+                Forestry,
+                HardcoreEnderExpansion,
+                IndustrialCraft2,
+                MagicBees,
+                ProjectRedIllumination,
+                ProjectRedIntegration,
+                RandomThings,
+                RemoteIO,
+                Thaumcraft,
+                TinkerConstruct,
+                TwilightForest);
     }
 
     @Override

@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.Mods;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -23,8 +24,8 @@ public class ScriptThaumicMachina implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Thaumcraft.ID, ThaumicMachina.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Thaumcraft, ThaumicMachina);
     }
 
     @Override

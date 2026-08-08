@@ -50,6 +50,7 @@ import biomesoplenty.api.content.BOPCBlocks;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -65,22 +66,22 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                Botania.ID,
-                Botany.ID,
-                Chisel.ID,
-                Forestry.ID,
-                HardcoreEnderExpansion.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                PamsHarvestCraft.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID,
-                Witchery.ID,
-                WitchingGadgets.ID);
+                BiomesOPlenty,
+                Botania,
+                Botany,
+                Chisel,
+                Forestry,
+                HardcoreEnderExpansion,
+                IguanaTweaksTinkerConstruct,
+                PamsHarvestCraft,
+                Railcraft,
+                RandomThings,
+                ThaumicBases,
+                TinkerConstruct,
+                Witchery,
+                WitchingGadgets);
     }
 
     @Override
