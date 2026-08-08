@@ -32,15 +32,15 @@ public class ScriptGraviSuite implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
+                "plateAlloyIridium",
+                "plateAlloyAdvanced",
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0));
+                "plateAlloyAdvanced",
+                "plateAlloyIridium",
+                "plateAlloyAdvanced");
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 1),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
@@ -77,7 +77,7 @@ public class ScriptGraviSuite implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 6),
                 "itemCasingAluminium",
-                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
+                "plateAlloyAdvanced",
                 "itemCasingAluminium",
                 "circuitAdvanced",
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0),

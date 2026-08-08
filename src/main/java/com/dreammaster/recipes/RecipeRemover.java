@@ -1491,6 +1491,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 15));
+        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTFBP", 1, 0));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTFBPCultivation", 1, 0));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTFBPIrrigation", 1, 0));
