@@ -69,6 +69,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -1610,8 +1611,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(Thaumcraft.ID, "ItemNugget", 1, 19));
         TConstructHelper
                 .getMeltingAdder(
-                        GameRegistry.findBlock("gregtech", "gt.blockmachines"),
-                        1585,
+                        MaterialLibAPI.getBlock(TEBlockShapes.wireGt16),
+                        Materials.Aluminium.getIndex(),
                         500,
                         "aluminum.molten",
                         144)
