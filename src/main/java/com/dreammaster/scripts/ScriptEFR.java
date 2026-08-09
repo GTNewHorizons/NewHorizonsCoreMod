@@ -2337,12 +2337,12 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         singleBlockInput,
                         MaterialLibAPI.getStack(Materials.CarbonDioxide, CellShapes.cell, (int) (2)))
-                .itemOutputs(singleBlockOutput, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 2, 0))
+                .itemOutputs(singleBlockOutput, ItemList.Cell_Empty.get(2))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, (int) (1000L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(singleBlockInput, MaterialLibAPI.getStack(Materials.Oxygen, CellShapes.cell, (int) (1)))
-                .itemOutputs(singleBlockOutput, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0))
+                .itemOutputs(singleBlockOutput, ItemList.Cell_Empty.get(1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, (int) (2000L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder().itemInputs(moreOxidized).itemOutputs(lessOxidized)

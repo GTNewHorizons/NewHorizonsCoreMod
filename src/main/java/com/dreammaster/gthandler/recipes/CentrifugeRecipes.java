@@ -603,10 +603,10 @@ public class CentrifugeRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.dust, (int) (1L)))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(5L))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(10L))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials.Oxygen, CellShapes.cell, (int) (1)),
-                        ItemList.Cell_Empty.get(4L))
+                        ItemList.Cell_Empty.get(9L))
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Nitrogen, FluidShapes.fluidGas, (int) (3900L)))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
 

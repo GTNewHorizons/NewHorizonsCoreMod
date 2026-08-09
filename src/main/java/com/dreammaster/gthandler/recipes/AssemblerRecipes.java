@@ -286,7 +286,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0),
+                        ItemList.Cell_Empty.get(1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, (int) (4L)))
                 .circuit(1).itemOutputs(NHItemList.TenKCell.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -300,7 +300,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemCellEmpty", 3, 0),
+                        ItemList.Cell_Empty.get(3),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, (int) (6L)))
                 .circuit(1).itemOutputs(NHItemList.ThirtyKCell.get()).duration(15 * SECONDS).eut(TierEU.RECIPE_MV / 2)
                 .addTo(assemblerRecipes);
@@ -314,7 +314,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemCellEmpty", 6, 0),
+                        ItemList.Cell_Empty.get(6),
                         MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, (int) (8L)))
                 .circuit(1).itemOutputs(NHItemList.SixtyKCell.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);

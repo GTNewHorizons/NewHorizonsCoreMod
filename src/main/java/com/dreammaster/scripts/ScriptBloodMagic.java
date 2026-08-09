@@ -989,14 +989,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.METAL, 8),
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0),
                 getModItem(Witchery.ID, "divinerwater", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 1),
+                ItemList.Cell_Water.get(1),
                 getModItem(BloodMagic.ID, "aquasalus", 1, 0),
                 getModItem(BloodMagic.ID, "aquasalus", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 1),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 1),
+                ItemList.Cell_Water.get(1),
+                ItemList.Cell_Water.get(1),
                 getModItem(BloodMagic.ID, "aquasalus", 1, 0),
                 getModItem(BloodMagic.ID, "aquasalus", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 1));
+                ItemList.Cell_Water.get(1));
         TCHelper.addResearchPage(
                 "WATERSIGIL",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "waterSigil", 1, 0))));
@@ -1019,15 +1019,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.METAL, 16),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0),
                 getModItem(Witchery.ID, "divinerlava", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 2),
+                ItemList.Cell_Lava.get(1),
                 getModItem(BloodMagic.ID, "incendium", 1, 0),
                 getModItem(BloodMagic.ID, "incendium", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 2),
+                ItemList.Cell_Lava.get(1),
                 getModItem(BloodMagic.ID, "lavaCrystal", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 2),
+                ItemList.Cell_Lava.get(1),
                 getModItem(BloodMagic.ID, "incendium", 1, 0),
                 getModItem(BloodMagic.ID, "incendium", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 2));
+                ItemList.Cell_Lava.get(1));
         TCHelper.addResearchPage(
                 "LAVASIGIL",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "lavaSigil", 1, 0))));

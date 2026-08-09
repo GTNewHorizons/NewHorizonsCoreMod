@@ -139,7 +139,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemFluidCell", 1),
+                        ItemList.Cell_Empty.get(1),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 463)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);

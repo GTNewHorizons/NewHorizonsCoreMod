@@ -40,6 +40,7 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
@@ -2082,7 +2083,7 @@ public class ScriptEMT implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "UUMatterInfusion",
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 3),
+                MaterialLibAPI.getStack(Materials.UUMatter, CellShapes.cell, 1),
                 new AspectList().add(Aspect.CRYSTAL, 16).add(Aspect.COLD, 8).add(Aspect.MAGIC, 8)
                         .add(Aspect.EXCHANGE, 8));
         TCHelper.addResearchPage(

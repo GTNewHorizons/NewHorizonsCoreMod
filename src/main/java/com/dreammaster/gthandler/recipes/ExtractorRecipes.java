@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.SGCraft;
@@ -12,7 +11,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -21,7 +19,6 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
@@ -32,11 +29,6 @@ public class ExtractorRecipes implements Runnable {
 
     @Override
     public void run() {
-        if (IndustrialCraft2.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1, WILDCARD))
-                    .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(extractorRecipes);
-        }
-
         if (GalaxySpace.isModLoaded() && SGCraft.isModLoaded()) {
             for (int i = 0; i < 6; ++i) {
 
