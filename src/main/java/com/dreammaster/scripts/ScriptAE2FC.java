@@ -705,7 +705,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 AE2_QUARTZ_GLASS);
         // Fluid annihilation plane
         addShapedRecipe(
-                AE2FC_FORMATION_PLANE,
+                AE2FC_ANNIHILATION_PLANE,
                 "craftingToolScrewdriver",
                 AE2FC_IMPORTBUS,
                 "craftingToolHardHammer",
@@ -818,7 +818,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
                         AE2_CORE_ANN,
                         AE2FC_IMPORTBUS)
-                .circuit(2).itemOutputs(AE2FC_FORMATION_PLANE).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .circuit(2).itemOutputs(AE2FC_ANNIHILATION_PLANE).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         // Interface from Small to Block and opposite
