@@ -861,12 +861,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapelessRecipe(
-                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0));
-        addShapelessRecipe(
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemPartCFPowder", 1, 0),
                 "dustCalcite",
