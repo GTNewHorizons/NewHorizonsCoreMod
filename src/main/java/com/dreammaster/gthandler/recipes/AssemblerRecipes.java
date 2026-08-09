@@ -90,6 +90,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -2838,6 +2839,15 @@ public class AssemblerRecipes implements Runnable {
                         MARAGING250.getPlate(2))
                 .circuit(1).itemOutputs(ItemList.CasingMixer.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        // Tension Resistant Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
+                        Materials.HSSG.getPlates(2),
+                        MaterialsAlloy.INCONEL_690.getPlate(4))
+                .circuit(1).itemOutputs(ItemList.TensionResistantMachineCasing.get(1).duration(10 * SECONDS))
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
