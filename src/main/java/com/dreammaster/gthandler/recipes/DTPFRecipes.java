@@ -432,12 +432,12 @@ public class DTPFRecipes implements Runnable {
                 // V3
                 GTValues.RA.stdBuilder()
                         .itemInputs(
-                                GTOreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 32L),
+                                GTOreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 16L),
                                 MaterialsAlloy.BLACK_TITANIUM.getPlate(24),
                                 MaterialsAlloy.ZERON_100.getScrew(16),
                                 GregtechItemList.Laser_Lens_Special.get(1))
                         .itemOutputs(ItemList.Tesseract.get(16)).fluidInputs(Materials.ExcitedDTSC.getFluid(1000))
-                        .fluidOutputs(Materials.DTR.getFluid(2000)).duration(40 * SECONDS).eut(512_000_000)
+                        .fluidOutputs(Materials.DTR.getFluid(2000)).duration(20 * SECONDS).eut(512_000_000)
                         .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
                 // V2
