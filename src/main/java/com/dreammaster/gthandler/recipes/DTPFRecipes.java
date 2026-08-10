@@ -464,7 +464,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsAlloy.BOTMIUM.getScrew(16),
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1L))
                         .itemOutputs(ItemList.Tesseract.get(4)).fluidInputs(Materials.ExcitedDTRC.getFluid(1000))
-                        .fluidOutputs(Materials.DTR.getFluid(1000 / 2)).duration(40 * SECONDS).eut(32_000_000)
+                        .fluidOutputs(Materials.DTR.getFluid(1000 / 2)).duration(80 * SECONDS).eut(32_000_000)
                         .metadata(COIL_HEAT, infinity_heat).addTo(plasmaForgeRecipes);
             }
 
