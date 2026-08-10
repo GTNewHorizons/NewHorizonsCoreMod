@@ -2848,6 +2848,15 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(1).itemOutputs(ItemList.TensionResistantMachineCasing.get(1).duration(10 * SECONDS))
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
+        // Extruder Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        Materials.Titanium.getPlates(2),
+                        Materials.TPV.getPlates(4))
+                .circuit(1).itemOutputs(ItemList.ExtruderMachineCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
             GTValues.RA.stdBuilder()
