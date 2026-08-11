@@ -1303,7 +1303,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Helium, CellShapes.cell, (int) (1L)),
+                        MaterialParts.requireCell(Materials.Helium, (int) (1L)),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 16L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 16, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(20 * SECONDS)

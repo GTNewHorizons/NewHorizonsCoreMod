@@ -97,7 +97,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
@@ -2334,14 +2333,11 @@ public class ScriptEFR implements IScriptLoader {
         ItemStack singleBlockOutput = GTUtility.copyAmount(20, moreOxidized);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        singleBlockInput,
-                        MaterialLibAPI.getStack(Materials.CarbonDioxide, CellShapes.cell, (int) (2)))
+                .itemInputs(singleBlockInput, MaterialParts.requireCell(Materials.CarbonDioxide, (int) (2)))
                 .itemOutputs(singleBlockOutput, ItemList.Cell_Empty.get(2))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, (int) (1000L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(singleBlockInput, MaterialLibAPI.getStack(Materials.Oxygen, CellShapes.cell, (int) (1)))
+        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, MaterialParts.requireCell(Materials.Oxygen, (int) (1)))
                 .itemOutputs(singleBlockOutput, ItemList.Cell_Empty.get(1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, (int) (2000L)))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);

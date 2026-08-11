@@ -26,7 +26,6 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
@@ -604,9 +603,7 @@ public class CentrifugeRecipes implements Runnable {
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(10L))
-                .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.Oxygen, CellShapes.cell, (int) (1)),
-                        ItemList.Cell_Empty.get(9L))
+                .itemOutputs(MaterialParts.requireCell(Materials.Oxygen, (int) (1)), ItemList.Cell_Empty.get(9L))
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Nitrogen, FluidShapes.fluidGas, (int) (3900L)))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
 
