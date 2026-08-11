@@ -31,6 +31,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
+import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class CentrifugeRecipes implements Runnable {
 
@@ -359,7 +360,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lanthanum, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Caesium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cerium, 4L))
+                        WerkstoffMaterialPool.CeriumRichMixture.get(OrePrefixes.dust, 8))
                 .outputChances(5000, 2500, 850, 750, 500, 450).duration(10 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
