@@ -26,6 +26,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
+import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -552,7 +553,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.EnceladusIceDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2))
                     .outputChances(10000, 1500, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -560,7 +561,7 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.EnceladusStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
+                            WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1))
                     .outputChances(10000, 750, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
@@ -570,7 +571,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.EnceladusIceDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2))
                     .outputChances(10000, 1500, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -578,8 +579,8 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1))
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
+                            WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -587,8 +588,8 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1))
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
+                            WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -596,16 +597,16 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1))
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
+                            WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
+                            WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
@@ -613,8 +614,8 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
+                            WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
@@ -622,8 +623,8 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 2))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
+                            WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
@@ -633,7 +634,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.MirandaStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -642,7 +643,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.MirandaStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -651,7 +652,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.MirandaStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -793,7 +794,7 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "acentauribbgrunt", 1, 0))
                     .itemOutputs(
                             NHItemList.CentauriASurfaceDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1),
+                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
                     .outputChances(10000, 1250, 750, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
@@ -802,7 +803,7 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1, 0))
                     .itemOutputs(
                             NHItemList.CentauriAStoneDust.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1),
+                            WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 1))
                     .outputChances(10000, 1250, 750, 125).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
