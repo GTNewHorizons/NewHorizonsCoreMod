@@ -432,7 +432,7 @@ public class DTPFRecipes implements Runnable {
                 // V3
                 GTValues.RA.stdBuilder()
                         .itemInputs(
-                                GTOreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 16L),
+                                GTOreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 32L),
                                 MaterialsAlloy.BLACK_TITANIUM.getPlate(24),
                                 MaterialsAlloy.ZERON_100.getScrew(16),
                                 GregtechItemList.Laser_Lens_Special.get(1))
