@@ -27,7 +27,6 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.system.material.WerkstoffLoader;
-import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -608,7 +607,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.OberonStoneDust.get(),
                             WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
                             WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
-                            GGMaterial.naquadahEarth.get(OrePrefixes.dust, 1))
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -617,7 +616,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.OberonStoneDust.get(),
                             WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
                             WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
-                            GGMaterial.naquadahEarth.get(OrePrefixes.dust, 1))
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -626,7 +625,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.OberonStoneDust.get(),
                             WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
                             WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
-                            GGMaterial.naquadahEarth.get(OrePrefixes.dust, 1))
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -787,7 +786,7 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.HaumeaStoneDust.get(),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedGold, 1),
-                            GGMaterial.naquadahEarth.get(OrePrefixes.dust, 1),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1))
                     .outputChances(10000, 1250, 625, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
                     .addTo(maceratorRecipes);
@@ -796,7 +795,7 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.CentauriASurfaceDust.get(),
                             WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2),
-                            GGMaterial.enrichedNaquadahEarth.get(OrePrefixes.dust, 1),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1))
                     .outputChances(10000, 1250, 750, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
@@ -805,7 +804,7 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.CentauriAStoneDust.get(),
                             WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 2),
-                            GGMaterial.enrichedNaquadahEarth.get(OrePrefixes.dust, 1),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 1),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 1))
                     .outputChances(10000, 1250, 750, 125).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                     .addTo(maceratorRecipes);
