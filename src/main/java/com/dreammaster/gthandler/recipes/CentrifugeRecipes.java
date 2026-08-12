@@ -151,7 +151,7 @@ public class CentrifugeRecipes implements Runnable {
                         WerkstoffLoader.PTMetallicPowder.get(OrePrefixes.dust, 18),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L))
+                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
                 .outputChances(5000, 2500, 1000, 750, 500, 150).duration(5 * MINUTES + 24 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
@@ -162,7 +162,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Oriharukon, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Barium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L))
+                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
                 .outputChances(5000, 2500, 1250, 750, 500, 150).fluidOutputs(Materials.Oxygen.getGas(1800L))
                 .duration(5 * MINUTES + 24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
@@ -250,7 +250,7 @@ public class CentrifugeRecipes implements Runnable {
                         WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L))
+                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
                 .outputChances(5000, 3000, 1000, 750, 400, 200).fluidOutputs(Materials.Oxygen.getGas(5400L))
                 .duration(8 * MINUTES + 6 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
@@ -261,7 +261,7 @@ public class CentrifugeRecipes implements Runnable {
                         WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 18),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L))
+                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
                 .outputChances(5000, 3000, 1000, 1000, 400, 100).fluidOutputs(Materials.Nitrogen.getGas(5400L))
                 .duration(8 * MINUTES + 6 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
@@ -280,7 +280,7 @@ public class CentrifugeRecipes implements Runnable {
                 .itemOutputs(
                         WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
                         WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 9L),
+                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 18),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L))
@@ -327,7 +327,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L))
+                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
                 .outputChances(5000, 2500, 1250, 750, 500, 400).duration(10 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
@@ -338,7 +338,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetYellow, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L))
+                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
                 .outputChances(5000, 2500, 850, 500, 500, 300).duration(10 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
@@ -356,7 +356,7 @@ public class CentrifugeRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HaumeaStoneDust.get(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedGold, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 9L),
+                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 18),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lanthanum, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Caesium, 4L),
@@ -367,7 +367,7 @@ public class CentrifugeRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CentauriASurfaceDust.get(36))
                 .itemOutputs(
                         WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 9L),
+                        GGMaterial.enrichedNaquadahEarth.get(OrePrefixes.dust, 18),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 9L),
                         WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 8),
                         getModItem(Avaritia.ID, "Resource", 36, 2),
@@ -378,7 +378,7 @@ public class CentrifugeRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CentauriAStoneDust.get(36))
                 .itemOutputs(
                         WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 9L),
+                        GGMaterial.enrichedNaquadahEarth.get(OrePrefixes.dust, 18),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 4L),
                         getModItem(Avaritia.ID, "Resource", 36, 2),
@@ -392,7 +392,7 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadria, 4L),
+                        GGMaterial.naquadriaEarth.get(OrePrefixes.dust, 8),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.DraconiumAwakened, 4L))
                 .outputChances(5000, 3000, 1500, 800, 500, 50).duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS)
                 .eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
