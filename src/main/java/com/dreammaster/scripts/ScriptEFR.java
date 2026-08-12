@@ -1234,6 +1234,9 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "crying_obsidian", 16)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        ChiselHelper.addVariationFromStack("endstone", getModItem(Botania.ID, "endStoneBrick", 1, 0));
+        ChiselHelper.addVariationFromStack("endstone", getModItem(EtFuturumRequiem.ID, "end_bricks", 1, 0));
+
         ChiselHelper.addVariationFromStack("EFRHoneyBlock", getModItem(BiomesOPlenty.ID, "honeyBlock", 1));
         ChiselHelper.addVariationFromStack("EFRHoneyBlock", getModItem(EtFuturumRequiem.ID, "honey_block", 1));
 

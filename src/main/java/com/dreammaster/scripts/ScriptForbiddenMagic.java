@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
@@ -39,6 +40,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
+import magicbees.item.types.NuggetType;
+import magicbees.main.Config;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -66,6 +69,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 EnderIO.ID,
                 ForbiddenMagic.ID,
                 IndustrialCraft2.ID,
+                MagicBees.ID,
                 Thaumcraft.ID,
                 ThaumicTinkerer.ID,
                 TinkerConstruct.ID,
@@ -91,7 +95,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ChiselHelper.registerOredict("blockNetherStar", "blockNetherStar");
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
-                .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0)).duration(1 * MINUTES).eut(5)
+                .itemOutputs(Config.nuggets.getStackForType(NuggetType.EMERALD, 9)).duration(1 * MINUTES).eut(5)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0))
                 .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);

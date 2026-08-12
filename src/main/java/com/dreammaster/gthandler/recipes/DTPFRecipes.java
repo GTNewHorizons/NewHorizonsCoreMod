@@ -437,7 +437,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsAlloy.ZERON_100.getScrew(16),
                                 GregtechItemList.Laser_Lens_Special.get(1))
                         .itemOutputs(ItemList.Tesseract.get(16)).fluidInputs(Materials.ExcitedDTSC.getFluid(1000))
-                        .fluidOutputs(Materials.DTR.getFluid(2000)).duration(40 * SECONDS).eut(512_000_000)
+                        .fluidOutputs(Materials.DTR.getFluid(2000)).duration(20 * SECONDS).eut(512_000_000)
                         .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
                 // V2
@@ -464,7 +464,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsAlloy.BOTMIUM.getScrew(16),
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1L))
                         .itemOutputs(ItemList.Tesseract.get(4)).fluidInputs(Materials.ExcitedDTRC.getFluid(1000))
-                        .fluidOutputs(Materials.DTR.getFluid(1000 / 2)).duration(40 * SECONDS).eut(32_000_000)
+                        .fluidOutputs(Materials.DTR.getFluid(1000 / 2)).duration(80 * SECONDS).eut(32_000_000)
                         .metadata(COIL_HEAT, infinity_heat).addTo(plasmaForgeRecipes);
             }
 
