@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler;
 
 import static com.dreammaster.item.NHItemList.CokeOvenBrick;
+import static com.dreammaster.main.MainRegistry.LOGGER;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.Bronze;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
@@ -65,7 +66,6 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OreDictNames;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.util.GTLog;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -1452,7 +1452,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         }
 
         if (Railcraft.isModLoaded()) {
-            GTLog.out.println("GTMod: Replacing Railcraft recipes with slightly more Oredicted variants");
+            LOGGER.debug("NHCore: Replacing Railcraft recipes with slightly more Oredicted variants");
 
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 2, 0),
