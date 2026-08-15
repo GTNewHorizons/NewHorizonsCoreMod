@@ -414,14 +414,10 @@ public class FormingPressRecipes implements Runnable {
                 .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
 
         // Music Discs
-
-        // Blank Music Disc
         GTValues.RA.stdBuilder()
                 .itemInputs(Materials.PolyvinylChloride.getPlates(1), ItemList.Shape_Mold_Cylinder.get(0L))
                 .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(formingPressRecipes);
-
-        // Vanilla discs
 
         // Flora
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BlankMusicDisc.get(1), new ItemStack(Blocks.red_flower, 9, 1))
@@ -441,14 +437,13 @@ public class FormingPressRecipes implements Runnable {
         if (UniversalSingularities.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.PolyvinylChloride, 1L),
+                            NHItemList.BlankMusicDisc.get(1),
                             GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Gold, 64L),
                             new ItemStack(Blocks.grass, 64),
                             new ItemStack(Blocks.sand, 64),
-                            getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 64, 3),
-                            ItemList.Shape_Mold_Cylinder.get(0L))
-                    .fluidInputs(Materials.Universium.getMolten(INGOTS * 16))
-                    .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(100 * SECONDS).eut(TierEU.RECIPE_MAX / 2)
+                            getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 64, 3))
+                    .fluidInputs(Materials.Universium.getMolten(INGOTS * 1))
+                    .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UMV / 2)
                     .addTo(formingPressRecipes);
         }
 
