@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
+import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.UniversalSingularities;
@@ -434,13 +435,14 @@ public class FormingPressRecipes implements Runnable {
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(formingPressRecipes);
 
         // Sweet Dreams
-        if (UniversalSingularities.isModLoaded()) {
+        if (UniversalSingularities.isModLoaded() && Natura.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             NHItemList.BlankMusicDisc.get(1),
                             GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Gold, 64L),
                             new ItemStack(Blocks.grass, 64),
                             new ItemStack(Blocks.sand, 64),
+                            getModItem(Natura.ID, "Cloud", 64, 0),
                             getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 64, 3))
                     .fluidInputs(Materials.Universium.getMolten(INGOTS * 1))
                     .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UMV / 2)
