@@ -6,6 +6,7 @@ import static gregtech.api.enums.Materials.MeatCooked;
 import static gregtech.api.enums.Materials.MeatRaw;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
@@ -2045,6 +2046,27 @@ public class ScriptEFR implements IScriptLoader {
                 new ResearchPage(
                         Objects.requireNonNull(
                                 TCHelper.findInfusionRecipe(getModItem(EtFuturumRequiem.ID, "elytra", 1, 0)))));
+
+        new ResearchItem(
+                "SCULK",
+                "NEWHORIZONS",
+                new AspectList().add(DarkAspects.WRATH, 15).add(Aspect.DEATH, 12).add(Aspect.LIFE, 5)
+                        .add(Aspect.UNDEAD, 5),
+                -4,
+                7,
+                3,
+                getModItem(EtFuturumRequiem.ID, "five_record", 1)).setConcealed().setRound()
+                        .setPages(new ResearchPage("TConstruct.research_page.SCULK.1")).registerResearchItem();
+        ThaumcraftApi.addCrucibleRecipe(
+                "SCULK",
+                getModItem(EtFuturumRequiem.ID, "disk_fragment_5", 1),
+                getModItem(Avaritia.ID, "Resource", 1, 7),
+                new AspectList().add(DarkAspects.WRATH, 15).add(Aspect.DEATH, 12).add(Aspect.LIFE, 5)
+                        .add(Aspect.UNDEAD, 5));
+        TCHelper.addResearchPage(
+                "SCULK",
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(EtFuturumRequiem.ID, "disk_fragment_5", 1))));
+        ThaumcraftApi.addWarpToResearch("SCULK", 1);
 
         // Recipe Function Calls
         addOxidizedCopperDoors();
