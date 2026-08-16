@@ -1,8 +1,10 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedCore;
@@ -15,6 +17,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
@@ -24,6 +27,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
@@ -419,6 +423,184 @@ public class FormingPressRecipes implements Runnable {
                 .itemInputs(Materials.PolyvinylChloride.getPlates(1), ItemList.Shape_Mold_Cylinder.get(0L))
                 .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(formingPressRecipes);
+
+        if (Avaritia.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeYellow", 1),
+                            new OreDictItemStack("dyeWhite", 1),
+                            new ItemStack(Blocks.stone, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_13, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeLime", 1),
+                            new OreDictItemStack("dyeGreen", 1),
+                            new ItemStack(Items.fish, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_cat, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeRed", 1),
+                            new OreDictItemStack("dyePink", 1),
+                            new ItemStack(Blocks.dirt, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_blocks, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeRed", 1),
+                            new OreDictItemStack("dyeGray", 1),
+                            new ItemStack(Items.feather, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_chirp, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeYellow", 1),
+                            new OreDictItemStack("dyeLime", 1),
+                            new ItemStack(Items.arrow, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_far, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyePurple", 1),
+                            new OreDictItemStack("dyeBlue", 1),
+                            new ItemStack(Items.gold_ingot, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_mall, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeMagenta", 1),
+                            new OreDictItemStack("dyeWhite", 1),
+                            new ItemStack(Blocks.noteblock, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_mellohi, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeBlack", 1),
+                            new OreDictItemStack("dyeGray", 1),
+                            new ItemStack(Items.string, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_stal, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeWhite", 1),
+                            new OreDictItemStack("dyeLightGray", 1),
+                            new ItemStack(Items.iron_ingot, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_strad, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeCyan", 1),
+                            new OreDictItemStack("dyeGreen", 1),
+                            new ItemStack(Items.redstone, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_ward, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeGray", 1),
+                            new OreDictItemStack("dyeLightGray", 1),
+                            new ItemStack(Items.ender_pearl, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_11, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            new OreDictItemStack("dyeLightBlue", 1),
+                            new OreDictItemStack("dyeBlue", 1),
+                            new ItemStack(Items.clock, 1, 0))
+                    .itemOutputs(new ItemStack(Items.record_wait, 1, 0)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(formingPressRecipes);
+
+            if (EtFuturumRequiem.isModLoaded()) {
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Avaritia.ID, "Resource", 9, 7),
+                                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 1L),
+                                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
+                                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, "pigstep_record", 1)).duration(60 * SECONDS)
+                        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Avaritia.ID, "Resource", 9, 7),
+                                new OreDictItemStack("dyeLightBlue", 1),
+                                new OreDictItemStack("dyeWhite", 1),
+                                new ItemStack(Items.ghast_tear, 1, 0))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, "tears_record", 1)).duration(60 * SECONDS)
+                        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Avaritia.ID, "Resource", 9, 7),
+                                new OreDictItemStack("dyeRed", 1),
+                                new OreDictItemStack("dyeWhite", 1),
+                                new ItemStack(Items.chicken, 1, 0))
+                        .fluidInputs(Materials.Lava.getFluid(BUCKETS * 1))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, "lava_chicken_record", 1)).duration(60 * SECONDS)
+                        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Avaritia.ID, "Resource", 9, 7),
+                                new OreDictItemStack("dyeLightBlue", 1),
+                                new OreDictItemStack("dyeGreen", 1),
+                                getModItem(EtFuturumRequiem.ID, "deepslate", 1))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, "otherside_record", 1)).duration(60 * SECONDS)
+                        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Avaritia.ID, "Resource", 9, 7),
+                                new OreDictItemStack("dyeOrange", 1),
+                                new OreDictItemStack("dyeCyan", 1),
+                                getModItem(EtFuturumRequiem.ID, "tuff", 1))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, "precipice_record", 1)).duration(60 * SECONDS)
+                        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Avaritia.ID, "Resource", 9, 7),
+                                new OreDictItemStack("dyeOrange", 1),
+                                new OreDictItemStack("dyeYellow", 1),
+                                getModItem(EtFuturumRequiem.ID, "copper_block", 1, 3))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, "creator_record", 1)).duration(60 * SECONDS)
+                        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Avaritia.ID, "Resource", 9, 7),
+                                new OreDictItemStack("dyeOrange", 1),
+                                new OreDictItemStack("dyeYellow", 1),
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Copper, 1L))
+                        .itemOutputs(getModItem(EtFuturumRequiem.ID, "creator_music_box_record", 1))
+                        .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+            }
+        }
 
         // Flora
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BlankMusicDisc.get(1), new ItemStack(Blocks.red_flower, 9, 1))
