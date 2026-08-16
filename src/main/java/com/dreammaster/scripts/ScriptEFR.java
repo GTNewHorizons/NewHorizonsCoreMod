@@ -2053,19 +2053,31 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(DarkAspects.WRATH, 15).add(Aspect.DEATH, 12).add(Aspect.LIFE, 5)
                         .add(Aspect.UNDEAD, 5),
                 -4,
-                7,
+                8,
                 3,
                 getModItem(EtFuturumRequiem.ID, "five_record", 1)).setConcealed().setRound()
-                        .setPages(new ResearchPage("TConstruct.research_page.SCULK.1")).registerResearchItem();
+                        .setPages(new ResearchPage("EtFuturumRequiem.research_page.SCULK.1")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "SCULK",
-                getModItem(EtFuturumRequiem.ID, "disk_fragment_5", 1),
+                getModItem(EtFuturumRequiem.ID, "disc_fragment_5", 1),
                 getModItem(Avaritia.ID, "Resource", 1, 7),
                 new AspectList().add(DarkAspects.WRATH, 15).add(Aspect.DEATH, 12).add(Aspect.LIFE, 5)
                         .add(Aspect.UNDEAD, 5));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SCULK",
+                getModItem(EtFuturumRequiem.ID, "five_record", 1),
+                new AspectList().add(Aspect.FIRE, 10).add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 20),
+                "aaa",
+                "aaa",
+                "aaa",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "disc_fragment_5", 1));
         TCHelper.addResearchPage(
                 "SCULK",
-                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(EtFuturumRequiem.ID, "disk_fragment_5", 1))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(EtFuturumRequiem.ID, "disc_fragment_5", 1))));
+        TCHelper.addResearchPage(
+                "SCULK",
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(EtFuturumRequiem.ID, "five_record", 1, 0))));
         ThaumcraftApi.addWarpToResearch("SCULK", 1);
 
         // Recipe Function Calls
