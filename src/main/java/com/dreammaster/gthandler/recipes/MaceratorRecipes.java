@@ -211,7 +211,7 @@ public class MaceratorRecipes implements Runnable {
 
         if (Avaritia.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 7))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.PolyvinylChloride, 2L))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.PolyvinylChloride, 1L))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(maceratorRecipes);
         }
 
