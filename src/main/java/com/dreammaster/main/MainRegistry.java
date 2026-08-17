@@ -272,7 +272,7 @@ public class MainRegistry {
         // Register additional OreDictionary Names
         if (CoreModConfig.Modules.OreDictItems) OreDictHandler.register_all();
 
-        new GT_Loader_OreDictionary().run();
+        GT_Loader_OreDictionary.registerMaterialEntries();
 
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();

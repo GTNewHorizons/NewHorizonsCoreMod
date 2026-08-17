@@ -41,9 +41,13 @@ import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTLog;
 import gregtech.api.util.GTOreDictUnificator;
 
-/// Ore-dictionary entries for non-GT items. Registered at init, not alongside the other GT loaders in
-/// [GT_CustomLoader]: MaterialLib's postInit shape consumers resolve these entries, and FML orders no mod's
-/// postInit against `materiallib`'s.
+/// Ore-dictionary entries for non-GT items, split by phase.
+///
+/// [#registerMaterialEntries] runs at init, so GregTech's postInit shape consumers resolve its
+/// `<prefix><Material>` names whatever order FML gives `dreamcraft` and `materiallib`. It carries only stacks
+/// that exist by init: this mod's own preInit items and blocks, and Applied Energistics'
+/// `item.ItemMultiMaterial`. [IngredientFactory#getModItem] throws on an item its owner has not registered
+/// yet, so every other foreign item waits for [#run] at postInit.
 public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOreDictionary implements Runnable {
 
     // When an optional mod is absent, getModItem resolves its items to the shared missing-item placeholder
@@ -63,16 +67,9 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         GTOreDictUnificator.registerOre(prefix.oreDictName(materialName), stack);
     }
 
-    @Override
-    public void run() {
-        GTLog.out.println("Core-Mod: Register OreDict Entries of Non-GT-Items.");
-
-        // Custom Stuff
-        registerOre("ingotBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0));
-        registerOre("blockBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0));
-
-        registerOre(OrePrefixes.log, Materials.Wood, getModItem(BiomesOPlenty.ID, "logs4", 1, 3));
-        registerOre("cropCarrot", getModItem(BiomesOPlenty.ID, "food", 1, 2));
+    /// Registers the entries whose ore-dictionary name resolves to a MaterialLib material.
+    public static void registerMaterialEntries() {
+        GTLog.out.println("Core-Mod: Register Material OreDict Entries of Non-GT-Items.");
 
         registerOre(OrePrefixes.compressed, Materials.Mytryl, NHItemList.MytrylCompressedPlate.get());
         registerOre(OrePrefixes.block, Materials.Mytryl, BlockList.Mytryl.get());
@@ -82,7 +79,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre(OrePrefixes.compressed, Materials.Ledox, NHItemList.LedoxCompressedPlate.get());
         registerOre(OrePrefixes.stick, Materials.Stone, NHItemList.CobbleStoneRod.get());
         registerOre(OrePrefixes.plate, Materials.Stone, NHItemList.StonePlate.get());
-        registerOre("stickSandstone", NHItemList.SandStoneRod.get());
         registerOre("lensReinforcedGlass", NHItemList.ReinforcedGlassLense.get());
         registerOre("plateReinforcedGlass", NHItemList.ReinforcedGlassPlate.get());
         registerOre("blockQuantium", BlockList.Quantinum.get());
@@ -104,10 +100,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 OrePrefixes.gem,
                 Materials.ChargedCertusQuartz,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
-        registerOre("dustCokeOvenBrick", NHItemList.CokeOvenBrickDust.get(1));
-        registerOre("ingotCokeOvenBrick", NHItemList.CokeOvenBrick.get(1));
-        registerOre("leather", NHItemList.ArtificialLeather.get(1));
-        registerOre("itemLeather", NHItemList.ArtificialLeather.get(1));
 
         registerOre(OrePrefixes.stickLong, Materials.Obsidian, NHItemList.LongObsidianRod.get());
 
@@ -116,11 +108,30 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre(OrePrefixes.bars, Materials.Iridium, BlockList.IridiumBars.get());
         registerOre(OrePrefixes.bars, Materials.Neutronium, BlockList.NeutroniumBars.get());
         registerOre(OrePrefixes.bars, Materials.Osmium, BlockList.OsmiumBars.get());
-        registerOre(OrePrefixes.bars, Materials.Soularium, getModItem(EnderIO.ID, "blockSoulariumBars", 1, 0));
         registerOre(OrePrefixes.bars, Materials.StainlessSteel, BlockList.StainlessSteelBars.get());
         registerOre(OrePrefixes.bars, Materials.Steel, BlockList.SteelBars.get());
         registerOre(OrePrefixes.bars, Materials.Titanium, BlockList.TitaniumBars.get());
         registerOre(OrePrefixes.bars, Materials.TungstenSteel, BlockList.TungstenSteelBars.get());
+    }
+
+    @Override
+    public void run() {
+        GTLog.out.println("Core-Mod: Register OreDict Entries of Non-GT-Items.");
+
+        // Custom Stuff
+        registerOre("ingotBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0));
+        registerOre("blockBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0));
+
+        registerOre(OrePrefixes.log, Materials.Wood, getModItem(BiomesOPlenty.ID, "logs4", 1, 3));
+        registerOre("cropCarrot", getModItem(BiomesOPlenty.ID, "food", 1, 2));
+
+        registerOre("stickSandstone", NHItemList.SandStoneRod.get());
+        registerOre("dustCokeOvenBrick", NHItemList.CokeOvenBrickDust.get(1));
+        registerOre("ingotCokeOvenBrick", NHItemList.CokeOvenBrick.get(1));
+        registerOre("leather", NHItemList.ArtificialLeather.get(1));
+        registerOre("itemLeather", NHItemList.ArtificialLeather.get(1));
+
+        registerOre(OrePrefixes.bars, Materials.Soularium, getModItem(EnderIO.ID, "blockSoulariumBars", 1, 0));
 
         registerOre(
                 OrePrefixes.rawOre,
