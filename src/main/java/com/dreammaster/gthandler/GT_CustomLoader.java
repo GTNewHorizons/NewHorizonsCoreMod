@@ -141,7 +141,6 @@ public class GT_CustomLoader {
     private static final GT_Loader_Materials MaterialLoader = new GT_Loader_Materials();
     private static final GT_MachineRecipeLoader MachineRecipeLoader = new GT_MachineRecipeLoader();
     private static final GT_CraftingRecipeLoader CraftingRecipeLoader = new GT_CraftingRecipeLoader();
-    private static final GT_Loader_OreDictionary OreDictionary = new GT_Loader_OreDictionary();
     private static final GT_Recipe_Remover Remover = new GT_Recipe_Remover();
     private static final GT_Loader_Molds MoldLoader = new GT_Loader_Molds();
 
@@ -156,7 +155,6 @@ public class GT_CustomLoader {
         ItemLoader.run();
         MachineLoader.run();
         Remover.run();
-        OreDictionary.run();
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
         MoldLoader.run();

@@ -41,6 +41,9 @@ import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTLog;
 import gregtech.api.util.GTOreDictUnificator;
 
+/// Ore-dictionary entries for non-GT items. Registered at init, not alongside the other GT loaders in
+/// [GT_CustomLoader]: MaterialLib's postInit shape consumers resolve these entries, and FML orders no mod's
+/// postInit against `materiallib`'s.
 public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOreDictionary implements Runnable {
 
     // When an optional mod is absent, getModItem resolves its items to the shared missing-item placeholder

@@ -38,6 +38,7 @@ import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.GT_CustomLoader;
+import com.dreammaster.gthandler.GT_Loader_OreDictionary;
 import com.dreammaster.gthandler.recipes.AssemblingLineRecipes;
 import com.dreammaster.gthandler.recipes.BECRecipes;
 import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
@@ -270,6 +271,8 @@ public class MainRegistry {
 
         // Register additional OreDictionary Names
         if (CoreModConfig.Modules.OreDictItems) OreDictHandler.register_all();
+
+        new GT_Loader_OreDictionary().run();
 
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
