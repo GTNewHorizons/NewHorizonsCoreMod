@@ -2460,7 +2460,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.CertusQuartz, 3))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0))
+                .circuit(19).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Cell Reshuffler
