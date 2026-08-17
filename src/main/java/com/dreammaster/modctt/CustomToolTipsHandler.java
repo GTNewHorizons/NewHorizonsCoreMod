@@ -10,6 +10,7 @@ import javax.xml.bind.Unmarshaller;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
+import com.dreammaster.auxiliary.MaterialLibNames;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 
@@ -122,6 +123,39 @@ public class CustomToolTipsHandler {
         return tState;
     }
 
+    /// Rewrites every `ml:` tooltip into its resolved item name. A MaterialLib entry names one stack, so a
+    /// MetaStart/MetaEnd range on it is dropped.
+    private void ResolveMaterialLibNames(CustomToolTips pToolTips) {
+        int tResolved = 0;
+        int tInvalid = 0;
+
+        for (CustomToolTips.ItemToolTip itt : pToolTips.getToolTips()) {
+            if (!MaterialLibNames.isMaterialLibName(itt.getUnlocalizedName())) {
+                continue;
+            }
+
+            if (itt.getMetaStart() != null || itt.getMetaEnd() != null) {
+                MainRegistry.LOGGER.warn(
+                        "[CTT] MaterialLib entry [{}] cannot carry a MetaStart/MetaEnd range; ignoring it",
+                        itt.getUnlocalizedName());
+                itt.clearMetaRange();
+            }
+
+            String tCanonical = MaterialLibNames.canonicalize(itt.getUnlocalizedName());
+            if (tCanonical == null) {
+                tInvalid++;
+            } else {
+                itt.setUnlocalizedName(tCanonical);
+                tResolved++;
+            }
+        }
+
+        if (tResolved + tInvalid > 0) {
+            MainRegistry.LOGGER
+                    .info("CustomToolTips: resolved {} MaterialLib entries ({} invalid)", tResolved, tInvalid);
+        }
+    }
+
     /**
      * Reload tooltip configuration from disk. Will overwrite current List without restart, if the config file is valid
      *
@@ -140,6 +174,8 @@ public class CustomToolTipsHandler {
             File tConfigFile = new File(_mConfigFileName);
             tNewItemCollection = (CustomToolTips) jaxUnmarsh.unmarshal(tConfigFile);
             MainRegistry.LOGGER.debug("[CTT.ReloadCustomToolTips] Config file has been loaded. Entering Verify state");
+
+            ResolveMaterialLibNames(tNewItemCollection);
 
             _mCustomToolTips = tNewItemCollection;
             tResult = true;

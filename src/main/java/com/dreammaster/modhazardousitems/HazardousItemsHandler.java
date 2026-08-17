@@ -16,6 +16,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.fluids.IFluidContainerItem;
 
+import com.dreammaster.auxiliary.MaterialLibNames;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.modhazardousitems.HazardousItems.HazardousItem;
@@ -209,6 +210,8 @@ public class HazardousItemsHandler {
             HazardousItems tNewItemCollection = (HazardousItems) jaxUnmarsh.unmarshal(tConfigFile);
             MainRegistry.LOGGER.debug("Config file has been loaded. Entering Verify state");
 
+            ResolveMaterialLibNames(tNewItemCollection);
+
             if (VerifyConfiguredDamageEffects(tNewItemCollection)
                     && VerifyConfiguredPotionEffects(tNewItemCollection)) {
                 _mHazardItemsCollection = tNewItemCollection; // Configuration verified, activate now
@@ -221,6 +224,39 @@ public class HazardousItemsHandler {
         }
 
         return tResult;
+    }
+
+    /// Rewrites every `ml:` item into its resolved item name, and forces it to an exact match: a resolved name ends in
+    /// a metadata suffix, and the "contains" match of [HazardousItems#FindHazardousItem] would find `dust:45` inside
+    /// `dust:453`.
+    private void ResolveMaterialLibNames(HazardousItems pItemCollection) {
+        int tResolved = 0;
+        int tInvalid = 0;
+
+        for (HazardousItem hi : pItemCollection.getHazardousItems()) {
+            if (!MaterialLibNames.isMaterialLibName(hi.getItemName())) {
+                continue;
+            }
+
+            String tCanonical = MaterialLibNames.canonicalize(hi.getItemName());
+            if (tCanonical == null) {
+                tInvalid++;
+                continue;
+            }
+
+            if (!hi.getExactMatch()) {
+                MainRegistry.LOGGER
+                        .warn("HazardousItem [{}] is a MaterialLib entry, forcing ExactNameMatch", hi.getItemName());
+                hi.setExactMatch(true);
+            }
+            hi.setItemName(tCanonical);
+            tResolved++;
+        }
+
+        if (tResolved + tInvalid > 0) {
+            MainRegistry.LOGGER
+                    .info("HazardousItems: resolved {} MaterialLib entries ({} invalid)", tResolved, tInvalid);
+        }
     }
 
     /**

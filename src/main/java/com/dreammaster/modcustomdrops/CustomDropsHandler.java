@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,6 +30,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
 import org.jetbrains.annotations.NotNull;
 
+import com.dreammaster.auxiliary.MaterialLibNames;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.kuba6000.mobsinfo.api.IChanceModifier;
@@ -116,6 +118,37 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
         }
     }
 
+    /// Rewrites every `ml:` drop into its resolved item name, dropping the entries that resolve to nothing so one bad
+    /// MaterialLib name does not fail [#VerifyConfig] for the whole file.
+    private void ResolveMaterialLibNames(CustomDrops pDropList) {
+        int tResolved = 0;
+        int tInvalid = 0;
+
+        for (CustomDrops.CustomDrop X : pDropList.getCustomDrops()) {
+            Iterator<CustomDrops.CustomDrop.Drop> tIter = X.getDrops().iterator();
+            while (tIter.hasNext()) {
+                CustomDrops.CustomDrop.Drop Y = tIter.next();
+                if (!MaterialLibNames.isMaterialLibName(Y.getItemName())) {
+                    continue;
+                }
+
+                String tCanonical = MaterialLibNames.canonicalize(Y.getItemName());
+                if (tCanonical == null) {
+                    MainRegistry.LOGGER.warn("Removing ItemDropID [{}] with unresolved item", Y.getIdentifier());
+                    tIter.remove();
+                    tInvalid++;
+                } else {
+                    Y.setItemName(tCanonical);
+                    tResolved++;
+                }
+            }
+        }
+
+        if (tResolved + tInvalid > 0) {
+            MainRegistry.LOGGER.info("CustomDrops: resolved {} MaterialLib entries ({} invalid)", tResolved, tInvalid);
+        }
+    }
+
     private boolean VerifyConfig(CustomDrops pDropListToCheck) {
         boolean tSuccess = true;
 
@@ -153,6 +186,8 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
             Unmarshaller jaxUnmarsh = tJaxbCtx.createUnmarshaller();
             CustomDrops tNewItemCollection = (CustomDrops) jaxUnmarsh.unmarshal(tConfigFile);
             MainRegistry.LOGGER.debug("Config file has been loaded. Entering Verify state");
+
+            ResolveMaterialLibNames(tNewItemCollection);
 
             if (!VerifyConfig(tNewItemCollection)) {
                 MainRegistry.LOGGER

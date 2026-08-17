@@ -72,6 +72,10 @@ public class CustomFuels {
             return mItemName;
         }
 
+        public void setName(String value) {
+            mItemName = value;
+        }
+
         public int getBurnTime() {
             return mBurnTime;
         }

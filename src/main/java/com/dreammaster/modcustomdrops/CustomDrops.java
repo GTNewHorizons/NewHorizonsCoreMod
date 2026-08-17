@@ -108,6 +108,10 @@ public class CustomDrops {
                 return mItemName;
             }
 
+            public void setItemName(String value) {
+                mItemName = value;
+            }
+
             public int getAmount() {
                 return mAmount;
             }
