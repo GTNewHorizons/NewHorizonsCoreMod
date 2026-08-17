@@ -935,8 +935,7 @@ public class ScriptEFR implements IScriptLoader {
         // GTValues.RA.stdBuilder()
         // .itemInputs(
         // getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
-        // MaterialLibAPI.getStack(Materials.Netherite, Shapes.plateDouble, (int)
-        // (2L))).circuit(2)
+        // MaterialLibAPI.getStack(Materials.Netherite, Shapes.plateDouble, 2)).circuit(2)
         // .itemOutputs(getModItem(EtFuturumRequiem.ID, "netherite_barrel", 1, 0))
         // .duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
         // .addTo(assemblerRecipes);

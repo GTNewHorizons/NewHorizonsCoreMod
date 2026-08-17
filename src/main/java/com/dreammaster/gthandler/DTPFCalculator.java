@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
@@ -93,16 +94,16 @@ public class DTPFCalculator {
             }
         }
         // Determine oganesson recipe stats
+        FluidStack radon = MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, 1000);
         for (GTRecipe recipe : foundEBFRecipes) {
             if (recipe.mFluidInputs.length == 0) {
                 ebfDuration = (long) Math.max(1, recipe.mDuration * 0.3);
                 ebfEUpertick = recipe.mEUt;
-            } else if (recipe.mFluidInputs[0]
-                    .isFluidEqual(MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, (int) (1000L)))) {
-                        ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
-                        ebfEUpertick = recipe.mEUt;
-                        break;
-                    }
+            } else if (recipe.mFluidInputs[0].isFluidEqual(radon)) {
+                ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
+                ebfEUpertick = recipe.mEUt;
+                break;
+            }
         }
         recipeDuration = ebfDuration;
     }

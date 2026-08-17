@@ -16,9 +16,8 @@ import gregtech.api.material.GTMaterialProperties;
 import gregtech.api.material.MaterialAtomics;
 import gregtech.api.util.recipe.Sievert;
 
-/// Radiation hatch entries for the radioactive materials that originate in gtPlusPlus. BartWorks
-/// registers the werkstoff-backed and GT-native ones itself, so Thorium, Thorium 232 and Californium
-/// are skipped here to avoid a second entry.
+/// Radiation hatch entries for the radioactive materials that originate in gtPlusPlus. BartWorks registers the
+/// werkstoff-backed and GT-native ones itself.
 public class BW_RadHatchMaterial {
 
     public static void runRadHatchAdder() {

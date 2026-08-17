@@ -35,7 +35,7 @@ public final class IngredientFactory {
     }
 
     /**
-     * Whether the stack is the missing-item placeholder produced by {@link #invalidItem} when a mod item lookup fails.
+     * Whether the stack is the missing-item placeholder produced by {@link #invalidItem}.
      */
     public static boolean isMissingItem(ItemStack stack) {
         return stack != null && stack.getItem() == Item.getItemFromBlock(Blocks.fire);

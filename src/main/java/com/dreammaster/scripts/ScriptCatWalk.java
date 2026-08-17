@@ -154,10 +154,10 @@ public class ScriptCatWalk implements IScriptLoader {
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0))
                 .itemOutputs(getModItem(CatWalks.ID, "ropeLight", 8, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
+        // GTValues.M equals one dust or ingot
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "steelgrate", 1, 0),
-                new ItemData(Materials.Steel, 2 * GTValues.M / 9)); // GTValues.M equals one
-                                                                    // dust or ingot
+                new ItemData(Materials.Steel, 2 * GTValues.M / 9));
         GTOreDictUnificator.addItemData(
                 getModItem(CatWalks.ID, "support_column", 1, 0),
                 new ItemData(Materials.Steel, 6 * GTValues.M / 9));

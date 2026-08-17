@@ -9031,13 +9031,8 @@ public class AssemblerRecipes implements Runnable {
                                 getModItem(Minecraft.ID, "grass", 64, 0),
                                 getModItem(Minecraft.ID, "stone", 64, 0),
                                 GTOreDictUnificator.get(orePrefix, Materials.Dilithium, 64))
-                        .circuit(17).fluidInputs(GTUtility.getWater(10000)) // There
-                                                                            // isn't
-                                                                            // actually
-                                                                            // water on
-                        // Neper, but it
-                        // fits
-                        // the grass
+                        .circuit(17).fluidInputs(GTUtility.getWater(10000))
+                        // There isn't actually water on Neper, but it fits the grass
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("Np"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             }
@@ -9049,11 +9044,8 @@ public class AssemblerRecipes implements Runnable {
                                 getModItem(GalacticraftAmunRa.ID, "tile.baseGrass", 64, 0),
                                 getModItem(GalacticraftAmunRa.ID, "tile.saplings", 1, 0),
                                 GTOreDictUnificator.get(orePrefix, Materials.Naquadria, 64))
-                        .circuit(17).fluidInputs(GTUtility.getWater(10000)) // Same as
-                                                                            // Neper (but
-                                                                            // the grass
-                                                                            // is
-                        // red)
+                        .circuit(17).fluidInputs(GTUtility.getWater(10000))
+                        // Same as Neper (but the grass is red)
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("Mh"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             }
@@ -10072,7 +10064,7 @@ public class AssemblerRecipes implements Runnable {
                                 (int) (10)))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
-        // Reinforced glass has no GregTech plate; this mod owns the item, so the recipe lives here.
+        // Reinforced glass has no GregTech plate; this mod owns the plate item.
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.BorosilicateGlass, 1),

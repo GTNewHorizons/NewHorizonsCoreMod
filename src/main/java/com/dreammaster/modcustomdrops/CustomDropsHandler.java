@@ -118,8 +118,7 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
         }
     }
 
-    /// Rewrites every `ml:` drop into its resolved item name, dropping the entries that resolve to nothing so one bad
-    /// MaterialLib name does not fail [#VerifyConfig] for the whole file.
+    /// Rewrites every `ml:` drop into its resolved item name, removing the entries that resolve to nothing.
     private void ResolveMaterialLibNames(CustomDrops pDropList) {
         int tResolved = 0;
         int tInvalid = 0;

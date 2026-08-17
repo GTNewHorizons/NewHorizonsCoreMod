@@ -8,8 +8,8 @@ import com.ruling_0.materiallib.api.StackResolver;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /// Rewrites the `ml:<Material>:<shapeToken>` form the XML item configs accept into the `modid:item[:meta]` form their
-/// lookups compare against. MaterialLib item metadata is a material index that shifts whenever the material set
-/// changes, so a config entry names the material and shape and the metadata is resolved at load time.
+/// lookups compare against. A config entry names the material and shape because MaterialLib item metadata is a
+/// material index that shifts whenever the material set changes.
 ///
 /// Resolution reads MaterialLib's resolved registries, so it runs no earlier than the config modules' postInit load.
 public final class MaterialLibNames {

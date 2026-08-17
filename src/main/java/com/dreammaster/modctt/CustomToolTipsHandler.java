@@ -123,8 +123,7 @@ public class CustomToolTipsHandler {
         return tState;
     }
 
-    /// Rewrites every `ml:` tooltip into its resolved item name. A MaterialLib entry names one stack, so a
-    /// MetaStart/MetaEnd range on it is dropped.
+    /// Rewrites every `ml:` tooltip into its resolved item name, dropping any MetaStart/MetaEnd range on it.
     private void ResolveMaterialLibNames(CustomToolTips pToolTips) {
         int tResolved = 0;
         int tInvalid = 0;

@@ -138,8 +138,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 36))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(20 * TICKS)
                     .eut(TierEU.RECIPE_ULV).addTo(fluidSolidifierRecipes);
-            // maybe MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid,
-            // (int) (144L)) instead
+            // maybe MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 144) instead
 
             GTValues.RA.stdBuilder().circuit(1).itemOutputs(getModItem(TinkerConstruct.ID, "blankPattern", 1, 1))
                     .fluidInputs(FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144))

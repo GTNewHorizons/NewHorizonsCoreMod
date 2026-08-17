@@ -170,11 +170,10 @@ public class LaserEngraverRecipes implements Runnable {
         // Optical Boule
         GTValues.RA.stdBuilder().itemInputs(
                 ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
-                MaterialLibAPI.getStack(Materials.MagnetoResonatic, Shapes.lens, (int) (0)), // Magneto
-                                                                                             // resonatic
-                                                                                             // lens
-                MaterialLibAPI.getStack(Materials.Fayalite, Shapes.lens, (int) (0)), // Fayalite
-                                                                                     // lens
+                // Magneto resonatic lens
+                MaterialLibAPI.getStack(Materials.MagnetoResonatic, Shapes.lens, (int) (0)),
+                // Fayalite lens
+                MaterialLibAPI.getStack(Materials.Fayalite, Shapes.lens, (int) (0)),
                 NHItemList.MysteriousCrystalLens.get(0)).itemOutputs(ItemList.Circuit_Silicon_Ingot6.get(1L))
                 .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 16000L)).duration(30 * SECONDS).eut(7_864_320)
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
