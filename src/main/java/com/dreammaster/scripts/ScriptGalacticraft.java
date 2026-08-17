@@ -1839,8 +1839,8 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void maceratorRecipes() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 2, 0)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.MeteoricIron, 2L))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
     }
 
     private void dungeonBlockRecipes() {
