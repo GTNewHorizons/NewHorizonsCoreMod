@@ -2068,16 +2068,19 @@ public class ScriptRailcraft implements IScriptLoader {
         // Water Tank
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 1, 14),
+                GTModHandler.RecipeBits.BUFFERED,
 
                 new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
                         OrePrefixes.stick.get(Materials.Iron), 'S', ItemList.IC2_Resin.get(1L) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 2, 14),
+                GTModHandler.RecipeBits.BUFFERED,
 
                 new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
                         OrePrefixes.stick.get(Materials.Iron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 4, 14),
+                GTModHandler.RecipeBits.BUFFERED,
 
                 new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
                         OrePrefixes.stick.get(Materials.CastIron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
