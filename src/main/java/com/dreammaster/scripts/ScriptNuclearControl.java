@@ -20,6 +20,7 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -33,8 +34,8 @@ public class ScriptNuclearControl implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(AppliedEnergistics2.ID, IC2NuclearControl.ID, IndustrialCraft2.ID, Natura.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AppliedEnergistics2, IC2NuclearControl, IndustrialCraft2, Natura);
     }
 
     @Override

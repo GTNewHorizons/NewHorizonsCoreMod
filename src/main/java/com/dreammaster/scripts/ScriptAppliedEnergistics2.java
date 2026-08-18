@@ -46,6 +46,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -63,20 +64,20 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                Computronics.ID,
-                DraconicEvolution.ID,
-                EnderIO.ID,
-                EternalSingularity.ID,
-                ExtraUtilities.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                OpenComputers.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID);
+                AppliedEnergistics2,
+                Avaritia,
+                Computronics,
+                DraconicEvolution,
+                EnderIO,
+                EternalSingularity,
+                ExtraUtilities,
+                IndustrialCraft2,
+                IronChests,
+                OpenComputers,
+                Thaumcraft,
+                TinkerConstruct);
     }
 
     @Override

@@ -97,6 +97,7 @@ import ganymedes01.etfuturum.recipes.SmokerRecipes;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -119,36 +120,36 @@ public class ScriptEFR implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdventureBackpack.ID,
-                AppliedEnergistics2.ID,
-                BiomesOPlenty.ID,
-                BloodMagic.ID,
-                Botania.ID,
-                Chisel.ID,
-                DraconicEvolution.ID,
-                ElectroMagicTools.ID,
-                EnderIO.ID,
-                EtFuturumRequiem.ID,
-                ExtraUtilities.ID,
-                Fether.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                HardcoreEnderExpansion.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                PamsHarvestCraft.ID,
-                StevesCarts2.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                ThaumicHorizons.ID,
-                TinkerConstruct.ID,
-                TinkersGregworks.ID,
-                Witchery.ID,
-                WitchingGadgets.ID,
-                ZTones.ID);
+                AdventureBackpack,
+                AppliedEnergistics2,
+                BiomesOPlenty,
+                BloodMagic,
+                Botania,
+                Chisel,
+                DraconicEvolution,
+                ElectroMagicTools,
+                EnderIO,
+                EtFuturumRequiem,
+                ExtraUtilities,
+                Fether,
+                ForbiddenMagic,
+                Forestry,
+                HardcoreEnderExpansion,
+                IndustrialCraft2,
+                MagicBees,
+                PamsHarvestCraft,
+                StevesCarts2,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                ThaumicHorizons,
+                TinkerConstruct,
+                TinkersGregworks,
+                Witchery,
+                WitchingGadgets,
+                ZTones);
     }
 
     @Override
