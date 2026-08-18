@@ -62,6 +62,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -85,30 +86,30 @@ public class ScriptTinkersConstruct implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                BuildCraftCore.ID,
-                Chisel.ID,
-                ElectroMagicTools.ID,
-                ExtraTrees.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                ForgeMicroblocks.ID,
-                GalaxySpace.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                IndustrialCraft2.ID,
-                Mantle.ID,
-                Natura.ID,
-                PamsHarvestCraft.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                TinkersMechworks.ID,
-                WitchingGadgets.ID);
+                Backpack,
+                BiomesOPlenty,
+                BloodArsenal,
+                BuildCraftCore,
+                Chisel,
+                ElectroMagicTools,
+                ExtraTrees,
+                ExtraUtilities,
+                Forestry,
+                ForgeMicroblocks,
+                GalaxySpace,
+                IguanaTweaksTinkerConstruct,
+                IndustrialCraft2,
+                Mantle,
+                Natura,
+                PamsHarvestCraft,
+                Railcraft,
+                RandomThings,
+                Thaumcraft,
+                TinkerConstruct,
+                TinkersMechworks,
+                WitchingGadgets);
     }
 
     @Override

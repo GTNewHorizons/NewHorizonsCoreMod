@@ -32,6 +32,7 @@ import bartworks.common.loaders.ItemRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
@@ -46,21 +47,21 @@ public class ScriptLogisticPipes implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                BuildCraftSilicon.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                GalacticraftCore.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                LogisticsPipes.ID,
-                OpenComputers.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedCore.ID,
-                Railcraft.ID,
-                Thaumcraft.ID);
+                AppliedEnergistics2,
+                BuildCraftSilicon,
+                ExtraUtilities,
+                Forestry,
+                GalacticraftCore,
+                IndustrialCraft2,
+                IronChests,
+                LogisticsPipes,
+                OpenComputers,
+                ProjectRedExpansion,
+                ProjectRedCore,
+                Railcraft,
+                Thaumcraft);
     }
 
     // This should ideally be shared somewhere; pending more cleanup/rewrite.

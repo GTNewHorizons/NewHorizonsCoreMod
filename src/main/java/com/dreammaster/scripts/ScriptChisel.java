@@ -31,6 +31,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -42,21 +43,21 @@ public class ScriptChisel implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                Botania.ID,
-                Chisel.ID,
-                EnderIO.ID,
-                GalacticraftAmunRa.ID,
-                GalacticraftCore.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                Natura.ID,
-                ProjectRedExploration.ID,
-                Railcraft.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID);
+                BiomesOPlenty,
+                Botania,
+                Chisel,
+                EnderIO,
+                GalacticraftAmunRa,
+                GalacticraftCore,
+                IndustrialCraft2,
+                IronChests,
+                Natura,
+                ProjectRedExploration,
+                Railcraft,
+                TinkerConstruct,
+                TwilightForest);
     }
 
     @Override
