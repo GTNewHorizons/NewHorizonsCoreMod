@@ -383,6 +383,7 @@ public class RecipeRemover {
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "copper_block", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "five_record", 1, 0));
 
             removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_brick_stairs", 4, 0));
 

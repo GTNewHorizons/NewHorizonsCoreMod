@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
@@ -24,8 +25,8 @@ public class ScriptBattleGear implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(MineAndBladeBattleGear2.ID, Backpack.ID, TinkerConstruct.ID, TinkersGregworks.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(MineAndBladeBattleGear2, Backpack, TinkerConstruct, TinkersGregworks);
     }
 
     @Override

@@ -46,6 +46,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -63,20 +64,20 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                Computronics.ID,
-                DraconicEvolution.ID,
-                EnderIO.ID,
-                EternalSingularity.ID,
-                ExtraUtilities.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                OpenComputers.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID);
+                AppliedEnergistics2,
+                Avaritia,
+                Computronics,
+                DraconicEvolution,
+                EnderIO,
+                EternalSingularity,
+                ExtraUtilities,
+                IndustrialCraft2,
+                IronChests,
+                OpenComputers,
+                Thaumcraft,
+                TinkerConstruct);
     }
 
     @Override
@@ -261,11 +262,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTModHandler.addCraftingRecipe(
                 AE2_ADVANCED_HOUSING,
+                GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "hPS", "CGC", "SCd", 'P', CERTUS_PLATE, 'S',
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 1L), 'C',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 1L), 'G', GLASS_PANE });
         GTModHandler.addCraftingRecipe(
                 AE2_ADVANCED_HOUSING,
+                GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "dPS", "CGC", "SCh", 'P', CERTUS_PLATE, 'S',
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 1L), 'C',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 1L), 'G', GLASS_PANE });
@@ -287,11 +290,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         for (int i = 0; i < components.length; i++) {
             GTModHandler.addCraftingRecipe(
                     cells[i],
+                    GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "hPS", "CGC", "SCd", 'P', CERTUS_PLATE, 'S',
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 1L), 'C',
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 1L), 'G', components[i] });
             GTModHandler.addCraftingRecipe(
                     cells[i],
+                    GTModHandler.RecipeBits.BUFFERED,
                     new Object[] { "dPS", "CGC", "SCh", 'P', CERTUS_PLATE, 'S',
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 1L), 'C',
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 1L), 'G', components[i] });
@@ -299,19 +304,23 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         }
         GTModHandler.addCraftingRecipe(
                 components[0],
+                GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitData", 'P',
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38), // 64k
                         'X', NHItemList.EngineeringProcessorItemEmeraldCore.get() });
         GTModHandler.addCraftingRecipe(
                 components[1],
+                GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitElite", 'P', components[0], 'X',
                         NHItemList.EngineeringProcessorItemEmeraldCore.get() });
         GTModHandler.addCraftingRecipe(
                 components[2],
+                GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitMaster", 'P', components[1], 'X',
                         NHItemList.EngineeringProcessorItemAdvEmeraldCore.get() });
         GTModHandler.addCraftingRecipe(
                 components[3],
+                GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CPC", "PXP", "CPC", 'C', "circuitSuperconductor", 'P', components[2], 'X',
                         NHItemList.EngineeringProcessorItemAdvEmeraldCore.get() });
 
@@ -371,6 +380,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         // ME Block Container
         GTModHandler.addCraftingRecipe(
                 AE2_BLOCK_CONTAINER,
+                GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { " K ", "SMS", "dHw", 'K',
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35), 'S',
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 1), 'M', AE2_ME_CHEST, 'H',

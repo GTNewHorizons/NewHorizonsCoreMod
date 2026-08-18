@@ -17,6 +17,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -31,8 +32,8 @@ public class ScriptOpenComputers implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(HardcoreEnderExpansion.ID, IndustrialCraft2.ID, OpenComputers.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(HardcoreEnderExpansion, IndustrialCraft2, OpenComputers);
     }
 
     private static ItemStack getTransposer(int aAmount, int rate) {

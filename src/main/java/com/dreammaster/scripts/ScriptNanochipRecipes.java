@@ -32,6 +32,7 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.VoltageIndex;
@@ -63,8 +64,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, OpenComputers.ID, UniversalSingularities.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AE2FluidCraft, AppliedEnergistics2, OpenComputers, UniversalSingularities);
     }
 
     @Override
@@ -1473,7 +1474,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         }),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(10 * INGOTS),
-                        Materials.Radon.getGas(10 * INGOTS),
+                        Materials.Radon.getPlasma(10 * INGOTS),
                         Materials.SuperCoolant.getFluid(10000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(500)),
                 CircuitComponent.OpticalAssembly,
@@ -1499,7 +1500,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedFoilPolybenzimidazole, 64)),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(20 * INGOTS),
-                        Materials.Radon.getGas(20 * INGOTS),
+                        Materials.Radon.getPlasma(20 * INGOTS),
                         Materials.SuperCoolant.getFluid(20000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(1000)),
                 CircuitComponent.OpticalComputer,
@@ -1524,7 +1525,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         }),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(40 * INGOTS),
-                        Materials.Radon.getGas(40 * INGOTS),
+                        Materials.Radon.getPlasma(40 * INGOTS),
                         Materials.SuperCoolant.getFluid(40000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(2000)),
                 CircuitComponent.OpticalMainframe,

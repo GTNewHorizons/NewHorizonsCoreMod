@@ -30,6 +30,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.SubstituteFluidStack;
@@ -48,9 +49,8 @@ public class ScriptAE2FC implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays
-                .asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, Avaritia.ID, EternalSingularity.ID, OpenComputers.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AE2FluidCraft, AppliedEnergistics2, Avaritia, EternalSingularity, OpenComputers);
     }
 
     @Override

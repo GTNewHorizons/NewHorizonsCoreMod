@@ -7815,6 +7815,8 @@ public class AssemblerRecipes implements Runnable {
         // HEE
         addLootbagPair(57, 58, 3, 1, TierEU.RECIPE_HV, DURATION); // Basic -> Advanced
 
+        // CropsNH
+        addLootbagPair(51, 59, 3, 1, TierEU.RECIPE_LV, DURATION); // Farmhand -> Agriculturalist
     }
 
     // Assembler recipe registry

@@ -27,6 +27,7 @@ import com.dreammaster.block.BlockList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.objects.ItemData;
 
@@ -38,17 +39,17 @@ public class ScriptIndustrialApiary implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                Botany.ID,
-                ExtraBees.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                Gendustry.ID,
-                Genetics.ID,
-                ProjectRedIllumination.ID,
-                TinkerConstruct.ID);
+                BiomesOPlenty,
+                Botany,
+                ExtraBees,
+                ExtraUtilities,
+                Forestry,
+                Gendustry,
+                Genetics,
+                ProjectRedIllumination,
+                TinkerConstruct);
     }
 
     @Override
