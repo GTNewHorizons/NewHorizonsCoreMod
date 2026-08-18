@@ -418,15 +418,17 @@ public class FormingPressRecipes implements Runnable {
                 .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
 
         // Music Discs
-        GTValues.RA.stdBuilder()
-                .itemInputs(Materials.PolyvinylChloride.getPlates(1), ItemList.Shape_Mold_Cylinder.get(0L))
-                .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
-                .addTo(formingPressRecipes);
 
         if (Avaritia.isModLoaded()) {
             GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(Avaritia.ID, "Resource", 9, 7), ItemList.Shape_Mold_Cylinder.get(0L))
+                    .fluidInputs(Materials.PolyvinylChloride.getMolten(1 * INGOTS))
+                    .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
+                    .addTo(formingPressRecipes);
+
+            GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeYellow", 1),
                             new OreDictItemStack("dyeWhite", 1),
                             new ItemStack(Blocks.stone, 1, 0))
@@ -435,7 +437,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeLime", 1),
                             new OreDictItemStack("dyeGreen", 1),
                             new ItemStack(Items.fish, 1, 0))
@@ -444,7 +446,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeRed", 1),
                             new OreDictItemStack("dyePink", 1),
                             new ItemStack(Blocks.dirt, 1, 0))
@@ -453,7 +455,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeRed", 1),
                             new OreDictItemStack("dyeGray", 1),
                             new ItemStack(Items.feather, 1, 0))
@@ -462,7 +464,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeYellow", 1),
                             new OreDictItemStack("dyeLime", 1),
                             new ItemStack(Items.arrow, 1, 0))
@@ -471,7 +473,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyePurple", 1),
                             new OreDictItemStack("dyeBlue", 1),
                             new ItemStack(Items.gold_ingot, 1, 0))
@@ -480,7 +482,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeMagenta", 1),
                             new OreDictItemStack("dyeWhite", 1),
                             new ItemStack(Blocks.noteblock, 1, 0))
@@ -489,7 +491,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeBlack", 1),
                             new OreDictItemStack("dyeGray", 1),
                             new ItemStack(Items.string, 1, 0))
@@ -498,7 +500,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeWhite", 1),
                             new OreDictItemStack("dyeLightGray", 1),
                             new ItemStack(Items.iron_ingot, 1, 0))
@@ -507,7 +509,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeCyan", 1),
                             new OreDictItemStack("dyeGreen", 1),
                             new ItemStack(Items.redstone, 1, 0))
@@ -516,7 +518,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeGray", 1),
                             new OreDictItemStack("dyeLightGray", 1),
                             new ItemStack(Items.ender_pearl, 1, 0))
@@ -525,7 +527,7 @@ public class FormingPressRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(Avaritia.ID, "Resource", 9, 7),
+                            NHItemList.BlankMusicDisc.get(1),
                             new OreDictItemStack("dyeLightBlue", 1),
                             new OreDictItemStack("dyeBlue", 1),
                             new ItemStack(Items.clock, 1, 0))
@@ -535,7 +537,7 @@ public class FormingPressRecipes implements Runnable {
 
         // Flora
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BlankMusicDisc.get(1), new ItemStack(Blocks.red_flower, 9, 1))
-                .fluidInputs(Materials.Ice.getFluid(BUCKETS)).itemOutputs(NHItemList.FloraDisc.get(1))
+                .fluidInputs(Materials.Ice.getFluid(1 * BUCKETS)).itemOutputs(NHItemList.FloraDisc.get(1))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         // Absolute Zero

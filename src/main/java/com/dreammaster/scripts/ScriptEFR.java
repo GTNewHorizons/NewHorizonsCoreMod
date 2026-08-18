@@ -2235,7 +2235,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 9, 7),
+                        NHItemList.BlankMusicDisc.get(1),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
                         getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1))
@@ -2244,7 +2244,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 9, 7),
+                        NHItemList.BlankMusicDisc.get(1),
                         new OreDictItemStack("dyeLightBlue", 1),
                         new OreDictItemStack("dyeWhite", 1),
                         new ItemStack(Items.ghast_tear, 1, 0))
@@ -2253,7 +2253,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 9, 7),
+                        NHItemList.BlankMusicDisc.get(1),
                         new OreDictItemStack("dyeRed", 1),
                         new OreDictItemStack("dyeWhite", 1),
                         new ItemStack(Items.chicken, 1, 0))
@@ -2263,7 +2263,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 9, 7),
+                        NHItemList.BlankMusicDisc.get(1),
                         new OreDictItemStack("dyeLightBlue", 1),
                         new OreDictItemStack("dyeGreen", 1),
                         getModItem(EtFuturumRequiem.ID, "deepslate", 1))
@@ -2272,7 +2272,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 9, 7),
+                        NHItemList.BlankMusicDisc.get(1),
                         new OreDictItemStack("dyeOrange", 1),
                         new OreDictItemStack("dyeCyan", 1),
                         getModItem(EtFuturumRequiem.ID, "tuff", 1))
@@ -2281,7 +2281,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 9, 7),
+                        NHItemList.BlankMusicDisc.get(1),
                         new OreDictItemStack("dyeOrange", 1),
                         new OreDictItemStack("dyeYellow", 1),
                         getModItem(EtFuturumRequiem.ID, "copper_block", 1, 3))
@@ -2290,7 +2290,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 9, 7),
+                        NHItemList.BlankMusicDisc.get(1),
                         new OreDictItemStack("dyeOrange", 1),
                         new OreDictItemStack("dyeYellow", 1),
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Copper, 1L))
