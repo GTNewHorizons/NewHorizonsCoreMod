@@ -36,6 +36,7 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
@@ -56,18 +57,18 @@ public class ScriptWitchery implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                Botania.ID,
-                EtFuturumRequiem.ID,
-                IndustrialCraft2.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                Witchery.ID);
+                Backpack,
+                BiomesOPlenty,
+                BloodArsenal,
+                Botania,
+                EtFuturumRequiem,
+                IndustrialCraft2,
+                Railcraft,
+                Thaumcraft,
+                TinkerConstruct,
+                Witchery);
     }
 
     @Override

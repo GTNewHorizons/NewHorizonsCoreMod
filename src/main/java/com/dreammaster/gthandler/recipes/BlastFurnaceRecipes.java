@@ -509,7 +509,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .outputChances(10000, 1111)
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, (int) (1000L)))
                 .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, (int) (1000L)))
+                        MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, (int) (250)))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()

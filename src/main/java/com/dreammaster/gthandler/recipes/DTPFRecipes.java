@@ -637,7 +637,7 @@ public class DTPFRecipes implements Runnable {
                                         Materials.DimensionallyTranscendentResidue,
                                         FluidShapes.fluidLiquid,
                                         (int) (2000)))
-                        .duration(40 * SECONDS).eut(512_000_000).metadata(COIL_HEAT, eternal_heat)
+                        .duration(20 * SECONDS).eut(512_000_000).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
                 // V2
@@ -680,7 +680,7 @@ public class DTPFRecipes implements Runnable {
                                         Materials.DimensionallyTranscendentResidue,
                                         FluidShapes.fluidLiquid,
                                         (int) (1000 / 2)))
-                        .duration(40 * SECONDS).eut(32_000_000).metadata(COIL_HEAT, infinity_heat)
+                        .duration(80 * SECONDS).eut(32_000_000).metadata(COIL_HEAT, infinity_heat)
                         .addTo(plasmaForgeRecipes);
             }
 

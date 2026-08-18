@@ -1323,7 +1323,18 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(IndustrialCraft2.ID, "reactorPlating", 1))
                 .circuit(23).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorPlatingExplosive", 1))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
-        // LV and MV Energy Hatches
+        // ULV and LV and MV Energy Hatches
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Lead, 2),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Lead, 1),
+                        ItemList.Hull_ULV.get(1),
+                        ItemList.ULV_Coil.get(2),
+                        Circuits.ULV.get(1))
+                .circuit(4).itemOutputs(ItemList.Hatch_Energy_ULV.get(1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (2000)))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1344,6 +1355,41 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.MV_Coil.get(2),
                         ItemList.Circuit_Chip_ULPIC.get(2))
                 .circuit(4).itemOutputs(ItemList.Hatch_Energy_MV.get(1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (2000)))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        // ULV and LV and MV Dynamo Hatches
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Lead, 1),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Lead, 1),
+                        ItemList.Hull_ULV.get(1),
+                        ItemList.ULV_Coil.get(2),
+                        Circuits.ULV.get(2))
+                .circuit(4).itemOutputs(ItemList.Hatch_Dynamo_ULV.get(1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (2000)))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Tin, 1),
+                        ItemList.Electric_Pump_LV.get(1),
+                        ItemList.Hull_LV.get(1),
+                        ItemList.LV_Coil.get(2),
+                        Circuits.LV.get(2))
+                .circuit(4).itemOutputs(ItemList.Hatch_Dynamo_LV.get(1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (2000)))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.spring, Materials.Copper, 1),
+                        ItemList.Electric_Pump_MV.get(1),
+                        ItemList.Hull_MV.get(1),
+                        ItemList.MV_Coil.get(2),
+                        ItemList.Circuit_Chip_ULPIC.get(2))
+                .circuit(4).itemOutputs(ItemList.Hatch_Dynamo_MV.get(1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (2000)))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -2586,8 +2632,8 @@ public class AssemblerRecipes implements Runnable {
                         Circuits.EV.get(2),
                         ItemList.Hull_EV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4))
-                .itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
+                .circuit(2).itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         // UV Compressor
         GTValues.RA.stdBuilder().itemInputs(
@@ -2656,14 +2702,32 @@ public class AssemblerRecipes implements Runnable {
         ItemStack[] dyes = new ItemStack[] { ItemList.Color_15.get(1), // white
                 ItemList.Color_07.get(1), // light gray
                 ItemList.Color_08.get(1), // gray
-                ItemList.Color_00.get(1) // black
+                ItemList.Color_00.get(1), // black
+                ItemList.Color_03.get(1), // brown
+                ItemList.Color_01.get(1), // red
+                ItemList.Color_14.get(1), // orange
+                ItemList.Color_11.get(1), // yellow
+                ItemList.Color_10.get(1), // lime
+                ItemList.Color_02.get(1), // green
+                ItemList.Color_06.get(1), // cyan
+                ItemList.Color_12.get(1), // light blue
+                ItemList.Color_04.get(1), // blue
+                ItemList.Color_05.get(1), // purple
+                ItemList.Color_13.get(1), // magenta
+                ItemList.Color_09.get(1) // pink
         };
 
         ItemStack[] glasses = new ItemStack[] { ItemList.GlassTintedIndustrialWhite.get(1),
                 ItemList.GlassTintedIndustrialLightGray.get(1), ItemList.GlassTintedIndustrialGray.get(1),
-                ItemList.GlassTintedIndustrialBlack.get(1), };
+                ItemList.GlassTintedIndustrialBlack.get(1), ItemList.GlassTintedIndustrialBrown.get(1),
+                ItemList.GlassTintedIndustrialRed.get(1), ItemList.GlassTintedIndustrialOrange.get(1),
+                ItemList.GlassTintedIndustrialYellow.get(1), ItemList.GlassTintedIndustrialLime.get(1),
+                ItemList.GlassTintedIndustrialGreen.get(1), ItemList.GlassTintedIndustrialCyan.get(1),
+                ItemList.GlassTintedIndustrialLightBlue.get(1), ItemList.GlassTintedIndustrialBlue.get(1),
+                ItemList.GlassTintedIndustrialPurple.get(1), ItemList.GlassTintedIndustrialMagenta.get(1),
+                ItemList.GlassTintedIndustrialPink.get(1), };
 
-        for (int meta = 0; meta < 4; ++meta) {
+        for (int meta = 0; meta < 16; ++meta) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
@@ -4843,7 +4907,7 @@ public class AssemblerRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials.Titanium, Shapes.plate, (int) (3L)),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12), // Pure fluix crystal
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16)) // glass cable
-                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
+                .circuit(3).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // ME IO Port
@@ -7966,6 +8030,8 @@ public class AssemblerRecipes implements Runnable {
         // HEE
         addLootbagPair(57, 58, 3, 1, TierEU.RECIPE_HV, DURATION); // Basic -> Advanced
 
+        // CropsNH
+        addLootbagPair(51, 59, 3, 1, TierEU.RECIPE_LV, DURATION); // Farmhand -> Agriculturalist
     }
 
     // Assembler recipe registry
@@ -8886,16 +8952,22 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             }
             // Pluto
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 0),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 4),
-                            getModItem(GalaxySpace.ID, "plutoblocks", 64, 6))
-                    .circuit(17)
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Fluorine, FluidShapes.fluidGas, (int) (10000)))
-                    .itemOutputs(new ItemStack(ModBlocks.blocks.get("Pl"), 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            ItemStack[] plutoSurfaceIce = new ItemStack[] { getModItem(GalaxySpace.ID, "plutoblocks", 64, 0),
+                    getModItem(GalaxySpace.ID, "plutoblocks", 64, 1), getModItem(GalaxySpace.ID, "plutoblocks", 64, 2),
+                    getModItem(GalaxySpace.ID, "plutoblocks", 64, 3) };
+            for (int meta = 0; meta < 4; meta++) {
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                plutoSurfaceIce[meta],
+                                getModItem(GalaxySpace.ID, "plutoblocks", 64, 4),
+                                getModItem(GalaxySpace.ID, "plutoblocks", 64, 6))
+                        .circuit(17)
+                        .fluidInputs(
+                                MaterialLibAPI.getFluidStack(Materials.Fluorine, FluidShapes.fluidGas, (int) (10000)))
+                        .itemOutputs(new ItemStack(ModBlocks.blocks.get("Pl"), 1, 0)).duration(15 * SECONDS)
+                        .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            }
             // Makemake
             for (OrePrefixes orePrefix : allOrePrefixes) {
                 GTValues.RA.stdBuilder()

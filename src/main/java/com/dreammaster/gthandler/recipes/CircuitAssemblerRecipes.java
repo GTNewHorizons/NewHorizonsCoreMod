@@ -300,7 +300,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Diode.get(4L),
                         ItemList.Circuit_Chip_Ram.get(8L),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, (int) (16)),
-                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.bolt, (int) (16)))
+                        MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, (int) (16)))
                 .itemOutputs(ItemList.Circuit_Data.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
@@ -311,7 +311,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_DiodeASMD.get(1L),
                         ItemList.Circuit_Chip_Ram.get(8L),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, (int) (16)),
-                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.bolt, (int) (16)))
+                        MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, (int) (16)))
                 .itemOutputs(ItemList.Circuit_Data.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 

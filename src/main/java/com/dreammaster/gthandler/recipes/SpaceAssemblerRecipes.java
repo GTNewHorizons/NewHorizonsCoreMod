@@ -253,8 +253,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Hexanite, Shapes.bolt, (int) (4L)))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        MaterialLibAPI.getFluidStack(Materials.WhiteDwarfMatter, FluidShapes.fluidMolten, (int) (576)),
-                        MaterialLibAPI.getFluidStack(Materials.BlackDwarfMatter, FluidShapes.fluidMolten, (int) (576)))
+                        MaterialLibAPI.getFluidStack(Materials.WhiteDwarfMatter, FluidShapes.fluidMolten, (int) (144)),
+                        MaterialLibAPI.getFluidStack(Materials.RawStarMatter, FluidShapes.fluidLiquid, (int) (500)))
                 .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -431,8 +431,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 4),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Eternity, 4))
+                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1),
+                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Eternity, 1))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, (int) (36864)))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
@@ -464,8 +464,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 4),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Eternity, 4))
+                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1),
+                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Eternity, 1))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, (int) (36864)))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
@@ -521,6 +521,18 @@ public class SpaceAssemblerRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+        }
+        if (OpenComputers.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(OpenComputers.ID, "case3", 1, 0),
+                            getModItem(OpenComputers.ID, "item", 2, 103),
+                            Circuits.UV.get(2),
+                            Circuits.LuV.get(16),
+                            Circuits.IV.get(4))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 69)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
     }
 }

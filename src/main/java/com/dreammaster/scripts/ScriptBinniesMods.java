@@ -12,6 +12,7 @@ import java.util.List;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 
@@ -23,8 +24,8 @@ public class ScriptBinniesMods implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Avaritia.ID, ExtraBees.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Avaritia, ExtraBees);
     }
 
     @Override

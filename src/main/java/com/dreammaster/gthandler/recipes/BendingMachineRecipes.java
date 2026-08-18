@@ -18,6 +18,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class BendingMachineRecipes implements Runnable {
@@ -37,8 +38,8 @@ public class BendingMachineRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.ingot, (int) (1L)))
                 .circuit(1).itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (1L)))
                 .duration(20 * SECONDS).eut(24).addTo(benderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.ingot, (int) (9L)))
-                .circuit(9).itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("ingotObsidian", 9)).circuit(9)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (9L)))
                 .circuit(9).itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))

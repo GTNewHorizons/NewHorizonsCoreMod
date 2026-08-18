@@ -29,6 +29,7 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
@@ -52,8 +53,8 @@ public class ScriptFoundryRecipes implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(UniversalSingularities.ID, EternalSingularity.ID, DraconicEvolution.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(UniversalSingularities, EternalSingularity, DraconicEvolution);
     }
 
     @Override
@@ -281,7 +282,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.Timepiece.get(64),
                         MaterialLibAPI.getStack(Materials.Eternity, Shapes.plateSuperdense, (int) (64)),
                         ItemList.Black_Hole_Closer.get(64), ItemList.Field_Generator_UXV.get(16),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 4), ItemList.ZPM6.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1), ItemList.ZPM6.get(1),
                         MaterialLibAPI.getStack(Materials.GravitonShard, Shapes.gem, (int) (1)) },
                 new FluidStack[] {
                         MaterialLibAPI

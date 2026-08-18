@@ -31,6 +31,7 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.VoltageIndex;
@@ -62,8 +63,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, OpenComputers.ID, UniversalSingularities.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AE2FluidCraft, AppliedEnergistics2, OpenComputers, UniversalSingularities);
     }
 
     @Override
@@ -959,7 +960,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Quantum
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(48),
+                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(32),
                         CircuitComponent.ProcessedFrameboxHypogen.getFakeStack(2),
                         CircuitComponent.ScrewSixPhasedCopper.getFakeStack(4),
                         CircuitComponent.CasingCreon.getFakeStack(1))
@@ -1463,7 +1464,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedLivingBioChip, 1),
                         new CircuitComponentStack(CircuitComponent.ProcessedWireNiobiumTitanium, 16),
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltChromaticGlass, 4)),
-                Arrays.asList(MaterialLibAPI.getFluidStack(Materials.Indalloy140, FluidShapes.fluidMolten, (int) (9))),
+                Arrays.asList(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, (int) (9))),
                 CircuitComponent.BiowareProcessor,
                 3 * SECONDS,
                 2_457_600, // UEV
@@ -1566,7 +1567,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         }),
                 Arrays.asList(
                         MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, (int) (10 * INGOTS)),
-                        MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, (int) (10 * INGOTS)),
+                        MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidPlasma, (int) (10 * INGOTS)),
                         MaterialLibAPI.getFluidStack(Materials.SuperCoolant, FluidShapes.fluidLiquid, (int) (10000)),
                         MaterialLibAPI.getFluidStack(Materials.Oganesson, FluidShapes.fluidLiquid, (int) (500))),
                 CircuitComponent.OpticalAssembly,
@@ -1592,7 +1593,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedFoilPolybenzimidazole, 64)),
                 Arrays.asList(
                         MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, (int) (20 * INGOTS)),
-                        MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, (int) (20 * INGOTS)),
+                        MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidPlasma, (int) (20 * INGOTS)),
                         MaterialLibAPI.getFluidStack(Materials.SuperCoolant, FluidShapes.fluidLiquid, (int) (20000)),
                         MaterialLibAPI.getFluidStack(Materials.Oganesson, FluidShapes.fluidLiquid, (int) (1000))),
                 CircuitComponent.OpticalComputer,
@@ -1617,7 +1618,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         }),
                 Arrays.asList(
                         MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, (int) (40 * INGOTS)),
-                        MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, (int) (40 * INGOTS)),
+                        MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidPlasma, (int) (40 * INGOTS)),
                         MaterialLibAPI.getFluidStack(Materials.SuperCoolant, FluidShapes.fluidLiquid, (int) (40000)),
                         MaterialLibAPI.getFluidStack(Materials.Oganesson, FluidShapes.fluidLiquid, (int) (2000))),
                 CircuitComponent.OpticalMainframe,

@@ -41,6 +41,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -53,6 +54,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
@@ -74,27 +76,27 @@ public class ScriptGregtech implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                DraconicEvolution.ID,
-                IndustrialCraft2.ID,
-                MCFrames.ID,
-                Natura.ID,
-                OpenBlocks.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransmission.ID,
-                SGCraft.ID,
-                StructureLib.ID,
-                SuperSolarPanels.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID);
+                AdvancedSolarPanel,
+                AppliedEnergistics2,
+                Avaritia,
+                BiomesOPlenty,
+                BloodArsenal,
+                DraconicEvolution,
+                IndustrialCraft2,
+                MCFrames,
+                Natura,
+                OpenBlocks,
+                PamsHarvestCraft,
+                ProjectRedExpansion,
+                ProjectRedTransmission,
+                SGCraft,
+                StructureLib,
+                SuperSolarPanels,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct);
     }
 
     @Override
@@ -1422,9 +1424,6 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 18)).circuit(1)
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (1L))).duration(20).eut(24)
                 .addTo(benderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 18)).circuit(9)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1)).duration(180)
-                .eut(TierEU.RECIPE_MV).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.stick, (int) (2L)))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.stickLong, (int) (1L))).duration(20)
                 .eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
@@ -1464,6 +1463,9 @@ public class ScriptGregtech implements IScriptLoader {
                         ItemList.Shape_Mold_Credit.get(0L))
                 .itemOutputs(NHItemList.CoinBlank.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.potato, 1, 0))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 1, 0))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Wheat, Shapes.dust, (int) (1L))).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);

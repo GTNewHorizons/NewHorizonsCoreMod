@@ -33,6 +33,7 @@ import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
@@ -46,15 +47,8 @@ public class ScriptBloodArsenal implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(
-                BloodArsenal.ID,
-                BloodMagic.ID,
-                EnderIO.ID,
-                Natura.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                Witchery.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(BloodArsenal, BloodMagic, EnderIO, Natura, Thaumcraft, TinkerConstruct, Witchery);
     }
 
     @Override

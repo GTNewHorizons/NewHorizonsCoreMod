@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 
@@ -21,8 +22,8 @@ public class ScriptArchitectureCraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(ArchitectureCraft.ID, TinkerConstruct.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(ArchitectureCraft, TinkerConstruct);
     }
 
     @Override

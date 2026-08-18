@@ -78,7 +78,8 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Hull_UEV.get(1L),
-                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
+                        | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UEV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt08, Materials.Draconium), 'H',
                         MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Bedrockium), 'P',
@@ -86,7 +87,8 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Hull_UIV.get(1L),
-                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
+                        | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UIV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt08, Materials.NetherStar), 'H',
                         MaterialParts.craftIngredient(OrePrefixes.plate, Materials.BlackPlutonium), 'P',
@@ -94,7 +96,8 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Hull_UMV.get(1L),
-                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
+                        | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UMV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt12, Materials.Quantium), 'H',
                         MaterialParts.craftIngredient(OrePrefixes.plate, Materials.SpaceTime), 'P',
@@ -102,7 +105,8 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Hull_UXV.get(1L),
-                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
+                        | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UXV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.BlackPlutonium), 'H',
                         MaterialParts.craftIngredient(
@@ -112,7 +116,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Plasma_ZPMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "UCU", "FMF", "WCW", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_ZPM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         MaterialParts.namedIngredient(OrePrefixes.wireGt08, Materials.SuperconductorUHV), 'U',
@@ -120,7 +124,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Generator_Plasma_UV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "UCU", "FMF", "WCW", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         MaterialParts.namedIngredient(OrePrefixes.wireGt12, Materials.SuperconductorUHV), 'U',
@@ -128,209 +132,209 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MassFabricatorLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_LuV, 'F', ItemList.Field_Generator_LuV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MassFabricatorZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_ZPM, 'F', ItemList.Field_Generator_ZPM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MassFabricatorUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MassFabricatorUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_MAX, 'F', ItemList.Field_Generator_UHV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
         GTModHandler.addCraftingRecipe(
                 ItemList.MassFabricatorUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_UEV, 'F', ItemList.Field_Generator_UEV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MassFabricatorUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_UIV, 'F', ItemList.Field_Generator_UIV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MassFabricatorUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_UMV, 'F', ItemList.Field_Generator_UMV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ReplicatorLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_LuV, 'F', ItemList.Field_Generator_LuV, 'E',
                         ItemList.Emitter_LuV, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ReplicatorZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_ZPM, 'F', ItemList.Field_Generator_ZPM, 'E',
                         ItemList.Emitter_ZPM, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ReplicatorUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'E',
                         ItemList.Emitter_UV, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ReplicatorUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_MAX, 'F', ItemList.Field_Generator_UHV, 'E',
                         ItemList.Emitter_UHV, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ReplicatorUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_UEV, 'F', ItemList.Field_Generator_UEV, 'E',
                         ItemList.Emitter_UEV, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ReplicatorUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_UIV, 'F', ItemList.Field_Generator_UIV, 'E',
                         ItemList.Emitter_UIV, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ReplicatorUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_UMV, 'F', ItemList.Field_Generator_UMV, 'E',
                         ItemList.Emitter_UMV, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ScannerLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_LuV, 'T', ItemList.Emitter_LuV, 'R',
                         ItemList.Sensor_LuV, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ScannerZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_ZPM, 'T', ItemList.Emitter_ZPM, 'R',
                         ItemList.Sensor_ZPM, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ScannerUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_UV, 'T', ItemList.Emitter_UV, 'R',
                         ItemList.Sensor_UV, 'C', Circuits.UHV.getIngredient(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ScannerUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_MAX, 'T', ItemList.Emitter_UHV, 'R',
                         ItemList.Sensor_UHV, 'C', Circuits.UEV.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Bedrockium) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ScannerUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_UEV, 'T', ItemList.Emitter_UEV, 'R',
                         ItemList.Sensor_UEV, 'C', Circuits.UIV.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Draconium) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ScannerUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_UIV, 'T', ItemList.Emitter_UIV, 'R',
                         ItemList.Sensor_UIV, 'C', Circuits.UMV.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Draconium) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ScannerUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_UMV, 'T', ItemList.Emitter_UMV, 'R',
                         ItemList.Sensor_UMV, 'C', Circuits.UXV.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Draconium) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorLV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LV, 'M', ItemList.Electric_Motor_LV, 'P',
                         ItemList.Electric_Pump_LV, 'B', ItemList.Hull_LV, 'C', ItemList.Conveyor_Module_LV, 'I',
                         ItemList.Electric_Piston_LV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_MV, 'M', ItemList.Electric_Motor_MV, 'P',
                         ItemList.Electric_Pump_MV, 'B', ItemList.Hull_MV, 'C', ItemList.Conveyor_Module_MV, 'I',
                         ItemList.Electric_Piston_MV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_HV, 'M', ItemList.Electric_Motor_HV, 'P',
                         ItemList.Electric_Pump_HV, 'B', ItemList.Hull_HV, 'C', ItemList.Conveyor_Module_HV, 'I',
                         ItemList.Electric_Piston_HV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_EV, 'M', ItemList.Electric_Motor_EV, 'P',
                         ItemList.Electric_Pump_EV, 'B', ItemList.Hull_EV, 'C', ItemList.Conveyor_Module_EV, 'I',
                         ItemList.Electric_Piston_EV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_IV, 'M', ItemList.Electric_Motor_IV, 'P',
                         ItemList.Electric_Pump_IV, 'B', ItemList.Hull_IV, 'C', ItemList.Conveyor_Module_IV, 'I',
                         ItemList.Electric_Piston_IV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LuV, 'M', ItemList.Electric_Motor_LuV, 'P',
                         ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C', ItemList.Conveyor_Module_LuV, 'I',
                         ItemList.Electric_Piston_LuV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_ZPM, 'M', ItemList.Electric_Motor_ZPM, 'P',
                         ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C', ItemList.Conveyor_Module_ZPM, 'I',
                         ItemList.Electric_Piston_ZPM });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_UV, 'M', ItemList.Electric_Motor_UV, 'P',
                         ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C', ItemList.Conveyor_Module_UV, 'I',
                         ItemList.Electric_Piston_UV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.BreweryLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GPG", "WBW", "CZC", 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.VanadiumGallium), 'P',
                         ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C', Circuits.LuV.getIngredient(), 'G',
@@ -339,7 +343,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.BreweryZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GPG", "WBW", "CZC", 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Naquadah), 'P',
                         ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C', Circuits.ZPM.getIngredient(), 'G',
@@ -348,7 +352,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.BreweryUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GPG", "WBW", "CZC", 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.ElectrumFlux), 'P',
                         ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C', Circuits.UV.getIngredient(), 'G',
@@ -356,7 +360,7 @@ public class GT_Loader_Machines {
                         new ItemStack(Items.brewing_stand, 1, 32767) });
         GTModHandler.addCraftingRecipe(
                 ItemList.BreweryUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
                         ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C', Circuits.UHV.getIngredient(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'Z',
@@ -364,7 +368,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.BreweryUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GPG", "WBW", "CZC", 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Draconium), 'P',
                         ItemList.Electric_Pump_UEV, 'B', ItemList.Hull_UEV, 'C', Circuits.UEV.getIngredient(), 'G',
@@ -373,7 +377,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.BreweryUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
                         ItemList.Electric_Pump_UIV, 'B', ItemList.Hull_UIV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'G',
@@ -382,7 +386,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.BreweryUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
                         ItemList.Electric_Pump_UMV, 'B', ItemList.Hull_UMV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'G',
@@ -391,7 +395,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_LuV, 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, LuVMat2), 'P',
                         MaterialParts.craftIngredient(OrePrefixes.pipeMedium, Materials.PolyvinylChloride), 'M',
@@ -400,7 +404,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_ZPM, 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Iridium), 'P',
                         MaterialParts.craftIngredient(OrePrefixes.pipeLarge, Materials.PolyvinylChloride), 'M',
@@ -409,7 +413,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_UV, 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Osmium), 'P',
                         MaterialParts.craftIngredient(OrePrefixes.pipeHuge, Materials.PolyvinylChloride), 'M',
@@ -418,7 +422,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_MAX, 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Osmiridium), 'P',
                         MaterialParts.craftIngredient(OrePrefixes.pipeHuge, Materials.PolyvinylChloride), 'M',
@@ -427,7 +431,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_UEV, 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.InfinityCatalyst), 'P',
                         MaterialParts.craftIngredient(OrePrefixes.pipeHuge, Materials.PolyvinylChloride), 'M',
@@ -436,7 +440,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_UIV, 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Infinity), 'P',
                         MaterialParts.craftIngredient(OrePrefixes.pipeMedium, Materials.Polybenzimidazole), 'M',
@@ -445,7 +449,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_UMV, 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.TranscendentMetal), 'P',
                         MaterialParts.craftIngredient(OrePrefixes.pipeLarge, Materials.Polybenzimidazole), 'M',
@@ -454,7 +458,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FermenterLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WPW", "GBG", "WCW", 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.VanadiumGallium), 'P',
                         ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C', Circuits.LuV.getIngredient(), 'G',
@@ -462,7 +466,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FermenterZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WPW", "GBG", "WCW", 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Naquadah), 'P',
                         ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C', Circuits.ZPM.getIngredient(), 'G',
@@ -470,7 +474,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FermenterUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WPW", "GBG", "WCW", 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.ElectrumFlux), 'P',
                         ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C', Circuits.UV.getIngredient(), 'G',
@@ -478,35 +482,35 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FermenterUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
                         ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C', Circuits.UHV.getIngredient(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FermenterUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'P',
                         ItemList.Electric_Pump_UEV, 'B', ItemList.Hull_UEV, 'C', Circuits.UEV.getIngredient(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FermenterUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
                         ItemList.Electric_Pump_UIV, 'B', ItemList.Hull_UIV, 'C', Circuits.UIV.getIngredient(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FermenterUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
                         ItemList.Electric_Pump_UMV, 'B', ItemList.Hull_UMV, 'C', Circuits.UMV.getIngredient(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_LuV, 'E', ItemList.Electric_Piston_LuV, 'P',
                         ItemList.Electric_Pump_LuV, 'C', Circuits.LuV.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.VanadiumGallium), 'G',
@@ -514,7 +518,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_ZPM, 'E', ItemList.Electric_Piston_ZPM, 'P',
                         ItemList.Electric_Pump_ZPM, 'C', Circuits.ZPM.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Naquadah), 'G',
@@ -522,7 +526,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_UV, 'E', ItemList.Electric_Piston_UV, 'P',
                         ItemList.Electric_Pump_UV, 'C', Circuits.UV.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.ElectrumFlux), 'G',
@@ -530,7 +534,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_MAX, 'E', ItemList.Electric_Piston_UHV, 'P',
                         ItemList.Electric_Pump_UHV, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
@@ -538,7 +542,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_UEV, 'E', ItemList.Electric_Piston_UEV, 'P',
                         ItemList.Electric_Pump_UEV, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
@@ -546,7 +550,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_UIV, 'E', ItemList.Electric_Piston_UIV, 'P',
                         ItemList.Electric_Pump_UIV, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
@@ -554,7 +558,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_UMV, 'E', ItemList.Electric_Piston_UMV, 'P',
                         ItemList.Electric_Pump_UMV, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
@@ -562,7 +566,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidHeaterLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WGW", "PMP", "RCR", 'M', ItemList.Hull_LuV, 'P', ItemList.Electric_Pump_LuV, 'C',
                         Circuits.LuV.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.NiobiumTitanium), 'R',
@@ -571,7 +575,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidHeaterZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_ZPM, 'P', ItemList.Electric_Pump_ZPM, 'C',
                         Circuits.ZPM.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Naquadah), 'R',
@@ -580,7 +584,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidHeaterUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_UV, 'P', ItemList.Electric_Pump_UV, 'C',
                         Circuits.UV.getIngredient(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.NaquadahAlloy), 'R',
@@ -589,7 +593,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidHeaterUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_MAX, 'P', ItemList.Electric_Pump_UHV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil(), 'R',
@@ -598,7 +602,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidHeaterUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_UEV, 'P', ItemList.Electric_Pump_UEV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil(), 'R',
@@ -607,7 +611,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidHeaterUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_UIV, 'P', ItemList.Electric_Pump_UIV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil(), 'R',
@@ -616,7 +620,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidHeaterUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_UMV, 'P', ItemList.Electric_Pump_UMV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil(), 'R',
@@ -625,14 +629,14 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MixerLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GRG", "GMG", "CBC", 'R', MaterialParts.craftIngredient(OrePrefixes.rotor, LuVMat2), 'M',
                         ItemList.Electric_Motor_LuV, 'B', ItemList.Hull_LuV, 'C', Circuits.LuV.getIngredient(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MixerZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GRG", "GMG", "CBC", 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Iridium), 'M',
                         ItemList.Electric_Motor_ZPM, 'B', ItemList.Hull_ZPM, 'C', Circuits.ZPM.getIngredient(), 'G',
@@ -640,7 +644,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MixerUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GRG", "GMG", "CBC", 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Osmium), 'M',
                         ItemList.Electric_Motor_UV, 'B', ItemList.Hull_UV, 'C', Circuits.UV.getIngredient(), 'G',
@@ -648,7 +652,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MixerUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GRG", "GMG", "CBC", 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Neutronium), 'M',
                         ItemList.Electric_Motor_UHV, 'B', ItemList.Hull_MAX, 'C', Circuits.UHV.getIngredient(), 'G',
@@ -656,7 +660,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MixerUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GRG", "GMG", "CBC", 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.Neutronium), 'M',
                         ItemList.Electric_Motor_UEV, 'B', ItemList.Hull_UEV, 'C', Circuits.UEV.getIngredient(), 'G',
@@ -664,7 +668,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MixerUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GRG", "GMG", "CBC", 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.CosmicNeutronium), 'M',
                         ItemList.Electric_Motor_UIV, 'B', ItemList.Hull_UIV, 'C', Circuits.UIV.getIngredient(), 'G',
@@ -672,7 +676,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.MixerUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GRG", "GMG", "CBC", 'R',
                         MaterialParts.craftIngredient(OrePrefixes.rotor, Materials.CosmicNeutronium), 'M',
                         ItemList.Electric_Motor_UMV, 'B', ItemList.Hull_UMV, 'C', Circuits.UMV.getIngredient(), 'G',
@@ -680,7 +684,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UEV_UHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_MAX, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.Draconium), 'B',
                         MaterialParts.namedIngredient(OrePrefixes.wireGt04, Materials.SuperconductorUHV), 'K',
@@ -688,7 +692,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UIV_UEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UEV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.NetherStar), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Draconium), 'K',
@@ -696,7 +700,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UMV_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UIV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.Quantium), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.NetherStar), 'K',
@@ -704,7 +708,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UXV_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UMV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.BlackPlutonium), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Quantium), 'K',
@@ -712,125 +716,125 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_MAX_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UXV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.Infinity), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.BlackPlutonium), 'K',
                         ItemList.Circuit_Chip_ZPIC });
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_4by4_UEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UEV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.Draconium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_3by3_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UIV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt08, Materials.NetherStar), 'T',
                         OreDictNames.craftingChest });
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_3by3_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UMV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt08, Materials.Quantium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_3by3_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UXV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt08, Materials.BlackPlutonium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_2by2_UEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UEV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Draconium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_2by2_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UIV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.NetherStar), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_2by2_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UMV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Quantium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_2by2_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UXV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.BlackPlutonium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_1by1_UEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UEV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.Draconium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_1by1_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UIV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.NetherStar), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_1by1_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UMV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.Quantium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_1by1_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UXV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt01, Materials.BlackPlutonium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_4by4_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UIV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.NetherStar), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_4by4_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UMV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.Quantium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_4by4_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UXV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.BlackPlutonium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_3by3_UEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WTW", "WMW", 'M', ItemList.Hull_UEV, 'W',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt08, Materials.Draconium), 'T',
                         OreDictNames.craftingChest });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_ULV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_LV_ULV, 'M',
                         ItemList.Battery_Charger_4by4_ULV, 'B', ItemList.Battery_RE_ULV_Tantalum, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Lead), 'X',
@@ -838,7 +842,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_LV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_MV_LV, 'M',
                         ItemList.Battery_Charger_4by4_LV, 'B', ItemList.Battery_RE_LV_Lithium, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Tin), 'X',
@@ -846,7 +850,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_MV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_HV_MV, 'M',
                         ItemList.Battery_Charger_4by4_MV, 'B', ItemList.Battery_RE_MV_Lithium, 'C',
                         MaterialParts.namedIngredient(OrePrefixes.cableGt16, MaterialFacades.AnyCopper), 'X',
@@ -854,7 +858,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_HV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_EV_HV, 'M',
                         ItemList.Battery_Charger_4by4_HV, 'B', ItemList.Battery_RE_HV_Lithium, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Gold), 'X',
@@ -862,7 +866,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_EV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_IV_EV, 'M',
                         ItemList.Battery_Charger_4by4_EV, 'B', TieredItems.EV.getBatteryIngredient(), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Aluminium), 'X',
@@ -870,7 +874,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_IV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_LuV_IV, 'M',
                         ItemList.Battery_Charger_4by4_IV, 'B', ItemList.Energy_LapotronicOrb, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Tungsten), 'X',
@@ -878,7 +882,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_LuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_ZPM_LuV, 'M',
                         ItemList.Battery_Charger_4by4_LuV, 'B', ItemList.Energy_LapotronicOrb2, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.VanadiumGallium), 'X',
@@ -886,7 +890,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_ZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_UV_ZPM, 'M',
                         ItemList.Battery_Charger_4by4_ZPM, 'B', ItemList.Energy_LapotronicOrb2, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Naquadah), 'X',
@@ -894,7 +898,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_UV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_UHV_UV, 'M',
                         ItemList.Battery_Charger_4by4_UV, 'B', ItemList.ZPM2, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.NaquadahAlloy), 'X',
@@ -902,7 +906,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_UHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_UEV_UHV, 'M',
                         ItemList.Battery_Charger_4by4_UHV, 'B', ItemList.ZPM2, 'C',
                         MaterialParts.namedIngredient(OrePrefixes.wireGt16, Materials.SuperconductorUHV), 'X',
@@ -910,25 +914,25 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Automation_ChestBuffer_UEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CMV", " X ", 'M', ItemList.Hull_UEV, 'V', ItemList.Conveyor_Module_UEV, 'C',
                         OreDictNames.craftingChest, 'X', Circuits.UEV.getIngredient() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Automation_ChestBuffer_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CMV", " X ", 'M', ItemList.Hull_UIV, 'V', ItemList.Conveyor_Module_UIV, 'C',
                         OreDictNames.craftingChest, 'X', Circuits.UIV.getIngredient() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Automation_ChestBuffer_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "CMV", " X ", 'M', ItemList.Hull_UMV, 'V', ItemList.Conveyor_Module_UMV, 'C',
                         OreDictNames.craftingChest, 'X', Circuits.UMV.getIngredient() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.NameRemover.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "SsS", "VMV", "SXS", 'M', ItemList.Hull_ULV, 'V',
                         MaterialParts.namedIngredient(OrePrefixes.gearGtSmall, MaterialFacades.AnyBronze), 'S',
                         MaterialParts.namedIngredient(OrePrefixes.screw, MaterialFacades.AnyIron), 'X',
@@ -936,7 +940,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerLuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_LuV, 'E', ItemList.Electric_Motor_LuV,
                         'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.VanadiumGallium), 'M',
@@ -944,7 +948,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_ZPM, 'E', ItemList.Electric_Motor_ZPM,
                         'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Naquadah), 'M',
@@ -952,7 +956,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerUV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UV, 'E', ItemList.Electric_Motor_UV,
                         'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'W',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.NaquadahAlloy), 'M',
@@ -960,28 +964,28 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UHV, 'E', ItemList.Electric_Motor_UHV,
                         'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'M', ItemList.Hull_MAX });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UEV, 'E', ItemList.Electric_Motor_UEV,
                         'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'M', ItemList.Hull_UEV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UIV, 'E', ItemList.Electric_Motor_UIV,
                         'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'M', ItemList.Hull_UIV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UMV, 'E', ItemList.Electric_Motor_UMV,
                         'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'M', ItemList.Hull_UMV });
@@ -997,21 +1001,21 @@ public class GT_Loader_Machines {
         }
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_HA_UEV_UHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Transformer_UEV_UHV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Draconium), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Bedrockium), 'K',
                         ItemList.Casing_Coil_Superconductor });
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_HA_UIV_UEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Transformer_UIV_UEV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.NetherStar), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Draconium), 'K',
                         ItemList.Casing_Fusion_Coil });
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_HA_UMV_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_UMV_UIV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Quantium), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.NetherStar), 'K',
@@ -1019,7 +1023,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_HA_UXV_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_UXV_UMV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.BlackPlutonium), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Quantium), 'K',
@@ -1027,7 +1031,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_HA_MAX_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_MAX_UXV, 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Infinity), 'B',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.BlackPlutonium), 'K',
@@ -1035,7 +1039,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_LV_ULV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Lead), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Lead), 'S',
@@ -1046,7 +1050,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_MV_LV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Tin), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Tin), 'S',
@@ -1057,7 +1061,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_HV_MV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.namedIngredient(OrePrefixes.springSmall, MaterialFacades.AnyCopper), 'C',
                         MaterialParts.namedIngredient(OrePrefixes.cableGt16, MaterialFacades.AnyCopper), 'S',
@@ -1068,7 +1072,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_EV_HV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Gold), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Gold), 'S',
@@ -1079,7 +1083,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_IV_EV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Aluminium), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Aluminium), 'S',
@@ -1090,7 +1094,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_LuV_IV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Tungsten), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Tungsten), 'S',
@@ -1101,7 +1105,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_ZPM_LuV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.VanadiumGallium), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.VanadiumGallium), 'S',
@@ -1112,7 +1116,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UV_ZPM.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Naquadah), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.Naquadah), 'S',
@@ -1123,7 +1127,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UHV_UV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.NaquadahAlloy), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.NaquadahAlloy), 'S',
@@ -1134,7 +1138,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UEV_UHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Neutronium), 'C',
                         MaterialParts.namedIngredient(OrePrefixes.wireGt16, Materials.SuperconductorUHV), 'S',
@@ -1145,7 +1149,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UIV_UEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Draconium), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.Draconium), 'S',
@@ -1156,7 +1160,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UMV_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.BlackPlutonium), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.NetherStar), 'S',
@@ -1167,7 +1171,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UXV_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.SpaceTime), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.Quantium), 'S',
@@ -1178,7 +1182,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_MAX_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A',
                         MaterialParts.craftIngredient(OrePrefixes.springSmall, Materials.Universium), 'C',
                         MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.BlackPlutonium), 'S',
@@ -3024,7 +3028,7 @@ public class GT_Loader_Machines {
     private void registerCircuitAssembler() {
         GTModHandler.addCraftingRecipe(
                 ItemList.CircuitAssemblerUHV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UHV, 'E', ItemList.Emitter_UHV, 'H',
                         ItemList.Hull_MAX, 'K', ItemList.Conveyor_Module_UHV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
@@ -3032,21 +3036,21 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.CircuitAssemblerUEV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UEV, 'E', ItemList.Emitter_UEV, 'H',
                         ItemList.Hull_UEV, 'K', ItemList.Conveyor_Module_UEV, 'C', Circuits.UIV.getIngredient(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.CircuitAssemblerUIV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UIV, 'E', ItemList.Emitter_UIV, 'H',
                         ItemList.Hull_UIV, 'K', ItemList.Conveyor_Module_UIV, 'C', Circuits.UMV.getIngredient(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.CircuitAssemblerUMV.get(1L),
-                GTModHandler.RecipeBits.BITSD,
+                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UMV, 'E', ItemList.Emitter_UMV, 'H',
                         ItemList.Hull_UMV, 'K', ItemList.Conveyor_Module_UMV, 'C', Circuits.UXV.getIngredient(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() });

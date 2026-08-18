@@ -79,11 +79,11 @@ public class MaceratorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystal.get(1L))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dust, (int) (2)))
-                .outputChances(10000).duration(5 * SECONDS).eut(4).addTo(maceratorRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystalSmallPart.get(1L))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dustSmall, (int) (1)))
-                .outputChances(10000).duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dustSmall, (int) (2)))
+                .duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard))
                 .itemOutputs(
@@ -214,55 +214,9 @@ public class MaceratorRecipes implements Runnable {
         }
 
         if (Avaritia.isModLoaded()) {
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_11, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_13, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_cat, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_blocks, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_chirp, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_far, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_mellohi, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_mall, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_stal, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_strad, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_ward, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.record_wait, 1, 0))
-                    .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).outputChances(10000).duration(15 * SECONDS)
-                    .eut(2).addTo(maceratorRecipes);
-
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 7))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.PolyvinylChloride, 1L))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(maceratorRecipes);
         }
 
         if (AdvancedSolarPanel.isModLoaded()) {
@@ -557,7 +511,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.EnceladusIceDust.get(),
                             MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, (int) (1L)),
                             MaterialLibAPI.getStack(Materials.Chrome, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)))
                     .outputChances(10000, 1500, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -565,7 +519,7 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.EnceladusStoneDust.get(),
                             MaterialLibAPI.getStack(Materials.Chrome, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, (int) (2)),
                             MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, (int) (1)))
                     .outputChances(10000, 750, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
@@ -575,7 +529,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.EnceladusIceDust.get(),
                             MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, (int) (1L)),
                             MaterialLibAPI.getStack(Materials.Chrome, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)))
                     .outputChances(10000, 1500, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -583,8 +537,8 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
                             MaterialLibAPI.getStack(Materials.Nickel, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)),
+                            MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, (int) (2)))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -592,8 +546,8 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
                             MaterialLibAPI.getStack(Materials.Nickel, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)),
+                            MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, (int) (2)))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -601,16 +555,16 @@ public class MaceratorRecipes implements Runnable {
                     .itemOutputs(
                             NHItemList.TitanStoneDust.get(),
                             MaterialLibAPI.getStack(Materials.Nickel, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)),
+                            MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, (int) (2)))
                     .outputChances(10000, 1125, 750, 500).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 0))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)),
+                            MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, (int) (2)),
                             MaterialLibAPI.getStack(Materials.Naquadah, Shapes.dust, (int) (1)))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
@@ -618,8 +572,8 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 1))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)),
+                            MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, (int) (2)),
                             MaterialLibAPI.getStack(Materials.Naquadah, Shapes.dust, (int) (1)))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
@@ -627,8 +581,8 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "oberonblocks", 1, 2))
                     .itemOutputs(
                             NHItemList.OberonStoneDust.get(),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)),
+                            MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, (int) (2)),
                             MaterialLibAPI.getStack(Materials.Naquadah, Shapes.dust, (int) (1)))
                     .outputChances(10000, 500, 250, 212).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
@@ -638,7 +592,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.MirandaStoneDust.get(),
                             MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, (int) (1)),
                             MaterialLibAPI.getStack(Materials.Tetrahedrite, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -647,7 +601,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.MirandaStoneDust.get(),
                             MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, (int) (1)),
                             MaterialLibAPI.getStack(Materials.Tetrahedrite, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -656,7 +610,7 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.MirandaStoneDust.get(),
                             MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, (int) (1)),
                             MaterialLibAPI.getStack(Materials.Tetrahedrite, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)))
                     .outputChances(10000, 625, 375, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(maceratorRecipes);
 
@@ -798,7 +752,7 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "acentauribbgrunt", 1, 0))
                     .itemOutputs(
                             NHItemList.CentauriASurfaceDust.get(),
-                            MaterialLibAPI.getStack(Materials.Iridium, Shapes.dust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, (int) (2)),
                             MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.dust, (int) (1)),
                             MaterialLibAPI.getStack(Materials.Draconium, Shapes.dust, (int) (1)))
                     .outputChances(10000, 1250, 750, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)
@@ -807,7 +761,7 @@ public class MaceratorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1, 0))
                     .itemOutputs(
                             NHItemList.CentauriAStoneDust.get(),
-                            MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, (int) (1)),
+                            MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, (int) (2)),
                             MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.dust, (int) (1)),
                             MaterialLibAPI.getStack(Materials.Neutronium, Shapes.dust, (int) (1)))
                     .outputChances(10000, 1250, 750, 125).duration(20 * SECONDS).eut(TierEU.RECIPE_IV / 2)

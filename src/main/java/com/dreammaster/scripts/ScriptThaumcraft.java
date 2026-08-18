@@ -67,6 +67,7 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -96,36 +97,36 @@ public class ScriptThaumcraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                Botania.ID,
-                BuildCraftFactory.ID,
-                Chisel.ID,
-                ExtraUtilities.ID,
-                Fether.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GTNHTCWands.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                MalisisDoors.ID,
-                Natura.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                StevesCarts2.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID,
-                Witchery.ID);
+                Backpack,
+                BiomesOPlenty,
+                Botania,
+                BuildCraftFactory,
+                Chisel,
+                ExtraUtilities,
+                Fether,
+                ForbiddenMagic,
+                Forestry,
+                GalacticraftCore,
+                GalacticraftMars,
+                GTNHTCWands,
+                IguanaTweaksTinkerConstruct,
+                IndustrialCraft2,
+                MagicBees,
+                MalisisDoors,
+                Natura,
+                PamsHarvestCraft,
+                ProjectRedIntegration,
+                Railcraft,
+                RandomThings,
+                StevesCarts2,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct,
+                TwilightForest,
+                Witchery);
     }
 
     @Override
@@ -149,7 +150,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1)),
                         MaterialLibAPI.getStack(Materials.Thaumium, Shapes.ingot, (int) (2)))
-                .itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
+                .circuit(19).itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Thaumium Shovel
@@ -166,7 +167,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (2)),
                         MaterialLibAPI.getStack(Materials.Thaumium, Shapes.ingot, (int) (1)))
-                .circuit(2).itemOutputs(getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0)).duration(4 * SECONDS)
+                .circuit(20).itemOutputs(getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         ChiselHelper
@@ -3129,7 +3130,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 'e',
-                getModItem(Thaumcraft.ID, "FocusWarding", 1, 0),
+                getModItem(Thaumcraft.ID, "FocusWarding", 0, 0),
                 'f',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 'g',

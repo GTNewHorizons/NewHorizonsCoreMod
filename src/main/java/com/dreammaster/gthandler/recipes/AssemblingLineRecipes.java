@@ -2002,7 +2002,7 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.IndustrialCentrifuge.get(64),
                         ItemList.SCSteamTurbine.get(4),
                         GregtechItemList.Hatch_Turbine_Rotor.get(4),
-                        Circuits.UV.get(4),
+                        new Object[] { Circuits.UV.getIngredient(), 4L },
                         MaterialLibAPI.getStack(Materials.Pikyonium64B, Shapes.rotor, (int) (4)),
                         MaterialLibAPI.getStack(Materials.HeLiCoPtEr, Shapes.rotor, (int) (4)),
                         MaterialLibAPI.getStack(Materials.ArceusAlloy2B, Shapes.rotor, (int) (4)),

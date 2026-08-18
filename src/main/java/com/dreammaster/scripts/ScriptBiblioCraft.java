@@ -22,6 +22,7 @@ import net.minecraft.item.ItemStack;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.FluidShapes;
@@ -38,14 +39,9 @@ public class ScriptBiblioCraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(
-                BiblioCraft.ID,
-                EtFuturumRequiem.ID,
-                FloodLights.ID,
-                IndustrialCraft2.ID,
-                OpenComputers.ID,
-                PamsHarvestCraft.ID);
+    public List<Mods> getDependencies() {
+        return Arrays
+                .asList(BiblioCraft, EtFuturumRequiem, FloodLights, IndustrialCraft2, OpenComputers, PamsHarvestCraft);
     }
 
     @Override

@@ -35,12 +35,15 @@ import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
+import magicbees.item.types.NuggetType;
+import magicbees.main.Config;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -57,21 +60,21 @@ public class ScriptForbiddenMagic implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                BloodMagic.ID,
-                Botania.ID,
-                EnderIO.ID,
-                ForbiddenMagic.ID,
-                IndustrialCraft2.ID,
-                Thaumcraft.ID,
-                ThaumicTinkerer.ID,
-                TinkerConstruct.ID,
-                Witchery.ID);
+                AppliedEnergistics2,
+                Backpack,
+                BiomesOPlenty,
+                BloodArsenal,
+                BloodMagic,
+                Botania,
+                EnderIO,
+                ForbiddenMagic,
+                IndustrialCraft2,
+                Thaumcraft,
+                ThaumicTinkerer,
+                TinkerConstruct,
+                Witchery);
     }
 
     @Override
@@ -93,7 +96,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ChiselHelper.registerOredict("blockNetherStar", "blockNetherStar");
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
-                .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0)).duration(1 * MINUTES).eut(5)
+                .itemOutputs(Config.nuggets.getStackForType(NuggetType.EMERALD, 9)).duration(1 * MINUTES).eut(5)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0))
                 .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);

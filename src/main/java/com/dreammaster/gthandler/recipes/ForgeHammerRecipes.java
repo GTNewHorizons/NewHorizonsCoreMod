@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -26,6 +27,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
+import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ForgeHammerRecipes implements Runnable {
@@ -144,6 +146,10 @@ public class ForgeHammerRecipes implements Runnable {
                     .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 4)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
                     .addTo(hammerRecipes);
         }
+
+        GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("record", 1))
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 7)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(hammerRecipes);
 
         // Raw optical chip
         int chip_duration_ticks = 10 * SECONDS;

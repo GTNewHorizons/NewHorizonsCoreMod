@@ -1,12 +1,13 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.item.NHItemList.EngravedGoldChip;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
+import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -18,6 +19,8 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBoots;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
@@ -29,7 +32,6 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList.MagicFeather;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -42,6 +44,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagByte;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -54,13 +57,11 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
-import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
@@ -73,6 +74,7 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import thaumicboots.api.TB_Aspect;
 
 public class ScriptExtraUtilities implements IScriptLoader {
 
@@ -82,26 +84,29 @@ public class ScriptExtraUtilities implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Avaritia.ID,
-                Botania.ID,
-                BuildCraftFactory.ID,
-                BuildCraftTransport.ID,
-                ExtraUtilities.ID,
-                ForbiddenMagic.ID,
-                HardcoreEnderExpansion.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIllumination.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID,
-                WirelessRedstoneCBECore.ID,
-                WirelessRedstoneCBELogic.ID);
+                Avaritia,
+                BloodMagic,
+                Botania,
+                BuildCraftFactory,
+                BuildCraftTransport,
+                ExtraUtilities,
+                ForbiddenMagic,
+                HardcoreEnderExpansion,
+                IndustrialCraft2,
+                IronChests,
+                PamsHarvestCraft,
+                ProjectRedIllumination,
+                Railcraft,
+                RandomThings,
+                Thaumcraft,
+                ThaumicBoots,
+                ThaumicTinkerer,
+                TinkerConstruct,
+                TwilightForest,
+                WirelessRedstoneCBECore,
+                WirelessRedstoneCBELogic);
     }
 
     @Override
@@ -491,7 +496,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, (int) (1)),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (1)),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (1)))
-                .circuit(3).itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 1)).duration(4 * SECONDS)
+                .circuit(11).itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 1)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -499,7 +504,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, (int) (1)),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (1)),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (1)))
-                .circuit(5).fluidInputs(GTUtility.getWater(1000))
+                .circuit(12).fluidInputs(GTUtility.getWater(1000))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "watering_can", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         addShapedRecipe(
@@ -1376,93 +1381,107 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
                 30,
-                new AspectList().add(Aspect.MAGIC, 200).add(Aspect.FLIGHT, 200).add(Aspect.WEATHER, 200)
-                        .add(TCAspects.NEBRISUM.getAspect(), 200).add(Aspect.MOTION, 200).add(Lucrum.ULTRA_DEATH, 200),
-                createItemStack(
-                        TinkerConstruct.ID,
-                        "travelWings",
-                        1,
-                        0,
-                        "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}"),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Iridium),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Tritanium),
-                EngravedGoldChip.get(1),
+                new AspectList().add(Aspect.MAGIC, 256).add(Aspect.FLIGHT, 256).add(Aspect.TOOL, 128)
+                        .add(TB_Aspect.SPACE, 128).add(Aspect.GREED, 64).add(Aspect.AIR, 64),
+                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Ichorium),
+                getModItem(ElectroMagicTools.ID, "ThaumiumWing"),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.ElvenElementium),
+                getModItem(BloodMagic.ID, "aether", 1, 0),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                MagicFeather.get(1),
-                getModItem(Minecraft.ID, "nether_star", 1, 0),
-                getModItem(Avaritia.ID, "big_pearl", 1, 0),
-                getModItem(Minecraft.ID, "nether_star", 1, 0),
-                MagicFeather.get(1),
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                getModItem(ExtraUtilities.ID, "unstableingot", 1, 2),
+                ItemList.QuantumStar.get(1),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
+                ItemList.QuantumStar.get(1),
+                getModItem(ExtraUtilities.ID, "unstableingot", 1, 2),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
-                EngravedGoldChip.get(1),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Tritanium));
-        TCHelper.addInfusionCraftingRecipe(
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
+                getModItem(BloodMagic.ID, "aether", 1, 0),
+                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.ElvenElementium));
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1),
-                4,
-                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.FLIGHT, 50).add(Aspect.AIR, 50),
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.ORDER, 100),
+                " s ",
+                "frf",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                getModItem(TinkerConstruct.ID, "fletching", 1, 0),
-                getModItem(TinkerConstruct.ID, "fletching", 1, 0));
-        TCHelper.addInfusionCraftingRecipe(
+                'f',
+                getModItem(TwilightForest.ID, "item.tfFeather", 1, 0));
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 2),
-                4,
-                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.FLIGHT, 50).add(Aspect.AURA, 50),
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.WATER, 100),
+                " s ",
+                "frp",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                getModItem(TwilightForest.ID, "item.critter", 1, 0),
-                getModItem(TwilightForest.ID, "item.critter", 1, 1));
-        TCHelper.addInfusionCraftingRecipe(
+                'f',
+                getModItem(Botania.ID, "flower", 1, 6),
+                'p',
+                getModItem(Botania.ID, "flower", 1, 10));
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 3),
-                4,
-                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.BEAST, 50).add(DarkAspects.NETHER, 50),
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.FIRE, 100),
+                " s ",
+                "frf",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                getModItem(Minecraft.ID, "dragon_egg", 1, 0),
+                'f',
                 getModItem(Botania.ID, "manaResource", 1, 9));
-        TCHelper.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 4),
-                4,
-                new AspectList().add(Aspect.EXCHANGE, 50).add(Aspect.METAL, 50).add(Aspect.GREED, 50),
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.EARTH, 100),
+                " s ",
+                "frf",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.RoseGold));
-        new ResearchItem(
-                "EXURINGS",
-                "ARTIFICE",
-                new AspectList().add(Aspect.MAGIC, 10).add(Aspect.FLIGHT, 10).add(Aspect.WEATHER, 100)
-                        .add(TCAspects.NEBRISUM.getAspect(), 10).add(Aspect.MOTION, 10).add(Lucrum.ULTRA_DEATH, 10),
-                1,
-                -5,
-                3,
-                getModItem(TinkerConstruct.ID, "travelWings", 1, 0)).setRound().setConcealed()
-                        .setParentsHidden("INFUSION")
-                        .setPages(
-                                new ResearchPage("tc.research_page.EXURINGS.1"),
-                                new ResearchPage("tc.research_page.EXURINGS.2"),
-                                new ResearchPage("tc.research_page.EXURINGS.3"),
-                                new ResearchPage("tc.research_page.EXURINGS.4"),
-                                new ResearchPage("tc.research_page.EXURINGS.5"),
-                                new ResearchPage("tc.research_page.EXURINGS.6"))
-                        .registerResearchItem();
+                'f',
+                "plateThaumium");
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "EXURINGS_CRAFTING",
+                getModItem(ExtraUtilities.ID, "angelRing", 1, 0),
+                new AspectList().add(Aspect.AIR, 100).add(Aspect.ENTROPY, 100),
+                " s ",
+                "arn",
+                " s ",
+                'r',
+                getModItem(ExtraUtilities.ID, "angelRing", 1, OreDictionary.WILDCARD_VALUE),
+                's',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
+                'n',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 0));
         new ResearchItem(
                 "EXURINGS_CRAFTING",
-                "ARTIFICE",
-                new AspectList().add(Aspect.MAGIC, 10).add(Aspect.FLIGHT, 10).add(Aspect.WEATHER, 10)
-                        .add(TCAspects.NEBRISUM.getAspect(), 10).add(Aspect.MOTION, 10).add(Lucrum.ULTRA_DEATH, 10),
-                -1,
-                -5,
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.MAGIC, 20).add(Aspect.FLIGHT, 20).add(Aspect.TOOL, 10).add(Aspect.GREED, 5)
+                        .add(Aspect.AIR, 5),
+                0,
+                8,
                 3,
-                getModItem(ExtraUtilities.ID, "angelRing", 1, 0)).setParents("EXURINGS").setConcealed()
+                getModItem(ExtraUtilities.ID, "angelRing", 1, 0))
+                        .setParents("ICHORIUM", "BH_ALFHEIM", "ANGELBLOCK", "ALCHEMICCHEMSTRYSET").setConcealed()
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("EXURINGS_CRAFTING", 16);
+
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.1"));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
@@ -1470,16 +1489,19 @@ public class ScriptExtraUtilities implements IScriptLoader {
         TCHelper.addResearchPage("EXURINGS_CRAFTING", new ResearchPage("tc.research_page.EXURINGS_CRAFTING.2"));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 1))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 2))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 2))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 3))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 3))));
         TCHelper.addResearchPage(
                 "EXURINGS_CRAFTING",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4))));
+        TCHelper.addResearchPage(
+                "EXURINGS_CRAFTING",
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 0))));
 
         ExtraUtilitiesHelper.fixColorBlockOreDictionary();
     }

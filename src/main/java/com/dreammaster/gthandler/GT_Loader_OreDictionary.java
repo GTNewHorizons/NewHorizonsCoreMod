@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import static com.dreammaster.main.MainRegistry.LOGGER;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -38,7 +39,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTLog;
 import gregtech.api.util.GTOreDictUnificator;
 
 /// Ore-dictionary entries for non-GT items, split by phase.
@@ -69,7 +69,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
     /// Registers the entries whose ore-dictionary name resolves to a MaterialLib material.
     public static void registerMaterialEntries() {
-        GTLog.out.println("Core-Mod: Register Material OreDict Entries of Non-GT-Items.");
+        LOGGER.debug("NHCore: Register Material OreDict Entries of Non-GT-Items.");
 
         registerOre(OrePrefixes.compressed, Materials.Mytryl, NHItemList.MytrylCompressedPlate.get());
         registerOre(OrePrefixes.block, Materials.Mytryl, BlockList.Mytryl.get());
@@ -116,7 +116,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
     @Override
     public void run() {
-        GTLog.out.println("Core-Mod: Register OreDict Entries of Non-GT-Items.");
+        LOGGER.debug("NHCore: Register OreDict Entries of Non-GT-Items.");
 
         // Custom Stuff
         registerOre("ingotBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0));

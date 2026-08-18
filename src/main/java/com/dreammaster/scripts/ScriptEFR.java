@@ -2276,7 +2276,7 @@ public class ScriptEFR implements IScriptLoader {
                         new OreDictItemStack("dyeRed", 1),
                         new OreDictItemStack("dyeWhite", 1),
                         new ItemStack(Items.chicken, 1, 0))
-                .fluidInputs(Materials.Lava.getFluid(BUCKETS * 1))
+                .fluidInputs(GTUtility.getLava(BUCKETS * 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "lava_chicken_record", 1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
