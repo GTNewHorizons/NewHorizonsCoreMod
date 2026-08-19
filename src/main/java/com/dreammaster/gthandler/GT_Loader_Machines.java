@@ -92,7 +92,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
                         | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UMV, 'W',
-                        OrePrefixes.wireGt12.get(Materials.Quantium), 'H', OrePrefixes.plate.get(Materials.SpaceTime),
+                        OrePrefixes.cableGt12.get(Materials.Quantium), 'H', OrePrefixes.plate.get(Materials.SpaceTime),
                         'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
 
         GTModHandler.addCraftingRecipe(

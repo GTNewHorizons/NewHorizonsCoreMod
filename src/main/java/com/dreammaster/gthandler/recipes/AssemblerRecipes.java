@@ -837,7 +837,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.Quantium, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt12, Materials.Quantium, 2L),
                         ItemList.Casing_UMV.get(1L))
                 .itemOutputs(ItemList.Hull_UMV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
