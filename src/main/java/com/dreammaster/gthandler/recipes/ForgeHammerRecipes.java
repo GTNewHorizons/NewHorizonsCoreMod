@@ -157,16 +157,12 @@ public class ForgeHammerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(8))
-                .fluidInputs(
-                        MaterialLibAPI
-                                .getFluidStack(Materials.Grade7PurifiedWater, FluidShapes.fluidLiquid, (int) (100L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Grade7PurifiedWater, FluidShapes.fluidLiquid, 100))
                 .duration(chip_duration_ticks).eut(chip_eu_per_tick).addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(12))
-                .fluidInputs(
-                        MaterialLibAPI
-                                .getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, (int) (100L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, 100))
                 .duration(chip_duration_ticks / 2).eut(chip_eu_per_tick).addTo(hammerRecipes);
 
         // The charged certus quartz dust is this mod's item, so GregTech's crushed ore pass does not cover it.

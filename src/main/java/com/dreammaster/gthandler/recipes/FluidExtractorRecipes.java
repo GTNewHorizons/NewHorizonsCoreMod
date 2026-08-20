@@ -29,12 +29,11 @@ public class FluidExtractorRecipes implements Runnable {
     public void run() {
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1, 0))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, (int) (144L)))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, 144))
                 .duration(1 * SECONDS + 4 * TICKS).eut(54).addTo(fluidExtractionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystal.get(1L))
-                .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(Materials.GalliumArsenide, FluidShapes.fluidMolten, (int) (288L)))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.GalliumArsenide, FluidShapes.fluidMolten, 288))
                 .duration(2 * SECONDS + 8 * TICKS).eut(37).addTo(fluidExtractionRecipes);
 
         if (OpenBlocks.isModLoaded() && TinkerConstruct.isModLoaded()) {
@@ -80,20 +79,21 @@ public class FluidExtractorRecipes implements Runnable {
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0))
-                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, (int) (144L)))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, 144))
                     .duration(24 * TICKS).eut(54).recipeCategory(RecipeCategories.fluidExtractorRecycling)
                     .addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
-                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, (int) (54L)))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, 54))
                     .duration(9 * TICKS).eut(54).recipeCategory(RecipeCategories.fluidExtractorRecycling)
                     .addTo(fluidExtractionRecipes);
 
         }
 
         if (GalacticraftAmunRa.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.wood1", 8, 1)).fluidOutputs(
-                    MaterialLibAPI.getFluidStack(Materials.BrightLumipodExtract, FluidShapes.fluidLiquid, (int) (250)))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.wood1", 8, 1))
+                    .fluidOutputs(
+                            MaterialLibAPI.getFluidStack(Materials.BrightLumipodExtract, FluidShapes.fluidLiquid, 250))
 
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(fluidExtractionRecipes);
         }

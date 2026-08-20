@@ -61,7 +61,6 @@ import com.dreammaster.thaumcraft.TCHelper;
 import com.gtnewhorizons.tcwands.api.TCWandAPI;
 import com.gtnewhorizons.tcwands.api.wrappers.AbstractWandWrapper;
 import com.gtnewhorizons.tcwands.api.wrappers.CapWrapper;
-import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
@@ -148,8 +147,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
-                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1)),
-                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.ingot, (int) (2)))
+                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.ingot, 2))
                 .circuit(19).itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -157,7 +156,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
-                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1))
                 .circuit(1).itemOutputs(getModItem(Thaumcraft.ID, "ItemShovelThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -165,30 +164,30 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("stickWood", 2),
-                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (2)),
-                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.ingot, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.ingot, 1))
                 .circuit(20).itemOutputs(getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         ChiselHelper
                 .addVariationFromStack("thaumium", GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L));
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, 1))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(7000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS).eut(24)
                 .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, 1))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(24).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, 1))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(10000)
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, (int) (36)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, 36))
                 .duration(50 * SECONDS).eut(24).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Fether.ID, "glow_flower_seeds", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Blaze, Shapes.dustTiny, (int) (8L)))
+                        MaterialLibAPI.getStack(Materials.Blaze, Shapes.dustTiny, 8))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1649,7 +1648,7 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         // Quicksilver Drop Fixes
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 1, 5))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, (int) (100)))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, 100))
                 .duration(13 * TICKS).eut(4).addTo(fluidExtractionRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 9, 5))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 3)).duration(15 * SECONDS).eut(2)
@@ -1694,7 +1693,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "TALLOW",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 4),
-                MaterialLibAPI.getStack(Materials.Soapstone, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Soapstone, Shapes.dust, 1),
                 new AspectList().add(Aspect.MAGIC, 2).add(Aspect.FLESH, 4).add(Aspect.DEATH, 2));
         TCHelper.setResearchAspects(
                 "TALLOW",
@@ -1733,17 +1732,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
-                MaterialLibAPI.getStack(Materials.Coal, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Coal, Shapes.dust, 1),
                 new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
-                MaterialLibAPI.getStack(Materials.Charcoal, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Charcoal, Shapes.dust, 1),
                 new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0),
-                MaterialLibAPI.getStack(Materials.Lignite, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Lignite, Shapes.dust, 1),
                 new AspectList().add(Aspect.FIRE, 6).add(Aspect.ENTROPY, 3).add(Aspect.ENERGY, 6));
         TCHelper.setResearchAspects(
                 "ALUMENTUM",
@@ -2352,58 +2351,55 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (2)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 2))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Ruby, Shapes.lens, (int) (1L))))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Ruby, Shapes.lens, 1)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Jasper, Shapes.lens, (int) (1L))))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Jasper, Shapes.lens, 1)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.FoolsRuby, Shapes.lens, (int) (1L))))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.FoolsRuby, Shapes.lens, 1)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.GarnetRed, Shapes.lens, (int) (1L))))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.GarnetRed, Shapes.lens, 1)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        GTUtility
-                                .copyAmount(0, MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.lens, (int) (1L))))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.lens, 1)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        MaterialLibAPI.getStack(Materials.RedZircon, Shapes.lens, (int) (0)))
+                        MaterialLibAPI.getStack(Materials.RedZircon, Shapes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        MaterialLibAPI.getStack(Materials.Fluorspar, Shapes.lens, (int) (0)))
+                        MaterialLibAPI.getStack(Materials.Fluorspar, Shapes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6),
-                        MaterialLibAPI.getStack(Materials.Orundum, Shapes.lens, (int) (0)))
+                        MaterialLibAPI.getStack(Materials.Orundum, Shapes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
@@ -2535,11 +2531,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'c',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
                 'd',
-                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.ring, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.ring, 1),
                 'e',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6),
                 'f',
-                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.ring, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.ring, 1),
                 'g',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
                 'h',
@@ -4307,7 +4303,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.WEAPON, 32),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(BUTCHERYKNIFE.ID, 1, (Material) null, null, null),
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(BUTCHERYKNIFE.ID, 1, null, null, null),
                 getModItem(Minecraft.ID, "iron_sword", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
                 getModItem(Minecraft.ID, "bow", 1, 0),
@@ -4333,7 +4329,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "fish", 1, 2),
                 getModItem(Minecraft.ID, "fish", 1, 3),
                 getModItem(Minecraft.ID, "fishing_rod", 1, 0),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, (Material) null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null));
         TCHelper.setResearchAspects(
                 "COREFISHING",
                 new AspectList().add(Aspect.HUNGER, 12).add(Aspect.WATER, 12).add(Aspect.BEAST, 12)

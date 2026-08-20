@@ -217,13 +217,13 @@ public class ScriptJABBA implements IScriptLoader {
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1),
                 "stickWood",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "stickWood",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 getModItem(JABBA.ID, "barrel", 1),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "stickWood",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "stickWood");
 
         addShapedRecipe(

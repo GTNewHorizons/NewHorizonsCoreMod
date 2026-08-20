@@ -31,26 +31,26 @@ public class BendingMachineRecipes implements Runnable {
                 .itemOutputs(NHItemList.MicaInsulatorFoil.get(4)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(benderRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.plateQuadruple, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.plateQuadruple, 1))
                 .circuit(1).itemOutputs(ItemList.Shape_Empty.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(benderRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.ingot, (int) (1L)))
-                .circuit(1).itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (1L)))
-                .duration(20 * SECONDS).eut(24).addTo(benderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.ingot, 1)).circuit(1)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1)).duration(20 * SECONDS)
+                .eut(24).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("ingotObsidian", 9)).circuit(9)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(benderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (9L)))
-                .circuit(9).itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 9)).circuit(9)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(benderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, (int) (9L)))
-                .circuit(9).itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lapis, 1L))
-                .duration(3 * MINUTES).eut(TierEU.RECIPE_MV * 3 / 4).addTo(benderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 9)).circuit(9)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lapis, 1L)).duration(3 * MINUTES)
+                .eut(TierEU.RECIPE_MV * 3 / 4).addTo(benderRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.stickLong, (int) (1L)))
-                .circuit(1).itemOutputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.spring, (int) (1L)))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.stickLong, 1)).circuit(1)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.spring, 1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
 
         if (GalacticraftCore.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7)).circuit(2)

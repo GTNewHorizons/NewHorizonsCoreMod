@@ -99,24 +99,24 @@ public class CompressorRecipes implements Runnable {
                     .addTo(compressorRecipes);
         }
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Marble, Shapes.dust, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Marble, Shapes.dust, 1))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Marble, 1L)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CastIron, Shapes.nugget, (int) (9L)))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.CastIron, Shapes.ingot, (int) (1L)))
-                .duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CastIron, Shapes.nugget, 9))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.CastIron, Shapes.ingot, 1)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Gangue, Shapes.dust, (int) (9)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Gangue, Shapes.dust, 9))
                 .itemOutputs((GTOreDictUnificator.get(OrePrefixes.block, Materials.Gangue, 1))).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (9L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 9))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))
                 .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 750L)).duration(2 * MINUTES)
                 .metadata(CompressionTierKey.INSTANCE, 1).eut(TierEU.RECIPE_UV).addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dust, (int) (9L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dust, 9))
                 .itemOutputs(BlockList.Sulfur.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(compressorRecipes);
 
@@ -181,14 +181,12 @@ public class CompressorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(BlockGodforgeGlass.INSTANCE, 1))
                 .itemOutputs(ItemList.Gravitational_Lens.get(1))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, (int) (5760L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, 5760))
                 .duration(2 * MINUTES).metadata(CompressionTierKey.INSTANCE, 2).eut(TierEU.RECIPE_UMV)
                 .addTo(compressorRecipes);
 
         if (StevesCarts2.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(MaterialLibAPI.getStack(Materials.EnhancedGalgadorian, Shapes.dust, (int) (9L)))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.EnhancedGalgadorian, Shapes.dust, 9))
                     .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
         }
@@ -236,10 +234,10 @@ public class CompressorRecipes implements Runnable {
         if (!AdvancedSolarPanel.isModLoaded()) {
             return;
         }
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Sunnarium, Shapes.dust, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Sunnarium, Shapes.dust, 1))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Sunnarium, Shapes.dustTiny, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Sunnarium, Shapes.dustTiny, 1))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 9)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9, 9))
@@ -324,7 +322,7 @@ public class CompressorRecipes implements Runnable {
         if (!HardcoreEnderExpansion.isModLoaded()) {
             return;
         }
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.ingot, (int) (9L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.ingot, 9))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "dry_splinter", 9, 0))
@@ -399,7 +397,7 @@ public class CompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 4, 2))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "Smeltery", 1, 2)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dust, (int) (1L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dust, 1))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 12)).duration(5 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 

@@ -86,11 +86,11 @@ public class ScriptExtraBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'b',
-                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, 1),
                 'c',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'd',
                 "itemCasingGold",
                 'e',
@@ -98,11 +98,11 @@ public class ScriptExtraBees implements IScriptLoader {
                 'f',
                 "itemCasingGold",
                 'g',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'h',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'i',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
@@ -114,19 +114,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'b',
-                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, 1),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'd',
-                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1),
                 'e',
                 getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12),
                 'h',
-                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12));
         RecipeManagers.carpenterManager.addRecipe(
@@ -244,7 +244,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'b',
-                MaterialLibAPI.getStack(Materials.Redstone, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Redstone, Shapes.plate, 1),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'd',
@@ -256,7 +256,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3),
                 'h',
-                MaterialLibAPI.getStack(Materials.Redstone, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Redstone, Shapes.plate, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3));
         RecipeManagers.carpenterManager.addRecipe(
@@ -314,7 +314,7 @@ public class ScriptExtraBees implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("for.honey", 1000),
-                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.gearGt, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.gearGt, 1),
                 getModItem(ExtraBees.ID, "misc", 1, 0),
                 "abc",
                 "def",
@@ -381,8 +381,8 @@ public class ScriptExtraBees implements IScriptLoader {
                 100);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 1))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Diamond, Shapes.dustTiny, (int) (1L)))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Diamond, Shapes.dustTiny, 1)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
         new ResearchItem(
                 "HEALINGFRAME",
@@ -404,19 +404,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 "screwIron",
                 'b',
-                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, 1),
                 'c',
                 "screwIron",
                 'd',
-                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, 1),
                 'e',
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, 1),
                 'g',
                 "screwIron",
                 'h',
-                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, 1),
                 'i',
                 "screwIron");
         TCHelper.addResearchPage(

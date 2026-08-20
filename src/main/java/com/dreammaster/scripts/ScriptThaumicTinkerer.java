@@ -91,7 +91,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
         GTModHandler.addSmeltingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
-                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (2L)));
+                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 2));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0))
@@ -108,33 +108,30 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.NetherStar, Shapes.lens, (int) (1))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.NetherStar, Shapes.lens, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Dilithium, Shapes.lens, (int) (1))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Dilithium, Shapes.lens, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility
-                                .copyAmount(0, MaterialLibAPI.getStack(Materials.InfusedOrder, Shapes.lens, (int) (1))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.InfusedOrder, Shapes.lens, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Glass, Shapes.lens, (int) (1))),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Glass, Shapes.lens, 1)),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(laserEngraverRecipes);
@@ -1559,7 +1556,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.addResearchPage("ICHORIUM", new ResearchPage("ttresearch.page.ICHORIUM.0"));
         arcaneRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORIUM",
-                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 1),
                 new AspectList().add(Aspect.AIR, 125).add(Aspect.WATER, 125).add(Aspect.FIRE, 125)
                         .add(Aspect.EARTH, 125).add(Aspect.ORDER, 125).add(Aspect.ENTROPY, 125),
                 "abc",

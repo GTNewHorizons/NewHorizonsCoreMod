@@ -59,7 +59,7 @@ public class ScriptSGCraft implements IScriptLoader {
 
         ItemStack darkMatterBlock = getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14);
         ItemStack magmatterBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.Magmatter, 1L);
-        ItemStack magmatterSuperdensePlate = MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plateSuperdense, (int) (1L));
+        ItemStack magmatterSuperdensePlate = MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plateSuperdense, 1);
         ItemStack magmatterNanite = GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1L);
         ItemStack umvCap = new ItemStack(Blocks.lscLapotronicEnergyUnit, 1, 10);
 
@@ -211,8 +211,8 @@ public class ScriptSGCraft implements IScriptLoader {
                 "wpmmmbw--",
                 "wuppmmbw-",
                 "cwwwwwwww",
-                'w', MaterialLibAPI.getStack(Materials.WhiteDwarfMatter, Shapes.plateSuperdense, (int) (1L)),
-                'b', MaterialLibAPI.getStack(Materials.BlackDwarfMatter, Shapes.plateSuperdense, (int) (1L)),
+                'w', MaterialLibAPI.getStack(Materials.WhiteDwarfMatter, Shapes.plateSuperdense, 1),
+                'b', MaterialLibAPI.getStack(Materials.BlackDwarfMatter, Shapes.plateSuperdense, 1),
                 'm', magmatterSuperdensePlate,
                 'p', ItemList.Electric_Piston_UXV.get(1L),
                 'u', ItemList.ZPM6.get(1L),

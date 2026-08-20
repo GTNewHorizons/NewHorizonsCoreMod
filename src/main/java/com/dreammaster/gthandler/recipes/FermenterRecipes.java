@@ -18,11 +18,11 @@ public class FermenterRecipes implements Runnable {
     @Override
     public void run() {
         GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("concrete", 1000))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Concrete, FluidShapes.fluidMolten, (int) (1000)))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Concrete, FluidShapes.fluidMolten, 1000))
                 .duration(1 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(fermentingRecipes);
 
         GTValues.RA.stdBuilder()
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Concrete, FluidShapes.fluidMolten, (int) (1000)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Concrete, FluidShapes.fluidMolten, 1000))
                 .fluidOutputs(MaterialUtils.fluid(Materials.ConstructionFoam, 1000)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(fermentingRecipes);
 

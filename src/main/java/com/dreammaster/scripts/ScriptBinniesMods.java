@@ -31,16 +31,16 @@ public class ScriptBinniesMods implements IScriptLoader {
     @Override
     public void loadRecipes() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Emerald, Shapes.dustTiny, (int) (1L)))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Emerald, Shapes.dustTiny, 1)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 3))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Ruby, Shapes.dustTiny, (int) (1L))).outputChances(10000)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Ruby, Shapes.dustTiny, 1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dustTiny, (int) (1L)))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dustTiny, 1)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 5))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Lapis, Shapes.dustTiny, (int) (1L))).outputChances(10000)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Lapis, Shapes.dustTiny, 1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
     }

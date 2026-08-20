@@ -618,7 +618,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodArsenal.ID, "blood_diamond", 1, 0),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, 1),
                 4,
                 12000,
                 20,
@@ -728,10 +728,8 @@ public class ScriptBloodArsenal implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 6, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 1, 0))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_stick", 2, 0)).duration(20)

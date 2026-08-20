@@ -11,7 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 /// lookups compare against. A config entry names the material and shape because MaterialLib item metadata is a
 /// material index that shifts whenever the material set changes.
 ///
-/// Resolution reads MaterialLib's resolved registries, so it runs no earlier than the config modules' postInit load.
+/// Runs no earlier than the config modules' postInit load; see [StackResolver] for the timing the lookups require.
 public final class MaterialLibNames {
 
     private static final String PREFIX = "ml:";
@@ -49,7 +49,7 @@ public final class MaterialLibNames {
         }
 
         if (tStack.getItemDamage() > 0) {
-            return String.format("%s:%d", tUID.toString(), tStack.getItemDamage());
+            return String.format("%s:%d", tUID, tStack.getItemDamage());
         }
         return tUID.toString();
     }

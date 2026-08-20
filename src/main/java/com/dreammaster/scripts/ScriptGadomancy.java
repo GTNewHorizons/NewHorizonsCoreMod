@@ -79,10 +79,8 @@ public class ScriptGadomancy implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
 
         TCHelper.removeInfusionRecipe(getModItem(Gadomancy.ID, "itemSilverwoodGolemPlacer", 1, 8));

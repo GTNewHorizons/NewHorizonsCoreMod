@@ -226,9 +226,9 @@ public class HazardousItemsHandler {
         return tResult;
     }
 
-    /// Rewrites every `ml:` item into its resolved item name, and forces it to an exact match: a resolved name ends in
-    /// a metadata suffix, and the "contains" match of [HazardousItems#FindHazardousItem] would find `dust:45` inside
-    /// `dust:453`.
+    /// Rewrites every `ml:` item into its resolved item name, and forces it to an exact match: resolved names end in a
+    /// metadata suffix that the substring match of [HazardousItems#FindHazardousItem] confuses with a longer one, such
+    /// as `dust:45` inside `dust:453`.
     private void ResolveMaterialLibNames(HazardousItems pItemCollection) {
         int tResolved = 0;
         int tInvalid = 0;

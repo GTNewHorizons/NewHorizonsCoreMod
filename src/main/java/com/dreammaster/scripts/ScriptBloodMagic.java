@@ -151,10 +151,10 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 18),
                 getModItem(Witchery.ID, "ingredient", 1, 18),
                 getModItem(Witchery.ID, "ingredient", 1, 18),
-                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 0),
@@ -647,17 +647,17 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new AspectList().add(Aspect.CRAFT, 24).add(Aspect.TOOL, 24).add(Aspect.MAGIC, 18).add(Aspect.LIFE, 12)
                         .add(Aspect.FIRE, 12),
                 getModItem(Minecraft.ID, "brewing_stand", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, (int) (1)),
+                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, (int) (1)),
+                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, (int) (1)),
+                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, (int) (1)),
+                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, (int) (1)),
+                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, (int) (1)),
+                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0));
         TCHelper.addResearchPage(
                 "ALCHEMICCHEMSTRYSET",
@@ -1053,19 +1053,19 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'a',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
                 'b',
-                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.plate, 1),
                 'c',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
                 'd',
-                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 1),
                 'e',
                 getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 1),
                 'g',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2),
                 'h',
-                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.plate, 1),
                 'i',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2));
         TCHelper.addResearchPage(
@@ -1300,15 +1300,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.MAGIC, 32).add(Aspect.AURA, 24).add(Aspect.METAL, 16),
                 getModItem(BloodMagic.ID, "voidSigil", 1, 0),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.FishOil, CellShapes.cell, (int) (1)),
-                MaterialParts.requireCell(Materials.LiquidOxygen, (int) (1)),
-                MaterialLibAPI.getStack(Materials.FishOil, CellShapes.cell, (int) (1)),
-                MaterialParts.requireCell(Materials.LiquidOxygen, (int) (1)),
+                MaterialLibAPI.getStack(Materials.FishOil, CellShapes.cell, 1),
+                MaterialParts.requireCell(Materials.LiquidOxygen, 1),
+                MaterialLibAPI.getStack(Materials.FishOil, CellShapes.cell, 1),
+                MaterialParts.requireCell(Materials.LiquidOxygen, 1),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0),
-                MaterialParts.requireCell(Materials.LiquidOxygen, (int) (1)),
-                MaterialLibAPI.getStack(Materials.FishOil, CellShapes.cell, (int) (1)),
-                MaterialParts.requireCell(Materials.LiquidOxygen, (int) (1)),
-                MaterialLibAPI.getStack(Materials.FishOil, CellShapes.cell, (int) (1)));
+                MaterialParts.requireCell(Materials.LiquidOxygen, 1),
+                MaterialLibAPI.getStack(Materials.FishOil, CellShapes.cell, 1),
+                MaterialParts.requireCell(Materials.LiquidOxygen, 1),
+                MaterialLibAPI.getStack(Materials.FishOil, CellShapes.cell, 1));
         TCHelper.addResearchPage(
                 "SIGILOFSWIMMING",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodArsenal.ID, "sigil_of_swimming", 1, 0))));
@@ -3146,11 +3146,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 'c',
-                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 1),
                 'd',
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0),
                 'e',
@@ -3158,11 +3158,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'f',
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0),
                 'g',
-                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 1),
                 'h',
                 getModItem(BloodMagic.ID, "demonicTelepositionFocus", 1, 0),
                 'i',
-                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 1));
         TCHelper.addResearchPage(
                 "ENERGYBAZOOKAI",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "energyBazooka", 1, 0))));
@@ -3562,19 +3562,19 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "weakBloodOrb", 1, 0),
                         'b',
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                         'c',
                         getModItem(BloodMagic.ID, "blankSlate", 1, 0),
                         'd',
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                         'e',
                         NHItemList.ArcaneSlate.get(),
                         'f',
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                         'g',
                         getModItem(BloodMagic.ID, "blankSlate", 1, 0),
                         'h',
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L))));
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1)));
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 4),
@@ -3777,7 +3777,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "aether", 1, 0),
                         'b',
-                        MaterialParts.requireCell(Materials.Helium, (int) (1L)),
+                        MaterialParts.requireCell(Materials.Helium, 1),
                         'c',
                         getModItem(BloodMagic.ID, "aether", 1, 0),
                         'd',
@@ -3801,7 +3801,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "terrae", 1, 0),
                         'b',
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemFlawless, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemFlawless, 1),
                         'c',
                         getModItem(BloodMagic.ID, "terrae", 1, 0),
                         'd',
@@ -4280,7 +4280,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, (int) (1)),
+                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
                 GTOreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 1),
                 1,
                 1000,
@@ -4446,13 +4446,13 @@ public class ScriptBloodMagic implements IScriptLoader {
         BindingRegistry.registerRecipe(getModItem(BloodMagic.ID, "energyBlaster", 1, 0), NHItemList.Blaster.get(1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.stick, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.stick, 1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0),
-                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.stick, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.stick, 1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0),
-                MaterialLibAPI.getStack(Materials.Quartzite, Shapes.stick, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Quartzite, Shapes.stick, 1));
 
         UnbindingRegistry.unbindingRecipes.clear();
         UnbindingRegistry.addAllUnbindingRecipesFromBinding();
@@ -4476,18 +4476,18 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "crystallos", 1, 0),
                 10,
                 new ItemStack[] { getModItem(BiomesOPlenty.ID, "hardIce", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "sanctus", 1, 0),
                 10,
-                new ItemStack[] { MaterialLibAPI.getStack(Materials.RoseGold, Shapes.dust, (int) (1L)),
+                new ItemStack[] { MaterialLibAPI.getStack(Materials.RoseGold, Shapes.dust, 1),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4502,14 +4502,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 new ItemStack[] { getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Silicon, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (1L)) },
+                        MaterialLibAPI.getStack(Materials.Silicon, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, 1) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "mundaneLengtheningCatalyst", 1, 0),
                 40,
-                new ItemStack[] { MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, (int) (1L)),
+                new ItemStack[] { MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, 1),
                         getModItem(Minecraft.ID, "redstone", 1, 0), getModItem(Minecraft.ID, "redstone", 1, 0),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
                         getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0) },
@@ -4533,7 +4533,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "mundanePowerCatalyst", 1, 0),
                 40,
-                new ItemStack[] { MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, (int) (1L)),
+                new ItemStack[] { MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, 1),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0),
@@ -4558,7 +4558,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "standardBindingAgent", 1, 0),
                 40,
-                new ItemStack[] { MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, (int) (1L)),
+                new ItemStack[] { MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, 1),
                         getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0),
                         getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0), getModItem(BloodMagic.ID, "sanctus", 1, 0),
                         getModItem(BloodMagic.ID, "crystallos", 1, 0) },
@@ -4596,16 +4596,16 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Minecraft.ID, "fire_charge", 1, 0),
                 9,
                 new ItemStack[] { getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Coal, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Coal, Shapes.dust, 1),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0) },
                 1);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "incendium", 1, 0),
                 10,
-                new ItemStack[] { MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.dust, (int) (1L)),
+                new ItemStack[] { MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.dust, 1),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Firestone, Shapes.dustSmall, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Netherrack, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Firestone, Shapes.dustSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Netherrack, Shapes.dust, 1),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4613,7 +4613,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 10,
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 1),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Thaumium, Shapes.dust, 1),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
@@ -4629,26 +4629,26 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "terrae", 1, 0),
                 10,
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 45),
-                        MaterialLibAPI.getStack(Materials.BasalticMineralSand, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.GraniticMineralSand, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.BasalticMineralSand, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.GraniticMineralSand, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "aquasalus", 1, 0),
                 10,
                 new ItemStack[] { getModItem(Natura.ID, "waterdrop", 1, 0),
-                        MaterialLibAPI.getStack(Materials.InfusedWater, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.InfusedWater, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.InfusedWater, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.InfusedWater, Shapes.dust, 1),
                         getModItem(Minecraft.ID, "dye", 1, 0), getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0),
                 10,
-                new ItemStack[] { MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Coal, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Charcoal, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Lignite, Shapes.dust, (int) (1L)),
+                new ItemStack[] { MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Coal, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Charcoal, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Lignite, Shapes.dust, 1),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4686,7 +4686,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 5),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.dustSmall, (int) (1L)) },
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.dustSmall, 1) },
                 4);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "itemComplexSpellCrystal", 1, 0),
@@ -4757,25 +4757,25 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
                         getModItem(BloodMagic.ID, "terrae", 1, 0), getModItem(BloodMagic.ID, "terrae", 1, 0),
-                        MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.dust, (int) (1L)) },
+                        MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.dust, 1) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 6),
                 40,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
-                        MaterialLibAPI.getStack(Materials.FierySteel, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.FierySteel, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.FierySteel, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.FierySteel, Shapes.dust, 1),
                         NHItemList.ChargedCertusQuartzDust.get(), NHItemList.ChargedCertusQuartzDust.get() },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 7),
                 40,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Soularium, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Soularium, Shapes.dust, (int) (1L)) },
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Soularium, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Soularium, Shapes.dust, 1) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
@@ -4783,8 +4783,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3),
                         getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2),
                         getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2),
-                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.dust, (int) (1L)) },
+                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.dust, 1) },
                 3);
     }
 }

@@ -330,11 +330,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, 1),
                 'b',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360),
                 'c',
-                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, 1),
                 'd',
                 EngProcessor,
                 'e',
@@ -342,11 +342,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'f',
                 CalcProcessor,
                 'g',
-                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, 1),
                 'h',
                 LogicProcessor,
                 'i',
-                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, 1));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANETERM",
                 new AspectList().add(Aspect.TOOL, 15).add(Aspect.CRAFT, 12).add(Aspect.ENERGY, 9)

@@ -181,7 +181,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
 
         // add a Spinning Wheel recipes
         SpinningWheel.addRecipe(
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, (int) (8L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 8),
                 Witchery.Items.GENERIC.itemGoldenThread.createStack(1),
                 new ItemStack[] { new ItemStack(Items.string, 8, 0),
                         Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1) });
@@ -228,7 +228,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack(Witchery.Items.CHALK_GOLDEN),
                 new ItemStack(Witchery.Items.CHALK_RITUAL),
                 Witchery.Items.GENERIC.itemMandrakeRoot.createStack(),
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, 1),
                 Witchery.Items.GENERIC.itemDiamondVapour.createStack());
         addBrewRecipe(
                 2000,
@@ -242,7 +242,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     4000,
                     new ItemStack(Witchery.Items.CHALK_OTHERWHERE),
                     new ItemStack(Witchery.Items.CHALK_RITUAL),
-                    MaterialLibAPI.getStack(Materials.EnderEye, Shapes.dust, (int) (1L)),
+                    MaterialLibAPI.getStack(Materials.EnderEye, Shapes.dust, 1),
                     getModItem(HardcoreEnderExpansion.ID, "end_powder", 1),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
                     NHItemList.ManyullynCrystal.get(1));

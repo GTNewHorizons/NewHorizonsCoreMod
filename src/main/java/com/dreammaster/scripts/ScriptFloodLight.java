@@ -103,7 +103,7 @@ public class ScriptFloodLight implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Tungsten, Shapes.wireFine, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Tungsten, Shapes.wireFine, 1),
                         getModItem(Minecraft.ID, "glass_pane", 2, 0))
                 .itemOutputs(getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("argon", 1)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -111,14 +111,14 @@ public class ScriptFloodLight implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 3, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 2))
                 .itemOutputs(getModItem(FloodLights.ID, "carbonDissolver", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 2))
                 .itemOutputs(getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);

@@ -102,20 +102,20 @@ public class ScriptCatWalk implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, (int) (5L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, 5),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, 3))
                 .itemOutputs(getModItem(CatWalks.ID, "steelgrate", 10, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, (int) (6L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, 6),
                         getModItem(CatWalks.ID, "steelgrate", 4, 0))
                 .itemOutputs(getModItem(CatWalks.ID, "support_column", 4, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CatWalks.ID, "steelgrate", 3, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, 2))
                 .itemOutputs(getModItem(CatWalks.ID, "catwalk_unlit", 6, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -150,7 +150,7 @@ public class ScriptCatWalk implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.wireFine, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.wireFine, 2),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0))
                 .itemOutputs(getModItem(CatWalks.ID, "ropeLight", 8, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);

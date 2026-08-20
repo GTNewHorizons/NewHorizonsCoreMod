@@ -166,26 +166,26 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 "plateVibrantAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "screwIron",
                 "springIron",
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "craftingPiston",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1));
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "ringIron",
                 "craftingToolWrench",
                 "ringIron",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1));
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "disposeItemTurret", 1, 0),
                 "craftingToolWrench",
@@ -385,31 +385,29 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_bars", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierOne", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
-                .itemInputs(
-                        BlockList.SteelBars.get(),
-                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.ring, (int) (1L)))
+                .itemInputs(BlockList.SteelBars.get(), MaterialLibAPI.getStack(Materials.Aluminium, Shapes.ring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierTwo", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierThree", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         BlockList.TungstenSteelBars.get(),
-                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.ring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.ring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFour", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         BlockList.IridiumBars.get(),
-                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.ring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.ring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFive", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
@@ -474,172 +472,172 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 2))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 2))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ring, 2))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierThree", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.EnergeticAlloy, Shapes.plate, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.EnergeticAlloy, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.ring, 2))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierFour", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.plate, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.Iridium, Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Iridium, Shapes.ring, 2))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         getModItem(Minecraft.ID, "piston", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.spring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.spring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         ItemList.Electric_Piston_LV.get(1L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.spring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.spring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierTwo", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         ItemList.Electric_Piston_MV.get(1L),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.spring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.spring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         ItemList.Electric_Piston_HV.get(1L),
-                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.spring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.spring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierFour", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
                         ItemList.Electric_Piston_EV.get(1L),
-                        MaterialLibAPI.getStack(Materials.Iridium, Shapes.spring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iridium, Shapes.spring, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierFive", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
-                .itemInputs(Circuits.LV.get(2), MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)))
+                .itemInputs(Circuits.LV.get(2), MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "ioBus", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 72)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.foil, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.foil, 4),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "bulletCraftable", 64, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 2),
                         getModItem(Minecraft.ID, "tnt", 1, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "grenadeCraftable", 32, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 4),
                         getModItem(IndustrialCraft2.ID, "blockITNT", 3, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "rocketCraftable", 24, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials.NeodymiumMagnetic, Shapes.bolt, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.NeodymiumMagnetic, Shapes.bolt, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "ferroSlug", 16, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tungstensteel", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         NHItemList.ReinforcedGlassLense.get())
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "accuraccyUpgradeItem", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         getModItem(Minecraft.ID, "magma_cream", 1, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "fireRateUpgradeItem", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.springSmall, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.springSmall, 1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "rangeUpgradeItem", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         BlockList.StainlessSteelBars.get())
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "scattershotUpgradeItem", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 2L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "efficiencyUpgradeItem", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         getModItem(Minecraft.ID, "ender_eye", 2, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "damageAmpAddon", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         getModItem(EnderIO.ID, "blockSolarPanel", 1, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "solarPanelAddon", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         getModItem(OpenComputers.ID, "item", 4, 24))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "serialPortAddon", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         ItemList.Electric_Piston_MV.get(1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "concealerAddon", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         getModItem(EnderStorage.ID, "enderChest", 1, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "recyclerAddon", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         getModItem(Thaumcraft.ID, "blockTube", 4, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "potentiaAddon", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().circuit(19)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
                         getModItem(OpenModularTurrets.ID, "ioBus", 4, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "redstoneReactorAddon", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, 4),
                         getModItem(Minecraft.ID, "redstone", 4, 0),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "blazingClayCraftable", 32, 0)).duration(10 * SECONDS)

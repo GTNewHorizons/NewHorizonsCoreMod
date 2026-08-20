@@ -31,12 +31,9 @@ public class PreciseAssemblerRecipes implements Runnable {
                             getModItem(TwilightForest.ID, "tile.TFSapling", 64, 6))
                     .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.saplings", 1, 1))
                     .fluidInputs(
+                            MaterialLibAPI.getFluidStack(Materials.Hypogen, FluidShapes.fluidMolten, 1 * STACKS),
                             MaterialLibAPI
-                                    .getFluidStack(Materials.Hypogen, FluidShapes.fluidMolten, (int) (1 * STACKS)),
-                            MaterialLibAPI.getFluidStack(
-                                    Materials.NaquadahBasedLiquidFuelMkV,
-                                    FluidShapes.fluidLiquid,
-                                    (int) (4000)))
+                                    .getFluidStack(Materials.NaquadahBasedLiquidFuelMkV, FluidShapes.fluidLiquid, 4000))
                     .duration(30 * SECONDS).eut(TierEU.RECIPE_UHV).metadata(PRECISE_ASSEMBLER_CASING_TIER, 3)
                     .addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
         }

@@ -134,7 +134,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
@@ -187,7 +187,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Calcite, Shapes.dust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Calcite, Shapes.dust, 4))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "rocks", 1, 0)).duration(2 * SECONDS + 10 * TICKS).eut(2)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0))
@@ -293,18 +293,18 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardSand", 1, 0))
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dust, (int) (2)),
-                        MaterialLibAPI.getStack(Materials.Flint, Shapes.dustSmall, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.CassiteriteSand, Shapes.dustSmall, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Phosphate, Shapes.dustSmall, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dust, 2),
+                        MaterialLibAPI.getStack(Materials.Flint, Shapes.dustSmall, 1),
+                        MaterialLibAPI.getStack(Materials.CassiteriteSand, Shapes.dustSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Phosphate, Shapes.dustSmall, 1))
                 .outputChances(10000, 5000, 1000, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardDirt", 1, 0))
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dustSmall, (int) (2L)),
-                        MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dustSmall, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Gypsum, Shapes.dustSmall, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Calcite, Shapes.dustSmall, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dustSmall, 2),
+                        MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dustSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Gypsum, Shapes.dustSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Calcite, Shapes.dustSmall, 1))
                 .outputChances(10000, 7500, 2500, 2500).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
@@ -323,7 +323,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1),
                         getModItem(PamsHarvestCraft.ID, "seaweedItem", 32),
                         getModItem(Botany.ID, "misc", 1, 7))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "coral1", 32, 11))
@@ -331,7 +331,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Honey, FluidShapes.fluidLiquid, (int) (1000L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Honey, FluidShapes.fluidLiquid, 1000))
                 .duration(2 * SECONDS).eut(1).addTo(cannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.get(1)).circuit(16)
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1)).eut(TierEU.RECIPE_LV).duration(2 * MINUTES)
@@ -551,7 +551,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.potato, 16),
-                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 4))
                 .itemOutputs(new ItemStack(Items.poisonous_potato, 16))
                 .fluidInputs(FluidRegistry.getFluidStack("poison", 200)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
@@ -656,7 +656,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(
                         getModItem(BiomesOPlenty.ID, "gems", 2, 0),
                         getModItem(BiomesOPlenty.ID, "gems", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Endstone, Shapes.dust, (int) (3)))
+                        MaterialLibAPI.getStack(Materials.Endstone, Shapes.dust, 3))
                 .outputChances(10000, 2500, 500).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(maceratorRecipes);
         // BoP Honey
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2))

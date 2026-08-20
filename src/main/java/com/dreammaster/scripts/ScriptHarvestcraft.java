@@ -28,7 +28,6 @@ import java.util.List;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.item.NHItemList;
-import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
@@ -67,17 +66,17 @@ public class ScriptHarvestcraft implements IScriptLoader {
     public void loadRecipes() {
         OreDictionary.registerOre(
                 "toolMortarandpestle",
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(MORTAR.ID, 1, (Material) null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(MORTAR.ID, 1, null, null, null));
         OreDictionary.registerOre(
                 "toolCuttingboard",
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, (Material) null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null));
         OreDictionary.registerOre("toolMixingbowl", getModItem(Minecraft.ID, "bowl", 1, 0));
         OreDictionary.registerOre(
                 "toolBakeware",
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(ROLLING_PIN.ID, 1, (Material) null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(ROLLING_PIN.ID, 1, null, null, null));
         OreDictionary.registerOre(
                 "toolJuicer",
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SOFTMALLET.ID, 1, (Material) null, null, null));
+                MetaGeneratedTool01.INSTANCE.getToolWithStats(SOFTMALLET.ID, 1, null, null, null));
 
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0),
@@ -417,7 +416,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 "craftingToolHardHammer",
                 "plateStainlessSteel",
                 "plateStainlessSteel",
-                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.toolHeadDrill, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.toolHeadDrill, 1),
                 "plateStainlessSteel",
                 "boltStainlessSteel",
                 "plateStainlessSteel",
@@ -1004,380 +1003,380 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Salt, Shapes.dustTiny, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Salt, Shapes.dustTiny, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "butterItem", 1, 0)).duration(1 * MINUTES).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "melon", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "melonsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "strawberryItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "lemonItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "lemonsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "blueberryItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 1),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "cherryItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 4),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 5),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 6),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "starfruitItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "starfruitsmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "bananaItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 28),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 29),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "orangeItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 1),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 18),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 13),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 21),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "papayaItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "fruits", 1, 6),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayasmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "peachItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 12),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 3),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "limeItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 3),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 17),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 16),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "mangoItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangosmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 57),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangosmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pomegranateItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pomegranatesmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 2),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 43),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "raspberryItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 44),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "kiwiItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "kiwismoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "apricotItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 10),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "grapefruitItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitsmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 11),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitsmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "persimmonItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonsmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 8),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonsmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "gooseberryItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "gooseberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 48),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "gooseberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "apple", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "applesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "applesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "coconutItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 50),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "cranberryItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 46),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberrysmoothieItem", 1, 0)).duration(20 * SECONDS)
                 .eut(2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "grapeItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapesmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pearItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 22),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 12),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 23),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "plumItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "fruits", 1, 4),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 8),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "figItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "figsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 32),
-                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ice, Shapes.dust, 1))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "figsmoothieItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0),
                         getModItem(PamsHarvestCraft.ID, "vinegarItem", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Salt, Shapes.dustTiny, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Salt, Shapes.dustTiny, 2))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "saladdressingItem", 1, 0)).duration(20 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
 

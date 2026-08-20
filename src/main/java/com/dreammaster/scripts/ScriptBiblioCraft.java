@@ -492,7 +492,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "screwGold");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioLantern", 4)).duration(3 * SECONDS)
@@ -512,7 +512,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioIronLantern", 4)).duration(3 * SECONDS)
@@ -902,16 +902,14 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (1)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 1))
                 .duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         // --- Frame Board
 
@@ -926,16 +924,14 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (1)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 1))
                 .duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
 
     }

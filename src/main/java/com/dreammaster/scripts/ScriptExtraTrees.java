@@ -67,9 +67,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "misc", 1, 3));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 1),
-                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, 1),
                 "plankWood",
-                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, 1),
                 getModItem(Forestry.ID, "factory2", 1, 2),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
                 getModItem(Forestry.ID, "factory2", 1, 2),
@@ -78,9 +78,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "misc", 1, 3));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 2),
-                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, 1),
                 "slabWood",
-                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.WoodSealed, Shapes.plate, 1),
                 getModItem(Forestry.ID, "factory2", 1, 2),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0),
                 getModItem(Forestry.ID, "factory2", 1, 2),
@@ -4081,23 +4081,23 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'b',
                 "itemCasingGold",
                 'c',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'd',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'e',
                 "circuitAdvanced",
                 'f',
-                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, 1),
                 'g',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'h',
                 "itemCasingGold",
                 'i',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1440),
@@ -4107,23 +4107,23 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'b',
                 "itemCasingGold",
                 'c',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'd',
-                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, 1),
                 'e',
                 "circuitAdvanced",
                 'f',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'g',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'h',
                 "itemCasingGold",
                 'i',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1));
 
     }
 

@@ -84,7 +84,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                         ItemList.Electric_Piston_HV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
-                        MaterialLibAPI.getStack(Materials.Nichrome, Shapes.stick, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.Nichrome, Shapes.stick, 1))
                 .circuit(1).itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -248,18 +248,17 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                             MaterialLibAPI.getFluidStack(
                                     Materials.MagnetohydrodynamicallyConstrainedStarMatter,
                                     FluidShapes.fluidMolten,
-                                    (int) (288)),
-                            MaterialLibAPI.getFluidStack(Materials.ExcitedDTSC, FluidShapes.fluidLiquid, (int) (10000)))
+                                    288),
+                            MaterialLibAPI.getFluidStack(Materials.ExcitedDTSC, FluidShapes.fluidLiquid, 10000))
                     .fluidOutputs(
-                            MaterialLibAPI.getFluidStack(Materials.Hydrogen, FluidShapes.fluidPlasma, (int) (576)),
-                            MaterialLibAPI.getFluidStack(Materials.Helium, FluidShapes.fluidPlasma, (int) (576)))
+                            MaterialLibAPI.getFluidStack(Materials.Hydrogen, FluidShapes.fluidPlasma, 576),
+                            MaterialLibAPI.getFluidStack(Materials.Helium, FluidShapes.fluidPlasma, 576))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(hammerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, (int) (144)))
-                    .fluidOutputs(
-                            MaterialLibAPI.getFluidStack(Materials.Infinity, FluidShapes.fluidMolten, (int) (576)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 144))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Infinity, FluidShapes.fluidMolten, 576))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(arcFurnaceRecipes);
 
             // Spaghettic Singularity

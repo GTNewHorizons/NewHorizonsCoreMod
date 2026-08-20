@@ -38,8 +38,8 @@ public class FluidSolidifierRecipes implements Runnable {
         // Sodium Dust
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Sodium, Shapes.dust, (int) (1L)))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Sodium, FluidShapes.fluidLiquid, (int) (1000)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Sodium, Shapes.dust, 1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Sodium, FluidShapes.fluidLiquid, 1000))
                 .duration(20 * TICKS).eut(4).addTo(fluidSolidifierRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_00.get(1L))
@@ -108,27 +108,25 @@ public class FluidSolidifierRecipes implements Runnable {
 
         // Electron-permeable neutronium-coated glass
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(new ItemStack(ItemRegistry.bw_glasses[0], 1, 6)))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Helium, FluidShapes.fluidPlasma, (int) (4 * 144)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Helium, FluidShapes.fluidPlasma, 4 * 144))
                 .itemOutputs(ItemList.GlassUVResistant.get(1)).eut(TierEU.RECIPE_UV).duration(5 * SECONDS)
                 .addTo(fluidSolidifierRecipes);
 
         // Omni Purpose Infinity Fused Glass
         GTValues.RA.stdBuilder().itemInputs(ItemList.GlassUVResistant.get(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Infinity, FluidShapes.fluidMolten, (int) (144)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Infinity, FluidShapes.fluidMolten, 144))
                 .itemOutputs(ItemList.GlassOmniPurposeInfinityFused.get(1)).eut(TierEU.RECIPE_UEV).duration(5 * SECONDS)
                 .addTo(fluidSolidifierRecipes);
 
         // Non photonic matter exclusion glass
         GTValues.RA.stdBuilder().itemInputs(ItemList.GlassOmniPurposeInfinityFused.get(1))
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.ExcitedDTRC, FluidShapes.fluidLiquid, (int) (1000L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.ExcitedDTRC, FluidShapes.fluidLiquid, 1000))
                 .itemOutputs(ItemList.GlassQuarkContainment.get(1)).eut(TierEU.RECIPE_UEV).duration(5 * SECONDS)
                 .addTo(fluidSolidifierRecipes);
         if (Botania.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(Botania.ID, "bifrostPerm", 1))
                     .itemOutputs(BlockList.Gaia.get(1))
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(Materials.GaiaSpirit, FluidShapes.fluidMolten, (int) (1296L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GaiaSpirit, FluidShapes.fluidMolten, 1296))
                     .duration(2 * SECONDS).eut(TierEU.RECIPE_IV).addTo(fluidSolidifierRecipes);
         }
 
@@ -138,7 +136,6 @@ public class FluidSolidifierRecipes implements Runnable {
                     .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 36))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(20 * TICKS)
                     .eut(TierEU.RECIPE_ULV).addTo(fluidSolidifierRecipes);
-            // maybe MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 144) instead
 
             GTValues.RA.stdBuilder().circuit(1).itemOutputs(getModItem(TinkerConstruct.ID, "blankPattern", 1, 1))
                     .fluidInputs(FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144))
@@ -146,25 +143,24 @@ public class FluidSolidifierRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.gravel, 1, 0))
                     .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Tin, FluidShapes.fluidMolten, (int) (16L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Tin, FluidShapes.fluidMolten, 16))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6))
                     .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 43))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (288L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 288))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             if (ExtraUtilities.isModLoaded()) {
 
                 GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
                         .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
-                        .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Tin, FluidShapes.fluidMolten, (int) (144L)))
+                        .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Tin, FluidShapes.fluidMolten, 144))
                         .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
                 GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12))
                         .itemOutputs(getModItem(TinkerConstruct.ID, "SpeedBlock", 9, 0))
-                        .fluidInputs(
-                                MaterialLibAPI.getFluidStack(Materials.Electrum, FluidShapes.fluidMolten, (int) (48L)))
+                        .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Electrum, FluidShapes.fluidMolten, 48))
                         .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             }
@@ -172,322 +168,322 @@ public class FluidSolidifierRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormAnvil.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Anvil.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormArrowHead.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Arrow.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBaguette.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Baguette.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBall.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Ball.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBlock.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Block.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBolt.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Bolt.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBottle.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Bottle.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBread.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Bread.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBuns.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Bun.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormCasing.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Casing.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormCoinage.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Credit.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormCylinder.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Cylinder.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormGear.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Gear.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormIngot.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Ingot.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MarshmallowFormMold.get())
                     .itemOutputs(NHItemList.MarshmallowForm.get())
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormName.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Name.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormNuggets.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Nugget.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormPlate.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Plate.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormRing.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Ring.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormRound.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Round.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormRotor.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Rotor.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormScrew.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Screw.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormSmallGear.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Gear_Small.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormStick.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Rod.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormStickLong.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Rod_Long.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormPipeTiny.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Pipe_Tiny.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormPipeSmall.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Pipe_Small.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormPipeMedium.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Pipe_Medium.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormPipeLarge.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Pipe_Large.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormPipeHuge.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Pipe_Huge.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormTurbineBlade.get(1))
                     .itemOutputs(ItemList.Shape_Mold_Turbine_Blade.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormBoots.get(1)).itemOutputs(NHItemList.MoldBoots.get())
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormChestplate.get(1))
                     .itemOutputs(NHItemList.MoldChestplate.get())
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormLeggings.get(1))
                     .itemOutputs(NHItemList.MoldLeggings.get())
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormHelmet.get(1))
                     .itemOutputs(NHItemList.MoldHelmet.get())
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.MoldFormDrillHead.get(1))
                     .itemOutputs(ItemList.Shape_Mold_ToolHeadDrill.get(1))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
             // Making shapes
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeBolt.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Bolt.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeHoeHead.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Hoe.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeRing.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Ring.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeTurbineBlade.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Turbine_Blade.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeGear.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Gear.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeLargePipe.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Pipe_Large.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeShovelHead.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Shovel.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeCell.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Cell.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeAxeHead.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Axe.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeBlock.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Block.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeSwordBlade.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Sword.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapePlate.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Plate.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeBoat.get(1))
                     .itemOutputs(NHItemList.ExtruderShapeBoat.get(1))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeCasing.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Casing.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeHugePipe.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Pipe_Huge.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeRod.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Rod.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeTinyPipe.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Pipe_Tiny.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeHammerHead.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Hammer.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeNormalPipe.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Pipe_Medium.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeFileHead.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_File.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeBottle.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Bottle.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeSmallGear.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Small_Gear.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeSawBlade.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Saw.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeSmallPipe.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Pipe_Small.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeRotor.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Rotor.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapePickaxeHead.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Pickaxe.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeIngot.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_Ingot.get(1L))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeDrillHead.get(1))
                     .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, (int) (576L)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             // Hawking Radiation Realignment Focus
@@ -496,8 +492,9 @@ public class FluidSolidifierRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Hawking_Glass.get(1)).addTo(fluidSolidifierRecipes);
 
             // TODO: move into exo-foundry when special uiv+ module is finished
-            GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer8.get(1)).fluidInputs(
-                    MaterialLibAPI.getFluidStack(Materials.QuarkGluonPlasma, FluidShapes.fluidLiquid, (int) (1500L)))
+            GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer8.get(1))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(Materials.QuarkGluonPlasma, FluidShapes.fluidLiquid, 1500))
                     .itemOutputs(ItemList.Circuit_Wafer_YPIC.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MAX)
                     .addTo(fluidSolidifierRecipes);
         }
@@ -509,9 +506,7 @@ public class FluidSolidifierRecipes implements Runnable {
         }
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 1))
-                .fluidInputs(
-                        MaterialLibAPI
-                                .getFluidStack(Materials.CosmicNeutronium, FluidShapes.fluidMolten, (int) (1296L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CosmicNeutronium, FluidShapes.fluidMolten, 1296))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(fluidSolidifierRecipes);
     }
 }

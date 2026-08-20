@@ -260,17 +260,17 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "gearGtSmallWood",
                 "plateSteel",
                 "gearGtSmallWood",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "wireGt01RedAlloy",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "village_highlighter", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "plateEmerald",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "plateStone",
                 "plateStone",
                 "plateStone");
@@ -305,9 +305,9 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "generic", 1, 10),
                 getModItem(OpenBlocks.ID, "generic", 1, 11),
                 getModItem(OpenBlocks.ID, "generic", 1, 10),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 getModItem(Minecraft.ID, "crafting_table", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "screwSteel",
                 "craftingToolScrewdriver",
                 "screwSteel");
@@ -365,7 +365,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "string", 64, 0),
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stickLong, (int) (64L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stickLong, 64))
                 .itemOutputs(getModItem(OpenBlocks.ID, "ropeladder", 64, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -383,13 +383,13 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
-                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.itemCasing, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.itemCasing, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
-                        MaterialLibAPI.getStack(Materials.PigIron, Shapes.itemCasing, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.PigIron, Shapes.itemCasing, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -401,32 +401,32 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0),
-                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.itemCasing, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.itemCasing, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0),
-                        MaterialLibAPI.getStack(Materials.PigIron, Shapes.itemCasing, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.PigIron, Shapes.itemCasing, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Graphite, Shapes.dustSmall, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Graphite, Shapes.dustSmall, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 11))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "generic", 1, 11),
-                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, 1))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 0, "{Uses:10.0f}")).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Board_Plastic_Advanced.get(1L), Circuits.LV.get(1))
@@ -473,23 +473,23 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "guide", 1, 0),
-                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.lens, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "builder_guide", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1),
-                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, (int) (1)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (4)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.gearGtSmall, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.gearGtSmall, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "elevator", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, (int) (1)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.gearGtSmall, (int) (1)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, 1),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.gearGtSmall, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard))

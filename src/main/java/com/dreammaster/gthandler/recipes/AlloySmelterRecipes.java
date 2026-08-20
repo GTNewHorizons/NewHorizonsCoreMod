@@ -33,119 +33,117 @@ public class AlloySmelterRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedSheet.get(4),
-                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 1))
                 .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.GreenSapphire, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.GreenSapphire, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedSheet.get(4),
-                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1))
                 .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.GreenSapphire, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.GreenSapphire, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedSheet.get(4),
-                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 1))
                 .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.GreenSapphire, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.GreenSapphire, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 1))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedSheet.get(4),
-                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 2))
                 .itemOutputs(NHItemList.MicaInsulatorSheet.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 2))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Sapphire, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 2))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.GreenSapphire, Shapes.dust, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.GreenSapphire, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 2))
                 .itemOutputs(NHItemList.AluminoSilicateWool.get(2)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (1)),
-                        ItemList.Shape_Mold_Ball.get(0))
+                .itemInputs(MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1), ItemList.Shape_Mold_Ball.get(0))
                 .itemOutputs(ItemList.Circuit_Parts_Glass_Tube.get(1L)).duration(6 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
 
@@ -155,16 +153,16 @@ public class AlloySmelterRecipes implements Runnable {
                 .eut(TierEU.RECIPE_HV / 2).addTo(alloySmelterRecipes);
 
         // GT++ Recipes
-        ItemStack[] tumbagaInputs = { MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, (int) (7)), // 0
+        ItemStack[] tumbagaInputs = { MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, 7), // 0
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 7), // 1
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, (int) (3)), // 2
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.ingot, (int) (3)) // 3
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 3), // 2
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.ingot, 3) // 3
         };
         int[][] tumbagaCombos = { { 0, 2 }, { 0, 3 }, { 1, 2 }, { 1, 3 } };
         for (int[] pair : tumbagaCombos) {
             GTValues.RA.stdBuilder().itemInputs(tumbagaInputs[pair[0]], tumbagaInputs[pair[1]])
-                    .itemOutputs(MaterialLibAPI.getStack(Materials.Tumbaga, Shapes.ingot, (int) (10)))
-                    .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Tumbaga, Shapes.ingot, 10)).duration(15 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         }
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard), new ItemStack(Items.clay_ball))
@@ -176,63 +174,62 @@ public class AlloySmelterRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (2)),
-                            MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 2),
+                            MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1))
                     .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, (int) (2)),
-                            MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 2),
+                            MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1))
                     .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (2)),
-                            MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, (int) (2)))
+                            MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 2),
+                            MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 2))
                     .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, (int) (2)),
-                            MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, (int) (2)))
+                            MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 2),
+                            MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 2))
                     .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 1),
+                            MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.dust, 1))
                     .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1)).duration(25 * SECONDS).eut(90)
                     .addTo(alloySmelterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, (int) (1)),
-                            MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.dust, (int) (1)))
+                            MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1),
+                            MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.dust, 1))
                     .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1)).duration(25 * SECONDS).eut(90)
                     .addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (3)))
-                    .circuit(1).itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1, 1)).duration(25 * SECONDS)
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 3)).circuit(1)
+                    .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1, 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, (int) (4)))
-                    .circuit(1).itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1, 1)).duration(25 * SECONDS)
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 4)).circuit(1)
+                    .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1, 1)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.dust, (int) (1))).circuit(1)
-                    .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 2, 1)).duration(25 * SECONDS).eut(90)
-                    .addTo(alloySmelterRecipes);
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.dust, 1))
+                    .circuit(1).itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 2, 1)).duration(25 * SECONDS)
+                    .eut(90).addTo(alloySmelterRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(EnderIO.ID, "blockFusedQuartz", 1, 1),
-                            MaterialLibAPI.getStack(Materials.Glowstone, Shapes.dust, (int) (4)))
+                            MaterialLibAPI.getStack(Materials.Glowstone, Shapes.dust, 4))
                     .itemOutputs(getModItem(EnderIO.ID, "blockFusedQuartz", 1, 3)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
 
@@ -250,7 +247,7 @@ public class AlloySmelterRecipes implements Runnable {
         // Sunnarium Alloys
         GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Sunnarium, Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Sunnarium, Shapes.plate, 4),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LuV).addTo(alloySmelterRecipes);
@@ -263,19 +260,19 @@ public class AlloySmelterRecipes implements Runnable {
         GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4),
-                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, 1))
                 .itemOutputs(NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_UV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1),
-                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plateDense, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plateDense, 1))
                 .itemOutputs(NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.get(1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.get(1),
-                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.plate, (int) (18)))
+                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.plate, 18))
                 .itemOutputs(NHItemList.EnrichedXSunnariumAlloy.get(1)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_UEV).addTo(alloySmelterRecipes);
     }

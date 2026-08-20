@@ -463,13 +463,13 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "glass", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 2))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 2))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "paper", 8, 0)).circuit(8)
@@ -479,7 +479,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 4))
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -531,21 +531,21 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.gearGtSmall, (int) (1)),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, (int) (2)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.gearGtSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, 2),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, 1),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Firestone, Shapes.lens, (int) (1L))),
-                        MaterialLibAPI.getStack(Materials.Firestone, Shapes.plate, (int) (4L)))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Firestone, Shapes.lens, 1)),
+                        MaterialLibAPI.getStack(Materials.Firestone, Shapes.plate, 4))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 

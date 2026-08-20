@@ -16,8 +16,8 @@ import gregtech.api.material.GTMaterialProperties;
 import gregtech.api.material.MaterialAtomics;
 import gregtech.api.util.recipe.Sievert;
 
-/// Radiation hatch entries for the radioactive materials that originate in gtPlusPlus. BartWorks registers the
-/// werkstoff-backed and GT-native ones itself.
+/// Radiation hatch entries for the radioactive materials that originate in gtPlusPlus.
+/// [bartworks.common.loaders.RadioHatchMaterialLoader] registers the rest.
 public class BW_RadHatchMaterial {
 
     public static void runRadHatchAdder() {

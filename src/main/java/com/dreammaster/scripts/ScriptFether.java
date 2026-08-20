@@ -68,18 +68,18 @@ public class ScriptFether implements IScriptLoader {
                 null,
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 null,
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 "craftingToolFile",
                 Items.stick,
                 "craftingToolHardHammer");
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_shovel", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 "craftingToolFile",
                 Items.stick,
                 "craftingToolHardHammer",
@@ -89,7 +89,7 @@ public class ScriptFether implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_pickaxe", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 "craftingToolFile",
@@ -101,10 +101,10 @@ public class ScriptFether implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_axe", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 Items.stick,
                 null,
                 "craftingToolFile",
@@ -113,7 +113,7 @@ public class ScriptFether implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_hoe", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 "craftingToolHardHammer",
                 "craftingToolFile",
@@ -128,21 +128,21 @@ public class ScriptFether implements IScriptLoader {
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 null,
                 null,
                 null);
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_chestplate", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0));
@@ -152,21 +152,21 @@ public class ScriptFether implements IScriptLoader {
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 null,
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1));
 
         addShapedRecipe(
                 getModItem(Fether.ID, "quartz_boots", 1, 0),
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
                 null,
                 getModItem(Fether.ID, "quartz_ingot", 1, 0),
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1),
                 null,
                 null,
                 null);
@@ -186,16 +186,14 @@ public class ScriptFether implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
                 .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, (int) (1)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 1))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone_slab, 1, 7))
                 .itemOutputs(getModItem(Fether.ID, "quartz_ingot", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
         // Stripped Logs

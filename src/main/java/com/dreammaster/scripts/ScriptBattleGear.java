@@ -89,7 +89,7 @@ public class ScriptBattleGear implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(MineAndBladeBattleGear2.ID, "dagger.wood", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "craftingToolFile",
                 null,
                 "stickWood",

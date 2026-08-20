@@ -2490,7 +2490,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "redwood", 1, 0),
                 getModItem(Natura.ID, "redwood", 1, 0));
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dust, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dust, 1),
                 getModItem(Natura.ID, "Cloud", 1, 3),
                 getModItem(Natura.ID, "Cloud", 1, 3),
                 getModItem(Natura.ID, "Cloud", 1, 3),
@@ -2993,10 +2993,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.eucalyptus", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.sakura", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.sakura", 2, 0))
@@ -3013,10 +3011,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.sakura", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.sakura", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.ghostwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.ghostwood", 2, 0))
@@ -3033,10 +3029,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.ghostwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.ghostwood", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.redwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.redwood", 2, 0))
@@ -3053,10 +3047,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.redwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.redwood", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.bloodwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.bloodwood", 2, 0))
@@ -3073,10 +3065,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.bloodwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.bloodwood", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.hopseed", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.hopseed", 2, 0))
@@ -3093,10 +3083,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.hopseed", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.hopseed", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.maple", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.maple", 2, 0))
@@ -3113,10 +3101,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.maple", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.maple", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.silverbell", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.silverbell", 2, 0))
@@ -3133,10 +3119,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.silverbell", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.silverbell", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.amaranth", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.amaranth", 2, 0))
@@ -3153,10 +3137,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.amaranth", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.amaranth", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.tiger", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.tiger", 2, 0))
@@ -3173,10 +3155,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.tiger", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.tiger", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.willow", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.willow", 2, 0))
@@ -3193,10 +3173,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.willow", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.willow", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.darkwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.darkwood", 2, 0))
@@ -3213,10 +3191,8 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.darkwood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.darkwood", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.fusewood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.fusewood", 2, 0))
@@ -3233,43 +3209,39 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.fusewood", 1, 0))
                 .itemOutputs(getModItem(Natura.ID, "button.fusewood", 2, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 3),
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(20 * SECONDS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 3),
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(20 * SECONDS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 3),
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(10 * SECONDS).eut(4)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 3),
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, 1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(4 * SECONDS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, wildcard))
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, (int) (6L)),
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, 6),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, 1))
                 .outputChances(10000, 8000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.snow, 4)).circuit(4)
                 .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 0))
@@ -3282,7 +3254,7 @@ public class ScriptNatura implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "Cloud", 4, 1),
-                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1))
                 .circuit(4).itemOutputs(getModItem(Natura.ID, "Cloud", 4, 2)).duration(20 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1)).circuit(4)

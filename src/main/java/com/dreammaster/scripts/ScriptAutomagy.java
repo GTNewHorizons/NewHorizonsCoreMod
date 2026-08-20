@@ -589,12 +589,12 @@ public class ScriptAutomagy implements IScriptLoader {
                 -5,
                 -2,
                 3,
-                MaterialLibAPI.getStack(Materials.InfusedGold, Shapes.ingot, (int) (1L)))
+                MaterialLibAPI.getStack(Materials.InfusedGold, Shapes.ingot, 1))
                         .setPages(new ResearchPage("tc.research_page.InfusedGoldGTNH.1"))
                         .setParents("INFUSION", "THAUMIUM").registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "InfusedGoldGTNH",
-                MaterialLibAPI.getStack(Materials.InfusedGold, Shapes.ingot, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedGold, Shapes.ingot, 1),
                 2,
                 new AspectList().add(Aspect.GREED, 16).add(Aspect.METAL, 12).add(Aspect.ORDER, 8).add(Aspect.MAGIC, 4)
                         .add(Aspect.AIR, 4),
@@ -606,8 +606,7 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.addResearchPage(
                 "InfusedGoldGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(Materials.InfusedGold, Shapes.ingot, (int) (1L)))));
+                        TCHelper.findInfusionRecipe(MaterialLibAPI.getStack(Materials.InfusedGold, Shapes.ingot, 1))));
         TCHelper.clearPrereq("MAGICHOURGLASS");
         TCHelper.addResearchPrereq("MAGICHOURGLASS", "INFUSION", false);
         TCHelper.addResearchPrereq("MAGICHOURGLASS", "InfusedGoldGTNH", false);

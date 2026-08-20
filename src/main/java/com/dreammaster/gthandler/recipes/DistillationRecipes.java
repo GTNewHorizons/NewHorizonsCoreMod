@@ -26,36 +26,35 @@ public class DistillationRecipes implements Runnable {
     }
 
     public static void distillationTowerRecipes() {
-        GTValues.RA.stdBuilder().circuit(1).itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, (int) (1)))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, (int) (1000)))
+        GTValues.RA.stdBuilder().circuit(1).itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, 1000))
                 .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(Materials.SulfuricAcid, FluidShapes.fluidLiquid, (int) (150)),
-                        MaterialLibAPI.getFluidStack(Materials.NitrogenDioxide, FluidShapes.fluidGas, (int) (150)),
-                        MaterialLibAPI.getFluidStack(Materials.Methane, FluidShapes.fluidGas, (int) (150)),
-                        MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, (int) (10)))
+                        MaterialLibAPI.getFluidStack(Materials.SulfuricAcid, FluidShapes.fluidLiquid, 150),
+                        MaterialLibAPI.getFluidStack(Materials.NitrogenDioxide, FluidShapes.fluidGas, 150),
+                        MaterialLibAPI.getFluidStack(Materials.Methane, FluidShapes.fluidGas, 150),
+                        MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, 10))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(distillationTowerRecipes);
 
-        GTValues.RA.stdBuilder().circuit(2).itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, (int) (10)))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, (int) (10000)))
+        GTValues.RA.stdBuilder().circuit(2).itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 10))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, 10000))
                 .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(Materials.SulfuricAcid, FluidShapes.fluidLiquid, (int) (3000)),
-                        MaterialLibAPI.getFluidStack(Materials.NitrogenDioxide, FluidShapes.fluidGas, (int) (3000)),
-                        MaterialLibAPI.getFluidStack(Materials.Methane, FluidShapes.fluidGas, (int) (3000)),
-                        MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, (int) (200)))
+                        MaterialLibAPI.getFluidStack(Materials.SulfuricAcid, FluidShapes.fluidLiquid, 3000),
+                        MaterialLibAPI.getFluidStack(Materials.NitrogenDioxide, FluidShapes.fluidGas, 3000),
+                        MaterialLibAPI.getFluidStack(Materials.Methane, FluidShapes.fluidGas, 3000),
+                        MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, 200))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(distillationTowerRecipes);
     }
 
     public static void distilleryRecipes() {
         // Sodium Potassium
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.RockSalt, Shapes.dust, (int) (1)))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Sodium, FluidShapes.fluidLiquid, (int) (1000)))
-                .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(Materials.SodiumPotassium, FluidShapes.fluidLiquid, (int) (1000)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.RockSalt, Shapes.dust, 1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Sodium, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.SodiumPotassium, FluidShapes.fluidLiquid, 1000))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(distilleryRecipes);
 
         GTValues.RA.stdBuilder().circuit(1)
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, (int) (40)))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Ethanol, FluidShapes.fluidLiquid, (int) (20)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, 40))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Ethanol, FluidShapes.fluidLiquid, 20))
                 .duration(16 * TICKS).eut(24).addTo(distilleryRecipes);
 
         // unify milk from Automagy
@@ -64,11 +63,11 @@ public class DistillationRecipes implements Runnable {
             FluidStack fluidMilk = FluidRegistry.getFluidStack("fluidmilk", 1000);
 
             GTValues.RA.stdBuilder().circuit(1)
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Milk, FluidShapes.fluidLiquid, (int) (1000)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Milk, FluidShapes.fluidLiquid, 1000))
                     .fluidOutputs(fluidMilk.copy()).duration(5 * SECONDS).eut(2).addTo(distilleryRecipes);
 
             GTValues.RA.stdBuilder().circuit(1).fluidInputs(fluidMilk.copy())
-                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Milk, FluidShapes.fluidLiquid, (int) (1000)))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Milk, FluidShapes.fluidLiquid, 1000))
                     .duration(5 * SECONDS).eut(2).addTo(distilleryRecipes);
         }
     }

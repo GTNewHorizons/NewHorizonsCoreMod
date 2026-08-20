@@ -56,58 +56,56 @@ public class SpaceAssemblerRecipes implements Runnable {
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         ItemList.Emitter_UHV.get(1),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, 8),
                         ItemList.EnergisedTesseract.get(1),
                         ItemList.EnergisedTesseract.get(1),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, (int) (8)),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, 8),
+                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, 8),
                         ItemList.EnergisedTesseract.get(1),
                         ItemList.EnergisedTesseract.get(1),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, 8),
                         ItemList.Emitter_UHV.get(1),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
                         ItemList.Emitter_UHV.get(1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.Plutonium, FluidShapes.fluidMolten, (int) (64 * 144)),
-                        MaterialLibAPI.getFluidStack(
-                                Materials.AtomicSeparationCatalyst,
-                                FluidShapes.fluidMolten,
-                                (int) (64 * 144)),
-                        MaterialLibAPI.getFluidStack(Materials.Tartarite, FluidShapes.fluidMolten, (int) (64 * 144)),
+                        MaterialLibAPI.getFluidStack(Materials.Plutonium, FluidShapes.fluidMolten, 64 * 144),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.AtomicSeparationCatalyst, FluidShapes.fluidMolten, 64 * 144),
+                        MaterialLibAPI.getFluidStack(Materials.Tartarite, FluidShapes.fluidMolten, 64 * 144),
                         MaterialLibAPI.getFluidStack(
                                 Materials.Longasssuperconductornameforuvwire,
                                 FluidShapes.fluidMolten,
-                                (int) (64 * 144)))
+                                64 * 144))
                 .itemOutputs(ItemList.Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                 .duration(120 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Sensor_UHV.get(1),
-                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, (int) (16)),
-                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, (int) (16)),
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, 16),
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, 16),
                         ItemList.Sensor_UHV.get(1),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, 8),
                         ItemList.Tesseract.get(1),
                         ItemList.Tesseract.get(1),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, (int) (8)),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, 8),
+                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, 8),
                         ItemList.Tesseract.get(1),
                         ItemList.Tesseract.get(1),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, (int) (8)),
+                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.plate, 8),
                         ItemList.Sensor_UHV.get(1),
-                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, (int) (16)),
-                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, (int) (16)),
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, 16),
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, 16),
                         ItemList.Sensor_UHV.get(1))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
                                 Materials.Longasssuperconductornameforuhvwire,
                                 FluidShapes.fluidMolten,
-                                (int) (64 * 144)),
-                        MaterialLibAPI.getFluidStack(Materials.Osmiridium, FluidShapes.fluidMolten, (int) (64 * 144)),
-                        MaterialLibAPI.getFluidStack(Materials.Ledox, FluidShapes.fluidMolten, (int) (64 * 144)),
-                        MaterialLibAPI.getFluidStack(Materials.CallistoIce, FluidShapes.fluidMolten, (int) (64 * 144)))
+                                64 * 144),
+                        MaterialLibAPI.getFluidStack(Materials.Osmiridium, FluidShapes.fluidMolten, 64 * 144),
+                        MaterialLibAPI.getFluidStack(Materials.Ledox, FluidShapes.fluidMolten, 64 * 144),
+                        MaterialLibAPI.getFluidStack(Materials.CallistoIce, FluidShapes.fluidMolten, 64 * 144))
                 .itemOutputs(ItemList.Black_Hole_Closer.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                 .duration(120 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -116,12 +114,12 @@ public class SpaceAssemblerRecipes implements Runnable {
                 .itemInputs(
                         gregtech.api.enums.ItemList.Circuit_Chip_Optical.get(1L),
                         ItemList.Optical_Cpu_Containment_Housing.get(1L),
-                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.screw, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.screw, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.Draconium, Shapes.wireFine, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.screw, 4),
+                        MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.screw, 4),
+                        MaterialLibAPI.getStack(Materials.Draconium, Shapes.wireFine, 4),
                         CustomItemList.DATApipe.get(1L),
-                        MaterialLibAPI.getStack(Materials.AtomicSeparationCatalyst, Shapes.screw, (int) (4)),
-                        MaterialLibAPI.getStack(Materials.PreciousMetalsAlloy, Shapes.screw, (int) (4)))
+                        MaterialLibAPI.getStack(Materials.AtomicSeparationCatalyst, Shapes.screw, 4),
+                        MaterialLibAPI.getStack(Materials.PreciousMetalsAlloy, Shapes.screw, 4))
                 .fluidInputs(new FluidStack(solderUEV, 288)).itemOutputs(ItemList.Optically_Perfected_CPU.get(1L))
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(20 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -130,14 +128,13 @@ public class SpaceAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Chip_Optical.get(4L),
                         ItemList.Optical_Cpu_Containment_Housing.get(4L),
-                        MaterialLibAPI
-                                .getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.screw, (int) (8L)),
-                        MaterialLibAPI.getStack(Materials.TengamAttuned, Shapes.screw, (int) (8L)),
-                        MaterialLibAPI.getStack(Materials.DraconiumAwakened, Shapes.wireFine, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.screw, 8),
+                        MaterialLibAPI.getStack(Materials.TengamAttuned, Shapes.screw, 8),
+                        MaterialLibAPI.getStack(Materials.DraconiumAwakened, Shapes.wireFine, 8),
                         CustomItemList.DATApipe.get(4L),
-                        MaterialLibAPI.getStack(Materials.PreciousMetalsAlloy, Shapes.screw, (int) (8)),
+                        MaterialLibAPI.getStack(Materials.PreciousMetalsAlloy, Shapes.screw, 8),
                         // Enriched Naquadah Alloy screw
-                        MaterialLibAPI.getStack(Materials.EnrichedNaquadahAlloy, Shapes.screw, (int) (8)))
+                        MaterialLibAPI.getStack(Materials.EnrichedNaquadahAlloy, Shapes.screw, 8))
                 .fluidInputs(new FluidStack(solderUEV, 576)).itemOutputs(ItemList.Optically_Perfected_CPU.get(4L))
                 .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(20 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -146,14 +143,14 @@ public class SpaceAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Chip_Optical.get(16L),
                         ItemList.Optical_Cpu_Containment_Housing.get(16L),
-                        MaterialLibAPI.getStack(Materials.CelestialTungsten, Shapes.screw, (int) (16)),
-                        MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.screw, (int) (16L)),
-                        MaterialLibAPI.getStack(Materials.Tritanium, Shapes.wireFine, (int) (16L)),
+                        MaterialLibAPI.getStack(Materials.CelestialTungsten, Shapes.screw, 16),
+                        MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.screw, 16),
+                        MaterialLibAPI.getStack(Materials.Tritanium, Shapes.wireFine, 16),
                         CustomItemList.DATApipe.get(16L),
                         // Enriched Naquadah Alloy screw
-                        MaterialLibAPI.getStack(Materials.EnrichedNaquadahAlloy, Shapes.screw, (int) (16)),
+                        MaterialLibAPI.getStack(Materials.EnrichedNaquadahAlloy, Shapes.screw, 16),
                         // Shirabon screw
-                        MaterialLibAPI.getStack(Materials.Shirabon, Shapes.screw, (int) (16)))
+                        MaterialLibAPI.getStack(Materials.Shirabon, Shapes.screw, 16))
                 .fluidInputs(new FluidStack(solderUEV, 1152)).itemOutputs(ItemList.Optically_Perfected_CPU.get(16L))
                 .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(20 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -162,8 +159,8 @@ public class SpaceAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Multifiberglass.get(1L),
-                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.foil, (int) (64L)),
-                        GTOreDictUnificator.get(Circuits.LuV.getIngredient(), 4L),
+                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.foil, 64),
+                        Circuits.LuV.get(4),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(8L),
                         ItemList.Circuit_Chip_HPIC.get(64L),
@@ -171,7 +168,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorASMD.get(8L),
                         ItemList.Circuit_Parts_ResistorASMD.get(8L),
                         ItemList.Circuit_Parts_TransistorASMD.get(8L),
-                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, (int) (64)))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 64))
                 .fluidInputs(new FluidStack(solderIndalloy, 720)).itemOutputs(ItemList.Energy_LapotronicOrb2.get(1))
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -180,7 +177,7 @@ public class SpaceAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.foil, (int) (64L)),
+                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.foil, 64),
                         Circuits.ZPM.get(4),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
@@ -197,13 +194,13 @@ public class SpaceAssemblerRecipes implements Runnable {
         // Advanced Radiation Proof Plate
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Lanthanum, Shapes.plate, (int) (32L)),
-                        MaterialLibAPI.getStack(Materials.ElectrumFlux, Shapes.plate, (int) (16L)),
-                        MaterialLibAPI.getStack(Materials.Trinium, Shapes.plate, (int) (16L)),
-                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.plate, (int) (64L)),
-                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.plate, (int) (16L)),
-                        MaterialLibAPI.getStack(Materials.Osmiridium, Shapes.plate, (int) (16L)),
-                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.plate, (int) (16L)),
+                        MaterialLibAPI.getStack(Materials.Lanthanum, Shapes.plate, 32),
+                        MaterialLibAPI.getStack(Materials.ElectrumFlux, Shapes.plate, 16),
+                        MaterialLibAPI.getStack(Materials.Trinium, Shapes.plate, 16),
+                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.plate, 64),
+                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.plate, 16),
+                        MaterialLibAPI.getStack(Materials.Osmiridium, Shapes.plate, 16),
+                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.plate, 16),
                         ItemList.Radiation_Proof_Prismatic_Naquadah_Composite_Sheet.get(16L))
                 .fluidInputs(
                         new FluidStack(solderIndalloy, (32 * 144)),
@@ -216,7 +213,7 @@ public class SpaceAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
-                        MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.foil, (int) (64L)),
+                        MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.foil, 64),
                         Circuits.UV.get(4),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
@@ -250,36 +247,37 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
                         ItemList.Circuit_Parts_ResistorXSMD.get(64L),
                         ItemList.Circuit_Parts_TransistorXSMD.get(64L),
-                        MaterialLibAPI.getStack(Materials.Hexanite, Shapes.bolt, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Hexanite, Shapes.bolt, 4))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        MaterialLibAPI.getFluidStack(Materials.WhiteDwarfMatter, FluidShapes.fluidMolten, (int) (144)),
-                        MaterialLibAPI.getFluidStack(Materials.RawStarMatter, FluidShapes.fluidLiquid, (int) (500)))
+                        MaterialLibAPI.getFluidStack(Materials.WhiteDwarfMatter, FluidShapes.fluidMolten, 144),
+                        MaterialLibAPI.getFluidStack(Materials.RawStarMatter, FluidShapes.fluidLiquid, 500))
                 .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
         // Alternate Really Ultimate Battery Recipe
-        GTValues.RA.stdBuilder().itemInputs(
-                ItemList.Circuit_Board_Optical.get(8),
-                MaterialLibAPI.getStack(Materials.Hexanite, Shapes.foil, (int) (64)),
-                Circuits.UEV.get(4),
-                ItemList.Wrap_EngravedLapotrionChips.get(8),
-                ItemList.Wrap_EngravedLapotrionChips.get(8),
-                ItemList.Wrap_EngravedLapotrionChips.get(8),
-                ItemList.Wrap_EngravedLapotrionChips.get(8),
-                ItemList.Wrap_EngravedLapotrionChips.get(8),
-                ItemList.Wrap_EngravedLapotrionChips.get(8),
-                ItemList.Wrap_EngravedLapotrionChips.get(8),
-                ItemList.Circuit_Chip_QPIC.get(64L),
-                ItemList.Wrap_OpticalSMDDiodes.get(8),
-                ItemList.Wrap_OpticalSMDCapacitors.get(8),
-                ItemList.Wrap_OpticalSMDResistors.get(8),
-                ItemList.Wrap_OpticalSMDTransistors.get(8),
-                MaterialLibAPI.getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.bolt, (int) (2)))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Board_Optical.get(8),
+                        MaterialLibAPI.getStack(Materials.Hexanite, Shapes.foil, 64),
+                        Circuits.UEV.get(4),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Circuit_Chip_QPIC.get(64L),
+                        ItemList.Wrap_OpticalSMDDiodes.get(8),
+                        ItemList.Wrap_OpticalSMDCapacitors.get(8),
+                        ItemList.Wrap_OpticalSMDResistors.get(8),
+                        ItemList.Wrap_OpticalSMDTransistors.get(8),
+                        MaterialLibAPI.getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.bolt, 2))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        MaterialLibAPI.getFluidStack(Materials.Magmatter, FluidShapes.fluidMolten, (int) (576)),
-                        MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, (int) (576)))
+                        MaterialLibAPI.getFluidStack(Materials.Magmatter, FluidShapes.fluidMolten, 576),
+                        MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 576))
                 .itemOutputs(ItemList.ZPM3.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -290,7 +288,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(4L),
                     GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 4),
-                    MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, (int) (8L)),
+                    MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, 8),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 1, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 288))
                     .itemOutputs(ItemList.Optically_Compatible_Memory.get(2)).metadata(IGRecipeMaps.MODULE_TIER, 1)
@@ -301,7 +299,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(16L),
                     GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 4),
-                    MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, (int) (16L)),
+                    MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, 16),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 4, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 576))
                     .itemOutputs(ItemList.Optically_Compatible_Memory.get(8)).metadata(IGRecipeMaps.MODULE_TIER, 2)
@@ -312,7 +310,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(64L),
                     GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 4),
-                    MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, (int) (32L)),
+                    MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, 32),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 16, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 1152))
                     .itemOutputs(ItemList.Optically_Compatible_Memory.get(32)).metadata(IGRecipeMaps.MODULE_TIER, 2)
@@ -328,7 +326,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Chip_SoC.get(64),
                             ItemList.Circuit_Chip_NAND.get(64),
                             Circuits.ZPM.get(2),
-                            MaterialLibAPI.getStack(Materials.VanadiumGallium, Shapes.foil, (int) (64L)))
+                            MaterialLibAPI.getStack(Materials.VanadiumGallium, Shapes.foil, 64))
                     .fluidInputs(new FluidStack(solderIndalloy, 1152))
                     .itemOutputs(getModItem(OpenComputers.ID, "item", 64, 39)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -343,7 +341,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingStorage", 1, 3),
                             ItemList.Robot_Arm_UHV.get(16),
                             ItemList.Circuit_OpticalProcessor.get(16),
-                            MaterialLibAPI.getStack(Materials.Aluminium, Shapes.bolt, (int) (4L)),
+                            MaterialLibAPI.getStack(Materials.Aluminium, Shapes.bolt, 4),
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500))
                     .fluidInputs(new FluidStack(solderUEV, 9216))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockPatternOptimizationMatrix", 1))
@@ -382,10 +380,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54))
                     .fluidInputs(
                             new FluidStack(solderUEV, 2304),
-                            MaterialLibAPI.getFluidStack(
-                                    Materials.Grade7PurifiedWater,
-                                    FluidShapes.fluidLiquid,
-                                    (int) (4000)))
+                            MaterialLibAPI.getFluidStack(Materials.Grade7PurifiedWater, FluidShapes.fluidLiquid, 4000))
                     .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -407,7 +402,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             MaterialLibAPI.getFluidStack(
                                     Materials.dimensionallyshiftedsuperfluid,
                                     FluidShapes.fluidLiquid,
-                                    (int) (4000)))
+                                    4000))
                     .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2)
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
@@ -427,14 +422,13 @@ public class SpaceAssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
-                            MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.plateDense, (int) (64L)),
+                            MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.plateDense, 64),
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
                             GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1),
                             GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Eternity, 1))
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, (int) (36864)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 36864))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -466,8 +460,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
                             GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1),
                             GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Eternity, 1))
-                    .fluidInputs(
-                            MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, (int) (36864)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 36864))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -508,10 +501,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                     .itemInputs(
                             ItemList.CompressorUV.get(1),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L),
-                            MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.plateSuperdense, (int) (2L)),
-                            MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.plateSuperdense, (int) (2L)),
-                            MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.plateQuadruple, (int) (8L)),
-                            MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plate, (int) (4L)),
+                            MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.plateSuperdense, 2),
+                            MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.plateSuperdense, 2),
+                            MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.plateQuadruple, 8),
+                            MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plate, 4),
                             getModItem(Avaritia.ID, "Resource", 20, 1),
                             ItemList.Electric_Motor_UV.get(4),
                             ItemList.Electric_Piston_UV.get(8),

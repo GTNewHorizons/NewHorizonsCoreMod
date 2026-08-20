@@ -1214,14 +1214,14 @@ public class GT_Loader_Machines {
                             MaterialLibAPI.getFluidStack(
                                     Materials.RadoxPoly,
                                     FluidShapes.fluidMolten,
-                                    (int) ((long) (2.25 * Math.pow(2, (aTier - 9))))))
+                                    (int) (2.25 * Math.pow(2, aTier - 9))))
                     .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).circuit(2).itemOutputs(outHatches[aTier - 10])
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials.RadoxPoly,
                                     FluidShapes.fluidMolten,
-                                    (int) ((long) (2.25 * Math.pow(2, (aTier - 9))))))
+                                    (int) (2.25 * Math.pow(2, aTier - 9))))
                     .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
         }
 

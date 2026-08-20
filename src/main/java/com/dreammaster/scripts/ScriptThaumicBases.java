@@ -1296,10 +1296,8 @@ public class ScriptThaumicBases implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, blockId, 1, blockMeta))
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (2)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 2))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
     }
 }

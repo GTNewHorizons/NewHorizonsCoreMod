@@ -168,13 +168,12 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "copper_grate", 8),
                 bits,
-                new Object[] { "ABA", "BCB", "ABA", 'A',
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.stick, (int) (1L)), 'B',
-                        MaterialLibAPI.getStack(Materials.GraniteRed, Shapes.dust, (int) (1L)), 'C',
+                new Object[] { "ABA", "BCB", "ABA", 'A', MaterialLibAPI.getStack(Materials.Copper, Shapes.stick, 1),
+                        'B', MaterialLibAPI.getStack(Materials.GraniteRed, Shapes.dust, 1), 'C',
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Copper, 1L) });
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Copper, Shapes.stick, (int) (8L)))
-                .circuit(8).fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Copper, Shapes.stick, 8)).circuit(8)
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
                 .addTo(assemblerRecipes);
         for (int i = 0; i < 4; i++) {
@@ -289,7 +288,7 @@ public class ScriptEFR implements IScriptLoader {
                                 MaterialLibAPI.getFluidStack(
                                         Materials.dimensionallyshiftedsuperfluid,
                                         FluidShapes.fluidLiquid,
-                                        (int) (1)))
+                                        1))
                         .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
@@ -323,7 +322,7 @@ public class ScriptEFR implements IScriptLoader {
                                 MaterialLibAPI.getFluidStack(
                                         Materials.dimensionallyshiftedsuperfluid,
                                         FluidShapes.fluidLiquid,
-                                        (int) (1)))
+                                        1))
                         .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
@@ -346,11 +345,11 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1, 0),
                 bits,
                 new Object[] { "ABA", "BCB", "DBE", 'A', "screwCopper", 'B',
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1L)), 'C', "trapdoorWood", 'D',
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1), 'C', "trapdoorWood", 'D',
                         "craftingToolSaw", 'E', "craftingToolScrewdriver" });
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (4L)),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 4),
                         getModItem(Minecraft.ID, "trapdoor", 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -365,8 +364,8 @@ public class ScriptEFR implements IScriptLoader {
                         "craftingToolScrewdriver" });
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.itemCasing, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.itemCasing, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_door", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
@@ -405,7 +404,7 @@ public class ScriptEFR implements IScriptLoader {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1, outMeta))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Acetone, FluidShapes.fluidLiquid, (int) (16)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Acetone, FluidShapes.fluidLiquid, 16))
                     .duration(5 * SECONDS).eut(4).addTo(UniversalChemical);
         }
 
@@ -487,7 +486,7 @@ public class ScriptEFR implements IScriptLoader {
                             MaterialLibAPI.getFluidStack(
                                     Materials.dimensionallyshiftedsuperfluid,
                                     FluidShapes.fluidLiquid,
-                                    (int) (1)))
+                                    1))
                     .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
@@ -533,7 +532,7 @@ public class ScriptEFR implements IScriptLoader {
                     getModItem(EtFuturumRequiem.ID, boatChestType[i], 1),
                     bits,
                     new Object[] { " A ", "BCB", " D ", 'A', "craftingToolScrewdriver", 'B',
-                            MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)), 'C', "chestWood", 'D',
+                            MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1), 'C', "chestWood", 'D',
                             boatType[i] });
         }
 
@@ -542,12 +541,12 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
                 bits,
-                new Object[] { "hPs", "PCP", " P ", 'P',
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)), 'C', "chestWood" });
+                new Object[] { "hPs", "PCP", " P ", 'P', MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1), 'C',
+                        "chestWood" });
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1),
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 2))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -565,8 +564,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 3))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
@@ -583,8 +582,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 3))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
@@ -601,8 +600,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 2)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
@@ -619,8 +618,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 2))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 3)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -637,8 +636,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 4)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
@@ -655,7 +654,7 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 2, 7))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 5)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
@@ -673,8 +672,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 7)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -691,8 +690,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 8))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -709,8 +708,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 2))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 9)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -727,8 +726,8 @@ public class ScriptEFR implements IScriptLoader {
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 2))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
@@ -736,151 +735,151 @@ public class ScriptEFR implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
                 "screwCopper",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "screwCopper",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0),
                 "screwSteel",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "screwSteel",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0),
                 "screwSilver",
-                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 "screwSilver",
-                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0),
                 "screwGold",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "screwGold",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
                 "screwDiamond",
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "screwDiamond",
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 4))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 2))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -905,18 +904,18 @@ public class ScriptEFR implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
-                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -956,7 +955,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                         new ItemStack(Blocks.torch, 4),
                         new ItemStack(Blocks.glass_pane, 2, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "lantern", 4, 0)).duration(3 * SECONDS)
@@ -964,7 +963,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(EtFuturumRequiem.ID, "soul_torch", 4, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "soul_lantern", 4, 0)).duration(3 * SECONDS)
@@ -979,7 +978,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "blackstone", 1, 0))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "gilded_blackstone", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Gold, FluidShapes.fluidMolten, (int) (188L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Gold, FluidShapes.fluidMolten, 188))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
 
         // Smooth Blocks
@@ -1085,8 +1084,8 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (8L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.round, (int) (8L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 8),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.round, 8))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "chain", 16, 0)).duration(20 * SECONDS).eut(28)
                 .addTo(formingPressRecipes);
 
@@ -1097,13 +1096,13 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Blocks.red_flower, 1, 0),
-                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dustTiny, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dustTiny, 2))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.dust, (int) (2L)),
+                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.dust, 2),
                         getModItem(EtFuturumRequiem.ID, "nether_wart", 4, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
@@ -1182,8 +1181,7 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "smithing_table", 1, 0),
                 bits,
-                new Object[] { "TT ", "GG ", "GG ", 'T',
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)), 'G',
+                new Object[] { "TT ", "GG ", "GG ", 'T', MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1), 'G',
                         MaterialParts.craftIngredient(OrePrefixes.plank, Materials.Wood) });
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.magma_cream, 4))
@@ -1221,8 +1219,8 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         new ItemStack(Blocks.stone_slab, 1),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 5L),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.bolt, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.bolt, 3),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 2))
                 .circuit(21).itemOutputs(getModItem(EtFuturumRequiem.ID, "wooden_armorstand", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1262,13 +1260,11 @@ public class ScriptEFR implements IScriptLoader {
         ChiselHelper.addVariationFromStack("EFRAmethystBlock", getModItem(EtFuturumRequiem.ID, "amethyst_block", 1));
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Blocks.glass, 2),
-                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, (int) (4L)))
+                .itemInputs(new ItemStack(Blocks.glass, 2), MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 4))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "tinted_glass", 2)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Calcite, Shapes.dust, (int) (2L)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Calcite, Shapes.dust, 2))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
@@ -1277,44 +1273,44 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Calcite, Shapes.dust, (int) (2L))).duration(8 * SECONDS)
-                .eut(2).addTo(hammerRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Calcite, Shapes.dust, 2)).duration(8 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "leaves", 1, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "pink_petals", 4, 0)).duration(8 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, (int) (9L))).duration(8 * SECONDS)
-                .eut(2).addTo(hammerRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 9)).duration(8 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, (int) (3L))).duration(8 * SECONDS)
-                .eut(2).addTo(hammerRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 3)).duration(8 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, (int) (9L)))
-                .duration(13 * SECONDS).eut(4).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 9)).duration(13 * SECONDS).eut(4)
+                .addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, (int) (13L)),
-                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 13),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, (int) (36)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, 36))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, (int) (3L)),
-                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 3),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 3),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
@@ -1322,7 +1318,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 3),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
@@ -1330,7 +1326,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 3),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
@@ -1355,7 +1351,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.MelodicAlloy, Shapes.dust, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials.MelodicAlloy, Shapes.dust, 8),
                         getModItem(Botania.ID, "fertilizer", 3, 0),
                         getModItem(ThaumicBases.ID, "genLeaves", 1, 3))
                 .circuit(24).itemOutputs(getModItem(EtFuturumRequiem.ID, "chorus_flower", 1, 0))
@@ -1375,12 +1371,12 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(36))
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.VolcanicAsh, Shapes.dust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials.Pumice, Shapes.dust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.PotassiumFeldspar, Shapes.dust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.GraniteBlack, Shapes.dust, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.VolcanicAsh, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Pumice, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.PotassiumFeldspar, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.GraniteBlack, Shapes.dust, 4))
                 .outputChances(5000, 2000, 1000, 750, 500, 250).duration(2 * MINUTES)
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
@@ -1395,26 +1391,25 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.get(36))
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.Chlorite, Shapes.dust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials.Plagioclase, Shapes.dust, (int) (9L)), // gt
-                        MaterialLibAPI.getStack(Materials.MetamorphicMineralMixture, Shapes.dust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.GarnetRed, Shapes.dust, (int) (8L)), // gt
-                        MaterialLibAPI.getStack(Materials.Staurolite, Shapes.dust, (int) (4L)),
-                        MaterialLibAPI.getStack(Materials.Kyanite, Shapes.dust, (int) (2L))) // gt
+                        MaterialLibAPI.getStack(Materials.Chlorite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Plagioclase, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.MetamorphicMineralMixture, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.GarnetRed, Shapes.dust, 8),
+                        MaterialLibAPI.getStack(Materials.Staurolite, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Kyanite, Shapes.dust, 2))
                 .duration(1 * MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.get(1));
 
         GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials.MetamorphicMineralMixture, Shapes.dust, (int) (36)))
+                .itemInputs(MaterialLibAPI.getStack(Materials.MetamorphicMineralMixture, Shapes.dust, 36))
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.Epidote, Shapes.dust, (int) (9L)), // gt
-                        MaterialLibAPI.getStack(Materials.Cordierite, Shapes.dust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials.Cobaltite, Shapes.dust, (int) (6L)), // gt
-                        GTOreDictUnificator
-                                .get(MaterialLibAPI.getStack(Materials.Bismuthinite, Shapes.dust, (int) (4))), // bart
-                        MaterialLibAPI.getStack(Materials.Datolite, Shapes.dust, (int) (4L)),
-                        GTOreDictUnificator.get(MaterialLibAPI.getStack(Materials.Titanite, Shapes.dust, (int) (4)))) // gt++
+                        MaterialLibAPI.getStack(Materials.Epidote, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Cordierite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Cobaltite, Shapes.dust, 6),
+                        GTOreDictUnificator.get(MaterialLibAPI.getStack(Materials.Bismuthinite, Shapes.dust, 4)),
+                        MaterialLibAPI.getStack(Materials.Datolite, Shapes.dust, 4),
+                        GTOreDictUnificator.get(MaterialLibAPI.getStack(Materials.Titanite, Shapes.dust, 4)))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         // Totem of Undying
@@ -1472,7 +1467,7 @@ public class ScriptEFR implements IScriptLoader {
                 new ItemStack[] { getModItem(ThaumicBases.ID, "thauminiteHelmet", 1, 0),
                         GTOreDictUnificator.get("dustCrystallinePinkSlime", 1),
                         getModItem(ThaumicHorizons.ID, "golemPowder", 1, 0),
-                        MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.dust, 1),
                         getModItem(BloodMagic.ID, "magicales", 1, 0) },
                 2);
 
@@ -1642,7 +1637,7 @@ public class ScriptEFR implements IScriptLoader {
                 "bab",
                 " a ",
                 'a',
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 'b',
                 GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -1654,7 +1649,7 @@ public class ScriptEFR implements IScriptLoader {
                 "bab",
                 " a ",
                 'a',
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 'b',
                 GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -1666,11 +1661,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1)));
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 7), // Copper to Silver
@@ -1680,11 +1675,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1)));
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 2), // Iron to Gold
@@ -1694,11 +1689,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1)));
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 8), // Silver to Gold
@@ -1708,11 +1703,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, (int) (1)));
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 3), // Gold to Diamond
@@ -1722,11 +1717,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1)));
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 5), // Diamond to Crystal
@@ -1740,7 +1735,7 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 4), // Diamond to Obsidian
@@ -1754,7 +1749,7 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1));
 
         // Shulker Research Pages
 
@@ -2189,8 +2184,8 @@ public class ScriptEFR implements IScriptLoader {
         }
         // getSmeltingResult for mince meat is null here for some reason, so adding explicitly
         SmokerRecipes.smelting().addRecipe(
-                MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, (int) (1)),
-                MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, (int) (1)),
+                MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, 1),
                 0);
 
         // Boat Assembler Recipes
@@ -2323,25 +2318,24 @@ public class ScriptEFR implements IScriptLoader {
     private static void addCopperOxidationRecipes(@NotNull ItemStack lessOxidized, @NotNull ItemStack moreOxidized) {
         GTValues.RA.stdBuilder().itemInputs(lessOxidized).itemOutputs(moreOxidized)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, (int) (50)),
-                        MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, (int) (100)))
+                        MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 50),
+                        MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, 100))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
 
         // x20 to keep the same ratio as the LCR
         ItemStack singleBlockInput = GTUtility.copyAmount(20, lessOxidized);
         ItemStack singleBlockOutput = GTUtility.copyAmount(20, moreOxidized);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(singleBlockInput, MaterialParts.requireCell(Materials.CarbonDioxide, (int) (2)))
+        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, MaterialParts.requireCell(Materials.CarbonDioxide, 2))
                 .itemOutputs(singleBlockOutput, ItemList.Cell_Empty.get(2))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, (int) (1000L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 1000))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, MaterialParts.requireCell(Materials.Oxygen, (int) (1)))
+        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, MaterialParts.requireCell(Materials.Oxygen, 1))
                 .itemOutputs(singleBlockOutput, ItemList.Cell_Empty.get(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, (int) (2000L)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, 2000))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder().itemInputs(moreOxidized).itemOutputs(lessOxidized)
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Hydrogen, FluidShapes.fluidGas, (int) (100)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Hydrogen, FluidShapes.fluidGas, 100))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(arcFurnaceRecipes);
     }
 

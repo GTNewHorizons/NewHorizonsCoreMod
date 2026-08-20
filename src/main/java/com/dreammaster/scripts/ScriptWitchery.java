@@ -115,7 +115,7 @@ public class ScriptWitchery implements IScriptLoader {
                         getModItem(Witchery.ID, "ingredient", 9, 130),
                         new ItemStack(Items.magma_cream, 9),
                         new ItemStack(Items.blaze_powder, 9),
-                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dust, 1))
                 .circuit(4).itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
@@ -123,7 +123,7 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 16),
                 null,
                 null,
-                MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, 1),
                 null,
                 null,
                 null,
@@ -131,7 +131,7 @@ public class ScriptWitchery implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, 1),
                 null,
                 null,
                 getModItem(Witchery.ID, "ingredient", 1, 16),
@@ -297,10 +297,8 @@ public class ScriptWitchery implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(12 * TICKS).eut(24).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0), ItemList.Shape_Mold_Bottle.get(0L))

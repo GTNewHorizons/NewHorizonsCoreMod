@@ -792,7 +792,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshPick", 1, 0),
-                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, 1),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
                 "craftingToolFile",
@@ -805,7 +805,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.deshAxe", 1, 0),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
-                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, 1),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
                 "stickDesh",
                 "craftingToolHardHammer",
@@ -816,7 +816,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.deshHoe", 1, 0),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
-                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, 1),
                 "craftingToolFile",
                 "stickDesh",
                 "craftingToolHardHammer",
@@ -827,7 +827,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.deshSpade", 1, 0),
                 "craftingToolFile",
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
-                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, 1),
                 null,
                 "stickDesh",
                 "craftingToolHardHammer",
@@ -838,7 +838,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.deshSword", 1, 0),
                 null,
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
-                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ruby, Shapes.gemExquisite, 1),
                 "craftingToolFile",
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
                 "craftingToolHardHammer",
@@ -990,9 +990,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5));
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 1),
-                MaterialLibAPI.getStack(Materials.Desh, Shapes.stick, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Desh, Shapes.stick, 1));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials.Desh, Shapes.stick, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Desh, Shapes.stick, 1),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 1));
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.battery", 1, wildcard),
@@ -1318,7 +1318,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 'h',
                 ItemList.Quantum_Tank_HV.get(1L));
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Oil, CellShapes.cell, (int) (1)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Oil, CellShapes.cell, 1))
                 .itemOutputs(ItemList.Cell_Empty.get(1)).metadata(FUEL_VALUE, 16).metadata(FUEL_TYPE, 0).duration(0)
                 .eut(0).addTo(GTRecipeConstants.Fuel);
 
@@ -1340,81 +1340,81 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (64L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 64))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 1))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (64L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 64))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 2))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (64L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 64))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 3))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (64L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 64))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (64L)),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (6L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 64),
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 6))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (64L)),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (6L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 64),
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 6))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 2))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (64L)),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (6L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 64),
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 6))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (64L)),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (6L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 64),
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 6))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (12L)))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 12))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 1))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (12L)))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 12))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 2))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (12L)))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 12))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 3))
                 .itemOutputs(
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (12L)))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 12))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 0))
                 .itemOutputs(
@@ -1560,21 +1560,21 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (40L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 40),
                         getModItem(Minecraft.ID, "diamond", 4, 0))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (40L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 40),
                         getModItem(Minecraft.ID, "diamond", 4, 0))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (40L)),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 40),
                         getModItem(Minecraft.ID, "diamond", 4, 0))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemAstroMiner", 1, 0))
@@ -1582,35 +1582,35 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(3L),
                         ItemList.Ingot_Heavy2.get(8L),
                         ItemList.Ingot_Heavy1.get(3L),
-                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.ingot, (int) (10L)))
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.ingot, 10))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (5L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (21L)),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 5),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 21),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, 4))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (5L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (28L)),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 5),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 28),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, 4))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (5L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (35L)),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 5),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 35),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, 4))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, (int) (5L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, (int) (42L)),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.ingot, 5),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 42),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, 4))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LV).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
     }
 
@@ -1618,7 +1618,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 8, 0),
-                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.foil, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.foil, 8),
                         NHItemList.MeteoricIronString.get(8))
                 .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 144)).duration(15 * SECONDS)
@@ -1626,27 +1626,27 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 8, 0),
-                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.foil, (int) (8L)),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.foil, 8),
                         NHItemList.MeteoricIronString.get(8))
                 .circuit(1).itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 144)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.stick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.stick, 1),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0))
                 .circuit(2).itemOutputs(getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.basicItem", 4, 9),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 4))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.ring, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.ring, 4))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "tile.hydrogenPipe", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1745,13 +1745,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.stick, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.stick, 2))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.canvas", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.canvas", 2, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.wireFine, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.wireFine, 3))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.parachute", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1779,7 +1779,7 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void blastFurnaceRecipes() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 4))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Titanium, Shapes.ingot, (int) (1L)))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Titanium, Shapes.ingot, 1))
                 .duration(1 * MINUTES + 15 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1500)
                 .addTo(blastFurnaceRecipes);
     }
@@ -2001,13 +2001,13 @@ public class ScriptGalacticraft implements IScriptLoader {
             input.put(i, new ItemStack(GCItems.partBuggy));
         }
         for (int i = 8; i <= 11; i++) {
-            input.put(i, MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, (int) (1)));
+            input.put(i, MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, 1));
         }
         for (int i = 12; i <= 16; i++) {
             input.put(i, new ItemStack(GCItems.meteoricIronIngot, 1, 1));
         }
         for (int i = 17; i <= 24; i++) {
-            input.put(i, MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)));
+            input.put(i, MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1));
         }
         for (int i = 25; i <= 34; i++) {
             input.put(i, new ItemStack(GCItems.heavyPlatingTier1));
@@ -2046,25 +2046,25 @@ public class ScriptGalacticraft implements IScriptLoader {
         input3.put(
                 8,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, 1),
                         26 - x,
                         19 - y));
         input3.put(
                 9,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, 1),
                         98 - x,
                         19 - y));
         input3.put(
                 10,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, 1),
                         26 - x,
                         109 - y));
         input3.put(
                 11,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.stick, 1),
                         98 - x,
                         109 - y));
         input3.put(12, new PositionedStack(new ItemStack(GCItems.meteoricIronIngot, 1, 1), 44 - x, 19 - y));
@@ -2074,50 +2074,44 @@ public class ScriptGalacticraft implements IScriptLoader {
         input3.put(16, new PositionedStack(new ItemStack(GCItems.meteoricIronIngot, 1, 1), 80 - x, 109 - y));
         input3.put(
                 17,
-                new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)),
-                        8 - x,
-                        37 - y));
+                new PositionedStack(MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1), 8 - x, 37 - y));
         input3.put(
                 18,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1),
                         26 - x,
                         37 - y));
         input3.put(
                 19,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1),
                         98 - x,
                         37 - y));
         input3.put(
                 20,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1),
                         116 - x,
                         37 - y));
         input3.put(
                 21,
-                new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)),
-                        8 - x,
-                        91 - y));
+                new PositionedStack(MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1), 8 - x, 91 - y));
         input3.put(
                 22,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1),
                         26 - x,
                         91 - y));
         input3.put(
                 23,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1),
                         98 - x,
                         91 - y));
         input3.put(
                 24,
                 new PositionedStack(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1)),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1),
                         116 - x,
                         91 - y));
         input3.put(25, new PositionedStack(new ItemStack(GCItems.heavyPlatingTier1), 44 - x, 37 - y));

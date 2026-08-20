@@ -155,23 +155,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1),
                 'b',
                 getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 18),
                 'c',
-                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1),
                 'd',
-                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1),
                 'e',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7),
                 'f',
-                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1),
                 'g',
-                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1),
                 'h',
                 getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 26),
                 'i',
-                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1));
         TCHelper.addResearchPage("EMINENCESTONE", new ResearchPage(arcaneRecipe));
         new ResearchItem(
                 "PORTALMILLENIUM",
@@ -254,11 +254,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'c',
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
                 'd',
-                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1),
                 'e',
                 getModItem(Minecraft.ID, "bookshelf", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1),
                 'g',
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0),
                 'h',
@@ -283,11 +283,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.plate, 1),
                 'b',
-                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.foil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.foil, 1),
                 'c',
-                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.plate, 1),
                 'd',
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 'e',
@@ -295,11 +295,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 'g',
-                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.plate, 1),
                 'h',
-                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.foil, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.RoseGold, Shapes.foil, 1),
                 'i',
-                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.plate, 1));
         TCHelper.addResearchPage("ANGELBLOCK", new ResearchPage(arcaneRecipe));
         new ResearchItem(
                 "DEZILSMARSHMALLOW",
@@ -837,11 +837,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, 1),
                 'b',
-                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, 1),
                 'c',
-                MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, 1),
                 'd',
                 ItemList.Sensor_IV.get(1L),
                 'e',
@@ -849,11 +849,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 ItemList.Emitter_IV.get(1L),
                 'g',
-                MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, 1),
                 'h',
-                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, 1),
                 'i',
-                MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, 1));
         TCHelper.addResearchPage("ENDERCHEST", new ResearchPage(arcaneRecipe));
         new ResearchItem(
                 "ENDERTANK",
@@ -874,11 +874,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Blaze, Shapes.stickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Blaze, Shapes.stickLong, 1),
                 'b',
-                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, 1),
                 'c',
-                MaterialLibAPI.getStack(Materials.Blaze, Shapes.stickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Blaze, Shapes.stickLong, 1),
                 'd',
                 ItemList.Sensor_IV.get(1L),
                 'e',
@@ -886,11 +886,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 ItemList.Emitter_IV.get(1L),
                 'g',
-                MaterialLibAPI.getStack(Materials.Blaze, Shapes.stickLong, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Blaze, Shapes.stickLong, 1),
                 'h',
-                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, 1),
                 'i',
-                MaterialLibAPI.getStack(Materials.Blaze, Shapes.stickLong, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Blaze, Shapes.stickLong, 1));
         TCHelper.addResearchPage("ENDERTANK", new ResearchPage(arcaneRecipe));
         new ResearchItem(
                 "ENDERPOUCHE",
@@ -911,11 +911,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, 1),
                 'b',
-                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, 1),
                 'c',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, 1),
                 'd',
                 ItemList.Sensor_IV.get(1L),
                 'e',
@@ -923,11 +923,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 ItemList.Emitter_IV.get(1L),
                 'g',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, 1),
                 'h',
-                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Enderium, Shapes.plateDense, 1),
                 'i',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, 1));
         TCHelper.addResearchPage("ENDERPOUCHE", new ResearchPage(arcaneRecipe));
         new ResearchItem(
                 "AUTOENCHANTINGTABLE",
@@ -950,23 +950,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 1),
                 'b',
                 getModItem(Minecraft.ID, "book", 1, 0),
                 'c',
-                MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 1),
                 'd',
-                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1),
                 'e',
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0),
                 'f',
-                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1),
                 'g',
-                MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.plate, 1),
                 'h',
                 getModItem(Minecraft.ID, "redstone_block", 1, 0),
                 'i',
-                MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.plate, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.plate, 1));
         TCHelper.addResearchPage("AUTOENCHANTINGTABLE", new ResearchPage(arcaneRecipe));
         ThaumcraftApi.addWarpToResearch("AUTOENCHANTINGTABLE", 1);
         new ResearchItem(
@@ -992,11 +992,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0),
                 'c',
-                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1),
                 'd',
                 getModItem(Automagy.ID, "crystalBrain", 1, 3),
                 'e',
@@ -1004,11 +1004,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 getModItem(Automagy.ID, "crystalBrain", 1, 3),
                 'g',
-                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1),
                 'h',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2),
                 'i',
-                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1));
         TCHelper.addResearchPage("LUGGAGE", new ResearchPage(arcaneRecipe));
         ThaumcraftApi.addWarpToResearch("LUGGAGE", 1);
         new ResearchItem(
@@ -1123,7 +1123,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 0,
                 6,
                 3,
-                MaterialLibAPI.getStack(Materials.HellishMetal, Shapes.ingot, (int) (1))).setConcealed().setRound()
+                MaterialLibAPI.getStack(Materials.HellishMetal, Shapes.ingot, 1)).setConcealed().setRound()
                         .setPages(new ResearchPage("TConstruct.research_page.HELLISHMETAL.1")).registerResearchItem();
         infusionRecipe = TCHelper.addInfusionCraftingRecipe(
                 "HELLISHMETAL",
@@ -1141,20 +1141,18 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Rhodium, 1),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 8, 6),
-                        MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.dust, (int) (8)))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Thaumium, FluidShapes.fluidMolten, (int) (8 * 144)))
+                        MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.dust, 8))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Thaumium, FluidShapes.fluidMolten, 8 * 144))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(electrolyzerNonCellRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Rhodium, Shapes.dust, (int) (64)),
+                        MaterialLibAPI.getStack(Materials.Rhodium, Shapes.dust, 64),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 64, 6),
-                        MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.dust, (int) (64)))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Thaumium, FluidShapes.fluidMolten, (int) (STACKS)))
-                .fluidOutputs(
-                        MaterialLibAPI
-                                .getFluidStack(Materials.HellishMetal, FluidShapes.fluidMolten, (int) (4 * STACKS)))
+                        MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.dust, 64))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Thaumium, FluidShapes.fluidMolten, STACKS))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.HellishMetal, FluidShapes.fluidMolten, 4 * STACKS))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).metadata(DEFC_CASING_TIER, 1)
                 .addTo(fusionCraftingRecipes);
 
@@ -1179,9 +1177,9 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "PRP",
                 "gPg",
                 'g',
-                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.gearGtSmall, (int) (1)),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.gearGtSmall, 1),
                 'P',
-                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1),
                 'G',
                 GTModHandler.getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
                 'R',
@@ -1208,7 +1206,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'M',
                 ItemList.Electric_Motor_IV.get(4),
                 'V',
-                MaterialLibAPI.getStack(Materials.Void, Shapes.plate, (int) (1)),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.plate, 1),
                 'T',
                 GTModHandler.getModItem(ThaumicTinkerer.ID, "cleansingTalisman", 1, 0),
                 'R',

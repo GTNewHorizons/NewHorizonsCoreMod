@@ -49,13 +49,13 @@ public class FormingPressRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedPulp.get(4),
-                        MaterialLibAPI.getStack(Materials.Asbestos, Shapes.dust, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Asbestos, Shapes.dust, 1))
                 .circuit(1).itemOutputs(NHItemList.MicaBasedSheet.get(4)).duration(20 * SECONDS).eut(28)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.MicaBasedPulp.get(16),
-                        MaterialLibAPI.getStack(Materials.Asbestos, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Asbestos, Shapes.dust, 1),
                         ItemList.Shape_Mold_Plate.get(0L))
                 .circuit(2).itemOutputs(NHItemList.MicaBasedSheet.get(16)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
@@ -313,23 +313,19 @@ public class FormingPressRecipes implements Runnable {
                 .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (1L)),
-                        ItemList.Shape_Mold_Ball.get(0L))
+                .itemInputs(MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1), ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(ItemList.Circuit_Parts_Glass_Tube.get(1L)).duration(6 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1),
                         ItemList.Shape_Mold_Bottle.get(0L))
                 .itemOutputs(ItemList.Bottle_Empty.get(1L)).duration(1 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_ULV)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, (int) (1L)),
-                        ItemList.Shape_Mold_Block.get(0L))
+                .itemInputs(MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(new ItemStack(Blocks.glass, 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
 
@@ -399,11 +395,11 @@ public class FormingPressRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Optical.get(1L),
-                        MaterialLibAPI.getStack(Materials.Botmium, Shapes.foil, (int) (1)),
-                        MaterialLibAPI.getStack(Materials.NickelZincFerrite, Shapes.foil, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.foil, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.foil, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.bolt, (int) (8L)))
+                        MaterialLibAPI.getStack(Materials.Botmium, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.NickelZincFerrite, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.bolt, 8))
                 .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
 
@@ -413,10 +409,8 @@ public class FormingPressRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(Avaritia.ID, "Resource", 9, 7), ItemList.Shape_Mold_Cylinder.get(0L))
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials.PolyvinylChloride,
-                                    FluidShapes.fluidMolten,
-                                    (int) (1 * INGOTS)))
+                            MaterialLibAPI
+                                    .getFluidStack(Materials.PolyvinylChloride, FluidShapes.fluidMolten, 1 * INGOTS))
                     .itemOutputs(NHItemList.BlankMusicDisc.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ULV)
                     .addTo(formingPressRecipes);
 
@@ -538,8 +532,8 @@ public class FormingPressRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.BlankMusicDisc.get(1),
-                        MaterialLibAPI.getStack(Materials.CallistoIce, Shapes.dust, (int) (9L)),
-                        MaterialLibAPI.getStack(Materials.Ledox, Shapes.dust, (int) (9L)))
+                        MaterialLibAPI.getStack(Materials.CallistoIce, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Ledox, Shapes.dust, 9))
                 .fluidInputs(MaterialUtils.solid(Materials.Ice, 256_000))
                 .itemOutputs(NHItemList.AbsoluteZeroDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(formingPressRecipes);
@@ -555,8 +549,7 @@ public class FormingPressRecipes implements Runnable {
                             getModItem(Natura.ID, "Cloud", 64, 0),
                             getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 64, 3))
                     .fluidInputs(
-                            MaterialLibAPI
-                                    .getFluidStack(Materials.Universium, FluidShapes.fluidMolten, (int) (INGOTS * 1)))
+                            MaterialLibAPI.getFluidStack(Materials.Universium, FluidShapes.fluidMolten, INGOTS * 1))
                     .itemOutputs(NHItemList.SweetDreamsDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UMV / 2)
                     .addTo(formingPressRecipes);
         }
@@ -567,7 +560,7 @@ public class FormingPressRecipes implements Runnable {
                     .itemInputs(
                             NHItemList.BlankMusicDisc.get(1),
                             getModItem(PamsHarvestCraft.ID, "frosteddonutItem", 1))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Milk, FluidShapes.fluidLiquid, (int) (BUCKETS)))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Milk, FluidShapes.fluidLiquid, BUCKETS))
                     .itemOutputs(NHItemList.LunchBreakDisc.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
                     .addTo(formingPressRecipes);
         }

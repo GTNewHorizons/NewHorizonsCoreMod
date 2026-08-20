@@ -35,7 +35,7 @@ public final class IngredientFactory {
     }
 
     /**
-     * Whether the stack is the missing-item placeholder produced by {@link #invalidItem}.
+     * Whether the stack is the placeholder returned in place of an item missing from the runtime environment.
      */
     public static boolean isMissingItem(ItemStack stack) {
         return stack != null && stack.getItem() == Item.getItemFromBlock(Blocks.fire);

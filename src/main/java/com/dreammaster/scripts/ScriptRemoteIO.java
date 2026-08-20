@@ -175,7 +175,7 @@ public class ScriptRemoteIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 1),
-                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, 1))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.blank_plate", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -223,7 +223,7 @@ public class ScriptRemoteIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.BlankPlatedChip.get(1),
-                        MaterialLibAPI.getStack(Materials.Enderium, Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Enderium, Shapes.plate, 4))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

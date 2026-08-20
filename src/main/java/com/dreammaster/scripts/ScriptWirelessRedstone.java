@@ -88,7 +88,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.stick, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.stick, 1),
                         getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0))
                 .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
@@ -151,7 +151,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (3L)),
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 3),
                         getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
                 .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "tracker", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
@@ -161,7 +161,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                         getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 2, 0),
                         getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 2, 0))
                 .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "rep", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Obsidian, FluidShapes.fluidMolten, (int) (1440)))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Obsidian, FluidShapes.fluidMolten, 1440))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

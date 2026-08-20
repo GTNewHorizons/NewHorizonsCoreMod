@@ -15,17 +15,16 @@ public class CrackingRecipes implements Runnable {
     public void run() {
         GTValues.RA.stdBuilder().circuit(24)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, (int) (100L)),
-                        MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, (int) (1)))
-                .fluidOutputs(
-                        MaterialLibAPI.getFluidStack(Materials.SuperLightRadox, FluidShapes.fluidGas, (int) (50L)))
+                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 100),
+                        MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, 1))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.SuperLightRadox, FluidShapes.fluidGas, 50))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(crackingRecipes);
 
         GTValues.RA.stdBuilder().circuit(24)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, (int) (100L)),
-                        MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, (int) (1)))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, (int) (20L)))
+                        MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, 100),
+                        MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, 1))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 20))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(crackingRecipes);
     }
 }

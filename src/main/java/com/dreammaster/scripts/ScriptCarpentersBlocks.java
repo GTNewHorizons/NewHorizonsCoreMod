@@ -46,118 +46,118 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 2, 0),
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 8, 0),
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 "frameGtWood",
                 "frameGtWood",
                 "craftingToolScrewdriver",
                 "frameGtWood",
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 12, 0),
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, 1),
                 "frameGtWood",
                 "frameGtWood",
                 "craftingToolScrewdriver",
                 "frameGtWood",
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, 1),
                 "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 16, 0),
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1),
                 "frameGtWood",
                 "frameGtWood",
                 "craftingToolScrewdriver",
                 "frameGtWood",
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1),
                 "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 20, 0),
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1),
                 "frameGtWood",
                 "frameGtWood",
                 "craftingToolScrewdriver",
                 "frameGtWood",
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1),
                 "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 24, 0),
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, 1),
                 "frameGtWood",
                 "frameGtWood",
                 "craftingToolScrewdriver",
                 "frameGtWood",
                 "frameGtWood",
-                MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, 1),
                 "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 ItemList.Plank_Oak.get(1L),
                 ItemList.Plank_Oak.get(1L),
                 ItemList.Plank_Oak.get(1L),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "itemCarpentersChisel", 1, 0),
                 "craftingToolScrewdriver",
                 getModItem(TinkerConstruct.ID, "chiselHead", 1, 2),
                 "craftingToolSaw",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 "stickAnyIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 "stickAnyIron",
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "itemCarpentersHammer", 1, 0),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.toolHeadHammer, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.toolHeadHammer, 1),
                 "craftingToolSaw",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 "stickAnyIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 "stickAnyIron",
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersSafe", 1, 0),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0),
                 getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersDaylightSensor", 1, 0),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 getModItem(Minecraft.ID, "daylight_detector", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
@@ -196,28 +196,28 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 getModItem(Minecraft.ID, "ladder", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 "fenceWood",
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 2, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 "springAnyIron",
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1));
         addShapelessRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 1, 0),
                 "craftingToolSaw",
@@ -235,22 +235,22 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 getModItem(Minecraft.ID, "fence_gate", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersHatch", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersLever", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 getModItem(Minecraft.ID, "lever", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 null,
                 "craftingToolScrewdriver",
                 null);
@@ -272,44 +272,44 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
                 getModItem(Minecraft.ID, "wooden_door", 1, 0),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "craftingToolScrewdriver",
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2L),
-                        MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 2))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 8, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 12, 0)).duration(5 * SECONDS)
                 .eut(48).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
-                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 16, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 20, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
-                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 24, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -331,13 +331,13 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersGarageDoor", 2, 0))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersGarageDoor", 4, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -385,7 +385,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.toolHeadHammer, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.toolHeadHammer, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "itemCarpentersHammer", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -421,10 +421,8 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0))
@@ -441,10 +439,8 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0))
@@ -461,10 +457,8 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                (int) (1)))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
     }

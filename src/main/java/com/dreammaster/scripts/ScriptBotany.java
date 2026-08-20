@@ -41,7 +41,7 @@ public class ScriptBotany implements IScriptLoader {
         addShapelessRecipe(getModItem(Botany.ID, "database", 1, 0), getModItem(Botany.ID, "database", 1, 0));
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelWood", 1, 0),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "craftingToolHardHammer",
                 null,
                 "craftingToolFile",
@@ -96,21 +96,21 @@ public class ScriptBotany implements IScriptLoader {
                 "stickWood");
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 0),
-                MaterialLibAPI.getStack(Materials.Ash, Shapes.dustSmall, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Ash, Shapes.dustSmall, 1));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials.Ash, Shapes.dustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Ash, Shapes.dustSmall, 1),
                 getModItem(Botany.ID, "misc", 1, 0));
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 1),
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.dustSmall, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.dustSmall, 1));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials.Wood, Shapes.dustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.dustSmall, 1),
                 getModItem(Botany.ID, "misc", 1, 1));
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 3),
-                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dustSmall, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dustSmall, 1));
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dustSmall, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dustSmall, 1),
                 getModItem(Botany.ID, "misc", 1, 3));
 
         ForestryHelper.removeCarpenterRecipe(getModItem(Botany.ID, "database", 1, 0));
@@ -123,11 +123,11 @@ public class ScriptBotany implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'b',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'c',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'd',
                 "itemCasingGold",
                 'e',
@@ -135,11 +135,11 @@ public class ScriptBotany implements IScriptLoader {
                 'f',
                 "itemCasingGold",
                 'g',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'h',
-                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, 1),
                 'i',
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay", 4, 0), getModItem(Forestry.ID, "thermionicTubes", 1, 0))
@@ -287,8 +287,8 @@ public class ScriptBotany implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 4))
                 .itemOutputs(getModItem(Botany.ID, "soilMeter", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);

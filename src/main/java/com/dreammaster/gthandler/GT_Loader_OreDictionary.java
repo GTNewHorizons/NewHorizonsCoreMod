@@ -44,10 +44,9 @@ import gregtech.api.util.GTOreDictUnificator;
 /// Ore-dictionary entries for non-GT items, split by phase.
 ///
 /// [#registerMaterialEntries] runs at init, so GregTech's postInit shape consumers resolve its
-/// `<prefix><Material>` names whatever order FML gives `dreamcraft` and `materiallib`. It carries only stacks
-/// that exist by init: this mod's own preInit items and blocks, and Applied Energistics'
-/// `item.ItemMultiMaterial`. [IngredientFactory#getModItem] throws on an item its owner has not registered
-/// yet, so every other foreign item waits for [#run] at postInit.
+/// `<prefix><Material>` names whatever order FML gives `dreamcraft` and `materiallib`. It takes only stacks that
+/// already exist at init. [IngredientFactory#getModItem] throws on an item its owner has not registered yet, so
+/// entries for foreign items belong in [#run] at postInit.
 public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOreDictionary implements Runnable {
 
     // When an optional mod is absent, getModItem resolves its items to the shared missing-item placeholder
@@ -184,15 +183,15 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         registerOre("itemBeeswax", getModItem(PamsHarvestCraft.ID, "beeswaxItem", 1, 0));
         registerOre("foodFlour", getModItem(PamsHarvestCraft.ID, "flourItem", 1, 0));
-        registerOre("listAllmeatcooked", MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, (int) (1L)));
-        registerOre("listAllporkcooked", MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, (int) (1L)));
-        registerOre("listAllchickencooked", MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, (int) (1L)));
-        registerOre("listAllbeefcooked", MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, (int) (1L)));
-        registerOre("listAllmeatraw", MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, (int) (1L)));
-        registerOre("listAllporkraw", MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, (int) (1L)));
-        registerOre("listAllchickenraw", MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, (int) (1L)));
-        registerOre("listAllbeefraw", MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, (int) (1L)));
-        registerOre("foodSalt", MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, (int) (1L)));
+        registerOre("listAllmeatcooked", MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, 1));
+        registerOre("listAllporkcooked", MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, 1));
+        registerOre("listAllchickencooked", MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, 1));
+        registerOre("listAllbeefcooked", MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, 1));
+        registerOre("listAllmeatraw", MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, 1));
+        registerOre("listAllporkraw", MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, 1));
+        registerOre("listAllchickenraw", MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, 1));
+        registerOre("listAllbeefraw", MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, 1));
+        registerOre("foodSalt", MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1));
         registerOre(
                 OrePrefixes.block,
                 Materials.Salt,
@@ -226,7 +225,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         registerOre(OrePrefixes.ingot, "Firebrick", ItemList.Firebrick.get(1));
 
-        registerOre("dyeLime", MaterialLibAPI.getStack(Materials.Soapstone, Shapes.dust, (int) (1L)));
+        registerOre("dyeLime", MaterialLibAPI.getStack(Materials.Soapstone, Shapes.dust, 1));
 
         registerOre(OrePrefixes.log, Materials.Wood, getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
 

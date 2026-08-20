@@ -115,23 +115,23 @@ public class ScriptIronChests implements IScriptLoader {
                 null,
                 "craftingToolScrewdriver",
                 null,
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 getModItem(Minecraft.ID, "minecart", 1, 0),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(IronChestsMinecarts.ID, "minecart_chest_crystal", 1, 0),
                 null,
                 "craftingToolScrewdriver",
                 null,
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, 1),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 5),
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, 1),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, 1),
                 getModItem(Minecraft.ID, "minecart", 1, 0),
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, (int) (1L)));
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 7),
                 getModItem(Minecraft.ID, "dirt", 1, 0),
@@ -146,156 +146,156 @@ public class ScriptIronChests implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 3),
                 "screwCopper",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "screwCopper",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0),
                 "screwCopper",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "screwCopper",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "plankWood",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 0),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "woodIronUpgrade", 1, 0),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "plankWood",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "copperIronUpgrade", 1, 0),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "screwIron",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 4),
                 "screwSteel",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "screwSteel",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "copperSteelUpgrade", 1, 0),
                 "screwSteel",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "screwSteel",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 1),
                 "screwGold",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "screwGold",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "ironGoldUpgrade", 1, 0),
                 "screwGold",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "screwGold",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "steelGoldUpgrade", 1, 0),
                 "screwGold",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "screwGold",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
                 "screwDiamond",
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "screwDiamond",
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "goldDiamondUpgrade", 1, 0),
                 "screwDiamond",
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "screwDiamond",
                 null,
-                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 null,
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 5),
                 "screwGlass",
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "screwGlass",
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "diamondCrystalUpgrade", 1, 0),
                 "screwGlass",
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "screwGlass",
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 6),
@@ -313,66 +313,66 @@ public class ScriptIronChests implements IScriptLoader {
                 "screwDiamond",
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 "screwDiamond",
-                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
                 "craftingToolHardHammer",
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "diamondDarkSteelUpgrade", 1, 0),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "crystalDarkSteelUpgrade", 1, 0),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "screwDarkSteel",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "ironSteelUpgrade", 1, 0),
                 "screwSteel",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "screwSteel",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "craftingToolScrewdriver");
 
         GTValues.RA.stdBuilder()
@@ -382,91 +382,91 @@ public class ScriptIronChests implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 3)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("plankWood", 1),
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 3))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("plankWood", 1),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 3))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "copperIronUpgrade", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "copperSteelUpgrade", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "ironSteelUpgrade", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (3L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 1)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "ironGoldUpgrade", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, (int) (1L)))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "steelGoldUpgrade", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 4))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 2)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 2))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "goldDiamondUpgrade", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (4L)))
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 4))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 5)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 2))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "diamondCrystalUpgrade", 1, 0)).duration(35 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -477,32 +477,32 @@ public class ScriptIronChests implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 2, 7))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "diamondObsidianUpgrade", 1, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 9)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(7).itemOutputs(getModItem(IronChests.ID, "diamondDarkSteelUpgrade", 1, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(7).itemOutputs(getModItem(IronChests.ID, "crystalDarkSteelUpgrade", 1, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, (int) (1L)),
-                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, (int) (2L)))
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(7).itemOutputs(getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
     }

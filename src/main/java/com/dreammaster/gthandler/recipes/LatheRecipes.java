@@ -17,11 +17,11 @@ public class LatheRecipes implements Runnable {
     @Override
     public void run() {
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.plate, (int) (1)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.plate, 1))
                 .itemOutputs(NHItemList.ChromaticLens.get()).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(latheRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.RadoxPoly, Shapes.plate, (int) (1)))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.RadoxPoly, Shapes.plate, 1))
                 .itemOutputs(NHItemList.RadoxPolymerLens.get()).duration(1 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(latheRecipes);
     }
