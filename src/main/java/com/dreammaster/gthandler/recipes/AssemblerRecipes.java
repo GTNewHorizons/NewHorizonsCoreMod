@@ -1951,7 +1951,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.NaquadahAlloy, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Bedrockium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Bedrockium, 1),
                         ItemList.Hull_UV.get(1),
                         ItemList.Circuit_Chip_NPIC.get(2))
                 .itemOutputs(ItemList.Transformer_MAX_UV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -1961,7 +1961,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Draconium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Draconium, 1),
                         ItemList.Hull_MAX.get(1),
                         ItemList.Circuit_Chip_PPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UEV_UHV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -1970,8 +1970,8 @@ public class AssemblerRecipes implements Runnable {
         // UEV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Draconium, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.NetherStar, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Draconium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.NetherStar, 1),
                         ItemList.Hull_UEV.get(1),
                         ItemList.Circuit_Chip_QPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UIV_UEV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -1980,8 +1980,8 @@ public class AssemblerRecipes implements Runnable {
         // UIV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.NetherStar, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Quantium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.NetherStar, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Quantium, 1),
                         ItemList.Hull_UIV.get(1),
                         ItemList.Circuit_Chip_FPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UMV_UIV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -1990,7 +1990,7 @@ public class AssemblerRecipes implements Runnable {
         // UMV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Quantium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Quantium, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackPlutonium, 1),
                         ItemList.Hull_UMV.get(1),
                         ItemList.Circuit_Chip_APIC.get(2))
@@ -2244,7 +2244,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.NaquadahAlloy, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Bedrockium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Bedrockium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Neutronium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.NaquadahAlloy, 1),
                         GregtechItemList.Transformer_HA_MAX_UV.get(1),
@@ -2256,7 +2256,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Draconium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Draconium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Neutronium, 1),
                         ItemList.Transformer_HA_UEV_UHV.get(1),
@@ -2268,8 +2268,8 @@ public class AssemblerRecipes implements Runnable {
         // 64A UEV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Draconium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.NetherStar, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Draconium, 2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.NetherStar, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.BlackPlutonium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Draconium, 1),
                         ItemList.Transformer_HA_UIV_UEV.get(1),
@@ -2281,8 +2281,8 @@ public class AssemblerRecipes implements Runnable {
         // 64A UIV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.NetherStar, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Quantium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.NetherStar, 2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Quantium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Quantium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.BlackPlutonium, 1),
                         ItemList.Transformer_HA_UMV_UIV.get(1),
@@ -2294,8 +2294,8 @@ public class AssemblerRecipes implements Runnable {
         // 64A UMV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Quantium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.BlackPlutonium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Quantium, 2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.BlackPlutonium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Infinity, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.SpaceTime, 1),
                         ItemList.Transformer_HA_UXV_UMV.get(1),
