@@ -1075,32 +1075,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.cableGt08.get(Materials.NetherStar), 'O', ItemList.Reactor_Coolant_He_3, 'P',
                         ItemList.Electric_Pump_HV, 'T', ItemList.Transformer_HA_UIV_UEV });
 
-        GTModHandler.addCraftingRecipe(
-                ItemList.WetTransformer_UMV_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.BlackPlutonium), 'C',
-                        OrePrefixes.cableGt16.get(Materials.NetherStar), 'S',
-                        OrePrefixes.spring.get(Materials.Quantium), 'X', OrePrefixes.cableGt08.get(Materials.Quantium),
-                        'O', ItemList.Reactor_Coolant_He_6, 'P', ItemList.Electric_Pump_IV, 'T',
-                        ItemList.Transformer_HA_UMV_UIV });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.WetTransformer_UXV_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.SpaceTime), 'C',
-                        OrePrefixes.cableGt16.get(Materials.Quantium), 'S', OrePrefixes.spring.get(Materials.Infinity),
-                        'X', OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1,
-                        'P', ItemList.Electric_Pump_LuV, 'T', ItemList.Transformer_HA_UXV_UMV });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.WetTransformer_MAX_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Universium), 'C',
-                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
-                        OrePrefixes.spring.get(Materials.SpaceTime), 'X', OrePrefixes.wireGt08.get(Materials.Infinity),
-                        'O', ItemList.Reactor_Coolant_Sp_2, 'P', ItemList.Electric_Pump_ZPM, 'T',
-                        ItemList.Transformer_HA_MAX_UXV });
-
         ItemStack[] inHatches = { ItemList.Hatch_Input_UEV.get(1), ItemList.Hatch_Input_UIV.get(1),
                 ItemList.Hatch_Input_UMV.get(1), ItemList.Hatch_Input_UXV.get(1), ItemList.Hatch_Input_MAX.get(1) };
         ItemStack[] outHatches = { ItemList.Hatch_Output_UEV.get(1), ItemList.Hatch_Output_UIV.get(1),

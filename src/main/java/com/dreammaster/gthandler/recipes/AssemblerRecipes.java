@@ -2286,9 +2286,9 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Quantium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.BlackPlutonium, 1),
                         ItemList.Transformer_HA_UMV_UIV.get(1),
-                        ItemList.Electric_Pump_IV.get(1),
-                        ItemList.Reactor_Coolant_He_6.get(2))
-                .itemOutputs(ItemList.WetTransformer_UMV_UIV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                        ItemList.Electric_Pump_IV.get(1))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(2000L))
+                .itemOutputs(ItemList.WetTransformer_UMV_UIV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(assemblerRecipes);
 
         // 64A UMV transformer
@@ -2299,9 +2299,9 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Infinity, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.SpaceTime, 1),
                         ItemList.Transformer_HA_UXV_UMV.get(1),
-                        ItemList.Electric_Pump_LuV.get(1),
-                        ItemList.Reactor_Coolant_Sp_1.get(2))
-                .itemOutputs(ItemList.WetTransformer_UXV_UMV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                        ItemList.Electric_Pump_LuV.get(1))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(8000L))
+                .itemOutputs(ItemList.WetTransformer_UXV_UMV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .addTo(assemblerRecipes);
 
         // 64A UXV transformer
@@ -2312,9 +2312,9 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.SpaceTime, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Universium, 1),
                         ItemList.Transformer_HA_MAX_UXV.get(1),
-                        ItemList.Electric_Pump_ZPM.get(1),
-                        ItemList.Reactor_Coolant_Sp_2.get(2))
-                .itemOutputs(ItemList.WetTransformer_MAX_UXV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                        ItemList.Electric_Pump_ZPM.get(1))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(32_000L))
+                .itemOutputs(ItemList.WetTransformer_MAX_UXV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(assemblerRecipes);
 
         // Tesla Coil
