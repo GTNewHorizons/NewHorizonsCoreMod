@@ -1062,9 +1062,9 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Neutronium), 'C',
                         OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 'S',
-                        OrePrefixes.spring.get(Materials.Draconium), 'X', OrePrefixes.cableGt08.get(Materials.Draconium),
-                        'O', ItemList.Reactor_Coolant_He_1, 'P', ItemList.Electric_Pump_MV, 'T',
-                        ItemList.Transformer_HA_UEV_UHV });
+                        OrePrefixes.spring.get(Materials.Draconium), 'X',
+                        OrePrefixes.cableGt08.get(Materials.Draconium), 'O', ItemList.Reactor_Coolant_He_1, 'P',
+                        ItemList.Electric_Pump_MV, 'T', ItemList.Transformer_HA_UEV_UHV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UIV_UEV.get(1L),
@@ -1079,9 +1079,10 @@ public class GT_Loader_Machines {
                 ItemList.WetTransformer_UMV_UIV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.BlackPlutonium), 'C',
-                        OrePrefixes.cableGt16.get(Materials.NetherStar), 'S', OrePrefixes.spring.get(Materials.Quantium),
-                        'X', OrePrefixes.cableGt08.get(Materials.Quantium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
-                        ItemList.Electric_Pump_IV, 'T', ItemList.Transformer_HA_UMV_UIV });
+                        OrePrefixes.cableGt16.get(Materials.NetherStar), 'S',
+                        OrePrefixes.spring.get(Materials.Quantium), 'X', OrePrefixes.cableGt08.get(Materials.Quantium),
+                        'O', ItemList.Reactor_Coolant_He_6, 'P', ItemList.Electric_Pump_IV, 'T',
+                        ItemList.Transformer_HA_UMV_UIV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UXV_UMV.get(1L),
