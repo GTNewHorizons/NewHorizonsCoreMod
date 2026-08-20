@@ -1807,7 +1807,6 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         FluidRegistry.getFluidStack("xpjuice", 1728),
                         FluidRegistry.getFluidStack("hell_blood", 100),
-                        FluidRegistry.getFluidStack("putrescine", 250),
                         FluidRegistry.getFluidStack("binnie.growthmedium", 100),
                         FluidRegistry.getFluidStack("vapor_of_levity", 500),
                         FluidRegistry.getFluidStack("cadaverine", 250))
