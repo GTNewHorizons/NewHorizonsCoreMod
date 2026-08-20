@@ -837,7 +837,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.Quantium, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt12, Materials.Quantium, 2L),
                         ItemList.Casing_UMV.get(1L))
                 .itemOutputs(ItemList.Hull_UMV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -2548,8 +2548,8 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
                         ItemList.Hull_EV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4))
-                .itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
+                .circuit(2).itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         // UV Compressor
         GTValues.RA.stdBuilder().itemInputs(
@@ -4708,7 +4708,7 @@ public class AssemblerRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12), // Pure fluix crystal
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16)) // glass cable
-                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
+                .circuit(3).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // ME IO Port
@@ -7815,6 +7815,8 @@ public class AssemblerRecipes implements Runnable {
         // HEE
         addLootbagPair(57, 58, 3, 1, TierEU.RECIPE_HV, DURATION); // Basic -> Advanced
 
+        // CropsNH
+        addLootbagPair(51, 59, 3, 1, TierEU.RECIPE_LV, DURATION); // Farmhand -> Agriculturalist
     }
 
     // Assembler recipe registry

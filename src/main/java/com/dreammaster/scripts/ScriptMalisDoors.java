@@ -21,6 +21,7 @@ import com.dreammaster.block.BlockList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -33,9 +34,8 @@ public class ScriptMalisDoors implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays
-                .asList(BiomesOPlenty.ID, MalisisDoors.ID, Natura.ID, ProjectRedIntegration.ID, TinkerConstruct.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(BiomesOPlenty, MalisisDoors, Natura, ProjectRedIntegration, TinkerConstruct);
     }
 
     @Override
@@ -1278,23 +1278,23 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "stick", 2, 0), getModItem(Minecraft.ID, "planks", 2, 4))
-                .itemOutputs(getModItem(MalisisDoors.ID, "acaciaFenceGate", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(MalisisDoors.ID, "acaciaFenceGate", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "stick", 2, 0), getModItem(Minecraft.ID, "planks", 2, 2))
-                .itemOutputs(getModItem(MalisisDoors.ID, "birchFenceGate", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(MalisisDoors.ID, "birchFenceGate", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "stick", 2, 0), getModItem(Minecraft.ID, "planks", 2, 5))
-                .itemOutputs(getModItem(MalisisDoors.ID, "darkOakFenceGate", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(MalisisDoors.ID, "darkOakFenceGate", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "stick", 2, 0), getModItem(Minecraft.ID, "planks", 2, 3))
-                .itemOutputs(getModItem(MalisisDoors.ID, "jungleFenceGate", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(MalisisDoors.ID, "jungleFenceGate", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "stick", 2, 0), getModItem(Minecraft.ID, "planks", 2, 1))
-                .itemOutputs(getModItem(MalisisDoors.ID, "spruceFenceGate", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(MalisisDoors.ID, "spruceFenceGate", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "wooden_slab", 4, 4), getModItem(Minecraft.ID, "stick", 4, 0))

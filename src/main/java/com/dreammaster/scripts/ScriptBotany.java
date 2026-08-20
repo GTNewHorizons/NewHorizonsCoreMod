@@ -32,8 +32,8 @@ public class ScriptBotany implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Mods.Botany.ID, Forestry.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Botany, Forestry);
     }
 
     @Override

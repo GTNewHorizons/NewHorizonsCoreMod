@@ -46,6 +46,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -61,18 +62,18 @@ public class ScriptIndustrialCraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                BuildCraftFactory.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                Natura.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                TinkersGregworks.ID,
-                TwilightForest.ID);
+                BiomesOPlenty,
+                BuildCraftFactory,
+                Forestry,
+                IndustrialCraft2,
+                Natura,
+                Railcraft,
+                Thaumcraft,
+                TinkerConstruct,
+                TinkersGregworks,
+                TwilightForest);
     }
 
     @Override

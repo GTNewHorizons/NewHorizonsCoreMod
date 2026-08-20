@@ -117,7 +117,6 @@ public class ScriptLoader {
                         new ScriptThaumicExploration(),
                         new ScriptThaumicHorizons(),
                         new ScriptThaumicMachina(),
-                        new ScriptThaumicTinkerer(),
                         new ScriptTinkersConstruct(),
                         new ScriptTinkersDefence(),
                         new ScriptTranslocator(),
@@ -129,13 +128,14 @@ public class ScriptLoader {
                         new ScriptTB(),
                         ScriptZZClientOnly.instance));
 
-        // Java somehow tries to load XU / TiC class when instantiating this class
-        // but @Optional.Method cannot have multiple mod ids
+        // If you access any classes from the mod, you have to put it behind one of these handlers
+        // because it will otherwise always be classloaded and crash. This is gross.
         if (TinkerConstruct.isModLoaded() && ExtraUtilities.isModLoaded()) {
             scripts.add(new ScriptAvaritia());
         }
         if (Thaumcraft.isModLoaded()) {
             scripts.add(new ScriptTCCoreMod());
+            scripts.add(new ScriptThaumicTinkerer());
         }
 
         ArrayList<String> errored = new ArrayList<>();

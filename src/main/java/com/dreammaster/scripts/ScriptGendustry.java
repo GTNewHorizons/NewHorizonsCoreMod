@@ -21,6 +21,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -37,8 +38,8 @@ public class ScriptGendustry implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(ExtraBees.ID, Forestry.ID, Gendustry.ID, IndustrialCraft2.ID, IronTanks.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(ExtraBees, Forestry, Gendustry, IndustrialCraft2, IronTanks);
     }
 
     @Override
