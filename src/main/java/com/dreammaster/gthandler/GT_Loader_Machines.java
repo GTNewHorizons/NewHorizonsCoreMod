@@ -663,29 +663,29 @@ public class GT_Loader_Machines {
                 ItemList.Transformer_UEV_UHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.wireGt01.get(Materials.Draconium), 'B',
+                        OrePrefixes.cableGt01.get(Materials.Draconium), 'B',
                         OrePrefixes.wireGt04.get(Materials.SuperconductorUHV), 'K', ItemList.Circuit_Chip_PPIC });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UIV_UEV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UEV, 'C',
-                        OrePrefixes.wireGt01.get(Materials.NetherStar), 'B',
-                        OrePrefixes.wireGt04.get(Materials.Draconium), 'K', ItemList.Circuit_Chip_QPIC });
+                        OrePrefixes.cableGt01.get(Materials.NetherStar), 'B',
+                        OrePrefixes.cableGt04.get(Materials.Draconium), 'K', ItemList.Circuit_Chip_QPIC });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UMV_UIV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UIV, 'C',
-                        OrePrefixes.wireGt01.get(Materials.Quantium), 'B',
-                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Circuit_Chip_FPIC });
+                        OrePrefixes.cableGt01.get(Materials.Quantium), 'B',
+                        OrePrefixes.cableGt04.get(Materials.NetherStar), 'K', ItemList.Circuit_Chip_FPIC });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UXV_UMV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UMV, 'C',
                         OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'B',
-                        OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_APIC });
+                        OrePrefixes.cableGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_APIC });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_MAX_UXV.get(1L),
@@ -1054,7 +1054,7 @@ public class GT_Loader_Machines {
                 new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy), 'C',
                         OrePrefixes.cableGt16.get(Materials.NaquadahAlloy), 'S',
                         OrePrefixes.spring.get(Materials.Neutronium), 'X',
-                        OrePrefixes.wireGt08.get(Materials.Bedrockium), 'O', OrePrefixes.cell.get(Materials.Lubricant),
+                        OrePrefixes.cableGt08.get(Materials.Bedrockium), 'O', OrePrefixes.cell.get(Materials.Lubricant),
                         'P', ItemList.Electric_Pump_LV, 'T', GregtechItemList.Transformer_HA_MAX_UV.get(1) });
 
         GTModHandler.addCraftingRecipe(
@@ -1062,43 +1062,18 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Neutronium), 'C',
                         OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 'S',
-                        OrePrefixes.spring.get(Materials.Draconium), 'X', OrePrefixes.wireGt08.get(Materials.Draconium),
-                        'O', ItemList.Reactor_Coolant_He_1, 'P', ItemList.Electric_Pump_MV, 'T',
-                        ItemList.Transformer_HA_UEV_UHV });
+                        OrePrefixes.spring.get(Materials.Draconium), 'X',
+                        OrePrefixes.cableGt08.get(Materials.Draconium), 'O', ItemList.Reactor_Coolant_He_1, 'P',
+                        ItemList.Electric_Pump_MV, 'T', ItemList.Transformer_HA_UEV_UHV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UIV_UEV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Draconium), 'C',
-                        OrePrefixes.wireGt16.get(Materials.Draconium), 'S',
+                        OrePrefixes.cableGt16.get(Materials.Draconium), 'S',
                         OrePrefixes.spring.get(Materials.BlackPlutonium), 'X',
-                        OrePrefixes.wireGt08.get(Materials.NetherStar), 'O', ItemList.Reactor_Coolant_He_3, 'P',
+                        OrePrefixes.cableGt08.get(Materials.NetherStar), 'O', ItemList.Reactor_Coolant_He_3, 'P',
                         ItemList.Electric_Pump_HV, 'T', ItemList.Transformer_HA_UIV_UEV });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.WetTransformer_UMV_UIV.get(1L),
-                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.BlackPlutonium), 'C',
-                        OrePrefixes.wireGt16.get(Materials.NetherStar), 'S', OrePrefixes.spring.get(Materials.Quantium),
-                        'X', OrePrefixes.wireGt08.get(Materials.Quantium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
-                        ItemList.Electric_Pump_IV, 'T', ItemList.Transformer_HA_UMV_UIV });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.WetTransformer_UXV_UMV.get(1L),
-                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.SpaceTime), 'C',
-                        OrePrefixes.wireGt16.get(Materials.Quantium), 'S', OrePrefixes.spring.get(Materials.Infinity),
-                        'X', OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1,
-                        'P', ItemList.Electric_Pump_LuV, 'T', ItemList.Transformer_HA_UXV_UMV });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.WetTransformer_MAX_UXV.get(1L),
-                GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Universium), 'C',
-                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
-                        OrePrefixes.spring.get(Materials.SpaceTime), 'X', OrePrefixes.wireGt08.get(Materials.Infinity),
-                        'O', ItemList.Reactor_Coolant_Sp_2, 'P', ItemList.Electric_Pump_ZPM, 'T',
-                        ItemList.Transformer_HA_MAX_UXV });
 
         ItemStack[] inHatches = { ItemList.Hatch_Input_UEV.get(1), ItemList.Hatch_Input_UIV.get(1),
                 ItemList.Hatch_Input_UMV.get(1), ItemList.Hatch_Input_UXV.get(1), ItemList.Hatch_Input_MAX.get(1) };
