@@ -2295,7 +2295,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Quantium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.BlackPlutonium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.BlackPlutonium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Infinity, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.SpaceTime, 1),
                         ItemList.Transformer_HA_UXV_UMV.get(1),
