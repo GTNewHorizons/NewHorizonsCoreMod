@@ -11,15 +11,23 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.research.ResearchCategories;
+import thaumcraft.api.research.ResearchItem;
+import thaumcraft.api.research.ResearchPage;
+import thaumcraft.common.config.ConfigItems;
 
 public class ScriptThaumicHorizons implements IScriptLoader {
 
@@ -42,6 +50,8 @@ public class ScriptThaumicHorizons implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "transductionAmplifier", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "vortexStabilizer", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "recombinator", 1, 0));
+        TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "slotTH", 1, 0));
+        TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "keystoneTH", 1, 0));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "greatwoodBoat",
                 getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0),
@@ -184,12 +194,76 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.MAGIC, 12).add(Aspect.ENERGY, 9).add(Aspect.SENSES, 6));
         TCHelper.setResearchComplexity("recombinator", 4);
         ThaumcraftApi.addWarpToResearch("recombinator", 3);
+
+        TCHelper.addInfusionCraftingRecipe(
+                "pocketPlane",
+                getModItem(ThaumicHorizons.ID, "keystoneTH", 1, 0),
+                12,
+                (new AspectList()).add(Aspect.TRAVEL, 128).add(Aspect.VOID, 64).add(Aspect.EXCHANGE, 48)
+                        .add(Aspect.AURA, 32).add(Aspect.MIND, 16).add(Aspect.ELDRITCH, 64),
+                getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
+                new ItemStack(ConfigItems.itemShard, 1, 6),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Glass, 1L),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
+                new ItemStack(ConfigItems.itemShard, 1, 6),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Glass, 1L),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
+                new ItemStack(ConfigItems.itemShard, 1, 6),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Glass, 1L),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
+                new ItemStack(ConfigItems.itemShard, 1, 6),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Glass, 1L),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L));
+        ResearchPage p1 = new ResearchPage(
+                TCHelper.addInfusionCraftingRecipe(
+                        "planarKeystone",
+                        getModItem(ThaumicHorizons.ID, "keystoneTH", 1, 0),
+                        9,
+                        (new AspectList()).add(Aspect.TRAVEL, 64).add(Aspect.VOID, 48).add(Aspect.MECHANISM, 32)
+                                .add(Aspect.ELDRITCH, 32),
+                        new ItemStack(Items.ender_eye),
+                        new ItemStack(ConfigItems.itemShard, 1, 6),
+                        new ItemStack(ConfigItems.itemResource, 1, 3),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
+                        new ItemStack(ConfigItems.itemResource, 1, 3),
+                        new ItemStack(ConfigItems.itemShard, 1, 6),
+                        new ItemStack(ConfigItems.itemResource, 1, 3),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
+                        new ItemStack(ConfigItems.itemResource, 1, 3)));
+        ResearchPage p2 = new ResearchPage(
+                TCHelper.addInfusionCraftingRecipe(
+                        "planarKeystone",
+                        getModItem(ThaumicHorizons.ID, "slotTH", 1, 0),
+                        12,
+                        (new AspectList()).add(Aspect.VOID, 48).add(Aspect.TRAVEL, 64).add(Aspect.AIR, 64)
+                                .add(Aspect.MECHANISM, 32).add(Aspect.ELDRITCH, 64).add(Aspect.MAGIC, 16),
+                        getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.InfusedGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.InfusedGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 1L)));
+
         TCHelper.refreshResearchPages("greatwoodBoat");
         TCHelper.refreshResearchPages("thaumiumBoat");
         TCHelper.refreshResearchPages("planarTheory");
         TCHelper.refreshResearchPages("transductionAmplifier");
         TCHelper.refreshResearchPages("vortexStabilizer");
         TCHelper.refreshResearchPages("recombinator");
+        TCHelper.refreshResearchPages("pocketPlane");
+
+        ResearchItem planarPage = ResearchCategories.getResearch("planarKeystone");
+        ResearchPage[] pages = planarPage.getPages();
+        pages[1] = p1;
+        pages[3] = p2;
+
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flesh", 2))
                 .itemOutputs(getModItem(ThaumicHorizons.ID, "meatTH", 1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
