@@ -802,11 +802,11 @@ public class AssemblerRecipes implements Runnable {
 
         // UEV-UXV casings+hulls
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 8))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 8))
                 .circuit(8).itemOutputs(ItemList.Casing_UEV.get(1L)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 8L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 8L))
                 .circuit(8).itemOutputs(ItemList.Casing_UIV.get(1L)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
@@ -837,7 +837,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.Quantium, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt12, Materials.Quantium, 2L),
                         ItemList.Casing_UMV.get(1L))
                 .itemOutputs(ItemList.Hull_UMV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -1951,7 +1951,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.NaquadahAlloy, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Bedrockium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Bedrockium, 1),
                         ItemList.Hull_UV.get(1),
                         ItemList.Circuit_Chip_NPIC.get(2))
                 .itemOutputs(ItemList.Transformer_MAX_UV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -1961,7 +1961,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Draconium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Draconium, 1),
                         ItemList.Hull_MAX.get(1),
                         ItemList.Circuit_Chip_PPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UEV_UHV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -1970,8 +1970,8 @@ public class AssemblerRecipes implements Runnable {
         // UEV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Draconium, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.NetherStar, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Draconium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.NetherStar, 1),
                         ItemList.Hull_UEV.get(1),
                         ItemList.Circuit_Chip_QPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UIV_UEV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -1980,8 +1980,8 @@ public class AssemblerRecipes implements Runnable {
         // UIV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.NetherStar, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Quantium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.NetherStar, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Quantium, 1),
                         ItemList.Hull_UIV.get(1),
                         ItemList.Circuit_Chip_FPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UMV_UIV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -1990,7 +1990,7 @@ public class AssemblerRecipes implements Runnable {
         // UMV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Quantium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Quantium, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackPlutonium, 1),
                         ItemList.Hull_UMV.get(1),
                         ItemList.Circuit_Chip_APIC.get(2))
@@ -2244,7 +2244,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.NaquadahAlloy, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Bedrockium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Bedrockium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Neutronium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.NaquadahAlloy, 1),
                         GregtechItemList.Transformer_HA_MAX_UV.get(1),
@@ -2256,7 +2256,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Draconium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Draconium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Neutronium, 1),
                         ItemList.Transformer_HA_UEV_UHV.get(1),
@@ -2268,8 +2268,8 @@ public class AssemblerRecipes implements Runnable {
         // 64A UEV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Draconium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.NetherStar, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Draconium, 2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.NetherStar, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.BlackPlutonium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Draconium, 1),
                         ItemList.Transformer_HA_UIV_UEV.get(1),
@@ -2281,27 +2281,27 @@ public class AssemblerRecipes implements Runnable {
         // 64A UIV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.NetherStar, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Quantium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.NetherStar, 2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Quantium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Quantium, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.BlackPlutonium, 1),
                         ItemList.Transformer_HA_UMV_UIV.get(1),
-                        ItemList.Electric_Pump_IV.get(1),
-                        ItemList.Reactor_Coolant_He_6.get(2))
-                .itemOutputs(ItemList.WetTransformer_UMV_UIV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                        ItemList.Electric_Pump_IV.get(1))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(2000L))
+                .itemOutputs(ItemList.WetTransformer_UMV_UIV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(assemblerRecipes);
 
         // 64A UMV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Quantium, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.BlackPlutonium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Quantium, 2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.BlackPlutonium, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.Infinity, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.SpaceTime, 1),
                         ItemList.Transformer_HA_UXV_UMV.get(1),
-                        ItemList.Electric_Pump_LuV.get(1),
-                        ItemList.Reactor_Coolant_Sp_1.get(2))
-                .itemOutputs(ItemList.WetTransformer_UXV_UMV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                        ItemList.Electric_Pump_LuV.get(1))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(8000L))
+                .itemOutputs(ItemList.WetTransformer_UXV_UMV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .addTo(assemblerRecipes);
 
         // 64A UXV transformer
@@ -2312,9 +2312,9 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.SpaceTime, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Universium, 1),
                         ItemList.Transformer_HA_MAX_UXV.get(1),
-                        ItemList.Electric_Pump_ZPM.get(1),
-                        ItemList.Reactor_Coolant_Sp_2.get(2))
-                .itemOutputs(ItemList.WetTransformer_MAX_UXV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                        ItemList.Electric_Pump_ZPM.get(1))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(32_000L))
+                .itemOutputs(ItemList.WetTransformer_MAX_UXV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(assemblerRecipes);
 
         // Tesla Coil
@@ -2548,8 +2548,8 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
                         ItemList.Hull_EV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4))
-                .itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
+                .circuit(2).itemOutputs(ItemList.Machine_EV_Compressor.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         // UV Compressor
         GTValues.RA.stdBuilder().itemInputs(
@@ -4708,7 +4708,7 @@ public class AssemblerRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12), // Pure fluix crystal
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16)) // glass cable
-                .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
+                .circuit(3).itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialNetworkRelay", 1))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // ME IO Port
@@ -7815,6 +7815,8 @@ public class AssemblerRecipes implements Runnable {
         // HEE
         addLootbagPair(57, 58, 3, 1, TierEU.RECIPE_HV, DURATION); // Basic -> Advanced
 
+        // CropsNH
+        addLootbagPair(51, 59, 3, 1, TierEU.RECIPE_LV, DURATION); // Farmhand -> Agriculturalist
     }
 
     // Assembler recipe registry

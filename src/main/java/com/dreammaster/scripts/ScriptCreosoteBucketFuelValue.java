@@ -15,6 +15,8 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.config.CoreModConfig;
 
+import gregtech.api.enums.Mods;
+
 public class ScriptCreosoteBucketFuelValue implements IScriptLoader {
 
     @Override
@@ -23,8 +25,8 @@ public class ScriptCreosoteBucketFuelValue implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Collections.singletonList(Railcraft.ID);
+    public List<Mods> getDependencies() {
+        return Collections.singletonList(Railcraft);
     }
 
     @Override

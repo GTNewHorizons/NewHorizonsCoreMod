@@ -18,6 +18,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -30,8 +31,8 @@ public class ScriptMechworks implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(TinkerConstruct.ID, TinkersMechworks.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(TinkerConstruct, TinkersMechworks);
     }
 
     @Override

@@ -54,6 +54,7 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -69,36 +70,36 @@ public class ScriptMinecraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                Botania.ID,
-                CarpentersBlocks.ID,
-                EnderStorage.ID,
-                EtFuturumRequiem.ID,
-                ExtraTrees.ID,
-                ExtraUtilities.ID,
-                Fether.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                GalacticraftAmunRa.ID,
-                GalaxySpace.ID,
-                HardcoreEnderExpansion.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                Natura.ID,
-                PamsHarvestCraft.ID,
-                Railcraft.ID,
-                StevesCarts2.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID,
-                Witchery.ID);
+                Backpack,
+                BiomesOPlenty,
+                BloodArsenal,
+                Botania,
+                CarpentersBlocks,
+                EnderStorage,
+                EtFuturumRequiem,
+                ExtraTrees,
+                ExtraUtilities,
+                Fether,
+                ForbiddenMagic,
+                Forestry,
+                GalacticraftAmunRa,
+                GalaxySpace,
+                HardcoreEnderExpansion,
+                IguanaTweaksTinkerConstruct,
+                IndustrialCraft2,
+                MagicBees,
+                Natura,
+                PamsHarvestCraft,
+                Railcraft,
+                StevesCarts2,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct,
+                TwilightForest,
+                Witchery);
     }
 
     @Override
@@ -111,8 +112,8 @@ public class ScriptMinecraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 2))
-                .itemOutputs(getModItem(Minecraft.ID, "iron_pickaxe", 1, 0)).duration(4 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .circuit(19).itemOutputs(getModItem(Minecraft.ID, "iron_pickaxe", 1, 0)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Diamond Pickaxe
         GTValues.RA.stdBuilder()
@@ -120,7 +121,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 2))
-                .itemOutputs(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0)).duration(4 * SECONDS)
+                .circuit(19).itemOutputs(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTModHandler.addSmeltingRecipe(NHItemList.UnfiredClayBrick.get(), getModItem(Minecraft.ID, "brick", 1, 0));

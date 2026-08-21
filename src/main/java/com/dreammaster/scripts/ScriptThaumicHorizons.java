@@ -18,6 +18,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
@@ -36,8 +37,8 @@ public class ScriptThaumicHorizons implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(BiomesOPlenty.ID, Thaumcraft.ID, ThaumicHorizons.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(BiomesOPlenty, Thaumcraft, ThaumicHorizons);
     }
 
     @Override

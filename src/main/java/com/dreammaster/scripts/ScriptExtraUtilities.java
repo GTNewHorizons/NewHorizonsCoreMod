@@ -63,6 +63,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -82,29 +83,29 @@ public class ScriptExtraUtilities implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Avaritia.ID,
-                BloodMagic.ID,
-                Botania.ID,
-                BuildCraftFactory.ID,
-                BuildCraftTransport.ID,
-                ExtraUtilities.ID,
-                ForbiddenMagic.ID,
-                HardcoreEnderExpansion.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIllumination.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                Thaumcraft.ID,
-                ThaumicBoots.ID,
-                ThaumicTinkerer.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID,
-                WirelessRedstoneCBECore.ID,
-                WirelessRedstoneCBELogic.ID);
+                Avaritia,
+                BloodMagic,
+                Botania,
+                BuildCraftFactory,
+                BuildCraftTransport,
+                ExtraUtilities,
+                ForbiddenMagic,
+                HardcoreEnderExpansion,
+                IndustrialCraft2,
+                IronChests,
+                PamsHarvestCraft,
+                ProjectRedIllumination,
+                Railcraft,
+                RandomThings,
+                Thaumcraft,
+                ThaumicBoots,
+                ThaumicTinkerer,
+                TinkerConstruct,
+                TwilightForest,
+                WirelessRedstoneCBECore,
+                WirelessRedstoneCBELogic);
     }
 
     @Override

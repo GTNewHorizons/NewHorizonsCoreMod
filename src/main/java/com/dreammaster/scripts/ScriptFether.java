@@ -18,6 +18,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -31,8 +32,8 @@ public class ScriptFether implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Collections.singletonList(Fether.ID);
+    public List<Mods> getDependencies() {
+        return Collections.singletonList(Fether);
     }
 
     @Override
@@ -195,7 +196,7 @@ public class ScriptFether implements IScriptLoader {
                 .itemOutputs(getModItem(Fether.ID, "nether_log", 1, 2)).duration(6 * SECONDS).eut(80)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Fether.ID, "nether_log", 1, 0), ItemList.Shape_Extruder_Block.get(0L))
+                .itemInputs(getModItem(Fether.ID, "nether_log", 1, 1), ItemList.Shape_Extruder_Block.get(0L))
                 .itemOutputs(getModItem(Fether.ID, "nether_log", 1, 3)).duration(6 * SECONDS).eut(80)
                 .addTo(extruderRecipes);
 

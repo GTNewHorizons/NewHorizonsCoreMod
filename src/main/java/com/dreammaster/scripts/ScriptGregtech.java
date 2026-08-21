@@ -53,6 +53,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
@@ -71,27 +72,27 @@ public class ScriptGregtech implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                DraconicEvolution.ID,
-                IndustrialCraft2.ID,
-                MCFrames.ID,
-                Natura.ID,
-                OpenBlocks.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransmission.ID,
-                SGCraft.ID,
-                StructureLib.ID,
-                SuperSolarPanels.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID);
+                AdvancedSolarPanel,
+                AppliedEnergistics2,
+                Avaritia,
+                BiomesOPlenty,
+                BloodArsenal,
+                DraconicEvolution,
+                IndustrialCraft2,
+                MCFrames,
+                Natura,
+                OpenBlocks,
+                PamsHarvestCraft,
+                ProjectRedExpansion,
+                ProjectRedTransmission,
+                SGCraft,
+                StructureLib,
+                SuperSolarPanels,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct);
     }
 
     @Override
@@ -1418,9 +1419,6 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 18)).circuit(1)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(24)
                 .addTo(benderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 18)).circuit(9)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1)).duration(180)
-                .eut(TierEU.RECIPE_MV).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L)).duration(20)
                 .eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);

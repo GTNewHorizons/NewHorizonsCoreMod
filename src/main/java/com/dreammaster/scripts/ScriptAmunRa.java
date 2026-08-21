@@ -67,16 +67,16 @@ public class ScriptAmunRa implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                GalacticraftAmunRa.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                GraviSuite.ID,
-                IronChests.ID,
-                RandomThings.ID);
+                AdvancedSolarPanel,
+                GalacticraftAmunRa,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                GraviSuite,
+                IronChests,
+                RandomThings);
     }
 
     private static ItemStack[] createOreVariants(Materials material, int amount) {

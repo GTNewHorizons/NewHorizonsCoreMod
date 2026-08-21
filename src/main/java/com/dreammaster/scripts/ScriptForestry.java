@@ -45,6 +45,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -64,21 +65,21 @@ public class ScriptForestry implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BuildCraftFactory.ID,
-                ExtraBees.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                Natura.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedExpansion.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID);
+                Backpack,
+                BiomesOPlenty,
+                BuildCraftFactory,
+                ExtraBees,
+                Forestry,
+                IndustrialCraft2,
+                MagicBees,
+                Natura,
+                PamsHarvestCraft,
+                ProjectRedExpansion,
+                Railcraft,
+                Thaumcraft,
+                TinkerConstruct);
     }
 
     @Override
