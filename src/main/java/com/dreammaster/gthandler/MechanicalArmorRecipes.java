@@ -40,6 +40,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class MechanicalArmorRecipes {
 
@@ -375,6 +376,17 @@ public class MechanicalArmorRecipes {
                 new Object[] { "VDV", "MRM", "CDC", 'V', OrePrefixes.plate.get(Materials.VibrantAlloy), 'D',
                         OrePrefixes.plate.get(Materials.DarkSteel), 'M', ItemList.Electric_Motor_IV.get(1), 'C',
                         OrePrefixes.circuit.get(Materials.IV), 'R', ItemList.Armor_Chip_T2.get(1) });
+
+        GTValues.RA.stdBuilder().circuit(10)
+                .itemInputs(
+                        ItemList.Armor_Chip_T2.get(1),
+                        ItemList.Augment_Jetpack.get(1),
+                        ItemList.Electric_Motor_IV.get(4),
+                        ItemList.Field_Generator_IV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.HSSS, 4))
+                .fluidInputs(MaterialsAlloy.STELLITE.getFluidStack(INGOTS * 16))
+                .itemOutputs(ItemList.Augment_VectoredJetpack.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
