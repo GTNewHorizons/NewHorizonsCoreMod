@@ -17,6 +17,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static kekztech.common.Blocks.tfftStorageField;
 
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
@@ -522,7 +523,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 6L),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L))
-                    .fluidInputs(new FluidStack(solderIndalloy, 288))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
                     .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 91)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -535,8 +536,20 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L),
                             GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Electrum, 2L))
-                    .fluidInputs(new FluidStack(solderIndalloy, 288))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
                     .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 90)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(OpenComputers.ID, "item", 1, 43),
+                            getModItem(OpenComputers.ID, "item", 1, 102),
+                            getModItem(OpenComputers.ID, "item", 1, 10),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 103)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
     }
