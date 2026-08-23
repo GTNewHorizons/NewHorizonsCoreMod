@@ -137,14 +137,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UMV.get(1L),
                 ItemList.Casing_UMV.get(1L),
-                OrePrefixes.wireGt12.get(Materials.Quantium),
-                OrePrefixes.wireGt12.get(Materials.Quantium));
+                OrePrefixes.cableGt12.get(Materials.Quantium),
+                OrePrefixes.cableGt12.get(Materials.Quantium));
 
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UXV.get(1L),
                 ItemList.Casing_UXV.get(1L),
-                OrePrefixes.wireGt16.get(Materials.BlackPlutonium),
-                OrePrefixes.wireGt16.get(Materials.BlackPlutonium));
+                OrePrefixes.cableGt16.get(Materials.BlackPlutonium),
+                OrePrefixes.cableGt16.get(Materials.BlackPlutonium));
 
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
@@ -1027,28 +1027,28 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt12 : OrePrefixes.wireGt12, cable, 1L),
+                                        .get(i < 14 ? OrePrefixes.cableGt12 : OrePrefixes.wireGt12, cable, 1L),
                                 'P', hull, 'C', machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode8A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt08 : OrePrefixes.wireGt08, cable, 1L),
+                                        .get(i < 14 ? OrePrefixes.cableGt08 : OrePrefixes.wireGt08, cable, 1L),
                                 'P', hull, 'C', machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode4A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt04 : OrePrefixes.wireGt04, cable, 1L),
+                                        .get(i < 14 ? OrePrefixes.cableGt04 : OrePrefixes.wireGt04, cable, 1L),
                                 'P', hull, 'C', machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode2A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt02 : OrePrefixes.wireGt02, cable, 1L),
+                                        .get(i < 14 ? OrePrefixes.cableGt02 : OrePrefixes.wireGt02, cable, 1L),
                                 'P', hull, 'C', machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode16A[i],
@@ -1056,7 +1056,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         new Object[] { "WHW", "DCD", "PDP", 'H', OrePrefixes.componentCircuit.get(Materials.Inductor),
                                 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt16 : OrePrefixes.wireGt16, cable, 1L),
+                                        .get(i < 14 ? OrePrefixes.cableGt16 : OrePrefixes.wireGt16, cable, 1L),
                                 'P', hull, 'C', machinehull });
 
             } catch (ArrayIndexOutOfBoundsException e) {
