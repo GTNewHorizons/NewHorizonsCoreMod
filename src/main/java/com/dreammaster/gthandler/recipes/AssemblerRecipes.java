@@ -844,7 +844,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.BlackPlutonium, 2L),
                         ItemList.Casing_UXV.get(1L))
                 .itemOutputs(ItemList.Hull_UXV.get(1L)).fluidInputs(Materials.Kevlar.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -1991,7 +1991,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Quantium, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackPlutonium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.BlackPlutonium, 1),
                         ItemList.Hull_UMV.get(1),
                         ItemList.Circuit_Chip_APIC.get(2))
                 .itemOutputs(ItemList.Transformer_UXV_UMV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -2000,7 +2000,7 @@ public class AssemblerRecipes implements Runnable {
         // UXV Transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.BlackPlutonium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.BlackPlutonium, 4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Infinity, 1),
                         ItemList.Hull_UXV.get(1),
                         ItemList.Circuit_Chip_ZPIC.get(2))
@@ -2307,7 +2307,7 @@ public class AssemblerRecipes implements Runnable {
         // 64A UXV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.BlackPlutonium, 2),
                         GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Infinity, 1),
                         GTOreDictUnificator.get(OrePrefixes.spring, Materials.SpaceTime, 1),
                         GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Universium, 1),
