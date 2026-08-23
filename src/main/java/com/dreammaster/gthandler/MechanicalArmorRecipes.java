@@ -380,18 +380,6 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
                         ItemList.Armor_Chip_T2.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.HSSS, 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 8),
-                        ItemList.Field_Generator_IV.get(1),
-                        ItemList.Sensor_IV.get(1))
-                .fluidInputs(MaterialsAlloy.STELLITE.getFluidStack(INGOTS * 8))
-                .itemOutputs(ItemList.Augment_Jetpack_PerfectHover.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder().circuit(10)
-                .itemInputs(
-                        ItemList.Armor_Chip_T2.get(1),
                         NHItemList.MicaInsulatorFoil.get(64),
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.ZPM, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("pyrotheum", 4000))
