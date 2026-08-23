@@ -546,8 +546,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             getModItem(OpenComputers.ID, "item", 1, 102),
                             getModItem(OpenComputers.ID, "item", 1, 10),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L))
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16L))
                     .fluidInputs(new FluidStack(solderIndalloy, 2304))
                     .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 103)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
