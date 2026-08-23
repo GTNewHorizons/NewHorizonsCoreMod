@@ -388,7 +388,7 @@ public class MechanicalArmorRecipes {
                 .itemOutputs(ItemList.Augment_VectoredJetpack.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
+        GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
                         ItemList.Armor_Chip_T2.get(1),
                         GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Iridium, 4),
