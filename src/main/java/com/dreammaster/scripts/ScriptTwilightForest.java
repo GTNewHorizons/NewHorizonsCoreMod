@@ -33,6 +33,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -50,15 +51,15 @@ public class ScriptTwilightForest implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                ElectroMagicTools.ID,
-                EtFuturumRequiem.ID,
-                ForbiddenMagic.ID,
-                MagicBees.ID,
-                Thaumcraft.ID,
-                TwilightForest.ID,
-                ZTones.ID);
+                ElectroMagicTools,
+                EtFuturumRequiem,
+                ForbiddenMagic,
+                MagicBees,
+                Thaumcraft,
+                TwilightForest,
+                ZTones);
     }
 
     @Override

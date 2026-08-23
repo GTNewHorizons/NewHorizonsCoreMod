@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
@@ -36,6 +35,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.ToolDictNames;
@@ -58,22 +58,21 @@ public class ScriptForbiddenMagic implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                BloodMagic.ID,
-                Botania.ID,
-                EnderIO.ID,
-                ForbiddenMagic.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                Thaumcraft.ID,
-                ThaumicTinkerer.ID,
-                TinkerConstruct.ID,
-                Witchery.ID);
+                AppliedEnergistics2,
+                Backpack,
+                BiomesOPlenty,
+                BloodArsenal,
+                BloodMagic,
+                Botania,
+                EnderIO,
+                ForbiddenMagic,
+                IndustrialCraft2,
+                Thaumcraft,
+                ThaumicTinkerer,
+                TinkerConstruct,
+                Witchery);
     }
 
     @Override

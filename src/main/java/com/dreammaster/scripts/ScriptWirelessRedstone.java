@@ -20,6 +20,7 @@ import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -32,12 +33,9 @@ public class ScriptWirelessRedstone implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(
-                ProjectRedCore.ID,
-                WirelessRedstoneCBEAddons.ID,
-                WirelessRedstoneCBECore.ID,
-                WirelessRedstoneCBELogic.ID);
+    public List<Mods> getDependencies() {
+        return Arrays
+                .asList(ProjectRedCore, WirelessRedstoneCBEAddons, WirelessRedstoneCBECore, WirelessRedstoneCBELogic);
     }
 
     @Override
