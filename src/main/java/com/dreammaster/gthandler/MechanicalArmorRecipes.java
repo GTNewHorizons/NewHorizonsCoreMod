@@ -380,13 +380,22 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
                         ItemList.Armor_Chip_T2.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.HSSS, 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 8),
+                        ItemList.Augment_Jetpack.get(1),
+                        ItemList.Electric_Motor_IV.get(4),
                         ItemList.Field_Generator_IV.get(1),
-                        ItemList.Sensor_IV.get(1))
-                .fluidInputs(MaterialsAlloy.STELLITE.getFluidStack(INGOTS * 8))
-                .itemOutputs(ItemList.Augment_Jetpack_PerfectHover.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.HSSS, 4))
+                .fluidInputs(MaterialsAlloy.STELLITE.getFluidStack(INGOTS * 16))
+                .itemOutputs(ItemList.Augment_VectoredJetpack.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().circuit(10)
+                .itemInputs(
+                        ItemList.Armor_Chip_T2.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Iridium, 4),
+                        ItemList.Sensor_IV.get(4),
+                        ItemList.Field_Generator_IV.get(2))
+                .fluidInputs(Materials.HSSG.getMolten(INGOTS * 32))
+                .itemOutputs(ItemList.Augment_InertiaCanceling.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().circuit(10)
@@ -427,16 +436,6 @@ public class MechanicalArmorRecipes {
                         ItemList.Field_Generator_LuV.get(2))
                 .fluidInputs(Materials.Neutronium.getMolten(INGOTS * 20), Materials.Tritanium.getMolten(INGOTS * 10))
                 .itemOutputs(ItemList.Augment_CreativeFlight.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM)
-                .metadata(PRECISE_ASSEMBLER_CASING_TIER, 2).addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Armor_Chip_T3.get(1),
-                        ItemRefer.HiC_T2.get(4),
-                        ItemList.Sensor_ZPM.get(4), // Gravitation Engine
-                        ItemList.Field_Generator_LuV.get(2))
-                .fluidInputs(Materials.Neutronium.getMolten(INGOTS * 20), Materials.Tritanium.getMolten(INGOTS * 10))
-                .itemOutputs(ItemList.Augment_InertiaCanceling.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .metadata(PRECISE_ASSEMBLER_CASING_TIER, 2).addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
