@@ -37,6 +37,18 @@ import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import tectech.recipe.TecTechRecipeMaps;
 import tectech.thing.CustomItemList;
 
+/// Recipes made in the BEC Condensate Assembler.
+///
+/// As a design constraint, recipes should fit into as narrow condensate families as possible. Presently, this is 5
+/// 7-member families, given below.
+///
+/// | Family | Condensates |
+/// |----------|------------------------------------------------------------------------------------------|
+/// | Family 1 | SpaceTime, Space, Time, Neutronium, Cosmic Neutronium, Cosmic Solder, Bedrockium |
+/// | Family 2 | Chromatic Glass, Celestial Tungsten, Infinity, Transcendent Metal, DSS, Cosmic Solder, Eternity |
+/// | Family 3 | Phononic Medium, Universium, MHDCSM, QGP, MagMatter, Cosmic Solder, Eternity |
+/// | Family 4 | Phononic Medium, Celestial Tungsten, Infinity, Neutronium, Cosmic Neutronium, Hypogen, Bedrockium |
+/// | Family 5 | SpaceTime, Space, MHDCSM, QGP, DSS, Cosmic Solder, Eternity |
 public class BECRecipes implements Runnable {
 
     private static final NaniteTier[] TIER_TO_NANITE = { NaniteTier.Carbon, NaniteTier.Silver, NaniteTier.Gold,
@@ -77,7 +89,7 @@ public class BECRecipes implements Runnable {
                         new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(36000),
                                 CondensateType.QuarkGluonPlasma.getEntangled(100_000),
                                 CondensateType.DimensionallyShiftedSuperfluid.getEntangled(50_000),
-                                CondensateType.MagMatter.getEntangled(48 * INGOTS) },
+                                CondensateType.Eternity.getEntangled(48 * INGOTS) },
                         600 * SECONDS,
                         TierEU.RECIPE_UXV);
             }
@@ -194,8 +206,7 @@ public class BECRecipes implements Runnable {
         final ItemStack[] energyConduits = new ItemStack[] { ItemList.MetaMaterial_EnergyConduit1.get(64),
                 ItemList.MetaMaterial_EnergyConduit2.get(64), ItemList.MetaMaterial_EnergyConduit3.get(64) };
 
-        final FluidStack[] condensates = new FluidStack[] {
-                CondensateType.ChromaticGlass.getEntangled(1_024_000 * INGOTS),
+        final FluidStack[] condensates = new FluidStack[] { CondensateType.Infinity.getEntangled(1_024_000 * INGOTS),
                 CondensateType.Neutronium.getEntangled(1_024_000 * INGOTS),
                 CondensateType.CosmicNeutronium.getEntangled(1_024_000 * INGOTS),
                 CondensateType.Bedrockium.getEntangled(1_024_000 * INGOTS) };
@@ -223,10 +234,9 @@ public class BECRecipes implements Runnable {
         // Stargate-Radiation-Containment-Plate
         addBec(
                 NHItemList.StargateShieldingFoil.get(),
-                new ItemStack[] { CustomItemList.StabilisationFieldGeneratorTier8.get(64),
+                new ItemStack[] { CustomItemList.EOH_Reinforced_Spatial_Casing.get(64),
                         CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(64),
                         ItemList.SuperconductivePlasmaEnergyConduit.get(64),
-                        ItemList.FineStructureConstantManipulator.get(64),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 8),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 8),
@@ -247,8 +257,8 @@ public class BECRecipes implements Runnable {
         // Stargate Chevron
         addBec(
                 NHItemList.StargateChevron.get(),
-                new ItemStack[] { CustomItemList.EOH_Reinforced_Spatial_Casing.get(64),
-                        CustomItemList.EOH_Reinforced_Temporal_Casing.get(64), ItemList.MetaMaterial_WaveFocus4.get(64),
+                new ItemStack[] { ItemList.FineStructureConstantManipulator.get(64),
+                        CustomItemList.astralArrayFabricator.get(4), ItemList.MetaMaterial_WaveFocus4.get(64),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amalgatite, 64),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.MagMatter, 16),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 8),
@@ -259,11 +269,11 @@ public class BECRecipes implements Runnable {
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64), ItemList.Electric_Piston_UXV.get(64L),
                         ItemList.Robot_Arm_UXV.get(64L), ItemList.Field_Generator_UXV.get(32),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 32), },
-                nanites(2, 2, 4, 10, 1, 3, 4, 3, 6, 6, 7, 7, 5, 5, 8, 9),
+                nanites(2, 10, 2, 4, 1, 3, 4, 3, 6, 6, 7, 7, 5, 5, 8, 9),
                 new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
                         CondensateType.PhononMedium.getEntangled(256_000),
                         CondensateType.MagMatter.getEntangled(4_096 * INGOTS),
-                        CondensateType.Eternity.getEntangled(2_048 * INGOTS) },
+                        CondensateType.BoundlessCosmicSolder.getEntangled(256_000) },
                 baseStargateTime,
                 TierEU.RECIPE_UXV);
 
@@ -474,7 +484,7 @@ public class BECRecipes implements Runnable {
                         CustomItemList.dataOut_Wireless_Hatch.get(64L), CustomItemList.dataIn_Wireless_Hatch.get(64L),
                         ItemList.Machine_Multi_BlackHoleCompressor.get(64), },
                 nanites(2, 2, 4, 10, 1, 3, 4, 3, 6, 6, 7, 7, 5, 5, 8, 9),
-                new FluidStack[] { CondensateType.Hypogen.getEntangled(8_192 * INGOTS),
+                new FluidStack[] { CondensateType.PhononMedium.getEntangled(1_024_000),
                         CondensateType.DimensionallyShiftedSuperfluid.getEntangled(2_048_000),
                         CondensateType.Universium.getEntangled(8 * INGOTS),
                         CondensateType.MHDCSM.getEntangled(8 * INGOTS) },
