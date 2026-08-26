@@ -11,6 +11,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.VariableHorizons;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
@@ -32,6 +33,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.LazyFlesh.variablehorizons.variants.VariantNames;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
@@ -794,7 +796,9 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'C',
                 OrePrefixes.circuit.get(Materials.EV));
 
-        if (OpenModularTurrets.isModLoaded()) {
+        if (OpenModularTurrets.isModLoaded()
+                && !(VariableHorizons.isModLoaded() && VariantNames.activeContains(VariantNames.NO_ROCKET.id))) {
+            // don't add nasa bench recipe if NoRocket is active 
             addShapedRecipe(
                     new ItemStack(GCBlocks.nasaWorkbench),
                     "RRR",
