@@ -74,9 +74,8 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
                         | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UEV, 'W',
-                        OrePrefixes.cableGt08.get(Materials.Draconium), 'H',
-                        OrePrefixes.plate.get(Materials.Bedrockium), 'P',
-                        OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
+                        OrePrefixes.cableGt08.get(Materials.Draconium), 'H', OrePrefixes.plate.get(Materials.Infinity),
+                        'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Hull_UIV.get(1L),
@@ -84,7 +83,7 @@ public class GT_Loader_Machines {
                         | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UIV, 'W',
                         OrePrefixes.cableGt08.get(Materials.NetherStar), 'H',
-                        OrePrefixes.plate.get(Materials.BlackPlutonium), 'P',
+                        OrePrefixes.plate.get(Materials.TranscendentMetal), 'P',
                         OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
 
         GTModHandler.addCraftingRecipe(
@@ -100,7 +99,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
                         | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UXV, 'W',
-                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'H',
+                        OrePrefixes.cableGt16.get(Materials.BlackPlutonium), 'H',
                         OrePrefixes.plate.get(Materials.MHDCSM), 'P', OrePrefixes.plateDense.get(Materials.Kevlar) });
 
         GTModHandler.addCraftingRecipe(
@@ -684,7 +683,7 @@ public class GT_Loader_Machines {
                 ItemList.Transformer_UXV_UMV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UMV, 'C',
-                        OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'B',
+                        OrePrefixes.cableGt01.get(Materials.BlackPlutonium), 'B',
                         OrePrefixes.cableGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_APIC });
 
         GTModHandler.addCraftingRecipe(
@@ -692,7 +691,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UXV, 'C',
                         OrePrefixes.wireGt01.get(Materials.Infinity), 'B',
-                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Circuit_Chip_ZPIC });
+                        OrePrefixes.cableGt04.get(Materials.BlackPlutonium), 'K', ItemList.Circuit_Chip_ZPIC });
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_Buffer_4by4_UEV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
