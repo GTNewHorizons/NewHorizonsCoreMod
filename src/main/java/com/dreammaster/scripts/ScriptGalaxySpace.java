@@ -798,7 +798,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
         if (OpenModularTurrets.isModLoaded()
                 && !(VariableHorizons.isModLoaded() && VariantNames.activeContains(VariantNames.NO_ROCKET.id))) {
-            // don't add nasa bench recipe if NoRocket is active 
+            // don't add nasa bench recipe if NoRocket is active
             addShapedRecipe(
                     new ItemStack(GCBlocks.nasaWorkbench),
                     "RRR",
