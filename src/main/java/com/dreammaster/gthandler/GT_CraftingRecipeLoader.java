@@ -346,8 +346,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_6.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PPP", "PIP", "PPP", 'P', WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.plate), 'I',
-                        OrePrefixes.pipeLarge.get(Materials.TungstenSteel) });
+                new Object[] { "PPP", "PIP", "PPP", 'P', WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.plate),
+                        'I', OrePrefixes.pipeLarge.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_7.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
