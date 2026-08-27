@@ -336,7 +336,7 @@ public class AssemblingLineRecipes implements Runnable {
                 new Object[] { getModItem(OpenComputers.ID, "item", 4, 91),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TranscendentMetal, 4),
                         ItemList.Emitter_UEV.get(1), getModItem(OpenComputers.ID, "item", 64, 36),
-                        getModItem(GraviSuite.ID, "itemSimpleItem", 4, 3), ItemList.Energy_LapotronicOrb.get(1),
+                        getModItem(GraviSuite.ID, "itemSimpleItem", 4, 3), ItemList.Energy_LapotronicOrb2.get(4),
                         NHItemList.HeavyDutyRocketEngineTier4.get(1) },
                 new FluidStack[] { new FluidStack(solderUEV, 720),
                         new FluidStack(MaterialsElements.getInstance().XENON.getPlasma(), 1_000) },
