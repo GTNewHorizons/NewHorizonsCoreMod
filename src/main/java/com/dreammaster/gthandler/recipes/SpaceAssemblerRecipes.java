@@ -17,7 +17,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static kekztech.common.Blocks.tfftStorageField;
 
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
