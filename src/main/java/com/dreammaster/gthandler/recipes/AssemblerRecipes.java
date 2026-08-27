@@ -889,7 +889,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.TungstenSteel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 8L))
+                        WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.plate, 8))
                 .circuit(4).itemOutputs(ItemList.Casing_Tank_6.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
 
@@ -917,7 +917,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.MysteriousCrystal, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 8L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 8L))
                 .circuit(4).itemOutputs(ItemList.Casing_Tank_10.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
 
