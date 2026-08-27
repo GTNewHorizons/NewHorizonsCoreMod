@@ -105,6 +105,7 @@ import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
+import goodgenerator.util.ItemRefer;
 import gregtech.GTMod;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -9845,5 +9846,14 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.StableEmptyContainmentUnit.get(64))
                 .fluidInputs(MaterialMisc.ETHYL_CYANOACRYLATE.getFluidStack(10)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+
+        // Dyson Fuel Pellet
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemRefer.Advanced_Radiation_Protection_Plate.get(6),
+                        ItemList.RodNaquadah32.get(4),
+                        ItemList.Naquarite_Universal_Insulator_Foil.get(4))
+                .itemOutputs(ItemList.FuelPellet.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV)
+                .fluidInputs(Materials.SuperCoolant.getFluid(16000)).addTo(assemblerRecipes);
     }
 }
