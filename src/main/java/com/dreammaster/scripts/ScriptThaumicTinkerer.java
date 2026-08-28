@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderStorage;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
@@ -24,10 +25,12 @@ import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static thaumic.tinkerer.common.core.helper.AspectCropLootManager.addAspectLoot;
 
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -78,7 +81,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 PamsHarvestCraft,
                 StevesCarts2,
                 Thaumcraft,
-                ThaumicTinkerer);
+                ThaumicTinkerer,
+                EtFuturumRequiem);
     }
 
     @Override
@@ -2245,6 +2249,34 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.MIND, 15).add(Aspect.CRAFT, 12).add(Aspect.MAGIC, 9).add(Aspect.CRYSTAL, 6)
                         .add(Aspect.ELDRITCH, 3));
         TCHelper.setResearchComplexity("PLACEMENT_MIRROR", 4);
+
+        // infused seeds additional loot
+        {
+            addAspectLoot(Aspect.COLD, "rodBlizz", 1);
+
+            addAspectLoot(Aspect.POISON, "asbestos", 2);
+
+            String[] gems = new String[] { "Diamond", "Emerald", "Ruby", "Sapphire", "GreenSapphire", "Amethyst",
+                    "Opal", "Tanzanite", "Amber", "Olivine", "Topaz" };
+            for (int i = 0; i < gems.length; i++) {
+                addAspectLoot(Aspect.CRYSTAL, "gemFlawless" + gems[i], 1);
+                addAspectLoot(Aspect.CRYSTAL, "gemExquisite" + gems[i], 1);
+            }
+
+            if (ForbiddenMagic.isModLoaded()) {
+                addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.soul_sand, 24), 200);
+                addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.netherrack, 16), 500);
+                addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.glowstone, 4), 100);
+                addAspectLoot(DarkAspects.NETHER, new ItemStack(Items.nether_wart, 4), 50);
+                addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.quartz_ore, 8), 50);
+
+                if (EtFuturumRequiem.isModLoaded()) {
+                    addAspectLoot(DarkAspects.NETHER, getModItem(EtFuturumRequiem.ID, "magma"), 100);
+                    addAspectLoot(DarkAspects.NETHER, getModItem(EtFuturumRequiem.ID, "ancient_debris"), 1);
+                }
+            }
+        }
+
         ThaumcraftApi.addWarpToResearch("PLACEMENT_MIRROR", 8);
         TCHelper.refreshResearchPages("ICHOR");
         TCHelper.refreshResearchPages("ICHOR_CLOTH");
