@@ -2254,7 +2254,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         {
             addAspectLoot(Aspect.COLD, "rodBlizz", 1);
 
-            addAspectLoot(Aspect.POISON, "asbestos", 2);
+            addAspectLoot(Aspect.POISON, "dustAsbestos", 2);
 
             String[] gems = new String[] { "Diamond", "Emerald", "Ruby", "Sapphire", "GreenSapphire", "Amethyst",
                     "Opal", "Tanzanite", "Amber", "Olivine", "Topaz" };
