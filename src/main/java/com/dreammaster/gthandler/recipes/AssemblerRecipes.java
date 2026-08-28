@@ -86,9 +86,12 @@ import static tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import gregtech.GTMod;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -8380,6 +8383,30 @@ public class AssemblerRecipes implements Runnable {
 
     }
 
+    private OrePrefixes[] getOresFromMaterial(Materials materials){
+        List<OrePrefixes> variants = Arrays.asList(getOrePrefixesVariants(materials));
+
+        // still add the following variants, in case the ores got obtained by meteor / void miner / space miner
+
+        variants.add(OrePrefixes.ore);
+        variants.add(OrePrefixes.oreNetherrack);
+        variants.add(OrePrefixes.oreEndstone);
+
+        if (GTMod.proxy.enableBlackGraniteOres) {
+            variants.add(OrePrefixes.oreBlackgranite);
+        }
+        if (GTMod.proxy.enableRedGraniteOres) {
+            variants.add(OrePrefixes.oreRedgranite);
+        }
+        if (GTMod.proxy.enableMarbleOres) {
+            variants.add(OrePrefixes.oreMarble);
+        }
+        if (GTMod.proxy.enableBasaltOres) {
+            variants.add(OrePrefixes.oreBasalt);
+        }
+        return variants.toArray(new OrePrefixes[0]);
+    }
+
     private void makeNEIPlanetRecipes() {
         if (!Botania.isModLoaded()) {
             return;
@@ -8469,7 +8496,7 @@ public class AssemblerRecipes implements Runnable {
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
             // T2 Planets
             // Deimos
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Uranium)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Uranium)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8512,7 +8539,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("Ce"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
             // Callisto
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.CallistoIce)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.CallistoIce)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8534,7 +8561,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("As"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
             // Ganymede
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Platinum)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Platinum)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8546,7 +8573,7 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
             }
             // Europa
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Manganese)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Manganese)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8589,7 +8616,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("Me"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
             // Venus
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Quantium)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Quantium)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8674,7 +8701,7 @@ public class AssemblerRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
             // T7 Planets
             // Haumea
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Naquadah)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Naquadah)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8701,7 +8728,7 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             }
             // Makemake
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Chrysotile)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Chrysotile)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8713,7 +8740,7 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             }
             // Kuiper Belt
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Neutronium)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Neutronium)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8726,7 +8753,7 @@ public class AssemblerRecipes implements Runnable {
             }
             // T8 Planets
             // Vega B
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.InfinityCatalyst)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.InfinityCatalyst)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8758,7 +8785,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("BE"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
             // Barnard F
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Bedrockium)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Bedrockium)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8780,7 +8807,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(new ItemStack(ModBlocks.blocks.get("TE"), 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
             // Alpha Centauri Bb
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Samarium)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Samarium)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8793,7 +8820,7 @@ public class AssemblerRecipes implements Runnable {
             }
             // T9 Planets
             // Seth
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.TengamRaw)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.TengamRaw)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8805,7 +8832,7 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             }
             // Anubis
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.InfinityCatalyst)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.InfinityCatalyst)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8819,7 +8846,7 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             }
             // Neper
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Dilithium)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Dilithium)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8834,7 +8861,7 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             }
             // Maahes
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Naquadria)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Naquadria)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8847,7 +8874,7 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             }
             // Horus
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.CosmicNeutronium)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.CosmicNeutronium)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
@@ -8871,7 +8898,7 @@ public class AssemblerRecipes implements Runnable {
 
             // Technically T10
             // Deep Dark
-            for (OrePrefixes orePrefix : getOrePrefixesVariants(Materials.Rubidium)) {
+            for (OrePrefixes orePrefix : getOresFromMaterial(Materials.Rubidium)) {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
