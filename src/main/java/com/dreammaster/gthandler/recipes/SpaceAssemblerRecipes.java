@@ -5,11 +5,13 @@ import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicEnergistics;
+import static gregtech.api.enums.OrePrefixes.turbineBlade;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
@@ -21,6 +23,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
@@ -235,13 +238,39 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
                         ItemList.Circuit_Parts_ResistorXSMD.get(64L),
                         ItemList.Circuit_Parts_TransistorXSMD.get(64L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.MHDCSM, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Hexanite, 4L))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        Materials.WhiteDwarfMatter.getMolten(576),
-                        Materials.BlackDwarfMatter.getMolten(576))
+                        Materials.WhiteDwarfMatter.getMolten(144),
+                        Materials.RawStarMatter.getFluid(500))
                 .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+        // Alternate Really Ultimate Battery Recipe
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Board_Optical.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Hexanite, 64),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4L),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Wrap_EngravedLapotrionChips.get(8),
+                        ItemList.Circuit_Chip_QPIC.get(64L),
+                        ItemList.Wrap_OpticalSMDDiodes.get(8),
+                        ItemList.Wrap_OpticalSMDCapacitors.get(8),
+                        ItemList.Wrap_OpticalSMDResistors.get(8),
+                        ItemList.Wrap_OpticalSMDTransistors.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.MHDCSM, 2))
+                .fluidInputs(
+                        new FluidStack(solderUEV, 2880),
+                        Materials.MagMatter.getMolten(576),
+                        Materials.Eternity.getMolten(576))
+                .itemOutputs(ItemList.ZPM3.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3).duration(50 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
         if (OpenComputers.isModLoaded() && SuperSolarPanels.isModLoaded()) {
             // Optically Compatible Memory
@@ -383,8 +412,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            Materials.MagMatter.getNanite(1),
+                            Materials.Eternity.getNanite(1))
                     .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
@@ -415,8 +444,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            Materials.MagMatter.getNanite(4),
-                            Materials.Eternity.getNanite(4))
+                            Materials.MagMatter.getNanite(1),
+                            Materials.Eternity.getNanite(1))
                     .fluidInputs(Materials.Eternity.getMolten(36864))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
@@ -451,25 +480,76 @@ public class SpaceAssemblerRecipes implements Runnable {
                         .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
             }
-            // Pseudo-Inversion Sigil Ritual
-            /*
-             * if (ExtraUtilities.isModLoaded()) { GTValues.RA.stdBuilder() .itemInputs(
-             * getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2), getModItem(Avaritia.ID,
-             * "Singularity", 1, 0), getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24),
-             * getModItem(Avaritia.ID, "Singularity", 1, 3), getModItem(Avaritia.ID, "Resource", 64, 7),
-             * getModItem(Avaritia.ID, "Ultimate_Stew", 1, 0), getModItem(Avaritia.ID, "Cosmic_Meatballs", 1, 0),
-             * getModItem(StevesCarts2.ID, "CartModule", 1, 82), getModItem(ExtraUtilities.ID, "decorativeBlock1", 16,
-             * 12), getModItem(BiomesOPlenty.ID, "petals", 64, 0), getModItem(Witchery.ID, "ingredient", 64, 56),
-             * getModItem(Avaritia.ID, "Endest_Pearl", 16, 0), getModItem(EtFuturumRequiem.ID, "chorus_flower", 64, 0),
-             * getModItem(Witchery.ID, "cauldronbook", 1, 0), getModItem(AvaritiaAddons.ID, "CompressedChest", 4, 0),
-             * getModItem(ExtraUtilities.ID, "block_bedrockium", 16, 0)) .fluidInputs( new
-             * FluidStack(FluidRegistry.getFluid("ender"), 16000), new FluidStack(FluidRegistry.getFluid("endergoo"),
-             * 8000), new FluidStack(FluidRegistry.getFluid("radon"), 4000), new
-             * FluidStack(FluidRegistry.getFluid("potion.diablosauce.strong"), 2000)) .itemOutputs( new
-             * NBTItem(getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0)) .setNBT("{stable:1b}"))
-             * .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
-             * .addTo(IGRecipeMaps.spaceAssemblerRecipes); }
-             */
+        }
+
+        if (Avaritia.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.CompressorUV.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackPlutonium, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.CosmicNeutronium, 8L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 4L),
+                            getModItem(Avaritia.ID, "Resource", 20, 1),
+                            ItemList.Electric_Motor_UV.get(4),
+                            ItemList.Electric_Piston_UV.get(8),
+                            ItemList.Conveyor_Module_UV.get(8),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1))
+                    .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
+                    .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+        }
+        if (OpenComputers.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(OpenComputers.ID, "case3", 1, 0),
+                            getModItem(OpenComputers.ID, "item", 2, 103),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 69)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(OpenComputers.ID, "item", 1, 90),
+                            ItemList.Electric_Motor_LuV.get(4L),
+                            WerkstoffLoader.RhodiumPlatedPalladium.get(turbineBlade, 6),
+                            getModItem(HardcoreEnderExpansion.ID, "biome_compass", 2, 0),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 6L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 91)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6),
+                            getModItem(IndustrialCraft2.ID, "itemRTGPellet", 2, 0),
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 12L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Electrum, 2L))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 90)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(OpenComputers.ID, "item", 1, 43),
+                            getModItem(OpenComputers.ID, "item", 1, 102),
+                            getModItem(OpenComputers.ID, "item", 1, 10),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16L))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 103)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
     }
 }

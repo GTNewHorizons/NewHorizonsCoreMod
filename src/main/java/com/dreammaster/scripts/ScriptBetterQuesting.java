@@ -8,6 +8,8 @@ import static gregtech.api.enums.Mods.QuestBook;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.enums.Mods;
+
 public class ScriptBetterQuesting implements IScriptLoader {
 
     @Override
@@ -16,8 +18,8 @@ public class ScriptBetterQuesting implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(BetterQuesting.ID, QuestBook.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(BetterQuesting, QuestBook);
     }
 
     @Override

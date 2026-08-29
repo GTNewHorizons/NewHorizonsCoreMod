@@ -25,6 +25,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
@@ -41,15 +42,9 @@ public class ScriptExtraBees implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(
-                ExtraBees.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                PamsHarvestCraft.ID,
-                Thaumcraft.ID);
+    public List<Mods> getDependencies() {
+        return Arrays
+                .asList(ExtraBees, ExtraUtilities, Forestry, IndustrialCraft2, MagicBees, PamsHarvestCraft, Thaumcraft);
     }
 
     @Override
@@ -169,19 +164,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'b',
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'd',
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
                 'e',
                 getModItem(Minecraft.ID, "brick_block", 1, 0),
                 'f',
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 8),
                 'h',
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 8));
         RecipeManagers.carpenterManager.addRecipe(

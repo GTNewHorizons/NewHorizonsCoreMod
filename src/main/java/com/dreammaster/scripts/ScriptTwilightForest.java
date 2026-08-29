@@ -13,10 +13,10 @@ import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerNonCellRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gtPlusPlus.api.recipe.GTPPRecipeMaps.mixerNonCellRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +33,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -50,15 +51,15 @@ public class ScriptTwilightForest implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                ElectroMagicTools.ID,
-                EtFuturumRequiem.ID,
-                ForbiddenMagic.ID,
-                MagicBees.ID,
-                Thaumcraft.ID,
-                TwilightForest.ID,
-                ZTones.ID);
+                ElectroMagicTools,
+                EtFuturumRequiem,
+                ForbiddenMagic,
+                MagicBees,
+                Thaumcraft,
+                TwilightForest,
+                ZTones);
     }
 
     @Override

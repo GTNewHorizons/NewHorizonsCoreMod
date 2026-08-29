@@ -46,6 +46,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -61,18 +62,18 @@ public class ScriptIndustrialCraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                BuildCraftFactory.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                Natura.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                TinkersGregworks.ID,
-                TwilightForest.ID);
+                BiomesOPlenty,
+                BuildCraftFactory,
+                Forestry,
+                IndustrialCraft2,
+                Natura,
+                Railcraft,
+                Thaumcraft,
+                TinkerConstruct,
+                TinkersGregworks,
+                TwilightForest);
     }
 
     @Override
@@ -159,17 +160,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "circuitData",
                 "batteryData",
                 "circuitData");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
-                "plateAnyRubber",
-                "plateAnyRubber",
-                "plateAnyRubber",
-                "plateAnyRubber",
-                "plateAnyRubber",
-                "plateAnyRubber",
-                null,
-                null,
-                null);
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockScaffold", 1, 0),
                 "screwIron",
@@ -586,7 +576,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemDoorAlloy", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
-                getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0),
+                ItemList.ReinforcedGlass.get(1L),
                 "craftingToolHardHammer",
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
                 "ringLead",
@@ -1169,9 +1159,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartAlloy", 3, 0),
-                        getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0))
+                .itemInputs(getModItem(IndustrialCraft2.ID, "itemPartAlloy", 3, 0), ItemList.ReinforcedGlass.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDoorAlloy", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 720)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1300,12 +1288,12 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                        ItemList.Block_ReinforcedConcrete.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lead, 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTOreDictUnificator.addItemData(
-                getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                ItemList.Block_ReinforcedConcrete.get(1L),
                 new ItemData(
                         new ItemData(Materials.Steel, 2 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));

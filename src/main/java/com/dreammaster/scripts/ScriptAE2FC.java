@@ -30,6 +30,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.SubstituteFluidStack;
@@ -48,9 +49,8 @@ public class ScriptAE2FC implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays
-                .asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, Avaritia.ID, EternalSingularity.ID, OpenComputers.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AE2FluidCraft, AppliedEnergistics2, Avaritia, EternalSingularity, OpenComputers);
     }
 
     @Override
@@ -121,6 +121,8 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_BUFFER_LARGE = getModItem(AE2FluidCraft.ID, "large_ingredient_buffer", 1, 0);
         final ItemStack AE2FC_EXPORTBUS = getModItem(AE2FluidCraft.ID, "part_fluid_export", 1, 0);
         final ItemStack AE2FC_IMPORTBUS = getModItem(AE2FluidCraft.ID, "part_fluid_import", 1, 0);
+        final ItemStack AE2FC_FORMATION_PLANE = getModItem(AE2FluidCraft.ID, "part_fluid_formation_plane", 1, 0);
+        final ItemStack AE2FC_ANNIHILATION_PLANE = getModItem(AE2FluidCraft.ID, "part_fluid_annihilation_plane", 1, 0);
         final ItemStack AE2FC_OCEDITOR = getModItem(AE2FluidCraft.ID, "oc_pattern_editor", 1, 0);
         final ItemStack AE2FC_MAINTAIN = getModItem(AE2FluidCraft.ID, "level_maintainer", 1, 0);
         final ItemStack AE2FC_FLUID_BUFFER = getModItem(AE2FluidCraft.ID, "fluid_buffer", 1, 0);
@@ -689,6 +691,30 @@ public class ScriptAE2FC implements IScriptLoader {
                 NETHER_QUARTZ_PLATE,
                 ItemList.Electric_Piston_LV.get(1),
                 NETHER_QUARTZ_PLATE);
+        // Fluid formation plane
+        addShapedRecipe(
+                AE2FC_FORMATION_PLANE,
+                "craftingToolScrewdriver",
+                AE2FC_EXPORTBUS,
+                "craftingToolHardHammer",
+                LAPIS_SCREW,
+                AE2_CORE_FOM,
+                LAPIS_SCREW,
+                AE2_QUARTZ_GLASS,
+                AE2_QUARTZ_GLASS,
+                AE2_QUARTZ_GLASS);
+        // Fluid annihilation plane
+        addShapedRecipe(
+                AE2FC_ANNIHILATION_PLANE,
+                "craftingToolScrewdriver",
+                AE2FC_IMPORTBUS,
+                "craftingToolHardHammer",
+                LAPIS_SCREW,
+                AE2_CORE_ANN,
+                LAPIS_SCREW,
+                AE2_QUARTZ_GLASS,
+                AE2_QUARTZ_GLASS,
+                AE2_QUARTZ_GLASS);
         // Fluid Auto Filler
         addShapedRecipe(
                 AE2FC_AUTO_FILLER,
@@ -729,7 +755,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemOutputs(AE2FC_TANK).duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Wireless Pattern Terminal
-        GTValues.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_TERM).itemOutputs(AE2FC_PATTERN_WIRELESS)
+        GTValues.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_PATTERN_TERM).itemOutputs(AE2FC_PATTERN_WIRELESS)
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Wireless Interface Terminal
@@ -775,6 +801,26 @@ public class ScriptAE2FC implements IScriptLoader {
                 .circuit(2).itemOutputs(AE2FC_IMPORTBUS).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
+        // ME Fluid formation plane
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTUtility.copyAmount(3, AE2_QUARTZ_GLASS),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        AE2_CORE_FOM,
+                        AE2FC_EXPORTBUS)
+                .circuit(2).itemOutputs(AE2FC_FORMATION_PLANE).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
+
+        // ME Fluid annihilation plane
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTUtility.copyAmount(3, AE2_QUARTZ_GLASS),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        AE2_CORE_ANN,
+                        AE2FC_IMPORTBUS)
+                .circuit(2).itemOutputs(AE2FC_ANNIHILATION_PLANE).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
+
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
@@ -804,5 +850,18 @@ public class ScriptAE2FC implements IScriptLoader {
         addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2FC_INTERFACE_P2P);
 
         GameRegistry.addShapelessRecipe(AE2FC_ENERGY_CARD, AE2_ADV_CARD, AE2_NEUTRONIUM_ENERGY_CELL);
+
+        // Super ME Replenisher
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSuperMEReplenisher"),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 67),
+                getModItem(AE2FluidCraft.ID, "fluid_part", 7),
+                "circuitInfinite",
+                getModItem(AE2FluidCraft.ID, "super_stock_replenisher"),
+                "circuitInfinite",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 67),
+                getModItem(AE2FluidCraft.ID, "fluid_part", 7));
     }
 }

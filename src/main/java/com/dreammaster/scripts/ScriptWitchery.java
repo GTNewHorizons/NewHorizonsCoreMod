@@ -36,6 +36,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -55,18 +56,18 @@ public class ScriptWitchery implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                Botania.ID,
-                EtFuturumRequiem.ID,
-                IndustrialCraft2.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                Witchery.ID);
+                Backpack,
+                BiomesOPlenty,
+                BloodArsenal,
+                Botania,
+                EtFuturumRequiem,
+                IndustrialCraft2,
+                Railcraft,
+                Thaumcraft,
+                TinkerConstruct,
+                Witchery);
     }
 
     @Override
@@ -371,11 +372,11 @@ public class ScriptWitchery implements IScriptLoader {
                 'f',
                 BlockList.SteelBars.get(),
                 'g',
-                getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0),
+                ItemList.FenceIron.get(1L),
                 'h',
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0),
                 'i',
-                getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0));
+                ItemList.FenceIron.get(1L));
         TCHelper.addResearchPage(
                 "OVEN",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "witchesovenidle", 1, 0))));

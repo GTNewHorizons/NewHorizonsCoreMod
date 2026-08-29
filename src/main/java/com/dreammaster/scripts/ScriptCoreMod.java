@@ -62,6 +62,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.ItemData;
@@ -79,26 +80,26 @@ public class ScriptCoreMod implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                AppliedEnergistics2.ID,
-                BiomesOPlenty.ID,
-                BuildCraftSilicon.ID,
-                EnderIO.ID,
-                Forestry.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                IndustrialCraft2.ID,
-                Natura.ID,
-                OpenBlocks.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedCore.ID,
-                Railcraft.ID,
-                RemoteIO.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID);
+                AdvancedSolarPanel,
+                AppliedEnergistics2,
+                BiomesOPlenty,
+                BuildCraftSilicon,
+                EnderIO,
+                Forestry,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                IndustrialCraft2,
+                Natura,
+                OpenBlocks,
+                PamsHarvestCraft,
+                ProjectRedCore,
+                Railcraft,
+                RemoteIO,
+                Thaumcraft,
+                TinkerConstruct);
     }
 
     @Override
@@ -721,42 +722,42 @@ public class ScriptCoreMod implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                        ItemList.Block_ReinforcedConcrete.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 6L))
                 .itemOutputs(BlockList.BronzePlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 144)).duration(10 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                        ItemList.Block_ReinforcedConcrete.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 6L))
                 .itemOutputs(BlockList.SteelPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                        ItemList.Block_ReinforcedConcrete.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 6L))
                 .itemOutputs(BlockList.TitaniumPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.platinum", 144)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                        ItemList.Block_ReinforcedConcrete.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L))
                 .itemOutputs(BlockList.TungstensteelPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iridium", 144)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                        ItemList.Block_ReinforcedConcrete.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 6L))
                 .itemOutputs(BlockList.NaquadahPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.osmium", 144)).duration(22 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                        ItemList.Block_ReinforcedConcrete.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 6L))
                 .itemOutputs(BlockList.NeutroniumPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).duration(25 * SECONDS)

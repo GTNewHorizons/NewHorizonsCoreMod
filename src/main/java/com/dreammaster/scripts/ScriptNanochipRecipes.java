@@ -32,6 +32,7 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.VoltageIndex;
@@ -63,8 +64,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, OpenComputers.ID, UniversalSingularities.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AE2FluidCraft, AppliedEnergistics2, OpenComputers, UniversalSingularities);
     }
 
     @Override
@@ -866,7 +867,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Quantum
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(48),
+                        CircuitComponent.ProcessedFoilShirabon.getFakeStack(32),
                         CircuitComponent.ProcessedFrameboxHypogen.getFakeStack(2),
                         CircuitComponent.ScrewSixPhasedCopper.getFakeStack(4),
                         CircuitComponent.CasingCreon.getFakeStack(1))
@@ -1370,7 +1371,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedLivingBioChip, 1),
                         new CircuitComponentStack(CircuitComponent.ProcessedWireNiobiumTitanium, 16),
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltChromaticGlass, 4)),
-                Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(9)),
+                Arrays.asList(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(9)),
                 CircuitComponent.BiowareProcessor,
                 3 * SECONDS,
                 2_457_600, // UEV
@@ -1473,7 +1474,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         }),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(10 * INGOTS),
-                        Materials.Radon.getGas(10 * INGOTS),
+                        Materials.Radon.getPlasma(10 * INGOTS),
                         Materials.SuperCoolant.getFluid(10000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(500)),
                 CircuitComponent.OpticalAssembly,
@@ -1499,7 +1500,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedFoilPolybenzimidazole, 64)),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(20 * INGOTS),
-                        Materials.Radon.getGas(20 * INGOTS),
+                        Materials.Radon.getPlasma(20 * INGOTS),
                         Materials.SuperCoolant.getFluid(20000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(1000)),
                 CircuitComponent.OpticalComputer,
@@ -1524,7 +1525,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         }),
                 Arrays.asList(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(40 * INGOTS),
-                        Materials.Radon.getGas(40 * INGOTS),
+                        Materials.Radon.getPlasma(40 * INGOTS),
                         Materials.SuperCoolant.getFluid(40000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(2000)),
                 CircuitComponent.OpticalMainframe,
@@ -1582,7 +1583,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UIV);
 
-        // Planck manifold
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.ProcessedFrameboxHypogen, 2),
@@ -1592,7 +1592,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.CasingEternity, 4),
                         new CircuitComponentStack(CircuitComponent.ProcessedFoilShirabon, 64)),
                 Arrays.asList(
-                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(16 * INGOTS),
+                        Materials.BoundlessCosmicSolder.getFluid(1000),
                         Materials.RadoxPolymer.getMolten(16 * INGOTS),
                         Materials.PrimordialMatter.getFluid(1000),
                         Materials.ExcitedDTSC.getFluid(4000)),
@@ -1616,7 +1616,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltWhiteDwarfMatter, 32),
                         new CircuitComponentStack(CircuitComponent.ProcessedCoiledThermalSuperconductor, 8)),
                 Arrays.asList(
-                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(64 * INGOTS),
+                        Materials.BoundlessCosmicSolder.getFluid(4000),
                         Materials.PrimordialMatter.getFluid(4000),
                         Materials.Space.getMolten(4000),
                         Materials.PhononMedium.getFluid(1000)),
@@ -1624,7 +1624,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 1000 * SECONDS,
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UMV);
-
     }
     // spotless:on
 }

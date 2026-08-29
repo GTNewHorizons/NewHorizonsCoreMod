@@ -18,7 +18,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
@@ -86,21 +85,21 @@ public class ScriptGalacticraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AE2FluidCraft.ID,
-                AppliedEnergistics2.ID,
-                BuildCraftTransport.ID,
-                CarpentersBlocks.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                GraviSuite.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIllumination.ID,
-                TinkersGregworks.ID);
+                AE2FluidCraft,
+                AppliedEnergistics2,
+                BuildCraftTransport,
+                CarpentersBlocks,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                GraviSuite,
+                IndustrialCraft2,
+                IronChests,
+                PamsHarvestCraft,
+                ProjectRedIllumination,
+                TinkersGregworks);
     }
 
     @Override
@@ -945,10 +944,10 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggymat", 1, 1),
                 null,
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
                 "compressedSteel",
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
+                ItemList.PadBouncy.get(1L),
                 "compressedSteel",
                 "compressedSteel",
                 "compressedSteel",
@@ -956,7 +955,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggymat", 1, 2),
                 "compressedSteel",
-                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0),
+                ItemList.PadBouncy.get(1L),
                 "compressedSteel",
                 "compressedSteel",
                 getModItem(IronChests.ID, "BlockIronChest", 1, 0),
@@ -1814,9 +1813,7 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void extruderRecipes() {
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0),
-                        ItemList.Shape_Extruder_Pipe_Small.get(0L))
+                .itemInputs(ItemList.ReinforcedGlass.get(1L), ItemList.Shape_Extruder_Pipe_Small.get(0L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 2, 0)).duration(6 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
@@ -1841,8 +1838,8 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void maceratorRecipes() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 2, 0)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.MeteoricIron, 2L))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
     }
 
     private void dungeonBlockRecipes() {

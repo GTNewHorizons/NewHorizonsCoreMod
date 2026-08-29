@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.dreammaster.item.NHItemList;
 
+import gregtech.api.enums.Mods;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptIguanaTweaks implements IScriptLoader {
@@ -19,8 +20,8 @@ public class ScriptIguanaTweaks implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(IguanaTweaksTinkerConstruct.ID, Natura.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(IguanaTweaksTinkerConstruct, Natura);
     }
 
     @Override

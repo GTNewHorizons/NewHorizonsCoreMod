@@ -19,6 +19,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
@@ -37,15 +38,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                TinkersGregworks.ID);
+                ForbiddenMagic,
+                Forestry,
+                IndustrialCraft2,
+                MagicBees,
+                TaintedMagic,
+                Thaumcraft,
+                TinkersGregworks);
     }
 
     @Override

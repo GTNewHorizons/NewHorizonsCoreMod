@@ -11,6 +11,7 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.enums.Mods;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptBiblioWoodsForestry implements IScriptLoader {
@@ -21,8 +22,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(BiblioCraft.ID, BiblioWoodsForestryEdition.ID, Forestry.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(BiblioCraft, BiblioWoodsForestryEdition, Forestry);
     }
 
     @Override

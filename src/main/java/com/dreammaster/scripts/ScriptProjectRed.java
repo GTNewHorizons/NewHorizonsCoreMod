@@ -60,6 +60,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
@@ -75,34 +76,34 @@ public class ScriptProjectRed implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                Botania.ID,
-                Botany.ID,
-                BuildCraftFactory.ID,
-                EtFuturumRequiem.ID,
-                ExtraBees.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                GalacticraftAmunRa.ID,
-                Gendustry.ID,
-                IndustrialCraft2.ID,
-                MCFrames.ID,
-                Natura.ID,
-                OpenBlocks.ID,
-                OpenComputers.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedCore.ID,
-                ProjectRedExploration.ID,
-                ProjectRedTransmission.ID,
-                ProjectRedTransportation.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedFabrication.ID,
-                Railcraft.ID,
-                StevesCarts2.ID,
-                ThaumicHorizons.ID,
-                TinkerConstruct.ID);
+                BiomesOPlenty,
+                Botania,
+                Botany,
+                BuildCraftFactory,
+                EtFuturumRequiem,
+                ExtraBees,
+                ForbiddenMagic,
+                Forestry,
+                GalacticraftAmunRa,
+                Gendustry,
+                IndustrialCraft2,
+                MCFrames,
+                Natura,
+                OpenBlocks,
+                OpenComputers,
+                PamsHarvestCraft,
+                ProjectRedCore,
+                ProjectRedExploration,
+                ProjectRedTransmission,
+                ProjectRedTransportation,
+                ProjectRedExpansion,
+                ProjectRedFabrication,
+                Railcraft,
+                StevesCarts2,
+                ThaumicHorizons,
+                TinkerConstruct);
     }
 
     // This should ideally be shared somewhere; pending more cleanup/rewrite.
@@ -1496,7 +1497,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedFabrication).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Circuit_Board_Epoxy.get(1L),
+                        ItemList.Circuit_Board_Plastic.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 4L))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)

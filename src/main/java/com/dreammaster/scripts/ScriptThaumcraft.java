@@ -69,6 +69,7 @@ import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -94,36 +95,36 @@ public class ScriptThaumcraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                Botania.ID,
-                BuildCraftFactory.ID,
-                Chisel.ID,
-                ExtraUtilities.ID,
-                Fether.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GTNHTCWands.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                MalisisDoors.ID,
-                Natura.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                StevesCarts2.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID,
-                Witchery.ID);
+                Backpack,
+                BiomesOPlenty,
+                Botania,
+                BuildCraftFactory,
+                Chisel,
+                ExtraUtilities,
+                Fether,
+                ForbiddenMagic,
+                Forestry,
+                GalacticraftCore,
+                GalacticraftMars,
+                GTNHTCWands,
+                IguanaTweaksTinkerConstruct,
+                IndustrialCraft2,
+                MagicBees,
+                MalisisDoors,
+                Natura,
+                PamsHarvestCraft,
+                ProjectRedIntegration,
+                Railcraft,
+                RandomThings,
+                StevesCarts2,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct,
+                TwilightForest,
+                Witchery);
     }
 
     @Override
@@ -147,7 +148,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 2))
-                .itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
+                .circuit(19).itemOutputs(getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Thaumium Shovel
@@ -164,7 +165,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 2),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 1))
-                .circuit(2).itemOutputs(getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0)).duration(4 * SECONDS)
+                .circuit(20).itemOutputs(getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         ChiselHelper
@@ -3117,7 +3118,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 'e',
-                getModItem(Thaumcraft.ID, "FocusWarding", 1, 0),
+                getModItem(Thaumcraft.ID, "FocusWarding", 0, 0),
                 'f',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6),
                 'g',
@@ -5686,7 +5687,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 NHItemList.ReinforcedGlassPlate.get(),
                 new AspectList().add(Aspect.METAL, 1).add(Aspect.COLD, 1).add(Aspect.CRYSTAL, 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0),
+                ItemList.Block_ReinforcedConcrete.get(1L),
                 new AspectList().add(Aspect.METAL, 4).add(Aspect.ORDER, 3).add(Aspect.EARTH, 2).add(Aspect.CRAFT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "blockMetal", 1, 0),

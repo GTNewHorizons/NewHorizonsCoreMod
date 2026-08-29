@@ -41,6 +41,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -52,12 +53,14 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.library.TConstructRegistry;
+import tectech.thing.CustomItemList;
 import vexatos.tgregworks.reference.PartTypes;
 import vexatos.tgregworks.util.TGregUtils;
 
@@ -69,27 +72,27 @@ public class ScriptGregtech implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                DraconicEvolution.ID,
-                IndustrialCraft2.ID,
-                MCFrames.ID,
-                Natura.ID,
-                OpenBlocks.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransmission.ID,
-                SGCraft.ID,
-                StructureLib.ID,
-                SuperSolarPanels.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID);
+                AdvancedSolarPanel,
+                AppliedEnergistics2,
+                Avaritia,
+                BiomesOPlenty,
+                BloodArsenal,
+                DraconicEvolution,
+                IndustrialCraft2,
+                MCFrames,
+                Natura,
+                OpenBlocks,
+                PamsHarvestCraft,
+                ProjectRedExpansion,
+                ProjectRedTransmission,
+                SGCraft,
+                StructureLib,
+                SuperSolarPanels,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct);
     }
 
     @Override
@@ -613,6 +616,28 @@ public class ScriptGregtech implements IScriptLoader {
                 "platePaper",
                 "dyeBlue",
                 "dyeWhite");
+        addShapedRecipe(
+                ItemList.PadBouncy.get(1L),
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                ItemList.PadSticky.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                ItemList.IC2_Resin.get(1L),
+                null,
+                null,
+                null);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Spray_Color_Infinite.get(1L),
@@ -653,6 +678,32 @@ public class ScriptGregtech implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320),
                 'b',
                 ItemList.Battery_Buffer_3by3_IV.get(1L));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                NHItemList.SingularityComputationCore.get(),
+                "eeebbbeee",
+                "es-----se",
+                "e-sgags-e",
+                "b-gsdsg-b",
+                "b-adcda-b",
+                "b-gsdsg-b",
+                "e-sgags-e",
+                "es-----se",
+                "eeebbbeee",
+                'b',
+                CustomItemList.Godforge_SingularityShieldingCasing.get(1),
+                's',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47),
+                'g',
+                CustomItemList.StabilisationFieldGeneratorTier8.get(1),
+                'a',
+                CustomItemList.astralArrayFabricator.get(1),
+                'd',
+                getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1, 0),
+                'c',
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1, 0),
+                'e',
+                CustomItemList.SpacetimeCompressionFieldGeneratorTier8.get(1));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L)).duration(15 * SECONDS)
@@ -1368,9 +1419,6 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 18)).circuit(1)
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(24)
                 .addTo(benderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 18)).circuit(9)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1)).duration(180)
-                .eut(TierEU.RECIPE_MV).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Polyethylene, 2L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Polyethylene, 1L)).duration(20)
                 .eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
@@ -1410,6 +1458,9 @@ public class ScriptGregtech implements IScriptLoader {
                         ItemList.Shape_Mold_Credit.get(0L))
                 .itemOutputs(NHItemList.CoinBlank.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.potato, 1, 0))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
