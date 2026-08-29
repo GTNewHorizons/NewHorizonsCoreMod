@@ -91,7 +91,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import gregtech.GTMod;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -108,6 +107,7 @@ import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import goodgenerator.util.ItemRefer;
+import gregtech.GTMod;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -8383,7 +8383,7 @@ public class AssemblerRecipes implements Runnable {
 
     }
 
-    private OrePrefixes[] getOresFromMaterial(Materials materials){
+    private OrePrefixes[] getOresFromMaterial(Materials materials) {
         List<OrePrefixes> variants = Arrays.asList(getOrePrefixesVariants(materials));
 
         // still add the following variants, in case the ores got obtained by meteor / void miner / space miner
