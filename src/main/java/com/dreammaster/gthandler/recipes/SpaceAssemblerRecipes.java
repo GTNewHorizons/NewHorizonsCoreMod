@@ -545,7 +545,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     .itemInputs(
                             getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6),
                             getModItem(IndustrialCraft2.ID, "itemRTGPellet", 2, 0),
-                            MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plateDense, 12),
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 12L),
                             Circuits.UV.get(2),
                             Circuits.LuV.get(2),
                             Circuits.IV.get(4),
