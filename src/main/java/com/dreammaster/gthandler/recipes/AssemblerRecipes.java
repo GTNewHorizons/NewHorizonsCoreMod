@@ -86,6 +86,7 @@ import static tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -8384,7 +8385,7 @@ public class AssemblerRecipes implements Runnable {
     }
 
     private OrePrefixes[] getOresFromMaterial(Materials materials) {
-        List<OrePrefixes> variants = Arrays.asList(getOrePrefixesVariants(materials));
+        List<OrePrefixes> variants = new ArrayList<>(Arrays.asList(getOrePrefixesVariants(materials)));
 
         // still add the following variants, in case the ores got obtained by meteor / void miner / space miner
 
