@@ -1239,7 +1239,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.MAGIC, 32).add(Aspect.TRAVEL, 32).add(Aspect.ARMOR, 24),
 
                 ItemList.Armor_Chip_T1.get(1),
-                NHItemList.QuantumCrystal.get(1),
+                NHItemList.NanoCrystal.get(1),
                 GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StainlessSteel, 1),
                 GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1),
                 ItemList.Field_Generator_LV.get(1),

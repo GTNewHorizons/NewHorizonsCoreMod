@@ -402,7 +402,21 @@ public class SolarFactoryRecipes implements Runnable {
                             MaterialLibAPI.getFluidStack(Materials.Infinity, FluidShapes.fluidMolten, 4 * 144),
                             MaterialLibAPI.getFluidStack(Materials.Kevlar, FluidShapes.fluidMolten, 8 * 144),
                             MaterialLibAPI.getFluidStack(Materials.Knightmetal, FluidShapes.fluidMolten, 2 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS)
+                    .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Cover_SolarPanel_LuV.get(1),
+                            ItemList.Robot_Arm_LuV.get(1),
+                            ItemList.UHTResistantMesh.get(8),
+                            MaterialLibAPI.getStack(Materials.Kevlar, Shapes.plate, 4),
+                            MaterialLibAPI.getStack(Materials.RadoxPoly, Shapes.itemCasing, 1),
+                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Glowstone, 2))
+                    .itemOutputs(ItemList.SolarSail.get(1))
+                    .fluidInputs(
+                            new FluidStack(FluidRegistry.getFluid("molten.mutatedlivingsolder"), 720),
+                            MaterialLibAPI.getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, 100))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 3)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UEV) };
 
     public void run() {

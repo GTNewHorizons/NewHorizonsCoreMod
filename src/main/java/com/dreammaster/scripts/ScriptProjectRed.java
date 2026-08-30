@@ -1502,7 +1502,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedFabrication).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Circuit_Board_Epoxy.get(1L),
+                        ItemList.Circuit_Board_Plastic.get(1L),
                         MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 4))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)

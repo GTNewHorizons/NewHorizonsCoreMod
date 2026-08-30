@@ -1,9 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
-import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -36,13 +34,11 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
@@ -268,54 +264,6 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(4), ItemList.NtNanofibers.get(4))
                 .itemOutputs(ItemList.UHTResistantMesh.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
-                .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder() // drone case
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TranscendentMetal, 1),
-                        ItemList.Emitter_UEV.get(1),
-                        ItemList.Sensor_UEV.get(1),
-                        ItemList.Naquarite_Universal_Insulator_Foil.get(64),
-                        getModItem(OpenComputers.ID, "item", 64, 36),
-                        ItemList.Electric_Motor_UHV.get(4),
-                        MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.turbineBlade, 8),
-                        MaterialLibAPI.getStack(Materials.RadoxPoly, Shapes.itemCasing, 4),
-                        ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(ItemList.DroneCase.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidMolten, 2304))
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder() // femtocontroller
-                .itemInputs(
-                        ItemList.Optically_Perfected_CPU.get(1),
-                        Circuits.UHV.get(4),
-                        ItemList.Circuit_Chip_FPIC.get(8),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Silver, 2),
-                        ItemList.EnergisedTesseract.get(1),
-                        ItemRefer.HiC_T5.get(4),
-                        MaterialLibAPI.getStack(Materials.SuperconductorUEVBase, Shapes.wireFine, 32),
-                        MaterialLibAPI.getStack(Materials.TengamAttuned, Shapes.itemCasing, 64),
-                        ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(ItemList.Femtocontroller.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, 16000))
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder() // fuel
-                .itemInputs(
-                        ItemList.Large_Fluid_Cell_Neutronium.get(1),
-                        ItemList.RodNaquadah32.get(32),
-                        MaterialLibAPI.getStack(Materials.Hypogen, Shapes.plate, 4),
-                        ItemList.neutroniumHeatCapacitor.get(1),
-                        ItemList.UIV_Coil.get(16),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 4),
-                        getModItem(GalacticraftAmunRa.ID, "item.baseItem", 16, 27),
-                        ItemRefer.Advanced_Radiation_Protection_Plate.get(48),
-                        ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(ItemList.FuelPellet.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
-                                FluidShapes.fluidLiquid,
-                                16000))
                 .addTo(assemblerRecipes);
 
         // Chemical Reactor

@@ -48,15 +48,15 @@ public class GT_CustomLoader {
 
         UEV(Circuits.UEV.getIngredient(), MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Bedrockium),
                 Materials.Draconium, MaterialParts.craftIngredient(OrePrefixes.wireGt02, Materials.Draconium), null,
-                null, "blockGlassUEV", Materials.Bedrockium, Materials.Infinity),
+                null, "blockGlassUEV", Materials.Infinity, Materials.Infinity),
 
         UIV(Circuits.UIV.getIngredient(), MaterialParts.craftIngredient(OrePrefixes.wireGt08, Materials.Bedrockium),
                 Materials.NetherStar, MaterialParts.craftIngredient(OrePrefixes.wireGt02, Materials.NetherStar), null,
-                null, "blockGlassUIV", Materials.CosmicNeutronium, Materials.TranscendentMetal),
+                null, "blockGlassUIV", Materials.TranscendentMetal, Materials.TranscendentMetal),
 
         UMV(Circuits.UMV.getIngredient(), MaterialParts.craftIngredient(OrePrefixes.wireGt16, Materials.Bedrockium),
                 Materials.Quantium, MaterialParts.craftIngredient(OrePrefixes.wireGt02, Materials.Quantium), null, null,
-                "blockGlassUMV", Materials.TranscendentMetal, Materials.SpaceTime);
+                "blockGlassUMV", Materials.SpaceTime, Materials.SpaceTime);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;

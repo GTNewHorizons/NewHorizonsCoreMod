@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
@@ -525,7 +526,45 @@ public class SpaceAssemblerRecipes implements Runnable {
                             Circuits.IV.get(4))
                     .fluidInputs(new FluidStack(solderIndalloy, 2304))
                     .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 69)).metadata(IGRecipeMaps.MODULE_TIER, 1)
-                    .duration(20 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(OpenComputers.ID, "item", 1, 90),
+                            ItemList.Electric_Motor_LuV.get(4L),
+                            MaterialLibAPI.getStack(Materials.RhodiumPlatedPalladium, Shapes.turbineBlade, 6),
+                            getModItem(HardcoreEnderExpansion.ID, "biome_compass", 2, 0),
+                            Circuits.UV.get(2),
+                            Circuits.LuV.get(6),
+                            Circuits.IV.get(4))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 91)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6),
+                            getModItem(IndustrialCraft2.ID, "itemRTGPellet", 2, 0),
+                            MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plateDense, 12),
+                            Circuits.UV.get(2),
+                            Circuits.LuV.get(2),
+                            Circuits.IV.get(4),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Electrum, 2L))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 90)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(OpenComputers.ID, "item", 1, 43),
+                            getModItem(OpenComputers.ID, "item", 1, 102),
+                            getModItem(OpenComputers.ID, "item", 1, 10),
+                            Circuits.UV.get(2),
+                            Circuits.LuV.get(4),
+                            Circuits.IV.get(16))
+                    .fluidInputs(new FluidStack(solderIndalloy, 2304))
+                    .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 103)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
         }
     }
 }
