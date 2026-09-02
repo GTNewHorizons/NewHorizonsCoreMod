@@ -1265,7 +1265,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'M',
                 ItemList.Electric_Motor_HV.get(1),
                 'T',
-                GTModHandler.getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1));
+                GTModHandler.getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1, wildcard));
 
         TCHelper.addResearchPage("MECHANICALARMOR_APPRENTICE_STRIDERS", new ResearchPage(infusionRecipe));
         TCHelper.addResearchPage("MECHANICALARMOR_APPRENTICE_STRIDERS", new ResearchPage(arcaneRecipe));
@@ -1320,7 +1320,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new AspectList().add(Aspect.MOTION, 64).add(Aspect.ARMOR, 48).add(Aspect.MAGIC, 48).add(Aspect.AIR, 32)
                         .add(Aspect.CRAFT, 32).add(Aspect.ENERGY, 32),
 
-                GTModHandler.getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller", 1),
+                GTModHandler.getModItem(ElectroMagicTools.ID, "QuantumBootsTraveller", 1, wildcard),
                 GTModHandler.getModItem(Thaumcraft.ID, "ItemEldritchObject", 1),
                 GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5),
                 GTModHandler.getModItem(ThaumicTinkerer.ID, "spellCloth", 1),
