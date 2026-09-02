@@ -591,7 +591,8 @@ public class ScriptChisel implements IScriptLoader {
 
         ChiselHelper.addGroup("fertilized_dirt");
         ChiselHelper.addVariationFromStack("fertilizedDirt", getModItem(RandomThings.ID, "fertilizedDirt", 1, 0));
-        ChiselHelper.addVariationFromStack("fertilizedDirt", getModItem(RandomThings.ID, "fertilizedDirt_tilled", 1, 0));
+        ChiselHelper
+                .addVariationFromStack("fertilizedDirt", getModItem(RandomThings.ID, "fertilizedDirt_tilled", 1, 0));
 
         ChiselHelper.addGroup("castle_brick");
         ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0));
