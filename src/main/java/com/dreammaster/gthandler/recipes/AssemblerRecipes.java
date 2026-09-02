@@ -9718,7 +9718,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                             getModItem(OpenComputers.ID, "item", 2, 24),
-                            new ItemStack(Blocks.stone_button, 64, 30720),
+                            new ItemStack(Blocks.stone_button, 64),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 2L),
                             ItemList.Dye_SquidInk.get(4L))
                     .circuit(1).itemOutputs(getModItem(Computronics.ID, "computronics.ocParts", 1, 13))
