@@ -72,6 +72,7 @@ import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import gtPlusPlus.xmod.thermalfoundation.fluid.TFFluids;
 import gtnhlanth.common.register.LanthItemList;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
 import tectech.recipe.TTRecipeAdder;
@@ -325,18 +326,51 @@ public class AssemblingLineRecipes implements Runnable {
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UEV);
 
-        // Dyson Swarm Module
+        // Dyson Drone Case
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.DroneCase.get(1),
+                getModItem(OpenComputers.ID, "item", 1, 91),
                 192_000,
                 512,
                 (int) TierEU.RECIPE_UEV,
                 16,
-                new Object[] { ItemList.DroneCase.get(1), ItemList.FuelPellet.get(1), GregtechItemList.RTG.get(1),
-                        ItemList.Femtocontroller.get(1), ItemList.Circuit_Chip_FPIC.get(8),
-                        ItemList.Cover_SolarPanel_LuV.get(4), ItemList.UHTResistantMesh.get(64) },
-                new FluidStack[] { new FluidStack(solderUEV, 18_432),
-                        new FluidStack(FluidRegistry.getFluid("silane-nitrogen plasma mixture"), 16000) },
+                new Object[] { getModItem(OpenComputers.ID, "item", 4, 91),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TranscendentMetal, 4),
+                        ItemList.Emitter_UEV.get(1), getModItem(OpenComputers.ID, "item", 64, 36),
+                        getModItem(GraviSuite.ID, "itemSimpleItem", 4, 3), ItemList.Energy_LapotronicOrb2.get(4),
+                        NHItemList.HeavyDutyRocketEngineTier4.get(1) },
+                new FluidStack[] { new FluidStack(solderUEV, 720),
+                        new FluidStack(MaterialsElements.getInstance().XENON.getPlasma(), 1_000) },
+                ItemList.DroneCase.get(1),
+                5 * SECONDS,
+                (int) TierEU.RECIPE_UHV);
+
+        // Dyson Femtocontroller
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                getModItem(OpenComputers.ID, "item", 1, 90),
+                192_000,
+                512,
+                (int) TierEU.RECIPE_UEV,
+                16,
+                new Object[] { getModItem(OpenComputers.ID, "item", 4, 90), ItemList.Optically_Perfected_CPU.get(1),
+                        ItemList.Sensor_UEV.get(1), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2L },
+                        ItemList.EnergisedTesseract.get(1), GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 4) },
+                new FluidStack[] { new FluidStack(solderUEV, 720),
+                        Materials.DimensionallyShiftedSuperfluid.getFluid(1_000L) },
+                ItemList.Femtocontroller.get(1),
+                5 * SECONDS,
+                (int) TierEU.RECIPE_UHV);
+
+        // Dyson Swarm Module
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                ItemList.SolarSail.get(1),
+                192_000,
+                512,
+                (int) TierEU.RECIPE_UEV,
+                16,
+                new Object[] { ItemList.SolarSail.get(4), ItemList.DroneCase.get(1), ItemList.Femtocontroller.get(1),
+                        GregtechItemList.RTG.get(1), ItemList.FuelPellet.get(1), ItemList.Circuit_Chip_FPIC.get(4) },
+                new FluidStack[] { new FluidStack(solderUEV, 18_432), new FluidStack(TFFluids.fluidCryotheum, 16_000) },
                 ItemList.DysonSwarmModule.get(64),
                 5 * SECONDS,
                 (int) TierEU.RECIPE_UHV);
@@ -386,9 +420,10 @@ public class AssemblingLineRecipes implements Runnable {
                 512,
                 (int) TierEU.RECIPE_UHV,
                 32,
-                new Object[] { ItemList.Hull_UIV.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UMV), 4L },
+                new Object[] { ItemList.Hull_UIV.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UIV), 8L },
                         ItemList.Electric_Pump_UIV.get(32), ItemList.Quantum_Tank_IV.get(2),
-                        ItemList.Conveyor_Module_UIV.get(32), ItemList.Quantum_Chest_IV.get(2) },
+                        ItemList.Conveyor_Module_UIV.get(32), ItemList.Quantum_Chest_IV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.RadoxPolymer, 64) },
                 new FluidStack[] { Materials.DimensionallyShiftedSuperfluid.getFluid(50000),
                         Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                         Materials.UUMatter.getFluid(8_000) },
@@ -424,7 +459,8 @@ public class AssemblingLineRecipes implements Runnable {
                 new Object[] { ItemList.Hull_UIV.get(4),
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 16),
                         ItemList.Circuit_Chip_FPIC.get(32),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UMV), 8L } },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 16L },
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.RadoxPolymer, 32) },
                 new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                         Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                         Materials.UUMatter.getFluid(8_000) },
@@ -440,10 +476,10 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UHV,
                 32,
                 new Object[] { ItemList.Hull_UIV.get(4), getModItem(OpenComputers.ID, "item", 4, 103),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UMV), 4L },
-                        tectech.thing.CustomItemList.Machine_Multi_Computer.get(4), },
-                new FluidStack[] { Materials.SuperCoolant.getFluid(32_000), new FluidStack(solderUEV, 11_520),
-                        Materials.UUMatter.getFluid(8_000) },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 8L },
+                        tectech.thing.CustomItemList.Machine_Multi_Computer.get(4) },
+                new FluidStack[] { Materials.RadoxPolymer.getMolten(2_304), Materials.SuperCoolant.getFluid(32_000),
+                        new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
                 ItemList.DysonSwarmControlCasing.get(8),
                 80 * SECONDS,
                 (int) TierEU.RECIPE_UEV);
@@ -504,9 +540,10 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UEV,
                 16,
                 new Object[] { ItemList.Hull_UIV.get(4), NHItemList.IrradiantReinforcedBedrockiumPlate.get(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UMV), 8L },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 16L },
                         getModItem(Computronics.ID, "computronics.ocSpecialParts", 4),
-                        getModItem(OpenComputers.ID, "item", 8, 103) },
+                        getModItem(OpenComputers.ID, "item", 8, 103),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 64) },
                 new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(100),
                         Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                         Materials.UUMatter.getFluid(8_000) },

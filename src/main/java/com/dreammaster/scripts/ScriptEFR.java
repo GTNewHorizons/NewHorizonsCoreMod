@@ -4,36 +4,7 @@ import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.MeatCooked;
 import static gregtech.api.enums.Materials.MeatRaw;
-import static gregtech.api.enums.Mods.AdventureBackpack;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.Chisel;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.ElectroMagicTools;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.Fether;
-import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MagicBees;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.TaintedMagic;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicBases;
-import static gregtech.api.enums.Mods.ThaumicHorizons;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.enums.Mods.WitchingGadgets;
-import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -537,6 +508,12 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "coopers_mallet", 1),
+                bits,
+                new Object[] { "BB ", "CCS", "PP ", 'B', getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0), 'S',
+                        "stickWood", 'C', "blockCopper", 'P', "chestCopper" });
 
         // Barrel Upgrades
         addShapedRecipe(
