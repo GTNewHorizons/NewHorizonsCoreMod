@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBEAddons;
@@ -170,11 +171,9 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 0))
-                .itemOutputs(
-                        getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Stone, 1))
-                .duration(5 * SECONDS).eut(10).addTo(latheRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "stone_slab", 1, 0))
+                .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0)).duration(5 * SECONDS).eut(10)
+                .addTo(latheRecipes);
 
     }
 }
