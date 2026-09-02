@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.ProjectRedExploration;
 import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
@@ -57,7 +58,8 @@ public class ScriptChisel implements IScriptLoader {
                 ProjectRedExploration,
                 Railcraft,
                 TinkerConstruct,
-                TwilightForest);
+                TwilightForest,
+                RandomThings);
     }
 
     @Override
@@ -584,6 +586,12 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 1));
         ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 2));
         ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 3));
+
+        ChiselHelper.addVariationFromStack("dirt", getModItem(Minecraft.ID, "farmland", 1, 0));
+
+        ChiselHelper.addGroup("fertilized_dirt");
+        ChiselHelper.addVariationFromStack("fertilizedDirt", getModItem(RandomThings.ID, "fertilizedDirt", 1, 0));
+        ChiselHelper.addVariationFromStack("fertilizedDirt", getModItem(RandomThings.ID, "fertilizedDirt_tilled", 1, 0));
 
         ChiselHelper.addGroup("castle_brick");
         ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0));
