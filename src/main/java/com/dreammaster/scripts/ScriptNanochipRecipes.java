@@ -1099,6 +1099,39 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 ModuleRecipeInfo.ExtremeTier,
                 5 * SECONDS,
                 RecipeMaps.nanochipOpticalOrganizer);
+
+        // Optical Processor
+        addSimpleProcessingRecipe(
+                CircuitComponent.ProcessedCircuitOpticalProcessor,
+                CircuitComponent.OpticalProcessor,
+                ModuleRecipeInfo.ExtremeTier,
+                2 * SECONDS + 10 * TICKS,
+                RecipeMaps.nanochipOpticalOrganizer);
+
+        // Optical Assembly
+        addSimpleProcessingRecipe(
+                CircuitComponent.ProcessedCircuitOpticalAssembly,
+                CircuitComponent.OpticalAssembly,
+                ModuleRecipeInfo.ExtremeTier,
+                5 * SECONDS,
+                RecipeMaps.nanochipOpticalOrganizer);
+
+        // Optical Computer
+        addSimpleProcessingRecipe(
+                CircuitComponent.ProcessedCircuitOpticalComputer,
+                CircuitComponent.OpticalComputer,
+                ModuleRecipeInfo.ExtremeTier,
+                10 * SECONDS,
+                RecipeMaps.nanochipOpticalOrganizer);
+
+        // Optical Mainframe
+        addSimpleProcessingRecipe(
+                CircuitComponent.ProcessedCircuitOpticalMainframe,
+                CircuitComponent.OpticalMainframe,
+                ModuleRecipeInfo.ExtremeTier,
+                20 * SECONDS,
+                RecipeMaps.nanochipOpticalOrganizer);
+
     }
 
     private static void registerSMDProcessorRecipes() {
