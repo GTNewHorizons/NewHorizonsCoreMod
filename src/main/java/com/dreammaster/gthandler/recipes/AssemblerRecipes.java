@@ -25,7 +25,6 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
-import static gregtech.api.enums.Mods.GTPlusPlusEverglades;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -85,6 +84,8 @@ import static tectech.thing.CustomItemList.DATApipe;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
+import static toxiceverglades.dimension.DimensionEverglades.blockSecondLayer;
+import static toxiceverglades.dimension.DimensionEverglades.blockTopLayer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8419,8 +8420,8 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                        getModItem(GTPlusPlusEverglades.ID, "blockDarkWorldGround", 64, 0),
-                        getModItem(GTPlusPlusEverglades.ID, "blockDarkWorldGround2", 64, 0))
+                        new ItemStack(blockTopLayer, 64),
+                        new ItemStack(blockSecondLayer, 64))
                 .circuit(17).fluidInputs(Materials.StagnantWasteWater.getFluid(10000L))
                 .itemOutputs(new ItemStack(ModBlocks.blocks.get("Eg"), 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
