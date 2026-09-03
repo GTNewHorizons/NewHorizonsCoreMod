@@ -470,6 +470,11 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
             GTValues.RA.stdBuilder().itemInputs(cc.realComponent.get()).itemOutputs(cc.getFakeStack(1))
                     .duration(5 * SECONDS).eut(0).addTo(RecipeMaps.nanochipConversionRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(cc.getFakeStack(1))
+                    .itemOutputs(cc.realComponent.get())
+                    .duration(5 * SECONDS).eut(0).addTo(RecipeMaps.nanochipConversionRecipes);
         }
     }
 
