@@ -1600,11 +1600,11 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         addAssemblyMatrixRecipe(
                 Arrays.asList(
-                        //new CircuitComponentStack(CircuitComponent.ProcessedChipOpticalCPU, 1),
-                        //new CircuitComponentStack(CircuitComponent.ProcessedOpticalRAM, 2),
-                        //new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDCapacitor, 16),
-                        //new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDDiode, 16),
-                        //new CircuitComponentStack(CircuitComponent.ProcessedCableOpticalFiber, 4),
+                        new CircuitComponentStack(CircuitComponent.ProcessedChipOpticalCPU, 1),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalRAM, 2),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDCapacitor, 16),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDDiode, 16),
+                        new CircuitComponentStack(CircuitComponent.ProcessedCableOpticalFiber, 4),
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltEnrichedHolmium, 4)),
                 Arrays.asList(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(18)),
                 CircuitComponent.OpticalProcessor,
