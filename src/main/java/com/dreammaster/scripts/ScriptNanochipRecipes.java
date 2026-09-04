@@ -78,7 +78,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         registerEncasementWrapperRecipes();
         registerEtchingArrayRecipes();
         registerOpticalOrganizerRecipes();
-        registerSMDProcessorRecipes();
+        registerPartProcessorRecipes();
         registerSuperconductorSplitterRecipes();
         registerWireTracerRecipes();
 
@@ -263,7 +263,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemOutputs(ItemList.NanoChipModule_EtchingArray.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
 
-        // SMD Processor
+        // Part Processor
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.MeshInterfaceNanochipCasing.get(1),
@@ -271,13 +271,13 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Conveyor_Module_UEV.get(1),
                         ItemRefer.Precise_Assembler.get(1),
-                        GregtechItemList.GT4_Multi_Crafter.get(1),
+                        ItemList.IndustrialPackager.get(1),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polyethylene, 64),
                         ItemList.Circuit_Parts_InductorXSMD.get(64))
                 .fluidInputs(
                         MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(32 * INGOTS),
                         Materials.RadoxPolymer.getMolten(32 * INGOTS))
-                .itemOutputs(ItemList.NanoChipModule_SMDProcessor.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .itemOutputs(ItemList.NanoChipModule_PartProcessor.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
 
         // Board Processor
@@ -406,7 +406,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                         ItemList.VacuumConveyorPipe.get(16),
                         ItemList.Electric_Piston_UEV.get(1),
-                        ItemList.IndustrialPackager.get(1),
+                        GregtechItemList.GT4_Multi_Crafter.get(1),
                         ItemList.LATEX.get(1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 16),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Polybenzimidazole, 64))
@@ -471,9 +471,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             GTValues.RA.stdBuilder().itemInputs(cc.realComponent.get()).itemOutputs(cc.getFakeStack(1))
                     .duration(5 * SECONDS).eut(0).addTo(RecipeMaps.nanochipConversionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(cc.getFakeStack(1))
-                    .itemOutputs(cc.realComponent.get())
+            GTValues.RA.stdBuilder().itemInputs(cc.getFakeStack(1)).itemOutputs(cc.realComponent.get())
                     .duration(5 * SECONDS).eut(0).addTo(RecipeMaps.nanochipConversionRecipes);
         }
     }
@@ -1134,42 +1132,42 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
     }
 
-    private static void registerSMDProcessorRecipes() {
+    private static void registerPartProcessorRecipes() {
         // ASMDs
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDResistor,
                 CircuitComponent.ProcessedAdvSMDResistor,
                 ModuleRecipeInfo.LowTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDTransistor,
                 CircuitComponent.ProcessedAdvSMDTransistor,
                 ModuleRecipeInfo.LowTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDInductor,
                 CircuitComponent.ProcessedAdvSMDInductor,
                 ModuleRecipeInfo.LowTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDCapacitor,
                 CircuitComponent.ProcessedAdvSMDCapacitor,
                 ModuleRecipeInfo.LowTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.AdvSMDDiode,
                 CircuitComponent.ProcessedAdvSMDDiode,
                 ModuleRecipeInfo.LowTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         // Optical SMDs
         addSimpleProcessingRecipe(
@@ -1177,35 +1175,35 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.ProcessedOpticalSMDResistor,
                 ModuleRecipeInfo.MediumTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDTransistor,
                 CircuitComponent.ProcessedOpticalSMDTransistor,
                 ModuleRecipeInfo.MediumTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDInductor,
                 CircuitComponent.ProcessedOpticalSMDInductor,
                 ModuleRecipeInfo.MediumTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDCapacitor,
                 CircuitComponent.ProcessedOpticalSMDCapacitor,
                 ModuleRecipeInfo.MediumTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
 
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalSMDDiode,
                 CircuitComponent.ProcessedOpticalSMDDiode,
                 ModuleRecipeInfo.MediumTier,
                 5 * SECONDS,
-                RecipeMaps.nanochipSMDProcessorRecipes);
+                RecipeMaps.nanochipPartProcessorRecipes);
     }
 
     private static void registerSuperconductorSplitterRecipes() {
