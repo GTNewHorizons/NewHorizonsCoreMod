@@ -1113,21 +1113,6 @@ public class ScriptEFR implements IScriptLoader {
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "amethyst_block", 64, 0),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockCrystalGrowthChamber", 6, 0),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 6, 0),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 6, 7),
-                        getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0),
-                        getModItem(BloodMagic.ID, "enhancedFillingAgent", 1, 0),
-                        getModItem(Botania.ID, "rune", 1, 9),
-                        getModItem(Witchery.ID, "ingredient", 1, 10),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 32, 6))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.crystallinepinkslime"), 4320))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "budding_amethyst", 6, 0)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-
         GTModHandler.addCraftingRecipe(
                 getModItem(Minecraft.ID, "leather", 1, 0),
                 bits,
