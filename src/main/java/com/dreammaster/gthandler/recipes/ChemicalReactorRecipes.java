@@ -35,10 +35,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
-import ic2.core.Ic2Items;
 
 public class ChemicalReactorRecipes implements Runnable {
 
@@ -262,8 +260,7 @@ public class ChemicalReactorRecipes implements Runnable {
                 .fluidInputs(Materials.InfinityCatalyst.getMolten(576L)).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).addTo(UniversalChemical);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Circuit_Wafer_CPU.get(1L), GTUtility.copyAmount(16, Ic2Items.carbonFiber))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_CPU.get(1L), ItemList.Carbon_Fiber_Bundle.get(16L))
                 .itemOutputs(ItemList.Circuit_Wafer_NanoCPU.get(1L)).fluidInputs(Materials.Glowstone.getMolten(576L))
                 .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
 

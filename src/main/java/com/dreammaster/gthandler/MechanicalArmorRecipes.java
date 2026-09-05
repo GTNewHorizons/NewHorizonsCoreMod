@@ -53,7 +53,7 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         NHItemList.MoldHelmet.get(0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 20),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 5, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 5))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .itemOutputs(ItemList.Mechanical_Helmet.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
@@ -62,7 +62,7 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         NHItemList.MoldChestplate.get(0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 32),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 8, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 8))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .itemOutputs(ItemList.Mechanical_Chestplate.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
@@ -71,7 +71,7 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         NHItemList.MoldLeggings.get(0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 28),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 7, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 7))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .itemOutputs(ItemList.Mechanical_Leggings.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
@@ -80,7 +80,7 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         NHItemList.MoldBoots.get(0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 16),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 4, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 4))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .itemOutputs(ItemList.Mechanical_Boots.get(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(formingPressRecipes);
@@ -127,7 +127,7 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 2),
                         ItemList.Electric_Piston_HV.get(1),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 8, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 8),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 16))
                 .fluidInputs(Materials.StainlessSteel.getMolten(INGOTS * 2))
                 .itemOutputs(ItemList.Armor_Frame_Light.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
