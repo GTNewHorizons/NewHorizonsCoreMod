@@ -1413,9 +1413,9 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 2,
                 2,
                 ItemList.Augment_Terrasteel.get(1))
-                .setParents("MECHANICALARMOR_GOGGLES", "BH_NATURA_PYLON", "BH_ALFHEIM")
-                .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_TERRASTEEL"))
-                .registerResearchItem();
+                        .setParents("MECHANICALARMOR_GOGGLES", "BH_NATURA_PYLON", "BH_ALFHEIM")
+                        .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_TERRASTEEL"))
+                        .registerResearchItem();
 
         ThaumcraftApi.addWarpToResearch("MECHANICALARMOR_TERRASTEEL", 3);
 
