@@ -1403,8 +1403,6 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
         TCHelper.addResearchPage("MECHANICALARMOR_ELDRITCH_STRIDERS", new ResearchPage(infusionRecipe));
 
-        TCHelper.addResearchPage("MECHANICALARMOR_TERRASTEEL", new ResearchPage(infusionRecipe));
-
         new ResearchItem(
                 "MECHANICALARMOR_TERRASTEEL",
                 "NEWHORIZONS",
