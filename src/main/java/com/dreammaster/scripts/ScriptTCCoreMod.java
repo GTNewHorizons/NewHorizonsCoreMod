@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderStorage;
@@ -78,6 +79,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 Avaritia,
                 Backpack,
                 BiomesOPlenty,
+                Botania,
                 DraconicEvolution,
                 ElectroMagicTools,
                 EnderStorage,
@@ -1400,5 +1402,59 @@ public class ScriptTCCoreMod implements IScriptLoader {
         );
 
         TCHelper.addResearchPage("MECHANICALARMOR_ELDRITCH_STRIDERS", new ResearchPage(infusionRecipe));
+
+        TCHelper.addResearchPage("MECHANICALARMOR_TERRASTEEL", new ResearchPage(infusionRecipe));
+
+        new ResearchItem(
+                "MECHANICALARMOR_TERRASTEEL",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.PLANT, 48).add(Aspect.ARMOR, 24).add(Aspect.MAGIC, 12).add(Aspect.CRAFT, 8),
+                -8,
+                2,
+                2,
+                ItemList.Augment_Terrasteel.get(1))
+                .setParents("MECHANICALARMOR_GOGGLES", "BH_NATURA_PYLON", "BH_ALFHEIM")
+                .setPages(new ResearchPage("NewHorizons.research_page.MECHANICALARMOR_TERRASTEEL"))
+                .registerResearchItem();
+
+        ThaumcraftApi.addWarpToResearch("MECHANICALARMOR_TERRASTEEL", 3);
+
+        infusionRecipe = TCHelper.addInfusionCraftingRecipe(
+                "MECHANICALARMOR_TERRASTEEL",
+                ItemList.Augment_Terrasteel.get(1),
+                12,
+                new AspectList().add(Aspect.PLANT, 128).add(Aspect.CRAFT, 32).add(Aspect.EARTH, 80)
+                        .add(Aspect.MAGIC, 48).add(Aspect.ARMOR, 24),
+
+                ItemList.Armor_Chip_T2.get(1),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Dragonstone, 1),
+                GTModHandler.getModItem(Botania.ID, "bifrostPermPane", 1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Terrasteel, 1),
+                GTModHandler.getModItem(Botania.ID, "terrasteelChest", 1),
+                GTModHandler.getModItem(Botania.ID, "pylon", 1, 1),
+                GTModHandler.getModItem(Botania.ID, "terrasteelBoots", 1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Terrasteel, 1),
+                GTModHandler.getModItem(Botania.ID, "bifrostPermPane", 1),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Dragonstone, 1),
+                GTModHandler.getModItem(Botania.ID, "bifrostPermPane", 1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Terrasteel, 1),
+                GTModHandler.getModItem(Botania.ID, "terrasteelLegs", 1),
+                GTModHandler.getModItem(Botania.ID, "pylon", 1, 1),
+                GTModHandler.getModItem(Botania.ID, "terrasteelHelm", 1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Terrasteel, 1),
+                GTModHandler.getModItem(Botania.ID, "bifrostPermPane", 1));
+
+        arcaneRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
+                "MECHANICALARMOR_TERRASTEEL",
+                GTModHandler.getModItem(Botania.ID, "terrasteelHelm", 1),
+                new AspectList().add(Aspect.ENTROPY, 150),
+                "   ",
+                " X ",
+                "   ",
+                'X',
+                GTModHandler.getModItem(Botania.ID, "terrasteelHelmReveal", 1));
+
+        TCHelper.addResearchPage("MECHANICALARMOR_TERRASTEEL", new ResearchPage(infusionRecipe));
+        TCHelper.addResearchPage("MECHANICALARMOR_TERRASTEEL", new ResearchPage(arcaneRecipe));
     }
 }
