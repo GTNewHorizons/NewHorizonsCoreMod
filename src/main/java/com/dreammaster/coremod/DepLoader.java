@@ -336,7 +336,7 @@ public class DepLoader implements IFMLCallHook {
         } else {
             mcLocation = args[0];
         }
-        System.out.println("mcLocation: " + mcLocation);
+        LOGGER.info("mcLocation: {}", mcLocation);
         DepLoader depLoader = new DepLoader();
         depLoader.injectData(ImmutableMap.of("mcLocation", new File(mcLocation)));
         depLoader.call();
