@@ -69,7 +69,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -1609,13 +1608,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15));
         TConstructHelper.removeBasinRecipe(getModItem(IndustrialCraft2.ID, "blockMetal", 1, 5));
         TConstructHelper.removeMeltingRecipe(getModItem(Thaumcraft.ID, "ItemNugget", 1, 19));
-        TConstructHelper
-                .getMeltingAdder(
-                        MaterialLibAPI.getBlock(TEBlockShapes.wireGt16),
-                        Materials.Aluminium.getIndex(),
-                        500,
-                        "aluminum.molten",
-                        144)
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Aluminum"), 150, 144)
                 .add(
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.ingot, 1))
@@ -1626,13 +1619,13 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .withAmount(36).add(MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dustSmall, 1));
         Smeltery.addMelting(
                 MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1),
-                GameRegistry.findBlock("minecraft", "sand"),
+                Blocks.sand,
                 0,
                 800,
                 FluidRegistry.getFluidStack("glass.molten", 1000));
         Smeltery.addMelting(
                 MaterialLibAPI.getStack(Materials.Electrum, Shapes.ingot, 1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                GameRegistry.findBlock(TinkerConstruct.ID, "MetalBlock"),
                 7,
                 400,
                 FluidRegistry.getFluidStack("electrum.molten", 144));
@@ -1837,7 +1830,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .add(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8));
         Smeltery.addMelting(
                 MaterialLibAPI.getStack(Materials.Cobalt, Shapes.ingot, 1),
-                GameRegistry.findBlock("TConstruct", "GravelOre"),
+                GameRegistry.findBlock(TinkerConstruct.ID, "GravelOre"),
                 5,
                 650,
                 FluidRegistry.getFluidStack("cobalt.molten", 144));
@@ -1849,7 +1842,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 200);
         Smeltery.addMelting(
                 getModItem(TinkerConstruct.ID, "materials", 1, 12),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                GameRegistry.findBlock(TinkerConstruct.ID, "MetalBlock"),
                 6,
                 500,
                 FluidRegistry.getFluidStack("aluminum.molten", 144));
@@ -1882,7 +1875,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 250);
         Smeltery.addMelting(
                 getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                GameRegistry.findBlock(TinkerConstruct.ID, "MetalBlock"),
                 10,
                 250,
                 FluidRegistry.getFluidStack("ender", 2250));

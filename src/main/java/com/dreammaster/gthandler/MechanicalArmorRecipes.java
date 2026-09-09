@@ -2,6 +2,7 @@ package com.dreammaster.gthandler;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -287,6 +288,15 @@ public class MechanicalArmorRecipes {
                 .metadata(PRECISE_ASSEMBLER_CASING_TIER, 1).addTo(GoodGeneratorRecipeMaps.preciseAssemblerRecipes);
 
         // T1 Augments
+        if (EnderIO.isModLoaded()) {
+            GTModHandler.addCraftingRecipe(
+                    ItemList.Augment_Soulbound.get(1),
+                    new Object[] { "DCD", "BPO", "DCD", 'D',
+                            MaterialParts.craftIngredient(OrePrefixes.plate, Materials.DarkSteel), 'C',
+                            getModItem(EnderIO.ID, "itemMaterial", 1, 8), 'P', ItemList.Armor_Chip_T1.get(1), 'B',
+                            new ItemStack(Items.writable_book, 1), 'O',
+                            getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2) });
+        }
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Augment_Hazmat.get(1),
@@ -372,7 +382,6 @@ public class MechanicalArmorRecipes {
                         ItemList.Armor_Chip_T1.get(1) });
 
         // T2 Augments
-
         GTModHandler.addCraftingRecipe(
                 ItemList.Augment_OmniMovement.get(1),
                 new Object[] { "TCT", "CRC", "TCT", 'T',

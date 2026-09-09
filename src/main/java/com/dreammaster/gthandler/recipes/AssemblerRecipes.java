@@ -24,7 +24,6 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
-import static gregtech.api.enums.Mods.GTPlusPlusEverglades;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -70,6 +69,8 @@ import static tectech.thing.CustomItemList.DATApipe;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
+import static toxiceverglades.dimension.DimensionEverglades.blockSecondLayer;
+import static toxiceverglades.dimension.DimensionEverglades.blockTopLayer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8513,8 +8514,8 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                        getModItem(GTPlusPlusEverglades.ID, "blockDarkWorldGround", 64, 0),
-                        getModItem(GTPlusPlusEverglades.ID, "blockDarkWorldGround2", 64, 0))
+                        new ItemStack(blockTopLayer, 64),
+                        new ItemStack(blockSecondLayer, 64))
                 .circuit(17)
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.StagnantWasteWater, FluidShapes.fluidLiquid, 10000))
                 .itemOutputs(new ItemStack(ModBlocks.blocks.get("Eg"), 1, 0)).duration(15 * SECONDS)
@@ -9836,7 +9837,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                             getModItem(OpenComputers.ID, "item", 2, 24),
-                            new ItemStack(Blocks.stone_button, 64, 30720),
+                            new ItemStack(Blocks.stone_button, 64),
                             MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 2),
                             ItemList.Dye_SquidInk.get(4L))
                     .circuit(1).itemOutputs(getModItem(Computronics.ID, "computronics.ocParts", 1, 13))

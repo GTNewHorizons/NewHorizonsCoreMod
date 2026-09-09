@@ -428,9 +428,9 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, 2),
-                        MaterialLibAPI.getStack(Materials.Silver, Shapes.dust, 1),
-                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.dust, 1))
-                .circuit(2).itemOutputs(MaterialLibAPI.getStack(Materials.EnderiumBase, Shapes.dust, 4))
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.dust, 2),
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.dust, 2))
+                .circuit(2).itemOutputs(MaterialLibAPI.getStack(Materials.EnderiumBase, Shapes.dust, 6))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()

@@ -45,6 +45,7 @@ import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.katzenpapst.amunra.block.ARBlocks;
 import de.katzenpapst.amunra.crafting.RecipeHelper;
+import goodgenerator.loader.Loaders;
 import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
@@ -80,6 +81,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 GalacticraftCore,
                 GalacticraftMars,
                 GalaxySpace,
+                GoodGenerator,
                 GraviSuite,
                 IronChests,
                 RandomThings);
@@ -148,8 +150,7 @@ public class ScriptAmunRa implements IScriptLoader {
 
         final Item baseItem = GameRegistry.findItem(GalacticraftAmunRa.ID, "item.baseItem");
         final Item basicItem = GameRegistry.findItem(GalacticraftCore.ID, "item.basicItem");
-        final Item advancedRadiationProtectionPlate = GameRegistry
-                .findItem(GoodGenerator.ID, "advancedRadiationProtectionPlate");
+        final Item advancedRadiationProtectionPlate = Loaders.advancedRadiationProtectionPlate;
         final Item simpleItem = GameRegistry.findItem(GraviSuite.ID, "itemSimpleItem");
 
         final Fluid mutatedLivingSolder = FluidRegistry.getFluid("molten.mutatedlivingsolder");
@@ -395,7 +396,7 @@ public class ScriptAmunRa implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(simpleItem, 16, 3),
-                        GameRegistry.findItemStack(GoodGenerator.ID, "radiationProtectionPlate", 4),
+                        new ItemStack(Loaders.radiationProtectionPlate, 4),
                         new Object[] { Circuits.UV.getIngredient(), 1 },
                         new Object[] { OrePrefixes.gearGtSmall.oreDictName("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
@@ -476,7 +477,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 2500000,
                 10,
                 new Object[] { new ItemStack(advancedRadiationProtectionPlate, 64),
-                        GameRegistry.findItemStack(GoodGenerator.ID, "FRF_Coil_2", 8),
+                        new ItemStack(Loaders.FRF_Coil_2, 8),
                         new Object[] { MaterialParts.namedIngredient(OrePrefixes.wireGt16, Materials.SuperconductorUHV),
                                 8 },
                         ItemList.Emitter_UHV.get(16), ItemList.Field_Generator_UHV.get(8),

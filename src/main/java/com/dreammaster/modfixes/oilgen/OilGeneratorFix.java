@@ -1,5 +1,7 @@
 package com.dreammaster.modfixes.oilgen;
 
+import static gregtech.api.enums.Mods.BuildCraftEnergy;
+
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -105,7 +107,7 @@ public class OilGeneratorFix extends ModFixBase {
 
     public OilGeneratorFix() {
         super(ModFixName);
-        _mBuildCraftOilBlock = GameRegistry.findBlock("BuildCraft|Energy", "blockOil");
+        _mBuildCraftOilBlock = GameRegistry.findBlock(BuildCraftEnergy.ID, "blockOil");
     }
 
     @Override
