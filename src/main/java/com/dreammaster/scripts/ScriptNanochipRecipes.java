@@ -522,8 +522,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Elite Board
         GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 1)
                 .itemInputs(CircuitComponent.BoardMultifiberglassElite.getFakeStack(1))
-                .itemOutputs(CircuitComponent.ProcessedBoardMultifiberglassElite.getFakeStack(1)).duration(25 * SECONDS)
-                .eut(TierEU.RECIPE_UHV).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.ProcessedBoardMultifiberglassElite.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
         // Elite Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardMultifiberglassElite.getFakeStack(1))
@@ -843,7 +843,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Crystal
         GTValues.RA.stdBuilder().itemInputs(CircuitComponent.ProcessedFrameboxAluminium.getFakeStack(2))
                 .itemOutputs(CircuitComponent.ProcessedBasicMainframeCasing.getFakeStack(1))
-                .duration(22 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_UIV).addTo(RecipeMaps.nanochipEncasementWrapper);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Wetware, Bioware, Optical
         GTValues.RA.stdBuilder()
@@ -957,8 +957,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipCrystalSoC,
                 CircuitComponent.ProcessedChipCrystalSoC,
-                TierEU.RECIPE_UEV,
-                22 * SECONDS + 10 * TICKS,
+                TierEU.RECIPE_UV,
+                40 * SECONDS,
                 RecipeMaps.nanochipEtchingArray);
     }
 
@@ -1059,8 +1059,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addSimpleProcessingRecipe(
                 CircuitComponent.SuperconductorLuV,
                 CircuitComponent.ProcessedSuperconductorLuV,
-                TierEU.RECIPE_UHV,
-                22 * SECONDS + 10 * TICKS,
+                TierEU.RECIPE_UV,
+                10 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // ZPM
@@ -1192,22 +1192,22 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Crystal // todo 3810s UHV of power per mainframe
         // ======= // todo already removed 3170s UHV
 
-        // todo 75% non-matrix, 25% matrix
+        // todo 80% non-matrix, 20% matrix
         // todo 2857.5 UHV non-matrix, 952.5 UHV matrix
         // todo 9.375% per non-matrix module, 18.75% etching
         // todo applied a 33% discount to the time
 
         // todo matrix should be 628 UHV
-        // todo 14 board @ 377 UHV    -> 25s UHV ea.
-        // todo 1 encasement          -> 22.5s UIV ea.
-        // todo 16 supercon @ 377 UHV -> 22.5s UHV ea.
-        // todo 8 SoC @ 1142.8 UHV    -> 90s UHV ea.
+        // todo 14 board @ 377 UHV    -> 10s UV ea.
+        // todo 1 encasement          -> 10s UEV ea.
+        // todo 16 supercon @ 377 UHV -> 10s UV ea.
+        // todo 8 SoC @ 1142.8 UHV    -> 40s UV ea.
 
         // todo 40 15 ways
-        // todo IV  = 20s UHV  -> 5s UEV
-        // todo LuV = 40s UHV  -> 10s UEV
-        // todo ZPM = 80s UHV  -> 20s UEV
-        // todo UV  = 160s UHV -> 40s UEV
+        // todo IV  = 20s UHV  -> 2.5s UHV
+        // todo LuV = 40s UHV  -> 5s UHV
+        // todo ZPM = 80s UHV  -> 10s UHV
+        // todo UV  = 160s UHV -> 20s UHV
 
         addAssemblyMatrixRecipe(
                 Arrays.asList(
@@ -1217,8 +1217,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltYttriumBariumCuprate, 4)),
                 Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(4)),
                 CircuitComponent.CrystalProcessor,
-                5 * SECONDS,
-                TierEU.RECIPE_UEV,
+                2 * SECONDS + 10 * TICKS,
+                TierEU.RECIPE_UHV,
                 VoltageIndex.UV);
 
         addAssemblyMatrixRecipe(
@@ -1231,8 +1231,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedWireNiobiumTitanium, 16)),
                 Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(9)),
                 CircuitComponent.CrystalAssembly,
-                10 * SECONDS,
-                TierEU.RECIPE_UEV,
+                5 * SECONDS,
+                TierEU.RECIPE_UHV,
                 VoltageIndex.UV);
 
         addAssemblyMatrixRecipe(
@@ -1245,8 +1245,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedWireNiobiumTitanium, 32)),
                 Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(9)),
                 CircuitComponent.CrystalComputer,
-                20 * SECONDS,
-                TierEU.RECIPE_UEV,
+                10 * SECONDS,
+                TierEU.RECIPE_UHV,
                 VoltageIndex.UV);
 
         addAssemblyMatrixRecipe(
@@ -1259,8 +1259,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedSuperconductorLuV, 16)),
                 Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(18)),
                 CircuitComponent.CrystalMainframe,
-                40 * SECONDS,
-                TierEU.RECIPE_UEV,
+                20 * SECONDS,
+                TierEU.RECIPE_UHV,
                 VoltageIndex.UV);
 
         // ======= //
