@@ -842,7 +842,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
     private static void registerEncasementWrapperRecipes() {
         // Crystal
         GTValues.RA.stdBuilder().itemInputs(CircuitComponent.ProcessedFrameboxAluminium.getFakeStack(2))
-                .itemOutputs(CircuitComponent.ProcessedBasicMainframeCasing.getFakeStack(1)).duration(20 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedBasicMainframeCasing.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Wetware, Bioware, Optical
@@ -851,7 +851,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedFoilSiliconeRubber.getFakeStack(16),
                         CircuitComponent.ProcessedFrameboxTritanium.getFakeStack(1),
                         CircuitComponent.ProcessedFoilPolybenzimidazole.getFakeStack(16))
-                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(30 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         GTValues.RA.stdBuilder()
@@ -859,7 +859,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedFoilStyreneRubber.getFakeStack(16),
                         CircuitComponent.ProcessedFrameboxTritanium.getFakeStack(1),
                         CircuitComponent.ProcessedFoilPolybenzimidazole.getFakeStack(16))
-                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(30 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Pico
@@ -1060,7 +1060,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorLuV,
                 CircuitComponent.ProcessedSuperconductorLuV,
                 TierEU.RECIPE_UV,
-                10 * SECONDS,
+                5 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // ZPM
@@ -1068,7 +1068,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorZPM,
                 CircuitComponent.ProcessedSuperconductorZPM,
                 TierEU.RECIPE_UHV,
-                4 * SECONDS,
+                2 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UV
@@ -1076,7 +1076,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUV,
                 CircuitComponent.ProcessedSuperconductorUV,
                 TierEU.RECIPE_UHV,
-                8 * SECONDS,
+                4 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UHV
@@ -1084,7 +1084,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUHV,
                 CircuitComponent.ProcessedSuperconductorUHV,
                 TierEU.RECIPE_UEV,
-                4 * SECONDS,
+                2 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UEV
@@ -1092,7 +1092,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUEV,
                 CircuitComponent.ProcessedSuperconductorUEV,
                 TierEU.RECIPE_UEV,
-                8 * SECONDS,
+                4 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UIV
@@ -1100,7 +1100,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUIV,
                 CircuitComponent.ProcessedSuperconductorUIV,
                 TierEU.RECIPE_UIV,
-                4 * SECONDS,
+                2 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
 
         // UMV
@@ -1108,7 +1108,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.SuperconductorUMV,
                 CircuitComponent.ProcessedSuperconductorUMV,
                 TierEU.RECIPE_UIV,
-                8 * SECONDS,
+                4 * SECONDS,
                 RecipeMaps.nanochipSuperconductorSplitter);
     }
 
