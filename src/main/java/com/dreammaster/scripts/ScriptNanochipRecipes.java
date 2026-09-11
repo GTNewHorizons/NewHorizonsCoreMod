@@ -560,14 +560,14 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Optical Board
         GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 4)
                 .itemInputs(CircuitComponent.BoardOptical.getFakeStack(1))
-                .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(20 * SECONDS)
-                .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
         // Optical Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardOptical.getFakeStack(1))
                 .fluidInputs(Materials.PrismaticAcid.getFluid(0)).fluidOutputs(Materials.PrismaticGas.getFluid(0))
-                .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(20 * SECONDS)
-                .eut(ModuleRecipeInfo.ExtremeTier.recipeEUt).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
     }
 
     private static void registerCuttingChamberRecipes() {
@@ -851,7 +851,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedFoilSiliconeRubber.getFakeStack(16),
                         CircuitComponent.ProcessedFrameboxTritanium.getFakeStack(1),
                         CircuitComponent.ProcessedFoilPolybenzimidazole.getFakeStack(16))
-                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(32 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         GTValues.RA.stdBuilder()
@@ -859,7 +859,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedFoilStyreneRubber.getFakeStack(16),
                         CircuitComponent.ProcessedFrameboxTritanium.getFakeStack(1),
                         CircuitComponent.ProcessedFoilPolybenzimidazole.getFakeStack(16))
-                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(32 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Pico
@@ -967,16 +967,16 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addSimpleProcessingRecipe(
                 CircuitComponent.ChipOpticalCPU,
                 CircuitComponent.ProcessedChipOpticalCPU,
-                ModuleRecipeInfo.ExtremeTier,
-                10 * SECONDS,
+                TierEU.RECIPE_UEV,
+                30 * SECONDS,
                 RecipeMaps.nanochipOpticalOrganizer);
 
         // Optical Memory
         addSimpleProcessingRecipe(
                 CircuitComponent.OpticalRAM,
                 CircuitComponent.ProcessedOpticalRAM,
-                ModuleRecipeInfo.ExtremeTier,
-                5 * SECONDS,
+                TierEU.RECIPE_UEV,
+                15 * SECONDS,
                 RecipeMaps.nanochipOpticalOrganizer);
     }
 
@@ -1165,8 +1165,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addSimpleProcessingRecipe(
                 CircuitComponent.CableOpticalFiber,
                 CircuitComponent.ProcessedCableOpticalFiber,
-                TierEU.RECIPE_ZPM,
-                1 * SECONDS,
+                TierEU.RECIPE_UEV,
+                5 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
         // Hypogen
@@ -1487,6 +1487,26 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Optical //
         // ======= //
 
+        // todo old recipe: 22,120s UHV
+
+        // todo ratio: 60% matrix, 40% non-matrix
+        // todo 7 non-matrix modules needed, but 2x organizers and 2x optical
+        // todo 4.44% per non-matrix module, 8.88% for organizer
+
+        // todo 970s UHV per (2x for organizer and supercon)
+        // todo opt board:      8      -> 30s UEV ea.
+        // todo opt cpu:        8      -> 30s UEV ea.
+        // todo opt ram:        16     -> 15s UEV ea.
+        // todo opt cable:      32     -> 5s UEV ea.
+        // todo adv encasement: 8      -> 30s UEV ea.
+        // todo superconductor: 64 uev -> 8s UEV ea.
+
+        // todo 13,480s UHV
+        // todo UV  -> 25s UIV
+        // todo UHV -> 50s UIV
+        // todo UEV -> 100s UIV
+        // todo UIV -> 200s UIV
+
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.ProcessedChipOpticalCPU, 1),
@@ -1497,8 +1517,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedBoltEnrichedHolmium, 4)),
                 Arrays.asList(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(18)),
                 CircuitComponent.OpticalProcessor,
-                15 * SECONDS,
-                614_400, // UHV
+                25 * SECONDS,
+                TierEU.RECIPE_UIV,
                 VoltageIndex.UHV);
 
         addAssemblyMatrixRecipe(
@@ -1521,7 +1541,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         Materials.SuperCoolant.getFluid(10000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(500)),
                 CircuitComponent.OpticalAssembly,
-                20 * SECONDS,
+                50 * SECONDS,
                 TierEU.RECIPE_UIV,
                 VoltageIndex.UHV);
 
@@ -1547,7 +1567,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         Materials.SuperCoolant.getFluid(20000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(1000)),
                 CircuitComponent.OpticalComputer,
-                200 * SECONDS,
+                100 * SECONDS,
                 TierEU.RECIPE_UIV,
                 VoltageIndex.UHV);
 
@@ -1572,8 +1592,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         Materials.SuperCoolant.getFluid(40000),
                         WerkstoffLoader.Oganesson.getFluidOrGas(2000)),
                 CircuitComponent.OpticalMainframe,
-                300 * SECONDS,
-                TierEU.RECIPE_UMV,
+                200 * SECONDS,
+                TierEU.RECIPE_UIV,
                 VoltageIndex.UHV);
 
         // ======= //
