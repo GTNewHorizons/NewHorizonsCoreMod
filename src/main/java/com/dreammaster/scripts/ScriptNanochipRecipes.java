@@ -1189,25 +1189,28 @@ public class ScriptNanochipRecipes implements IScriptLoader {
     // spotless:off
     private static void registerAssemblyMatrixRecipes() {
         // ======= //
-        // Crystal // todo 3810s UHV of power per mainframe
-        // ======= // todo already removed 3170s UHV
+        // Crystal //
+        // ======= //
 
-        // todo 80% non-matrix, 20% matrix
-        // todo 2857.5 UHV non-matrix, 952.5 UHV matrix
-        // todo 9.375% per non-matrix module, 18.75% etching
-        // todo applied a 33% discount to the time
+        // Ideal ratio: 20% matrix, 80% non-matrix
+        // 7 non-matrix needed, ideal needs 8 for 2 etching arrays
+        // Ideal distribution: 9.375% per non-matrix module, 18.75% for etching array
 
-        // todo matrix should be 628 UHV
-        // todo 14 board @ 377 UHV    -> 10s UV ea.
-        // todo 1 encasement          -> 10s UEV ea.
-        // todo 16 supercon @ 377 UHV -> 10s UV ea.
-        // todo 8 SoC @ 1142.8 UHV    -> 40s UV ea.
+        // Non-matrix:
+        // ~40s UHV each (2x for SoC)
+        // - Elite board:      14     -> 10s UV ea.
+        // - Crystal SoC:      8      -> 40s UV ea.
+        // - Basic encasement: 1      -> 10s UEV ea.
+        // - Superconductor:   16 luv -> 10s UV ea.
 
-        // todo 80s UHV total per mainframe
-        // todo IV  = 20s UHV  -> 2.5s UHV
-        // todo LuV = 40s UHV  -> 5s UHV
-        // todo ZPM = 80s UHV  -> 10s UHV
-        // todo UV  = 160s UHV -> 20s UHV
+        // Matrix:
+        // 80s UHV, split 15 ways for 15 crafts
+        // - IV  -> 2.5s UHV
+        // - LuV -> 5s UHV
+        // - ZPM -> 10s UHV
+        // - UV  -> 20s UHV
+
+        // Note on old NAC balance: old total time 3810s UHV
 
         addAssemblyMatrixRecipe(
                 Arrays.asList(
@@ -1267,9 +1270,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Wetware //
         // ======= //
 
-        // todo old total time 7220s UHV
-        // todo old minus new zero time 3280s UHV
-
         // Ideal ratio: 40% matrix, 60% non-matrix
         // 7 non-matrix needed, ideal needs 8 for 2 bio coordinators
         // Ideal distribution: 7.5% per non-matrix module, 15% for bio coordinator
@@ -1287,6 +1287,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // - ZPM -> 22.5s UEV
         // - UV  -> 45s UEV
         // - UHV -> 90s UEV
+
+        // Note on old NAC balance: old total time 7220s UHV
 
         addAssemblyMatrixRecipe(
                 Arrays.asList(
@@ -1359,39 +1361,39 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Bioware //
         // ======= //
 
-        // todo old normal: 11,410s UHV
-        // todo old soc: 15,930s UHV
+        // Ideal ratio: 50% matrix, 50% non-matrix
 
-        // todo 50% matrix, 50% non-matrix
-        // todo 8 non-matrix modules.
-        // todo Bio SoC needs 3 bio modules
-        // todo Bio normal needs 2 etching, 2 bio module
+        // Normal Recipe
+        // 8 non-matrix needed, ideal needs 10 for 2 bio coordinators and 2 superconductor splitters
+        // Ideal distribution: 5% per non-matrix module, 10% for bio coordinator and superconductor splitter
 
-        // todo bio normal: 10 non-matrix modules. 2x superconductor, 2x bio
-        // todo bio normal: 5% per non-matrix module. 10% for both etching and bio
+        // SoC Recipe
+        // 7 non-matrix needed, ideal needs 10 for 2 bio coordinators, 2 superconductor splitters, and 2 board modules
+        // Ideal distribution: 5% per non-matrix module, 10% for bio, superconductor, and board
 
-        // todo 570.5s UHV per (2x for bio and superconductor)
-        // todo Bio board:      8      -> 16s UEV
-        // todo Bio unit:       8      -> 32s UEV
-        // todo Crystal chip    8      -> 16s UEV
-        // todo adv encasement: 4      -> 32s UEV
-        // todo superconductor: 64 uhv -> 4s UEV
+        // Non-matrix (Normal):
+        // ~570.5s UHV per (2x for bio and superconductor)
+        // - Bio board:      8      -> 16s UEV
+        // - Bio unit:       8      -> 32s UEV
+        // - Crystal chip    8      -> 16s UEV
+        // - Adv encasement: 4      -> 32s UEV
+        // - Superconductor: 64 uhv -> 4s UEV
 
-        // todo 5760s UHV
-        // todo ZPM -> 11.25s UIV
-        // todo UV  -> 22.5s UIV
-        // todo UHV -> 45s UIV
-        // todo UEV -> 90s UIV
+        // Non-matrix (SoC):
+        // ~570.5s UHV per (2x for bio, superconductor, and board)
+        // - Bio board:      16     -> 16s UEV
+        // - Bio soc:        8      -> 32s UEV
+        // - Adv encasement: 4      -> 32s UEV
+        // - Superconductor: 64 uhv -> 4s UEV
 
+        // Matrix:
+        // ~5760s UHV, split 15 ways for 16 crafts
+        // - ZPM -> 11.25s UIV
+        // - UV  -> 22.5s UIV
+        // - UHV -> 45s UIV
+        // - UEV -> 90s UIV
 
-        // todo bio soc: 10 non-matrix modules. 2x board, 2x supercon, 2x bio
-        // todo bio soc: 5.55% per non-matrix. 16.66% for bio
-
-        // todo: 3776s
-        // todo Bio board:      16     -> 16s UEV
-        // todo Bio soc:        8      -> 32s UEV
-        // todo adv encasement: 4      -> 32s UEV
-        // todo superconductor: 64 uhv -> 4s UEV
+        // Notes on old NAC balance: old total time 11,410s (normal), 15,930s (SoC)
 
         addAssemblyMatrixRecipe(
                 Arrays.asList(
@@ -1487,25 +1489,27 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Optical //
         // ======= //
 
-        // todo old recipe: 22,120s UHV
+        // Ideal ratio: 60% matrix, 40% non-matrix
+        // 7 non-matrix needed, ideal needs 9 for 2 organizers and 2 superconductor
+        // Ideal distribution: 4.44% per non-matrix module, 8.88% for organizer and superconductor
 
-        // todo ratio: 60% matrix, 40% non-matrix
-        // todo 7 non-matrix modules needed, but 2x organizers and 2x optical
-        // todo 4.44% per non-matrix module, 8.88% for organizer
+        // Non-matrix:
+        // ~970s UHV each (2x for organizer and supercon)
+        // - Opt board:      8      -> 30s UEV ea.
+        // - Opt cpu:        8      -> 30s UEV ea.
+        // - Opt ram:        16     -> 15s UEV ea.
+        // - Opt cable:      32     -> 5s UEV ea.
+        // - Adv encasement: 8      -> 30s UEV ea.
+        // - Superconductor: 64 uev -> 8s UEV ea.
 
-        // todo 970s UHV per (2x for organizer and supercon)
-        // todo opt board:      8      -> 30s UEV ea.
-        // todo opt cpu:        8      -> 30s UEV ea.
-        // todo opt ram:        16     -> 15s UEV ea.
-        // todo opt cable:      32     -> 5s UEV ea.
-        // todo adv encasement: 8      -> 30s UEV ea.
-        // todo superconductor: 64 uev -> 8s UEV ea.
+        // Matrix:
+        // ~13,480s UHV, split 15 ways for 15 crafts
+        // - UV  -> 25s UIV
+        // - UHV -> 50s UIV
+        // - UEV -> 100s UIV
+        // - UIV -> 200s UIV
 
-        // todo 13,480s UHV
-        // todo UV  -> 25s UIV
-        // todo UHV -> 50s UIV
-        // todo UEV -> 100s UIV
-        // todo UIV -> 200s UIV
+        // Note on old NAC balance: old total time 22,120s UHV
 
         addAssemblyMatrixRecipe(
                 Arrays.asList(
