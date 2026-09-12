@@ -585,26 +585,10 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     1 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            addSimpleProcessingRecipe(
-                    CircuitComponent.ChipNanoCPU,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(15),
-                    CircuitComponent.ProcessedChipNanoCPU,
-                    TierEU.RECIPE_LuV,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // RAM
             addSimpleProcessingRecipe(
                     CircuitComponent.ChipRAM,
                     Materials.Lubricant.getFluid(50),
-                    CircuitComponent.ProcessedChipRAM,
-                    TierEU.RECIPE_LuV,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
-            addSimpleProcessingRecipe(
-                    CircuitComponent.ChipRAM,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(15),
                     CircuitComponent.ProcessedChipRAM,
                     TierEU.RECIPE_LuV,
                     1 * SECONDS,
@@ -619,26 +603,10 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     1 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            addSimpleProcessingRecipe(
-                    CircuitComponent.ChipNOR,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(15),
-                    CircuitComponent.ProcessedChipNOR,
-                    TierEU.RECIPE_LuV,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // NAND
             addSimpleProcessingRecipe(
                     CircuitComponent.ChipNAND,
                     Materials.Lubricant.getFluid(50),
-                    CircuitComponent.ProcessedChipNAND,
-                    TierEU.RECIPE_LuV,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
-            addSimpleProcessingRecipe(
-                    CircuitComponent.ChipNAND,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(15),
                     CircuitComponent.ProcessedChipNAND,
                     TierEU.RECIPE_LuV,
                     1 * SECONDS,
@@ -653,14 +621,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     1 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            addSimpleProcessingRecipe(
-                    CircuitComponent.ChipASOC,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(15),
-                    CircuitComponent.ProcessedChipASOC,
-                    TierEU.RECIPE_LuV,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // PPIC
             addSimpleProcessingRecipe(
                     CircuitComponent.ChipPikoPIC,
@@ -670,14 +630,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     5 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            addSimpleProcessingRecipe(
-                    CircuitComponent.ChipPikoPIC,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(15),
-                    CircuitComponent.ProcessedChipPikoPIC,
-                    ModuleRecipeInfo.HighTier,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // QPIC
             addSimpleProcessingRecipe(
                     CircuitComponent.ChipQuantumPIC,
@@ -685,14 +637,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     CircuitComponent.ProcessedChipQuantumPIC,
                     ModuleRecipeInfo.HighTier,
                     5 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
-            addSimpleProcessingRecipe(
-                    CircuitComponent.ChipQuantumPIC,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(15),
-                    CircuitComponent.ProcessedChipQuantumPIC,
-                    ModuleRecipeInfo.HighTier,
-                    1 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
             // APIC
@@ -734,14 +678,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     1 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            addSimpleProcessingRecipe(
-                    CircuitComponent.BoltEnrichedHolmium,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(5),
-                    CircuitComponent.ProcessedBoltEnrichedHolmium,
-                    TierEU.RECIPE_LuV,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // Transcendent Metal
             addSimpleProcessingRecipe(
                     CircuitComponent.BoltTranscendentMetal,
@@ -751,26 +687,10 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     5 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            addSimpleProcessingRecipe(
-                    CircuitComponent.BoltTranscendentMetal,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(5),
-                    CircuitComponent.ProcessedBoltTranscendentMetal,
-                    ModuleRecipeInfo.LowTier,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // Yttrium Barium Cuprate
             addSimpleProcessingRecipe(
                     CircuitComponent.BoltYttriumBariumCuprate,
                     Materials.Lubricant.getFluid(20),
-                    CircuitComponent.ProcessedBoltYttriumBariumCuprate,
-                    TierEU.RECIPE_LuV,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
-            addSimpleProcessingRecipe(
-                    CircuitComponent.BoltYttriumBariumCuprate,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(5),
                     CircuitComponent.ProcessedBoltYttriumBariumCuprate,
                     TierEU.RECIPE_LuV,
                     1 * SECONDS,
@@ -785,26 +705,10 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     1 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            addSimpleProcessingRecipe(
-                    CircuitComponent.BoltCosmicNeutronium,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(5),
-                    CircuitComponent.ProcessedBoltCosmicNeutronium,
-                    TierEU.RECIPE_ZPM,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // Chromatic Glass
             addSimpleProcessingRecipe(
                     CircuitComponent.BoltChromaticGlass,
                     Materials.Lubricant.getFluid(20),
-                    CircuitComponent.ProcessedBoltChromaticGlass,
-                    TierEU.RECIPE_ZPM,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
-            addSimpleProcessingRecipe(
-                    CircuitComponent.BoltChromaticGlass,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(5),
                     CircuitComponent.ProcessedBoltChromaticGlass,
                     TierEU.RECIPE_ZPM,
                     1 * SECONDS,
@@ -819,14 +723,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     5 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            addSimpleProcessingRecipe(
-                    CircuitComponent.BoltUMVSuperconductor,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(5),
-                    CircuitComponent.ProcessedBoltUMVSuperconductor,
-                    ModuleRecipeInfo.LowTier,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // White Dwarf Matter
             addSimpleProcessingRecipe(
                     CircuitComponent.BoltWhiteDwarfMatter,
@@ -835,26 +731,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     ModuleRecipeInfo.LowTier,
                     5 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
-
-            addSimpleProcessingRecipe(
-                    CircuitComponent.BoltWhiteDwarfMatter,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(5),
-                    CircuitComponent.ProcessedBoltWhiteDwarfMatter,
-                    ModuleRecipeInfo.LowTier,
-                    1 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
         }
         // Frame box recipes
         {
-            // Aluminium
-            addSimpleProcessingRecipe(
-                    CircuitComponent.FrameboxAluminium,
-                    Materials.Grade1PurifiedWater.getFluid(500),
-                    CircuitComponent.ProcessedFrameboxAluminium,
-                    ModuleRecipeInfo.HighTier,
-                    10 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // Aluminium
             addSimpleProcessingRecipe(
                     CircuitComponent.FrameboxAluminium,
