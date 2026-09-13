@@ -495,19 +495,23 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemOutputs(ItemList.RealizedQuantumCircuitRack.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(autoclaveRecipes);
 
+        // Isolated Black Dwarf Matter Strands
         GTValues.RA.stdBuilder().itemInputs(ItemList.MacrocosmicStrands.get(1))
                 .itemOutputs(ItemList.IsolatedBDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeRecipes);
 
+        // Rebound White Dwarf Matter Strands
         GTValues.RA.stdBuilder().itemInputs(ItemList.IsolatedWDMStrands.get(1))
                 .itemOutputs(ItemList.ReboundWDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeRecipes);
 
+        // Blossoming Manifold Bud
         GTValues.RA.stdBuilder().itemInputs(ItemList.RawManifoldBud.get(1))
                 .fluidInputs(Materials.Eternity.getMolten(10 * INGOTS), Materials.MagMatter.getMolten(10 * INGOTS))
                 .itemOutputs(ItemList.BlossomingManifoldBud.get(1)).fluidOutputs(Materials.Space.getMolten(10 * INGOTS))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(arcFurnaceRecipes);
 
+        // Calabi Yau Manifold
         GTValues.RA.stdBuilder().itemInputs(ItemList.BlossomingManifoldBud.get(1))
                 .itemOutputs(ItemList.CalabiYauManifold.get(1))
                 .fluidOutputs(Materials.Eternity.getMolten(10 * INGOTS), Materials.ExcitedDTSC.getFluid(10000))
@@ -862,6 +866,51 @@ public class ScriptNanochipRecipes implements IScriptLoader {
     }
 
     private static void registerEncasementWrapperRecipes() {
+        // Foils
+        {
+            addSimpleProcessingRecipe(
+                    CircuitComponent.FoilPolybenzimidazole,
+                    CircuitComponent.ProcessedFoilPolybenzimidazole,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipEncasementWrapper);
+
+            addSimpleProcessingRecipe(
+                    CircuitComponent.FoilSiliconeRubber,
+                    CircuitComponent.ProcessedFoilSiliconeRubber,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipEncasementWrapper);
+
+            addSimpleProcessingRecipe(
+                    CircuitComponent.FoilStyreneRubber,
+                    CircuitComponent.ProcessedFoilStyreneRubber,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipEncasementWrapper);
+
+            addSimpleProcessingRecipe(
+                    CircuitComponent.FoilRadoxPolymer,
+                    CircuitComponent.ProcessedFoilRadoxPolymer,
+                    TierEU.RECIPE_ZPM,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipEncasementWrapper);
+
+            addSimpleProcessingRecipe(
+                    CircuitComponent.FoilShirabon,
+                    CircuitComponent.ProcessedFoilShirabon,
+                    TierEU.RECIPE_UV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipEncasementWrapper);
+
+            addSimpleProcessingRecipe(
+                    CircuitComponent.FoilEternity,
+                    CircuitComponent.ProcessedFoilEternity,
+                    TierEU.RECIPE_UV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipEncasementWrapper);
+        }
+
         // Crystal
         GTValues.RA.stdBuilder().itemInputs(CircuitComponent.ProcessedFrameboxAluminium.getFakeStack(2))
                 .itemOutputs(CircuitComponent.ProcessedBasicMainframeCasing.getFakeStack(1)).duration(10 * SECONDS)
@@ -921,49 +970,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.CasingBlackDwarfMatter.getFakeStack(2))
                 .itemOutputs(CircuitComponent.ProcessedPlanckCircuitCasing.getFakeStack(1)).duration(7 * SECONDS)
                 .eut(TierEU.RECIPE_MAX).addTo(RecipeMaps.nanochipEncasementWrapper);
-
-        // Foil processing recipes
-        addSimpleProcessingRecipe(
-                CircuitComponent.FoilPolybenzimidazole,
-                CircuitComponent.ProcessedFoilPolybenzimidazole,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipEncasementWrapper);
-
-        addSimpleProcessingRecipe(
-                CircuitComponent.FoilSiliconeRubber,
-                CircuitComponent.ProcessedFoilSiliconeRubber,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipEncasementWrapper);
-
-        addSimpleProcessingRecipe(
-                CircuitComponent.FoilStyreneRubber,
-                CircuitComponent.ProcessedFoilStyreneRubber,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipEncasementWrapper);
-
-        addSimpleProcessingRecipe(
-                CircuitComponent.FoilRadoxPolymer,
-                CircuitComponent.ProcessedFoilRadoxPolymer,
-                TierEU.RECIPE_ZPM,
-                1 * SECONDS,
-                RecipeMaps.nanochipEncasementWrapper);
-
-        addSimpleProcessingRecipe(
-                CircuitComponent.FoilShirabon,
-                CircuitComponent.ProcessedFoilShirabon,
-                TierEU.RECIPE_UV,
-                1 * SECONDS,
-                RecipeMaps.nanochipEncasementWrapper);
-
-        addSimpleProcessingRecipe(
-                CircuitComponent.FoilEternity,
-                CircuitComponent.ProcessedFoilEternity,
-                TierEU.RECIPE_UV,
-                1 * SECONDS,
-                RecipeMaps.nanochipEncasementWrapper);
 
         // Pico CPU
         GTValues.RA.stdBuilder()
@@ -1499,6 +1505,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 1 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
+        // Processing Disorderly Spool
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CircuitComponent.DisorderlySpool.getFakeStack(1),
@@ -1509,6 +1516,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.EntangledAnnihilationStrands.getFakeStack(1))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(nanochipWireTracer);
 
+        // Processing Supermassive Spool
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CircuitComponent.SupermassiveSpool.getFakeStack(1),
