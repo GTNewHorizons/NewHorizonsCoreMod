@@ -10,7 +10,6 @@ import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeNonCellRecipes;
-import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
@@ -498,13 +497,15 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Isolated Black Dwarf Matter Strands
         GTValues.RA.stdBuilder().itemInputs(ItemList.MacrocosmicStrands.get(1))
-                .itemOutputs(ItemList.IsolatedBDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeNonCellRecipes);
+                .fluidInputs(Materials.Time.getMolten(72)).itemOutputs(ItemList.IsolatedBDMStrands.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_UMV).metadata(CentrifugeRecipeKey.INSTANCE, true)
+                .addTo(centrifugeNonCellRecipes);
 
         // Unbound White Dwarf Matter Strands
         GTValues.RA.stdBuilder().itemInputs(ItemList.PulsatingWDMStrands.get(1))
-                .itemOutputs(ItemList.UnboundWDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeNonCellRecipes);
+                .fluidInputs(Materials.Time.getMolten(72)).itemOutputs(ItemList.UnboundWDMStrands.get(1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_UMV).metadata(CentrifugeRecipeKey.INSTANCE, true)
+                .addTo(centrifugeNonCellRecipes);
 
         // Blossoming Manifold Bud
         GTValues.RA.stdBuilder().itemInputs(ItemList.RawManifoldBud.get(1))
@@ -626,14 +627,14 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Plank Board
         GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 5)
                 .itemInputs(CircuitComponent.BoardPlanck.getFakeStack(1))
-                .itemOutputs(CircuitComponent.CleansedBoardPlanck.getFakeStack(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_MAX)
-                .addTo(nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.CleansedBoardPlanck.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MAX).addTo(nanochipBoardProcessorRecipes);
 
         // Planck Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardPlanck.getFakeStack(1))
                 .fluidInputs(Materials.UUMatter.getFluid(0)).fluidOutputs(Materials.UUAmplifier.getFluid(0))
-                .itemOutputs(CircuitComponent.CleansedBoardPlanck.getFakeStack(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_MAX)
-                .addTo(nanochipBoardProcessorRecipes);
+                .itemOutputs(CircuitComponent.CleansedBoardPlanck.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MAX).addTo(nanochipBoardProcessorRecipes);
     }
 
     private static void registerCuttingChamberRecipes() {
@@ -1314,8 +1315,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedWireWhiteDwarfMatter.getFakeStack(1),
                         CircuitComponent.ProcessedWireBlackDwarfMatter.getFakeStack(1),
                         CircuitComponent.ProcessedWireUniversium.getFakeStack(1))
-                .itemOutputs(CircuitComponent.SupermassiveSpool.getFakeStack(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .addTo(nanochipPartProcessorRecipes);
+                .itemOutputs(CircuitComponent.SupermassiveSpool.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).addTo(nanochipPartProcessorRecipes);
 
         // Bundled Stellar Harmony Wire
         GTValues.RA.stdBuilder()
@@ -1323,8 +1324,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.UnboundWhiteDwarfMatterStrands.getFakeStack(1),
                         CircuitComponent.ReboundBlackDwarfMatterStrands.getFakeStack(1),
                         CircuitComponent.CosmologicalStrands.getFakeStack(1))
-                .itemOutputs(CircuitComponent.BundledStellarHarmonyWire.getFakeStack(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .addTo(nanochipPartProcessorRecipes);
+                .itemOutputs(CircuitComponent.BundledStellarHarmonyWire.getFakeStack(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).addTo(nanochipPartProcessorRecipes);
     }
 
     private static void registerSuperconductorSplitterRecipes() {
