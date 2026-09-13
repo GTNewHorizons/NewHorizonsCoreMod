@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
@@ -59,6 +60,14 @@ public class FluidExtractorRecipes implements Runnable {
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 45)).duration(50 * SECONDS).eut(48)
                     .addTo(fluidExtractionRecipes);
 
+            GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "rotten_flesh", 1, 0))
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 5)).duration(5 * SECONDS).eut(48)
+                    .addTo(fluidExtractionRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(Materials.MeatRaw.getDust(1))
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 50)).duration(10 * SECONDS).eut(48)
+                    .addTo(fluidExtractionRecipes);
+
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.slime_ball, 1, 0))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
@@ -68,8 +77,8 @@ public class FluidExtractorRecipes implements Runnable {
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1))
-                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 160)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 36))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
