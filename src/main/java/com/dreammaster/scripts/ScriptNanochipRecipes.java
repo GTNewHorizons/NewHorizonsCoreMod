@@ -1285,9 +1285,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Bundled Unity Wire
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CircuitComponent.SilencedStrands.getFakeStack(1),
+                        CircuitComponent.SettledStrands.getFakeStack(1),
                         CircuitComponent.AlienatedStrands.getFakeStack(2),
-                        CircuitComponent.SettledStrands.getFakeStack(1))
+                        CircuitComponent.SilencedStrands.getFakeStack(1))
                 .itemOutputs(CircuitComponent.BundledUnityWire.getFakeStack(1)).duration(8 * SECONDS)
                 .eut(TierEU.RECIPE_UMV).addTo(nanochipPartProcessorRecipes);
 
