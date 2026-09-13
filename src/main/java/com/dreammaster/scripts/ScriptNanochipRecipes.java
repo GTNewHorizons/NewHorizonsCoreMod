@@ -1064,7 +1064,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ScrewQuantum.getFakeStack(2))
                 .itemOutputs(
                         CircuitComponent.PicoCircuitRack.getFakeStack(1),
-                        CircuitComponent.CompressionResidue.getFakeStack(1))
+                        CircuitComponent.CompressionResidue.getFakeStack(4))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(nanochipEtchingArray);
 
         // Lost Quantum Circuit Rack
@@ -1074,7 +1074,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ScrewEternity.getFakeStack(2))
                 .itemOutputs(
                         CircuitComponent.LostQuantumCircuitRack.getFakeStack(1),
-                        CircuitComponent.CollapsingResidue.getFakeStack(1))
+                        CircuitComponent.CollapsingResidue.getFakeStack(4))
                 .duration(13 * SECONDS).eut(TierEU.RECIPE_MAX).addTo(nanochipEtchingArray);
     }
 
