@@ -500,9 +500,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemOutputs(ItemList.IsolatedBDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeRecipes);
 
-        // Rebound White Dwarf Matter Strands
-        GTValues.RA.stdBuilder().itemInputs(ItemList.IsolatedWDMStrands.get(1))
-                .itemOutputs(ItemList.ReboundWDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
+        // Unbound White Dwarf Matter Strands
+        GTValues.RA.stdBuilder().itemInputs(ItemList.PulsatingWDMStrands.get(1))
+                .itemOutputs(ItemList.UnboundWDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeRecipes);
 
         // Blossoming Manifold Bud
@@ -1032,10 +1032,10 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 15 * SECONDS,
                 nanochipEtchingArray);
 
-        // Isolated White Dwarf Matter Strands
+        // Pulsating White Dwarf Matter Strands
         addSimpleProcessingRecipe(
                 CircuitComponent.MicrocosmicStrands,
-                CircuitComponent.IsolatedWhiteDwarfMatterStrands,
+                CircuitComponent.PulsatingWhiteDwarfMatterStrands,
                 TierEU.RECIPE_UXV,
                 4 * SECONDS,
                 nanochipEtchingArray);
@@ -1319,7 +1319,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Bundled Stellar Harmony Wire
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CircuitComponent.ReboundWhiteDwarfMatterStrands.getFakeStack(1),
+                        CircuitComponent.UnboundWhiteDwarfMatterStrands.getFakeStack(1),
                         CircuitComponent.ReboundBlackDwarfMatterStrands.getFakeStack(1),
                         CircuitComponent.CosmologicalStrands.getFakeStack(1))
                 .itemOutputs(CircuitComponent.BundledStellarHarmonyWire.getFakeStack(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UMV)
