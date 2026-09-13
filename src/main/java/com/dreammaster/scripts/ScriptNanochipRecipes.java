@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.centrifugeNonCellRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
@@ -498,12 +499,12 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Isolated Black Dwarf Matter Strands
         GTValues.RA.stdBuilder().itemInputs(ItemList.MacrocosmicStrands.get(1))
                 .itemOutputs(ItemList.IsolatedBDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeRecipes);
+                .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeNonCellRecipes);
 
         // Unbound White Dwarf Matter Strands
         GTValues.RA.stdBuilder().itemInputs(ItemList.PulsatingWDMStrands.get(1))
                 .itemOutputs(ItemList.UnboundWDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeRecipes);
+                .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeNonCellRecipes);
 
         // Blossoming Manifold Bud
         GTValues.RA.stdBuilder().itemInputs(ItemList.RawManifoldBud.get(1))
