@@ -237,7 +237,7 @@ public class BECRecipes implements Runnable {
                 new ItemStack[] { CustomItemList.EOH_Reinforced_Temporal_Casing.get(64),
                         CustomItemList.EOH_Reinforced_Spatial_Casing.get(64),
                         CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(64),
-                        ItemList.SuperconductivePlasmaEnergyConduit.get(64),
+                        ItemList.CoherencePreservingPlasmaConduit.get(64),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Eternity, 16),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Universium, 8),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MHDCSM, 8),
@@ -450,7 +450,7 @@ public class BECRecipes implements Runnable {
                 GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.TranscendentMetal, 64),
                 GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.SpaceTime, 64),
                 CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(64),
-                ItemList.SuperconductivePlasmaEnergyConduit.get(64), };
+                ItemList.CoherencePreservingPlasmaConduit.get(64), };
 
         final FluidStack[] condensates = new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(10_000),
                 CondensateType.Space.getEntangled(72 * INGOTS), CondensateType.Time.getEntangled(72 * INGOTS),

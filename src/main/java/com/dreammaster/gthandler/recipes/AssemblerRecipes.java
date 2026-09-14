@@ -7176,6 +7176,30 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Nickel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Brass, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Zinc, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Nickel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Brass, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Nickel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Brass, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Invar, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnyBronze, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Zinc, 1))
@@ -7608,7 +7632,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSG, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSS, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnnealedCopper, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7616,7 +7640,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSG, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSS, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7624,7 +7648,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSG, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSS, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.AstralSilver, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7705,7 +7729,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticAlloy, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 40, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
