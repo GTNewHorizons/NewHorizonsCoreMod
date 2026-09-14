@@ -7,6 +7,8 @@ import static gregtech.api.enums.Mods.Natura;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.Mods;
@@ -56,7 +58,13 @@ public class ScriptIguanaTweaks implements IScriptLoader {
         /*
          * oredict so the recipes modified in iguanatweaks will work those are exceptionnally in iguanatweaks because
          * the items in the recipes are registered at PostInit=
-         */ GTOreDictUnificator.registerOre("toolHeadSawArdite", NHItemList.SawBladeArdite.get());
-        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", NHItemList.SawBladeManyullyn.get());
+         */
+        ItemStack arditeSawBlade = NHItemList.SawBladeArdite.get();
+        GTOreDictUnificator.addToBlacklist(arditeSawBlade);
+        GTOreDictUnificator.registerOre("toolHeadSawArdite", arditeSawBlade);
+
+        ItemStack manyullynSawBlade = NHItemList.SawBladeManyullyn.get();
+        GTOreDictUnificator.addToBlacklist(manyullynSawBlade);
+        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", manyullynSawBlade);
     }
 }
