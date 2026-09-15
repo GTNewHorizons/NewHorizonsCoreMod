@@ -7267,6 +7267,30 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        MaterialLibAPI.getStack(Materials.Nickel, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Brass, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials.Nickel, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Brass, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials.Nickel, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Brass, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         MaterialLibAPI.getStack(Materials.Invar, Shapes.plate, 1),
                         GTOreDictUnificator.get("plateAnyBronze", 1),
                         MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
@@ -7699,7 +7723,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.HSSG, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.HSSS, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7707,7 +7731,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.HSSG, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.HSSS, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.RoseGold, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7715,7 +7739,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.HSSG, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.HSSS, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.AstralSilver, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7796,7 +7820,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.plate, 1),
-                        MaterialLibAPI.getStack(Materials.EnergeticAlloy, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Sunnarium, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.Naquadah, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 40, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
