@@ -204,7 +204,7 @@ public class BioItemLoader {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Pancrea.get(1))
                 .fluidInputs(Materials.DilutedSulfuricAcid.getFluid(1000))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[5], 1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(centrifugeRecipes);
+                .addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
