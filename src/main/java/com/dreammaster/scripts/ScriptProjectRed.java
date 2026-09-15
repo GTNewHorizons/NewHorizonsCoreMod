@@ -53,7 +53,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
-import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -1549,8 +1548,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 0))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 0))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
 
@@ -1590,8 +1588,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 1))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 1))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
 
@@ -1628,8 +1625,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 2))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 2))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
 
@@ -1669,8 +1665,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 3))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 3))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
 
@@ -1705,8 +1700,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 4))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 4))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
 
@@ -1743,8 +1737,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 5))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 5))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
 
@@ -1781,8 +1774,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 6))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 6))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
 
@@ -1819,8 +1811,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 7))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 7))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
 
@@ -1856,8 +1847,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 8))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 8))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
         // OR Gate
