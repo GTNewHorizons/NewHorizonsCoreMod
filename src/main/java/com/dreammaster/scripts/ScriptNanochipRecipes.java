@@ -1259,9 +1259,10 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.ProcessedOpticalSMDCapacitor.getFakeStack(4),
                 CircuitComponent.ProcessedOpticalSMDResistor.getFakeStack(4),
                 CircuitComponent.ProcessedOpticalSMDTransistor.getFakeStack(4),
-                CircuitComponent.ProcessedOpticalSMDDiode.getFakeStack(4), CircuitComponent.ProcessedBoltCosmicNeutronium.getFakeStack(2))
+                CircuitComponent.ProcessedOpticalSMDDiode.getFakeStack(4),
+                CircuitComponent.ProcessedBoltCosmicNeutronium.getFakeStack(2), CircuitComponent.CasingDysprosium)
             .itemOutputs(CircuitComponent.PrimedUnattunedCircuitry.getFakeStack(1))
-            .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8))
+            .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(20), Materials.Void.getMolten(144))
             .metadata(NanochipAssemblyMatrixTierKey.INSTANCE, VoltageIndex.UV)
             .metadata(GTRecipeConstants.CIRCUIT_CALIBRATION_TYPE, CircuitComponent.PrimedUnattunedCircuitry.circuitType)
             .duration(25 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipAssemblyMatrixRecipes);
