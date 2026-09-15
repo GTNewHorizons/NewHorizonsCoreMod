@@ -1440,7 +1440,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.CableOpticalFiber,
                 CircuitComponent.ProcessedCableOpticalFiber,
                 TierEU.RECIPE_UEV,
-                5 * SECONDS,
+                3 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
 
         // Hypogen
@@ -1842,7 +1842,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // - Opt board:      8      -> 30s UEV ea.
         // - Opt cpu:        8      -> 30s UEV ea.
         // - Opt ram:        16     -> 15s UEV ea.
-        // - Opt cable:      32     -> 5s UEV ea.
+        // - Opt cable:      32     -> 3s UEV ea.
         // - Adv encasement: 8      -> 30s UEV ea.
         // - Superconductor: 64 uev -> 8s UEV ea.
 
