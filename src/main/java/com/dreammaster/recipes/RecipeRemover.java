@@ -1007,6 +1007,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "filing", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "filing", 1, 1));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "watering_can", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "watering_can", 1, 3));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "magnumTorch", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "sound_muffler", 1, 1));

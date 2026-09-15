@@ -508,6 +508,17 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "watering_can", 1, 3),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 1L),
+                getModItem(ExtraUtilities.ID, "mini-soul", 1, 0),
+                null,
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 1L),
+                getModItem(Minecraft.ID, "bowl", 1, 0),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 1L),
+                null,
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 1L),
+                null);
+        addShapedRecipe(
+                getModItem(ExtraUtilities.ID, "watering_can", 1, 3),
                 "craftingToolHardHammer",
                 "ringNeutronium",
                 "craftingToolScrewdriver",
