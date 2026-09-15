@@ -392,11 +392,6 @@ public class BacteriaRegistry {
                     .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);
         }
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), new ItemStack(Items.egg, 1, 0))
-                .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.OvaEvolutionis.bioCulture)).outputChances(15_00)
-                .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_IV).requiresCleanRoom().addTo(bioLabRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), ItemList.Circuit_Chip_Stemcell.get(1L))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.DerivanturCellulaEvolutionis.bioCulture))
                 .outputChances(7_50).fluidInputs(GrowthMediumRaw.getFluid(1000)).duration(2 * MINUTES)
