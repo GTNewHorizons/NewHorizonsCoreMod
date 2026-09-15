@@ -1238,10 +1238,13 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // A setup should have 4 matrices running the unattuned circuitry recipe and one converting those into real circuits
         // 1 primed circuitry recipe will be able to make 64/32/16/8/4 ULV-EV circuits, all at the same recipe time with varying inputs
 
-        // 1 circuit craft should take 160s UHV, with most of it being in the primed recipe
+        // 1 circuit craft should take 40s UHV, with most of it being in the primed recipe
+        // As any individual circuit in the primitive line will cost more to make than its CAL equivalent.
+        // this ratio is closer to the cal than other circuit lines.
+        // However, it is still much worse on an eu-eff perspective.
 
         // Non-matrix:
-        // ~16s UHV each per Circuitry
+        // ~5s UHV each per Circuitry
         // - Elite Board:      2      -> 10s UV ea. (pre computed)
         // - Tiered SOC:       4      -> 0 time
         // - Tiered Bolts:     16     -> 0 time
@@ -1250,8 +1253,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Matrix:
         // Circuitry recipe should be 4x slower than Processing them, to encourage placing multiple matrices
-        // 144s UHV per craft of PAC.
-        // 25s UHV for conversion, 25s UEV for ball
+        // 36s UHV per craft of PAC.
+        // 6.25s UHV for conversion, 25s UHV for ball
         GTValues.RA.stdBuilder()
             .itemInputs(
                 CircuitComponent.UnattunedCircuitry.getFakeStack(1),
@@ -1265,7 +1268,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(20), Materials.Void.getMolten(144))
             .metadata(NanochipAssemblyMatrixTierKey.INSTANCE, VoltageIndex.UV)
             .metadata(GTRecipeConstants.CIRCUIT_CALIBRATION_TYPE, CircuitComponent.PrimedUnattunedCircuitry.circuitType)
-            .duration(25 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipAssemblyMatrixRecipes);
+            .duration(25 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(RecipeMaps.nanochipAssemblyMatrixRecipes);
 
         // ULV - 64
         addAssemblyMatrixRecipe(
@@ -1278,7 +1281,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             Arrays.asList(Materials.Lead.getMolten(16)),
             new CircuitComponentStack(CircuitComponent.NandChip,64),
             25 * SECONDS,
-            TierEU.RECIPE_UHV,
+            TierEU.RECIPE_UV,
             VoltageIndex.UV);
 
         // LV - 32
@@ -1292,7 +1295,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             Arrays.asList(Materials.Tin.getMolten(8)),
             new CircuitComponentStack(CircuitComponent.Microprocessor,32),
             25 * SECONDS,
-            TierEU.RECIPE_UHV,
+            TierEU.RECIPE_UV,
             VoltageIndex.UV);
         // MV - 16
         addAssemblyMatrixRecipe(
@@ -1305,7 +1308,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             Arrays.asList(Materials.SolderingAlloy.getMolten(8)),
             new CircuitComponentStack(CircuitComponent.IntegratedProcessor,16),
             25 * SECONDS,
-            TierEU.RECIPE_UHV,
+            TierEU.RECIPE_UV,
             VoltageIndex.UV);
         // HV - 8
         addAssemblyMatrixRecipe(
@@ -1318,7 +1321,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(8)),
             new CircuitComponentStack(CircuitComponent.NanoProcessor,8),
             25 * SECONDS,
-            TierEU.RECIPE_UHV,
+            TierEU.RECIPE_UV,
             VoltageIndex.UV);
         // EV - 4
         addAssemblyMatrixRecipe(
@@ -1331,7 +1334,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             Arrays.asList(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8)),
             new CircuitComponentStack(CircuitComponent.QuantumProcessor,4),
             25 * SECONDS,
-            TierEU.RECIPE_UHV,
+            TierEU.RECIPE_UV,
             VoltageIndex.UV);
 
 
