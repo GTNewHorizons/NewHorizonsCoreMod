@@ -765,6 +765,42 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 5 * SECONDS,
                 RecipeMaps.nanochipCuttingChamber);
 
+        // Copper Bolt
+        addSimpleProcessingRecipe(
+                CircuitComponent.BoltCopper,
+                Materials.Lubricant.getFluid(5),
+                CircuitComponent.ProcessedBoltCopper,
+                TierEU.RECIPE_LuV,
+                1 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
+        // Red Alloy Bolt
+        addSimpleProcessingRecipe(
+                CircuitComponent.BoltRedAlloy,
+                Materials.Lubricant.getFluid(5),
+                CircuitComponent.ProcessedBoltRedAlloy,
+                TierEU.RECIPE_LuV,
+                1 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
+        // Platinum Bolt
+        addSimpleProcessingRecipe(
+                CircuitComponent.BoltPlatinum,
+                Materials.Lubricant.getFluid(5),
+                CircuitComponent.ProcessedBoltPlatinum,
+                TierEU.RECIPE_LuV,
+                1 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
+        // Niobium Titanium Bolt
+        addSimpleProcessingRecipe(
+                CircuitComponent.BoltNiobiumTitanium,
+                Materials.Lubricant.getFluid(5),
+                CircuitComponent.ProcessedBoltNiobiumTitanium,
+                TierEU.RECIPE_LuV,
+                1 * SECONDS,
+                RecipeMaps.nanochipCuttingChamber);
+
         // Frame box recipes
 
         // Aluminium
@@ -1223,6 +1259,38 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 ModuleRecipeInfo.ExtremeTier,
                 10 * SECONDS,
                 RecipeMaps.nanochipWireTracer);
+
+        // Copper
+        addSimpleProcessingRecipe(
+                CircuitComponent.WireCopper,
+                CircuitComponent.ProcessedWireCopper,
+                TierEU.RECIPE_LuV,
+                1 * SECONDS,
+                RecipeMaps.nanochipWireTracer);
+
+        // Red Alloy
+        addSimpleProcessingRecipe(
+                CircuitComponent.WireRedAlloy,
+                CircuitComponent.ProcessedWireRedAlloy,
+                TierEU.RECIPE_LuV,
+                1 * SECONDS,
+                RecipeMaps.nanochipWireTracer);
+
+        // Electrum
+        addSimpleProcessingRecipe(
+                CircuitComponent.WireElectrum,
+                CircuitComponent.ProcessedWireElectrum,
+                TierEU.RECIPE_LuV,
+                1 * SECONDS,
+                RecipeMaps.nanochipWireTracer);
+
+        // Platinum
+        addSimpleProcessingRecipe(
+                CircuitComponent.WirePlatinum,
+                CircuitComponent.ProcessedWirePlatinum,
+                TierEU.RECIPE_LuV,
+                1 * SECONDS,
+                RecipeMaps.nanochipWireTracer);
     }
 
     // spotless:off
@@ -1263,7 +1331,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.ProcessedOpticalSMDResistor.getFakeStack(4),
                 CircuitComponent.ProcessedOpticalSMDTransistor.getFakeStack(4),
                 CircuitComponent.ProcessedOpticalSMDDiode.getFakeStack(4),
-                CircuitComponent.ProcessedBoltCosmicNeutronium.getFakeStack(2), CircuitComponent.CasingDysprosium.getFakeStack(6))
+                CircuitComponent.ProcessedBoltCosmicNeutronium.getFakeStack(2), CircuitComponent.CasingKevlar.getFakeStack(4))
             .itemOutputs(CircuitComponent.PrimedUnattunedCircuitry.getFakeStack(1))
             .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(20), Materials.Void.getMolten(144))
             .metadata(NanochipAssemblyMatrixTierKey.INSTANCE, VoltageIndex.UV)
