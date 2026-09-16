@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
+import static gregtech.api.recipe.RecipeMaps.centrifugeNonCellRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
@@ -307,5 +308,9 @@ public class BioItemLoader {
                         new FluidStack(FluidLoader.BioLabFluidMaterials[2], 50))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(5000)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(mixerNonCellRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(Materials.MeatRaw.getDust(1))
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 20)).duration(5 * SECONDS).eut(48)
+                .addTo(centrifugeNonCellRecipes);
     }
 }
