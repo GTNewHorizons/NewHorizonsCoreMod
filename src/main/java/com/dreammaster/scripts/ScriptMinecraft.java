@@ -3362,6 +3362,17 @@ public class ScriptMinecraft implements IScriptLoader {
                 "plateWood",
                 "plateWood");
         addShapedRecipe(
+                getModItem(Minecraft.ID, "spawn_egg", 1, 61),
+                null,
+                getModItem(Botania.ID, "felPumpkin", 1, 0),
+                null,
+                null,
+                getModItem(Minecraft.ID, "iron_bars", 1, 0),
+                null,
+                null,
+                getModItem(Minecraft.ID, "iron_bars", 1, 0),
+                null);
+        addShapedRecipe(
                 GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Iron, 9),
                 "craftingToolSaw",
                 "ingotIron",
