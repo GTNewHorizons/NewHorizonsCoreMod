@@ -1274,7 +1274,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addAssemblyMatrixRecipe(
             Arrays.asList(
                 new CircuitComponentStack(CircuitComponent.PrimedUnattunedCircuitry,1),
-                new CircuitComponentStack(CircuitComponent.ChipASOC, 1),
+                new CircuitComponentStack(CircuitComponent.ProcessedChipASOC, 1),
                 new CircuitComponentStack(CircuitComponent.ProcessedBoltRedAlloy, 16),
                 new CircuitComponentStack(CircuitComponent.ProcessedWireCopper, 16)
             ),
@@ -1288,7 +1288,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addAssemblyMatrixRecipe(
             Arrays.asList(
                 new CircuitComponentStack(CircuitComponent.PrimedUnattunedCircuitry,1),
-                new CircuitComponentStack(CircuitComponent.ChipASOC, 1),
+                new CircuitComponentStack(CircuitComponent.ProcessedChipASOC, 1),
                 new CircuitComponentStack(CircuitComponent.ProcessedBoltCopper, 16),
                 new CircuitComponentStack(CircuitComponent.ProcessedWireCopper, 16)
             ),
@@ -1301,7 +1301,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addAssemblyMatrixRecipe(
             Arrays.asList(
                  new CircuitComponentStack(CircuitComponent.PrimedUnattunedCircuitry,1),
-                 new CircuitComponentStack(CircuitComponent.ChipASOC, 1),
+                 new CircuitComponentStack(CircuitComponent.ProcessedChipASOC, 1),
                  new CircuitComponentStack(CircuitComponent.ProcessedBoltCopper, 16),
                  new CircuitComponentStack(CircuitComponent.ProcessedWireRedAlloy, 16)
             ),
@@ -1314,7 +1314,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addAssemblyMatrixRecipe(
             Arrays.asList(
                 new CircuitComponentStack(CircuitComponent.PrimedUnattunedCircuitry,1),
-                new CircuitComponentStack(CircuitComponent.ChipASOC, 1),
+                new CircuitComponentStack(CircuitComponent.ProcessedChipASOC, 1),
                 new CircuitComponentStack(CircuitComponent.ProcessedBoltPlatinum, 16),
                 new CircuitComponentStack(CircuitComponent.ProcessedWireElectrum, 16)
             ),
@@ -1327,7 +1327,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         addAssemblyMatrixRecipe(
             Arrays.asList(
                  new CircuitComponentStack(CircuitComponent.PrimedUnattunedCircuitry,1),
-                 new CircuitComponentStack(CircuitComponent.ChipASOC, 1),
+                 new CircuitComponentStack(CircuitComponent.ProcessedChipASOC, 1),
                  new CircuitComponentStack(CircuitComponent.ProcessedBoltNiobiumTitanium, 16),
                  new CircuitComponentStack(CircuitComponent.ProcessedWirePlatinum, 16)
             ),
