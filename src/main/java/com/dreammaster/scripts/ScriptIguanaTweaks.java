@@ -7,12 +7,7 @@ import static gregtech.api.enums.Mods.Natura;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.ItemStack;
-
-import com.dreammaster.item.NHItemList;
-
 import gregtech.api.enums.Mods;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptIguanaTweaks implements IScriptLoader {
 
