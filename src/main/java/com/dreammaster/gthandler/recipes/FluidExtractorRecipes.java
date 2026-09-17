@@ -64,6 +64,10 @@ public class FluidExtractorRecipes implements Runnable {
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 5)).duration(5 * SECONDS).eut(48)
                     .addTo(fluidExtractionRecipes);
 
+            GTValues.RA.stdBuilder().itemInputs(Materials.MeatRaw.getDust(1))
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 5)).duration(5 * SECONDS).eut(48)
+                    .addTo(fluidExtractionRecipes);
+
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.slime_ball, 1, 0))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(fluidExtractionRecipes);
