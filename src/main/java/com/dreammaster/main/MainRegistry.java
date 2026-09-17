@@ -8,6 +8,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.List;
 import java.util.Random;
 
+import com.dreammaster.iguana.IguanaConverter;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -393,6 +394,8 @@ public class MainRegistry {
         if (!Loader.isModLoaded(BPPConverter.BPP_MOD_ID)) BPPConverter.doPostInitialization();
 
         if (IndustrialCraft2.isModLoaded()) IC2Converter.doPostInitialization();
+
+        if (IguanaTweaksTinkerConstruct.isModLoaded()) IguanaConverter.doPostInitialization();
     }
 
     @Mod.EventHandler

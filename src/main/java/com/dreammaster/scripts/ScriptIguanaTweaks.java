@@ -54,17 +54,5 @@ public class ScriptIguanaTweaks implements IScriptLoader {
                 getModItem(Natura.ID, "waterdrop", 1),
                 getModItem(Natura.ID, "waterdrop", 1),
                 getModItem(Natura.ID, "waterdrop", 1));
-
-        /*
-         * oredict so the recipes modified in iguanatweaks will work those are exceptionnally in iguanatweaks because
-         * the items in the recipes are registered at PostInit=
-         */
-        ItemStack arditeSawBlade = NHItemList.SawBladeArdite.get();
-        GTOreDictUnificator.addToBlacklist(arditeSawBlade);
-        GTOreDictUnificator.registerOre("toolHeadSawArdite", arditeSawBlade);
-
-        ItemStack manyullynSawBlade = NHItemList.SawBladeManyullyn.get();
-        GTOreDictUnificator.addToBlacklist(manyullynSawBlade);
-        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", manyullynSawBlade);
     }
 }
