@@ -756,102 +756,102 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         {
             // Enriched Holmium
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltEnrichedHolmium,
-                Materials.Lubricant.getFluid(20),
-                CircuitComponent.ProcessedBoltEnrichedHolmium,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltEnrichedHolmium,
+                    Materials.Lubricant.getFluid(20),
+                    CircuitComponent.ProcessedBoltEnrichedHolmium,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // Transcendent Metal
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltTranscendentMetal,
-                Materials.Lubricant.getFluid(20),
-                CircuitComponent.ProcessedBoltTranscendentMetal,
-                TierEU.RECIPE_ZPM,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltTranscendentMetal,
+                    Materials.Lubricant.getFluid(20),
+                    CircuitComponent.ProcessedBoltTranscendentMetal,
+                    TierEU.RECIPE_ZPM,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // Yttrium Barium Cuprate
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltYttriumBariumCuprate,
-                Materials.Lubricant.getFluid(20),
-                CircuitComponent.ProcessedBoltYttriumBariumCuprate,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltYttriumBariumCuprate,
+                    Materials.Lubricant.getFluid(20),
+                    CircuitComponent.ProcessedBoltYttriumBariumCuprate,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // Cosmic Neutronium
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltCosmicNeutronium,
-                Materials.Lubricant.getFluid(20),
-                CircuitComponent.ProcessedBoltCosmicNeutronium,
-                TierEU.RECIPE_ZPM,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltCosmicNeutronium,
+                    Materials.Lubricant.getFluid(20),
+                    CircuitComponent.ProcessedBoltCosmicNeutronium,
+                    TierEU.RECIPE_ZPM,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // Chromatic Glass
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltChromaticGlass,
-                Materials.Lubricant.getFluid(20),
-                CircuitComponent.ProcessedBoltChromaticGlass,
-                TierEU.RECIPE_ZPM,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltChromaticGlass,
+                    Materials.Lubricant.getFluid(20),
+                    CircuitComponent.ProcessedBoltChromaticGlass,
+                    TierEU.RECIPE_ZPM,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // SC Base UMV
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltUMVSuperconductor,
-                Materials.Lubricant.getFluid(20),
-                CircuitComponent.ProcessedBoltUMVSuperconductor,
-                TierEU.RECIPE_ZPM,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltUMVSuperconductor,
+                    Materials.Lubricant.getFluid(20),
+                    CircuitComponent.ProcessedBoltUMVSuperconductor,
+                    TierEU.RECIPE_ZPM,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // White Dwarf Matter
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltWhiteDwarfMatter,
-                Materials.Lubricant.getFluid(20),
-                CircuitComponent.ProcessedBoltWhiteDwarfMatter,
-                TierEU.RECIPE_UV,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltWhiteDwarfMatter,
+                    Materials.Lubricant.getFluid(20),
+                    CircuitComponent.ProcessedBoltWhiteDwarfMatter,
+                    TierEU.RECIPE_UV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // Copper Bolt
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltCopper,
-                Materials.Lubricant.getFluid(5),
-                CircuitComponent.ProcessedBoltCopper,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltCopper,
+                    Materials.Lubricant.getFluid(5),
+                    CircuitComponent.ProcessedBoltCopper,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // Red Alloy Bolt
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltRedAlloy,
-                Materials.Lubricant.getFluid(5),
-                CircuitComponent.ProcessedBoltRedAlloy,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltRedAlloy,
+                    Materials.Lubricant.getFluid(5),
+                    CircuitComponent.ProcessedBoltRedAlloy,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // Platinum Bolt
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltPlatinum,
-                Materials.Lubricant.getFluid(5),
-                CircuitComponent.ProcessedBoltPlatinum,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltPlatinum,
+                    Materials.Lubricant.getFluid(5),
+                    CircuitComponent.ProcessedBoltPlatinum,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
 
             // Niobium Titanium Bolt
             addSimpleProcessingRecipe(
-                CircuitComponent.BoltNiobiumTitanium,
-                Materials.Lubricant.getFluid(5),
-                CircuitComponent.ProcessedBoltNiobiumTitanium,
-                TierEU.RECIPE_LuV,
-                1 * SECONDS,
-                RecipeMaps.nanochipCuttingChamber);
+                    CircuitComponent.BoltNiobiumTitanium,
+                    Materials.Lubricant.getFluid(5),
+                    CircuitComponent.ProcessedBoltNiobiumTitanium,
+                    TierEU.RECIPE_LuV,
+                    1 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
         }
         // Frame box recipes
         {
@@ -2302,6 +2302,11 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedBoardOptical, 16),
                         new CircuitComponentStack(CircuitComponent.ProcessedPlateHexanite, 6),
                         new CircuitComponentStack(CircuitComponent.CasingEternity, 4),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDInductor, 64),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDCapacitor, 64),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDResistor, 64),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDTransistor, 64),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDDiode, 64),
                         new CircuitComponentStack(CircuitComponent.ProcessedWireMagMatter, 8),
                         new CircuitComponentStack(CircuitComponent.ProcessedFoilShirabon, 64)),
                 Arrays.asList(
