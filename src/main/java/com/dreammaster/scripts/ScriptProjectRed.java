@@ -42,8 +42,6 @@ import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
 import static gregtech.api.recipe.RecipeMaps.unpackagerRecipes;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
-import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
-import static gregtech.api.util.GTRecipeBuilder.QUARTER_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
@@ -70,7 +68,6 @@ import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
-@SuppressWarnings("PointlessArithmeticExpression")
 public class ScriptProjectRed implements IScriptLoader {
 
     @Override
@@ -113,8 +110,7 @@ public class ScriptProjectRed implements IScriptLoader {
     public void loadRecipes() {
         craftingRecipes();
         recipes1();
-        routingChipRecipes();
-        logicGateRecipes();
+        circuitAssemblerRecipes();
         recipes2();
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
