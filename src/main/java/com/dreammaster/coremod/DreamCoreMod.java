@@ -33,8 +33,6 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     private static boolean modpackHasUpdated;
 
     public static boolean showConfirmExitWindow;
-    static boolean downloadOnlyOnce;
-    static String downloadUA;
     public static String displayedModpackVersion;
 
     @Override
@@ -49,14 +47,13 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     @Override
     public String getSetupClass() {
-        return "com.dreammaster.coremod.DepLoader";
+        return null;
     }
 
     @Override
     public void injectData(Map<String, Object> data) {
         isObf = (boolean) data.get("runtimeDeobfuscationEnabled");
         coremodConfig.setProperty("showConfirmExitWindow", "true");
-        coremodConfig.setProperty("downloadOnlyOnce", "true");
         coremodConfig.setProperty("displayedModpackVersion", Refstrings.MODPACKPACK_VERSION);
         File mcLocation = (File) data.get("mcLocation");
         File configDir = new File(mcLocation, "config");
@@ -85,10 +82,6 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
             logger.warn("Can't write coremod config. Changes may not have been saved!", e);
         }
         showConfirmExitWindow = "true".equalsIgnoreCase(coremodConfig.getProperty("showConfirmExitWindow"));
-        downloadOnlyOnce = "true".equalsIgnoreCase(coremodConfig.getProperty("downloadOnlyOnce"));
-        downloadUA = coremodConfig.getProperty(
-                "downloadUA",
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0");
         displayedModpackVersion = coremodConfig.getProperty("displayedModpackVersion", Refstrings.MODPACKPACK_VERSION);
 
     }
