@@ -395,7 +395,7 @@ public class MainRegistry {
 
         if (IndustrialCraft2.isModLoaded()) IC2Converter.doPostInitialization();
 
-        if (IguanaTweaksTinkerConstruct.isModLoaded()) IguanaConverter.doPostInitialization();
+        IguanaConverter.doPostInitialization();
     }
 
     @Mod.EventHandler
