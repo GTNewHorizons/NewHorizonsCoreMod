@@ -105,11 +105,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UEV.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium) });
+                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Infinity) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UIV.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium) });
+                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.TranscendentMetal) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UMV.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
@@ -137,14 +137,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UMV.get(1L),
                 ItemList.Casing_UMV.get(1L),
-                OrePrefixes.wireGt12.get(Materials.Quantium),
-                OrePrefixes.wireGt12.get(Materials.Quantium));
+                OrePrefixes.cableGt12.get(Materials.Quantium),
+                OrePrefixes.cableGt12.get(Materials.Quantium));
 
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UXV.get(1L),
                 ItemList.Casing_UXV.get(1L),
-                OrePrefixes.wireGt16.get(Materials.BlackPlutonium),
-                OrePrefixes.wireGt16.get(Materials.BlackPlutonium));
+                OrePrefixes.cableGt16.get(Materials.BlackPlutonium),
+                OrePrefixes.cableGt16.get(Materials.BlackPlutonium));
 
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
@@ -346,8 +346,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_6.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Chrome), 'I',
-                        OrePrefixes.pipeLarge.get(Materials.TungstenSteel) });
+                new Object[] { "PPP", "PIP", "PPP", 'P', WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.plate),
+                        'I', OrePrefixes.pipeLarge.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_7.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
@@ -366,7 +366,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_10.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium), 'I',
+                new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Infinity), 'I',
                         OrePrefixes.pipeLarge.get(Materials.MysteriousCrystal) });
 
         GTModHandler.addCraftingRecipe(
@@ -978,7 +978,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 Materials.NetherStar, // UIV
                 Materials.Quantium, // UMV
                 Materials.BlackPlutonium, // UXV
-                Materials.DraconiumAwakened, // MAX
         };
 
         final long BITSD = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE;
@@ -995,25 +994,22 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         machinehull = ItemList.Hull_MAX.get(1L);
                         break;
                     case 10: // UEV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 1L);
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L);
                         machinehull = ItemList.Hull_UEV.get(1L);
                         break;
                     case 11: // UIV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 1L);
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 1L);
                         machinehull = ItemList.Hull_UIV.get(1L);
                         break;
                     case 12: // UMV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L);
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 1L);
                         machinehull = ItemList.Hull_UMV.get(1L);
                         break;
-                    case 13: // UXV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 1L);
+                    default: // UXV
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.MHDCSM, 1L);
                         machinehull = ItemList.Hull_UXV.get(1L);
                         break;
-                    default: // MAX
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 1L);
-                        machinehull = ItemList.Hull_MAXV.get(1L);
-                        break;
+
                 }
 
                 GTModHandler.addCraftingRecipe(
@@ -1026,38 +1022,33 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         ItemRegistry.diode12A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt12 : OrePrefixes.wireGt12, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt12, cable, 1L), 'P', hull, 'C',
+                                machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode8A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt08 : OrePrefixes.wireGt08, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt08, cable, 1L), 'P', hull, 'C',
+                                machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode4A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt04 : OrePrefixes.wireGt04, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt04, cable, 1L), 'P', hull, 'C',
+                                machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode2A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt02 : OrePrefixes.wireGt02, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt02, cable, 1L), 'P', hull, 'C',
+                                machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode16A[i],
                         BITSD,
                         new Object[] { "WHW", "DCD", "PDP", 'H', OrePrefixes.componentCircuit.get(Materials.Inductor),
                                 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt16 : OrePrefixes.wireGt16, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt16, cable, 1L), 'P', hull, 'C',
+                                machinehull });
 
             } catch (ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();

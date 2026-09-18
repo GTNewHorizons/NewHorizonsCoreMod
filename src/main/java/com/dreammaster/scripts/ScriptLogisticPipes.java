@@ -954,7 +954,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 0, wildcard),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0))
-                .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsRemoteOrdererLogistics", 1, 0))
+                .circuit(1).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsRemoteOrdererLogistics", 1, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Bee Analyzer Logistics Pipe

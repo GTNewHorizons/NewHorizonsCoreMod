@@ -53,7 +53,6 @@ import java.util.List;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.item.NHItemList;
@@ -1483,7 +1482,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedFabrication).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Circuit_Board_Epoxy.get(1L),
+                        ItemList.Circuit_Board_Plastic.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 4L))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
@@ -1493,14 +1492,14 @@ public class ScriptProjectRed implements IScriptLoader {
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
     }
 
-    private void routingChipRecipes() {
+    private void circuitAssemblerRecipes() {
         // Null-Logic Routing Chip
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 4L))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1508,7 +1507,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 0),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 6L))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1516,7 +1515,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 0),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 8L))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(circuitAssemblerRecipes);
 
@@ -1528,7 +1527,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1540,7 +1539,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Brass, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1552,7 +1551,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnnealedCopper, 1),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 0))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1566,7 +1565,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 1))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1579,7 +1578,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 1))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1592,7 +1591,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 1))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1605,7 +1604,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 2))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1617,7 +1616,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.CastIron, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 2))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1629,7 +1628,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ConductiveIron, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 2))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1643,7 +1642,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 3))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1656,7 +1655,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 29),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 26))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 3))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1669,7 +1668,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 3))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1682,7 +1681,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 4))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1693,7 +1692,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 4))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1704,7 +1703,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 4))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1717,7 +1716,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 5))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1729,7 +1728,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 5))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1741,7 +1740,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticAlloy, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 5))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1754,7 +1753,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.CobaltBrass, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 6))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1766,7 +1765,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Cobalt, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 6))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1778,7 +1777,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 6))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1791,7 +1790,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 7))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1803,7 +1802,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 7))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1815,7 +1814,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.BlueAlloy, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 7))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1828,7 +1827,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 8))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1840,7 +1839,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.SterlingSilver, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 8))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
@@ -1851,23 +1850,19 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticSilver, 1L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * QUARTER_INGOTS))
+                .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 8))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedTransportation)
                 .addTo(circuitAssemblerRecipes);
-    }
-
-    private void logicGateRecipes() {
         // OR Gate
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 0))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5))
+                .circuit(1).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 0))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
 
         // NOR Gate
         GTValues.RA.stdBuilder()
@@ -1876,30 +1871,29 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5))
-                .circuit(1).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                .circuit(10).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // NOT Gate
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 1),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 4),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 2))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 5))
+                .circuit(3).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 2))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // AND Gate
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 4),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 5),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 3))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 5))
+                .circuit(4).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 3))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // NAND Gate
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1907,91 +1901,86 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 5))
-                .circuit(2).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 4))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                .circuit(5).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 4))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // XOR Gate
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 0),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 1),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 4),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 5))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 5))
+                .circuit(1).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 5))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // XNOR Gate
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 5),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 6))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 5))
+                .circuit(2).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 6))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Buffer Gate
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 2),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 7))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5))
+                .circuit(6).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 7))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Multiplexr
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 13),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 1),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 8))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 5))
+                .circuit(7).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 8))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Pulser Former
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
-                        getModItem(Minecraft.ID, "repeater", 1),
-                        getModItem(Minecraft.ID, "comparator", 1))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 9))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 5))
+                .circuit(8).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 9))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Repeater
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2),
-                        getModItem(Minecraft.ID, "repeater", 1))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 10))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5))
+                .circuit(9).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 10))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Randomizer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 4),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 8),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 11))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 8))
+                .circuit(10).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 11))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // RS Latch
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 13),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 4),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 12))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5))
+                .circuit(11).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 12))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Toggle Latch
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1999,217 +1988,204 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
                         getModItem(Minecraft.ID, "lever", 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 13))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                .circuit(12).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 13))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Transparent Latch
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
-                        getModItem(Minecraft.ID, "repeater", 2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 14))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 5))
+                .circuit(13).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 14))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Light Sensor
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
-                        getModItem(Minecraft.ID, "daylight_detector", 1))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        new OreDictItemStack("dyeBlue", 3))
+                .circuit(14).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Rain Sensor
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
                         new OreDictItemStack("slimeball", 3))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                .circuit(15).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Timer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 9),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 17))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
-        // Sequencer
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6))
+                .circuit(16).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 17))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
+        // Sequenzer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 17),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 5),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 18))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6))
+                .circuit(17).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 18))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Counter
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 18),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 19))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6))
+                .circuit(18).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 19))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // State Cell
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 17),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 20))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                .circuit(19).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 20))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Synchronizer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 9),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 7))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                .circuit(3).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Bus Transceiver
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 6, 3),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 7))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 22))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                .circuit(20).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 22))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Null Cell
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 2),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 23))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 2),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9))
+                .circuit(21).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 23))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Inverter Cell
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 23),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 24))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9))
+                .circuit(22).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 24))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Buffer Cell
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 23),
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 7),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 25))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 2),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9))
+                .circuit(23).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 25))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Comparator
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 6, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 5),
                         getModItem(Minecraft.ID, "comparator", 1))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                .circuit(4).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // And Cell
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 23),
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 3),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 27))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 2),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 5),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9))
+                .circuit(24).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 27))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Bus Randomizer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 11),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 3),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 28))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 6, 3),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 8))
+                .circuit(5).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 28))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Bus Converter
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 2),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 3),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 29))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
-        // Bus Input Panel
-        for (int i = 0; i < 16; i++) {
-            OreDictionary.registerOre(
-                    "illumarButton",
-                    getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, i));
-        }
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 3),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7))
+                .circuit(6).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 29))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
+        // Bus Input Pannel
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 3),
-                        new OreDictItemStack("illumarButton", 16))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 7, 3),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7),
+                        new OreDictItemStack("projredIllumar", 1))
+                .circuit(17).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 30))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Data Cell
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 25),
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21),
-                        NHItemList.EtchedLowVoltageWiring.get(2))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 31))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 3, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 2),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 5))
+                .circuit(8).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 31))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Segment Display Gate
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 3),
-                        NHItemList.EtchedLowVoltageWiring.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 2L))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 3),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7),
+                        getModItem(Minecraft.ID, "quartz", 3))
+                .circuit(9).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
         // Dec Randomizer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 11),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 5),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4))
-                .itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 33))
-                .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore, ProjectRedIntegration)
-                .addTo(circuitAssemblerRecipes);
-
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 8))
+                .circuit(10).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 33))
+                .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
     }
 
     private void recipes2() {

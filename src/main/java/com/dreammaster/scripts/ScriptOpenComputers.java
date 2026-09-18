@@ -218,7 +218,7 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'c',
                 "circuitElite",
                 'd',
-                "turbineBladeChrome",
+                "turbineBladeRhodium-PlatedPalladium",
                 'e',
                 "circuitSuperconductor",
                 'f',

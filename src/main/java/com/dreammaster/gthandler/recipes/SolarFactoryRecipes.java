@@ -372,7 +372,21 @@ public class SolarFactoryRecipes implements Runnable {
                             Materials.Infinity.getMolten(4 * 144),
                             Materials.Kevlar.getMolten(8 * 144),
                             Materials.Knightmetal.getMolten(2 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS)
+                    .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Cover_SolarPanel_LuV.get(1),
+                            ItemList.Robot_Arm_LuV.get(1),
+                            ItemList.UHTResistantMesh.get(8),
+                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Kevlar), 4),
+                            GTOreDictUnificator.get(OrePrefixes.itemCasing.get(Materials.RadoxPolymer), 1),
+                            GTOreDictUnificator.get(OrePrefixes.nanite.get(Materials.Glowstone), 2))
+                    .itemOutputs(ItemList.SolarSail.get(1))
+                    .fluidInputs(
+                            new FluidStack(FluidRegistry.getFluid("molten.mutatedlivingsolder"), 720),
+                            Materials.Grade8PurifiedWater.getFluid(100L))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 3)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UEV) };
 
     public void run() {

@@ -35,7 +35,10 @@ public class TwilightForestMajorFeatureOverride {
         return null;
     }
 
-    private static class ComponentGregtechHollowHill extends ComponentTFHollowHill {
+    public static class ComponentGregtechHollowHill extends ComponentTFHollowHill {
+
+        @SuppressWarnings("unused")
+        public ComponentGregtechHollowHill() {}
 
         public ComponentGregtechHollowHill(World world, Random rand, int i, int size, int x, int y, int z) {
             super(world, rand, i, size, x, y, z);
