@@ -1054,6 +1054,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.OpticalMainframeRack.getFakeStack(1),
                         CircuitComponent.ProcessedPlateRhugnor.getFakeStack(2),
                         CircuitComponent.ProcessedChipAttoPIC.getFakeStack(8))
+                .fluidInputs(Materials.Space.getFluid(250))
                 .itemOutputs(CircuitComponent.PicoCPU.getFakeStack(1)).duration(40 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(nanochipEncasementWrapper);
 
@@ -1063,6 +1064,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.PicoCircuitRack.getFakeStack(1),
                         CircuitComponent.ProcessedPlateMetastableOganesson.getFakeStack(2),
                         CircuitComponent.ProcessedChipZeptoPIC.getFakeStack(8))
+                .fluidInputs(Materials.Space.getFluid(500))
                 .itemOutputs(CircuitComponent.QuantumCPU.getFakeStack(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_UXV)
                 .addTo(nanochipEncasementWrapper);
 
@@ -1072,6 +1074,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.RealizedQuantumCircuitRack.getFakeStack(1),
                         CircuitComponent.ProcessedPlateHexanite.getFakeStack(2),
                         CircuitComponent.ProcessedChipYoctoPIC.getFakeStack(8))
+                .fluidInputs(Materials.Space.getFluid(1_000))
                 .itemOutputs(CircuitComponent.PlanckCPU.getFakeStack(1)).duration(7 * SECONDS).eut(TierEU.RECIPE_MAX)
                 .addTo(nanochipEncasementWrapper);
     }
@@ -2337,8 +2340,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Arrays.asList(
                         Materials.BoundlessCosmicSolder.getFluid(4000),
                         Materials.PrimordialMatter.getFluid(4000),
-                        Materials.Space.getMolten(4000),
-                        Materials.PhononMedium.getFluid(1000)),
+                        Materials.PhononMedium.getFluid(1000),
+                        Materials.Space.getMolten(4000)),
                 CircuitComponent.PlanckCircuit,
                 600 * SECONDS,
                 TierEU.RECIPE_MAX,
