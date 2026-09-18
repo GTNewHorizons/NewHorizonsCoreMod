@@ -2174,7 +2174,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 3),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7),
-                        getModItem(Minecraft.ID, "quartz", 3))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 3L))
                 .circuit(9).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32))
                 .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
