@@ -2004,7 +2004,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 5, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
-                        new OreDictItemStack("dyeBlue", 3))
+                        getModItem(Minecraft.ID, "daylight_detector", 1))
                 .circuit(14).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 15))
                 .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(circuitAssemblerRecipes);
