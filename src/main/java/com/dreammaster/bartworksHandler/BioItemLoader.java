@@ -267,19 +267,19 @@ public class BioItemLoader {
                 .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000)).itemOutputs(new ItemStack(BIOTEMS, 10, 4))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(mixerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(BIOTEMS, 16, 4))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(BIOTEMS, 4, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 4000))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[8], 1000)).duration(1 * MINUTES).eut(TierEU.RECIPE_IV)
                 .addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(BIOTEMS, 16, 4))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(BIOTEMS, 8, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 4000))
-                .fluidOutputs(new FluidStack(BIOFLUIDS[8], 2000)).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
+                .fluidOutputs(new FluidStack(BIOFLUIDS[8], 2000)).duration(45 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(BIOTEMS, 16, 4))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(BIOTEMS, 12, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("mutagen", 4000))
-                .fluidOutputs(new FluidStack(BIOFLUIDS[8], 4000)).duration(1 * MINUTES).eut(TierEU.RECIPE_ZPM)
+                .fluidOutputs(new FluidStack(BIOFLUIDS[8], 4000)).duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM)
                 .addTo(brewingRecipes);
 
         GTValues.RA.stdBuilder().itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1))
