@@ -52,6 +52,13 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     @Override
     public void injectData(Map<String, Object> data) {
+        try {
+            LetsEncryptAdder.addLetsEncryptCertificates();
+        } catch (Exception e) {
+            logger.warn(
+                    "Could not ensure Let's Encrypt root certificates are present, HTTP requests might fail on older Java versions.");
+        }
+
         isObf = (boolean) data.get("runtimeDeobfuscationEnabled");
         coremodConfig.setProperty("showConfirmExitWindow", "true");
         coremodConfig.setProperty("displayedModpackVersion", Refstrings.MODPACKPACK_VERSION);
