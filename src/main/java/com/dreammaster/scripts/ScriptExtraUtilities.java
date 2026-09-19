@@ -509,25 +509,25 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "watering_can", 1, 3),
                 "craftingToolHardHammer",
-                "ringNeutronium",
+                "ringStainlessSteel",
                 "craftingToolScrewdriver",
-                "plateBedrockium",
-                "plateBedrockium",
-                "plateBedrockium",
-                "plateBedrockium",
-                "plateBedrockium",
-                "screwNeutronium");
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "stickStainlessSteel",
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "watering_can", 1, 3),
                 "craftingToolScrewdriver",
-                "ringNeutronium",
+                "ringStainlessSteel",
                 "craftingToolHardHammer",
-                "plateBedrockium",
-                "plateBedrockium",
-                "plateBedrockium",
-                "plateBedrockium",
-                "plateBedrockium",
-                "screwNeutronium");
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "stickStainlessSteel",
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0),
                 "blockWool",
