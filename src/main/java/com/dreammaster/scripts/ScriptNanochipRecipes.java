@@ -581,7 +581,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         addSimpleProcessingRecipe(
                 CircuitComponent.ProcessedBoardMultifiberglassElite,
-                Materials.BioMediumSterilized.getFluid(20),
+                MaterialLibAPI.getFluidStack(Materials.BiohMediumSterilized, FluidShapes.fluidLiquid, 20),
                 CircuitComponent.UnattunedCircuitry,
                 TierEU.RECIPE_UHV,
                 1 * SECONDS,
@@ -801,7 +801,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Copper Bolt
         addSimpleProcessingRecipe(
                 CircuitComponent.BoltCopper,
-                Materials.Lubricant.getFluid(5),
+                MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 5),
                 CircuitComponent.ProcessedBoltCopper,
                 TierEU.RECIPE_LuV,
                 1 * SECONDS,
@@ -810,7 +810,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Red Alloy Bolt
         addSimpleProcessingRecipe(
                 CircuitComponent.BoltRedAlloy,
-                Materials.Lubricant.getFluid(5),
+                MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 5),
                 CircuitComponent.ProcessedBoltRedAlloy,
                 TierEU.RECIPE_LuV,
                 1 * SECONDS,
@@ -819,7 +819,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Platinum Bolt
         addSimpleProcessingRecipe(
                 CircuitComponent.BoltPlatinum,
-                Materials.Lubricant.getFluid(5),
+                MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 5),
                 CircuitComponent.ProcessedBoltPlatinum,
                 TierEU.RECIPE_LuV,
                 1 * SECONDS,
@@ -828,7 +828,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Niobium Titanium Bolt
         addSimpleProcessingRecipe(
                 CircuitComponent.BoltNiobiumTitanium,
-                Materials.Lubricant.getFluid(5),
+                MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 5),
                 CircuitComponent.ProcessedBoltNiobiumTitanium,
                 TierEU.RECIPE_LuV,
                 1 * SECONDS,
@@ -1366,7 +1366,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 CircuitComponent.ProcessedOpticalSMDDiode.getFakeStack(4),
                 CircuitComponent.ProcessedBoltCosmicNeutronium.getFakeStack(2), CircuitComponent.CasingKevlar.getFakeStack(4))
             .itemOutputs(CircuitComponent.PrimedUnattunedCircuitry.getFakeStack(1))
-            .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(20), Materials.Void.getMolten(144))
+            .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 20), MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, 144))
             .metadata(NanochipAssemblyMatrixTierKey.INSTANCE, VoltageIndex.UV)
             .metadata(GTRecipeConstants.CIRCUIT_CALIBRATION_TYPE, CircuitComponent.PrimedUnattunedCircuitry.circuitType)
             .duration(25 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(RecipeMaps.nanochipAssemblyMatrixRecipes);
@@ -1379,7 +1379,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 new CircuitComponentStack(CircuitComponent.ProcessedBoltRedAlloy, 16),
                 new CircuitComponentStack(CircuitComponent.ProcessedWireCopper, 16)
             ),
-            Arrays.asList(Materials.Lead.getMolten(16)),
+            Arrays.asList(MaterialLibAPI.getFluidStack(Materials.Lead, FluidShapes.fluidMolten, 16)),
             new CircuitComponentStack(CircuitComponent.NandChip,64),
             25 * SECONDS,
             TierEU.RECIPE_UV,
@@ -1393,7 +1393,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 new CircuitComponentStack(CircuitComponent.ProcessedBoltCopper, 16),
                 new CircuitComponentStack(CircuitComponent.ProcessedWireCopper, 16)
             ),
-            Arrays.asList(Materials.Tin.getMolten(8)),
+            Arrays.asList(MaterialLibAPI.getFluidStack(Materials.Tin, FluidShapes.fluidMolten, 8)),
             new CircuitComponentStack(CircuitComponent.Microprocessor,32),
             25 * SECONDS,
             TierEU.RECIPE_UV,
@@ -1406,7 +1406,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                  new CircuitComponentStack(CircuitComponent.ProcessedBoltCopper, 16),
                  new CircuitComponentStack(CircuitComponent.ProcessedWireRedAlloy, 16)
             ),
-            Arrays.asList(Materials.SolderingAlloy.getMolten(8)),
+            Arrays.asList(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 8)),
             new CircuitComponentStack(CircuitComponent.IntegratedProcessor,16),
             25 * SECONDS,
             TierEU.RECIPE_UV,
@@ -1419,7 +1419,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 new CircuitComponentStack(CircuitComponent.ProcessedBoltPlatinum, 16),
                 new CircuitComponentStack(CircuitComponent.ProcessedWireElectrum, 16)
             ),
-            Arrays.asList(MaterialsAlloy.INDALLOY_140.getFluidStack(8)),
+            Arrays.asList(MaterialLibAPI.getFluidStack(Materials.Indalloy140, FluidShapes.fluidMolten, 8)),
             new CircuitComponentStack(CircuitComponent.NanoProcessor,8),
             25 * SECONDS,
             TierEU.RECIPE_UV,
@@ -1432,7 +1432,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                  new CircuitComponentStack(CircuitComponent.ProcessedBoltNiobiumTitanium, 16),
                  new CircuitComponentStack(CircuitComponent.ProcessedWirePlatinum, 16)
             ),
-            Arrays.asList(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8)),
+            Arrays.asList(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8)),
             new CircuitComponentStack(CircuitComponent.QuantumProcessor,4),
             25 * SECONDS,
             TierEU.RECIPE_UV,
