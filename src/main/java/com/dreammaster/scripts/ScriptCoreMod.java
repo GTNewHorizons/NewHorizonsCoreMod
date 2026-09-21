@@ -184,22 +184,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 "craftingToolHardHammer",
                 null);
         addShapedRecipe(
-                NHItemList.SawBladeArdite.get(),
-                "plateArdite",
-                "plateArdite",
-                null,
-                "craftingToolFile",
-                "craftingToolHardHammer",
-                null);
-        addShapedRecipe(
-                NHItemList.SawBladeManyullyn.get(),
-                "plateManyullyn",
-                "plateManyullyn",
-                null,
-                "craftingToolFile",
-                "craftingToolHardHammer",
-                null);
-        addShapedRecipe(
                 NHItemList.SawBladeRuby.get(),
                 "plateRuby",
                 "plateRuby",
@@ -1068,14 +1052,6 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                         ItemList.Shape_Extruder_Casing.get(0L))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2)).duration(20 * SECONDS).eut(384)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 2, 4), ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeArdite.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 2, 5), ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeManyullyn.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 5), ItemList.Shape_Extruder_Plate.get(0L))
