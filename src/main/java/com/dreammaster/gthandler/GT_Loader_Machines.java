@@ -934,7 +934,7 @@ public class GT_Loader_Machines {
                 ItemList.NameRemover.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "SsS", "VMV", "SXS", 'M', ItemList.Hull_ULV, 'V',
-                        MaterialParts.namedIngredient(OrePrefixes.gearGtSmall, MaterialFacades.AnyBronze), 'S',
+                        MaterialParts.namedIngredient(OrePrefixes.gearGtSmall, Materials.Bronze), 'S',
                         MaterialParts.namedIngredient(OrePrefixes.screw, MaterialFacades.AnyIron), 'X',
                         OreDictNames.craftingPiston });
 

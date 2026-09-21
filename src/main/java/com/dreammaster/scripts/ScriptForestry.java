@@ -4946,7 +4946,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                GTOreDictUnificator.get("wireFineAnyBronze", 1L),
+                GTOreDictUnificator.get("wireFineBronze", 1L),
                 'f',
                 "circuitBasic",
                 'g',

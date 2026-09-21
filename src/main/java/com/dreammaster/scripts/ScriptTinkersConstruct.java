@@ -1648,7 +1648,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 false,
                 20);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                GTOreDictUnificator.get("nuggetAnyBronze", 1L),
+                GTOreDictUnificator.get("nuggetBronze", 1L),
                 FluidRegistry.getFluidStack("bronze.molten", 16),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 27),
                 false,

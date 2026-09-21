@@ -959,7 +959,7 @@ public class AssemblerRecipes implements Runnable {
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Blocks.brick_block), GTOreDictUnificator.get("plateAnyBronze", 6)).circuit(1)
+                .itemInputs(new ItemStack(Blocks.brick_block), GTOreDictUnificator.get("plateBronze", 6)).circuit(1)
                 .itemOutputs(ItemList.Casing_BronzePlatedBricks.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -7196,7 +7196,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get("plateAnyIron", 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7204,7 +7204,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get("plateAnyIron", 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7212,7 +7212,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get("plateAnyIron", 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7244,7 +7244,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Nickel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7252,7 +7252,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Nickel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7260,7 +7260,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Nickel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7292,7 +7292,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Invar, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 2, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7300,7 +7300,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Invar, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 2, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7324,7 +7324,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 2, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7332,7 +7332,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 2, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7356,7 +7356,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Invar, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7372,7 +7372,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7382,21 +7382,21 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.Brass, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
-                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
-                        MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
+                        MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7420,7 +7420,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Titanium, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7428,7 +7428,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Titanium, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7452,7 +7452,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Tungsten, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7460,7 +7460,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Tungsten, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 3, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7484,7 +7484,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 4, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7500,7 +7500,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Titanium, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 4, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7516,7 +7516,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Tungsten, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 4, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7532,7 +7532,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Zinc, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 5, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7540,7 +7540,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 5, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7564,7 +7564,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, 1),
-                        GTOreDictUnificator.get("plateAnyBronze", 1),
+                        GTOreDictUnificator.get("plateBronze", 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 6, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
