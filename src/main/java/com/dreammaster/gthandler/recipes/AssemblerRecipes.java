@@ -1442,7 +1442,7 @@ public class AssemblerRecipes implements Runnable {
         // Humongous input hatch
         GTValues.RA.stdBuilder().itemInputs(ItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1))
                 .itemOutputs(ItemRegistry.humongousInputHatch.copy())
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, 5_760))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 5_760))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(assemblerRecipes);
 
         // Wood Plates
@@ -3219,7 +3219,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemRegistry.humongousInputHatch.copy(),
                         GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.SpaceTime, 4))
                 .circuit(4)
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, 5760))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 5760))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UXV).addTo(assemblerRecipes);
 

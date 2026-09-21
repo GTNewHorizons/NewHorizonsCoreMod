@@ -1936,7 +1936,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 Arrays.asList(
                         MaterialLibAPI.getFluidStack(Materials.BoundlessCosmicSolder, FluidShapes.fluidLiquid, 4000),
                         MaterialLibAPI.getFluidStack(Materials.PrimordialMatter, FluidShapes.fluidLiquid, 4000),
-                        MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, 4000),
+                        MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 4000),
                         MaterialLibAPI.getFluidStack(Materials.PhononMedium, FluidShapes.fluidLiquid, 1000)),
                 CircuitComponent.PlanckCircuit,
                 1000 * SECONDS,

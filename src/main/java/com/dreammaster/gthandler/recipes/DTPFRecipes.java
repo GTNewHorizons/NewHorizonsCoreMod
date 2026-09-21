@@ -1962,7 +1962,7 @@ public class DTPFRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials.temporalFluid,
-                                    FluidShapes.fluidMolten,
+                                    FluidShapes.fluidLiquid,
                                     (int) (18432L * 8)),
                             MaterialLibAPI.getFluidStack(Materials.ExcitedDTSC, FluidShapes.fluidLiquid, 100000))
                     .fluidOutputs(
@@ -1971,7 +1971,7 @@ public class DTPFRecipes implements Runnable {
                                     FluidShapes.fluidLiquid,
                                     (int) (100000L * 2)),
                             MaterialLibAPI
-                                    .getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, (int) (18432L * 8)))
+                                    .getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, (int) (18432L * 8)))
                     .duration(80 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500).addTo(plasmaForgeRecipes);
 
             // Time to Space
@@ -1984,7 +1984,7 @@ public class DTPFRecipes implements Runnable {
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials.temporalFluid,
-                                    FluidShapes.fluidMolten,
+                                    FluidShapes.fluidLiquid,
                                     (int) (9216L * 64)),
                             MaterialLibAPI
                                     .getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, (int) (9216L * 16)),
@@ -1995,7 +1995,7 @@ public class DTPFRecipes implements Runnable {
                                     FluidShapes.fluidLiquid,
                                     (int) (1000L * 2)),
                             MaterialLibAPI
-                                    .getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, (int) (9216L * 64)))
+                                    .getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, (int) (9216L * 64)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500).addTo(plasmaForgeRecipes);
 
             // Space to Time
@@ -2006,7 +2006,7 @@ public class DTPFRecipes implements Runnable {
                     ItemList.Timepiece.get(16)).itemOutputs(ItemList.Tesseract.get(1))
                     .fluidInputs(
                             MaterialLibAPI
-                                    .getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, (int) (9216L * 64)),
+                                    .getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, (int) (9216L * 64)),
                             MaterialLibAPI
                                     .getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, (int) (9216L * 16)),
                             MaterialLibAPI.getFluidStack(Materials.ExcitedDTSC, FluidShapes.fluidLiquid, 1000))
@@ -2017,7 +2017,7 @@ public class DTPFRecipes implements Runnable {
                                     (int) (1000L * 2)),
                             MaterialLibAPI.getFluidStack(
                                     Materials.temporalFluid,
-                                    FluidShapes.fluidMolten,
+                                    FluidShapes.fluidLiquid,
                                     (int) (9216L * 64)))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500).addTo(plasmaForgeRecipes);
 

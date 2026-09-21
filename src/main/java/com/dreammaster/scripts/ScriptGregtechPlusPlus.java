@@ -88,7 +88,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.PrimordialMatter, FluidShapes.fluidLiquid, 1152))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 9216),
-                        MaterialLibAPI.getFluidStack(Materials.temporalFluid, FluidShapes.fluidMolten, 18432))
+                        MaterialLibAPI.getFluidStack(Materials.temporalFluid, FluidShapes.fluidLiquid, 18432))
                 .metadata(QFT_CATALYST, GregtechItemList.TemporalHarmonyCatalyst.get(0)).metadata(QFT_FOCUS_TIER, 4)
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(quantumForceTransformerRecipes);
         addForestryRecipes();

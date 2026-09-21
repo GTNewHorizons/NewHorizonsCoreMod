@@ -266,8 +266,8 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.GravitonShard, Shapes.gem, 1) },
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(Materials.RawStarMatter, FluidShapes.fluidLiquid, 4_000_000),
-                        MaterialLibAPI.getFluidStack(Materials.temporalFluid, FluidShapes.fluidMolten, 4_000_000),
-                        MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidMolten, 4_000_000),
+                        MaterialLibAPI.getFluidStack(Materials.temporalFluid, FluidShapes.fluidLiquid, 4_000_000),
+                        MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 4_000_000),
                         MaterialLibAPI.getFluidStack(Materials.PhononMedium, FluidShapes.fluidLiquid, 1_000_000) },
                 ItemList.Universal_Collapser_ExoFoundry.get(1),
                 60 * SECONDS,

@@ -470,7 +470,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
 
             // Base Computation Singularity
             GTValues.RA.stdBuilder().fluidInputs(
-                    MaterialLibAPI.getFluidStack(Materials.ComputationBase, FluidShapes.fluidMolten, Integer.MAX_VALUE))
+                    MaterialLibAPI.getFluidStack(Materials.ComputationBase, FluidShapes.fluidLiquid, Integer.MAX_VALUE))
                     .itemInputs(NHItemList.SingularityComputationCore.get(1))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6))
                     .duration(4500 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COMPRESSION_TIER, 2)
