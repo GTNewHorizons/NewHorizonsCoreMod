@@ -2406,45 +2406,115 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         }
 
         if (EtFuturumRequiem.isModLoaded()) {
-            // Cherry
-            GameRegistry.addShapelessRecipe(
-                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 0));
-
             // Stripped Oak
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 0),
                     getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 0));
+
+            // Oak Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 0),
+                    getModItem(EtFuturumRequiem.ID, "bark", 1, 0));
+
+            // Stripped Oak Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 0),
+                    getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, 0));
 
             // Stripped Spruce
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 1),
                     getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 1));
 
+            // Spruce Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 1),
+                    getModItem(EtFuturumRequiem.ID, "bark", 1, 1));
+
+            // Stripped Spruce Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 1),
+                    getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, 1));
+
             // Stripped Birch
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 2),
                     getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 2));
+
+            // Birch Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 2),
+                    getModItem(EtFuturumRequiem.ID, "bark", 1, 2));
+
+            // Stripped Birch Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 2),
+                    getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, 2));
 
             // Stripped Jungle
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 3),
                     getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 3));
 
+            // Jungle Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "bark", 1, 3));
+
+            // Stripped Jungle Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, 3));
+
             // Stripped Acacia
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 4),
                     getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 0));
+
+            // Acacia Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 4),
+                    getModItem(EtFuturumRequiem.ID, "bark2", 1, 0));
+
+            // Stripped Acacia Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 4),
+                    getModItem(EtFuturumRequiem.ID, "wood2_stripped", 1, 0));
 
             // Stripped Dark Oak
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 5),
                     getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 1));
 
+            // Dark Oak Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 5),
+                    getModItem(EtFuturumRequiem.ID, "bark2", 1, 1));
+
+            // Stripped Dark Oak Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 5),
+                    getModItem(EtFuturumRequiem.ID, "wood2_stripped", 1, 1));
+
+            // Cherry
+            GameRegistry.addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 0));
+
             // Stripped Cherry
             GameRegistry.addShapelessRecipe(
                     getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
                     getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2));
+
+            // Cherry Wood
+            GameRegistry.addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 1));
+
+            // Stripped Cherry Wood
+            GameRegistry.addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 3));
 
             if (BiomesOPlenty.isModLoaded()) {
                 // Stripped Sacred Oak
@@ -2452,70 +2522,210 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         getModItem(BiomesOPlenty.ID, "planks", 4, 0),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped", 1, 0));
 
+                // Sacred Oak Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood", 1, 0));
+
+                // Stripped Sacred Oak Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped", 1, 0));
+
                 // Stripped Cherry
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 1),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped", 1, 1));
+
+                // Cherry Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood", 1, 1));
+
+                // Stripped Cherry Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped", 1, 1));
 
                 // Stripped Dark
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 2),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped", 1, 2));
 
+                // Dark Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood", 1, 2));
+
+                // Stripped Dark Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped", 1, 2));
+
                 // Stripped Fir
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 3),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped", 1, 3));
+
+                // Fir Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 3),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood", 1, 3));
+
+                // Stripped Fir Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 3),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped", 1, 3));
 
                 // Stripped Ethereal
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 4),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 0));
 
+                // Ethereal Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 4),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood2", 1, 0));
+
+                // Stripped Ethereal Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 4),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped2", 1, 0));
+
                 // Stripped Magic
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 5),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 1));
+
+                // Magic Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 5),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood2", 1, 1));
+
+                // Stripped Magic Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 5),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped2", 1, 1));
 
                 // Stripped Mangrove
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 6),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 2));
 
+                // Mangrove Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 6),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood2", 1, 2));
+
+                // Stripped Mangrove Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 6),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped2", 1, 2));
+
                 // Stripped Palm
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 7),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 3));
+
+                // Palm Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 7),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood2", 1, 3));
+
+                // Stripped Palm Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 7),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped2", 1, 3));
 
                 // Stripped Redwood
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 8),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped3", 1, 0));
 
+                // Redwood Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 8),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood3", 1, 0));
+
+                // Stripped Redwood Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 8),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped3", 1, 0));
+
                 // Stripped Willow
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 9),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped3", 1, 1));
+
+                // Willow Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 9),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood3", 1, 1));
+
+                // Stripped Willow Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 9),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped3", 1, 1));
 
                 // Stripped Pine
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 11),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped4", 1, 0));
 
+                // Pine Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 11),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood4", 1, 0));
+
+                // Stripped Pine Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 11),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped4", 1, 0));
+
                 // Stripped Hellbark
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 12),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped4", 1, 1));
+
+                // Hellbark Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 12),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood4", 1, 1));
+
+                // Stripped Hellbark Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 12),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped4", 1, 1));
 
                 // Stripped Jacaranda
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 13),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped4", 1, 2));
 
+                // Jacaranda Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 13),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood4", 1, 2));
+
+                // Stripped Jacaranda Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 13),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped4", 1, 2));
+
                 // Stripped Mahogany
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 14),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped4", 1, 3));
+
+                // Mahogany Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 14),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood4", 1, 3));
+
+                // Stripped Mahogany Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 14),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped4", 1, 3));
             }
 
             if (Witchery.isModLoaded()) {
@@ -2524,15 +2734,45 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         getModItem(Witchery.ID, "witchwood", 4, 0),
                         getModItem(EtFuturumRequiem.ID, "witchery_log_stripped", 1, 0));
 
+                // Rowan Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood", 1, 0));
+
+                // Stripped Rowan Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood_stripped", 1, 0));
+
                 // Stripped Alder
                 GameRegistry.addShapelessRecipe(
                         getModItem(Witchery.ID, "witchwood", 4, 1),
                         getModItem(EtFuturumRequiem.ID, "witchery_log_stripped", 1, 1));
 
+                // Alder Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood", 1, 1));
+
+                // Stripped Alder Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood_stripped", 1, 1));
+
                 // Stripped Hawthorn
                 GameRegistry.addShapelessRecipe(
                         getModItem(Witchery.ID, "witchwood", 4, 2),
                         getModItem(EtFuturumRequiem.ID, "witchery_log_stripped", 1, 2));
+
+                // Hawthorn Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood", 1, 2));
+
+                // Stripped Hawthorn Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood_stripped", 1, 2));
             }
         }
 
