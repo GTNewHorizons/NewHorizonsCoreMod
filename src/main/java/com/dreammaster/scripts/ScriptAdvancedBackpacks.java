@@ -32,6 +32,7 @@ import com.dreammaster.recipes.ShapedUniversalRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 
 public class ScriptAdvancedBackpacks implements IScriptLoader {
 
@@ -41,16 +42,16 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdventureBackpack.ID,
-                BuildCraftFactory.ID,
-                IndustrialCraft2.ID,
-                GalacticraftCore.ID,
-                SleepingBags.ID,
-                Backpack.ID,
-                PamsHarvestCraft.ID,
-                Railcraft.ID);
+                AdventureBackpack,
+                BuildCraftFactory,
+                IndustrialCraft2,
+                GalacticraftCore,
+                SleepingBags,
+                Backpack,
+                PamsHarvestCraft,
+                Railcraft);
     }
 
     @Override

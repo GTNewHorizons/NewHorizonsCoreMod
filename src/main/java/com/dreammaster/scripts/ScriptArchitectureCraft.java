@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -20,8 +21,8 @@ public class ScriptArchitectureCraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(ArchitectureCraft.ID, TinkerConstruct.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(ArchitectureCraft, TinkerConstruct);
     }
 
     @Override

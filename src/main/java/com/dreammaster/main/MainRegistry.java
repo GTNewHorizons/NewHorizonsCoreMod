@@ -1,5 +1,6 @@
 package com.dreammaster.main;
 
+import static gregtech.GTLoggers.GT_FML_LOGGER;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -43,6 +44,7 @@ import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.gthandler.recipes.SpaceAssemblerRecipes;
 import com.dreammaster.ic2.IC2Converter;
+import com.dreammaster.iguana.IguanaConverter;
 import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
@@ -70,6 +72,7 @@ import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.travellersgear.TGConverter;
 import com.dreammaster.witchery.WitcheryPlugin;
+import com.google.common.base.Stopwatch;
 import com.gtnewhorizon.gtnhlib.config.ConfigException;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 
@@ -98,6 +101,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.util.GTModHandler;
 import gregtech.common.items.MetaGeneratedItem01;
 import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 
@@ -390,6 +394,8 @@ public class MainRegistry {
         if (!Loader.isModLoaded(BPPConverter.BPP_MOD_ID)) BPPConverter.doPostInitialization();
 
         if (IndustrialCraft2.isModLoaded()) IC2Converter.doPostInitialization();
+
+        IguanaConverter.doPostInitialization();
     }
 
     @Mod.EventHandler
@@ -415,6 +421,14 @@ public class MainRegistry {
         }
 
         new FakeCuttingRecipes().run(); // nei cutting recipes display
+
+        GT_FML_LOGGER.debug("stopping second buffering pass, from NHCore.");
+        @SuppressWarnings("UnstableApiUsage") // Stable enough for this project
+        Stopwatch stopwatch = Stopwatch.createStarted();
+        GT_FML_LOGGER.debug("GTMod: Adding 2nd pass of buffered Recipes.");
+        GTModHandler.stopBufferingCraftingRecipes();
+        // noinspection UnstableApiUsage// Stable enough for this project
+        GT_FML_LOGGER.info("Executed 2nd pass of delayed Crafting Recipes ({}). Have another Cake.", stopwatch.stop());
     }
 
     /**

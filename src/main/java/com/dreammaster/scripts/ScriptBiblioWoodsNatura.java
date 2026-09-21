@@ -11,6 +11,8 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.enums.Mods;
+
 public class ScriptBiblioWoodsNatura implements IScriptLoader {
 
     @Override
@@ -19,8 +21,8 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(BiblioCraft.ID, BiblioWoodsNaturaEdition.ID, Natura.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(BiblioCraft, BiblioWoodsNaturaEdition, Natura);
     }
 
     @Override

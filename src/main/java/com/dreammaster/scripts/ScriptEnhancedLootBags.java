@@ -34,6 +34,7 @@ import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 
 public class ScriptEnhancedLootBags implements IScriptLoader {
 
@@ -43,24 +44,24 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BloodMagic.ID,
-                DraconicEvolution.ID,
-                EnhancedLootBags.ID,
-                Forestry.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                Gendustry.ID,
-                HardcoreEnderExpansion.ID,
-                IndustrialCraft2.ID,
-                OpenComputers.ID,
-                PamsHarvestCraft.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                ThaumicTinkerer.ID,
-                Witchery.ID,
-                CropsNH.ID);
+                BloodMagic,
+                DraconicEvolution,
+                EnhancedLootBags,
+                Forestry,
+                GalacticraftCore,
+                GalacticraftMars,
+                Gendustry,
+                HardcoreEnderExpansion,
+                IndustrialCraft2,
+                OpenComputers,
+                PamsHarvestCraft,
+                Railcraft,
+                Thaumcraft,
+                ThaumicTinkerer,
+                Witchery,
+                CropsNH);
     }
 
     @Override

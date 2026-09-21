@@ -62,6 +62,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.ItemData;
@@ -79,26 +80,26 @@ public class ScriptCoreMod implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                AppliedEnergistics2.ID,
-                BiomesOPlenty.ID,
-                BuildCraftSilicon.ID,
-                EnderIO.ID,
-                Forestry.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                IndustrialCraft2.ID,
-                Natura.ID,
-                OpenBlocks.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedCore.ID,
-                Railcraft.ID,
-                RemoteIO.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID);
+                AdvancedSolarPanel,
+                AppliedEnergistics2,
+                BiomesOPlenty,
+                BuildCraftSilicon,
+                EnderIO,
+                Forestry,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                IndustrialCraft2,
+                Natura,
+                OpenBlocks,
+                PamsHarvestCraft,
+                ProjectRedCore,
+                Railcraft,
+                RemoteIO,
+                Thaumcraft,
+                TinkerConstruct);
     }
 
     @Override
@@ -178,22 +179,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 NHItemList.SawBladeStone.get(),
                 "plateStone",
                 "plateStone",
-                null,
-                "craftingToolFile",
-                "craftingToolHardHammer",
-                null);
-        addShapedRecipe(
-                NHItemList.SawBladeArdite.get(),
-                "plateArdite",
-                "plateArdite",
-                null,
-                "craftingToolFile",
-                "craftingToolHardHammer",
-                null);
-        addShapedRecipe(
-                NHItemList.SawBladeManyullyn.get(),
-                "plateManyullyn",
-                "plateManyullyn",
                 null,
                 "craftingToolFile",
                 "craftingToolHardHammer",
@@ -1067,14 +1052,6 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                         ItemList.Shape_Extruder_Casing.get(0L))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2)).duration(20 * SECONDS).eut(384)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 2, 4), ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeArdite.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 2, 5), ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeManyullyn.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 5), ItemList.Shape_Extruder_Plate.get(0L))

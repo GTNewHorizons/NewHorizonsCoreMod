@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 
 public class ScriptBetterBuildersWands implements IScriptLoader {
@@ -23,8 +24,8 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(BetterBuildersWands.ID, ExtraUtilities.ID, TinkerConstruct.ID, TinkersGregworks.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(BetterBuildersWands, ExtraUtilities, TinkerConstruct, TinkersGregworks);
     }
 
     @Override

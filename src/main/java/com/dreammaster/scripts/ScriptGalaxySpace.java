@@ -1,9 +1,7 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
-import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -36,16 +34,15 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 
 import bartworks.system.material.WerkstoffLoader;
-import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsElements;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
@@ -59,15 +56,15 @@ public class ScriptGalaxySpace implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BuildCraftBuilders.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                IndustrialCraft2.ID,
-                OpenComputers.ID,
-                TinkerConstruct.ID);
+                BuildCraftBuilders,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                IndustrialCraft2,
+                OpenComputers,
+                TinkerConstruct);
     }
 
     @Override
@@ -264,47 +261,6 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(4), ItemList.NtNanofibers.get(4))
                 .itemOutputs(ItemList.UHTResistantMesh.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder() // drone case
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TranscendentMetal, 1),
-                        ItemList.Emitter_UEV.get(1),
-                        ItemList.Sensor_UEV.get(1),
-                        ItemList.Naquarite_Universal_Insulator_Foil.get(64),
-                        getModItem(OpenComputers.ID, "item", 64, 36),
-                        ItemList.Electric_Motor_UHV.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.CosmicNeutronium, 8),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.RadoxPolymer, 4),
-                        ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(ItemList.DroneCase.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(2304))
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder() // femtocontroller
-                .itemInputs(
-                        ItemList.Optically_Perfected_CPU.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
-                        ItemList.Circuit_Chip_FPIC.get(8),
-                        Materials.Silver.getNanite(2),
-                        ItemList.EnergisedTesseract.get(1),
-                        ItemRefer.HiC_T5.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.SuperconductorUEVBase, 32),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TengamAttuned, 64),
-                        ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(ItemList.Femtocontroller.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(16000)).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder() // fuel
-                .itemInputs(
-                        ItemList.Large_Fluid_Cell_Neutronium.get(1),
-                        ItemList.RodNaquadah32.get(32),
-                        MaterialsElements.STANDALONE.HYPOGEN.getPlate(4),
-                        ItemList.neutroniumHeatCapacitor.get(1),
-                        ItemList.UIV_Coil.get(16),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 4),
-                        getModItem(GalacticraftAmunRa.ID, "item.baseItem", 16, 27),
-                        ItemRefer.Advanced_Radiation_Protection_Plate.get(48),
-                        ItemList.UHTResistantMesh.get(64))
-                .itemOutputs(ItemList.FuelPellet.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(16000)).addTo(assemblerRecipes);
 
         // Chemical Reactor
         GTValues.RA.stdBuilder().itemInputs(Materials.Carbon.getDust(1), GTOreDictUnificator.get("dustHafnia", 1))
@@ -573,49 +529,49 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.lead_helmet", 1, 0),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "LLL", "LhL", "D D", 'L', getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.lead_plate", 1, 0),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "LhL", "LDL", "L L", 'L', getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.lead_leg", 1, 0),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "LLL", "LDL", "LhL", 'L', getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.lead_boots", 1, 0),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "D D", "LhL", "L L", 'L', getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.cobaltum_helmet", 1, 0),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CCC", "ChC", "D D", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.cobaltum_plate", 1, 0),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "ChC", "CDC", "C C", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.cobaltum_leg", 1, 0),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CCC", "CDC", "ChC", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.cobaltum_boots", 1, 0),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "D D", "ChC", "C C", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
@@ -709,7 +665,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmasword", 1, 100),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "DCD", "fCh", "DBW", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
                         'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'B', new ItemStack(GCItems.battery, 1, WILDCARD), 'W',
@@ -717,7 +673,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmapickaxe", 1, 100),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CCC", "fPh", "DBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'P', new ItemStack(GCItems.flagPole), 'D',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'B',
@@ -725,7 +681,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmaaxe", 1, 100),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CCh", "CPD", "fBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'P', new ItemStack(GCItems.flagPole), 'D',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'B',
@@ -733,7 +689,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmashovel", 1, 100),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "fCh", "DPD", "WBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'P',
                         new ItemStack(GCItems.flagPole), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B',
@@ -741,7 +697,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
         GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmahoe", 1, 100),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "CCh", "fPD", "WBD", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
                         'P', new ItemStack(GCItems.flagPole), 'D',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'W',
@@ -827,7 +783,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
     private void addDecorativeMetalBlockRecipe(int meta, ItemStack plate) {
         GTModHandler.addCraftingRecipe(
                 getGSItem("metalsblock", 1, meta),
-                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "hP ", "PSP", " Pw", 'P', plate, 'S', "stone" });
     }
 
@@ -837,6 +793,9 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
     @Override
     public boolean addShapedRecipe(ItemStack aOutput, Object... inputs) {
-        return GTModHandler.addCraftingRecipe(aOutput, GTModHandler.RecipeBits.NOT_REMOVABLE, inputs);
+        return GTModHandler.addCraftingRecipe(
+                aOutput,
+                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED,
+                inputs);
     }
 }

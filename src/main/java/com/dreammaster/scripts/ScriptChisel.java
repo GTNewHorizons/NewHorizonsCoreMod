@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.ProjectRedExploration;
 import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
@@ -31,6 +32,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -42,21 +44,22 @@ public class ScriptChisel implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                Botania.ID,
-                Chisel.ID,
-                EnderIO.ID,
-                GalacticraftAmunRa.ID,
-                GalacticraftCore.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                Natura.ID,
-                ProjectRedExploration.ID,
-                Railcraft.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID);
+                BiomesOPlenty,
+                Botania,
+                Chisel,
+                EnderIO,
+                GalacticraftAmunRa,
+                GalacticraftCore,
+                IndustrialCraft2,
+                IronChests,
+                Natura,
+                ProjectRedExploration,
+                Railcraft,
+                TinkerConstruct,
+                TwilightForest,
+                RandomThings);
     }
 
     @Override
@@ -583,6 +586,13 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 1));
         ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 2));
         ChiselHelper.addVariationFromStack("castle_door", getModItem(TwilightForest.ID, "tile.CastleDoor", 1, 3));
+
+        ChiselHelper.addVariationFromStack("dirt", getModItem(Minecraft.ID, "farmland", 1, 0));
+
+        ChiselHelper.addGroup("fertilized_dirt");
+        ChiselHelper.addVariationFromStack("fertilizedDirt", getModItem(RandomThings.ID, "fertilizedDirt", 1, 0));
+        ChiselHelper
+                .addVariationFromStack("fertilizedDirt", getModItem(RandomThings.ID, "fertilizedDirt_tilled", 1, 0));
 
         ChiselHelper.addGroup("castle_brick");
         ChiselHelper.addVariationFromStack("castle_brick", getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0));

@@ -11,6 +11,7 @@ import java.util.List;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 
 public class ScriptComputronics implements IScriptLoader {
 
@@ -20,8 +21,8 @@ public class ScriptComputronics implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Avaritia.ID, Computronics.ID, OpenComputers.ID, Thaumcraft.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Avaritia, Computronics, OpenComputers, Thaumcraft);
     }
 
     @Override

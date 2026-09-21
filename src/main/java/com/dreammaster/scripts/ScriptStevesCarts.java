@@ -51,6 +51,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -65,30 +66,30 @@ public class ScriptStevesCarts implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                Botany.ID,
-                BuildCraftFactory.ID,
-                BuildCraftSilicon.ID,
-                EnderIO.ID,
-                EtFuturumRequiem.ID,
-                ExtraBees.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                Gendustry.ID,
-                IndustrialCraft2.ID,
-                IronTanks.ID,
-                Natura.ID,
-                OpenBlocks.ID,
-                ProjectRedExploration.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                StevesCarts2.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID);
+                Backpack,
+                BiomesOPlenty,
+                Botany,
+                BuildCraftFactory,
+                BuildCraftSilicon,
+                EnderIO,
+                EtFuturumRequiem,
+                ExtraBees,
+                ExtraUtilities,
+                Forestry,
+                Gendustry,
+                IndustrialCraft2,
+                IronTanks,
+                Natura,
+                OpenBlocks,
+                ProjectRedExploration,
+                ProjectRedIntegration,
+                Railcraft,
+                StevesCarts2,
+                Thaumcraft,
+                TinkerConstruct,
+                TwilightForest);
     }
 
     @Override

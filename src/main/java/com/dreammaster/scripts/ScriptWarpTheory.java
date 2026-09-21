@@ -25,6 +25,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import thaumcraft.api.ThaumcraftApi;
@@ -41,19 +42,19 @@ public class ScriptWarpTheory implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                BiomesOPlenty.ID,
-                BloodMagic.ID,
-                ForbiddenMagic.ID,
-                OpenBlocks.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                ThaumicExploration.ID,
-                ThaumicTinkerer.ID,
-                WarpTheory.ID,
-                Witchery.ID);
+                AppliedEnergistics2,
+                BiomesOPlenty,
+                BloodMagic,
+                ForbiddenMagic,
+                OpenBlocks,
+                Thaumcraft,
+                ThaumicBases,
+                ThaumicExploration,
+                ThaumicTinkerer,
+                WarpTheory,
+                Witchery);
     }
 
     @Override

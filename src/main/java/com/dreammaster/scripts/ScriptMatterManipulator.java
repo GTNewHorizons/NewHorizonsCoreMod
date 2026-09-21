@@ -53,15 +53,15 @@ public class ScriptMatterManipulator implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AE2FluidCraft.ID,
-                AppliedEnergistics2.ID,
-                EnderIO.ID,
-                GraviSuite.ID,
-                MatterManipulator.ID,
-                Thaumcraft.ID,
-                ThaumicTinkerer.ID);
+                AE2FluidCraft,
+                AppliedEnergistics2,
+                EnderIO,
+                GraviSuite,
+                MatterManipulator,
+                Thaumcraft,
+                ThaumicTinkerer);
     }
 
     @Override

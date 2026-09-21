@@ -23,6 +23,7 @@ import com.dreammaster.item.NHItemList;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import kekztech.common.Blocks;
@@ -37,16 +38,16 @@ public class ScriptSGCraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                SGCraft.ID,
-                BartWorks.ID,
-                EnderIO.ID,
-                GoodGenerator.ID,
-                TecTech.ID,
-                EternalSingularity.ID,
-                AppliedEnergistics2.ID,
-                OpenComputers.ID);
+                SGCraft,
+                BartWorks,
+                EnderIO,
+                GoodGenerator,
+                TecTech,
+                EternalSingularity,
+                AppliedEnergistics2,
+                OpenComputers);
     }
 
     @Override

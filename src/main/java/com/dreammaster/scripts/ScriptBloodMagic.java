@@ -60,6 +60,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -80,36 +81,36 @@ public class ScriptBloodMagic implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                BloodMagic.ID,
-                Botania.ID,
-                BuildCraftFactory.ID,
-                DraconicEvolution.ID,
-                ElectroMagicTools.ID,
-                EnderIO.ID,
-                EnderStorage.ID,
-                EnderZoo.ID,
-                ExtraUtilities.ID,
-                ForbiddenMagic.ID,
-                Genetics.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                IronTanks.ID,
-                MagicBees.ID,
-                Railcraft.ID,
-                StevesCarts2.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                ThaumicTinkerer.ID,
-                TinkerConstruct.ID,
-                TinkersGregworks.ID,
-                TwilightForest.ID,
-                Witchery.ID);
+                AppliedEnergistics2,
+                Avaritia,
+                BiomesOPlenty,
+                BloodArsenal,
+                BloodMagic,
+                Botania,
+                BuildCraftFactory,
+                DraconicEvolution,
+                ElectroMagicTools,
+                EnderIO,
+                EnderStorage,
+                EnderZoo,
+                ExtraUtilities,
+                ForbiddenMagic,
+                Genetics,
+                IndustrialCraft2,
+                IronChests,
+                IronTanks,
+                MagicBees,
+                Railcraft,
+                StevesCarts2,
+                Thaumcraft,
+                ThaumicBases,
+                ThaumicTinkerer,
+                TinkerConstruct,
+                TinkersGregworks,
+                TwilightForest,
+                Witchery);
     }
 
     @Override

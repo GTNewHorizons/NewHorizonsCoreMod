@@ -38,6 +38,7 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -52,28 +53,28 @@ public class ScriptBuildCraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Botany.ID,
-                BuildCraftBuilders.ID,
-                BuildCraftCompat.ID,
-                BuildCraftCore.ID,
-                BuildCraftFactory.ID,
-                BuildCraftRobotics.ID,
-                BuildCraftSilicon.ID,
-                BuildCraftTransport.ID,
-                ExtraBees.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                ForgeMicroblocks.ID,
-                IndustrialCraft2.ID,
-                OpenBlocks.ID,
-                ProjectRedCore.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransportation.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                TinkerConstruct.ID);
+                Botany,
+                BuildCraftBuilders,
+                BuildCraftCompat,
+                BuildCraftCore,
+                BuildCraftFactory,
+                BuildCraftRobotics,
+                BuildCraftSilicon,
+                BuildCraftTransport,
+                ExtraBees,
+                ExtraUtilities,
+                Forestry,
+                ForgeMicroblocks,
+                IndustrialCraft2,
+                OpenBlocks,
+                ProjectRedCore,
+                ProjectRedExpansion,
+                ProjectRedTransportation,
+                Railcraft,
+                RandomThings,
+                TinkerConstruct);
     }
 
     @Override

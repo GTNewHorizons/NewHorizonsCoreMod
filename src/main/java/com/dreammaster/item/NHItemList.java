@@ -430,8 +430,6 @@ public enum NHItemList {
     SandStoneRod("SandStoneRod", GENERIC),
     SawBladeStone("SawBladeStone", GENERIC),
     SawBladeDiamond("SawBladeDiamond", GENERIC),
-    SawBladeArdite("SawBladeArdite", GENERIC),
-    SawBladeManyullyn("SawBladeManyullyn", GENERIC),
     SawBladeRuby("SawBladeRuby", GENERIC),
     SawBladeSapphire("SawBladeSapphire", GENERIC),
     SawBladePeridot("SawBladePeridot", GENERIC),

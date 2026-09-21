@@ -25,6 +25,7 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -37,18 +38,18 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Computronics.ID,
-                EnderIO.ID,
-                ExtraUtilities.ID,
-                IndustrialCraft2.ID,
-                OpenBlocks.ID,
-                ProjectRedTransmission.ID,
-                Railcraft.ID,
-                StevesFactoryManager.ID,
-                StevesAddons.ID);
+                AppliedEnergistics2,
+                Computronics,
+                EnderIO,
+                ExtraUtilities,
+                IndustrialCraft2,
+                OpenBlocks,
+                ProjectRedTransmission,
+                Railcraft,
+                StevesFactoryManager,
+                StevesAddons);
     }
 
     @Override

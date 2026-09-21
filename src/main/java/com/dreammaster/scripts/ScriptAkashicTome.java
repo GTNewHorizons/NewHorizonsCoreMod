@@ -8,6 +8,8 @@ import static gregtech.api.enums.Mods.Minecraft;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.enums.Mods;
+
 public class ScriptAkashicTome implements IScriptLoader {
 
     @Override
@@ -16,8 +18,8 @@ public class ScriptAkashicTome implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(AkashicTome.ID, Backpack.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AkashicTome, Backpack);
     }
 
     @Override

@@ -8,6 +8,8 @@ import java.util.List;
 
 import com.dreammaster.item.NHItemList;
 
+import gregtech.api.enums.Mods;
+
 public class ScriptForgeMultipart implements IScriptLoader {
 
     @Override
@@ -16,8 +18,8 @@ public class ScriptForgeMultipart implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Collections.singletonList(ForgeMicroblocks.ID);
+    public List<Mods> getDependencies() {
+        return Collections.singletonList(ForgeMicroblocks);
     }
 
     @Override

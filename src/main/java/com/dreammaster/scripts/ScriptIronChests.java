@@ -28,6 +28,7 @@ import java.util.List;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -41,25 +42,25 @@ public class ScriptIronChests implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                ExtraTrees.ID,
-                ExtraUtilities.ID,
-                Fether.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                GalacticraftAmunRa.ID,
-                GalaxySpace.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                IronChestsMinecarts.ID,
-                Natura.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TwilightForest.ID,
-                Witchery.ID);
+                BiomesOPlenty,
+                ExtraTrees,
+                ExtraUtilities,
+                Fether,
+                ForbiddenMagic,
+                Forestry,
+                GalacticraftAmunRa,
+                GalaxySpace,
+                IndustrialCraft2,
+                IronChests,
+                IronChestsMinecarts,
+                Natura,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                TwilightForest,
+                Witchery);
     }
 
     @Override

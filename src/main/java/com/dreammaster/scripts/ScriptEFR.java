@@ -4,35 +4,7 @@ import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Materials.MeatCooked;
 import static gregtech.api.enums.Materials.MeatRaw;
-import static gregtech.api.enums.Mods.AdventureBackpack;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.Chisel;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.ElectroMagicTools;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.Fether;
-import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MagicBees;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.TaintedMagic;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicBases;
-import static gregtech.api.enums.Mods.ThaumicHorizons;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.enums.Mods.WitchingGadgets;
-import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -54,6 +26,7 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTOreDictUnificator.get;
+import static gregtech.api.util.GTRecipeBuilder.BUCKETS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -95,6 +68,7 @@ import ganymedes01.etfuturum.recipes.SmokerRecipes;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -117,36 +91,36 @@ public class ScriptEFR implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdventureBackpack.ID,
-                AppliedEnergistics2.ID,
-                BiomesOPlenty.ID,
-                BloodMagic.ID,
-                Botania.ID,
-                Chisel.ID,
-                DraconicEvolution.ID,
-                ElectroMagicTools.ID,
-                EnderIO.ID,
-                EtFuturumRequiem.ID,
-                ExtraUtilities.ID,
-                Fether.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                HardcoreEnderExpansion.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                PamsHarvestCraft.ID,
-                StevesCarts2.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                ThaumicHorizons.ID,
-                TinkerConstruct.ID,
-                TinkersGregworks.ID,
-                Witchery.ID,
-                WitchingGadgets.ID,
-                ZTones.ID);
+                AdventureBackpack,
+                AppliedEnergistics2,
+                BiomesOPlenty,
+                BloodMagic,
+                Botania,
+                Chisel,
+                DraconicEvolution,
+                ElectroMagicTools,
+                EnderIO,
+                EtFuturumRequiem,
+                ExtraUtilities,
+                Fether,
+                ForbiddenMagic,
+                Forestry,
+                HardcoreEnderExpansion,
+                IndustrialCraft2,
+                MagicBees,
+                PamsHarvestCraft,
+                StevesCarts2,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                ThaumicHorizons,
+                TinkerConstruct,
+                TinkersGregworks,
+                Witchery,
+                WitchingGadgets,
+                ZTones);
     }
 
     @Override
@@ -534,6 +508,12 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "coopers_mallet", 1),
+                bits,
+                new Object[] { "BB ", "CCS", "PP ", 'B', getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0), 'S',
+                        "stickWood", 'C', "blockCopper", 'P', "chestCopper" });
 
         // Barrel Upgrades
         addShapedRecipe(
@@ -1109,21 +1089,6 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("plateAnyIron", 5), new ItemStack(Blocks.furnace, 1))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "amethyst_block", 64, 0),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockCrystalGrowthChamber", 6, 0),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 6, 0),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 6, 7),
-                        getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0),
-                        getModItem(BloodMagic.ID, "enhancedFillingAgent", 1, 0),
-                        getModItem(Botania.ID, "rune", 1, 9),
-                        getModItem(Witchery.ID, "ingredient", 1, 10),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 32, 6))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.crystallinepinkslime"), 4320))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "budding_amethyst", 6, 0)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         GTModHandler.addCraftingRecipe(
                 getModItem(Minecraft.ID, "leather", 1, 0),
@@ -2046,6 +2011,39 @@ public class ScriptEFR implements IScriptLoader {
                         Objects.requireNonNull(
                                 TCHelper.findInfusionRecipe(getModItem(EtFuturumRequiem.ID, "elytra", 1, 0)))));
 
+        new ResearchItem(
+                "SCULK",
+                "NEWHORIZONS",
+                new AspectList().add(DarkAspects.WRATH, 15).add(Aspect.DEATH, 12).add(Aspect.LIFE, 5)
+                        .add(Aspect.UNDEAD, 5),
+                -4,
+                8,
+                3,
+                getModItem(EtFuturumRequiem.ID, "five_record", 1)).setConcealed().setRound()
+                        .setPages(new ResearchPage("EtFuturumRequiem.research_page.SCULK.1")).registerResearchItem();
+        ThaumcraftApi.addCrucibleRecipe(
+                "SCULK",
+                getModItem(EtFuturumRequiem.ID, "disc_fragment_5", 1),
+                getModItem(Avaritia.ID, "Resource", 1, 7),
+                new AspectList().add(DarkAspects.WRATH, 15).add(Aspect.DEATH, 12).add(Aspect.LIFE, 5)
+                        .add(Aspect.UNDEAD, 5));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "SCULK",
+                getModItem(EtFuturumRequiem.ID, "five_record", 1),
+                new AspectList().add(Aspect.FIRE, 10).add(Aspect.ORDER, 20).add(Aspect.ENTROPY, 20),
+                "aaa",
+                "aaa",
+                "aaa",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "disc_fragment_5", 1));
+        TCHelper.addResearchPage(
+                "SCULK",
+                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(EtFuturumRequiem.ID, "disc_fragment_5", 1))));
+        TCHelper.addResearchPage(
+                "SCULK",
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(EtFuturumRequiem.ID, "five_record", 1, 0))));
+        ThaumcraftApi.addWarpToResearch("SCULK", 1);
+
         // Recipe Function Calls
         addOxidizedCopperDoors();
         addOxidizedCopperTrapdoors();
@@ -2197,6 +2195,71 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(new ItemStack(Blocks.chest), getModItem(EtFuturumRequiem.ID, "cherry_boat", 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_chest_boat", 1)).duration(10 * SECONDS).eut(15)
                 .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.BlankMusicDisc.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
+                        getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "pigstep_record", 1)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.BlankMusicDisc.get(1),
+                        new OreDictItemStack("dyeLightBlue", 1),
+                        new OreDictItemStack("dyeWhite", 1),
+                        new ItemStack(Items.ghast_tear, 1, 0))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "tears_record", 1)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.BlankMusicDisc.get(1),
+                        new OreDictItemStack("dyeRed", 1),
+                        new OreDictItemStack("dyeWhite", 1),
+                        new ItemStack(Items.chicken, 1, 0))
+                .fluidInputs(Materials.Lava.getFluid(BUCKETS * 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "lava_chicken_record", 1)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.BlankMusicDisc.get(1),
+                        new OreDictItemStack("dyeLightBlue", 1),
+                        new OreDictItemStack("dyeGreen", 1),
+                        getModItem(EtFuturumRequiem.ID, "deepslate", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "otherside_record", 1)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.BlankMusicDisc.get(1),
+                        new OreDictItemStack("dyeOrange", 1),
+                        new OreDictItemStack("dyeCyan", 1),
+                        getModItem(EtFuturumRequiem.ID, "tuff", 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "precipice_record", 1)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.BlankMusicDisc.get(1),
+                        new OreDictItemStack("dyeOrange", 1),
+                        new OreDictItemStack("dyeYellow", 1),
+                        getModItem(EtFuturumRequiem.ID, "copper_block", 1, 3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "creator_record", 1)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        NHItemList.BlankMusicDisc.get(1),
+                        new OreDictItemStack("dyeOrange", 1),
+                        new OreDictItemStack("dyeYellow", 1),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Copper, 1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "creator_music_box_record", 1)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
     }
 
     // Oxidation Functions

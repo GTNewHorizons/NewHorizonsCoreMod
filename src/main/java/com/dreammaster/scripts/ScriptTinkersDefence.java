@@ -13,6 +13,7 @@ import java.util.List;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
 
@@ -24,8 +25,8 @@ public class ScriptTinkersDefence implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(TinkerConstruct.ID, TinkersDefence.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(TinkerConstruct, TinkersDefence);
     }
 
     @Override
