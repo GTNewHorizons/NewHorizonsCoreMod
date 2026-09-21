@@ -2477,11 +2477,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         getModItem(BiomesOPlenty.ID, "planks", 4, 5),
                         getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 1));
 
-                // Stripped Magic
-                GameRegistry.addShapelessRecipe(
-                        getModItem(BiomesOPlenty.ID, "planks", 4, 5),
-                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 1));
-
                 // Stripped Mangrove
                 GameRegistry.addShapelessRecipe(
                         getModItem(BiomesOPlenty.ID, "planks", 4, 6),
