@@ -1017,7 +1017,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedFrameboxCelestialTungsten.getFakeStack(2),
                         CircuitComponent.ScrewAstralTitanium.getFakeStack(4),
                         CircuitComponent.CasingUEVSuperconductor.getFakeStack(1))
-                .itemOutputs(CircuitComponent.ProcessedPicoCircuitCasing.getFakeStack(1)).duration(40 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedPicoCircuitCasing.getFakeStack(1)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_UMV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
         // Quantum
@@ -1055,7 +1055,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedPlateRhugnor.getFakeStack(2),
                         CircuitComponent.ProcessedChipAttoPIC.getFakeStack(8))
                 .fluidInputs(Materials.Space.getMolten(250)).itemOutputs(CircuitComponent.PicoCPU.getFakeStack(1))
-                .duration(40 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(nanochipEncasementWrapper);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(nanochipEncasementWrapper);
 
         // Quantum CPU
         GTValues.RA.stdBuilder()
