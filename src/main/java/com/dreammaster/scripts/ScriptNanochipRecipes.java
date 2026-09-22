@@ -2291,7 +2291,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Matrix:
         // 800,000s UHV
         // - Planck       -> 600,000s UHV
-        // - Raw manifold -> 100,000s UHV (includes 50% calibration bonus that this does not receive)
+        // - Raw manifold -> 200,000s UHV (this receives the specialty circuit buff now)
 
         // Note on old NAC balance: old total time 1,120,000s UHV
 
@@ -2315,7 +2315,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         Materials.RadoxPolymer.getMolten(16 * INGOTS),
                         Materials.ExcitedDTSC.getFluid(4000)),
                 CircuitComponent.RawManifoldBud,
-                100 * SECONDS,
+                200 * SECONDS,
                 TierEU.RECIPE_MAX,
                 VoltageIndex.UMV);
 
