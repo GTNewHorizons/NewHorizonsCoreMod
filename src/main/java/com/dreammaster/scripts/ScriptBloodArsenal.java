@@ -68,6 +68,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
         BloodMagicHelper.removeBindingRecipe(getModItem(BloodArsenal.ID, "bound_sickle", 1, 0));
         BloodMagicHelper.removeBindingRecipe(getModItem(BloodArsenal.ID, "bound_bow", 1, 0));
         BloodMagicHelper.removeAltarRecipe(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0));
+        BloodMagicHelper.removeAltarRecipe(getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0));
         BloodMagicHelper.removeAltarRecipe(getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0));
         BloodMagicHelper.removeBindingRecipe(getModItem(BloodArsenal.ID, "bound_igniter", 1, 0));
         BloodMagicHelper.removeBindingRecipe(getModItem(BloodArsenal.ID, "bound_shears", 1, 0));
@@ -591,6 +592,14 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 600,
                 20,
                 20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                MaterialLibAPI.getStack(Materials.BloodInfusedIron, Shapes.ingot, 1),
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0),
+                3,
+                6000,
+                5,
+                5,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0),

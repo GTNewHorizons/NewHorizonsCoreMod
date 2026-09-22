@@ -46,7 +46,6 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.fluids.GTPPFluids;
-import gtPlusPlus.core.item.chemistry.Particle;
 
 public class MixerRecipes implements Runnable {
 
@@ -870,23 +869,6 @@ public class MixerRecipes implements Runnable {
                 .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
 
-        // TODO: remove for 2.10
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.StableAdhesive.get(64),
-                        ItemList.SuperconductorComposite.get(64),
-                        ItemList.NaquadriaSupersolid.get(64),
-                        ItemList.Timepiece.get(64),
-                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.Z_BOSON)),
-                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.ETA_MESON)),
-                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.LAMBDA)),
-                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
-                        MaterialLibAPI.getStack(Materials.GravitonShard, Shapes.gem, 4))
-                .fluidInputs(
-                        MaterialLibAPI
-                                .getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, 1_000_000_000))
-                .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
-                .addTo(mixerRecipes);
         // Stargate-Crystal Dust
         GTValues.RA.stdBuilder()
                 .itemInputs(
