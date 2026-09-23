@@ -17,8 +17,8 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import gregtech.api.interfaces.IItemContainer;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 /**
@@ -104,7 +104,7 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
                     this.recipeXY[y * 3 + x] = this.recipe[y][x];
                 } else if (this.recipe[y][x] instanceof ItemData) {
                     ItemData data = (ItemData) this.recipe[y][x];
-                    ItemStack itemStack = GTOreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
+                    ItemStack itemStack = MaterialParts.stack(data.mPrefix, data.mMaterial.mMaterial, 1);
                     if (itemStack == null) {
                         throw new NullPointerException("bad item passed in the recipe");
                     } else {
