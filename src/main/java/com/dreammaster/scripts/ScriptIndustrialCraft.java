@@ -630,7 +630,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwIron",
                 "craftingToolSaw",
                 "pipeSmallSteel",
-                GTOreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 1),
+                ItemList.Cell_Empty.get(1),
                 "screwIron",
                 getModItem(Minecraft.ID, "stone_button", 1, 0),
                 "circuitBasic");

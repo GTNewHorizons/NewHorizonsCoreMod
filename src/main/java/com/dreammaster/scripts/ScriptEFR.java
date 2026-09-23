@@ -3,6 +3,8 @@ package com.dreammaster.scripts;
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -1129,7 +1131,7 @@ public class ScriptEFR implements IScriptLoader {
                         new ItemStack(Blocks.furnace, 1),
                         getModItem(ZTones.ID, "minicharcoal", 6, 0),
                         getModItem(EtFuturumRequiem.ID, "smooth_stone", 2, 0),
-                        GTOreDictUnificator.get("plateAnyIron", 4L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 4))
                 .circuit(6).itemOutputs(getModItem(EtFuturumRequiem.ID, "smoker", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1708,7 +1710,7 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                GTOreDictUnificator.get("plateDenseObsidian", 1),
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',

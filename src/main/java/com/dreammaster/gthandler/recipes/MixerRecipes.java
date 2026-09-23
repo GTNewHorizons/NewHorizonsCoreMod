@@ -588,7 +588,7 @@ public class MixerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Yttrium, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Barium, Shapes.dust, 2),
-                        GTOreDictUnificator.get("dustAnyCopper", 3L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 3))
                 .circuit(2)
                 .itemOutputs(
                         GTOreDictUnificator
@@ -600,7 +600,7 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dust, 6),
-                        GTOreDictUnificator.get("dustAnyCopper", 1L),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Manganese, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Magnesium, Shapes.dust, 1))
                 .circuit(3)

@@ -32,9 +32,6 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.materials.Materials;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptChisel implements IScriptLoader {
 
@@ -295,9 +292,7 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("marble", new ItemStack(GregTechAPI.sBlockStones, 1, 6));
         ChiselHelper.addVariationFromStack("marble", new ItemStack(GregTechAPI.sBlockStones, 1, 7));
         ChiselHelper.addVariationFromStack("RCAbyssalBlock", getModItem(Railcraft.ID, "cube", 1, 6));
-        ChiselHelper.addVariationFromStack(
-                "RCAbyssalBlock",
-                GTOreDictUnificator.get(OrePrefixes.stone, Materials.GraniteBlack, 1L));
+        ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTechAPI.sBlockGranites, 1, 0));
         ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTechAPI.sBlockGranites, 1, 1));
         ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTechAPI.sBlockGranites, 1, 2));
         ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTechAPI.sBlockGranites, 1, 3));
@@ -328,9 +323,7 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("basalts", getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 1));
         ChiselHelper.addVariationFromStack("basalts", getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 7));
         ChiselHelper.addGroup("redgranite");
-        ChiselHelper.addVariationFromStack(
-                "redgranite",
-                GTOreDictUnificator.get(OrePrefixes.stone, Materials.GraniteRed, 1L));
+        ChiselHelper.addVariationFromStack("redgranite", new ItemStack(GregTechAPI.sBlockGranites, 1, 8));
         ChiselHelper.addVariationFromStack("redgranite", new ItemStack(GregTechAPI.sBlockGranites, 1, 9));
         ChiselHelper.addVariationFromStack("redgranite", new ItemStack(GregTechAPI.sBlockGranites, 1, 10));
         ChiselHelper.addVariationFromStack("redgranite", new ItemStack(GregTechAPI.sBlockGranites, 1, 11));

@@ -54,9 +54,11 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OreMixes;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.StoneType;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTOreDictUnificator;
@@ -93,30 +95,29 @@ public class ScriptAmunRa implements IScriptLoader {
 
         // still add the following variants, in case the ores got obtained by meteor / void miner / space miner
 
-        addOrePrefixVariants(variants, OrePrefixes.ore, material, amount);
-        addOrePrefixVariants(variants, OrePrefixes.oreNetherrack, material, amount);
-        addOrePrefixVariants(variants, OrePrefixes.oreEndstone, material, amount);
+        addOreVariant(variants, StoneType.Stone, material, amount);
+        addOreVariant(variants, StoneType.Netherrack, material, amount);
+        addOreVariant(variants, StoneType.Endstone, material, amount);
         if (GTMod.proxy.enableBlackGraniteOres) {
-            addOrePrefixVariants(variants, OrePrefixes.oreBlackgranite, material, amount);
+            addOreVariant(variants, StoneType.BlackGranite, material, amount);
         }
         if (GTMod.proxy.enableRedGraniteOres) {
-            addOrePrefixVariants(variants, OrePrefixes.oreRedgranite, material, amount);
+            addOreVariant(variants, StoneType.RedGranite, material, amount);
         }
         if (GTMod.proxy.enableMarbleOres) {
-            addOrePrefixVariants(variants, OrePrefixes.oreMarble, material, amount);
+            addOreVariant(variants, StoneType.Marble, material, amount);
         }
         if (GTMod.proxy.enableBasaltOres) {
-            addOrePrefixVariants(variants, OrePrefixes.oreBasalt, material, amount);
+            addOreVariant(variants, StoneType.Basalt, material, amount);
         }
         return variants.toArray(new ItemStack[0]);
     }
 
-    private static void addOrePrefixVariants(List<ItemStack> variants, OrePrefixes prefix, Material material,
-            int amount) {
-        ItemStack ore = GTOreDictUnificator.get(prefix, material, 1L);
-        if (!GTUtility.isStackValid(ore)) {
+    private static void addOreVariant(List<ItemStack> variants, StoneType stoneType, Material material, int amount) {
+        if (!material.hasShape(OreShapes.ore)) {
             return;
         }
+        ItemStack ore = MaterialLibAPI.getStack(material, OreShapes.ore, OreShapes.variantOf(stoneType.name()), 1);
         for (ItemStack variant : GTOreDictUnificator.getNonUnifiedStacks(ore)) {
             ItemStack sizedVariant = GTUtility.copyAmount(amount, variant);
             if (!GTUtility.isStackValid(sizedVariant) || containsStack(variants, sizedVariant)) {

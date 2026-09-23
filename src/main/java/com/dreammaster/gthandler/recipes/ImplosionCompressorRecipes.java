@@ -18,12 +18,10 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ImplosionCompressorRecipes implements Runnable {
 
@@ -31,14 +29,13 @@ public class ImplosionCompressorRecipes implements Runnable {
     public void run() {
         if (GalaxySpace.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.compressed, Materials.Aluminium, 2L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 8))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1, 0),
                             MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.compressed, Materials.Bronze, 2L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 10))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1, 0),
                             MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))

@@ -22,13 +22,11 @@ import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptNuclearControl implements IScriptLoader {
 
@@ -50,7 +48,7 @@ public class ScriptNuclearControl implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NC2_REMOTE_SENSOR_KIT,
-                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
+                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 2, 0),
                         Circuits.LV.get(2))
                 .itemOutputs(NC2_PANEL_MEMORY_CARD).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
@@ -333,7 +331,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0),
                         getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4),
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1),
-                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
+                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0),
                         Circuits.HV.get(1))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 9)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -342,7 +340,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0),
                         getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5),
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1),
-                        GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
+                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 10)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);

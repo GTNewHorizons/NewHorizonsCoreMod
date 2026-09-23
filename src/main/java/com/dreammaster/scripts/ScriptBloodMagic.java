@@ -70,7 +70,6 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
-import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -4283,7 +4282,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
-                GTOreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 1),
+                ItemList.Cell_Empty.get(1),
                 1,
                 1000,
                 20,

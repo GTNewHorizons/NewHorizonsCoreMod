@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
@@ -28,7 +29,6 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class BlastFurnaceRecipes implements Runnable {
 
@@ -763,7 +763,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .metadata(COIL_HEAT, MaterialUtils.blastFurnaceTemp(Materials.NickelZincFerrite))
                 .addTo(blastFurnaceRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get("ingotBrickNether", 1L)).circuit(1)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "netherbrick", 1, 0)).circuit(1)
                 .itemOutputs(NHItemList.HotNetherrackBrick.get())
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(blastFurnaceRecipes);

@@ -10,10 +10,8 @@ import net.minecraft.item.ItemStack;
 
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 import twilightforest.TFTreasure;
 
 public class TF_Loot_Chests {
@@ -125,7 +123,7 @@ public class TF_Loot_Chests {
         TFTreasure.tower_library.common.add(getModItem(Thaumcraft.ID, "blockCandle", 4, 14), 12);
         TFTreasure.tower_library.common.add(getModItem(Thaumcraft.ID, "blockCandle", 4, 15), 12);
         TFTreasure.tower_library.common.add(MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.dust, 4), 6);
-        TFTreasure.tower_library.common.add(GTOreDictUnificator.get(OrePrefixes.gem, Materials.EnderPearl, 8L), 6);
+        TFTreasure.tower_library.common.add(MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.gem, 8), 6);
         TFTreasure.tower_library.common.add(MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.ingot, 2), 6);
         TFTreasure.tower_library.common.add(MaterialLibAPI.getStack(Materials.Void, Shapes.dust, 2), 6);
         TFTreasure.tower_library.common.add(getModItem(Thaumcraft.ID, "ItemResource", 2, 1), 12); // Nitor

@@ -11,13 +11,11 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
-import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 @SuppressWarnings("PointlessArithmeticExpression")
@@ -113,7 +111,7 @@ public class ExtruderRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Carbon, Shapes.ingot, 4),
                         ItemList.Shape_Extruder_Gear.get(0L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gear, Materials.Carbon, 1)).duration(5 * SECONDS)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Carbon, Shapes.gearGt, 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()

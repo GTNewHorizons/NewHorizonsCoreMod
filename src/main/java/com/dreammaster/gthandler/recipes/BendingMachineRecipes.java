@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.benderRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -14,12 +15,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class BendingMachineRecipes implements Runnable {
 
@@ -39,13 +38,13 @@ public class BendingMachineRecipes implements Runnable {
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1)).duration(20 * SECONDS)
                 .eut(24).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("ingotObsidian", 9)).circuit(9)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
-                .duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(benderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7)).duration(3 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 9)).circuit(9)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L))
-                .duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(benderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7)).duration(3 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(benderRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 9)).circuit(9)
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lapis, 1L)).duration(3 * MINUTES)
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8)).duration(3 * MINUTES)
                 .eut(TierEU.RECIPE_MV * 3 / 4).addTo(benderRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.stickLong, 1)).circuit(1)

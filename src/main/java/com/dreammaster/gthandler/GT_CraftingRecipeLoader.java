@@ -85,7 +85,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
      * Rolling Machine Crafting Recipe
      */
     private static boolean addRollingMachineRecipe(ItemStack aResult, Object[] aRecipe) {
-        aResult = GTOreDictUnificator.get(true, aResult);
         if (aResult == null || aRecipe == null || aResult.stackSize <= 0) return false;
         try {
             mods.railcraft.api.crafting.RailcraftCraftingManager.rollingMachine.getRecipeList()
@@ -1217,7 +1216,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 NHItemList.UnfiredCokeOvenBrick.get(3),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "CCC", "SFS", "SSS", 'C', new ItemStack(Items.clay_ball, 1, 0), 'S',
-                        GTOreDictUnificator.get("sand", 1L), 'F',
+                        getModItem(Minecraft.ID, "sand", 1, WILDCARD), 'F',
                         new ItemStack(NHItemList.WoodenBrickForm.item, 1, WILDCARD) });
 
         GTModHandler.addCraftingRecipe(
@@ -1254,7 +1253,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 new ItemStack(Blocks.iron_bars, 3, 0),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
-                new Object[] { " h ", "SSS", "SSS", 'S', GTOreDictUnificator.get("stickAnyIron", 1) });
+                new Object[] { " h ", "SSS", "SSS", 'S',
+                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1) });
         GTModHandler.addCraftingRecipe(
                 BlockList.SteelBars.get(3),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
@@ -1969,8 +1969,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE
                             | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                     new Object[] { "SSS", "WBW", "GGG", 'G', new ItemStack(Blocks.gravel, 1, 0), 'S',
-                            GTOreDictUnificator.get("sand", 1L), 'W', GTOreDictUnificator.get("itemWheat", 1L), 'B',
-                            ItemList.IC2_Plantball.get(1L) });
+                            getModItem(Minecraft.ID, "sand", 1, WILDCARD), 'W',
+                            getModItem(Minecraft.ID, "wheat", 1, WILDCARD), 'B', ItemList.IC2_Plantball.get(1L) });
         }
 
         if (TinkerConstruct.isModLoaded()) {

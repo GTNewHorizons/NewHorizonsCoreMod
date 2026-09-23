@@ -55,7 +55,6 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.FluidShapes;
@@ -63,7 +62,6 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 public class ScriptMinecraft implements IScriptLoader {
@@ -2299,10 +2297,10 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_sword", 1, 0),
                 null,
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                NHItemList.StonePlate.get(1),
                 null,
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                NHItemList.StonePlate.get(1),
                 "craftingToolHardHammer",
                 null,
                 MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 1),
@@ -2310,7 +2308,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_shovel", 1, 0),
                 "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                NHItemList.StonePlate.get(1),
                 "craftingToolHardHammer",
                 null,
                 MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 1),
@@ -2320,9 +2318,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_pickaxe", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                NHItemList.StonePlate.get(1),
+                NHItemList.StonePlate.get(1),
+                NHItemList.StonePlate.get(1),
                 "craftingToolFile",
                 MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 1),
                 "craftingToolHardHammer",
@@ -2331,10 +2329,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_axe", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                NHItemList.StonePlate.get(1),
+                NHItemList.StonePlate.get(1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                NHItemList.StonePlate.get(1),
                 MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 1),
                 null,
                 "craftingToolFile",
@@ -2342,8 +2340,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "stone_hoe", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 1L),
+                NHItemList.StonePlate.get(1),
+                NHItemList.StonePlate.get(1),
                 "craftingToolHardHammer",
                 "craftingToolFile",
                 MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 1),

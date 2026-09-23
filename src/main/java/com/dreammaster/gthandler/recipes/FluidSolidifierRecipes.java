@@ -27,7 +27,6 @@ import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class FluidSolidifierRecipes implements Runnable {
 
@@ -107,7 +106,7 @@ public class FluidSolidifierRecipes implements Runnable {
                 .eut(TierEU.RECIPE_LV / 2).addTo(fluidSolidifierRecipes);
 
         // Electron-permeable neutronium-coated glass
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(new ItemStack(ItemRegistry.bw_glasses[0], 1, 6)))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(ItemRegistry.bw_glasses[0], 1, 6))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Helium, FluidShapes.fluidPlasma, 4 * 144))
                 .itemOutputs(ItemList.GlassUVResistant.get(1)).eut(TierEU.RECIPE_UV).duration(5 * SECONDS)
                 .addTo(fluidSolidifierRecipes);

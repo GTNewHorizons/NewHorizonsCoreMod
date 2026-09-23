@@ -56,6 +56,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.StoneType;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
@@ -192,7 +193,8 @@ public class ScriptGregtech implements IScriptLoader {
                 null);
         addShapedRecipe(
                 MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1),
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Salt, 1L),
+                MaterialLibAPI
+                        .getStack(Materials.Salt, OreShapes.ore, OreShapes.variantOf(StoneType.Netherrack.name()), 1),
                 null,
                 null,
                 "craftingToolMortar",
@@ -200,7 +202,8 @@ public class ScriptGregtech implements IScriptLoader {
                 null);
         addShapedRecipe(
                 MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1),
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Salt, 1L),
+                MaterialLibAPI
+                        .getStack(Materials.Salt, OreShapes.ore, OreShapes.variantOf(StoneType.Endstone.name()), 1),
                 null,
                 null,
                 "craftingToolMortar",
@@ -208,7 +211,8 @@ public class ScriptGregtech implements IScriptLoader {
                 null);
         addShapedRecipe(
                 MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1),
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Salt, 1L),
+                MaterialLibAPI
+                        .getStack(Materials.Salt, OreShapes.ore, OreShapes.variantOf(StoneType.BlackGranite.name()), 1),
                 null,
                 null,
                 "craftingToolMortar",
@@ -216,7 +220,8 @@ public class ScriptGregtech implements IScriptLoader {
                 null);
         addShapedRecipe(
                 MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1),
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Salt, 1L),
+                MaterialLibAPI
+                        .getStack(Materials.Salt, OreShapes.ore, OreShapes.variantOf(StoneType.RedGranite.name()), 1),
                 null,
                 null,
                 "craftingToolMortar",
@@ -1486,16 +1491,32 @@ public class ScriptGregtech implements IScriptLoader {
                 MaterialLibAPI.getStack(Materials.Magnetite, OreShapes.ore, 1),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0));
         GTModHandler.addSmeltingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Magnetite, 1L),
+                MaterialLibAPI.getStack(
+                        Materials.Magnetite,
+                        OreShapes.ore,
+                        OreShapes.variantOf(StoneType.Netherrack.name()),
+                        1),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0));
         GTModHandler.addSmeltingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Magnetite, 1L),
+                MaterialLibAPI.getStack(
+                        Materials.Magnetite,
+                        OreShapes.ore,
+                        OreShapes.variantOf(StoneType.Endstone.name()),
+                        1),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0));
         GTModHandler.addSmeltingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Magnetite, 1L),
+                MaterialLibAPI.getStack(
+                        Materials.Magnetite,
+                        OreShapes.ore,
+                        OreShapes.variantOf(StoneType.BlackGranite.name()),
+                        1),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0));
         GTModHandler.addSmeltingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
+                MaterialLibAPI.getStack(
+                        Materials.Magnetite,
+                        OreShapes.ore,
+                        OreShapes.variantOf(StoneType.RedGranite.name()),
+                        1),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(

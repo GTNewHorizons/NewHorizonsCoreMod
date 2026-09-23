@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -36,9 +37,9 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
@@ -46,7 +47,6 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.recipe.metadata.CompressionTierKey;
-import gregtech.api.util.GTOreDictUnificator;
 import tectech.thing.block.BlockGodforgeGlass;
 
 public class CompressorRecipes implements Runnable {
@@ -69,20 +69,25 @@ public class CompressorRecipes implements Runnable {
 
         // custom dust to plate compression
         Material[] dustToPlateList = new Material[] { Materials.NetherQuartz, Materials.Quartzite, Materials.Lazurite,
-                Materials.Sodalite, Materials.GraniteBlack, Materials.GraniteRed, Materials.Stone };
+                Materials.Sodalite, Materials.GraniteBlack, Materials.GraniteRed };
         for (Material material : dustToPlateList) {
             GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(material, Shapes.dust, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 1L)).duration(15 * SECONDS).eut(2)
+                    .itemOutputs(MaterialLibAPI.getStack(material, Shapes.plate, 1)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
         }
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Stone, Shapes.dust, 1))
+                .itemOutputs(NHItemList.StonePlate.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         // Custom Plate -> Block compression
-        Material[] plateToBlockList = new Material[] { Materials.GraniteBlack, Materials.GraniteRed, Materials.Stone };
-        for (Material material : plateToBlockList) {
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 4L))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stone, material, 3L)).duration(15 * SECONDS).eut(2)
-                    .addTo(compressorRecipes);
-        }
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.GraniteBlack, Shapes.plate, 4))
+                .itemOutputs(new ItemStack(GregTechAPI.sBlockGranites, 3, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.GraniteRed, Shapes.plate, 4))
+                .itemOutputs(new ItemStack(GregTechAPI.sBlockGranites, 3, 8)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.StonePlate.get(4))
+                .itemOutputs(getModItem(Minecraft.ID, "stone", 3, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
 
         // custom dust to ingot compression
         Material[] dustToIngotList = new Material[] { Materials.Carbon, Materials.Ledox };
@@ -101,8 +106,8 @@ public class CompressorRecipes implements Runnable {
         }
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Marble, Shapes.dust, 1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Marble, 1L)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
+                .itemOutputs(getModItem(Chisel.ID, "marble", 1, 0)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CastIron, Shapes.nugget, 9))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.CastIron, Shapes.ingot, 1)).duration(15 * SECONDS).eut(2)

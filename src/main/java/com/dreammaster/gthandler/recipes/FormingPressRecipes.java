@@ -25,14 +25,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 public class FormingPressRecipes implements Runnable {
@@ -382,10 +380,7 @@ public class FormingPressRecipes implements Runnable {
         }
         if (ProjectRedCore.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
-                            NHItemList.EtchedLowVoltageWiring.get())
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.StonePlate.get(2), NHItemList.EtchedLowVoltageWiring.get())
                     .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(formingPressRecipes);
 

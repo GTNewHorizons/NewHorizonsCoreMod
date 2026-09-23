@@ -28,14 +28,12 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
-import gregtech.api.util.GTOreDictUnificator;
 import gtnhintergalactic.recipe.IGRecipeMaps;
 import tectech.thing.CustomItemList;
 import tectech.thing.casing.TTCasingsContainer;
@@ -547,7 +545,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     .itemInputs(
                             getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6),
                             getModItem(IndustrialCraft2.ID, "itemRTGPellet", 2, 0),
-                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 12L),
+                            getModItem(IndustrialCraft2.ID, "itemDensePlates", 12, 7),
                             Circuits.UV.get(2),
                             Circuits.LuV.get(2),
                             Circuits.IV.get(4),

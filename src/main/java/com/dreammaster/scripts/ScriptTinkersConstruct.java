@@ -65,13 +65,14 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.StoneType;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import mantle.lib.client.MantleClientRegistry;
 import tconstruct.TConstruct;
@@ -2094,15 +2095,20 @@ public class ScriptTinkersConstruct implements IScriptLoader {
     }
 
     private void addOresForMaterial(Material material, List<ItemStack> stacks) {
-        stacks.add(GTOreDictUnificator.get(OrePrefixes.rawOre, material, 1L));
-        stacks.add(GTOreDictUnificator.get(OrePrefixes.ore, material, 1L));
-        stacks.add(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, material, 1L));
-        stacks.add(GTOreDictUnificator.get(OrePrefixes.oreEndstone, material, 1L));
+        stacks.add(MaterialLibAPI.getStack(material, Shapes.rawOre, 1));
+        stacks.add(MaterialLibAPI.getStack(material, OreShapes.ore, OreShapes.variantOf(StoneType.Stone.name()), 1));
+        stacks.add(
+                MaterialLibAPI.getStack(material, OreShapes.ore, OreShapes.variantOf(StoneType.Netherrack.name()), 1));
+        stacks.add(MaterialLibAPI.getStack(material, OreShapes.ore, OreShapes.variantOf(StoneType.Endstone.name()), 1));
         if (GTMod.proxy.enableBlackGraniteOres) {
-            stacks.add(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, material, 1L));
+            stacks.add(
+                    MaterialLibAPI
+                            .getStack(material, OreShapes.ore, OreShapes.variantOf(StoneType.BlackGranite.name()), 1));
         }
         if (GTMod.proxy.enableRedGraniteOres) {
-            stacks.add(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, material, 1L));
+            stacks.add(
+                    MaterialLibAPI
+                            .getStack(material, OreShapes.ore, OreShapes.variantOf(StoneType.RedGranite.name()), 1));
         }
     }
 

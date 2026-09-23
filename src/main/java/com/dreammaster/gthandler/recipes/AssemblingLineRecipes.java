@@ -67,7 +67,6 @@ import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.core.block.ModBlocks;
@@ -1293,7 +1292,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 GregtechItemList.Laser_Lens_Special.get(64),
                                 MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.ring, 32),
                                 MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.rotor, 16),
-                                GTOreDictUnificator.get(OrePrefixes.gear, Materials.protohalkonite, 8),
+                                MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.gearGt, 8),
                                 MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plateSuperdense, 16),
                                 MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateSuperdense, 16),
                                 MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.plateSuperdense, 8),

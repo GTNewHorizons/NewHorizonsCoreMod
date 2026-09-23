@@ -76,7 +76,6 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaGeneratedItem98;
 import gregtech.common.items.MetaGeneratedTool01;
@@ -4264,7 +4263,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketFired", 1, 0),
                 getModItem(Minecraft.ID, "bucket", 1, 0),
                 getModItem(Forestry.ID, "canEmpty", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 1));
+                ItemList.Cell_Empty.get(1));
         TCHelper.addResearchPage(
                 "CORELIQUID",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5))));

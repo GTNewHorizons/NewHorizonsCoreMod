@@ -63,7 +63,6 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
@@ -109,11 +108,7 @@ public class ScriptCoreMod implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(NHItemList.SandStoneRod.get(), "craftingToolFile", "sandstone", "craftingToolSaw");
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
-                "craftingToolFile",
-                "cobblestone",
-                "craftingToolSaw");
+        addShapedRecipe(NHItemList.CobbleStoneRod.get(1), "craftingToolFile", "cobblestone", "craftingToolSaw");
         addShapedRecipe(NHItemList.LongObsidianRod.get(2), "craftingToolSaw", "stoneObsidian", "craftingToolFile");
         addShapedRecipe(NHItemList.LongStoneRod.get(2), "craftingToolSaw", "stone", "craftingToolFile");
         addShapedRecipe(
@@ -1216,7 +1211,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                        NHItemList.CobbleStoneRod.get(1),
                         MaterialLibAPI.getStack(Materials.Stone, Shapes.dustSmall, 2))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, wildcard))

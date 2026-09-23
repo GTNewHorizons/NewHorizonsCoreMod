@@ -34,7 +34,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.FluidState;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.FluidShapes;
@@ -43,7 +42,6 @@ import gregtech.api.enums.materials.Shapes;
 import gregtech.api.fluid.GTFluidFactory;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Sievert;
 
@@ -98,7 +96,7 @@ public class BioItemLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(new ItemStack(BIOTEMS, 4, 0), MaterialLibAPI.getStack(Materials.Water, CellShapes.cell, 3))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 3))
+                .itemOutputs(ItemList.Cell_Empty.get(3))
                 .fluidInputs(MaterialUtils.fluid(Materials.PhosphoricAcidGT5U, 1000))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[0], 4000)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
@@ -107,9 +105,9 @@ public class BioItemLoader {
                 .itemInputs(
                         new ItemStack(BIOTEMS, 4, 0),
                         MaterialLibAPI.getStack(Materials.PhosphoricAcidGT5U, CellShapes.cell, 1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 1))
-                .fluidInputs(GTUtility.getWater(3000)).fluidOutputs(new FluidStack(BIOFLUIDS[0], 4000))
-                .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(chemicalReactorRecipes);
+                .itemOutputs(ItemList.Cell_Empty.get(1)).fluidInputs(GTUtility.getWater(3000))
+                .fluidOutputs(new FluidStack(BIOFLUIDS[0], 4000)).duration(1 * MINUTES + 20 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(chemicalReactorRecipes);
 
         GTValues.RA.stdBuilder().circuit(1)
                 .itemOutputs(

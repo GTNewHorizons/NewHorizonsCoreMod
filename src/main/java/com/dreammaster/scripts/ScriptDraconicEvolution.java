@@ -46,12 +46,10 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.tools.TinkerTools;
 
 public class ScriptDraconicEvolution implements IScriptLoader {
@@ -1204,9 +1202,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 ItemList.Electric_Motor_IV.get(1L));
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 4),
-                        getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0))
+                .itemInputs(NHItemList.StonePlate.get(4), getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infoTablet", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

@@ -102,12 +102,12 @@ import com.dreammaster.main.MainRegistry;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.StoneType;
 import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 public class RecipeRemover {
@@ -449,13 +449,28 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 2));
         GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "blockCustomOre", 1, 7));
         GTModHandler.removeFurnaceSmelting(getModItem(BiomesOPlenty.ID, "gemOre", 1, 14));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBasalt, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(
+                MaterialLibAPI
+                        .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Basalt.name()), 1));
+        GTModHandler.removeFurnaceSmelting(
+                MaterialLibAPI
+                        .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.RedGranite.name()), 1));
+        GTModHandler.removeFurnaceSmelting(
+                MaterialLibAPI
+                        .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Endstone.name()), 1));
         GTModHandler.removeFurnaceSmelting(new ItemStack(sBlockOres1, 1, 514));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreMarble, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Amber, 1L));
-        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(
+                MaterialLibAPI
+                        .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Marble.name()), 1));
+        GTModHandler.removeFurnaceSmelting(
+                MaterialLibAPI.getStack(
+                        Materials.Amber,
+                        OreShapes.ore,
+                        OreShapes.variantOf(StoneType.BlackGranite.name()),
+                        1));
+        GTModHandler.removeFurnaceSmelting(
+                MaterialLibAPI
+                        .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Netherrack.name()), 1));
         GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "ItemShard", 1, 6));
         GTModHandler.removeFurnaceSmelting(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1));
         GTModHandler.removeFurnaceSmelting(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1));
