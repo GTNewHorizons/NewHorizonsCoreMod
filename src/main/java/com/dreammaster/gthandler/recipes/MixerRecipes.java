@@ -44,7 +44,6 @@ import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.fluids.GTPPFluids;
 
@@ -578,9 +577,7 @@ public class MixerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Naquadah, Shapes.dust, 2),
                         MaterialLibAPI.getStack(Materials.Trinium, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 1))
-                .circuit(2)
-                .itemOutputs(
-                        GTOreDictUnificator.getDust(Materials.NaquadahAlloy, 4L * OrePrefixes.dust.getMaterialAmount()))
+                .circuit(2).itemOutputs(MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.dust, 4))
                 .duration((int) (400L * OrePrefixes.dust.getMaterialAmount() / 3628800L)).eut(TierEU.RECIPE_IV)
                 .addTo(mixerRecipes);
 
@@ -589,10 +586,7 @@ public class MixerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Yttrium, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Barium, Shapes.dust, 2),
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 3))
-                .circuit(2)
-                .itemOutputs(
-                        GTOreDictUnificator
-                                .getDust(Materials.YttriumBariumCuprate, 13L * OrePrefixes.dust.getMaterialAmount()))
+                .circuit(2).itemOutputs(MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.dust, 13))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 7000))
                 .duration((int) (600L * OrePrefixes.dust.getMaterialAmount() / 3628800L)).eut(TierEU.RECIPE_EV)
                 .addTo(mixerRecipes);
@@ -603,9 +597,7 @@ public class MixerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Manganese, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Magnesium, Shapes.dust, 1))
-                .circuit(3)
-                .itemOutputs(
-                        GTOreDictUnificator.getDust(Materials.Duralumin, 9L * OrePrefixes.dust.getMaterialAmount()))
+                .circuit(3).itemOutputs(MaterialLibAPI.getStack(Materials.Duralumin, Shapes.dust, 9))
                 .duration((int) (900L * OrePrefixes.dust.getMaterialAmount() / 3628800L)).eut(TierEU.RECIPE_EV)
                 .addTo(mixerRecipes);
 
