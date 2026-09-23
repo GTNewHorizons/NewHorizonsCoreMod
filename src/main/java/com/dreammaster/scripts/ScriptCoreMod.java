@@ -65,6 +65,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
@@ -800,7 +801,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.BioOrganicMesh.get()).duration(40 * SECONDS).eut(2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L),
+                        MaterialLibAPI.getStack(Materials.Charcoal, BlockShapes.block, 1),
                         NHItemList.CompressedBioBall.get(8))
                 .itemOutputs(NHItemList.BioChunk.get()).duration(1 * MINUTES).eut(TierEU.RECIPE_MV / 2)
                 .addTo(assemblerRecipes);

@@ -103,6 +103,7 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
@@ -3013,10 +3014,10 @@ public class RecipeRemover {
         removeRecipeShapelessDelayed("dustCoal"/* ERRORSTACK <- itemcount */, "blockCoal");
         removeRecipeShapelessDelayed(
                 getModItem(Minecraft.ID, "coal", 9, 1),
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
+                MaterialLibAPI.getStack(Materials.Charcoal, BlockShapes.block, 1));
         removeRecipeShapelessDelayed(
                 MaterialLibAPI.getStack(Materials.Charcoal, Shapes.dust, 9),
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
+                MaterialLibAPI.getStack(Materials.Charcoal, BlockShapes.block, 1));
         removeRecipeShapelessDelayed(getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0));
         removeRecipeShapelessDelayed(
                 getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0),

@@ -28,13 +28,11 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptNatura implements IScriptLoader {
 
@@ -2578,261 +2576,261 @@ public class ScriptNatura implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 0))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.eucalyptus", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 1))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.sakura", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 2))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.ghostwood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 3))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.redwood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 4))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.bloodwood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 5))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.hopseed", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 6))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.maple", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 7))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.silverbell", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 8))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.amaranth", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 9))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.tiger", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 10))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.willow", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 11))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.darkwood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 2),
                         getModItem(Natura.ID, "planks", 2, 12))
                 .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.fusewood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.eucalyptus", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.eucalyptus", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 1),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.sakura", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 1),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.sakura", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 2),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.ghostwood", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 2),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.ghostwood", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.redwood", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.redwood", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 4),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.bloodwood", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 4),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.bloodwood", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 5),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.hopseed", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 5),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.hopseed", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 6),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.maple", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 6),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.maple", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 7),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.silverbell", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 4, 7),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.silverbell", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.amaranth", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.amaranth", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 1),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.tiger", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 1),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.tiger", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 2),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.willow", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 2),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.willow", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.darkwood", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.darkwood", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 4),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.fusewood", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 4, 4),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(Natura.ID, "trapdoor.fusewood", 6, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);

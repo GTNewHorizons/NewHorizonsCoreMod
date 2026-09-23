@@ -36,11 +36,10 @@ import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.TEBlockShapes;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -442,7 +441,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 'g',
                 MaterialLibAPI.getStack(Materials.Gold, Shapes.springSmall, 1),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.frameGt, 1),
                 'i',
                 MaterialLibAPI.getStack(Materials.Gold, Shapes.springSmall, 1));
         TCHelper.addResearchPage(

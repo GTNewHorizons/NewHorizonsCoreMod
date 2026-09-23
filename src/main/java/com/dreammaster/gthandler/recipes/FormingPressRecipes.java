@@ -543,7 +543,7 @@ public class FormingPressRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             NHItemList.BlankMusicDisc.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Gold, 64L),
+                            MaterialLibAPI.getStack(Materials.Gold, Shapes.nanite, 64),
                             new ItemStack(Blocks.grass, 64),
                             new ItemStack(Blocks.sand, 64),
                             getModItem(Natura.ID, "Cloud", 64, 0),

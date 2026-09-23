@@ -63,13 +63,13 @@ import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.objects.SubstituteFluidStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptProjectRed implements IScriptLoader {
 
@@ -156,8 +156,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "sapphire",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 6));
         ChiselHelper.addVariationFromStack("peridot", getModItem(BiomesOPlenty.ID, "gemOre", 1, 5));
-        ChiselHelper
-                .addVariationFromStack("peridot", GTOreDictUnificator.get(OrePrefixes.block, Materials.Olivine, 1L));
+        ChiselHelper.addVariationFromStack("peridot", MaterialLibAPI.getStack(Materials.Olivine, BlockShapes.block, 1));
         ChiselHelper.addVariationFromStack(
                 "peridot",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 7));
@@ -253,7 +252,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 ItemList.Cover_SolarPanel.get(1L));
         addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L));
+                MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt01, 1));
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0),
                 "stickWood",
@@ -887,7 +886,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59),
                 "plateSteel",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.frameGt, 1),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 18),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59),
@@ -916,8 +915,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel");
         addShapelessRecipe(
                 getModItem(MCFrames.ID, "mcframes.frame", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L));
+                MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1),
+                MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1));
         addShapelessRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10),
                 getModItem(Forestry.ID, "factory2", 1, 2));
@@ -1116,7 +1115,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt01, 1))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1497,7 +1496,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
                         Circuits.ULV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 4L))
+                        MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.wireGt02, 4))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(circuitAssemblerRecipes);
@@ -1505,7 +1504,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 0),
                         Circuits.LV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 6L))
+                        MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.wireGt02, 6))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(circuitAssemblerRecipes);
@@ -1513,7 +1512,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 0),
                         Circuits.MV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 8L))
+                        MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.wireGt02, 8))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(circuitAssemblerRecipes);
@@ -1524,7 +1523,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 0))
@@ -1536,7 +1535,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.Brass, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 0))
@@ -1548,7 +1547,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.HV.get(1),
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 0))
@@ -1561,7 +1560,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.Bronze, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
@@ -1574,7 +1573,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.Potin, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
@@ -1587,7 +1586,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.BlackBronze, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
@@ -1601,7 +1600,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 2))
@@ -1613,7 +1612,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.CastIron, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 2))
@@ -1625,7 +1624,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.HV.get(1),
                         MaterialLibAPI.getStack(Materials.ConductiveIron, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 2))
@@ -1638,7 +1637,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
@@ -1651,7 +1650,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.TinAlloy, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 29),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 26))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
@@ -1664,7 +1663,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.HV.get(1),
                         MaterialLibAPI.getStack(Materials.EnderiumBase, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
@@ -1678,7 +1677,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 4))
@@ -1689,7 +1688,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.ElectricalSteel, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 4))
@@ -1700,7 +1699,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.HV.get(1),
                         MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 4))
@@ -1713,7 +1712,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 5))
@@ -1725,7 +1724,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 5))
@@ -1737,7 +1736,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.HV.get(1),
                         MaterialLibAPI.getStack(Materials.EnergeticAlloy, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 5))
@@ -1750,7 +1749,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.CobaltBrass, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 6))
@@ -1762,7 +1761,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.Cobalt, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 6))
@@ -1774,7 +1773,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.HV.get(1),
                         MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 6))
@@ -1787,7 +1786,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.Glowstone, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 7))
@@ -1799,7 +1798,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.RedstoneAlloy, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 7))
@@ -1811,7 +1810,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 7))
@@ -1824,7 +1823,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44),
                         Circuits.LV.get(1),
                         MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 4, 8))
@@ -1836,7 +1835,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.SterlingSilver, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 8, 8))
@@ -1847,7 +1846,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44),
                         Circuits.HV.get(1),
                         MaterialLibAPI.getStack(Materials.EnergeticSilver, Shapes.plate, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 4),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33))
                 .fluidInputs(SubstituteFluidStack.soldering(36))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 16, 8))
@@ -2178,7 +2177,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 3),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 3L))
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 3))
                 .circuit(9).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 32))
                 .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(assemblerRecipes);
@@ -2350,7 +2349,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .circuit(8).itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedCore)
                 .addTo(mixerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt01, 1))
                 .circuit(2).itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0))
                 .duration(1 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
                 .addTo(wiremillRecipes);
@@ -2455,7 +2454,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i),
-                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L))
+                            MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1))
                     .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, i))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
                     .addTo(packagerRecipes);
@@ -2464,7 +2463,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.framewire", 1, i))
                     .itemOutputs(
                             getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, i),
-                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L))
+                            MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
                     .addTo(unpackagerRecipes);
         }

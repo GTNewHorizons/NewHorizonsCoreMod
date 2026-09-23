@@ -44,7 +44,6 @@ import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
@@ -270,7 +269,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 1),
-                        GTOreDictUnificator.get("dustHafnia", 1))
+                        MaterialLibAPI.getStack(Materials.Hafnia, Shapes.dust, 1))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.HafniumCarbide, Shapes.dust, 1))
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 2000))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
@@ -278,7 +277,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         // Mixer
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get("dustTantalumCarbide", 4),
+                        MaterialLibAPI.getStack(Materials.TantalumCarbide, Shapes.dust, 4),
                         MaterialLibAPI.getStack(Materials.HafniumCarbide, Shapes.dust, 1))
                 .circuit(1)
                 .itemOutputs(MaterialLibAPI.getStack(Materials.TantalumCarbideHafniumCarbideMixture, Shapes.dust, 5))

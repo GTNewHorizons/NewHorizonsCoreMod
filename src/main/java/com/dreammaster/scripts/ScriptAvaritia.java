@@ -68,7 +68,6 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.recipe.RecipeCategories;
-import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
 import tconstruct.smeltery.TinkerSmeltery;
 import tconstruct.tools.TinkerTools;
@@ -1018,7 +1017,7 @@ public class ScriptAvaritia implements IScriptLoader {
     private void registerTinkerPartsRecipes() {
         List<TinkerMaterialWrapper> materials = Arrays.asList(
                 new TinkerMaterialWrapper(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ingot, 1),
                         TinkerTools.MaterialID.Iron,
                         3 * MINUTES + 20 * SECONDS + 8 * TICKS,
                         TierEU.RECIPE_LV),

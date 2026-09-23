@@ -23,12 +23,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ForgeHammerRecipes implements Runnable {
 
@@ -54,10 +54,10 @@ public class ForgeHammerRecipes implements Runnable {
 
         // Uncompressed coal variants
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCharcoal.get(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 9)).duration(15 * SECONDS)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Charcoal, BlockShapes.block, 9)).duration(15 * SECONDS)
                 .eut(2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.get(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Coal, 9)).duration(15 * SECONDS)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Coal, BlockShapes.block, 9)).duration(15 * SECONDS)
                 .eut(2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.get(1))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
@@ -167,7 +167,7 @@ public class ForgeHammerRecipes implements Runnable {
 
         // The charged certus quartz dust is this mod's item, so GregTech's crushed ore pass does not cover it.
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.crushedCentrifuged, Materials.ChargedCertusQuartz, 1))
+                .itemInputs(MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.crushedCentrifuged, 1))
                 .itemOutputs(NHItemList.ChargedCertusQuartzDust.get(1)).duration(10 * TICKS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(hammerRecipes);
     }

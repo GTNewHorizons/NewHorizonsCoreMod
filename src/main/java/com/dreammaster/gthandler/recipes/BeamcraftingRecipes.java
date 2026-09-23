@@ -13,12 +13,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.loaders.postload.recipes.beamcrafter.BeamCrafterMetadata;
 
 public class BeamcraftingRecipes implements Runnable {
@@ -45,8 +43,8 @@ public class BeamcraftingRecipes implements Runnable {
         if (ExtraUtilities.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.ingot, 1),
+                            MaterialLibAPI.getStack(Materials.Diamond, Shapes.gem, 1))
                     .itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2))
                     .metadata(
                             BEAMCRAFTER_METADATA,

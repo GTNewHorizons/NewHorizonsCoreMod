@@ -20,14 +20,13 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptCarpentersBlocks implements IScriptLoader {
 
@@ -278,37 +277,37 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2L),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 2),
                         MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 2))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 4, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 3),
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 8, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 3),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 12, 0)).duration(5 * SECONDS)
                 .eut(48).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 3),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 16, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 3),
                         MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 20, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 3L),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 3),
                         MaterialLibAPI.getStack(Materials.Titanium, Shapes.screw, 1))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 24, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);

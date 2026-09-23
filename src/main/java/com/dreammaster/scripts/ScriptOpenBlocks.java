@@ -44,8 +44,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
-import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -164,7 +164,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateEnderPearl",
                 "plateSteel",
                 "gearGtSmallSteel",
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1L),
+                MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 1),
                 "gearGtSmallSteel",
                 "plateSteel",
                 "plateSteel",
@@ -324,7 +324,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "pipeSmallSteel");
         addShapelessRecipe(
                 getModItem(OpenBlocks.ID, "scaffolding", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L));
+                MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "generic", 1, 9),
                 getModItem(ProjectBlue.ID, "miniatureLamp", 1, 14),
@@ -481,7 +481,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1),
+                        MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 1),
                         MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 4),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.gearGtSmall, 1))

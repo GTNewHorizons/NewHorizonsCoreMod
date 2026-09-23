@@ -32,18 +32,17 @@ import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.VoltageIndex;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.recipe.metadata.BoardProcessingModuleFluidKey;
 import gregtech.api.recipe.metadata.NanochipAssemblyMatrixTierKey;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.common.tileentities.machines.multi.nanochip.util.CircuitComponent;
@@ -146,7 +145,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Nanochip Reinforcement Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Bedrockium, 8),
+                        MaterialLibAPI.getStack(Materials.Bedrockium, TEBlockShapes.frameGt, 8),
                         MaterialLibAPI.getStack(Materials.CelestialTungsten, Shapes.foil, 48),
                         MaterialLibAPI.getStack(Materials.Naquadah, Shapes.plateSuperdense, 4))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Neutronium, FluidShapes.fluidMolten, 8 * INGOTS))
@@ -156,7 +155,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Nanochip Mesh Interface Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iridium, 8),
+                        MaterialLibAPI.getStack(Materials.Iridium, TEBlockShapes.frameGt, 8),
                         MaterialLibAPI.getStack(Materials.RhodiumPlatedPalladium, Shapes.foil, 48),
                         MaterialLibAPI.getStack(Materials.Adamantium, Shapes.plateSuperdense, 4),
                         ItemList.VacuumConveyorPipe.get(8))
@@ -196,7 +195,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Vacuum Conveyor Pipe
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.BlackPlutonium, 1),
+                        MaterialLibAPI.getStack(Materials.BlackPlutonium, TEBlockShapes.itemPipeSmall, 1),
                         MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.foil, 4))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Kevlar, FluidShapes.fluidMolten, 1 * INGOTS))
                 .itemOutputs(ItemList.VacuumConveyorPipe.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
@@ -255,7 +254,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         MaterialLibAPI
                                 .getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.plateSuperdense, 32),
                         MaterialLibAPI.getStack(Materials.Infinity, Shapes.plateSuperdense, 4),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Silver, 1))
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.nanite, 1))
                 .fluidInputs(
                         MaterialLibAPI
                                 .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
@@ -363,8 +362,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Electric_Motor_UEV.get(1),
                         ItemList.IndustrialWireFactory.get(1),
                         ItemList.IndustrialFormingPress.get(1), // forming press specifically
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Draconium, 16),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 16))
+                        MaterialLibAPI.getStack(Materials.Draconium, TEBlockShapes.wireGt16, 16),
+                        MaterialLibAPI.getStack(Materials.BlackPlutonium, TEBlockShapes.wireGt16, 16))
                 .fluidInputs(
                         MaterialLibAPI
                                 .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
@@ -438,7 +437,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Electric_Piston_UEV.get(1),
                         ItemList.IndustrialPackager.get(1),
                         ItemList.LATEX.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 16),
+                        MaterialLibAPI.getStack(Materials.Tritanium, TEBlockShapes.frameGt, 16),
                         MaterialLibAPI.getStack(Materials.Polybenzimidazole, Shapes.foil, 64))
                 .fluidInputs(
                         MaterialLibAPI

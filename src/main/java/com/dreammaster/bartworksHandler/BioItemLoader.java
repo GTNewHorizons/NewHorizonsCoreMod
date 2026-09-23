@@ -36,6 +36,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
@@ -89,14 +90,14 @@ public class BioItemLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 2))
+                        MaterialLibAPI.getStack(Materials.Bone, Shapes.dust, 2))
                 .itemOutputs(new ItemStack(BIOTEMS, 1, 0))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.DilutedSulfuricAcid, FluidShapes.fluidLiquid, 500))
                 .fluidOutputs(GTUtility.getWater(500)).duration(40 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(BIOTEMS, 4, 0), GTOreDictUnificator.get(OrePrefixes.cell, Materials.Water, 3))
+                .itemInputs(new ItemStack(BIOTEMS, 4, 0), MaterialLibAPI.getStack(Materials.Water, CellShapes.cell, 3))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 3))
                 .fluidInputs(MaterialUtils.fluid(Materials.PhosphoricAcidGT5U, 1000))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[0], 4000)).duration(1 * MINUTES + 20 * SECONDS)
@@ -105,7 +106,7 @@ public class BioItemLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(BIOTEMS, 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.PhosphoricAcidGT5U, 1))
+                        MaterialLibAPI.getStack(Materials.PhosphoricAcidGT5U, CellShapes.cell, 1))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.cell, Materials.Empty, 1))
                 .fluidInputs(GTUtility.getWater(3000)).fluidOutputs(new FluidStack(BIOFLUIDS[0], 4000))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(chemicalReactorRecipes);

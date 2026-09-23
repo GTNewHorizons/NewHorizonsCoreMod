@@ -26,10 +26,9 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.TEBlockShapes;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -146,7 +145,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'd',
                 getModItem(Forestry.ID, "frameProven", 1, 0),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L),
+                MaterialLibAPI.getStack(Materials.WoodSealed, TEBlockShapes.frameGt, 1),
                 'f',
                 getModItem(Forestry.ID, "frameProven", 1, 0),
                 'g',
@@ -218,7 +217,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, TEBlockShapes.wireGt01, 1),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'd',
@@ -230,7 +229,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, TEBlockShapes.wireGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1));
         RecipeManagers.carpenterManager.addRecipe(
@@ -274,15 +273,15 @@ public class ScriptExtraBees implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.cableGt02, 1),
                 'e',
                 ItemList.Hull_HV.get(1L),
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.cableGt02, 1),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.cableGt02, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0));
         RecipeManagers.carpenterManager.addRecipe(

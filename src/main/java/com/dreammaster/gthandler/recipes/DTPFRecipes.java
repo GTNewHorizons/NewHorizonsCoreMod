@@ -19,12 +19,11 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -678,7 +677,7 @@ public class DTPFRecipes implements Runnable {
                     // Dark Matter
                     GTValues.RA.stdBuilder()
                             .itemInputs(
-                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 16),
+                                    MaterialLibAPI.getStack(Materials.TranscendentMetal, BlockShapes.block, 16),
                                     getModItem(Avaritia.ID, "Resource", 16, 8),
                                     ItemList.StableBosonContainmentUnit.get(0))
                             .fluidInputs(
@@ -1821,9 +1820,11 @@ public class DTPFRecipes implements Runnable {
                     .calculateNonEBFRecipe(total_EU_per_ingot / recipe_time, recipe_time);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(ItemList.Tesseract.get(32), GTOreDictUnificator.get("blockCosmicNeutronium", 40))
+                    .itemInputs(
+                            ItemList.Tesseract.get(32),
+                            MaterialLibAPI.getStack(Materials.CosmicNeutronium, BlockShapes.block, 40))
                     .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 40),
+                            MaterialLibAPI.getStack(Materials.TranscendentMetal, BlockShapes.block, 40),
                             MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.dust, 24))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(Materials.Titansteel, FluidShapes.fluidMolten, 144 * 40 * 9),
@@ -1869,7 +1870,7 @@ public class DTPFRecipes implements Runnable {
                     BlockList.Quantinum.get(2),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.AstralTitanium, 2))
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.AstralTitanium, BlockShapes.block, 2))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials.BlackTitanium,
@@ -1898,7 +1899,7 @@ public class DTPFRecipes implements Runnable {
                     BlockList.Quantinum.get(4),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(3))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.AstralTitanium, 4))
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.AstralTitanium, BlockShapes.block, 4))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
                                     Materials.BlackTitanium,
@@ -1927,7 +1928,7 @@ public class DTPFRecipes implements Runnable {
                             GregtechItemList.SpaceTimeBendingCore.get(0),
                             MaterialLibAPI.getStack(Materials.DarkIron, Shapes.plateDense, 1),
                             MaterialLibAPI.getStack(Materials.Dilithium, Shapes.gem, 32),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Universium, 1))
+                            MaterialLibAPI.getStack(Materials.Universium, Shapes.nanite, 1))
                     .itemOutputs(ItemList.Timepiece.get(3))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(

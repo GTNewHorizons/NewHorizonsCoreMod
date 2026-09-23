@@ -19,11 +19,9 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ExtractorRecipes implements Runnable {
 
@@ -113,27 +111,27 @@ public class ExtractorRecipes implements Runnable {
                     .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 2, 7))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Gunpowder, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Leaves", 8, 3))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Gunpowder, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 2, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Gunpowder, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 2, 4))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L)).duration(5 * SECONDS)
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Bone, Shapes.dust, 1)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "floraleavesnocolor", 4, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L)).duration(5 * SECONDS)
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Bone, Shapes.dust, 1)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 2, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L)).duration(5 * SECONDS)
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Bone, Shapes.dust, 1)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Glowshroom", 2, 0))

@@ -22,10 +22,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptMalisDoors implements IScriptLoader {
@@ -78,7 +78,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -89,7 +89,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, TEBlockShapes.frameGt, 1),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -100,7 +100,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 MaterialLibAPI.getStack(Materials.Gold, Shapes.screw, 1),
                 "plateRedstone",
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.frameGt, 1),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -1072,21 +1072,21 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1),
                         MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
+                        MaterialLibAPI.getStack(Materials.Iron, TEBlockShapes.frameGt, 1),
                         MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                        MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.frameGt, 1),
                         MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 2))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(25 * SECONDS)

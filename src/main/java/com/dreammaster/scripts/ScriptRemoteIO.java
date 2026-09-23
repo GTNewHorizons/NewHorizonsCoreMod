@@ -28,12 +28,11 @@ import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptRemoteIO implements IScriptLoader {
 
@@ -65,7 +64,7 @@ public class ScriptRemoteIO implements IScriptLoader {
                 ItemList.Sensor_EV.get(1L),
                 ItemList.Automation_Regulator_IV.get(1L),
                 "circuitElite",
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.BlackSteel, 1L),
+                MaterialLibAPI.getStack(Materials.BlackSteel, TEBlockShapes.wireGt02, 1),
                 "circuitElite",
                 ItemList.Automation_Regulator_IV.get(1L),
                 ItemList.Emitter_EV.get(1L),
@@ -201,7 +200,7 @@ public class ScriptRemoteIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.BlankPlatedChip.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.BlackSteel, 2L))
+                        MaterialLibAPI.getStack(Materials.BlackSteel, TEBlockShapes.cableGt01, 2))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -217,7 +216,7 @@ public class ScriptRemoteIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.BlankPlatedChip.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt02, 2))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 21)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

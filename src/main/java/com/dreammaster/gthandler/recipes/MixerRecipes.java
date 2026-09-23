@@ -39,6 +39,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
@@ -63,252 +64,252 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Bauxite, Shapes.dust, 4),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 12L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 12))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 16))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Bauxite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(18 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Bauxite, Shapes.dustPure, 2),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 6L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 6))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 8))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(15 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(10 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Sodalite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Sodalite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Sodalite, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Alunite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Alunite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Alunite, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Lepidolite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Lepidolite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 15 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Lepidolite, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(2 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Mica, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Mica, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Mica, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Tanzanite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Tanzanite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Tanzanite, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Biotite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Lazurite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 13 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Lazurite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(5 * SECONDS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Lazurite, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 6 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Glauconite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Glauconite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 15 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Glauconite, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(2 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.GlauconiteSand, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.GlauconiteSand, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 15 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.GlauconiteSand, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(2 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Vermiculite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 5 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Vermiculite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(3 * SECONDS + 15 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Vermiculite, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(2 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Zeolite, Shapes.dust, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Zeolite, Shapes.dustImpure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS + 10 * TICKS).eut(48).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Zeolite, Shapes.dustPure, 1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxideGT5U, 3L))
+                        MaterialLibAPI.getStack(Materials.SodiumHydroxideGT5U, Shapes.dust, 3))
                 .circuit(5).itemOutputs(MaterialLibAPI.getStack(Materials.SodiumAluminate, Shapes.dust, 4))
                 .duration(1 * SECONDS).eut(48).addTo(mixerRecipes);
 
@@ -912,7 +913,7 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.dust, 4),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Glowstone, 2))
+                        MaterialLibAPI.getStack(Materials.Glowstone, Shapes.nanite, 2))
                 .fluidInputs(
                         new FluidStack(GTPPFluids.Kerosene, 4000),
                         MaterialLibAPI.getFluidStack(Materials.BrightLumipodExtract, FluidShapes.fluidLiquid, 1000))
@@ -1074,7 +1075,7 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 1),
+                            MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 1),
                             MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 1),
                             MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1))
                     .circuit(4).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
@@ -1083,7 +1084,7 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.ChargedCertusQuartz, 1),
+                            MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 1),
                             MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 1),
                             MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1))
                     .circuit(4).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8))
@@ -1104,8 +1105,8 @@ public class MixerRecipes implements Runnable {
             // Star Fuel
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 64L),
+                            MaterialLibAPI.getStack(Materials.Neutronium, BlockShapes.block, 64),
+                            MaterialLibAPI.getStack(Materials.CosmicNeutronium, BlockShapes.block, 64),
                             // Diamond Singularity
                             getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2))
                     .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 8))

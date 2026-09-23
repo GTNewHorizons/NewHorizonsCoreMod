@@ -29,12 +29,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.recipe.RecipeCategories;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class MaceratorRecipes implements Runnable {
 
@@ -215,7 +213,7 @@ public class MaceratorRecipes implements Runnable {
 
         if (Avaritia.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 7))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.PolyvinylChloride, 1L))
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dustTiny, 1))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(maceratorRecipes);
         }
 
@@ -871,10 +869,10 @@ public class MaceratorRecipes implements Runnable {
 
         // The charged certus quartz dust is this mod's item, so GregTech's crushed ore pass does not cover it.
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.crushedCentrifuged, Materials.ChargedCertusQuartz, 1))
+                .itemInputs(MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.crushedCentrifuged, 1))
                 .itemOutputs(
                         NHItemList.ChargedCertusQuartzDust.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Barite, 1))
+                        MaterialLibAPI.getStack(Materials.Barite, Shapes.dust, 1))
                 .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
     }
 }

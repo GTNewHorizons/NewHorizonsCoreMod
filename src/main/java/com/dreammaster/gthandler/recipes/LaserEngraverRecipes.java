@@ -21,13 +21,11 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
@@ -185,7 +183,7 @@ public class LaserEngraverRecipes implements Runnable {
             // Photonically Enhanced Wafer
             GTValues.RA.stdBuilder().itemInputs(
                     ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
-                    GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Glowstone, 1),
+                    MaterialLibAPI.getStack(Materials.Glowstone, Shapes.nanite, 1),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 0, 0) // Solar Light Splitter
             ).itemOutputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                     .fluidInputs(

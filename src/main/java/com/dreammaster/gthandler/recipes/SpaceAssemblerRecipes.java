@@ -30,9 +30,11 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.GTOreDictUnificator;
 import gtnhintergalactic.recipe.IGRecipeMaps;
 import tectech.thing.CustomItemList;
@@ -187,7 +189,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(8L),
                         ItemList.Circuit_Parts_ResistorXSMD.get(8L),
                         ItemList.Circuit_Parts_TransistorXSMD.get(8L),
-                        GTOreDictUnificator.get("wireFineHypogen", 48))
+                        MaterialLibAPI.getStack(Materials.Hypogen, Shapes.wireFine, 48))
                 .fluidInputs(new FluidStack(solderUEV, 720)).itemOutputs(ItemList.Energy_Module.get(1))
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -225,7 +227,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(32L),
                         ItemList.Circuit_Parts_ResistorXSMD.get(32L),
                         ItemList.Circuit_Parts_TransistorXSMD.get(32L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SpaceTime, 12L))
+                        MaterialLibAPI.getStack(Materials.SpaceTime, TEBlockShapes.wireGt01, 12))
                 .fluidInputs(new FluidStack(solderUEV, 1440)).itemOutputs(ItemList.Energy_Cluster.get(1))
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -234,7 +236,7 @@ public class SpaceAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Optical.get(1),
-                        GTOreDictUnificator.get("foilShirabon", 64),
+                        MaterialLibAPI.getStack(Materials.Shirabon, Shapes.foil, 64),
                         Circuits.UHV.get(4),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
@@ -288,7 +290,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     getModItem(OpenComputers.ID, "item", 1, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(4L),
-                    GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 4),
+                    MaterialLibAPI.getStack(Materials.SuperconductorUEV, TEBlockShapes.wireGt01, 4),
                     MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, 8),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 1, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 288))
@@ -299,7 +301,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     getModItem(OpenComputers.ID, "item", 4, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(16L),
-                    GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 4),
+                    MaterialLibAPI.getStack(Materials.SuperconductorUIV, TEBlockShapes.wireGt01, 4),
                     MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, 16),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 4, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 576))
@@ -310,7 +312,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     getModItem(OpenComputers.ID, "item", 16, 39), // Memory tier 3.5
                     ItemList.Circuit_Chip_Optical.get(1L),
                     CustomItemList.DATApipe.get(64L),
-                    GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 4),
+                    MaterialLibAPI.getStack(Materials.SuperconductorUMV, TEBlockShapes.wireGt01, 4),
                     MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, 32),
                     getModItem(SuperSolarPanels.ID, "solarsplitter", 16, 0)) // Solar Light Splitter
                     .fluidInputs(new FluidStack(solderUEV, 1152))
@@ -427,8 +429,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Eternity, 1))
+                            MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 1),
+                            MaterialLibAPI.getStack(Materials.Eternity, Shapes.nanite, 1))
                     .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 36864))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
@@ -440,9 +442,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                             getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 12, 60),
                             ItemList.Quantum_Chest_IV.get(8L),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                            MaterialLibAPI.getStack(Materials.Infinity, BlockShapes.block, 4),
                             getModItem(Avaritia.ID, "Resource", 4, 5),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
+                            MaterialLibAPI.getStack(Materials.CosmicNeutronium, BlockShapes.block, 12))
                     .fluidInputs(new FluidStack(solderUEV, 2304))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
@@ -454,13 +456,13 @@ public class SpaceAssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1),
-                            GTOreDictUnificator.get("plateDenseShirabon", 16),
+                            MaterialLibAPI.getStack(Materials.Shirabon, Shapes.plateDense, 16),
                             ItemList.Field_Generator_UXV.get(1L),
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1),
-                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Eternity, 1))
+                            MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 1),
+                            MaterialLibAPI.getStack(Materials.Eternity, Shapes.nanite, 1))
                     .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 36864))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
                     .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
@@ -472,9 +474,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                             getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                             getModItem(AE2FluidCraft.ID, "fluid_part", 12, 7),
                             ItemList.Quantum_Tank_IV.get(8L),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                            MaterialLibAPI.getStack(Materials.Infinity, BlockShapes.block, 4),
                             getModItem(Avaritia.ID, "Resource", 4, 5),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
+                            MaterialLibAPI.getStack(Materials.CosmicNeutronium, BlockShapes.block, 12))
                     .fluidInputs(new FluidStack(solderUEV, 2304))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0))
                     .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
@@ -487,9 +489,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                                 getModItem(ThaumicEnergistics.ID, "storage.component", 12, 8),
                                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 8, 0),
-                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                                MaterialLibAPI.getStack(Materials.Infinity, BlockShapes.block, 4),
                                 getModItem(Avaritia.ID, "Resource", 4, 5),
-                                GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
+                                MaterialLibAPI.getStack(Materials.CosmicNeutronium, BlockShapes.block, 12))
                         .fluidInputs(new FluidStack(solderUEV, 2304))
                         .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10))
                         .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
@@ -501,7 +503,7 @@ public class SpaceAssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.CompressorUV.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L),
+                            MaterialLibAPI.getStack(Materials.CosmicNeutronium, BlockShapes.block, 12),
                             MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.plateSuperdense, 2),
                             MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.plateSuperdense, 2),
                             MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.plateQuadruple, 8),
@@ -549,7 +551,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             Circuits.UV.get(2),
                             Circuits.LuV.get(2),
                             Circuits.IV.get(4),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Electrum, 2L))
+                            MaterialLibAPI.getStack(Materials.Electrum, TEBlockShapes.wireGt16, 2))
                     .fluidInputs(new FluidStack(solderIndalloy, 2304))
                     .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 90)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);

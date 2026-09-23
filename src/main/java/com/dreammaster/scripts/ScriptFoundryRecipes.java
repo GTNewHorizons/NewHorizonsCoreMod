@@ -30,12 +30,11 @@ import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import tectech.recipe.TTRecipeAdder;
@@ -94,7 +93,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
         // Exo-Foundry Inner Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuvwire, 1),
+                        MaterialLibAPI.getStack(Materials.Longasssuperconductornameforuvwire, TEBlockShapes.frameGt, 1),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(2),
                         ItemList.Electric_Pump_UV.get(4),
                         new Object[] { Circuits.UV.getIngredient(), 4 },
@@ -162,7 +161,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 new Object[] { ItemList.Magnetic_Chassis_T1_ExoFoundry.get(1),
                         MaterialLibAPI.getStack(Materials.TengamAttuned, Shapes.plate, 6),
                         ItemList.Electromagnet_Samarium.get(1), ItemList.Cover_SolarPanel_UV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 2),
+                        MaterialLibAPI.getStack(Materials.SuperconductorUEV, TEBlockShapes.wireGt01, 2),
                         ItemList.Energy_Cluster.get(1), },
                 // 4 : 2 : 1 magnet ratio
                 new FluidStack[] {
@@ -262,7 +261,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.Timepiece.get(64),
                         MaterialLibAPI.getStack(Materials.Eternity, Shapes.plateSuperdense, 64),
                         ItemList.Black_Hole_Closer.get(64), ItemList.Field_Generator_UXV.get(16),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1), ItemList.ZPM6.get(1),
+                        MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 1), ItemList.ZPM6.get(1),
                         MaterialLibAPI.getStack(Materials.GravitonShard, Shapes.gem, 1) },
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(Materials.RawStarMatter, FluidShapes.fluidLiquid, 4_000_000),
@@ -281,8 +280,8 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 (int) TierEU.RECIPE_UEV,
                 64,
                 new Object[] { ItemList.Machine_Mass_Solidifier.get(64), ItemList.Primary_Casing_ExoFoundry.get(16),
-                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Infinity, 8),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 8),
+                        MaterialLibAPI.getStack(Materials.Infinity, TEBlockShapes.pipeLarge, 8),
+                        MaterialLibAPI.getStack(Materials.SuperconductorUEV, TEBlockShapes.wireGt16, 8),
                         ItemList.Field_Generator_UEV.get(4), ItemList.Electric_Pump_UEV.get(8),
                         ItemList.FluidRegulator_UEV.get(8), new Object[] { Circuits.UIV.getIngredient(), 2 },
                         MaterialLibAPI.getStack(Materials.Netherite, Shapes.plateSuperdense, 4),
@@ -308,10 +307,10 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 2_048,
                 (int) TierEU.RECIPE_UEV,
                 8,
-                new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Netherite, 1),
+                new Object[] { MaterialLibAPI.getStack(Materials.Netherite, TEBlockShapes.frameGt, 1),
                         ItemList.Optically_Perfected_CPU.get(6), ItemRefer.Advanced_Radiation_Protection_Plate.get(8),
                         MaterialLibAPI.getStack(Materials.Infinity, Shapes.screw, 4),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 2) },
+                        MaterialLibAPI.getStack(Materials.SuperconductorUEV, TEBlockShapes.wireGt01, 2) },
                 new FluidStack[] {
                         MaterialLibAPI
                                 .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 4),
@@ -328,7 +327,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 2_048,
                 (int) TierEU.RECIPE_UEV,
                 16,
-                new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 1),
+                new Object[] { MaterialLibAPI.getStack(Materials.CosmicNeutronium, TEBlockShapes.frameGt, 1),
                         MaterialLibAPI.getStack(Materials.HighDurabilityCompoundSteel, Shapes.plate, 32),
                         ItemList.Optically_Compatible_Memory.get(6), ItemRefer.HiC_T4.get(4),
                         new Object[] { Circuits.UEV.getIngredient(), 1 }, ItemList.Emitter_UHV.get(1),
@@ -356,7 +355,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 2),
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 4),
                         new Object[] { Circuits.UIV.getIngredient(), 4L },
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.TranscendentMetal, 2),
+                        MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.nanite, 2),
                         MaterialLibAPI.getStack(Materials.SixPhasedCopper, Shapes.plateSuperdense, 1),
                         ItemList.Emitter_UIV.get(1) },
                 new FluidStack[] {

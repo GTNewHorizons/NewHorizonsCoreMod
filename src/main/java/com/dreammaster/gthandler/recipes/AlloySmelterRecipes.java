@@ -18,12 +18,10 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class AlloySmelterRecipes implements Runnable {
 
@@ -154,7 +152,7 @@ public class AlloySmelterRecipes implements Runnable {
 
         // GT++ Recipes
         ItemStack[] tumbagaInputs = { MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, 7), // 0
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 7), // 1
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.ingot, 7), // 1
                 MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 3), // 2
                 MaterialLibAPI.getStack(Materials.Copper, Shapes.ingot, 3) // 3
         };

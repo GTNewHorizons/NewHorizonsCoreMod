@@ -20,6 +20,7 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTOreDictUnificator;
@@ -49,7 +50,7 @@ public class ImplosionCompressorRecipes implements Runnable {
                             MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 5).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Coal, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Coal, BlockShapes.block, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedCoal", 1, 0),
                             MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
@@ -338,7 +339,7 @@ public class ImplosionCompressorRecipes implements Runnable {
 
         // Nether Star Dust -> Gem EIC recipe
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dust, 4))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 3)).duration(25)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.NetherStar, Shapes.gem, 3)).duration(25)
                 .eut(TierEU.RECIPE_UEV).addTo(electricImplosionCompressorRecipes);
     }
 }

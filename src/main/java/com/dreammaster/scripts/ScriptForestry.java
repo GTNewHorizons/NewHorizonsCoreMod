@@ -46,12 +46,11 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.GTRecipeConstants;
 import gtPlusPlus.xmod.bop.blocks.BOPBlockRegistrator;
 import thaumcraft.api.ThaumcraftApi;
@@ -2853,7 +2852,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, TEBlockShapes.pipeMedium, 1),
                 'f',
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 'g',
@@ -4159,7 +4158,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4185,7 +4184,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4211,7 +4210,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4237,7 +4236,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4263,7 +4262,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4289,7 +4288,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4315,7 +4314,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4341,7 +4340,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4367,7 +4366,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4393,7 +4392,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4419,7 +4418,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4));
     }
@@ -4946,7 +4945,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                GTOreDictUnificator.get("wireFineBronze", 1L),
+                MaterialLibAPI.getStack(Materials.Bronze, Shapes.wireFine, 1),
                 'f',
                 "circuitBasic",
                 'g',

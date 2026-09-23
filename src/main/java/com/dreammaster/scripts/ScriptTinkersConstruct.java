@@ -67,6 +67,7 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
@@ -1530,7 +1531,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 7));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 8));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "GlueBlock", 1, 0));
-        TConstructHelper.removeBasinRecipe(GTOreDictUnificator.get(OrePrefixes.block, Materials.PigIron, 1L));
+        TConstructHelper.removeBasinRecipe(MaterialLibAPI.getStack(Materials.PigIron, BlockShapes.block, 1));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 2));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 4));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 5));
@@ -1648,7 +1649,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 false,
                 20);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                GTOreDictUnificator.get("nuggetBronze", 1L),
+                MaterialLibAPI.getStack(Materials.Bronze, Shapes.nugget, 1),
                 FluidRegistry.getFluidStack("bronze.molten", 16),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 27),
                 false,

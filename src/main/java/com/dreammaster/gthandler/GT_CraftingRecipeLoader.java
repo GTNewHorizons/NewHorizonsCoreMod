@@ -61,6 +61,7 @@ import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -576,17 +577,17 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Coated_Basic.get(1, o),
                 new Object[] { "FFF", "FCF", "FFF", 'C', ItemList.Circuit_Board_Coated.get(1, o), 'F',
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 1) });
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 1) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Good.get(1, o),
                 new Object[] { "PAP", "CBC", "DCD", 'D', ItemList.Circuit_Parts_Diode.get(1, o), 'C',
                         Ic2Items.electronicCircuit, 'A', MaterialLibAPI.getStack(Materials.Steel, Shapes.itemCasing, 1),
-                        'P', GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 1), 'B',
+                        'P', MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 1), 'B',
                         ItemList.Circuit_Board_Phenolic_Good.get(1, o) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Phenolic_Good.get(1, o),
                 new Object[] { "FFF", "FCF", "FFF", 'C', ItemList.Circuit_Board_Phenolic.get(1, o), 'F',
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 1) });
+                        MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.wireGt01, 1) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Parts_Resistor.get(1, o),
                 new Object[] { "RPR", "FCF", " P ", 'F',
@@ -797,7 +798,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Casing_Laser.get(1),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PhP", "PFP", "PwP", 'P', MaterialLibAPI.getStack(Materials.Stellite, Shapes.plate, 1),
-                        'F', GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Nitinol60, 1) });
+                        'F', MaterialLibAPI.getStack(Materials.Nitinol60, TEBlockShapes.frameGt, 1) });
 
         // Dissection Apparatus
         GTModHandler.addCraftingRecipe(
@@ -828,7 +829,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Casing_Fluid_Solidifier.get(1),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PhP", "TFT", "PwP", 'P', MaterialLibAPI.getStack(Materials.Inconel792, Shapes.plate, 1),
-                        'F', GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WatertightSteel, 1), 'T',
+                        'F', MaterialLibAPI.getStack(Materials.WatertightSteel, TEBlockShapes.frameGt, 1), 'T',
                         MaterialLibAPI.getStack(Materials.Talonite, Shapes.plate, 1) });
 
         // Solidifier Radiator Casing
@@ -859,7 +860,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Compressor_Pipe_Casing.get(1),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', MaterialLibAPI.getStack(Materials.Incoloy903, Shapes.plate, 1),
-                        'Q', GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Incoloy903, 1), 'F',
+                        'Q', MaterialLibAPI.getStack(Materials.Incoloy903, TEBlockShapes.pipeSmall, 1), 'F',
                         MaterialParts.craftIngredient(OrePrefixes.gearGt, Materials.Titanium) });
 
         // Industrial Precision Lathe
@@ -1135,38 +1136,38 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         ItemRegistry.energyDistributor[i],
                         BITSD,
                         new Object[] { "PWP", "WCW", "PWP", 'W',
-                                GTOreDictUnificator.get(OrePrefixes.wireGt16, cable, 1L), 'P', hull, 'C',
+                                MaterialLibAPI.getStack(cable, TEBlockShapes.wireGt16, 1), 'P', hull, 'C',
                                 machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode12A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator.get(OrePrefixes.cableGt12, cable, 1L), 'P', hull, 'C',
+                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt12, 1), 'P', hull, 'C',
                                 machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode8A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator.get(OrePrefixes.cableGt08, cable, 1L), 'P', hull, 'C',
+                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt08, 1), 'P', hull, 'C',
                                 machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode4A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator.get(OrePrefixes.cableGt04, cable, 1L), 'P', hull, 'C',
+                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt04, 1), 'P', hull, 'C',
                                 machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode2A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator.get(OrePrefixes.cableGt02, cable, 1L), 'P', hull, 'C',
+                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt02, 1), 'P', hull, 'C',
                                 machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode16A[i],
                         BITSD,
                         new Object[] { "WHW", "DCD", "PDP", 'H', CircuitComponents.INDUCTOR.getIngredient(), 'D',
                                 CircuitComponents.DIODE.getIngredient(), 'W',
-                                GTOreDictUnificator.get(OrePrefixes.cableGt16, cable, 1L), 'P', hull, 'C',
+                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt16, 1), 'P', hull, 'C',
                                 machinehull });
 
             } catch (ArrayIndexOutOfBoundsException e) {

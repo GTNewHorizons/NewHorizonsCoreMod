@@ -70,6 +70,7 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
@@ -170,7 +171,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         ChiselHelper
-                .addVariationFromStack("thaumium", GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L));
+                .addVariationFromStack("thaumium", MaterialLibAPI.getStack(Materials.Thaumium, BlockShapes.block, 1));
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, 1))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(7000)

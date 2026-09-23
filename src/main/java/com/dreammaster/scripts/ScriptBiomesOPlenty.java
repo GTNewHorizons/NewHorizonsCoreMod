@@ -50,14 +50,13 @@ import biomesoplenty.api.content.BOPCBlocks;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptBiomesOPlenty implements IScriptLoader {
@@ -556,12 +555,11 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("poison", 200)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
-        ChiselHelper.addVariationFromStack("topaz", GTOreDictUnificator.get(OrePrefixes.block, Materials.Topaz, 1L));
+        ChiselHelper.addVariationFromStack("topaz", MaterialLibAPI.getStack(Materials.Topaz, BlockShapes.block, 1));
         ChiselHelper.addVariationFromStack("topaz", getModItem(BiomesOPlenty.ID, "gemOre", 1, 7));
 
-        ChiselHelper.addVariationFromStack(
-                "tanzanite",
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Tanzanite, 1L));
+        ChiselHelper
+                .addVariationFromStack("tanzanite", MaterialLibAPI.getStack(Materials.Tanzanite, BlockShapes.block, 1));
         ChiselHelper.addVariationFromStack("tanzanite", getModItem(BiomesOPlenty.ID, "gemOre", 1, 9));
 
         // Fence and Fence Gate recipes:

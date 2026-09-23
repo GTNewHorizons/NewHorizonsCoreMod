@@ -52,14 +52,13 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptStevesCarts implements IScriptLoader {
 
@@ -575,9 +574,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "CartModule", 1, 66));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L));
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeSmall, 1));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeSmall, 1),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 7),
@@ -1039,13 +1038,13 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
+                MaterialLibAPI.getStack(Materials.Bronze, TEBlockShapes.pipeSmall, 1),
                 "screwIron",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
+                MaterialLibAPI.getStack(Materials.Bronze, TEBlockShapes.pipeSmall, 1),
                 "screwIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 57),
@@ -1116,13 +1115,13 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 68),
                 "plateIron",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Brass, 1L),
+                MaterialLibAPI.getStack(Materials.Brass, TEBlockShapes.itemPipeSmall, 1),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 "plateIron",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Brass, 1L),
+                MaterialLibAPI.getStack(Materials.Brass, TEBlockShapes.itemPipeSmall, 1),
                 "plateIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 32),
@@ -1140,12 +1139,12 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeMedium, 1),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeMedium, 1),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeSmall, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L));
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeSmall, 1));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 95),
                 "plateEmerald",
@@ -1155,13 +1154,13 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(Minecraft.ID, "cauldron", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeMedium, 1),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 18),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.itemPipeSmall, 1),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.itemPipeSmall, 1),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
                 getModItem(Backpack.ID, "tannedLeather", 1, 0),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
@@ -1262,10 +1261,10 @@ public class ScriptStevesCarts implements IScriptLoader {
                 ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Minecraft.ID, "hay_block", 1, 0),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeSmall, 1),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeSmall, 1),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 89),
@@ -1320,7 +1319,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "gearSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Tin, 1L),
+                MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.wireGt02, 1),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 118),
@@ -1331,7 +1330,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 MaterialLibAPI.getStack(Materials.Reinforced, Shapes.gearGt, 1),
                 ItemList.Electric_Motor_MV.get(1L),
                 "plateAluminium",
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt02, 1),
                 "plateAluminium");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 119),
@@ -1342,7 +1341,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.gearGt, 1),
                 ItemList.Electric_Motor_HV.get(1L),
                 "plateStainlessSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.wireGt02, 1),
                 "plateStainlessSteel");
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22),
@@ -1415,7 +1414,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(Railcraft.ID, "track", 1, 0, "{track:\"railcraft:track.junction\"}"),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 4L))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt01, 4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "BlockJunction", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1706,7 +1705,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
+                        MaterialLibAPI.getStack(Materials.Bronze, TEBlockShapes.pipeSmall, 1),
                         getModItem(Minecraft.ID, "iron_bars", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);

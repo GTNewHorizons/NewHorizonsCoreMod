@@ -10,14 +10,13 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.material.MaterialUtils;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 public class ElectrolyzerRecipes implements Runnable {
@@ -301,7 +300,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Magnesium, Shapes.dust, 2),
                         MaterialLibAPI.getStack(Materials.Alumina, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 3),
-                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Water, 4L))
+                        MaterialLibAPI.getStack(Materials.Water, CellShapes.cell, 4))
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 5000))
                 .duration(18 * SECONDS + 18 * TICKS).eut(TierEU.RECIPE_MV).addTo(electrolyzerRecipes);
 

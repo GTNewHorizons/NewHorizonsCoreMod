@@ -38,12 +38,12 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
@@ -90,7 +90,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0));
 
         GTModHandler.addSmeltingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                MaterialLibAPI.getStack(Materials.Ichorium, BlockShapes.block, 1),
                 MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 2));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0))

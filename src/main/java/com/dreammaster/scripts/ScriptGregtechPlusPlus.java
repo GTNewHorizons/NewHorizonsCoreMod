@@ -32,13 +32,12 @@ import fox.spiteful.avaritia.compat.thaumcraft.Lucrum;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.aspects.Aspect;
@@ -73,7 +72,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 BlockList.SteelBars.get(),
                 BlockList.SteelBars.get(),
                 BlockList.SteelBars.get(),
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CastIron, 1),
+                MaterialLibAPI.getStack(Materials.CastIron, TEBlockShapes.frameGt, 1),
                 BlockList.SteelBars.get(),
                 BlockList.SteelBars.get(),
                 BlockList.SteelBars.get(),
@@ -84,7 +83,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .itemInputs(
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 15),
                         ItemList.EnergisedTesseract.get(1))
-                .itemOutputs(GTOreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Shirabon, Shapes.dust, 64), ItemList.Timepiece.get(1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.PrimordialMatter, FluidShapes.fluidLiquid, 1152))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 9216),
@@ -147,7 +146,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.BlueSteel, Shapes.stickLong, 4),
                         MaterialLibAPI.getStack(Materials.BlueSteel, Shapes.stick, 4),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.gem, 1),
                         getModItem(Forestry.ID, "frameImpregnated", 1, 0))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Redstone, FluidShapes.fluidMolten, 576))
                 .itemOutputs(GregtechItemList.HiveFrameBusy.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)

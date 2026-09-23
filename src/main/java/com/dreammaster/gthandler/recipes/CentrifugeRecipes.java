@@ -24,14 +24,12 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.material.MaterialUtils;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
@@ -576,8 +574,7 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(9000, 3000, 2000, 1500, 1000, 750).duration(1 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                GTOreDictUnificator.get(MaterialParts.craftIngredient(OrePrefixes.dust, Materials.DeepIron), 4L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.DeepIron, Shapes.dust, 4))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 3),
                         MaterialLibAPI.getStack(Materials.Trinium, Shapes.dust, 1))

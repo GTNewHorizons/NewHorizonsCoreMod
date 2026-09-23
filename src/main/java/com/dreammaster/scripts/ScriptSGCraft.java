@@ -24,10 +24,9 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 import kekztech.common.Blocks;
 import kekztech.common.TileEntities;
 import tectech.thing.CustomItemList;
@@ -58,9 +57,9 @@ public class ScriptSGCraft implements IScriptLoader {
         // spotless:off
 
         ItemStack darkMatterBlock = getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14);
-        ItemStack magmatterBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.Magmatter, 1L);
+        ItemStack magmatterBlock = MaterialLibAPI.getStack(Materials.Magmatter, BlockShapes.block, 1);
         ItemStack magmatterSuperdensePlate = MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plateSuperdense, 1);
-        ItemStack magmatterNanite = GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 1L);
+        ItemStack magmatterNanite = MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 1);
         ItemStack umvCap = new ItemStack(Blocks.lscLapotronicEnergyUnit, 1, 10);
 
         ItemStack ringBlock = getModItem(SGCraft.ID, "stargateRing", 1, 0);

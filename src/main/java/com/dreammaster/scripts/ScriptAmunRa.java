@@ -420,8 +420,8 @@ public class ScriptAmunRa implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Carbon, 4),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Neutronium, 1))
+                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.nanite, 4),
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.nanite, 1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Infinity, FluidShapes.fluidMolten, INGOTS))
                 .itemOutputs(new ItemStack(baseItem, 5, 27)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(mixerRecipes);

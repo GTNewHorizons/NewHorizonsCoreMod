@@ -65,8 +65,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
@@ -702,9 +702,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "screwEnderPearl",
                 ItemList.Electric_Pump_LV.get(1L),
                 "screwEnderPearl",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeMedium, 1),
                 ItemList.Electric_Pump_LV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L));
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeMedium, 1));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0),
                 "plateIron",
@@ -913,9 +913,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ingot, 1),
                         createItemStack(ExtraUtilities.ID, "divisionSigil", 0, 0, "{stable:1b}"),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.gem, 1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2)).nbtSensitive().duration(42 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 

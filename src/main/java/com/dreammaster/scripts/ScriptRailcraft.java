@@ -54,9 +54,9 @@ import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import mods.railcraft.api.crafting.RailcraftCraftingManager;
@@ -904,7 +904,7 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 4),
                 "paneGlass",
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeLarge, 1),
                 "paneGlass",
                 ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Railcraft.ID, "detector", 1, 8),
@@ -921,12 +921,12 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 8),
                 ItemList.Electric_Pump_LV.get(1L),
                 "paneGlass",
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeLarge, 1),
                 "paneGlass");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 6),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.cableGt01, 1),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
@@ -943,7 +943,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 10),
                 "plateRedAlloy",
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.cableGt01, 1),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 1, 8),
@@ -967,18 +967,18 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 0),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt04, 1),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
                 "plateRedAlloy",
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt04, 1),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 4),
                 "plateBronze",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.wireGt04, 1),
                 "plateBronze",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
@@ -2088,7 +2088,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1))
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 1L, 14))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 1 * HALF_INGOTS))
                 .duration(10 * SECONDS).eut(8).addTo(assemblerRecipes);
@@ -2096,7 +2096,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2))
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 2))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 2L, 14))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 1 * HALF_INGOTS))
                 .duration(10 * SECONDS).eut(8).addTo(assemblerRecipes);
@@ -2104,7 +2104,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 4))
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 4))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 4L, 14))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Rubber, FluidShapes.fluidMolten, 1 * INGOTS))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -2112,7 +2112,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 8))
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 8))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 8L, 14))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Rubber, FluidShapes.fluidMolten, 1 * INGOTS))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);

@@ -12,11 +12,9 @@ import net.minecraftforge.fluids.FluidStack;
 import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 
@@ -112,10 +110,11 @@ public class DTPFCalculator {
      * Finds the material's respective vacuum freezer recipe.
      */
     private void determineFreezerParams(Material material) {
+        if (!material.hasShape(Shapes.ingotHot)) return;
+        ItemStack hotIngot = MaterialLibAPI.getStack(material, Shapes.ingotHot, 1);
         // Find correct freezer recipe
         for (GTRecipe recipe : freezerRecipes) {
-            if (recipe.mInputs.length != 0 && GTUtility
-                    .areStacksEqual(GTOreDictUnificator.get(OrePrefixes.ingotHot, material, 1L), recipe.mInputs[0])) {
+            if (recipe.mInputs.length != 0 && GTUtility.areStacksEqual(hotIngot, recipe.mInputs[0])) {
                 // There's only one freezer recipe per material
                 freezerDuration = recipe.mDuration;
                 freezerEUpertick = recipe.mEUt;

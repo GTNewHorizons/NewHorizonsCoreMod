@@ -64,9 +64,11 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
@@ -2664,7 +2666,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -10,
                 2,
                 3,
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))
+                MaterialLibAPI.getStack(Materials.Ichorium, BlockShapes.block, 1))
                         .setParents("INFUSION", "CRYSTALCLUSTER").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.ICHORIUMBLOCK.1"),
@@ -2672,7 +2674,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .registerResearchItem();
         TCHelper.addInfusionCraftingRecipe(
                 "ICHORIUMBLOCK",
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                MaterialLibAPI.getStack(Materials.Ichorium, BlockShapes.block, 1),
                 12,
                 new AspectList().add(Aspect.LIFE, 64).add(Aspect.HUNGER, 48).add(Aspect.MAGIC, 32)
                         .add(DarkAspects.NETHER, 24).add(Aspect.ELDRITCH, 16).add(DarkAspects.PRIDE, 16)
@@ -2690,7 +2692,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ICHORIUMBLOCK",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))));
+                                MaterialLibAPI.getStack(Materials.Ichorium, BlockShapes.block, 1))));
         ThaumcraftApi.addWarpToResearch("ICHORIUMBLOCK", 3);
         new ResearchItem(
                 "GLYPHSTONE",
@@ -3438,7 +3440,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'g',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8),
                         'h',
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1L),
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, TEBlockShapes.frameGt, 1),
                         'i',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8)));
         GameRegistry.addRecipe(
@@ -4409,7 +4411,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 BlockList.BloodyIchorium.get(),
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                MaterialLibAPI.getStack(Materials.Ichorium, BlockShapes.block, 1),
                 5,
                 50000,
                 20,

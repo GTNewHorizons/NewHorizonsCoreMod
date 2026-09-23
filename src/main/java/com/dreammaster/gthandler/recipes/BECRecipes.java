@@ -25,12 +25,11 @@ import gregtech.api.enums.CondensateType;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.NaniteTier;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import tectech.recipe.TecTechRecipeMaps;
@@ -245,10 +244,10 @@ public class BECRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.plateSuperdense, 16), Circuits.MAX.get(16),
                         ItemList.Sensor_UXV.get(32L), ItemList.Emitter_UXV.get(32L),
                         getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.WhiteDwarfMatter, 32),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.BlackDwarfMatter, 16),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Universium, 8),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Magmatter, 4) },
+                        MaterialLibAPI.getStack(Materials.WhiteDwarfMatter, Shapes.nanite, 32),
+                        MaterialLibAPI.getStack(Materials.BlackDwarfMatter, Shapes.nanite, 16),
+                        MaterialLibAPI.getStack(Materials.Universium, Shapes.nanite, 8),
+                        MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 4) },
                 nanites(7, 6, 5, 5, 3, 3, 2, 2, 9, 4, 4, 1, 6, 7, 8, 10),
                 new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
                         CondensateType.PhononMedium.getEntangled(256_000),
@@ -263,14 +262,16 @@ public class BECRecipes implements Runnable {
                 new ItemStack[] { ItemList.FineStructureConstantManipulator.get(64),
                         CustomItemList.astralArrayFabricator.get(4), ItemList.MetaMaterial_WaveFocus4.get(64),
                         MaterialLibAPI.getStack(Materials.Amalgatite, Shapes.gemExquisite, 64),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Magmatter, 16),
+                        MaterialLibAPI.getStack(Materials.Magmatter, TEBlockShapes.frameGt, 16),
                         MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plateSuperdense, 8),
                         MaterialLibAPI.getStack(
                                 Materials.MagnetohydrodynamicallyConstrainedStarMatter,
                                 Shapes.plateSuperdense,
                                 8),
-                        GTOreDictUnificator
-                                .get(OrePrefixes.frameGt, Materials.MagnetohydrodynamicallyConstrainedStarMatter, 16),
+                        MaterialLibAPI.getStack(
+                                Materials.MagnetohydrodynamicallyConstrainedStarMatter,
+                                TEBlockShapes.frameGt,
+                                16),
                         ItemList.MetaMaterial_Shielding3.get(64), ItemList.MetaMaterial_Waveguide3.get(64),
                         ItemList.MetaMaterial_EnergyConduit3.get(64),
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64), ItemList.Electric_Piston_UXV.get(64L),
@@ -427,36 +428,36 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials.Hexanite, Shapes.plateSuperdense, 64), };
 
         final ItemStack[] superconductor = new ItemStack[] {
-                GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.RedstoneAlloy, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorMV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorHV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorEV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorIV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorLuV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorZPM, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUMV, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Infinity, 64),
-                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SpaceTime, 64), };
+                MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.cableGt16, 64),
+                MaterialLibAPI.getStack(Materials.RedstoneAlloy, TEBlockShapes.cableGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorMV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorHV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorEV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorIV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorZPM, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorUV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorUHV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorUEV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorUIV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorUMV, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.Infinity, TEBlockShapes.wireGt16, 64),
+                MaterialLibAPI.getStack(Materials.SpaceTime, TEBlockShapes.wireGt16, 64), };
 
         final ItemStack[] hugePipe = new ItemStack[] {
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Lead, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.TungstenSteel, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.NiobiumTitanium, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Enderium, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Naquadah, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Neutronium, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Bedrockium, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Infinity, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.TranscendentMetal, 64),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.SpaceTime, 64),
+                MaterialLibAPI.getStack(Materials.Lead, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.Titanium, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.TungstenSteel, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.NiobiumTitanium, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.Enderium, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.Naquadah, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.Neutronium, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.Bedrockium, TEBlockShapes.itemPipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.Infinity, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.TranscendentMetal, TEBlockShapes.pipeHuge, 64),
+                MaterialLibAPI.getStack(Materials.SpaceTime, TEBlockShapes.pipeHuge, 64),
                 CustomItemList.Godforge_HarmonicPhononTransmissionConduit.get(64),
                 ItemList.CoherencePreservingPlasmaConduit.get(64), };
 

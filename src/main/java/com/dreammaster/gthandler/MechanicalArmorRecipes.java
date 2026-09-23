@@ -42,9 +42,9 @@ import gregtech.api.enums.TieredItems;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class MechanicalArmorRecipes {
 
@@ -114,7 +114,7 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Energy_Module.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorLuV, 16),
+                        MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt04, 16),
                         ItemList.Field_Generator_ZPM.get(2))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Tritanium, FluidShapes.fluidMolten, INGOTS * 10))
                 .itemOutputs(ItemList.Armor_Core_T3.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)
@@ -123,9 +123,9 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.ZPM2.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Infinity, 16),
+                        MaterialLibAPI.getStack(Materials.Infinity, TEBlockShapes.wireGt04, 16),
                         ItemList.Field_Generator_UHV.get(2),
-                        GTOreDictUnificator.get(OrePrefixes.nanite, Materials.Neutronium, 1))
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.nanite, 1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, INGOTS * 10))
                 .itemOutputs(ItemList.Armor_Core_T4.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(assemblerRecipes);
@@ -259,7 +259,7 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder().circuit(10)
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 4),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Electrum, 2),
+                        MaterialLibAPI.getStack(Materials.Electrum, TEBlockShapes.cableGt02, 2),
                         Circuits.HV.get(1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Gold, FluidShapes.fluidMolten, INGOTS * 4))
                 .itemOutputs(ItemList.Armor_Chip_T1.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -277,7 +277,7 @@ public class MechanicalArmorRecipes {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plate, 2),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 8),
+                        MaterialLibAPI.getStack(Materials.SuperconductorZPM, TEBlockShapes.wireGt01, 8),
                         ItemRefer.HiC_T2.get(8),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(4))
                 .fluidInputs(

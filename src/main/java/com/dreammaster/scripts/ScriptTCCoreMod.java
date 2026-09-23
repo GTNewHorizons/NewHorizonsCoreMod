@@ -52,12 +52,13 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1129,10 +1130,10 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .setPages(new ResearchPage("TConstruct.research_page.HELLISHMETAL.1")).registerResearchItem();
         infusionRecipe = TCHelper.addInfusionCraftingRecipe(
                 "HELLISHMETAL",
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1),
+                MaterialLibAPI.getStack(Materials.HellishMetal, BlockShapes.block, 1),
                 1,
                 new AspectList().add(Aspect.FIRE, 8),
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Rhodium, 1),
+                MaterialLibAPI.getStack(Materials.Rhodium, BlockShapes.block, 1),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6),
                 MaterialParts.craftIngredient(OrePrefixes.ingot, Materials.Thaumium),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6),
@@ -1141,11 +1142,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Rhodium, 1),
+                        MaterialLibAPI.getStack(Materials.Rhodium, BlockShapes.block, 1),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 8, 6),
                         MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.dust, 8))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Thaumium, FluidShapes.fluidMolten, 8 * 144))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.HellishMetal, BlockShapes.block, 1))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(electrolyzerNonCellRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1242,8 +1243,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
                 ItemList.Armor_Chip_T1.get(1),
                 NHItemList.NanoCrystal.get(1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StainlessSteel, 1),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plateDense, 1),
+                MaterialLibAPI.getStack(Materials.Electrum, TEBlockShapes.wireGt04, 1),
                 ItemList.Field_Generator_LV.get(1),
                 GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
                 ItemList.Electric_Piston_HV.get(1),
@@ -1251,8 +1252,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 ItemList.Electric_Piston_HV.get(1),
                 GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
                 ItemList.Field_Generator_LV.get(1),
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Electrum, 1),
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.StainlessSteel, 1));
+                MaterialLibAPI.getStack(Materials.Electrum, TEBlockShapes.wireGt04, 1),
+                MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plateDense, 1));
 
         arcaneRecipe = ThaumcraftApi.addArcaneCraftingRecipe(
                 "MECHANICALARMOR_APPRENTICE_STRIDERS",
@@ -1304,7 +1305,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 ItemList.Augment_ApprenticeStriders.get(1),
                 ItemList.Armor_Chip_T2.get(1),
                 GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.plate, 1),
                 ItemList.Electric_Piston_IV.get(1),
                 NHItemList.QuantumCrystal.get(1),
                 GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3),
@@ -1314,7 +1315,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 5),
                 NHItemList.QuantumCrystal.get(1),
                 ItemList.Electric_Piston_IV.get(1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.plate, 1),
                 GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 3));
 
         TCHelper.addResearchPage("MECHANICALARMOR_ARCHMAGE_STRIDERS", new ResearchPage(infusionRecipe));
@@ -1396,11 +1397,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 GTModHandler.getModItem(ThaumicBoots.ID, "item.ItemQuantumVoid", 1),
                 GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.plate, 1),
                 GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
                 ItemList.Armor_Chip_T3.get(1),
                 GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.plate, 1),
                 GTModHandler.getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1)
 
         );
@@ -1429,21 +1430,21 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.MAGIC, 48).add(Aspect.ARMOR, 24),
 
                 ItemList.Armor_Chip_T2.get(1),
-                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.BotaniaDragonstone, 1),
+                MaterialLibAPI.getStack(Materials.BotaniaDragonstone, Shapes.gemExquisite, 1),
                 GTModHandler.getModItem(Botania.ID, "bifrostPermPane", 1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Terrasteel, 1),
+                MaterialLibAPI.getStack(Materials.Terrasteel, Shapes.plate, 1),
                 GTModHandler.getModItem(Botania.ID, "terrasteelChest", 1),
                 GTModHandler.getModItem(Botania.ID, "pylon", 1, 1),
                 GTModHandler.getModItem(Botania.ID, "terrasteelBoots", 1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Terrasteel, 1),
+                MaterialLibAPI.getStack(Materials.Terrasteel, Shapes.plate, 1),
                 GTModHandler.getModItem(Botania.ID, "bifrostPermPane", 1),
-                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.BotaniaDragonstone, 1),
+                MaterialLibAPI.getStack(Materials.BotaniaDragonstone, Shapes.gemExquisite, 1),
                 GTModHandler.getModItem(Botania.ID, "bifrostPermPane", 1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Terrasteel, 1),
+                MaterialLibAPI.getStack(Materials.Terrasteel, Shapes.plate, 1),
                 GTModHandler.getModItem(Botania.ID, "terrasteelLegs", 1),
                 GTModHandler.getModItem(Botania.ID, "pylon", 1, 1),
                 GTModHandler.getModItem(Botania.ID, "terrasteelHelm", 1),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Terrasteel, 1),
+                MaterialLibAPI.getStack(Materials.Terrasteel, Shapes.plate, 1),
                 GTModHandler.getModItem(Botania.ID, "bifrostPermPane", 1));
 
         arcaneRecipe = ThaumcraftApi.addArcaneCraftingRecipe(

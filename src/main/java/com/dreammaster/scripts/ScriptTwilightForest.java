@@ -34,14 +34,12 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -193,14 +191,14 @@ public class ScriptTwilightForest implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(TwilightForest.ID, "tile.TFWoodSlab", 4, i),
-                            GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                            MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                     .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 4, 0))
                     .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Iron, FluidShapes.fluidMolten, 16))
                     .duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(TwilightForest.ID, "tile.TFWoodSlab", 4, i),
-                            GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                            MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                     .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 6, 0))
                     .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 16))
                     .duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
