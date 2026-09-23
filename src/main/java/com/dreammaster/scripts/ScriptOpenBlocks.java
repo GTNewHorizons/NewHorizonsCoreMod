@@ -377,7 +377,9 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Machine_LV_Mixer.get(1L), getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4))
+                .itemInputs(
+                        ItemList.Machine_LV_Mixer.get(1L),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -395,7 +397,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

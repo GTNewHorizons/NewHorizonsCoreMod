@@ -1252,7 +1252,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 8, 6))
+                        MaterialLibAPI.getStack(Materials.Lead, Shapes.itemCasing, 8))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
