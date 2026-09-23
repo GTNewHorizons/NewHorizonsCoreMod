@@ -55,7 +55,6 @@ import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.StoneType;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.FluidShapes;
@@ -65,7 +64,6 @@ import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.library.TConstructRegistry;
 import tectech.thing.CustomItemList;
 import vexatos.tgregworks.reference.PartTypes;
@@ -420,9 +418,9 @@ public class ScriptGregtech implements IScriptLoader {
                 null);
         addShapedRecipe(
                 ItemList.WirelessHeadphones.get(1),
-                GTOreDictUnificator.get(OrePrefixes.rod, Materials.Rubber, 1L),
+                "stickRubber",
                 ItemList.Sensor_LV.get(1),
-                GTOreDictUnificator.get(OrePrefixes.rod, Materials.Rubber, 1L),
+                "stickRubber",
                 "circuitBasic",
                 null,
                 "circuitBasic",
