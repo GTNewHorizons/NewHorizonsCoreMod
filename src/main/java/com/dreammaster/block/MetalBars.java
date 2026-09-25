@@ -7,5 +7,7 @@ public class MetalBars extends BlockPane {
 
     public MetalBars(String texture) {
         super("dreamcraft:block" + texture, "dreamcraft:block" + texture, Material.iron, true);
+        setHardness(5.0F);
+        setResistance(10.0F);
     }
 }
