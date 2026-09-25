@@ -2616,7 +2616,16 @@ public class AssemblerRecipes implements Runnable {
                 ItemList.Emitter_UV.get(4),
                 ItemList.Field_Generator_UV.get(1),
                 ItemList.Energy_Module.get(1)).itemOutputs(ItemList.MicroTransmitter_UV.get(1)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+                .circuit(2).eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+
+        // UV Monster Repellator
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hull_UV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 3),
+                        ItemList.Emitter_UV.get(3))
+                .itemOutputs(ItemList.MobRep_UV.get(1)).duration(5 * SECONDS).circuit(3).eut(TierEU.RECIPE_UV)
+                .addTo(assemblerRecipes);
 
         // Industrial Tinted Glass
         ItemStack[] dyes = new ItemStack[] { ItemList.Color_15.get(1), // white
