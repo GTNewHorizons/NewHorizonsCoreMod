@@ -1473,14 +1473,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 Electric_Piston_HV.get(1L),
                 Electric_Piston_HV.get(1L));
         addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "materials", 1, 3),
-                MaterialLibAPI.getStack(Materials.Cobalt, Shapes.ingot, 1));
-        addShapelessRecipe(
                 MaterialLibAPI.getStack(Materials.Cobalt, Shapes.ingot, 1),
                 getModItem(TinkerConstruct.ID, "materials", 1, 3));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "materials", 1, 5),
-                MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.ingot, 1));
         addShapelessRecipe(
                 MaterialLibAPI.getStack(Materials.Manyullyn, Shapes.ingot, 1),
                 getModItem(TinkerConstruct.ID, "materials", 1, 5));
@@ -2019,11 +2013,11 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 32), ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15)).duration(10 * SECONDS)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Alumite, Shapes.ingot, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 27), ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 18)).duration(10 * SECONDS).eut(4)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.ingot, 1)).duration(10 * SECONDS).eut(4)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(TinkerConstruct.ID, "materials", 9, 24), ItemList.Shape_Mold_Ingot.get(0L))
