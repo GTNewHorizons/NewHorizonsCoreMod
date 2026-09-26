@@ -14,6 +14,8 @@ import static gregtech.api.enums.Mods.TinkersGregworks;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
@@ -21,7 +23,9 @@ import com.ruling_0.materiallib.api.MaterialLibAPI;
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.StoneType;
 import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import magicbees.api.MagicBeesAPI;
@@ -106,6 +110,8 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0));
         TCHelper.orphanResearch("SHADOWMETAL");
         TCHelper.removeResearch("SHADOWMETAL");
+        ItemStack shadowOre = MaterialLibAPI
+                .getStack(Materials.Shadow, OreShapes.ore, OreShapes.variantOf(StoneType.Stone.name()), 1);
         new ResearchItem(
                 "ShadowmetalGTNH",
                 "TM",
@@ -114,16 +120,14 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 0,
                 1,
                 2,
-                getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0)).setParents("TAINTEDMAGIC").setConcealed()
-                        .setPages(new ResearchPage("tm.text.SHADOWMETAL.1")).registerResearchItem();
+                shadowOre).setParents("TAINTEDMAGIC").setConcealed().setPages(new ResearchPage("tm.text.SHADOWMETAL.1"))
+                        .registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "ShadowmetalGTNH",
-                getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0),
+                shadowOre,
                 getModItem(Minecraft.ID, "stone", 1, 0),
                 new AspectList().add(Aspect.DARKNESS, 6).add(Aspect.MAGIC, 8).add(Aspect.METAL, 8).add(Aspect.VOID, 4));
-        TCHelper.addResearchPage(
-                "ShadowmetalGTNH",
-                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0))));
+        TCHelper.addResearchPage("ShadowmetalGTNH", new ResearchPage(TCHelper.findCrucibleRecipe(shadowOre)));
         ThaumcraftApi.addWarpToResearch("ShadowmetalGTNH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
