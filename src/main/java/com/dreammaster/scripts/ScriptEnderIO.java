@@ -1611,31 +1611,35 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.NiobiumTitanium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PrismaticNaquadah, 1L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 7))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 288)).duration(5 * SECONDS)
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.NiobiumTitanium, 15L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PrismaticNaquadah, 15L),
+                        ItemList.FluidRegulator_ZPM.get(1L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 15, 7))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 4320)).duration(75 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectrumFlux, 1L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 8))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 576)).duration(5 * SECONDS)
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 18L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectrumFlux, 18L),
+                        ItemList.FluidRegulator_UHV.get(1L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 18, 8))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 10368)).duration(90 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.DraconiumAwakened, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 1L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 9))
-                .fluidInputs(Materials.RadoxPolymer.getMolten(144)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.DraconiumAwakened, 21L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 21L),
+                        ItemList.FluidRegulator_UIV.get(1L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 21, 9))
+                .fluidInputs(Materials.RadoxPolymer.getMolten(12096)).duration(105 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.SpaceTime, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.MHDCSM, 1L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 10))
-                .fluidInputs(Materials.RadoxPolymer.getMolten(576)).duration(5 * SECONDS).eut(TierEU.RECIPE_UXV)
+                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.SpaceTime, 24L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.MHDCSM, 24L),
+                        ItemList.FluidRegulator_UXV.get(1L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 24, 10))
+                .fluidInputs(Materials.RadoxPolymer.getMolten(55296)).duration(120 * SECONDS).eut(TierEU.RECIPE_UXV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
