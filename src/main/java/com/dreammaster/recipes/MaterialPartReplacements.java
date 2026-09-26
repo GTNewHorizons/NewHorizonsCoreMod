@@ -1,11 +1,20 @@
 package com.dreammaster.recipes;
 
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
+import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedCore;
+import static gregtech.api.enums.Mods.ProjectRedExploration;
+import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
-import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 
 import java.util.ArrayList;
@@ -24,6 +33,9 @@ import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import com.dreammaster.chisel.ChiselHelper;
+import com.dreammaster.forestry.ForestryHelper;
+import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 import com.ruling_0.materiallib.api.Shape;
@@ -33,10 +45,13 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
 
-/// Swaps other mods' copies of material parts out of the crafting recipes, smelting recipes and dungeon loot that
-/// hand them out, for the MaterialLib part GregTech serves under the same ore-dictionary name, so the copies never
-/// enter play. Each entry names the exact foreign stack; the recipe or loot entry around it keeps its inputs,
-/// amounts, experience and weights.
+/// Swaps other mods' copies of material parts out of the crafting and smelting recipes, Tinkers' Construct casting,
+/// Forestry centrifuge products and dungeon loot that hand them out, for the MaterialLib part GregTech serves under the
+/// same ore-dictionary name, so the copies never enter play. Each entry names the exact foreign stack; the recipe or
+/// loot entry around it keeps its inputs, amounts, experience and weights.
+///
+/// Foreign storage blocks are dropped instead of swapped: their crafting recipes and chisel variations are removed,
+/// since GregTech already crafts MaterialLib's blocks from the same ingredients.
 public final class MaterialPartReplacements {
 
     private static final String[] LOOT_CHESTS = { ChestGenHooks.DUNGEON_CHEST, ChestGenHooks.BONUS_CHEST,
@@ -56,10 +71,17 @@ public final class MaterialPartReplacements {
         replace(IndustrialCraft2.ID, "itemDust", 6, Materials.Silver, Shapes.dust);
         replace(IndustrialCraft2.ID, "itemDust", 7, Materials.Tin, Shapes.dust);
         replace(IndustrialCraft2.ID, "itemDust", 10, Materials.Lead, Shapes.dust);
+        replace(IndustrialCraft2.ID, "itemDust", 11, Materials.Obsidian, Shapes.dust);
+        replace(IndustrialCraft2.ID, "itemDust", 13, Materials.Sulfur, Shapes.dust);
+        replace(IndustrialCraft2.ID, "itemCrushedOre", 4, Materials.Uranium, Shapes.crushed);
         replace(IndustrialCraft2.ID, "itemIngot", 0, Materials.Copper, Shapes.ingot);
         replace(IndustrialCraft2.ID, "itemIngot", 1, Materials.Tin, Shapes.ingot);
+        replace(IndustrialCraft2.ID, "itemIngot", 2, Materials.Bronze, Shapes.ingot);
         replace(IndustrialCraft2.ID, "itemIngot", 5, Materials.Lead, Shapes.ingot);
         replace(IndustrialCraft2.ID, "itemIngot", 6, Materials.Silver, Shapes.ingot);
+        replace(IndustrialCraft2.ID, "itemRubber", 0, Materials.Rubber, Shapes.ingot);
+
+        replace(BloodArsenal.ID, "blood_infused_iron", 0, Materials.BloodInfusedIron, Shapes.ingot);
 
         replace(PamsHarvestCraft.ID, "cocoapowderItem", 0, Materials.Cocoa, Shapes.dust);
         replace(PamsHarvestCraft.ID, "flourItem", 0, Materials.Wheat, Shapes.dust);
@@ -69,13 +91,42 @@ public final class MaterialPartReplacements {
 
         replace(TaintedMagic.ID, "ItemMaterial", 0, Materials.Shadow, Shapes.ingot);
 
-        replace(Thaumcraft.ID, "ItemNugget", 0, Materials.Iron, Shapes.nugget);
-        replace(Thaumcraft.ID, "ItemNugget", 1, Materials.Copper, Shapes.nugget);
-        replace(Thaumcraft.ID, "ItemNugget", 2, Materials.Tin, Shapes.nugget);
-        replace(Thaumcraft.ID, "ItemNugget", 4, Materials.Lead, Shapes.nugget);
-        replace(Thaumcraft.ID, "ItemResource", 6, Materials.Amber, Shapes.gem);
+        replace(TinkerConstruct.ID, "materials", 3, Materials.Cobalt, Shapes.ingot);
+        replace(TinkerConstruct.ID, "materials", 15, Materials.Alumite, Shapes.ingot);
+        replace(TinkerConstruct.ID, "materials", 18, Materials.Obsidian, Shapes.ingot);
+        replace(TinkerConstruct.ID, "materials", 27, Materials.Obsidian, Shapes.nugget);
+        replace(TinkerConstruct.ID, "materials", 28, Materials.Cobalt, Shapes.nugget);
+        replace(TinkerConstruct.ID, "materials", 31, Materials.Bronze, Shapes.nugget);
+        replace(TinkerConstruct.ID, "materials", 32, Materials.Alumite, Shapes.nugget);
+        replace(TinkerConstruct.ID, "materials", 33, Materials.Steel, Shapes.nugget);
+        replace(TinkerConstruct.ID, "materials", 34, Materials.PigIron, Shapes.ingot);
+        replace(TinkerConstruct.ID, "materials", 35, Materials.PigIron, Shapes.nugget);
 
         replace(TwilightForest.ID, "item.knightMetal", 0, Materials.Knightmetal, Shapes.ingot);
+
+        for (int meta = 0; meta <= 5; meta++) {
+            removeBlock(IndustrialCraft2.ID, "blockMetal", meta);
+        }
+        for (int meta : new int[] { 3, 7, 9, 13, 15 }) {
+            removeBlock(BiomesOPlenty.ID, "gemOre", meta);
+        }
+        removeBlock(Botania.ID, "blazeBlock", 0);
+        for (int meta = 1; meta <= 3; meta++) {
+            removeBlock(Forestry.ID, "resourceStorage", meta);
+        }
+        removeBlock(GalacticraftAmunRa.ID, "tile.baseBlockRock", 11);
+        for (int meta = 9; meta <= 11; meta++) {
+            removeBlock(GalacticraftCore.ID, "tile.gcBlockCore", meta);
+        }
+        for (int meta : new int[] { 5, 6, 8, 9, 10 }) {
+            removeBlock(ProjectRedExploration.ID, "projectred.exploration.stone", meta);
+        }
+        for (int meta : new int[] { 2, 9, 10, 11 }) {
+            removeBlock(Railcraft.ID, "cube", meta);
+        }
+        for (int meta : new int[] { 0, 3, 4, 5, 6, 9 }) {
+            removeBlock(TinkerConstruct.ID, "MetalBlock", meta);
+        }
     }
 
     private static void replace(String modId, String itemName, int meta, Material material, Shape shape) {
@@ -85,6 +136,15 @@ public final class MaterialPartReplacements {
         replaceCraftingOutputs(foreign, part);
         replaceSmeltingOutputs(foreign, part);
         replaceLoot(foreign, part);
+        if (TinkerConstruct.isModLoaded()) TConstructHelper.replaceCastingOutputs(foreign, part);
+        if (Forestry.isModLoaded()) ForestryHelper.replaceCentrifugeProducts(foreign, part);
+    }
+
+    private static void removeBlock(String modId, String blockName, int meta) {
+        ItemStack foreign = GTModHandler.getModItem(modId, blockName, 1, meta);
+        if (foreign == null) return;
+        CraftingManager.getInstance().getRecipeList().removeIf(recipe -> isSameItem(recipe.getRecipeOutput(), foreign));
+        if (Chisel.isModLoaded()) ChiselHelper.removeVariationAndOreMember(foreign);
     }
 
     /// ProjectRed's storage-block recipe builds a fresh output on every call rather than holding one stack, so it is
