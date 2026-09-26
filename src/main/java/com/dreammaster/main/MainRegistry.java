@@ -65,6 +65,7 @@ import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.dreammaster.recipes.MaterialPartReplacements;
 import com.dreammaster.recipes.RecipeRemover;
 import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
@@ -399,6 +400,7 @@ public class MainRegistry {
     public void CompleteLoad(FMLLoadCompleteEvent event) {
         RecipeRemover.run();
         ScriptLoader.run();
+        MaterialPartReplacements.run();
         new DTPFRecipes().run();
         new AssemblingLineRecipes().runLate();
         new BECRecipes().runLate();

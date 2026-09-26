@@ -989,9 +989,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5));
         addShapelessRecipe(
-                getModItem(GalacticraftMars.ID, "item.null", 1, 1),
-                MaterialLibAPI.getStack(Materials.Desh, Shapes.stick, 1));
-        addShapelessRecipe(
                 MaterialLibAPI.getStack(Materials.Desh, Shapes.stick, 1),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 1));
         addShapelessRecipe(
@@ -1234,7 +1231,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "wireFineSteel",
                 "wireFineSteel",
                 "wireFineSteel");
-        addShapelessRecipe(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0), "rawOreMeteoricIron");
         addShapelessRecipe(getModItem(GalacticraftCore.ID, "item.null", 3, 0), "rawOreMeteoricIron", "craftingToolSaw");
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0),
