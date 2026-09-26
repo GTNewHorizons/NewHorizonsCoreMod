@@ -1611,6 +1611,34 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.NiobiumTitanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.PrismaticNaquadah, 1L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 7))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 288)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ElectrumFlux, 1L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 8))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 576)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.DraconiumAwakened, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 1L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 9))
+                .fluidInputs(Materials.RadoxPolymer.getMolten(144)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.SpaceTime, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.MHDCSM, 1L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 10))
+                .fluidInputs(Materials.RadoxPolymer.getMolten(576)).duration(5 * SECONDS).eut(TierEU.RECIPE_UXV)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Electrum, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.PulsatingIron, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemItemConduit", 1, 0))
