@@ -68,9 +68,9 @@ import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialData;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.FluidType;
@@ -745,40 +745,40 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(BlockList.NeutroniumPlatedReinforcedStone.get())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-        GTOreDictUnificator.addItemData(
+        MaterialData.add(
                 BlockList.BronzePlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Bronze, 6 * GTValues.M),
                         new ItemData(Materials.Steel, 3 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
-        GTOreDictUnificator.addItemData(
+        MaterialData.add(
                 BlockList.SteelPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Steel, 8 * GTValues.M),
                         new ItemData(Materials.Aluminium, 1 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
-        GTOreDictUnificator.addItemData(
+        MaterialData.add(
                 BlockList.TitaniumPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Titanium, 6 * GTValues.M),
                         new ItemData(Materials.Platinum, 1 * GTValues.M),
                         new ItemData(Materials.Steel, 2 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
-        GTOreDictUnificator.addItemData(
+        MaterialData.add(
                 BlockList.TungstensteelPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.TungstenSteel, 6 * GTValues.M),
                         new ItemData(Materials.Iridium, 1 * GTValues.M),
                         new ItemData(Materials.Steel, 2 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
-        GTOreDictUnificator.addItemData(
+        MaterialData.add(
                 BlockList.NaquadahPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Naquadah, 6 * GTValues.M),
                         new ItemData(Materials.Osmium, 1 * GTValues.M),
                         new ItemData(Materials.Steel, 2 * GTValues.M),
                         new ItemData(Materials.Concrete, 1 * GTValues.M)));
-        GTOreDictUnificator.addItemData(
+        MaterialData.add(
                 BlockList.NeutroniumPlatedReinforcedStone.get(),
                 new ItemData(
                         new ItemData(Materials.Neutronium, 6 * GTValues.M),

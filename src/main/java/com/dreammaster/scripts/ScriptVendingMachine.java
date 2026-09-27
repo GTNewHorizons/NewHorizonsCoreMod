@@ -20,8 +20,8 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialData;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptVendingMachine implements IScriptLoader {
 
@@ -60,7 +60,7 @@ public class ScriptVendingMachine implements IScriptLoader {
                 ironPlate,
                 "foilIron",
                 ironPlate);
-        GTOreDictUnificator.addItemData(VMItems.casing, new ItemData(Materials.Iron, 7 * GTValues.M));
+        MaterialData.add(VMItems.casing, new ItemData(Materials.Iron, 7 * GTValues.M));
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),

@@ -18,8 +18,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
+import gregtech.api.material.MaterialData;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptCatWalk implements IScriptLoader {
 
@@ -155,22 +155,15 @@ public class ScriptCatWalk implements IScriptLoader {
                 .itemOutputs(getModItem(CatWalks.ID, "ropeLight", 8, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
         // GTValues.M equals one dust or ingot
-        GTOreDictUnificator.addItemData(
-                getModItem(CatWalks.ID, "steelgrate", 1, 0),
-                new ItemData(Materials.Steel, 2 * GTValues.M / 9));
-        GTOreDictUnificator.addItemData(
+        MaterialData
+                .add(getModItem(CatWalks.ID, "steelgrate", 1, 0), new ItemData(Materials.Steel, 2 * GTValues.M / 9));
+        MaterialData.add(
                 getModItem(CatWalks.ID, "support_column", 1, 0),
                 new ItemData(Materials.Steel, 6 * GTValues.M / 9));
-        GTOreDictUnificator.addItemData(
-                getModItem(CatWalks.ID, "scaffold", 1, 0),
-                new ItemData(Materials.Steel, 20 * GTValues.M / 9));
-        GTOreDictUnificator.addItemData(
-                getModItem(CatWalks.ID, "scaffold", 1, 1),
-                new ItemData(Materials.Steel, 20 * GTValues.M / 9));
-        GTOreDictUnificator.addItemData(
-                getModItem(CatWalks.ID, "catwalk_unlit", 1, 0),
-                new ItemData(Materials.Steel, GTValues.M / 9));
-        GTOreDictUnificator.addItemData(
+        MaterialData.add(getModItem(CatWalks.ID, "scaffold", 1, 0), new ItemData(Materials.Steel, 20 * GTValues.M / 9));
+        MaterialData.add(getModItem(CatWalks.ID, "scaffold", 1, 1), new ItemData(Materials.Steel, 20 * GTValues.M / 9));
+        MaterialData.add(getModItem(CatWalks.ID, "catwalk_unlit", 1, 0), new ItemData(Materials.Steel, GTValues.M / 9));
+        MaterialData.add(
                 getModItem(CatWalks.ID, "cagedLadder_north_unlit", 1, 0),
                 new ItemData(Materials.Steel, GTValues.M / 9));
     }

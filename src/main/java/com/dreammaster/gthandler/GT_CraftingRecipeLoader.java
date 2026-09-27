@@ -62,9 +62,9 @@ import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
+import gregtech.api.material.MaterialData;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.ItemGTToolbox;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -122,25 +122,25 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         'S', MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Magmatter) });
 
         // Hull recycling placed here after the casing recipes for proper item data
-        GTOreDictUnificator.addItemDataFromInputs(
+        MaterialData.addFromInputs(
                 ItemList.Hull_UEV.get(1L),
                 ItemList.Casing_UEV.get(1L),
                 MaterialParts.craftIngredient(OrePrefixes.cableGt08, Materials.Draconium),
                 MaterialParts.craftIngredient(OrePrefixes.cableGt08, Materials.Draconium));
 
-        GTOreDictUnificator.addItemDataFromInputs(
+        MaterialData.addFromInputs(
                 ItemList.Hull_UIV.get(1L),
                 ItemList.Casing_UIV.get(1L),
                 MaterialParts.craftIngredient(OrePrefixes.cableGt08, Materials.NetherStar),
                 MaterialParts.craftIngredient(OrePrefixes.cableGt08, Materials.NetherStar));
 
-        GTOreDictUnificator.addItemDataFromInputs(
+        MaterialData.addFromInputs(
                 ItemList.Hull_UMV.get(1L),
                 ItemList.Casing_UMV.get(1L),
                 MaterialParts.craftIngredient(OrePrefixes.cableGt12, Materials.Quantium),
                 MaterialParts.craftIngredient(OrePrefixes.cableGt12, Materials.Quantium));
 
-        GTOreDictUnificator.addItemDataFromInputs(
+        MaterialData.addFromInputs(
                 ItemList.Hull_UXV.get(1L),
                 ItemList.Casing_UXV.get(1L),
                 MaterialParts.craftIngredient(OrePrefixes.cableGt16, Materials.BlackPlutonium),

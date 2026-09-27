@@ -55,9 +55,9 @@ import gregtech.api.enums.materials.CellShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
+import gregtech.api.material.MaterialData;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptIndustrialCraft implements IScriptLoader {
@@ -1262,7 +1262,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Lead, Shapes.plate, 2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTOreDictUnificator.addItemData(
+        MaterialData.add(
                 ItemList.Block_ReinforcedConcrete.get(1L),
                 new ItemData(
                         new ItemData(Materials.Steel, 2 * GTValues.M),
