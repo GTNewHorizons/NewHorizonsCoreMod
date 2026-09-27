@@ -61,7 +61,6 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
@@ -118,7 +117,7 @@ public class ScriptAmunRa implements IScriptLoader {
             return;
         }
         ItemStack ore = MaterialLibAPI.getStack(material, OreShapes.ore, OreShapes.variantOf(stoneType.name()), 1);
-        for (ItemStack variant : GTOreDictUnificator.getNonUnifiedStacks(ore)) {
+        for (ItemStack variant : OreMixes.withOreDictAlternatives(ore)) {
             ItemStack sizedVariant = GTUtility.copyAmount(amount, variant);
             if (!GTUtility.isStackValid(sizedVariant) || containsStack(variants, sizedVariant)) {
                 continue;
