@@ -58,6 +58,7 @@ public class BECRecipes implements Runnable {
     @Override
     public void run() {
         addCircuitArrayRecipes();
+        addAntimatterRecipes();
         if (UniversalSingularities.isModLoaded()) addComputationSingularityRecipes();
     }
 
@@ -94,6 +95,52 @@ public class BECRecipes implements Runnable {
                         TierEU.RECIPE_UXV);
             }
         }
+    }
+
+    private void addAntimatterRecipes() {
+        // Antimatter Containment Casing
+        addBec(
+                ItemRefer.AntimatterContainmentCasing.get(6),
+                new ItemStack[] { ItemList.GlassQuarkContainment.get(6),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.ProtoHalkonite, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TranscendentMetal, 12),
+                        ItemList.Emitter_UIV.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 16), },
+                nanites(1, 3, 1, 4, 2),
+                new FluidStack[] { CondensateType.TranscendentMetal.getEntangled(24 * INGOTS) },
+                450 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Gravity Stabilization Casing
+        addBec(
+                ItemRefer.GravityStabilizationCasing.get(8),
+                new ItemStack[] { ItemList.Neutronium_Stable_Casing.get(8), ItemList.Emitter_UIV.get(2),
+                        GregtechItemList.Battery_Gem_4.get(1), // Graviton Anomaly
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.ProtoHalkonite, 4),
+                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlateSuperdense(2), ItemList.Gravistar.get(6),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 24), },
+                nanites(1, 4, 3, 1, 1, 1, 3, 2),
+                new FluidStack[] { CondensateType.TranscendentMetal.getEntangled(24 * INGOTS),
+                        CondensateType.DimensionallyShiftedSuperfluid.getEntangled(3_000) },
+                300 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Magnetic Flux Casing
+        addBec(
+                ItemRefer.MagneticFluxCasing.get(8),
+                new ItemStack[] { ItemList.Casing_Electromagnetic_Separator.get(8), ItemList.Sensor_UIV.get(2),
+                        ItemList.Electromagnet_Tengam.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.ProtoHalkonite, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TengamAttuned, 2),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TranscendentMetal, 24),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 24), },
+                nanites(1, 4, 3, 1, 1, 1, 3, 2),
+                new FluidStack[] { CondensateType.TranscendentMetal.getEntangled(24 * INGOTS),
+                        CondensateType.DimensionallyShiftedSuperfluid.getEntangled(3_000) },
+                300 * SECONDS,
+                TierEU.RECIPE_UIV);
     }
 
     private void addComputationSingularityRecipes() {
