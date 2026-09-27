@@ -59,6 +59,7 @@ public class BECRecipes implements Runnable {
     public void run() {
         addCircuitArrayRecipes();
         addAntimatterRecipes();
+        addDysonRecipes();
         if (UniversalSingularities.isModLoaded()) addComputationSingularityRecipes();
     }
 
@@ -140,6 +141,73 @@ public class BECRecipes implements Runnable {
                 new FluidStack[] { CondensateType.TranscendentMetal.getEntangled(24 * INGOTS),
                         CondensateType.DimensionallyShiftedSuperfluid.getEntangled(3_000) },
                 300 * SECONDS,
+                TierEU.RECIPE_UIV);
+    }
+
+    private void addDysonRecipes() {
+        // Dyson Swarm Energy Receiver Base Casing
+        addBec(
+                ItemList.DysonSwarmReceiverCasing.get(8),
+                new ItemStack[] { GTUtility.copyAmount(8, ItemRegistry.energyDistributor[9]),
+                        ItemList.Circuit_Chip_APIC.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 6),
+                        ItemList.UIV_Coil.get(16) },
+                nanites(1, 3, 5, 2),
+                new FluidStack[] { CondensateType.DimensionallyShiftedSuperfluid.getEntangled(10_000),
+                        CondensateType.TranscendentMetal.getEntangled(24 * INGOTS), },
+                600 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Dyson Swarm Energy Receiver Dish Block
+        addBec(
+                ItemList.DysonSwarmReceiverDish.get(6),
+                new ItemStack[] { ItemList.UHTResistantMesh.get(64),
+                        ItemRefer.Advanced_Radiation_Protection_Plate.get(64),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 12),
+                        ItemRefer.Field_Restriction_Coil_T2.get(3) },
+                nanites(1, 3, 2, 5),
+                new FluidStack[] { CondensateType.DimensionallyShiftedSuperfluid.getEntangled(10_000),
+                        CondensateType.TranscendentMetal.getEntangled(24 * INGOTS), },
+                600 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Dyson Swarm Module Deployment Unit Base Casing
+        addBec(
+                ItemList.DysonSwarmDeploymentUnitCasing.get(8),
+                new ItemStack[] { ItemList.Hull_UIV.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 12),
+                        ItemList.Electric_Pump_UIV.get(48), ItemList.Quantum_Tank_IV.get(4),
+                        ItemList.Conveyor_Module_UIV.get(48), ItemList.Quantum_Chest_IV.get(4) },
+                nanites(1, 5, 3, 2, 3, 2),
+                new FluidStack[] { CondensateType.DimensionallyShiftedSuperfluid.getEntangled(50_000),
+                        CondensateType.TranscendentMetal.getEntangled(24 * INGOTS), },
+                600 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Dyson Swarm Module Deployment Unit Superconducting Magnet
+        addBec(
+                ItemList.DysonSwarmDeploymentUnitMagnet.get(8),
+                new ItemStack[] { ItemList.Hull_UIV.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 24),
+                        ItemList.Circuit_Chip_APIC.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 24) },
+                nanites(1, 3, 2, 5),
+                new FluidStack[] { CondensateType.DimensionallyShiftedSuperfluid.getEntangled(50_000),
+                        CondensateType.TranscendentMetal.getEntangled(24 * INGOTS), },
+                600 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Dyson Swarm Control Center Base Casing
+        addBec(
+                ItemList.DysonSwarmControlCasing.get(16),
+                new ItemStack[] { ItemList.Hull_UIV.get(4),
+                        IngredientFactory.getModItem(OpenComputers.ID, "item", 4, 103),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 12),
+                        tectech.thing.CustomItemList.Machine_Multi_Computer.get(4) },
+                nanites(1, 3, 5, 2),
+                new FluidStack[] { CondensateType.DimensionallyShiftedSuperfluid.getEntangled(10_000),
+                        CondensateType.TranscendentMetal.getEntangled(24 * INGOTS), },
+                600 * SECONDS,
                 TierEU.RECIPE_UIV);
     }
 
