@@ -37,7 +37,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.OreDictUtils;
 
 /// Ore-dictionary entries for non-GT items, split by phase.
 ///
@@ -51,17 +51,17 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
     // (see IngredientFactory.invalidItem), which must never claim an ore-dictionary slot.
     private static void registerOre(Object name, ItemStack stack) {
         if (IngredientFactory.isMissingItem(stack)) return;
-        GTOreDictUnificator.registerOre(name, stack);
+        OreDictUtils.registerOre(name, stack);
     }
 
     private static void registerOre(OrePrefixes prefix, Material material, ItemStack stack) {
         if (IngredientFactory.isMissingItem(stack)) return;
-        GTOreDictUnificator.registerOre(prefix, material, stack);
+        OreDictUtils.registerOre(prefix, material, stack);
     }
 
     private static void registerOre(OrePrefixes prefix, String materialName, ItemStack stack) {
         if (IngredientFactory.isMissingItem(stack)) return;
-        GTOreDictUnificator.registerOre(prefix.oreDictName(materialName), stack);
+        OreDictUtils.registerOre(prefix.oreDictName(materialName), stack);
     }
 
     /// Registers the entries whose ore-dictionary name resolves to a MaterialLib material.
@@ -223,9 +223,9 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre(OrePrefixes.circuit, "UMV", NHItemList.PikoCircuit.get());
         registerOre(OrePrefixes.circuit, "UXV", NHItemList.QuantumCircuit.get());
         registerOre(OrePrefixes.circuit, "MAX", NHItemList.PlanckCircuit.get());
-        GTOreDictUnificator.addToBlacklist(NHItemList.PikoCircuit.get());
-        GTOreDictUnificator.addToBlacklist(NHItemList.QuantumCircuit.get());
-        GTOreDictUnificator.addToBlacklist(NHItemList.PlanckCircuit.get());
+        OreDictUtils.addToBlacklist(NHItemList.PikoCircuit.get());
+        OreDictUtils.addToBlacklist(NHItemList.QuantumCircuit.get());
+        OreDictUtils.addToBlacklist(NHItemList.PlanckCircuit.get());
 
         // Add ore dictionary entries for sand and red sand to craft unfired coke oven bricks.
         registerOre("sand", new ItemStack(Blocks.sand, 1, 0));

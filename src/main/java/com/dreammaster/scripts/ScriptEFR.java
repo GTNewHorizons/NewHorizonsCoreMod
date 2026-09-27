@@ -77,8 +77,8 @@ import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.OreDictUtils;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -2107,7 +2107,7 @@ public class ScriptEFR implements IScriptLoader {
                 .eut(4).addTo(assemblerRecipes);
 
         // Chiseled Red Sandstone
-        for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensRed")) {
+        for (ItemStack lens : OreDictUtils.getOres("craftingLensRed")) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1))
