@@ -1721,8 +1721,8 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlateSuperdense(1), ItemList.Gravistar.get(4),
                         new Object[] { OrePrefixes.circuit.get(Materials.UIV), 1L },
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 16), },
-                new FluidStack[] { Materials.TranscendentMetal.getMolten(2304),
-                        Materials.DimensionallyShiftedSuperfluid.getFluid(3_000) },
+                new FluidStack[] { Materials.TranscendentMetal.getMolten(16 * INGOTS),
+                        Materials.DimensionallyShiftedSuperfluid.getFluid(2_000) },
                 ItemRefer.GravityStabilizationCasing.get(4),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
@@ -1741,8 +1741,8 @@ public class AssemblingLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TranscendentMetal, 16),
                         new Object[] { OrePrefixes.circuit.get(Materials.UIV), 1L },
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 16), },
-                new FluidStack[] { Materials.TranscendentMetal.getMolten(2304),
-                        Materials.DimensionallyShiftedSuperfluid.getFluid(3_000) },
+                new FluidStack[] { Materials.TranscendentMetal.getMolten(16 * INGOTS),
+                        Materials.DimensionallyShiftedSuperfluid.getFluid(2_000) },
                 ItemRefer.MagneticFluxCasing.get(4),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
