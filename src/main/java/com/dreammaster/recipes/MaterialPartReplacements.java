@@ -15,7 +15,6 @@ import static gregtech.api.enums.Mods.ProjectRedExploration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TwilightForest;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -101,8 +100,6 @@ public final class MaterialPartReplacements {
         replace(TinkerConstruct.ID, "materials", 33, Materials.Steel, Shapes.nugget);
         replace(TinkerConstruct.ID, "materials", 34, Materials.PigIron, Shapes.ingot);
         replace(TinkerConstruct.ID, "materials", 35, Materials.PigIron, Shapes.nugget);
-
-        replace(TwilightForest.ID, "item.knightMetal", 0, Materials.Knightmetal, Shapes.ingot);
 
         for (int meta = 0; meta <= 5; meta++) {
             removeBlock(IndustrialCraft2.ID, "blockMetal", meta);

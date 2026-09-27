@@ -22,7 +22,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 
 import net.minecraft.init.Blocks;
@@ -218,8 +217,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre(OrePrefixes.block, Materials.Shadow, getModItem(TaintedMagic.ID, "BlockShadowmetal", 1, 0));
         registerOre(OrePrefixes.ingot, Materials.Shadow, getModItem(TaintedMagic.ID, "ItemMaterial", 1, 0));
 
-        registerOre(OrePrefixes.ingot, Materials.Ichorium, getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 2));
-        registerOre(OrePrefixes.nugget, Materials.Ichorium, getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 3));
         registerOre(OrePrefixes.paneGlass, getModItem(TinkerConstruct.ID, "GlassPane", 1, 0));
         registerOre(OrePrefixes.ingot, "SearedBrick", getModItem(TinkerConstruct.ID, "materials", 1, 2));
 
