@@ -4,7 +4,6 @@ import static com.dreammaster.main.MainRegistry.LOGGER;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -117,9 +116,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         LOGGER.debug("NHCore: Register OreDict Entries of Non-GT-Items.");
 
         // Custom Stuff
-        registerOre("ingotBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0));
-        registerOre("blockBloodInfusedIron", getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0));
-
         registerOre(OrePrefixes.log, Materials.Wood, getModItem(BiomesOPlenty.ID, "logs4", 1, 3));
         registerOre("cropCarrot", getModItem(BiomesOPlenty.ID, "food", 1, 2));
 
@@ -136,7 +132,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 Materials.MeteoricIron,
                 getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1));
         registerOre(OrePrefixes.ore, Materials.Desh, getModItem(GalacticraftMars.ID, "tile.mars", 1, 2));
-        registerOre(OrePrefixes.stick, Materials.Desh, getModItem(GalacticraftMars.ID, "item.null", 1, 1));
         registerOre(OrePrefixes.ore, Materials.Ilmenite, getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 4));
         registerOre(
                 OrePrefixes.block,
@@ -211,8 +206,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         registerOre(OrePrefixes.nugget, Materials.Void, getModItem(Thaumcraft.ID, "ItemNugget", 1, 7));
         registerOre(OrePrefixes.block, Materials.Amber, getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0));
-
-        registerOre(OrePrefixes.ingot, Materials.Bedrockium, getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0));
 
         registerOre(OrePrefixes.block, Materials.Shadow, getModItem(TaintedMagic.ID, "BlockShadowmetal", 1, 0));
         registerOre(OrePrefixes.ingot, Materials.Shadow, getModItem(TaintedMagic.ID, "ItemMaterial", 1, 0));

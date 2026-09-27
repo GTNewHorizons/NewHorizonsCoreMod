@@ -1466,7 +1466,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemDust", 8, 2),
+                        MaterialLibAPI.getStack(Materials.Coal, Shapes.dust, 8),
                         MaterialLibAPI.getStack(Materials.Flint, Shapes.dust, 1))
                 .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);

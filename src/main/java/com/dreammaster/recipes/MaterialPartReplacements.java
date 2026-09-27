@@ -1,7 +1,6 @@
 package com.dreammaster.recipes;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -79,8 +78,6 @@ public final class MaterialPartReplacements {
         replace(IndustrialCraft2.ID, "itemIngot", 5, Materials.Lead, Shapes.ingot);
         replace(IndustrialCraft2.ID, "itemIngot", 6, Materials.Silver, Shapes.ingot);
         replace(IndustrialCraft2.ID, "itemRubber", 0, Materials.Rubber, Shapes.ingot);
-
-        replace(BloodArsenal.ID, "blood_infused_iron", 0, Materials.BloodInfusedIron, Shapes.ingot);
 
         replace(PamsHarvestCraft.ID, "cocoapowderItem", 0, Materials.Cocoa, Shapes.dust);
         replace(PamsHarvestCraft.ID, "flourItem", 0, Materials.Wheat, Shapes.dust);
