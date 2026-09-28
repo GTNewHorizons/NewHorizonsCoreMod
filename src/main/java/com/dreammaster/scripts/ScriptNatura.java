@@ -2906,20 +2906,20 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 2), getModItem(Natura.ID, "barleyFood", 3, 7))
-                .itemOutputs(getModItem(Natura.ID, "natura.bow.ghostwood", 1, 0)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .exactItemInputs().itemOutputs(getModItem(Natura.ID, "natura.bow.ghostwood", 1, 0))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 4), getModItem(Natura.ID, "barleyFood", 3, 7))
-                .itemOutputs(getModItem(Natura.ID, "natura.bow.bloodwood", 1, 0)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .exactItemInputs().itemOutputs(getModItem(Natura.ID, "natura.bow.bloodwood", 1, 0))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 11), getModItem(Natura.ID, "barleyFood", 3, 7))
-                .itemOutputs(getModItem(Natura.ID, "natura.bow.darkwood", 1, 0)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .exactItemInputs().itemOutputs(getModItem(Natura.ID, "natura.bow.darkwood", 1, 0))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 12), getModItem(Natura.ID, "barleyFood", 3, 7))
-                .itemOutputs(getModItem(Natura.ID, "natura.bow.fusewood", 1, 0)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+                .exactItemInputs().itemOutputs(getModItem(Natura.ID, "natura.bow.fusewood", 1, 0))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "plankSlab1", 2, 0), new OreDictItemStack("springAnyIron", 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 2, 0)).duration(5 * SECONDS)
