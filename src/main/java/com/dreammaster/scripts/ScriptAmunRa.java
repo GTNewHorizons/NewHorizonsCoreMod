@@ -63,6 +63,7 @@ import gregtech.api.enums.materials.Shapes;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.OreDictUtils;
 import gregtech.api.util.recipe.Scanning;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import tectech.recipe.TTRecipeAdder;
@@ -117,7 +118,7 @@ public class ScriptAmunRa implements IScriptLoader {
             return;
         }
         ItemStack ore = MaterialLibAPI.getStack(material, OreShapes.ore, OreShapes.variantOf(stoneType.name()), 1);
-        for (ItemStack variant : OreMixes.withOreDictAlternatives(ore)) {
+        for (ItemStack variant : OreDictUtils.getInterchangeableStacks(ore)) {
             ItemStack sizedVariant = GTUtility.copyAmount(amount, variant);
             if (!GTUtility.isStackValid(sizedVariant) || containsStack(variants, sizedVariant)) {
                 continue;
