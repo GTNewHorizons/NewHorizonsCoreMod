@@ -43,6 +43,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
@@ -60,7 +61,6 @@ import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
-import gregtech.api.util.OreDictUtils;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import micdoodle8.mods.galacticraft.api.world.SpaceStationType;
@@ -1850,37 +1850,37 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 14)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 
-        for (ItemStack lens : OreDictUtils.getOres("craftingLensRed")) {
+        for (ItemStack lens : OreDictionary.getOres("craftingLensRed")) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(GalacticraftMars.ID, "tile.mars", 4, 9), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalacticraftMars.ID, "tile.mars", 1, 7)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_EV).addTo(laserEngraverRecipes);
         }
-        for (ItemStack lens : OreDictUtils.getOres("craftingLensCyan")) {
+        for (ItemStack lens : OreDictionary.getOres("craftingLensCyan")) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(GalaxySpace.ID, "ceresblocks", 4, 1), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "ceresblocks", 1, 2)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
         }
-        for (ItemStack lens : OreDictUtils.getOres("craftingLensYellow")) {
+        for (ItemStack lens : OreDictionary.getOres("craftingLensYellow")) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(GalaxySpace.ID, "ioblocks", 4, 2), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "ioblocks", 1, 3)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).addTo(laserEngraverRecipes);
         }
-        for (ItemStack lens : OreDictUtils.getOres("craftingLensWhite")) {
+        for (ItemStack lens : OreDictionary.getOres("craftingLensWhite")) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(GalaxySpace.ID, "enceladusblocks", 4, 1), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "enceladusblocks", 1, 2)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_ZPM).addTo(laserEngraverRecipes);
         }
-        for (ItemStack lens : OreDictUtils.getOres("craftingLensLightGray")) {
+        for (ItemStack lens : OreDictionary.getOres("craftingLensLightGray")) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(GalaxySpace.ID, "proteusblocks", 4, 2), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "proteusblocks", 1, 3)).duration(4 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(laserEngraverRecipes);
         }
-        for (ItemStack lens : OreDictUtils.getOres("craftingLensBrown")) {
+        for (ItemStack lens : OreDictionary.getOres("craftingLensBrown")) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(GalaxySpace.ID, "plutoblocks", 4, 5), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(GalaxySpace.ID, "plutoblocks", 1, 6)).duration(4 * SECONDS)
