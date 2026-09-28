@@ -1725,8 +1725,8 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Large_Fluid_Cell_Neutronium.get(1),
                             ItemList.Electric_Pump_UIV.get(1))
                     .fluidInputs(
-                            MaterialLibAPI
-                                    .getFluidStack(Materials.TranscendentMetal, FluidShapes.fluidMolten, INGOTS * 32),
+                            MaterialLibAPI.getFluidStack(Materials.SuperCoolant, FluidShapes.fluidLiquid, 1_024_000),
+                            // TODO: Change with Taranium line
                             new FluidStack(solderUEV, INGOTS * 32))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_UIV.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
@@ -1744,6 +1744,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Pump_UMV.get(1))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, INGOTS * 16),
+                            // TODO: Change with Taranium line
                             new FluidStack(solderUEV, INGOTS * 128))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_UMV.get(1)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).addTo(AssemblyLine);
