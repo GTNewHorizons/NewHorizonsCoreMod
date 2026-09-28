@@ -10,6 +10,7 @@ import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.NANITE_TIERS;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.HYPOGEN;
+import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.RHUGNOR;
 import static kekztech.common.Blocks.lscLapotronicEnergyUnit;
 import static tectech.thing.CustomItemList.Godforge_SingularityShieldingCasing;
 
@@ -59,16 +60,35 @@ public class BECRecipes implements Runnable {
 
     @Override
     public void run() {
-        addCircuitArrayRecipes();
+        addExoFoundryRecipes();
         addAntimatterRecipes();
         addDysonRecipes();
         addEarlyUMVBlocks();
+        addCircuitArrayRecipes();
         if (UniversalSingularities.isModLoaded()) addComputationSingularityRecipes();
     }
 
     public void runLate() {
         if (EternalSingularity.isModLoaded()) {
             addSGRecipes();
+            // Exo-Foundry Chassis Tier 2
+            addBec(
+                    ItemList.Magnetic_Chassis_T2_ExoFoundry.get(2),
+                    new ItemStack[] { ItemRefer.Compact_Fusion_Coil_T4.get(2),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.Ichorium, 64),
+                            IngredientFactory.getModItem(EternalSingularity.ID, "eternal_singularity", 1),
+                            GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.ProtoHalkonite, 20),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 6),
+                            GTOreDictUnificator.get(OrePrefixes.nanite, Materials.TranscendentMetal, 2),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SixPhasedCopper, 1),
+                            ItemList.Emitter_UIV.get(1), GTOreDictUnificator.get(OrePrefixes.plate, Materials.Creon, 4),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Mellion, 4) },
+                    nanites(2, 1, 3, 2, 4, 3, 1, 4, 1, 1),
+                    new FluidStack[] { CondensateType.Infinity.getEntangled(16 * INGOTS),
+                            CondensateType.TranscendentMetal.getEntangled(16 * INGOTS),
+                            CondensateType.DimensionallyShiftedSuperfluid.getEntangled(30_000) },
+                    600 * SECONDS,
+                    TierEU.RECIPE_UIV);
 
             if (DraconicEvolution.isModLoaded()) {
                 // Exo-Foundry Chassis Tier 3
@@ -99,6 +119,65 @@ public class BECRecipes implements Runnable {
                         TierEU.RECIPE_UXV);
             }
         }
+    }
+
+    private void addExoFoundryRecipes() {
+
+        // Hypercooler
+        addBec(
+                ItemList.Hypercooler_ExoFoundry.get(2),
+                new ItemStack[] { ItemList.Magnetic_Chassis_T2_ExoFoundry.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.InfinityCatalyst, 64),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CallistoIce, 32),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SixPhasedCopper, 16),
+                        ItemList.AcceleratorUV.get(12), ItemList.Electric_Pump_UIV.get(6),
+                        ItemList.FluidRegulator_UIV.get(6),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 3),
+                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.SpaceTime, 4) },
+                nanites(2, 1, 1, 2, 4, 2, 2, 4, 1, 3),
+                new FluidStack[] { CondensateType.Infinity.getEntangled(8 * INGOTS),
+                        CondensateType.TranscendentMetal.getEntangled(8 * INGOTS),
+                        CondensateType.DimensionallyShiftedSuperfluid.getEntangled(90_000) },
+                600 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Heliocast Reinforcement
+        addBec(
+                ItemList.Heliocast_Reinforcement_ExoFoundry.get(2),
+                new ItemStack[] { ItemList.Magnetic_Chassis_T2_ExoFoundry.get(2),
+                        tectech.thing.CustomItemList.Godforge_StellarEnergySiphonCasing.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.SixPhasedCopper, 6),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TranscendentMetal, 6),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 12), ItemList.Sensor_UIV.get(4),
+                        ItemList.Emitter_UIV.get(4), RHUGNOR.getGear(6),
+                        GGMaterial.metastableOganesson.get(OrePrefixes.plateDense, 20),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Creon, 20),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Mellion, 20),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.SpaceTime, 4) },
+                nanites(2, 4, 1, 1, 4, 3, 3, 2, 1, 1, 1, 2),
+                new FluidStack[] { CondensateType.Infinity.getEntangled(8 * INGOTS),
+                        CondensateType.TranscendentMetal.getEntangled(8 * INGOTS) },
+                600 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Efficient Overclocker
+        addBec(
+                ItemList.Efficient_Overclocking_ExoFoundry.get(1),
+                new ItemStack[] { ItemList.Magnetic_Chassis_T2_ExoFoundry.get(1),
+                        ItemRefer.GravityStabilizationCasing.get(1), ItemRefer.MagneticFluxCasing.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUIVBase, 16),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.ProtoHalkonite, 8),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 2),
+                        ItemList.Electric_Pump_UMV.get(4), ItemList.Field_Generator_UMV.get(1),
+                        GGMaterial.shirabon.get(OrePrefixes.plateDense, 20) },
+                nanites(2, 3, 3, 1, 1, 5, 4, 5, 3),
+                new FluidStack[] { CondensateType.Infinity.getEntangled(32 * INGOTS),
+                        CondensateType.CelestialTungsten.getEntangled(32 * INGOTS),
+                        CondensateType.Bedrockium.getEntangled(32 * INGOTS),
+                        CondensateType.Neutronium.getEntangled(32 * INGOTS) },
+                600 * SECONDS,
+                TierEU.RECIPE_UMV);
     }
 
     private void addAntimatterRecipes() {
