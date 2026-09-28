@@ -33,22 +33,22 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
 import ggfab.GGItemList;
 import goodgenerator.util.ItemRefer;
-import gregtech.api.enums.GTValues;
-import com.ruling_0.materiallib.api.MaterialLibAPI;
 import gregtech.api.enums.Circuits;
+import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
+import gregtech.api.enums.TierEU;
+import gregtech.api.enums.VoltageIndex;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.material.MaterialUtils;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Mods;
-import gregtech.api.enums.TierEU;
-import gregtech.api.enums.VoltageIndex;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.recipe.metadata.BoardProcessingModuleFluidKey;
@@ -102,15 +102,19 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 (int) TierEU.RECIPE_UHV,
                 4,
                 new Object[] { ItemList.ReinforcementNanochipCasing.get(1), ItemList.MobRep_UV.get(4),
-                        MaterialLibAPI.getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.plateSuperdense, 2),
+                        MaterialLibAPI
+                                .getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.plateSuperdense, 2),
                         MaterialLibAPI.getStack(Materials.TengamAttuned, Shapes.plateSuperdense, 8),
                         ItemList.Emitter_UEV.get(2), ItemList.Sensor_UEV.get(2),
                         getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24), // Nether Star
                                                                                                        // Singularity
                         ItemList.Field_Generator_UHV.get(1) },
-                new FluidStack[] { MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 128 * INGOTS),
+                new FluidStack[] {
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 128 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Oganesson, FluidShapes.fluidLiquid, 16000),
-                        MaterialLibAPI.getFluidStack(Materials.SuperconductorUEVBase, FluidShapes.fluidMolten, 16 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.SuperconductorUEVBase, FluidShapes.fluidMolten, 16 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 4 * INGOTS) },
                 ItemList.FirewallProjectionNanochipCasing.get(1),
                 120 * SECONDS,
@@ -129,8 +133,11 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         getModItem(OpenComputers.ID, "item", 1, 69), // Server Tier 4
                         ItemList.Optically_Perfected_CPU.get(2), ItemList.Optically_Compatible_Memory.get(2),
                         CustomItemList.DATApipe.get(16) },
-                new FluidStack[] { MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 16 * INGOTS),
-                        MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 16 * INGOTS), MaterialLibAPI.getFluidStack(Materials.TengamPurified, FluidShapes.fluidMolten, 16 * INGOTS), },
+                new FluidStack[] {
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 16 * INGOTS),
+                        MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 16 * INGOTS),
+                        MaterialLibAPI.getFluidStack(Materials.TengamPurified, FluidShapes.fluidMolten, 16 * INGOTS), },
                 ItemList.ComputationalMatrixNanochipCasing.get(4),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UHV);
@@ -141,7 +148,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new ItemStack(ItemRegistry.bw_realglas, 8, 6),
                         MaterialLibAPI.getStack(Materials.RoseGold, Shapes.wireFine, 64),
                         GregtechItemList.Laser_Lens_Special.get(0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.ReactiveIonEtchingMixture, FluidShapes.fluidLiquid, 2000))
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.ReactiveIonEtchingMixture, FluidShapes.fluidLiquid, 2000))
                 .itemOutputs(ItemList.ComplexNanochipGlass.get(8)).duration(15 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(laserEngraverRecipes);
 
@@ -164,7 +173,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.VacuumConveyorPipe.get(8))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(Materials.BlackPlutonium, FluidShapes.fluidMolten, 8 * INGOTS),
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8 * INGOTS))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8 * INGOTS))
                 .itemOutputs(ItemList.MeshInterfaceNanochipCasing.get(8)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_UHV).metadata(PRECISE_ASSEMBLER_CASING_TIER, 3).addTo(preciseAssemblerRecipes);
 
@@ -175,7 +185,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Hatch_Input_Bus_MAX.get(1),
                         ItemList.Conveyor_Module_UEV.get(1),
                         ItemList.VacuumConveyorPipe.get(8))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 4 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 4 * INGOTS))
                 .itemOutputs(ItemList.Hatch_VacuumConveyor_Input.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(assemblerRecipes);
 
@@ -186,7 +198,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Hatch_Output_Bus_MAX.get(1),
                         ItemList.Conveyor_Module_UEV.get(1),
                         ItemList.VacuumConveyorPipe.get(8))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 4 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 4 * INGOTS))
                 .itemOutputs(ItemList.Hatch_VacuumConveyor_Output.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(assemblerRecipes);
 
@@ -195,8 +209,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.BlackPlutonium, TEBlockShapes.itemPipeSmall, 1),
                         MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.foil, 4))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Kevlar, FluidShapes.fluidMolten, 1 * INGOTS)).itemOutputs(ItemList.VacuumConveyorPipe.get(1))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Kevlar, FluidShapes.fluidMolten, 1 * INGOTS))
+                .itemOutputs(ItemList.VacuumConveyorPipe.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .addTo(assemblerRecipes);
 
         // Splitter Redstone Hatch
         GTValues.RA.stdBuilder()
@@ -226,7 +241,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new Object[] { Circuits.UV.getIngredient(), 32 }, ItemList.ZPM2.get(1),
                         ItemList.Sensor_UEV.get(4), ItemList.Emitter_UEV.get(4),
                         getModItem(OpenComputers.ID, "screen3", 1, 0), getModItem(OpenComputers.ID, "keyboard", 1, 0) },
-                new FluidStack[] { MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 256 * INGOTS),
+                new FluidStack[] {
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 256 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidPlasma, 64 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Americium, FluidShapes.fluidPlasma, 64 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.AstralTitanium, FluidShapes.fluidPlasma, 64 * INGOTS) },
@@ -246,11 +263,13 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         GGItemList.AdvAssLine.get(1),
                         GTUtility.copyAmount(1, ItemRegistry.cal),
                         ItemRefer.Compassline_Casing_UEV.get(4),
-                        MaterialLibAPI.getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.plateSuperdense, 32),
+                        MaterialLibAPI
+                                .getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.plateSuperdense, 32),
                         MaterialLibAPI.getStack(Materials.Infinity, Shapes.plateSuperdense, 4),
                         MaterialLibAPI.getStack(Materials.Silver, Shapes.nanite, 1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.NaquadahAlloy, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Infinity, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_AssemblyMatrix.get(1)).duration(60 * SECONDS)
@@ -268,7 +287,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(16),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(16))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.EnrichedHolmium, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_EtchingArray.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -285,7 +305,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Plastic, Shapes.foil, 64),
                         ItemList.Circuit_Parts_InductorXSMD.get(64))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_PartProcessor.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -302,7 +323,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(16),
                         ItemList.Circuit_Board_Wetware_Extreme.get(16))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Octiron, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_BoardProcessor.get(1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -319,7 +341,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Circuit_Chip_BioCPU.get(16),
                         ItemList.Circuit_Chip_NeuroCPU.get(16))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Tritanium, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_BiologicalCoordinator.get(1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -336,7 +359,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Diamond, Shapes.lens, 1),
                         NHItemList.ChromaticLens.get(1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Neutronium, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_CuttingChamber.get(1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -353,8 +377,12 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Draconium, TEBlockShapes.wireGt16, 16),
                         MaterialLibAPI.getStack(Materials.BlackPlutonium, TEBlockShapes.wireGt16, 16))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
-                        MaterialLibAPI.getFluidStack(Materials.Longasssuperconductornameforuhvwire, FluidShapes.fluidMolten, 32 * INGOTS))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI.getFluidStack(
+                                Materials.Longasssuperconductornameforuhvwire,
+                                FluidShapes.fluidMolten,
+                                32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_WireTracer.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
 
@@ -370,7 +398,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Automation_ItemDistributor_MAX.get(1),
                         ItemList.Sensor_UEV.get(1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Kevlar, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_Splitter.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -387,7 +416,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Electromagnet_Tengam.get(1),
                         ItemList.Reactor_Coolant_Sp_6.get(1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Naquadria, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_SuperconductorSplitter.get(1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -404,7 +434,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         ItemList.Optically_Perfected_CPU.get(16),
                         ItemList.Optically_Compatible_Memory.get(16))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.DraconiumAwakened, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_OpticalOrganizer.get(1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -421,7 +452,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Tritanium, TEBlockShapes.frameGt, 16),
                         MaterialLibAPI.getStack(Materials.Polybenzimidazole, Shapes.foil, 64))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.Quantium, FluidShapes.fluidMolten, 32 * INGOTS))
                 .itemOutputs(ItemList.NanoChipModule_EncasementWrapper.get(1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).metadata(IGRecipeMaps.MODULE_TIER, 1).addTo(spaceAssemblerRecipes);
@@ -526,26 +558,32 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Isolated Black Dwarf Matter Strands
         GTValues.RA.stdBuilder().itemInputs(ItemList.MacrocosmicStrands.get(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Time, FluidShapes.fluidMolten, 72)).itemOutputs(ItemList.IsolatedBDMStrands.get(1))
-                .duration(1 * SECONDS).eut(TierEU.RECIPE_UMV).metadata(CentrifugeRecipeKey.INSTANCE, true)
-                .addTo(centrifugeNonCellRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.temporalFluid, FluidShapes.fluidLiquid, 72))
+                .itemOutputs(ItemList.IsolatedBDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
+                .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeNonCellRecipes);
 
         // Unbound White Dwarf Matter Strands
         GTValues.RA.stdBuilder().itemInputs(ItemList.PulsatingWDMStrands.get(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Time, FluidShapes.fluidMolten, 72)).itemOutputs(ItemList.UnboundWDMStrands.get(1))
-                .duration(1 * SECONDS).eut(TierEU.RECIPE_UMV).metadata(CentrifugeRecipeKey.INSTANCE, true)
-                .addTo(centrifugeNonCellRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.temporalFluid, FluidShapes.fluidLiquid, 72))
+                .itemOutputs(ItemList.UnboundWDMStrands.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_UMV)
+                .metadata(CentrifugeRecipeKey.INSTANCE, true).addTo(centrifugeNonCellRecipes);
 
         // Blossoming Manifold Bud
         GTValues.RA.stdBuilder().itemInputs(ItemList.RawManifoldBud.get(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 10 * INGOTS), MaterialLibAPI.getFluidStack(Materials.Magmatter, FluidShapes.fluidMolten, 10 * INGOTS))
-                .itemOutputs(ItemList.BlossomingManifoldBud.get(1)).fluidOutputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 10 * INGOTS))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 10 * INGOTS),
+                        MaterialLibAPI.getFluidStack(Materials.Magmatter, FluidShapes.fluidMolten, 10 * INGOTS))
+                .itemOutputs(ItemList.BlossomingManifoldBud.get(1))
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 10 * INGOTS))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(arcFurnaceRecipes);
 
         // Calabi Yau Manifold
         GTValues.RA.stdBuilder().itemInputs(ItemList.BlossomingManifoldBud.get(1))
                 .itemOutputs(ItemList.CalabiYauManifold.get(1))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 10 * INGOTS), MaterialLibAPI.getFluidStack(Materials.ExcitedDTSC, FluidShapes.fluidLiquid, 10000))
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 10 * INGOTS),
+                        MaterialLibAPI.getFluidStack(Materials.ExcitedDTSC, FluidShapes.fluidLiquid, 10000))
                 .duration(1 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(hammerRecipes);
     }
 
@@ -621,7 +659,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Bio Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardBioMutated.getFakeStack(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.BiohMediumSterilized, FluidShapes.fluidLiquid, 0)).fluidOutputs(MaterialLibAPI.getFluidStack(Materials.BioMediumRaw, FluidShapes.fluidLiquid, 0))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.BiohMediumSterilized, FluidShapes.fluidLiquid, 0))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.BioMediumRaw, FluidShapes.fluidLiquid, 0))
                 .itemOutputs(CircuitComponent.ProcessedBoardBioMutated.getFakeStack(1)).duration(16 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
@@ -633,7 +672,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Optical Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardOptical.getFakeStack(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.prismaticacid, FluidShapes.fluidLiquid, 0)).fluidOutputs(MaterialLibAPI.getFluidStack(Materials.prismaticgas, FluidShapes.fluidLiquid, 0))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.prismaticacid, FluidShapes.fluidLiquid, 0))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.prismaticgas, FluidShapes.fluidLiquid, 0))
                 .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
@@ -645,7 +685,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Pico Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardPico.getFakeStack(1))
-                .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 0)).fluidOutputs(MaterialUtils.fluid(Materials.UUAmplifier, 0))
+                .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 0))
+                .fluidOutputs(MaterialUtils.fluid(Materials.UUAmplifier, 0))
                 .itemOutputs(CircuitComponent.CleansedBoardPico.getFakeStack(1)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_UMV).addTo(nanochipBoardProcessorRecipes);
 
@@ -657,7 +698,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Quantum Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardQuantum.getFakeStack(1))
-                .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 0)).fluidOutputs(MaterialUtils.fluid(Materials.UUAmplifier, 0))
+                .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 0))
+                .fluidOutputs(MaterialUtils.fluid(Materials.UUAmplifier, 0))
                 .itemOutputs(CircuitComponent.CleansedBoardQuantum.getFakeStack(1)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_UXV).addTo(nanochipBoardProcessorRecipes);
 
@@ -669,7 +711,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
         // Planck Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardPlanck.getFakeStack(1))
-                .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 0)).fluidOutputs(MaterialUtils.fluid(Materials.UUAmplifier, 0))
+                .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 0))
+                .fluidOutputs(MaterialUtils.fluid(Materials.UUAmplifier, 0))
                 .itemOutputs(CircuitComponent.CleansedBoardPlanck.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MAX).addTo(nanochipBoardProcessorRecipes);
     }
@@ -932,7 +975,8 @@ public class ScriptNanochipRecipes implements IScriptLoader {
 
             addSimpleProcessingRecipe(
                     CircuitComponent.FrameboxMagMatter,
-                    MaterialLibAPI.getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 100),
+                    MaterialLibAPI
+                            .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 100),
                     CircuitComponent.ProcessedFrameboxMagMatter,
                     TierEU.RECIPE_UMV,
                     10 * SECONDS,
@@ -1052,8 +1096,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.OpticalMainframeRack.getFakeStack(1),
                         CircuitComponent.ProcessedPlateRhugnor.getFakeStack(2),
                         CircuitComponent.ProcessedChipAttoPIC.getFakeStack(8))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 250)).itemOutputs(CircuitComponent.PicoCPU.getFakeStack(1))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(nanochipEncasementWrapper);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 250))
+                .itemOutputs(CircuitComponent.PicoCPU.getFakeStack(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)
+                .addTo(nanochipEncasementWrapper);
 
         // Quantum CPU
         GTValues.RA.stdBuilder()
@@ -1061,8 +1106,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.PicoCircuitRack.getFakeStack(1),
                         CircuitComponent.ProcessedPlateMetastableOganesson.getFakeStack(2),
                         CircuitComponent.ProcessedChipZeptoPIC.getFakeStack(8))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 500)).itemOutputs(CircuitComponent.QuantumCPU.getFakeStack(1))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(nanochipEncasementWrapper);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 500))
+                .itemOutputs(CircuitComponent.QuantumCPU.getFakeStack(1)).duration(20 * SECONDS).eut(TierEU.RECIPE_UXV)
+                .addTo(nanochipEncasementWrapper);
 
         // Planck CPU
         GTValues.RA.stdBuilder()
@@ -1070,8 +1116,9 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.RealizedQuantumCircuitRack.getFakeStack(1),
                         CircuitComponent.ProcessedPlateHexanite.getFakeStack(2),
                         CircuitComponent.ProcessedChipYoctoPIC.getFakeStack(8))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 1_000)).itemOutputs(CircuitComponent.PlanckCPU.getFakeStack(1))
-                .duration(7 * SECONDS).eut(TierEU.RECIPE_MAX).addTo(nanochipEncasementWrapper);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 1_000))
+                .itemOutputs(CircuitComponent.PlanckCPU.getFakeStack(1)).duration(7 * SECONDS).eut(TierEU.RECIPE_MAX)
+                .addTo(nanochipEncasementWrapper);
     }
 
     private static void registerEtchingArrayRecipes() {
@@ -1344,7 +1391,12 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.ProcessedOpticalSMDTransistor.getFakeStack(32),
                         CircuitComponent.ProcessedOpticalSMDDiode.getFakeStack(32),
                         CircuitComponent.ProcessedBoardOptical.getFakeStack(4))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 1 * INGOTS), MaterialLibAPI.getFluidStack(Materials.DTR, FluidShapes.fluidLiquid, 1000))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 1 * INGOTS),
+                        MaterialLibAPI.getFluidStack(
+                                Materials.DimensionallyTranscendentResidue,
+                                FluidShapes.fluidLiquid,
+                                1000))
                 .itemOutputs(CircuitComponent.BoardQuantum.getFakeStack(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_UMV).addTo(nanochipPartProcessorRecipes);
 
