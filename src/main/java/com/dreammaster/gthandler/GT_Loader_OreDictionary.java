@@ -33,6 +33,7 @@ import com.dreammaster.scripts.IngredientFactory;
 import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials.Materials;
@@ -220,9 +221,9 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre(OrePrefixes.log, Materials.Wood, getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0));
 
         // oreDict UMV - MAX circuits
-        registerOre(OrePrefixes.circuit, "UMV", NHItemList.PikoCircuit.get());
-        registerOre(OrePrefixes.circuit, "UXV", NHItemList.QuantumCircuit.get());
-        registerOre(OrePrefixes.circuit, "MAX", NHItemList.PlanckCircuit.get());
+        registerOre(OrePrefixes.circuit, Circuits.UMV.materialName(), NHItemList.PikoCircuit.get());
+        registerOre(OrePrefixes.circuit, Circuits.UXV.materialName(), NHItemList.QuantumCircuit.get());
+        registerOre(OrePrefixes.circuit, Circuits.MAX.materialName(), NHItemList.PlanckCircuit.get());
         OreDictUtils.addToBlacklist(NHItemList.PikoCircuit.get());
         OreDictUtils.addToBlacklist(NHItemList.QuantumCircuit.get());
         OreDictUtils.addToBlacklist(NHItemList.PlanckCircuit.get());
