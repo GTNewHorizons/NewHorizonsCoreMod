@@ -9,12 +9,8 @@ import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
-import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
 import static gregtech.api.util.GTRecipeConstants.PRECISE_ASSEMBLER_CASING_TIER;
-import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
-import static gregtech.api.util.GTRecipeConstants.SCANNING;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.RHUGNOR;
 
@@ -35,7 +31,6 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -180,26 +175,6 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 ItemList.Hypercooler_ExoFoundry.get(1),
                 45 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
-
-        // Efficient Overclocker (Scanner)
-        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemRefer.AntimatterContainmentCasing.get(1))
-                .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_UIV))
-                .itemInputs(
-                        ItemList.Magnetic_Chassis_T2_ExoFoundry.get(1),
-                        ItemRefer.GravityStabilizationCasing.get(1),
-                        ItemRefer.MagneticFluxCasing.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.SuperconductorUIVBase, 16),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.ProtoHalkonite, 8),
-
-                        new Object[] { OrePrefixes.circuit.get(Materials.UXV), 2 },
-                        ItemList.Electric_Pump_UMV.get(4),
-                        ItemList.Field_Generator_UMV.get(1))
-                .fluidInputs(
-                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(INGOTS * 1024),
-                        Materials.DimensionallyShiftedSuperfluid.getFluid(300000),
-                        GGMaterial.shirabon.getMolten(INGOTS * 40))
-                .itemOutputs(ItemList.Efficient_Overclocking_ExoFoundry.get(1)).duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_UMV).addTo(AssemblyLine);
 
         // Heliocast Reinforcement
         TTRecipeAdder.addResearchableAssemblylineRecipe(
