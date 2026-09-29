@@ -101,7 +101,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.util.GTModHandler;
-import gregtech.common.items.MetaGeneratedItem01;
+import gregtech.common.items.CauldronWashing;
 import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 
 @Mod(
@@ -377,10 +377,10 @@ public class MainRegistry {
         BacteriaRegistry.runAllPostinit();
 
         LOGGER.debug("Nerf Platinum Metal Cauldron Cleaning");
-        MetaGeneratedItem01.registerCauldronCleaningFor(Materials.Platinum, Materials.PlatinumMetallicPowder);
-        MetaGeneratedItem01.registerCauldronCleaningFor(Materials.Osmium, Materials.RarestMetalResidue);
-        MetaGeneratedItem01.registerCauldronCleaningFor(Materials.Iridium, Materials.IridiumMetalResidue);
-        MetaGeneratedItem01.registerCauldronCleaningFor(Materials.Palladium, Materials.PalladiumMetallicPowder);
+        CauldronWashing.registerCleaningFor(Materials.Platinum, Materials.PlatinumMetallicPowder);
+        CauldronWashing.registerCleaningFor(Materials.Osmium, Materials.RarestMetalResidue);
+        CauldronWashing.registerCleaningFor(Materials.Iridium, Materials.IridiumMetalResidue);
+        CauldronWashing.registerCleaningFor(Materials.Palladium, Materials.PalladiumMetallicPowder);
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
