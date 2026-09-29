@@ -335,7 +335,7 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("redgranite", new ItemStack(GregTechAPI.sBlockGranites, 1, 14));
         ChiselHelper.addVariationFromStack("redgranite", new ItemStack(GregTechAPI.sBlockGranites, 1, 15));
         ChiselHelper.addVariationFromStack("limestone", getModItem(BiomesOPlenty.ID, "rocks", 1, 0));
-        ChiselHelper.addVariationFromStack("amber", new ItemStack(GregTechAPI.sBlockGem1, 1, 1));
+        ChiselHelper.addVariationFromStack("amber", MaterialLibAPI.getStack(Materials.Amber, BlockShapes.block, 1));
         ChiselHelper.addVariationFromStack("amber", getModItem(BiomesOPlenty.ID, "gemOre", 1, 15));
         CarvingUtils.getChiselRegistry().removeGroup("end_stone");
         ChiselHelper.addGroup("endstone");
