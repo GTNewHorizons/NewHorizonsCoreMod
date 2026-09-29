@@ -17,7 +17,7 @@ import gregtech.api.util.GTModHandler;
 public class ScannerTools implements IOreRecipeRegistrator {
 
     public ScannerTools() {
-        OrePrefixes.toolHeadDrill.add(this);
+        OrePrefixes.toolHeadDrill.addShapeRegistrator(this);
     }
 
     @Override
