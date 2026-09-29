@@ -64,7 +64,6 @@ import gregtech.api.enums.materials.MaterialFacades;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
-import gregtech.api.material.MaterialParts;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTUtility;
@@ -143,9 +142,7 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                         MaterialLibAPI.getStack(Materials.Polybenzimidazole, TEBlockShapes.pipeTiny, 8),
                         MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.itemCasing, 4),
-                        new Object[] {
-                                MaterialParts.namedIngredient(OrePrefixes.foil, MaterialFacades.AnySyntheticRubber),
-                                64L },
+                        new Object[] { OrePrefixes.foil.ingredient(MaterialFacades.AnySyntheticRubber), 64L },
                         MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.bolt, 32))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(Materials.GrowthMediumSterilized, FluidShapes.fluidLiquid, 250),
@@ -163,9 +160,7 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                         MaterialLibAPI.getStack(Materials.Polybenzimidazole, TEBlockShapes.pipeTiny, 16),
                         MaterialLibAPI.getStack(Materials.ElectrumFlux, Shapes.itemCasing, 16),
-                        new Object[] {
-                                MaterialParts.namedIngredient(OrePrefixes.foil, MaterialFacades.AnySyntheticRubber),
-                                64L },
+                        new Object[] { OrePrefixes.foil.ingredient(MaterialFacades.AnySyntheticRubber), 64L },
                         MaterialLibAPI.getStack(Materials.HSSS, Shapes.bolt, 32))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(Materials.BiohMediumSterilized, FluidShapes.fluidLiquid, 500),
@@ -616,9 +611,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Circuit_Chip_Ram.get(64L), ItemList.Circuit_Chip_NPIC.get(64L),
                             MaterialLibAPI.getStack(Materials.Draconium, TEBlockShapes.wireGt01, 64),
                             MaterialLibAPI.getStack(Materials.SuperconductorUHV, TEBlockShapes.wireGt02, 64),
-                            new Object[] {
-                                    MaterialParts.namedIngredient(OrePrefixes.foil, MaterialFacades.AnySyntheticRubber),
-                                    64L },
+                            new Object[] { OrePrefixes.foil.ingredient(MaterialFacades.AnySyntheticRubber), 64L },
                             MaterialLibAPI.getStack(Materials.Polybenzimidazole, Shapes.foil, 64) },
                     new FluidStack[] {
                             MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 3_744),
@@ -833,9 +826,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Circuit_Chip_Ram.get(64L), ItemList.Circuit_Chip_NPIC.get(64L),
                             MaterialLibAPI.getStack(Materials.Draconium, TEBlockShapes.wireGt01, 64),
                             MaterialLibAPI.getStack(Materials.SuperconductorUHV, TEBlockShapes.wireGt02, 64),
-                            new Object[] {
-                                    MaterialParts.namedIngredient(OrePrefixes.foil, MaterialFacades.AnySyntheticRubber),
-                                    64L },
+                            new Object[] { OrePrefixes.foil.ingredient(MaterialFacades.AnySyntheticRubber), 64L },
                             MaterialLibAPI.getStack(Materials.Polybenzimidazole, Shapes.foil, 64) },
                     new FluidStack[] { new FluidStack(FluidRegistry.getFluid("molten.mutatedlivingsolder"), 3_744),
                             MaterialLibAPI.getFluidStack(Materials.Naquadria, FluidShapes.fluidMolten, 4_032),
