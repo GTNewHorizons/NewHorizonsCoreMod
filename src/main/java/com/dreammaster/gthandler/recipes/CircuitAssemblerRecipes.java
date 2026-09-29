@@ -809,7 +809,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_OpticalProcessor.get(1L))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8 * INGOTS))
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 8 * INGOTS))
                 .requiresCleanRoom().duration(80 * SECONDS).eut(614400).addTo(circuitAssemblerRecipes);
     }
 

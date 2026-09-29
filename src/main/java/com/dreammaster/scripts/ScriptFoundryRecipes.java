@@ -120,7 +120,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plateSuperdense, 2), },
                 new FluidStack[] {
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 20),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, INGOTS * 20),
                         MaterialLibAPI.getFluidStack(Materials.Naquadria, FluidShapes.fluidMolten, INGOTS * 400),
                         MaterialLibAPI.getFluidStack(Materials.Manyullyn, FluidShapes.fluidMolten, INGOTS * 100),
                         MaterialLibAPI
@@ -143,7 +143,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         new Object[] { Circuits.UEV.getIngredient(), 2 }, ItemList.Electric_Pump_UHV.get(1) },
                 new FluidStack[] {
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 20),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, INGOTS * 20),
                         MaterialLibAPI.getFluidStack(Materials.Holmium, FluidShapes.fluidMolten, INGOTS * 40),
                         MaterialLibAPI
                                 .getFluidStack(Materials.EnrichedNaquadahAlloy, FluidShapes.fluidMolten, INGOTS * 10) },
@@ -166,7 +166,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                 // 4 : 2 : 1 magnet ratio
                 new FluidStack[] {
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 20),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, INGOTS * 20),
                         MaterialLibAPI.getFluidStack(Materials.Neodymium, FluidShapes.fluidMolten, INGOTS * 256),
                         MaterialLibAPI.getFluidStack(Materials.Samarium, FluidShapes.fluidMolten, INGOTS * 128),
                         MaterialLibAPI.getFluidStack(Materials.TengamPurified, FluidShapes.fluidMolten, INGOTS * 64) },
@@ -189,7 +189,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.FluidRegulator_UIV.get(4), new Object[] { Circuits.UIV.getIngredient(), 2L }, },
                 new FluidStack[] {
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 1024),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, INGOTS * 1024),
                         MaterialLibAPI.getFluidStack(
                                 Materials.dimensionallyshiftedsuperfluid,
                                 FluidShapes.fluidLiquid,
@@ -215,7 +215,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.Field_Generator_UMV.get(1))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 1024),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, INGOTS * 1024),
                         MaterialLibAPI.getFluidStack(
                                 Materials.dimensionallyshiftedsuperfluid,
                                 FluidShapes.fluidLiquid,
@@ -290,7 +290,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         GregtechItemList.Laser_Lens_Special.get(1) },
                 new FluidStack[] {
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 64),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, INGOTS * 64),
                         MaterialLibAPI
                                 .getFluidStack(Materials.PreciousMetalsAlloy, FluidShapes.fluidMolten, INGOTS * 32),
                         MaterialLibAPI
@@ -313,7 +313,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.SuperconductorUEV, TEBlockShapes.wireGt01, 2) },
                 new FluidStack[] {
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 4),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, INGOTS * 4),
                         new FluidStack(FluidRegistry.getFluid("oganesson"), 500),
                         MaterialLibAPI.getFluidStack(Materials.CosmicNeutronium, FluidShapes.fluidMolten, INGOTS * 2) },
                 ItemList.Primary_Casing_ExoFoundry.get(1),
@@ -335,7 +335,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.NuclearStar.get(1) },
                 new FluidStack[] {
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, INGOTS * 4),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, INGOTS * 4),
                         MaterialLibAPI
                                 .getFluidStack(Materials.SuperconductorUEVBase, FluidShapes.fluidMolten, INGOTS * 2),
                         MaterialLibAPI.getFluidStack(Materials.Rhugnor, FluidShapes.fluidMolten, INGOTS) },

@@ -1978,7 +1978,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidMolten, 16 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8 * STACKS) },
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 8 * STACKS) },
                 CustomItemList.Hatch_BEC_Nanites.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
@@ -2001,7 +2001,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidMolten, 16 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8 * STACKS) },
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 8 * STACKS) },
                 CustomItemList.Hatch_BEC_Connector.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
@@ -2023,7 +2023,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidMolten, 16 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8 * STACKS) },
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 8 * STACKS) },
                 CustomItemList.Hatch_BEC_CondensateDetector.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
@@ -2045,7 +2045,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialLibAPI.getFluidStack(Materials.Infinity, FluidShapes.fluidMolten, 16 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidMolten, 16 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8 * STACKS) },
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 8 * STACKS) },
                 CustomItemList.Hatch_BEC_IOController.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
@@ -2067,7 +2067,7 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 32 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidMolten, 16 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 8 * STACKS) },
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 8 * STACKS) },
                 CustomItemList.Hatch_LineOfSight_Connector.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
@@ -2090,7 +2090,7 @@ public class AssemblingLineRecipes implements Runnable {
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 1024 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 512 * INGOTS),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 512 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, 1_000_000),
                         MaterialLibAPI.getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, 32 * INGOTS) },
                 CustomItemList.Machine_Multi_BECGenerator.get(1),
@@ -2116,7 +2116,7 @@ public class AssemblingLineRecipes implements Runnable {
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 2048 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 1024 * INGOTS),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 1024 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, 2_000_000),
                         MaterialLibAPI.getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, 64 * INGOTS) },
                 CustomItemList.Machine_Multi_BECStorage.get(1),
@@ -2142,7 +2142,7 @@ public class AssemblingLineRecipes implements Runnable {
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 1024 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 512 * INGOTS),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 512 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, 1_000_000),
                         MaterialLibAPI.getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, 32 * INGOTS) },
                 CustomItemList.Machine_Multi_BECAssembler.get(1),
@@ -2169,7 +2169,7 @@ public class AssemblingLineRecipes implements Runnable {
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 1024 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 512 * INGOTS),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 512 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, 1_000_000),
                         MaterialLibAPI.getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, 32 * INGOTS) },
                 CustomItemList.Machine_Multi_BECIONode.get(1),
@@ -2193,7 +2193,7 @@ public class AssemblingLineRecipes implements Runnable {
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(Materials.ChromaticGlass, FluidShapes.fluidMolten, 512 * INGOTS),
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 256 * INGOTS),
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 256 * INGOTS),
                         MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, 500_000),
                         MaterialLibAPI.getFluidStack(Materials.SpaceTime, FluidShapes.fluidMolten, 16 * INGOTS) },
                 CustomItemList.Machine_Multi_BECDiode.get(1),

@@ -94,22 +94,22 @@ public class ScriptOpenComputers implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UEV.get(1L))
                 .itemOutputs(getTransposer(1, 41_943_040))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UIV.get(1L))
                 .itemOutputs(getTransposer(1, 83_886_080))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UMV.get(1L))
                 .itemOutputs(getTransposer(1, 167_772_160))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UXV.get(1L))
                 .itemOutputs(getTransposer(1, 335_544_320))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         addShapelessRecipe(getModItem(OpenComputers.ID, "item", 1, 23), ItemList.Circuit_Parts_Transistor.get(1));

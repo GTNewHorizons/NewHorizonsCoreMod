@@ -1465,7 +1465,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 32))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.EthylCyanoacrylateSuperGlue, FluidShapes.fluidMolten, 18))
+                                .getFluidStack(Materials.EthylCyanoacrylateSuperGlue, FluidShapes.fluidLiquid, 18))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         if (OpenBlocks.isModLoaded() && BloodMagic.isModLoaded()) {
@@ -9984,7 +9984,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.StableEmptyContainmentUnit.get(64))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.EthylCyanoacrylateSuperGlue, FluidShapes.fluidMolten, 10))
+                                .getFluidStack(Materials.EthylCyanoacrylateSuperGlue, FluidShapes.fluidLiquid, 10))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         // Reinforced glass has no GregTech plate; this mod owns the plate item.

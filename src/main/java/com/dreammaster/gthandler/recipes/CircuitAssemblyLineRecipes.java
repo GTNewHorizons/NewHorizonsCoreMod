@@ -1039,7 +1039,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_OpticalProcessor.get(4))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 2 * INGOTS))
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 2 * INGOTS))
                 .special(ItemList.CircuitImprint_OpticalProcessor.get(0)).eut(614_400).duration(4 * MINUTES)
                 .addTo(circuitAssemblyLineRecipes);
 
@@ -1053,7 +1053,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(16))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidMolten, 1 * INGOTS))
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 1 * INGOTS))
                 .special(ItemList.CircuitImprint_BiowareProcessor.get(0)).eut(2_457_600).duration(45 * SECONDS)
                 .addTo(circuitAssemblyLineRecipes);
     }
