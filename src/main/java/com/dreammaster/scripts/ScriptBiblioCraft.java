@@ -716,7 +716,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "springSmallIron",
                 "screwIron",
                 "craftingToolScrewdriver",
-                getMeta01(17809),
+                "plateWood",
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "paper", 1),
                 getModItem(Minecraft.ID, "paper", 1),
