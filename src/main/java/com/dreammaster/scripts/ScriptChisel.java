@@ -27,11 +27,14 @@ import net.minecraft.item.ItemStack;
 
 import com.cricketcraft.chisel.api.carving.CarvingUtils;
 import com.dreammaster.chisel.ChiselHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.materials.BlockShapes;
+import gregtech.api.enums.materials.Materials;
 
 public class ScriptChisel implements IScriptLoader {
 
@@ -373,7 +376,9 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("glowstoneGTNH", getModItem(Chisel.ID, "glowstone", 1, 14));
         ChiselHelper.addVariationFromStack("glowstoneGTNH", getModItem(Chisel.ID, "glowstone", 1, 15));
         ChiselHelper.addVariationFromStack("torch", getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0));
-        ChiselHelper.addVariationFromStack("aluminumblock", new ItemStack(GregTechAPI.sBlockMetal1, 1, 1));
+        ChiselHelper.addVariationFromStack(
+                "aluminumblock",
+                MaterialLibAPI.getStack(Materials.Aluminium, BlockShapes.block, 1));
         ChiselHelper.addGroup("searedStoneTCon");
         ChiselHelper.addVariationFromStack("searedStoneTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 4));
         ChiselHelper.addVariationFromStack("searedStoneTCon", getModItem(TinkerConstruct.ID, "Smeltery", 1, 6));
@@ -538,21 +543,30 @@ public class ScriptChisel implements IScriptLoader {
 
         ChiselHelper.addGroup("blazeblock");
         ChiselHelper.addVariationFromStack("blazeblock", getModItem(Botania.ID, "blazeBlock", 1, 0));
-        ChiselHelper.addVariationFromStack("blazeblock", new ItemStack(GregTechAPI.sBlockGem3, 1, 5));
+        ChiselHelper
+                .addVariationFromStack("blazeblock", MaterialLibAPI.getStack(Materials.Blaze, BlockShapes.block, 1));
         ChiselHelper.addGroup("steeleafblock");
         ChiselHelper.addVariationFromStack("steeleafblock", getModItem(TwilightForest.ID, "tile.SteeleafBlock", 1));
-        ChiselHelper.addVariationFromStack("steeleafblock", new ItemStack(GregTechAPI.sBlockMetal8, 1, 12));
+        ChiselHelper.addVariationFromStack(
+                "steeleafblock",
+                MaterialLibAPI.getStack(Materials.Steeleaf, BlockShapes.block, 1));
         ChiselHelper.addGroup("knightmetalblock");
         ChiselHelper.addVariationFromStack(
                 "knightmetalblock",
                 getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0));
-        ChiselHelper.addVariationFromStack("knightmetalblock", new ItemStack(GregTechAPI.sBlockMetal4, 1, 0));
+        ChiselHelper.addVariationFromStack(
+                "knightmetalblock",
+                MaterialLibAPI.getStack(Materials.Knightmetal, BlockShapes.block, 1));
         ChiselHelper.addGroup("ironwoodblock");
         ChiselHelper.addVariationFromStack("ironwoodblock", getModItem(TwilightForest.ID, "tile.IronwoodBlock", 1, 0));
-        ChiselHelper.addVariationFromStack("ironwoodblock", new ItemStack(GregTechAPI.sBlockMetal3, 1, 14));
+        ChiselHelper.addVariationFromStack(
+                "ironwoodblock",
+                MaterialLibAPI.getStack(Materials.IronWood, BlockShapes.block, 1));
         ChiselHelper.addGroup("fieryblock");
         ChiselHelper.addVariationFromStack("fieryblock", getModItem(TwilightForest.ID, "tile.FieryBlock", 1, 0));
-        ChiselHelper.addVariationFromStack("fieryblock", new ItemStack(GregTechAPI.sBlockMetal3, 1, 4));
+        ChiselHelper.addVariationFromStack(
+                "fieryblock",
+                MaterialLibAPI.getStack(Materials.FierySteel, BlockShapes.block, 1));
 
         ChiselHelper.addGroup("nagastone");
         ChiselHelper.addVariationFromStack("nagastone", getModItem(TwilightForest.ID, "tile.TFNagastoneBody", 1, 0));

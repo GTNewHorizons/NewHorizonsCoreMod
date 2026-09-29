@@ -58,7 +58,6 @@ import com.dreammaster.item.NHItemList;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -146,12 +145,13 @@ public class ScriptProjectRed implements IScriptLoader {
         ChiselHelper.addGroup("sapphire");
         ChiselHelper.addGroup("peridot");
         ChiselHelper.addVariationFromStack("ruby", getModItem(BiomesOPlenty.ID, "gemOre", 1, 3));
-        ChiselHelper.addVariationFromStack("ruby", new ItemStack(GregTechAPI.sBlockGem2, 1, 11));
+        ChiselHelper.addVariationFromStack("ruby", MaterialLibAPI.getStack(Materials.Ruby, BlockShapes.block, 1));
         ChiselHelper.addVariationFromStack(
                 "ruby",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 5));
         ChiselHelper.addVariationFromStack("sapphire", getModItem(BiomesOPlenty.ID, "gemOre", 1, 13));
-        ChiselHelper.addVariationFromStack("sapphire", new ItemStack(GregTechAPI.sBlockGem2, 1, 12));
+        ChiselHelper
+                .addVariationFromStack("sapphire", MaterialLibAPI.getStack(Materials.Sapphire, BlockShapes.block, 1));
         ChiselHelper.addVariationFromStack(
                 "sapphire",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 6));
