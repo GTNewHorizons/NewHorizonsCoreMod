@@ -1253,8 +1253,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 new ItemStack(Blocks.iron_bars, 3, 0),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
-                new Object[] { " h ", "SSS", "SSS", 'S',
-                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1) });
+                new Object[] { " h ", "SSS", "SSS", 'S', MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1) });
         GTModHandler.addCraftingRecipe(
                 BlockList.SteelBars.get(3),
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,

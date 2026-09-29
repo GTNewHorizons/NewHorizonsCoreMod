@@ -3635,7 +3635,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Electric_Motor_MV.get(2L),
                         new OreDictItemStack("plateAnyRubber", 6),
-                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.cableGt01, 1))
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt01, 1))
                 .itemOutputs(ItemList.Conveyor_Module_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -3679,7 +3679,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Motor_MV.get(1L),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 3),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.stick, 2),
-                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.cableGt01, 2),
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt01, 2),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.gearGtSmall, 1))
                 .itemOutputs(ItemList.Electric_Piston_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3731,7 +3731,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Piston_MV.get(1L),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.stick, 2),
                         Circuits.MV.get(1),
-                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.cableGt01, 3))
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt01, 3))
                 .itemOutputs(ItemList.Robot_Arm_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -3780,7 +3780,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.gem, 1),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.stick, 4),
                         Circuits.MV.get(2),
-                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.cableGt01, 2))
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt01, 2))
                 .itemOutputs(ItemList.Emitter_MV.get(1L)).duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 

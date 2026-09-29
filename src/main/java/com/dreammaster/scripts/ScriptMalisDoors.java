@@ -161,26 +161,26 @@ public class ScriptMalisDoors implements IScriptLoader {
                 MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 1));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
                 MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 1),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
                 MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 1),
                 "craftingToolWrench",
                 MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 1),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
                 MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 1),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1));
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "rustyLadder", 4, 0),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
                 MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
                 "craftingToolWrench",
                 MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 1),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
-                MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1));
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.door_acacia", 1, 0),
                 "craftingToolScrewdriver",
@@ -1109,7 +1109,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 3)).circuit(5)
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 3)).circuit(5)
                 .itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
