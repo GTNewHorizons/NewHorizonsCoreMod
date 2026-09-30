@@ -46,7 +46,7 @@ public class GT_CustomLoader {
                 Materials.Bedrockium, MaterialParts.craftIngredient(OrePrefixes.wireGt02, Materials.Bedrockium), null,
                 null, "blockGlassUHV", Materials.Neutronium, Materials.Neutronium),
 
-        UEV(Circuits.UEV.getIngredient(), MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Bedrockium),
+        UEV(Circuits.UEV.getIngredient(), MaterialParts.craftIngredient(OrePrefixes.wireGt04, Materials.Infinity),
                 Materials.Draconium, MaterialParts.craftIngredient(OrePrefixes.wireGt02, Materials.Draconium), null,
                 null, "blockGlassUEV", Materials.Infinity, Materials.Infinity),
 
