@@ -64,8 +64,8 @@ public class BECRecipes implements Runnable {
         addExoFoundryRecipes();
         addAntimatterRecipes();
         addDysonRecipes();
-        addEarlyUMVBlocks();
-        addUXVBlocks();
+        addUMVRecipes();
+        addUXVRecipes();
         addCircuitArrayRecipes();
         if (UniversalSingularities.isModLoaded()) addComputationSingularityRecipes();
     }
@@ -295,7 +295,7 @@ public class BECRecipes implements Runnable {
                 TierEU.RECIPE_UIV);
     }
 
-    private void addEarlyUMVBlocks() {
+    private void addUMVRecipes() {
         // Temporal Field Restriction Coil
         addBec(
                 ItemRefer.Field_Restriction_Coil_T4.get(1),
@@ -349,9 +349,24 @@ public class BECRecipes implements Runnable {
                         CondensateType.Neutronium.getEntangled(8 * INGOTS) },
                 1200 * SECONDS,
                 TierEU.RECIPE_UMV);
+
+        // UMV Mining Drone
+        addBec(
+                ItemList.MiningDroneUMV.get(1),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.toolHeadDrill, Materials.SpaceTime, 8),
+                        ItemList.Robot_Arm_UMV.get(8), ItemList.Field_Generator_UMV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 4),
+                        ItemList.MetaMaterial_Shielding1.get(32), NHItemList.HeavyDutyRocketEngineTier4.get(32),
+                        ItemList.Sensor_UMV.get(8) },
+                nanites(1, 2, 4, 5, 1, 2, 3),
+                new FluidStack[] { CondensateType.Hypogen.getEntangled(4 * INGOTS),
+                        CondensateType.CelestialTungsten.getEntangled(4 * INGOTS),
+                        CondensateType.DimensionallyShiftedSuperfluid.getEntangled(64_000) },
+                600 * SECONDS,
+                TierEU.RECIPE_UMV);
     }
 
-    private void addUXVBlocks() {
+    private void addUXVRecipes() {
 
         // Magnetic Anchor Casing
         addBec(
@@ -428,7 +443,7 @@ public class BECRecipes implements Runnable {
                         ItemList.Electric_Pump_UMV.get(8),
                         GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.BlackDwarfMatter, 8),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.WhiteDwarfMatter, 64) },
-                nanites(4, 4, 4, 6, 5, 5, 6, 3),
+                nanites(4, 6, 5, 5, 6, 3),
                 new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(2_000),
                         CondensateType.Eternity.getEntangled(32 * INGOTS) },
                 1200 * SECONDS,
@@ -454,6 +469,21 @@ public class BECRecipes implements Runnable {
                 new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(2_000),
                         CondensateType.Eternity.getEntangled(16 * INGOTS) },
                 1200 * SECONDS,
+                TierEU.RECIPE_UXV);
+
+        // UXV Mining Drone
+        addBec(
+                ItemList.MiningDroneUXV.get(1),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.toolHeadDrill, Materials.Eternity, 8),
+                        ItemList.Robot_Arm_UXV.get(8), ItemList.Field_Generator_UXV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 4),
+                        ItemList.MetaMaterial_Shielding3.get(32), NHItemList.HeavyDutyRocketEngineTier4.get(64),
+                        ItemList.Sensor_UXV.get(8) },
+                nanites(5, 6, 8, 9, 5, 6, 7),
+                new FluidStack[] { CondensateType.Space.getEntangled(4 * INGOTS),
+                        CondensateType.Universium.getEntangled(4 * INGOTS),
+                        CondensateType.DimensionallyShiftedSuperfluid.getEntangled(128_000) },
+                600 * SECONDS,
                 TierEU.RECIPE_UXV);
     }
 
