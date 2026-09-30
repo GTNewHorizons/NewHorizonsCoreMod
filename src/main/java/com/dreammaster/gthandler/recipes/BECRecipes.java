@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.STACKS;
 import static gregtech.api.util.GTRecipeConstants.NANITE_TIERS;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.HYPOGEN;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.RHUGNOR;
@@ -64,6 +65,7 @@ public class BECRecipes implements Runnable {
         addAntimatterRecipes();
         addDysonRecipes();
         addEarlyUMVBlocks();
+        addUXVBlocks();
         addCircuitArrayRecipes();
         if (UniversalSingularities.isModLoaded()) addComputationSingularityRecipes();
     }
@@ -347,6 +349,44 @@ public class BECRecipes implements Runnable {
                         CondensateType.Neutronium.getEntangled(8 * INGOTS) },
                 1200 * SECONDS,
                 TierEU.RECIPE_UMV);
+    }
+
+    private void addUXVBlocks() {
+
+        // Magnetic Anchor Casing
+        addBec(
+                ItemList.MagneticAnchorCasing.get(4),
+                new ItemStack[] { ItemRefer.MagneticFluxCasing.get(16),
+                        CustomItemList.Godforge_MagneticConfinementCasing.get(16), ItemList.Field_Generator_UMV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUMV, 8L),
+                        GGMaterial.shirabon.get(OrePrefixes.plateDense, 64),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.MHDCSM, 1L) },
+                nanites(4, 5, 6, 8, 3, 2, 7),
+                new FluidStack[] { CondensateType.ChromaticGlass.getEntangled(2 * STACKS),
+                        CondensateType.BoundlessCosmicSolder.getEntangled(2_000),
+                        CondensateType.Space.getEntangled(1 * STACKS) },
+                600 * SECONDS,
+                TierEU.RECIPE_UXV);
+
+        // Precision Field Sync Casing
+        addBec(
+                ItemList.PrecisionFieldSyncCasing.get(8),
+                new ItemStack[] { ItemRefer.GravityStabilizationCasing.get(16),
+                        ItemRefer.Field_Restriction_Coil_T4.get(2),
+                        CustomItemList.StabilisationFieldGeneratorTier0.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WhiteDwarfMatter, 1L),
+                        ItemList.Field_Generator_UMV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.MagMatter, 64L),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.SuperconductorUMVBase, 64L),
+                        GGMaterial.shirabon.get(OrePrefixes.wireFine, 64),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Flerovium, 16L) },
+                nanites(4, 6, 7, 5, 5, 8, 3, 4, 2),
+                new FluidStack[] { CondensateType.ChromaticGlass.getEntangled(2 * STACKS),
+                        CondensateType.BoundlessCosmicSolder.getEntangled(2_000),
+                        CondensateType.Eternity.getEntangled(1 * STACKS) },
+                600 * SECONDS,
+                TierEU.RECIPE_UXV);
     }
 
     private void addComputationSingularityRecipes() {
