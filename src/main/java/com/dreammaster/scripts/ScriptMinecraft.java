@@ -251,7 +251,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0)).fluidInputs(Materials.Steel.getMolten(16))
                 .duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 6, wildcard), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(new OreDictItemStack("plankWood", 6), getModItem(Minecraft.ID, "book", 3, 0)).circuit(1)
                 .itemOutputs(getModItem(Minecraft.ID, "bookshelf", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 1), getModItem(Minecraft.ID, "flint", 2, 0))
