@@ -387,6 +387,74 @@ public class BECRecipes implements Runnable {
                         CondensateType.Eternity.getEntangled(1 * STACKS) },
                 600 * SECONDS,
                 TierEU.RECIPE_UXV);
+
+        // Space Elevator Motor MK-V
+        addBec(
+                ItemList.SpaceElevatorMotorT5.get(1),
+                new ItemStack[] { ItemList.SpaceElevatorBaseCasing.get(1), ItemList.Electric_Motor_UMV.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.SpaceTime, 8),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.SpaceTime, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 1),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Universium, 16),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WhiteDwarfMatter, 16), },
+                nanites(1, 3, 2, 2, 4, 6, 5),
+                new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(2_000),
+                        CondensateType.DimensionallyShiftedSuperfluid.getEntangled(25_000) },
+                600 * SECONDS,
+                TierEU.RECIPE_UMV);
+
+        // Pump Module MK-III
+        addBec(
+                ItemList.SpaceElevatorModulePumpT3.get(1),
+                new ItemStack[] { ItemList.InfiniteFluidDrillingRig.get(16), ItemList.PlanetarySiphon.get(16),
+                        CustomItemList.enderLinkFluidCover.get(32),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.BlackDwarfMatter, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 16),
+                        ItemList.Electric_Pump_UMV.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.BlackDwarfMatter, 4),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.WhiteDwarfMatter, 64) },
+                nanites(4, 4, 4, 6, 5, 5, 6, 3),
+                new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(2_000),
+                        CondensateType.Eternity.getEntangled(16 * INGOTS) },
+                1200 * SECONDS,
+                TierEU.RECIPE_UMV);
+
+        // Pump Module MK-III - Recursive
+        addBec(
+                ItemList.SpaceElevatorModulePumpT3.get(1),
+                new ItemStack[] { ItemList.SpaceElevatorModulePumpT2.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.BlackDwarfMatter, 8),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 16),
+                        ItemList.Electric_Pump_UMV.get(8),
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.BlackDwarfMatter, 8),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.WhiteDwarfMatter, 64) },
+                nanites(4, 4, 4, 6, 5, 5, 6, 3),
+                new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(2_000),
+                        CondensateType.Eternity.getEntangled(32 * INGOTS) },
+                1200 * SECONDS,
+                TierEU.RECIPE_UIV);
+
+        // Assembler Module MK-III
+        addBec(
+                ItemList.SpaceElevatorModuleAssemblerT3.get(1),
+                new ItemStack[] { ItemList.SpaceElevatorBaseCasing.get(1), ItemList.AssemblingMachineUMV.get(4),
+                        ItemList.CircuitAssemblerUMV.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.MHDCSM, 8),
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.MagMatter, 8),
+                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.MHDCSM, 16),
+                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.MagMatter, 16),
+                        ItemList.Robot_Arm_UXV.get(8), ItemList.Conveyor_Module_UXV.get(16), ItemRefer.HiC_T5.get(32),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Universium, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.SpaceTime, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.WhiteDwarfMatter, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.BlackDwarfMatter, 1),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Universium, 32) },
+                nanites(4, 8, 8, 7, 6, 7, 6, 8, 8, 5, 6, 7, 4, 5, 6, 7),
+                new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(2_000),
+                        CondensateType.Eternity.getEntangled(16 * INGOTS) },
+                1200 * SECONDS,
+                TierEU.RECIPE_UXV);
     }
 
     private void addComputationSingularityRecipes() {
