@@ -58,10 +58,10 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OreDictNames;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.enums.materials.Wildcard;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
+import gregtech.api.enums.materials.Wildcard;
 import gregtech.api.material.MaterialData;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
@@ -1665,9 +1665,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 5),
                     GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                     new Object[] { "PCP", "BFB", "PUP", 'B', new ItemStack(Blocks.brick_block), 'P',
-                            Wildcard.AnyIron.ingredient(OrePrefixes.plate), 'U',
-                            OreDictNames.craftingBlastFurnace, 'C', new ItemStack(Items.cauldron, 1, 0), 'F',
-                            ItemList.Casing_Firebox_Bronze });
+                            Wildcard.AnyIron.ingredient(OrePrefixes.plate), 'U', OreDictNames.craftingBlastFurnace, 'C',
+                            new ItemStack(Items.cauldron, 1, 0), 'F', ItemList.Casing_Firebox_Bronze });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 6),
                     GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
@@ -1679,10 +1678,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 7),
                     GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED
                             | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                    new Object[] { "BLB", "SPS", "GCG", 'B', Wildcard.AnyCopper.ingredient(OrePrefixes.plate),
-                            'L', MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Lapis), 'S',
-                            Wildcard.AnyCopper.ingredient(OrePrefixes.spring), 'P', OreDictNames.craftingPiston,
-                            'G', Wildcard.AnyCopper.ingredient(OrePrefixes.gearGt), 'C',
+                    new Object[] { "BLB", "SPS", "GCG", 'B', Wildcard.AnyCopper.ingredient(OrePrefixes.plate), 'L',
+                            MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Lapis), 'S',
+                            Wildcard.AnyCopper.ingredient(OrePrefixes.spring), 'P', OreDictNames.craftingPiston, 'G',
+                            Wildcard.AnyCopper.ingredient(OrePrefixes.gearGt), 'C',
                             getModItem(Forestry.ID, "sturdyMachine", 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, aTextMachineBeta, 1, 8),

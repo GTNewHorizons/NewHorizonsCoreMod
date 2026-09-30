@@ -24,8 +24,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.TieredItems;
 import gregtech.api.enums.materials.FluidShapes;
-import gregtech.api.enums.materials.Wildcard;
 import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Wildcard;
 import gregtech.api.material.MaterialParts;
 import gregtech.api.metatileentity.implementations.MTEBasicMachineWithRecipe;
 import gregtech.api.util.GTModHandler;
@@ -853,8 +853,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "BTB", "CMC", "BXB", 'T', ItemList.WetTransformer_HV_MV, 'M',
                         ItemList.Battery_Charger_4by4_MV, 'B', ItemList.Battery_RE_MV_Lithium, 'C',
-                        Wildcard.AnyCopper.ingredient(OrePrefixes.cableGt16), 'X',
-                        Circuits.MV.getIngredient() });
+                        Wildcard.AnyCopper.ingredient(OrePrefixes.cableGt16), 'X', Circuits.MV.getIngredient() });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Battery_TurboCharger_4by4_HV.get(1L),
@@ -1061,8 +1060,8 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_HV_MV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "XOC", "STA", "POC", 'A', Wildcard.AnyCopper.ingredient(OrePrefixes.springSmall),
-                        'C', Wildcard.AnyCopper.ingredient(OrePrefixes.cableGt16), 'S',
+                new Object[] { "XOC", "STA", "POC", 'A', Wildcard.AnyCopper.ingredient(OrePrefixes.springSmall), 'C',
+                        Wildcard.AnyCopper.ingredient(OrePrefixes.cableGt16), 'S',
                         MaterialParts.craftIngredient(OrePrefixes.spring, Materials.Gold), 'X',
                         MaterialParts.craftIngredient(OrePrefixes.cableGt08, Materials.Gold), 'O',
                         MaterialParts.craftIngredient(OrePrefixes.cell, Materials.Lubricant), 'P',
