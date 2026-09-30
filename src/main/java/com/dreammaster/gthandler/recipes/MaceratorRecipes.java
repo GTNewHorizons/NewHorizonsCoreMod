@@ -104,22 +104,6 @@ public class MaceratorRecipes implements Runnable {
                 .itemOutputs(MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.dust, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Calcium, Shapes.ingot, 1))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Calcium, Shapes.dust, 1)).duration(20 * SECONDS).eut(2)
-                .addTo(maceratorRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Calcium, Shapes.nugget, 1))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Calcium, Shapes.dustTiny, 1)).duration(20 * SECONDS)
-                .eut(2).addTo(maceratorRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Magnesia, Shapes.ingot, 1))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Magnesia, Shapes.dust, 1)).duration(20 * SECONDS).eut(2)
-                .addTo(maceratorRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Magnesia, Shapes.nugget, 1))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Magnesia, Shapes.dustTiny, 1)).duration(20 * SECONDS)
-                .eut(2).addTo(maceratorRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(BlockList.Sulfur.get(1))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dust, 9)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
@@ -154,10 +138,6 @@ public class MaceratorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 12))
                     .itemOutputs(MaterialLibAPI.getStack(Materials.Aluminium, Shapes.dust, 1)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 14))
-                    .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 42)).outputChances(10000)
                     .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 7))
@@ -866,13 +846,5 @@ public class MaceratorRecipes implements Runnable {
                             NHItemList.ChaoticDust.get(1))
                     .duration(50 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(maceratorRecipes);
         }
-
-        // The charged certus quartz dust is this mod's item, so GregTech's crushed ore pass does not cover it.
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.crushedCentrifuged, 1))
-                .itemOutputs(
-                        NHItemList.ChargedCertusQuartzDust.get(1),
-                        MaterialLibAPI.getStack(Materials.Barite, Shapes.dust, 1))
-                .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
     }
 }

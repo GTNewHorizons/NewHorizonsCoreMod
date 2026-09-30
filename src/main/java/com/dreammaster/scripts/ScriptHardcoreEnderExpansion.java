@@ -566,9 +566,6 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "igneous_rock_ore", 1, 0))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "igneous_rock", 4, 0)).outputChances(10000)
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.dust, 9)).outputChances(10000)
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Sphalerite, Shapes.crushed, 4)).outputChances(10000)
                 .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);

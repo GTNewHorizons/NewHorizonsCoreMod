@@ -113,10 +113,6 @@ public class CompressorRecipes implements Runnable {
                 .itemOutputs(MaterialLibAPI.getStack(Materials.CastIron, Shapes.ingot, 1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Gangue, Shapes.dust, 9))
-                .itemOutputs((MaterialLibAPI.getStack(Materials.Gangue, BlockShapes.block, 1))).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Ichorium, Shapes.ingot, 9))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Ichorium, BlockShapes.block, 1))
                 .fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 750L)).duration(2 * MINUTES)

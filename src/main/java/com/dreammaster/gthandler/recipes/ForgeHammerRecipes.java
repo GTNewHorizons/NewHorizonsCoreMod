@@ -27,7 +27,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
-import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
 
 public class ForgeHammerRecipes implements Runnable {
@@ -164,11 +163,5 @@ public class ForgeHammerRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(12))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, 100))
                 .duration(chip_duration_ticks / 2).eut(chip_eu_per_tick).addTo(hammerRecipes);
-
-        // The charged certus quartz dust is this mod's item, so GregTech's crushed ore pass does not cover it.
-        GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.crushedCentrifuged, 1))
-                .itemOutputs(NHItemList.ChargedCertusQuartzDust.get(1)).duration(10 * TICKS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(hammerRecipes);
     }
 }
