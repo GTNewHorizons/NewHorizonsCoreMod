@@ -1111,56 +1111,15 @@ public class ScriptMalisDoors implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L))
                 .circuit(5).itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 4), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_acacia", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 4), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_acacia", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 2), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_birch", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 2), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_birch", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 5), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_dark_oak", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 5), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_dark_oak", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 3), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_jungle", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 3), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_jungle", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 1), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_spruce", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 1), getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.door_spruce", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
+        String[] woodTypes = new String[] { "spruce", "birch", "jungle", "acacia", "dark_oak" };
+        for (int i = 0; i < woodTypes.length; i++) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "planks", 4, i + 1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L))
+                    .itemOutputs(getModItem(MalisisDoors.ID, "item.door_" + woodTypes[i], 1, 0))
+                    .fluidInputs(Materials.Iron.getMolten(16)).duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
+        }
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "wooden_door", 1, 0), getModItem(Minecraft.ID, "glass_pane", 1, 0))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.wood_sliding_door", 1, 0)).duration(20 * SECONDS).eut(4)

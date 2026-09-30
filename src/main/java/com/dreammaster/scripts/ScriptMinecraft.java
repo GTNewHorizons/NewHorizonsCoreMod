@@ -224,15 +224,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
-                        getModItem(Minecraft.ID, "trapdoor", 1, 0))
+                        getModItem(Minecraft.ID, "planks", 4, 0),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0)).fluidInputs(Materials.Iron.getMolten(16))
-                .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
-                        getModItem(Minecraft.ID, "trapdoor", 1, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0)).fluidInputs(Materials.Copper.getMolten(16))
                 .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L), BlockList.SteelBars.get())
