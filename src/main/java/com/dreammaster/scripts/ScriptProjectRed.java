@@ -2199,11 +2199,9 @@ public class ScriptProjectRed implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(Minecraft.ID, "stone_button", 1),
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 19+i)
-                    )
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 19 + i))
                     .itemOutputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, i))
-                    .duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(assemblerRecipes);
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
     }
 
