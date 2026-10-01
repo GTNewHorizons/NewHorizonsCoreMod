@@ -423,6 +423,8 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "sand", 1, wildcard));
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "soul_sand", 1, 0));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "heatsand", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Fether.ID, "nether_log", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(ExtraTrees.ID, "log", 1, wildcard));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 0));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 1));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 2));
