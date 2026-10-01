@@ -2193,6 +2193,18 @@ public class ScriptProjectRed implements IScriptLoader {
                 .circuit(10).itemOutputs(getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 33))
                 .fluidInputs(SubstituteFluidStack.soldering(72)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .requireMods(ProjectRedCore, ProjectRedIntegration).addTo(assemblerRecipes);
+
+        // Illumar Buttons
+        for (int i = 0; i < 16; i++) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Minecraft.ID, "stone_button", 1),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 19+i)
+                    )
+                    .itemOutputs(getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, i))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+        }
     }
 
     private void recipes2() {
