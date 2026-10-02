@@ -196,32 +196,10 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(MalisisDoors.ID, "trapdoor_acacia", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 4),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                "screwAnyIron",
+                "ringAnyIron",
                 getModItem(Minecraft.ID, "planks", 1, 4),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "planks", 1, 4),
-                getModItem(Minecraft.ID, "planks", 1, 4));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_acacia", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_acacia", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 4),
-                "screwCopper",
-                "ringCopper",
-                getModItem(Minecraft.ID, "planks", 1, 4),
-                "craftingToolScrewdriver",
-                getModItem(Minecraft.ID, "planks", 1, 4),
-                getModItem(Minecraft.ID, "planks", 1, 4));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_acacia", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_acacia", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 4),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
-                getModItem(Minecraft.ID, "planks", 1, 4),
-                "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 4),
                 getModItem(Minecraft.ID, "planks", 1, 4));
         addShapedRecipe(
@@ -240,32 +218,10 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(MalisisDoors.ID, "trapdoor_birch", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                "screwAnyIron",
+                "ringAnyIron",
                 getModItem(Minecraft.ID, "planks", 1, 2),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "planks", 1, 2),
-                getModItem(Minecraft.ID, "planks", 1, 2));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_birch", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_birch", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 2),
-                "screwCopper",
-                "ringCopper",
-                getModItem(Minecraft.ID, "planks", 1, 2),
-                "craftingToolScrewdriver",
-                getModItem(Minecraft.ID, "planks", 1, 2),
-                getModItem(Minecraft.ID, "planks", 1, 2));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_birch", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_birch", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
-                getModItem(Minecraft.ID, "planks", 1, 2),
-                "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 2),
                 getModItem(Minecraft.ID, "planks", 1, 2));
         addShapedRecipe(
@@ -284,32 +240,10 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(MalisisDoors.ID, "trapdoor_dark_oak", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 5),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                "screwAnyIron",
+                "ringAnyIron",
                 getModItem(Minecraft.ID, "planks", 1, 5),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "planks", 1, 5),
-                getModItem(Minecraft.ID, "planks", 1, 5));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_dark_oak", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_dark_oak", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 5),
-                "screwCopper",
-                "ringCopper",
-                getModItem(Minecraft.ID, "planks", 1, 5),
-                "craftingToolScrewdriver",
-                getModItem(Minecraft.ID, "planks", 1, 5),
-                getModItem(Minecraft.ID, "planks", 1, 5));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_dark_oak", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_dark_oak", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 5),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
-                getModItem(Minecraft.ID, "planks", 1, 5),
-                "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 5),
                 getModItem(Minecraft.ID, "planks", 1, 5));
         addShapedRecipe(
@@ -328,32 +262,10 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(MalisisDoors.ID, "trapdoor_jungle", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 3),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                "screwAnyIron",
+                "ringAnyIron",
                 getModItem(Minecraft.ID, "planks", 1, 3),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "planks", 1, 3),
-                getModItem(Minecraft.ID, "planks", 1, 3));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_jungle", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_jungle", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 3),
-                "screwCopper",
-                "ringCopper",
-                getModItem(Minecraft.ID, "planks", 1, 3),
-                "craftingToolScrewdriver",
-                getModItem(Minecraft.ID, "planks", 1, 3),
-                getModItem(Minecraft.ID, "planks", 1, 3));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_jungle", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_jungle", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 3),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
-                getModItem(Minecraft.ID, "planks", 1, 3),
-                "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 3),
                 getModItem(Minecraft.ID, "planks", 1, 3));
         addShapedRecipe(
@@ -372,32 +284,10 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(MalisisDoors.ID, "trapdoor_spruce", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                "screwAnyIron",
+                "ringAnyIron",
                 getModItem(Minecraft.ID, "planks", 1, 1),
                 "craftingToolSaw",
-                getModItem(Minecraft.ID, "planks", 1, 1),
-                getModItem(Minecraft.ID, "planks", 1, 1));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_spruce", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_spruce", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 1),
-                "screwCopper",
-                "ringCopper",
-                getModItem(Minecraft.ID, "planks", 1, 1),
-                "craftingToolScrewdriver",
-                getModItem(Minecraft.ID, "planks", 1, 1),
-                getModItem(Minecraft.ID, "planks", 1, 1));
-        addShapedRecipe(
-                getModItem(MalisisDoors.ID, "item.door_spruce", 1, 0),
-                "craftingToolSaw",
-                getModItem(MalisisDoors.ID, "trapdoor_spruce", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
-                getModItem(Minecraft.ID, "planks", 1, 1),
-                "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 1),
                 getModItem(Minecraft.ID, "planks", 1, 1));
         addShapedRecipe(

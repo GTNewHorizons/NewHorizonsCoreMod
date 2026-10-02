@@ -2875,48 +2875,26 @@ public class ScriptMinecraft implements IScriptLoader {
                 "ingotBrickNether");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 "craftingToolScrewdriver",
+                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringAnyIron",
                 "screwAnyIron",
+                "ringAnyIron",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolSaw");
-        addShapedRecipe(
-                getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
-                "craftingToolScrewdriver",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringCopper",
-                "screwCopper",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolSaw");
-        addShapedRecipe(
-                getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringAnyIron",
-                "screwAnyIron",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolScrewdriver");
+                getModItem(Minecraft.ID, "planks", 1, 0));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
+                "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
+                getModItem(Minecraft.ID, "planks", 1, 0),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Minecraft.ID, "planks", 1, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringCopper",
-                "screwCopper",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolScrewdriver");
+                getModItem(Minecraft.ID, "planks", 1, 0));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0),
                 "plateAnyIron",
