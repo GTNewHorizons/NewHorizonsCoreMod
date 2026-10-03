@@ -184,8 +184,8 @@ public class BacteriaRegistry {
                         NHItemList.TCetiESeaweedExtract.get(4),
                         Tritanium.getDust(4))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.DerivanturCellulaEvolutionis.bioCulture))
-                .fluidInputs(GrowthMediumRaw.getFluid(8)).fluidOutputs(BioMediumRaw.getFluid(2)).duration(3 * MINUTES)
-                .eut(TierEU.RECIPE_LuV).metadata(GLASS, 6)
+                .fluidInputs(Materials.BioGrowthMediumBase.getFluid(8)).fluidOutputs(BioMediumRaw.getFluid(2))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_LuV).metadata(GLASS, 6)
                 .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), true)).addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
@@ -195,8 +195,8 @@ public class BacteriaRegistry {
                         NHItemList.TCetiESeaweedExtract.get(8),
                         InfinityCatalyst.getDustTiny(4))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.CellulaBiologicumEvolutione.bioCulture))
-                .fluidInputs(GrowthMediumRaw.getFluid(5)).fluidOutputs(BioMediumRaw.getFluid(5)).duration(3 * MINUTES)
-                .eut(TierEU.RECIPE_ZPM).metadata(GLASS, 7)
+                .fluidInputs(Materials.BioGrowthMediumBase.getFluid(5)).fluidOutputs(BioMediumRaw.getFluid(5))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_ZPM).metadata(GLASS, 7)
                 .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), true)).addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
@@ -205,8 +205,8 @@ public class BacteriaRegistry {
                         NHItemList.TCetiESeaweedExtract.get(16),
                         InfinityCatalyst.getDust(4))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.CellulaBiologicumEvolutione.bioCulture))
-                .fluidInputs(GrowthMediumRaw.getFluid(5)).fluidOutputs(BioMediumRaw.getFluid(10)).duration(3 * MINUTES)
-                .eut(TierEU.RECIPE_UV).metadata(GLASS, 8)
+                .fluidInputs(Materials.BioGrowthMediumBase.getFluid(5)).fluidOutputs(BioMediumRaw.getFluid(10))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).metadata(GLASS, 8)
                 .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Naquadria), true)).requiresCleanRoom()
                 .addTo(bacterialVatRecipes);
 
@@ -391,11 +391,6 @@ public class BacteriaRegistry {
                     .outputChances(2_50).fluidInputs(FluidRegistry.getFluidStack("unknowwater", 8000))
                     .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);
         }
-
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), new ItemStack(Items.egg, 1, 0))
-                .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.OvaEvolutionis.bioCulture)).outputChances(15_00)
-                .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).duration(1 * MINUTES)
-                .eut(TierEU.RECIPE_IV).requiresCleanRoom().addTo(bioLabRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), ItemList.Circuit_Chip_Stemcell.get(1L))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.DerivanturCellulaEvolutionis.bioCulture))
