@@ -228,11 +228,9 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         // remove lumipod sapling from the herba aspect table
         List<AspectCropLootManager.LootEntry> herba = getAllLoot().get(Aspect.PLANT);
         AspectCropLootManager.LootEntry lumipodEntry = null;
+        ItemStack lumiStack = GTModHandler.getModItem(Mods.GalacticraftAmunRa.ID, "tile.saplings", 1, 1);
         for (AspectCropLootManager.LootEntry entry : herba) {
-            if (ItemStack.areItemStacksEqual(
-                    entry.stack,
-                    GTModHandler.getModItem(Mods.GalacticraftAmunRa.ID, "tile.saplings", 1, 1))) {
-
+            if (ItemStack.areItemStacksEqual(entry.stack, lumiStack)) {
                 lumipodEntry = entry;
                 break;
             }
