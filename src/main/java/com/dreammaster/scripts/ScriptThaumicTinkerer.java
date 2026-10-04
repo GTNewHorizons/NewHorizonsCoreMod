@@ -24,6 +24,7 @@ import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static thaumic.tinkerer.common.core.helper.AspectCropLootManager.getAllLoot;
 
 import java.util.Arrays;
 import java.util.List;
@@ -55,6 +56,7 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import thaumic.tinkerer.common.core.helper.AspectCropLootManager;
 
 public class ScriptThaumicTinkerer implements IScriptLoader {
 
@@ -222,6 +224,20 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         InfusionRecipe infusionRecipe;
         IArcaneRecipe arcaneRecipe;
         CrucibleRecipe crucibleRecipe;
+
+        // remove lumipod sapling from the herba aspect table
+        List<AspectCropLootManager.LootEntry> herba = getAllLoot().get(Aspect.PLANT);
+        AspectCropLootManager.LootEntry lumipodEntry = null;
+        for (AspectCropLootManager.LootEntry entry : herba) {
+            if (ItemStack.areItemStacksEqual(
+                    entry.stack,
+                    GTModHandler.getModItem(Mods.GalacticraftAmunRa.ID, "tile.saplings", 1, 1))) {
+
+                lumipodEntry = entry;
+                break;
+            }
+        }
+        herba.remove(lumipodEntry);
 
         new ResearchItem(
                 "SHARETOME",
