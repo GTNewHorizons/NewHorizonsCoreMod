@@ -1742,7 +1742,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
         //
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22)).duration(50 * SECONDS)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Reinforced, 1L)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_MV).specialValue(1700).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Galgadorian, 1L))
