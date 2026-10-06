@@ -154,7 +154,7 @@ public class MainRegistry {
     }
 
     public MainRegistry() {
-        if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
+        if (DetravScannerMod.isModLoaded()) MinecraftForge.EVENT_BUS.register(new ScannerTools());
 
         GregTechAPI.sGTCompleteLoad.add(new CircuitAssemblyLineRecipes());
         GregTechAPI.sGTCompleteLoad.add(new SpaceAssemblerRecipes());

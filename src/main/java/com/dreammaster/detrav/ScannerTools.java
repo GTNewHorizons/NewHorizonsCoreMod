@@ -1,26 +1,37 @@
 package com.dreammaster.detrav;
 
-import net.minecraft.item.ItemStack;
-
 import com.ruling_0.materiallib.api.Material;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+import com.ruling_0.materiallib.api.MaterialRegistrationEvent;
 
+import cpw.mods.fml.common.eventhandler.EventPriority;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import detrav.items.DetravMetaGeneratedTool01;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials.Materials;
-import gregtech.api.interfaces.IOreRecipeRegistrator;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.GTMaterialFlag;
+import gregtech.api.material.MaterialUtils;
 import gregtech.api.util.GTModHandler;
 
-public class ScannerTools implements IOreRecipeRegistrator {
+/// Crafting recipes for the LuV to UHV Detrav prospectors, one set per drill-head material.
+public class ScannerTools {
 
-    public ScannerTools() {
-        OrePrefixes.toolHeadDrill.addShapeRegistrator(this);
+    /// Runs after GregTech declares its shapes.
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public void materialRegistration(MaterialRegistrationEvent event) {
+        MaterialLibAPI.registerPostInitShapeConsumer(
+                "dreamcraft",
+                Shapes.toolHeadDrill,
+                (shape, material) -> {
+                    if (!MaterialUtils.hasFlag(material, GTMaterialFlag.NO_RECIPES)) addRecipes(material);
+                });
     }
 
-    @Override
-    public void registerOre(OrePrefixes o, Material material, String s, String s2, ItemStack i) {
+    private static void addRecipes(Material material) {
         GTModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
                         100,
