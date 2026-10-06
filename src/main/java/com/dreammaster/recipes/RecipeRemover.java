@@ -461,9 +461,6 @@ public class RecipeRemover {
                         .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Endstone.name()), 1));
         GTModHandler.removeFurnaceSmelting(
                 MaterialLibAPI
-                        .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Stone.name()), 1));
-        GTModHandler.removeFurnaceSmelting(
-                MaterialLibAPI
                         .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Marble.name()), 1));
         GTModHandler.removeFurnaceSmelting(
                 MaterialLibAPI.getStack(

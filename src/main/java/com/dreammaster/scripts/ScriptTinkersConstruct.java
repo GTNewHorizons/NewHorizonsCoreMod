@@ -1530,9 +1530,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 4));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 5));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI
-                        .getStack(Materials.Cobalt, OreShapes.ore, OreShapes.variantOf(StoneType.Stone.name()), 1));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 1));
         TConstructHelper.removeMeltingRecipe(getModItem(GalaxySpace.ID, "phobosblocks", 1, 4));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "GravelOre", 1, 5));
@@ -1540,9 +1537,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Cobalt, Shapes.dust, 1));
         TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Steel, Shapes.dust, 1));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 2));
-        TConstructHelper.removeMeltingRecipe(
-                MaterialLibAPI
-                        .getStack(Materials.Ardite, OreShapes.ore, OreShapes.variantOf(StoneType.Stone.name()), 1));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 38));
         TConstructHelper.removeMeltingRecipe(MaterialLibAPI.getStack(Materials.Ardite, Shapes.dust, 1));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 29));

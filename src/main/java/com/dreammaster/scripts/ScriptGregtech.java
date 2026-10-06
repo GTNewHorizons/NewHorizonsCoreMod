@@ -182,14 +182,6 @@ public class ScriptGregtech implements IScriptLoader {
                 null);
         addShapedRecipe(
                 MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1),
-                MaterialLibAPI.getStack(Materials.Salt, OreShapes.ore, OreShapes.variantOf(StoneType.Stone.name()), 1),
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
-                MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1),
                 MaterialLibAPI
                         .getStack(Materials.Salt, OreShapes.ore, OreShapes.variantOf(StoneType.Netherrack.name()), 1),
                 null,
