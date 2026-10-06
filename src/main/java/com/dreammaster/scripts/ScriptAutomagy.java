@@ -26,7 +26,6 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialParts;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -599,10 +598,10 @@ public class ScriptAutomagy implements IScriptLoader {
                 new AspectList().add(Aspect.GREED, 16).add(Aspect.METAL, 12).add(Aspect.ORDER, 8).add(Aspect.MAGIC, 4)
                         .add(Aspect.AIR, 4),
                 getModItem(Minecraft.ID, "gold_ingot", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
-                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
-                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium),
-                MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Thaumium));
+                OrePrefixes.dust.ingredient(Materials.Thaumium),
+                OrePrefixes.dust.ingredient(Materials.Thaumium),
+                OrePrefixes.dust.ingredient(Materials.Thaumium),
+                OrePrefixes.dust.ingredient(Materials.Thaumium));
         TCHelper.addResearchPage(
                 "InfusedGoldGTNH",
                 new ResearchPage(

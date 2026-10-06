@@ -33,7 +33,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialParts;
 import gregtech.api.objects.SubstituteFluidStack;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -253,13 +252,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
                 DiffusionCore,
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 CoalescenceCore,
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",

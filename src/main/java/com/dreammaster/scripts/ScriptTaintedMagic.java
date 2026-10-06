@@ -27,7 +27,6 @@ import gregtech.api.enums.StoneType;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialParts;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -370,15 +369,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.ARMOR, 16).add(Aspect.SENSES, 8),
                 getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedEntropy),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.bolt, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.InfusedEntropy),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow));
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
+                OrePrefixes.lens.ingredient(Materials.InfusedEntropy),
+                OrePrefixes.screw.ingredient(Materials.Shadow),
+                OrePrefixes.bolt.ingredient(Materials.Shadow),
+                OrePrefixes.screw.ingredient(Materials.Shadow),
+                OrePrefixes.lens.ingredient(Materials.InfusedEntropy),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "WarpedGogglesGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0))));
@@ -444,16 +443,16 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 new AspectList().add(Aspect.METAL, 16).add(Aspect.ENTROPY, 32).add(Aspect.MAGIC, 48)
                         .add(Aspect.WEAPON, 64).add(Aspect.MIND, 8),
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.screw.ingredient(Materials.Shadow),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
-                MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Gold),
-                MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.NetherQuartz),
+                OrePrefixes.plate.ingredient(Materials.NetherQuartz),
+                OrePrefixes.stick.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Gold),
+                OrePrefixes.stick.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.NetherQuartz),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Shadow));
+                OrePrefixes.screw.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "MaceFocusGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1, 0))));
@@ -565,17 +564,17 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.DARKNESS, 64).add(DarkAspects.WRATH, 32).add(Aspect.ENERGY, 16),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Void));
         TCHelper.addResearchPage(
                 "EldritchFocusGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0))));
@@ -804,22 +803,22 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 6,
                 new AspectList().add(Aspect.METAL, 32).add(Aspect.MAGIC, 32).add(Aspect.DARKNESS, 32)
                         .add(Aspect.ELDRITCH, 32).add(Aspect.ARMOR, 32).add(Aspect.FIRE, 32).add(Aspect.HUNGER, 32),
-                MaterialParts.craftIngredient(OrePrefixes.plateQuadruple, Materials.Thaumium),
+                OrePrefixes.plateQuadruple.ingredient(Materials.Thaumium),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.FierySteel),
-                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.Ultimet),
-                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.Knightmetal),
-                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.AstralSilver),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.FierySteel),
+                OrePrefixes.screw.ingredient(Materials.FierySteel),
+                OrePrefixes.foil.ingredient(Materials.Ultimet),
+                OrePrefixes.foil.ingredient(Materials.Knightmetal),
+                OrePrefixes.foil.ingredient(Materials.AstralSilver),
+                OrePrefixes.screw.ingredient(Materials.FierySteel),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.FierySteel),
-                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.Ultimet),
-                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.Knightmetal),
-                MaterialParts.craftIngredient(OrePrefixes.foil, Materials.AstralSilver),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.FierySteel),
+                OrePrefixes.screw.ingredient(Materials.FierySteel),
+                OrePrefixes.foil.ingredient(Materials.Ultimet),
+                OrePrefixes.foil.ingredient(Materials.Knightmetal),
+                OrePrefixes.foil.ingredient(Materials.AstralSilver),
+                OrePrefixes.screw.ingredient(Materials.FierySteel),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7));
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
@@ -930,18 +929,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 new AspectList().add(Aspect.METAL, 64).add(Aspect.MAGIC, 64).add(Aspect.DARKNESS, 64)
                         .add(Aspect.ELDRITCH, 64).add(Aspect.ARMOR, 64),
                 getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow));
+                OrePrefixes.ring.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
@@ -954,18 +953,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 new AspectList().add(Aspect.METAL, 64).add(Aspect.MAGIC, 64).add(Aspect.DARKNESS, 64)
                         .add(Aspect.ELDRITCH, 64).add(Aspect.ARMOR, 64),
                 getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow));
+                OrePrefixes.ring.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
@@ -978,18 +977,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 new AspectList().add(Aspect.METAL, 64).add(Aspect.MAGIC, 64).add(Aspect.DARKNESS, 64)
                         .add(Aspect.ELDRITCH, 64).add(Aspect.ARMOR, 64),
                 getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.ring.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Shadow));
+                OrePrefixes.ring.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
@@ -1042,7 +1041,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2),
@@ -1072,15 +1071,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.VOID, 64).add(Aspect.CRYSTAL, 24).add(Aspect.ELDRITCH, 8).add(Aspect.METAL, 16),
                 getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.NetherStar),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.bolt, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.lens, Materials.NetherStar),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.ring.ingredient(Materials.Void),
+                OrePrefixes.lens.ingredient(Materials.NetherStar),
+                OrePrefixes.screw.ingredient(Materials.Void),
+                OrePrefixes.bolt.ingredient(Materials.Void),
+                OrePrefixes.screw.ingredient(Materials.Void),
+                OrePrefixes.lens.ingredient(Materials.NetherStar),
+                OrePrefixes.ring.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void));
         TCHelper.addResearchPage(
                 "VoidgogglesGTNH",
                 new ResearchPage(
@@ -1211,13 +1210,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.MAGIC, 16).add(Aspect.ENERGY, 16),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6),
                 getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(Thaumcraft.ID, "ItemAxeVoid", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow));
+                OrePrefixes.plate.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "ThaumicdisassemblerGTNH",
                 new ResearchPage(
@@ -1244,19 +1243,19 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.ARMOR, 64).add(Aspect.VOID, 64).add(Aspect.MAGIC, 32),
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateDouble, Materials.Polytetrafluoroethylene),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plateDouble.ingredient(Materials.Polytetrafluoroethylene),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plateDouble, Materials.Polytetrafluoroethylene),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plateDouble.ingredient(Materials.Polytetrafluoroethylene),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Void));
         TCHelper.addResearchPage(
                 "VoidWalkerBootsGTNH",
                 new ResearchPage(
@@ -1285,17 +1284,17 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.FLIGHT, 32).add(Aspect.ELDRITCH, 24).add(Aspect.AIR, 16),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Tanzanite),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.gemExquisite.ingredient(Materials.Tanzanite),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Void));
         TCHelper.addResearchPage(
                 "VoidSashGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0))));
@@ -1321,16 +1320,16 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.ARMOR, 48).add(Aspect.VOID, 32).add(Aspect.DARKNESS, 16).add(Aspect.ENERGY, 16)
                         .add(Aspect.LIFE, 32),
                 getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.gemExquisite.ingredient(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene),
+                OrePrefixes.plateTriple.ingredient(Materials.Polytetrafluoroethylene),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold));
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.RoseGold));
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
@@ -1344,20 +1343,20 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.ARMOR, 64).add(Aspect.VOID, 32).add(Aspect.DARKNESS, 16).add(Aspect.ENERGY, 16)
                         .add(Aspect.MIND, 32),
                 getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene),
+                OrePrefixes.plateTriple.ingredient(Materials.Polytetrafluoroethylene),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene),
+                OrePrefixes.plateTriple.ingredient(Materials.Polytetrafluoroethylene),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void));
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
@@ -1371,15 +1370,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.EARTH, 32),
                 getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene),
+                OrePrefixes.plateTriple.ingredient(Materials.Polytetrafluoroethylene),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold));
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.RoseGold));
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
@@ -1406,16 +1405,16 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.ARMOR, 64).add(Aspect.VOID, 48).add(Aspect.DARKNESS, 32).add(Aspect.ENERGY, 32)
                         .add(Aspect.LIFE, 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
+                OrePrefixes.gemExquisite.ingredient(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Polybenzimidazole),
+                OrePrefixes.plateDense.ingredient(Materials.Polybenzimidazole),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold));
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold));
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
@@ -1429,20 +1428,20 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.ARMOR, 84).add(Aspect.VOID, 48).add(Aspect.DARKNESS, 32).add(Aspect.ENERGY, 32)
                         .add(Aspect.MIND, 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Polybenzimidazole),
+                OrePrefixes.plateDense.ingredient(Materials.Polybenzimidazole),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Polybenzimidazole),
+                OrePrefixes.plateDense.ingredient(Materials.Polybenzimidazole),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow));
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
@@ -1457,15 +1456,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.EARTH, 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Polybenzimidazole),
+                OrePrefixes.plateDense.ingredient(Materials.Polybenzimidazole),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold));
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.block.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold));
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
@@ -1490,18 +1489,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 new AspectList().add(Aspect.METAL, 64).add(Aspect.MAGIC, 32).add(Aspect.WEAPON, 48)
                         .add(Aspect.DEATH, 24).add(Aspect.ENERGY, 16).add(Aspect.MOTION, 8),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Obsidian),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Gold),
-                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Emerald),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Steel),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Obsidian),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Gold),
-                MaterialParts.craftIngredient(OrePrefixes.gemFlawless, Materials.Emerald),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Steel),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Thaumium));
+                OrePrefixes.plate.ingredient(Materials.Obsidian),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Gold),
+                OrePrefixes.gemFlawless.ingredient(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.Steel),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Obsidian),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Gold),
+                OrePrefixes.gemFlawless.ingredient(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.Steel),
+                OrePrefixes.plate.ingredient(Materials.Thaumium));
         TCHelper.addResearchPage(
                 "ThaumiumKatanaGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 0))));
@@ -1527,18 +1526,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.WEAPON, 64).add(Aspect.DEATH, 32).add(Aspect.ENERGY, 24).add(Aspect.MOTION, 16)
                         .add(Aspect.VOID, 32),
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Manyullyn),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Titanium),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Manyullyn),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.RoseGold),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Titanium),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Manyullyn),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.gemExquisite.ingredient(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.Titanium),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Manyullyn),
+                OrePrefixes.plate.ingredient(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.RoseGold),
+                OrePrefixes.gemExquisite.ingredient(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.Titanium),
+                OrePrefixes.plate.ingredient(Materials.Void));
         TCHelper.addResearchPage(
                 "VoidMetalKatanaGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 1))));
@@ -1565,18 +1564,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.WEAPON, 72).add(Aspect.DEATH, 48).add(Aspect.ENERGY, 32).add(Aspect.MOTION, 24)
                         .add(Aspect.VOID, 48).add(Aspect.DARKNESS, 48),
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.TungstenSteel),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.TungstenSteel),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow));
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
+                OrePrefixes.gemExquisite.ingredient(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.TungstenSteel),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
+                OrePrefixes.gemExquisite.ingredient(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.TungstenSteel),
+                OrePrefixes.plate.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "ShadowMetalKatanaGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 2))));
@@ -1626,21 +1625,21 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.DARKNESS, 48).add(Aspect.TOOL, 32).add(Aspect.EARTH, 24),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(TaintedMagic.ID, "BlockWarpwoodLog", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Tungsten),
-                MaterialParts.craftIngredient(OrePrefixes.plateTriple, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plateDouble, Materials.Void),
+                OrePrefixes.ring.ingredient(Materials.Tungsten),
+                OrePrefixes.plateTriple.ingredient(Materials.Shadow),
+                OrePrefixes.plateDouble.ingredient(Materials.Void),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
-                MaterialParts.craftIngredient(OrePrefixes.plateDouble, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plateTriple, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Tungsten),
+                OrePrefixes.plateDouble.ingredient(Materials.Void),
+                OrePrefixes.plateTriple.ingredient(Materials.Shadow),
+                OrePrefixes.ring.ingredient(Materials.Tungsten),
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Tungsten),
-                MaterialParts.craftIngredient(OrePrefixes.plateTriple, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plateDouble, Materials.Void),
+                OrePrefixes.ring.ingredient(Materials.Tungsten),
+                OrePrefixes.plateTriple.ingredient(Materials.Shadow),
+                OrePrefixes.plateDouble.ingredient(Materials.Void),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
-                MaterialParts.craftIngredient(OrePrefixes.plateDouble, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plateTriple, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Tungsten));
+                OrePrefixes.plateDouble.ingredient(Materials.Void),
+                OrePrefixes.plateTriple.ingredient(Materials.Shadow),
+                OrePrefixes.ring.ingredient(Materials.Tungsten));
         TCHelper.addResearchPage(
                 "ROD_warpwood",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0))));
@@ -1791,19 +1790,19 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemPrimalCrusher", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 3),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 NHItemList.VoidEssence.get(1),
                 getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0),
                 NHItemList.VoidEssence.get(1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow),
+                OrePrefixes.plate.ingredient(Materials.Shadow),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Shadow));
+                OrePrefixes.plate.ingredient(Materials.Shadow));
         TCHelper.addResearchPage(
                 "PrimalBladeGTNH",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0))));
@@ -1958,15 +1957,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 7),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
-                MaterialParts.craftIngredient(OrePrefixes.plateQuadruple, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plateQuadruple, Materials.Shadow),
+                OrePrefixes.plateQuadruple.ingredient(Materials.Shadow),
+                OrePrefixes.plateDense.ingredient(Materials.Void),
+                OrePrefixes.plateQuadruple.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Tanzanite),
+                OrePrefixes.gemExquisite.ingredient(Materials.Tanzanite),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3),
-                MaterialParts.craftIngredient(OrePrefixes.plateQuadruple, Materials.Shadow),
-                MaterialParts.craftIngredient(OrePrefixes.plateDense, Materials.Void),
-                MaterialParts.craftIngredient(OrePrefixes.plateQuadruple, Materials.Shadow),
+                OrePrefixes.plateQuadruple.ingredient(Materials.Shadow),
+                OrePrefixes.plateDense.ingredient(Materials.Void),
+                OrePrefixes.plateQuadruple.ingredient(Materials.Shadow),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3));
         TCHelper.addResearchPage(
                 "CAP_shadowmetal",

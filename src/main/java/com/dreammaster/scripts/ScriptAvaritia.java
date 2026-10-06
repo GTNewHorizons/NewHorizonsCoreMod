@@ -66,7 +66,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialParts;
 import gregtech.api.recipe.RecipeCategories;
 import magicbees.api.MagicBeesAPI;
 import tconstruct.smeltery.TinkerSmeltery;
@@ -992,7 +991,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 new AspectList().add(Aspect.MAGIC, 512).add(Aspect.MIND, 128).add(Aspect.SENSES, 96)
                         .add(DarkAspects.LUST, 96).add((Aspect) MagicBeesAPI.thaumcraftAspectTempus, 64)
                         .add(Lucrum.ULTRA_DEATH, 128),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Infinity),
+                OrePrefixes.plate.ingredient(Materials.Infinity),
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 6),
                 getModItem(ThaumicBases.ID, "knoseFragment", 1, 6),

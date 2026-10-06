@@ -1146,7 +1146,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "smithing_table", 1, 0),
                 bits,
                 new Object[] { "TT ", "GG ", "GG ", 'T', MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1), 'G',
-                        MaterialParts.craftIngredient(OrePrefixes.plank, Materials.Wood) });
+                        OrePrefixes.plank.ingredient(Materials.Wood) });
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.magma_cream, 4))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
@@ -1395,18 +1395,18 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.UNDEAD, 100).add(Aspect.FIRE, 150).add(Aspect.GREED, 150)
                         .add(Aspect.HEAL, 200).add(Aspect.MAGIC, 200),
                 getModItem(TinkerConstruct.ID, "heartCanister", 1, 1),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
+                OrePrefixes.gemExquisite.ingredient(Materials.Emerald),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.InfusedGold),
+                OrePrefixes.block.ingredient(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 5),
-                MaterialParts.craftIngredient(OrePrefixes.plate, Materials.InfusedGold),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.block, Materials.InfusedGold),
+                OrePrefixes.block.ingredient(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.gemExquisite, Materials.GreenSapphire));
+                OrePrefixes.gemExquisite.ingredient(Materials.GreenSapphire));
         TCHelper.addResearchPage(
                 "UNDYINGTOTEM",
                 new ResearchPage(

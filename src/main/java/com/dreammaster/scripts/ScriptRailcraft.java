@@ -55,7 +55,6 @@ import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
-import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
@@ -2064,26 +2063,22 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "machine.alpha", 1, 14),
                 GTModHandler.RecipeBits.BUFFERED,
 
-                new Object[] { "PPP", "IhI", "PSP", 'P',
-                        MaterialParts.craftIngredient(OrePrefixes.plank, Materials.Wood), 'I',
-                        MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Iron), 'S',
-                        ItemList.IC2_Resin.get(1L) });
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.ingredient(Materials.Wood), 'I',
+                        OrePrefixes.stick.ingredient(Materials.Iron), 'S', ItemList.IC2_Resin.get(1L) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 2, 14),
                 GTModHandler.RecipeBits.BUFFERED,
 
-                new Object[] { "PPP", "IhI", "PSP", 'P',
-                        MaterialParts.craftIngredient(OrePrefixes.plank, Materials.Wood), 'I',
-                        MaterialParts.craftIngredient(OrePrefixes.stick, Materials.Iron), 'S',
-                        MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Rubber) });
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.ingredient(Materials.Wood), 'I',
+                        OrePrefixes.stick.ingredient(Materials.Iron), 'S',
+                        OrePrefixes.dust.ingredient(Materials.Rubber) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 4, 14),
                 GTModHandler.RecipeBits.BUFFERED,
 
-                new Object[] { "PPP", "IhI", "PSP", 'P',
-                        MaterialParts.craftIngredient(OrePrefixes.plank, Materials.Wood), 'I',
-                        MaterialParts.craftIngredient(OrePrefixes.stick, Materials.CastIron), 'S',
-                        MaterialParts.craftIngredient(OrePrefixes.dust, Materials.Rubber) });
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.ingredient(Materials.Wood), 'I',
+                        OrePrefixes.stick.ingredient(Materials.CastIron), 'S',
+                        OrePrefixes.dust.ingredient(Materials.Rubber) });
 
         GTValues.RA.stdBuilder()
                 .itemInputs(

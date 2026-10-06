@@ -60,7 +60,6 @@ import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.OreDictUtils;
@@ -460,7 +459,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new Object[] { ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
                         ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
                         NHItemList.HeavyDutyRocketEngineTier4.get(64),
-                        new Object[] { MaterialParts.craftIngredient(OrePrefixes.pipeHuge, Materials.Infinity), 8 },
+                        new Object[] { OrePrefixes.pipeHuge.ingredient(Materials.Infinity), 8 },
                         ItemList.Electric_Pump_UHV.get(16), new Object[] { Circuits.UHV.getIngredient(), 8 },
                         new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] {
@@ -479,8 +478,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 10,
                 new Object[] { new ItemStack(advancedRadiationProtectionPlate, 64),
                         new ItemStack(Loaders.FRF_Coil_2, 8),
-                        new Object[] { MaterialParts.namedIngredient(OrePrefixes.wireGt16, Materials.SuperconductorUHV),
-                                8 },
+                        new Object[] { OrePrefixes.wireGt16.namedIngredient(Materials.SuperconductorUHV), 8 },
                         ItemList.Emitter_UHV.get(16), ItemList.Field_Generator_UHV.get(8),
                         new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] {
@@ -557,7 +555,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         NHItemList.HeavyDutyPlateTier8.get(),
                         MaterialLibAPI.getStack(Materials.Kevlar, Shapes.plate, 7),
                         MaterialLibAPI.getStack(Materials.Kevlar, Shapes.plate, 7),
-                        new Object[] { MaterialParts.craftIngredient(OrePrefixes.screw, Materials.Neutronium), 12 })
+                        new Object[] { OrePrefixes.screw.ingredient(Materials.Neutronium), 12 })
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 4 * INGOTS))
                 .itemOutputs(NHItemList.HeavyDutyAlloyIngotT9.get())
                 .metadata(GTRecipeConstants.RESEARCH_ITEM, NHItemList.HeavyDutyPlateTier8.get())

@@ -561,12 +561,12 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemTreetapElectric", 1, 0),
                 "craftingToolScrewdriver",
                 "stickLongSteel",
-                MaterialParts.craftIngredient(OrePrefixes.toolHeadDrill, Materials.Steel),
+                OrePrefixes.toolHeadDrill.ingredient(Materials.Steel),
                 "stickLongSteel",
                 ItemList.Electric_Pump_LV,
                 "batteryBasic",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3),
-                MaterialParts.craftIngredient(OrePrefixes.cableGt01, Materials.Tin),
+                OrePrefixes.cableGt01.ingredient(Materials.Tin),
                 "screwSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, 0),

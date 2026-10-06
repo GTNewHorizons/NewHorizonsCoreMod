@@ -66,7 +66,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
-import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
@@ -1383,9 +1382,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 30,
                 new AspectList().add(Aspect.MAGIC, 256).add(Aspect.FLIGHT, 256).add(Aspect.TOOL, 128)
                         .add(TB_Aspect.SPACE, 128).add(Aspect.GREED, 64).add(Aspect.AIR, 64),
-                MaterialParts.craftIngredient(OrePrefixes.ring, Materials.Ichorium),
+                OrePrefixes.ring.ingredient(Materials.Ichorium),
                 getModItem(ElectroMagicTools.ID, "ThaumiumWing"),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.ElvenElementium),
+                OrePrefixes.screw.ingredient(Materials.ElvenElementium),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
@@ -1399,7 +1398,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "angelBlock", 1, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1),
                 getModItem(BloodMagic.ID, "aether", 1, 0),
-                MaterialParts.craftIngredient(OrePrefixes.screw, Materials.ElvenElementium));
+                OrePrefixes.screw.ingredient(Materials.ElvenElementium));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1),

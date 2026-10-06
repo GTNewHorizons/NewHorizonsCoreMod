@@ -38,7 +38,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
-import gregtech.api.material.MaterialParts;
 import gregtech.api.util.GTModHandler;
 import gregtech.common.items.MetaGeneratedTool01;
 
@@ -384,10 +383,9 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(PamsHarvestCraft.ID, "cuttingboardItem", 1, 0),
                 GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
-                new Object[] { "PPf", "PP ", "SBh", 'S',
-                        MaterialParts.craftIngredient(OrePrefixes.stick, Materials.StainlessSteel), 'P',
-                        MaterialParts.craftIngredient(OrePrefixes.plate, Materials.StainlessSteel), 'B',
-                        MaterialParts.craftIngredient(OrePrefixes.plate, Materials.Wood) });
+                new Object[] { "PPf", "PP ", "SBh", 'S', OrePrefixes.stick.ingredient(Materials.StainlessSteel), 'P',
+                        OrePrefixes.plate.ingredient(Materials.StainlessSteel), 'B',
+                        OrePrefixes.plate.ingredient(Materials.Wood) });
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "mortarandpestleItem", 1, 0),
                 "craftingToolHardHammer",

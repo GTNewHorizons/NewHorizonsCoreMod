@@ -109,7 +109,6 @@ import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.enums.materials.XModMaterials;
-import gregtech.api.material.MaterialParts;
 import gregtech.api.material.MaterialUtils;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.objects.SubstituteFluidStack;
@@ -932,10 +931,12 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(4).itemOutputs(ItemList.Casing_Tank_10.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(
-                new OreDictItemStack(MaterialParts.craftIngredient(OrePrefixes.gem, Materials.Diamond).toString(), 1),
-                Circuits.LV.get(4)).itemOutputs(NHItemList.TwilightCrystal.get()).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new OreDictItemStack(OrePrefixes.gem.ingredient(Materials.Diamond).toString(), 1),
+                        Circuits.LV.get(4))
+                .itemOutputs(NHItemList.TwilightCrystal.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_LV / 2)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
