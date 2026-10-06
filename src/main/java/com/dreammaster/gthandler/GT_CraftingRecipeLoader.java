@@ -54,7 +54,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.CircuitComponents;
 import gregtech.api.enums.Circuits;
 import gregtech.api.enums.Dyes;
-import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OreDictNames;
@@ -1003,77 +1002,67 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         final long BITSD = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE;
 
-        for (int i = 9; i < GTValues.VN.length - 1; i++) {
-            try {
-                Material cable = cables[i - 9];
-                ItemStack hull;
+        for (int i = 9; i < 9 + cables.length; i++) {
+            Material cable = cables[i - 9];
+            ItemStack hull;
 
-                ItemStack machinehull;
-                switch (i) {
-                    case 9: // UHV
-                        hull = MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plate, 1);
-                        machinehull = ItemList.Hull_MAX.get(1L);
-                        break;
-                    case 10: // UEV
-                        hull = MaterialLibAPI.getStack(Materials.Infinity, Shapes.plate, 1);
-                        machinehull = ItemList.Hull_UEV.get(1L);
-                        break;
-                    case 11: // UIV
-                        hull = MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.plate, 1);
-                        machinehull = ItemList.Hull_UIV.get(1L);
-                        break;
-                    case 12: // UMV
-                        hull = MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.plate, 1);
-                        machinehull = ItemList.Hull_UMV.get(1L);
-                        break;
-                    default: // UXV
-                        hull = MaterialLibAPI
-                                .getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.plate, 1);
-                        machinehull = ItemList.Hull_UXV.get(1L);
-                        break;
-                }
-
-                GTModHandler.addCraftingRecipe(
-                        ItemRegistry.energyDistributor[i],
-                        BITSD,
-                        new Object[] { "PWP", "WCW", "PWP", 'W',
-                                MaterialLibAPI.getStack(cable, TEBlockShapes.wireGt16, 1), 'P', hull, 'C',
-                                machinehull });
-                GTModHandler.addCraftingRecipe(
-                        ItemRegistry.diode12A[i],
-                        BITSD,
-                        new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt12, 1), 'P', hull, 'C',
-                                machinehull });
-                GTModHandler.addCraftingRecipe(
-                        ItemRegistry.diode8A[i],
-                        BITSD,
-                        new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt08, 1), 'P', hull, 'C',
-                                machinehull });
-                GTModHandler.addCraftingRecipe(
-                        ItemRegistry.diode4A[i],
-                        BITSD,
-                        new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt04, 1), 'P', hull, 'C',
-                                machinehull });
-                GTModHandler.addCraftingRecipe(
-                        ItemRegistry.diode2A[i],
-                        BITSD,
-                        new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
-                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt02, 1), 'P', hull, 'C',
-                                machinehull });
-                GTModHandler.addCraftingRecipe(
-                        ItemRegistry.diode16A[i],
-                        BITSD,
-                        new Object[] { "WHW", "DCD", "PDP", 'H', CircuitComponents.INDUCTOR.getIngredient(), 'D',
-                                CircuitComponents.DIODE.getIngredient(), 'W',
-                                MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt16, 1), 'P', hull, 'C',
-                                machinehull });
-
-            } catch (ArrayIndexOutOfBoundsException e) {
-                e.printStackTrace();
+            ItemStack machinehull;
+            switch (i) {
+                case 9: // UHV
+                    hull = MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plate, 1);
+                    machinehull = ItemList.Hull_MAX.get(1L);
+                    break;
+                case 10: // UEV
+                    hull = MaterialLibAPI.getStack(Materials.Infinity, Shapes.plate, 1);
+                    machinehull = ItemList.Hull_UEV.get(1L);
+                    break;
+                case 11: // UIV
+                    hull = MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.plate, 1);
+                    machinehull = ItemList.Hull_UIV.get(1L);
+                    break;
+                case 12: // UMV
+                    hull = MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.plate, 1);
+                    machinehull = ItemList.Hull_UMV.get(1L);
+                    break;
+                default: // UXV
+                    hull = MaterialLibAPI
+                            .getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.plate, 1);
+                    machinehull = ItemList.Hull_UXV.get(1L);
+                    break;
             }
+
+            GTModHandler.addCraftingRecipe(
+                    ItemRegistry.energyDistributor[i],
+                    BITSD,
+                    new Object[] { "PWP", "WCW", "PWP", 'W', MaterialLibAPI.getStack(cable, TEBlockShapes.wireGt16, 1),
+                            'P', hull, 'C', machinehull });
+            GTModHandler.addCraftingRecipe(
+                    ItemRegistry.diode12A[i],
+                    BITSD,
+                    new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
+                            MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt12, 1), 'P', hull, 'C', machinehull });
+            GTModHandler.addCraftingRecipe(
+                    ItemRegistry.diode8A[i],
+                    BITSD,
+                    new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
+                            MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt08, 1), 'P', hull, 'C', machinehull });
+            GTModHandler.addCraftingRecipe(
+                    ItemRegistry.diode4A[i],
+                    BITSD,
+                    new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
+                            MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt04, 1), 'P', hull, 'C', machinehull });
+            GTModHandler.addCraftingRecipe(
+                    ItemRegistry.diode2A[i],
+                    BITSD,
+                    new Object[] { "WDW", "DCD", "PDP", 'D', CircuitComponents.DIODE.getIngredient(), 'W',
+                            MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt02, 1), 'P', hull, 'C', machinehull });
+            GTModHandler.addCraftingRecipe(
+                    ItemRegistry.diode16A[i],
+                    BITSD,
+                    new Object[] { "WHW", "DCD", "PDP", 'H', CircuitComponents.INDUCTOR.getIngredient(), 'D',
+                            CircuitComponents.DIODE.getIngredient(), 'W',
+                            MaterialLibAPI.getStack(cable, TEBlockShapes.cableGt16, 1), 'P', hull, 'C', machinehull });
+
         }
 
         GTModHandler.addCraftingRecipe(
