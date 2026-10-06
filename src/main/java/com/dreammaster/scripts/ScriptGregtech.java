@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
@@ -183,7 +182,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null);
         addShapedRecipe(
                 MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 1),
-                new ItemStack(sBlockOres1, 1, 817),
+                MaterialLibAPI.getStack(Materials.Salt, OreShapes.ore, OreShapes.variantOf(StoneType.Stone.name()), 1),
                 null,
                 null,
                 "craftingToolMortar",

@@ -2,7 +2,6 @@ package com.dreammaster.recipes;
 
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AkashicTome;
 import static gregtech.api.enums.Mods.Automagy;
@@ -460,7 +459,9 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(
                 MaterialLibAPI
                         .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Endstone.name()), 1));
-        GTModHandler.removeFurnaceSmelting(new ItemStack(sBlockOres1, 1, 514));
+        GTModHandler.removeFurnaceSmelting(
+                MaterialLibAPI
+                        .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Stone.name()), 1));
         GTModHandler.removeFurnaceSmelting(
                 MaterialLibAPI
                         .getStack(Materials.Amber, OreShapes.ore, OreShapes.variantOf(StoneType.Marble.name()), 1));
