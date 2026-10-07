@@ -393,6 +393,8 @@ public class MainRegistry {
         if (!Loader.isModLoaded(BPPConverter.BPP_MOD_ID)) BPPConverter.doPostInitialization();
 
         if (IndustrialCraft2.isModLoaded()) IC2Converter.doPostInitialization();
+
+        NHCoreModConverter.doPostInitialization();
     }
 
     @Mod.EventHandler

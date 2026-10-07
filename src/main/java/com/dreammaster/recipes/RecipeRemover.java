@@ -423,6 +423,8 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "sand", 1, wildcard));
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "soul_sand", 1, 0));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "heatsand", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Fether.ID, "nether_log", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(ExtraTrees.ID, "log", 1, wildcard));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 0));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 1));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 2));
@@ -1006,7 +1008,9 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "conveyor", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "filing", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "filing", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "mini-soul", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "watering_can", 1, 1));
+        removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "watering_can", 1, 3));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "magnumTorch", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ExtraUtilities.ID, "sound_muffler", 1, 1));
