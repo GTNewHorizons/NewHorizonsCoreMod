@@ -2261,18 +2261,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 addAspectLoot(Aspect.CRYSTAL, "gemExquisite" + gems[i], 1);
             }
 
-            if (ForbiddenMagic.isModLoaded()) {
-                addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.soul_sand, 24), 200);
-                addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.netherrack, 16), 500);
-                addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.glowstone, 4), 100);
-                addAspectLoot(DarkAspects.NETHER, new ItemStack(Items.nether_wart, 4), 50);
-                addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.quartz_ore, 8), 50);
+            addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.soul_sand, 24), 200);
+            addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.netherrack, 16), 500);
+            addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.glowstone, 4), 100);
+            addAspectLoot(DarkAspects.NETHER, new ItemStack(Items.nether_wart, 4), 50);
+            addAspectLoot(DarkAspects.NETHER, new ItemStack(Blocks.quartz_ore, 8), 50);
+            addAspectLoot(DarkAspects.NETHER, getModItem(EtFuturumRequiem.ID, "magma"), 100);
+            addAspectLoot(DarkAspects.NETHER, getModItem(EtFuturumRequiem.ID, "ancient_debris"), 1); // 1/1000 weight
 
-                if (EtFuturumRequiem.isModLoaded()) {
-                    addAspectLoot(DarkAspects.NETHER, getModItem(EtFuturumRequiem.ID, "magma"), 100);
-                    addAspectLoot(DarkAspects.NETHER, getModItem(EtFuturumRequiem.ID, "ancient_debris"), 1);
-                }
-            }
         }
 
         ThaumcraftApi.addWarpToResearch("PLACEMENT_MIRROR", 8);
