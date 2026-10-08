@@ -16,11 +16,15 @@ import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -34,6 +38,7 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
+import com.github.bsideup.jabel.Desugar;
 import com.ruling_0.materiallib.api.Material;
 import com.ruling_0.materiallib.api.MaterialLibAPI;
 import com.ruling_0.materiallib.api.Shape;
@@ -50,6 +55,8 @@ import gregtech.api.util.GTModHandler;
 ///
 /// Foreign storage blocks are dropped instead of swapped: their crafting recipes and chisel variations are removed,
 /// since GregTech already crafts MaterialLib's blocks from the same ingredients.
+///
+/// Every foreign stack is collected first, so the crafting list, the smelting list and each loot table are walked once.
 public final class MaterialPartReplacements {
 
     private static final String[] LOOT_CHESTS = { ChestGenHooks.DUNGEON_CHEST, ChestGenHooks.BONUS_CHEST,
@@ -57,9 +64,27 @@ public final class MaterialPartReplacements {
             ChestGenHooks.STRONGHOLD_CORRIDOR, ChestGenHooks.PYRAMID_JUNGLE_DISPENSER,
             ChestGenHooks.PYRAMID_JUNGLE_CHEST, ChestGenHooks.PYRAMID_DESERT_CHEST, ChestGenHooks.MINESHAFT_CORRIDOR };
 
+    @Desugar
+    private record ItemKey(Item item, int meta) {
+
+        static ItemKey of(ItemStack stack) {
+            return new ItemKey(stack.getItem(), stack.getItemDamage());
+        }
+    }
+
+    private final Map<ItemKey, ItemStack> replacements = new HashMap<>();
+    private final Set<ItemKey> removedOutputs = new HashSet<>();
+    private ItemKey projectRedSilverIngot;
+
     private MaterialPartReplacements() {}
 
     public static void run() {
+        MaterialPartReplacements replacements = new MaterialPartReplacements();
+        replacements.collect();
+        replacements.apply();
+    }
+
+    private void collect() {
         replace(EnderIO.ID, "itemMaterial", 11, Materials.EndSteel, Shapes.nugget);
 
         replace(IndustrialCraft2.ID, "itemDust", 2, Materials.Coal, Shapes.dust);
@@ -123,44 +148,61 @@ public final class MaterialPartReplacements {
         }
     }
 
-    private static void replace(String modId, String itemName, int meta, Material material, Shape shape) {
+    private void replace(String modId, String itemName, int meta, Material material, Shape shape) {
         ItemStack foreign = GTModHandler.getModItem(modId, itemName, 1, meta);
         if (foreign == null) return;
         ItemStack part = MaterialLibAPI.getStack(material, shape, 1);
-        replaceCraftingOutputs(foreign, part);
-        replaceSmeltingOutputs(foreign, part);
-        replaceLoot(foreign, part);
+        replacements.put(ItemKey.of(foreign), part);
         if (TinkerConstruct.isModLoaded()) TConstructHelper.replaceCastingOutputs(foreign, part);
         if (Forestry.isModLoaded()) ForestryHelper.replaceCentrifugeProducts(foreign, part);
     }
 
-    private static void removeBlock(String modId, String blockName, int meta) {
+    private void removeBlock(String modId, String blockName, int meta) {
         ItemStack foreign = GTModHandler.getModItem(modId, blockName, 1, meta);
         if (foreign == null) return;
-        CraftingManager.getInstance().getRecipeList().removeIf(recipe -> isSameItem(recipe.getRecipeOutput(), foreign));
+        removedOutputs.add(ItemKey.of(foreign));
         if (Chisel.isModLoaded()) ChiselHelper.removeVariationAndOreMember(foreign);
     }
 
     /// ProjectRed's storage-block recipe builds a fresh output on every call rather than holding one stack, so it is
-    /// removed and added again as an ore recipe.
-    private static void replaceProjectRedSilverIngot() {
+    /// removed and added again as an ore recipe, while its smelting and loot outputs are swapped like any other part.
+    private void replaceProjectRedSilverIngot() {
         ItemStack foreign = GTModHandler.getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 54);
         if (foreign == null) return;
+        projectRedSilverIngot = ItemKey.of(foreign);
+        replacements.put(projectRedSilverIngot, MaterialLibAPI.getStack(Materials.Silver, Shapes.ingot, 1));
+    }
+
+    private void apply() {
+        replaceCraftingOutputs();
+        replaceSmeltingOutputs();
+        replaceLoot();
+    }
+
+    private void replaceCraftingOutputs() {
         List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
-        if (recipes.removeIf(recipe -> isSameItem(recipe.getRecipeOutput(), foreign))) {
+        boolean projectRedSilverRemoved = false;
+        for (Iterator<IRecipe> iterator = recipes.listIterator(); iterator.hasNext();) {
+            ItemStack output = iterator.next().getRecipeOutput();
+            if (output == null || output.getItem() == null) continue;
+            ItemKey key = ItemKey.of(output);
+            if (removedOutputs.contains(key)) {
+                iterator.remove();
+            } else if (key.equals(projectRedSilverIngot)) {
+                iterator.remove();
+                projectRedSilverRemoved = true;
+            }
+        }
+        if (projectRedSilverRemoved) {
             GameRegistry.addRecipe(
                     new ShapelessOreRecipe(MaterialLibAPI.getStack(Materials.Silver, Shapes.ingot, 9), "blockSilver"));
         }
-        replaceSmeltingOutputs(foreign, MaterialLibAPI.getStack(Materials.Silver, Shapes.ingot, 1));
-        replaceLoot(foreign, MaterialLibAPI.getStack(Materials.Silver, Shapes.ingot, 1));
-    }
-
-    private static void replaceCraftingOutputs(ItemStack foreign, ItemStack part) {
-        List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
         for (int i = 0; i < recipes.size(); i++) {
             IRecipe recipe = recipes.get(i);
             ItemStack output = recipe.getRecipeOutput();
-            if (!isSameItem(output, foreign)) continue;
+            if (output == null || output.getItem() == null) continue;
+            ItemStack part = replacements.get(ItemKey.of(output));
+            if (part == null) continue;
             ItemStack replacement = withSize(part, output.stackSize);
             if (recipe instanceof ShapelessOreRecipe shapeless && recipe.getClass() == ShapelessOreRecipe.class) {
                 recipes.set(i, new ShapelessOreRecipe(replacement, oreRecipeInputs(shapeless.getInput())));
@@ -191,14 +233,15 @@ public final class MaterialPartReplacements {
     }
 
     @SuppressWarnings("unchecked")
-    private static void replaceSmeltingOutputs(ItemStack foreign, ItemStack part) {
+    private void replaceSmeltingOutputs() {
         FurnaceRecipes smelting = FurnaceRecipes.smelting();
         List<ItemStack[]> replaced = new ArrayList<>();
         List<Float> experience = new ArrayList<>();
         Iterator<Map.Entry<ItemStack, ItemStack>> entries = smelting.getSmeltingList().entrySet().iterator();
         while (entries.hasNext()) {
             Map.Entry<ItemStack, ItemStack> entry = entries.next();
-            if (!isSameItem(entry.getValue(), foreign)) continue;
+            ItemStack part = replacementFor(entry.getValue());
+            if (part == null) continue;
             replaced.add(new ItemStack[] { entry.getKey(), withSize(part, entry.getValue().stackSize) });
             experience.add(smelting.func_151398_b(entry.getValue()));
             entries.remove();
@@ -208,11 +251,12 @@ public final class MaterialPartReplacements {
         }
     }
 
-    private static void replaceLoot(ItemStack foreign, ItemStack part) {
+    private void replaceLoot() {
         Random random = new Random();
         for (String chest : LOOT_CHESTS) {
             for (WeightedRandomChestContent content : ChestGenHooks.getInfo(chest).getItems(random)) {
-                if (!isSameItem(content.theItemId, foreign)) continue;
+                ItemStack part = replacementFor(content.theItemId);
+                if (part == null) continue;
                 ChestGenHooks.removeItem(chest, content.theItemId);
                 ChestGenHooks.addItem(
                         chest,
@@ -225,9 +269,8 @@ public final class MaterialPartReplacements {
         }
     }
 
-    private static boolean isSameItem(ItemStack stack, ItemStack foreign) {
-        return stack != null && stack.getItem() == foreign.getItem()
-                && stack.getItemDamage() == foreign.getItemDamage();
+    private ItemStack replacementFor(ItemStack stack) {
+        return stack == null || stack.getItem() == null ? null : replacements.get(ItemKey.of(stack));
     }
 
     private static ItemStack withSize(ItemStack stack, int size) {
