@@ -1247,21 +1247,21 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 2))
-                .fluidInputs(
-                        MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(GTUtility.getWater(20)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 2))
+                .fluidInputs(GTModHandler.getDistilledWater(15)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 2))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 5))
                 .duration(11 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 2))
-                .fluidInputs(GTUtility.getWater(20)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 2))
-                .fluidInputs(GTModHandler.getDistilledWater(15)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Obsidian, FluidShapes.fluidMolten, 288))
                 .duration(10 * SECONDS + 16 * TICKS).eut(35).addTo(fluidExtractionRecipes);
