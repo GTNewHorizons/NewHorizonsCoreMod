@@ -618,11 +618,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 4),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5));
-        GTModHandler.addCraftingRecipe(
-                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10),
-                GTModHandler.RecipeBits.BUFFERED,
-                new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
-                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F', "fenceWood" });
         Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10),
                 "stickWood",
@@ -648,19 +643,26 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F',
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}") });
+                        getModItem(ExtraTrees.ID, "fence", 1, 1) });
         GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 12),
                 GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F',
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}") });
+                        getModItem(ExtraTrees.ID, "fence", 1, 2) });
         GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13),
                 GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F',
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}") });
+                        getModItem(ExtraTrees.ID, "fence", 1, 3) });
+        // Keep the generic fence recipe after the wood-specific recipes.
+        GTModHandler.addCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10),
+                GTModHandler.RecipeBits.BUFFERED,
+                new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F', "fenceWood" });
+
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 3),
                 "craftingToolSaw",
