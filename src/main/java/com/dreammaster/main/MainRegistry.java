@@ -99,9 +99,7 @@ import eu.usrv.yamcore.fluids.ModFluidManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.materials.Materials;
 import gregtech.api.util.GTModHandler;
-import gregtech.common.items.CauldronWashing;
 import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 
 @Mod(
@@ -375,12 +373,6 @@ public class MainRegistry {
 
         LOGGER.debug("Add Bacteria Stuff to BartWorks");
         BacteriaRegistry.runAllPostinit();
-
-        LOGGER.debug("Nerf Platinum Metal Cauldron Cleaning");
-        CauldronWashing.registerCleaningFor(Materials.Platinum, Materials.PlatinumMetallicPowder);
-        CauldronWashing.registerCleaningFor(Materials.Osmium, Materials.RarestMetalResidue);
-        CauldronWashing.registerCleaningFor(Materials.Iridium, Materials.IridiumMetalResidue);
-        CauldronWashing.registerCleaningFor(Materials.Palladium, Materials.PalladiumMetallicPowder);
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
