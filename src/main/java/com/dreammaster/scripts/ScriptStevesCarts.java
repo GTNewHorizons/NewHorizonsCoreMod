@@ -1744,7 +1744,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
         //
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22)).duration(50 * SECONDS)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Reinforced, Shapes.ingot, 1)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_MV).specialValue(1700).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Galgadorian, Shapes.ingotHot, 1))
