@@ -204,7 +204,7 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
     public void updateEntity() {
         super.updateEntity();
 
-        if (++_mLastSyncTicks % 20 * 4 == 0) {
+        if (++_mLastSyncTicks % (20 * 4) == 0) {
             worldObj.addBlockEvent(
                     xCoord,
                     yCoord,
