@@ -79,7 +79,7 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                 this.recipeXY.add(i);
             } else if (value instanceof ItemData) {
                 ItemData data = (ItemData) value;
-                ItemStack itemStack = MaterialParts.stack(data.mPrefix, data.mMaterial.mMaterial, 1);
+                ItemStack itemStack = MaterialParts.stack(data.prefix, data.material.mMaterial, 1);
                 if (itemStack == null) {
                     throw new NullPointerException("bad item passed in the recipe");
                 } else {
