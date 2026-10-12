@@ -910,7 +910,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 10))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 10))
                 .duration(12 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .fluidInputs(
@@ -1260,7 +1260,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 2))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Obsidian, FluidShapes.fluidMolten, 288))

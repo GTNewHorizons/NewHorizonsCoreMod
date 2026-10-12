@@ -738,7 +738,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 6, 0))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 1, 0))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_stick", 2, 0)).duration(20)

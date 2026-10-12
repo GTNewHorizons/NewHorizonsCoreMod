@@ -909,7 +909,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         // --- Frame Board
 
@@ -931,7 +931,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
 
     }

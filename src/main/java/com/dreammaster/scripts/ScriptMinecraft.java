@@ -436,7 +436,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(6 * TICKS).eut(4).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0)).fluidInputs(GTUtility.getWater(4))
@@ -452,7 +452,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(6 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, wildcard))
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glass, FluidShapes.fluidMolten, 144))

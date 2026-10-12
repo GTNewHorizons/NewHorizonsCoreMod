@@ -288,7 +288,7 @@ public class BECRecipes implements Runnable {
         addBec(
                 NHItemList.StargateMaterialMesh.get(),
                 new ItemStack[] { MaterialLibAPI.getStack(Materials.Infinity, Shapes.stickLong, 64),
-                        MaterialLibAPI.getStack(Materials.protohalkonite, Shapes.stickLong, 64),
+                        MaterialLibAPI.getStack(Materials.ProtoHalkonite, Shapes.stickLong, 64),
                         MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.stickLong, 64),
                         MaterialLibAPI.getStack(Materials.Hypogen, Shapes.stickLong, 64),
                         MaterialLibAPI.getStack(Materials.SuperconductorUMVBase, Shapes.stickLong, 64),

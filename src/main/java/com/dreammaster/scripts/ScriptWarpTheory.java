@@ -149,13 +149,13 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "resource", 1, 5),
                 getModItem(CropsNH.ID, "berry", 1, 2),
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0),
-                OrePrefixes.cell.ingredient(Materials.lifeessence),
+                OrePrefixes.cell.ingredient(Materials.LifeEssence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 36),
                 getModItem(ThaumicBases.ID, "resource", 1, 5),
                 getModItem(CropsNH.ID, "berry", 1, 2),
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0),
-                OrePrefixes.cell.ingredient(Materials.lifeessence),
+                OrePrefixes.cell.ingredient(Materials.LifeEssence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 36));
         TCHelper.addResearchPage(

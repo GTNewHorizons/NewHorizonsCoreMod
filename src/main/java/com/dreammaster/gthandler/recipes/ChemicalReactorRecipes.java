@@ -587,7 +587,7 @@ public class ChemicalReactorRecipes implements Runnable {
                             MaterialLibAPI.getStack(Materials.Indium, Shapes.crushed, 4),
                             GTBees.combs.getStackForType(CombType.INDIUM, 16))
                     .itemOutputs(MaterialLibAPI.getStack(Materials.Indium, Shapes.crushedPurified, 12))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.phtalicacid, FluidShapes.fluidLiquid, 2688))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.PhthalicAcid, FluidShapes.fluidLiquid, 2688))
                     .duration(14 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
 
             GTValues.RA.stdBuilder()
@@ -598,7 +598,7 @@ public class ChemicalReactorRecipes implements Runnable {
                             MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 1),
                             MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, 3),
                             MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dust, 2))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.phtalicacid, FluidShapes.fluidLiquid, 90))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.PhthalicAcid, FluidShapes.fluidLiquid, 90))
                     .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
         }
     }

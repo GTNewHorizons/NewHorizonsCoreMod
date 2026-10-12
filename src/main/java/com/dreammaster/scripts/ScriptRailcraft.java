@@ -2143,7 +2143,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0))
                 .itemOutputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0)).duration(5 * SECONDS).eut(24)

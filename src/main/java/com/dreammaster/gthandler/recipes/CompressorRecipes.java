@@ -183,7 +183,7 @@ public class CompressorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(BlockGodforgeGlass.INSTANCE, 1))
                 .itemOutputs(ItemList.Gravitational_Lens.get(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 5760))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Space, FluidShapes.fluidLiquid, 5760))
                 .duration(2 * MINUTES).metadata(CompressionTierKey.INSTANCE, 2).eut(TierEU.RECIPE_UMV)
                 .addTo(compressorRecipes);
 

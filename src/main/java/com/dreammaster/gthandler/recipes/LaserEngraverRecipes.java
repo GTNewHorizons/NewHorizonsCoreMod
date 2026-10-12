@@ -290,7 +290,7 @@ public class LaserEngraverRecipes implements Runnable {
 
         // Bootstrap antimatter recipe
         GTValues.RA.stdBuilder()
-                .itemInputs(MaterialLibAPI.getStack(Materials.hotprotohalkonite, Shapes.plateSuperdense, 1))
+                .itemInputs(MaterialLibAPI.getStack(Materials.HotProtoHalkonite, Shapes.plateSuperdense, 1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Protomatter, FluidShapes.fluidLiquid, 100))
                 .duration(10000 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Antimatter, FluidShapes.fluidLiquid, 1))
@@ -304,7 +304,7 @@ public class LaserEngraverRecipes implements Runnable {
                         NHItemList.ChromaticLens.get(0))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 30))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 30))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .itemOutputs(
                         ItemList.Circuit_Chip_APIC.get(1),
@@ -317,7 +317,7 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 15))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 15))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Circuit_Chip_APIC.get(2))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
 
@@ -327,7 +327,7 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 20))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 20))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_UMV).itemOutputs(ItemList.Circuit_Chip_ZPIC.get(2))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
 
@@ -337,7 +337,7 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, ItemList.Gravitational_Lens.get(1)))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 25))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 25))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).itemOutputs(ItemList.Circuit_Chip_YPIC.get(2))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
 

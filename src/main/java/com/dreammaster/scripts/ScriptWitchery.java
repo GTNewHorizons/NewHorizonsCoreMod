@@ -298,7 +298,7 @@ public class ScriptWitchery implements IScriptLoader {
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(12 * TICKS).eut(24).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0), ItemList.Shape_Mold_Bottle.get(0L))

@@ -259,7 +259,7 @@ public class ScriptEFR implements IScriptLoader {
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
                         .fluidInputs(
                                 MaterialLibAPI.getFluidStack(
-                                        Materials.dimensionallyshiftedsuperfluid,
+                                        Materials.DimensionallyShiftedSuperfluid,
                                         FluidShapes.fluidLiquid,
                                         1))
                         .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
@@ -293,7 +293,7 @@ public class ScriptEFR implements IScriptLoader {
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
                         .fluidInputs(
                                 MaterialLibAPI.getFluidStack(
-                                        Materials.dimensionallyshiftedsuperfluid,
+                                        Materials.DimensionallyShiftedSuperfluid,
                                         FluidShapes.fluidLiquid,
                                         1))
                         .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
@@ -457,7 +457,7 @@ public class ScriptEFR implements IScriptLoader {
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials.dimensionallyshiftedsuperfluid,
+                                    Materials.DimensionallyShiftedSuperfluid,
                                     FluidShapes.fluidLiquid,
                                     1))
                     .duration(10 * TICKS).eut(4).addTo(cutterRecipes);

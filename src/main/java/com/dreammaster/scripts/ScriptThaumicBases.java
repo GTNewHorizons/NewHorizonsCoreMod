@@ -1296,7 +1296,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 .itemOutputs(getModItem(ThaumicBases.ID, slabId, 2, slabMeta))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 2))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 2))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
     }
 }

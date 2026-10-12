@@ -421,7 +421,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 4, 0))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0))
@@ -439,7 +439,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 4, 0))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0))
@@ -457,7 +457,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 4, 0))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(10 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(cutterRecipes);
 
     }

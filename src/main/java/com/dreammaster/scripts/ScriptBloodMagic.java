@@ -648,17 +648,17 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new AspectList().add(Aspect.CRAFT, 24).add(Aspect.TOOL, 24).add(Aspect.MAGIC, 18).add(Aspect.LIFE, 12)
                         .add(Aspect.FIRE, 12),
                 getModItem(Minecraft.ID, "brewing_stand", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
+                MaterialLibAPI.getStack(Materials.LifeEssence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
+                MaterialLibAPI.getStack(Materials.LifeEssence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
+                MaterialLibAPI.getStack(Materials.LifeEssence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
+                MaterialLibAPI.getStack(Materials.LifeEssence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
+                MaterialLibAPI.getStack(Materials.LifeEssence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0),
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
+                MaterialLibAPI.getStack(Materials.LifeEssence, CellShapes.cell, 1),
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0));
         TCHelper.addResearchPage(
                 "ALCHEMICCHEMSTRYSET",
@@ -4281,7 +4281,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                MaterialLibAPI.getStack(Materials.lifeessence, CellShapes.cell, 1),
+                MaterialLibAPI.getStack(Materials.LifeEssence, CellShapes.cell, 1),
                 ItemList.Cell_Empty.get(1),
                 1,
                 1000,

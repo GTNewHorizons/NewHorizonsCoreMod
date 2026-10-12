@@ -202,7 +202,7 @@ public class MechanicalArmorRecipes {
                 .itemInputs(
                         ItemList.Armor_Frame_Nimble.get(1),
                         ItemList.Electric_Piston_ZPM.get(1),
-                        MaterialLibAPI.getStack(Materials.prismaticnaquadah, Shapes.plate, 8),
+                        MaterialLibAPI.getStack(Materials.PrismaticNaquadah, Shapes.plate, 8),
                         MaterialLibAPI.getStack(Materials.Americium, Shapes.foil, 64))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Osmiridium, FluidShapes.fluidMolten, INGOTS * 8))
                 .itemOutputs(ItemList.Armor_Frame_Lightning.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)

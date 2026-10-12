@@ -110,7 +110,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_ULV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

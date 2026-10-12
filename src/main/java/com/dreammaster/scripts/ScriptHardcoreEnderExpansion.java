@@ -549,7 +549,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemOutputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.plate, 9))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 10))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 10))
                 .duration(36 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Sphalerite, Shapes.crushed, 2)).duration(4).eut(10)

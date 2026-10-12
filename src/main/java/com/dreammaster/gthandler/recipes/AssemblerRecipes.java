@@ -1448,7 +1448,7 @@ public class AssemblerRecipes implements Runnable {
         // Humongous input hatch
         GTValues.RA.stdBuilder().itemInputs(ItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1))
                 .itemOutputs(ItemRegistry.humongousInputHatch.copy())
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 5_760))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Space, FluidShapes.fluidLiquid, 5_760))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(assemblerRecipes);
 
         // Wood Plates
@@ -2326,7 +2326,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_IV.get(1))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 2000))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 2000))
                 .itemOutputs(ItemList.WetTransformer_UMV_UIV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(assemblerRecipes);
 
@@ -2341,7 +2341,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_LuV.get(1))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 8000))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 8000))
                 .itemOutputs(ItemList.WetTransformer_UXV_UMV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .addTo(assemblerRecipes);
 
@@ -2356,7 +2356,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_ZPM.get(1))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
+                                Materials.DimensionallyShiftedSuperfluid,
                                 FluidShapes.fluidLiquid,
                                 32_000))
                 .itemOutputs(ItemList.WetTransformer_MAX_UXV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
@@ -3048,7 +3048,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_RadiationProof.get(1),
                         new ItemStack(advancedRadiationProtectionPlate, 8),
-                        MaterialLibAPI.getStack(Materials.prismaticnaquadah, Shapes.plateSuperdense, 1))
+                        MaterialLibAPI.getStack(Materials.PrismaticNaquadah, Shapes.plateSuperdense, 1))
                 .circuit(16).fluidInputs(MaterialUtils.fluid(Materials.UUMatter, 64000L))
                 .itemOutputs(ItemList.Background_Radiation_Casing.get(1)).duration(10).eut(TierEU.RECIPE_UIV)
                 .addTo(assemblerRecipes);
@@ -3158,7 +3158,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.RedstoneAlloy, Shapes.plateSuperdense, 16))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(
-                                Materials.dimensionallyshiftedsuperfluid,
+                                Materials.DimensionallyShiftedSuperfluid,
                                 FluidShapes.fluidLiquid,
                                 16000))
                 .itemOutputs(ItemList.Hatch_BlackHoleUtility.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UIV)
@@ -3226,8 +3226,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemRegistry.humongousInputHatch.copy(),
                         MaterialLibAPI.getStack(Materials.SpaceTime, TEBlockShapes.pipeHuge, 4))
-                .circuit(4)
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.spatialFluid, FluidShapes.fluidLiquid, 5760))
+                .circuit(4).fluidInputs(MaterialLibAPI.getFluidStack(Materials.Space, FluidShapes.fluidLiquid, 5760))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UXV).addTo(assemblerRecipes);
 

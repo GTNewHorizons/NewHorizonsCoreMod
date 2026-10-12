@@ -1777,7 +1777,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(12 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
@@ -1795,7 +1795,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(12 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31))
@@ -1813,7 +1813,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(12 * TICKS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, 1))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
@@ -1831,7 +1831,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
@@ -1849,7 +1849,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35))
@@ -1867,7 +1867,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37))
@@ -1885,7 +1885,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 2))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 2))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38))
@@ -1903,7 +1903,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 3))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 3))
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62))
@@ -1921,7 +1921,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
@@ -1939,7 +1939,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
@@ -1957,7 +1957,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
@@ -1975,7 +1975,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61))
                 .fluidInputs(
                         MaterialLibAPI
-                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
                 .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Reinforced, Shapes.dust, 1)).outputChances(10000)

@@ -131,7 +131,7 @@ public class BioItemLoader {
                         MaterialLibAPI.getStack(Materials.Salt, Shapes.dust, 64))
                 .fluidInputs(
                         FluidRegistry.getFluidStack("unknowwater", 4000),
-                        MaterialLibAPI.getFluidStack(Materials.phtalicacid, FluidShapes.fluidLiquid, 3000),
+                        MaterialLibAPI.getFluidStack(Materials.PhthalicAcid, FluidShapes.fluidLiquid, 3000),
                         new FluidStack(BIOFLUIDS[1], 1000))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[2], 8000)).duration(60 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(multiblockChemicalReactorRecipes);
