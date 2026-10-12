@@ -9,11 +9,13 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class DistillationRecipes implements Runnable {
 
@@ -24,44 +26,49 @@ public class DistillationRecipes implements Runnable {
     }
 
     public static void distillationTowerRecipes() {
-        GTValues.RA.stdBuilder().circuit(1).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1))
-                .fluidInputs(Materials.Pollution.getFluid(1000))
+        GTValues.RA.stdBuilder().circuit(1).itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, 1000))
                 .fluidOutputs(
-                        Materials.SulfuricAcid.getFluid(150),
-                        Materials.NitrogenDioxide.getGas(150),
-                        Materials.Methane.getGas(150),
-                        Materials.Mercury.getFluid(10))
+                        MaterialLibAPI.getFluidStack(Materials.SulfuricAcid, FluidShapes.fluidLiquid, 150),
+                        MaterialLibAPI.getFluidStack(Materials.NitrogenDioxide, FluidShapes.fluidGas, 150),
+                        MaterialLibAPI.getFluidStack(Materials.Methane, FluidShapes.fluidGas, 150),
+                        MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, 10))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(distillationTowerRecipes);
 
-        GTValues.RA.stdBuilder().circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 10))
-                .fluidInputs(Materials.Pollution.getFluid(10000))
+        GTValues.RA.stdBuilder().circuit(2).itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 10))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, 10000))
                 .fluidOutputs(
-                        Materials.SulfuricAcid.getFluid(3000),
-                        Materials.NitrogenDioxide.getGas(3000),
-                        Materials.Methane.getGas(3000),
-                        Materials.Mercury.getFluid(200))
+                        MaterialLibAPI.getFluidStack(Materials.SulfuricAcid, FluidShapes.fluidLiquid, 3000),
+                        MaterialLibAPI.getFluidStack(Materials.NitrogenDioxide, FluidShapes.fluidGas, 3000),
+                        MaterialLibAPI.getFluidStack(Materials.Methane, FluidShapes.fluidGas, 3000),
+                        MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, 200))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(distillationTowerRecipes);
     }
 
     public static void distilleryRecipes() {
         // Sodium Potassium
-        GTValues.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.Sodium.getFluid(1000))
-                .fluidOutputs(Materials.SodiumPotassium.getFluid(1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(distilleryRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.RockSalt, Shapes.dust, 1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Sodium, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.SodiumPotassium, FluidShapes.fluidLiquid, 1000))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(distilleryRecipes);
 
-        GTValues.RA.stdBuilder().circuit(1).fluidInputs(Materials.Biomass.getFluid(40))
-                .fluidOutputs(Materials.Ethanol.getFluid(20)).duration(16 * TICKS).eut(24).addTo(distilleryRecipes);
+        GTValues.RA.stdBuilder().circuit(1)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, 40))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Ethanol, FluidShapes.fluidLiquid, 20))
+                .duration(16 * TICKS).eut(24).addTo(distilleryRecipes);
 
         // unify milk from Automagy
 
         if (Automagy.isModLoaded()) {
             FluidStack fluidMilk = FluidRegistry.getFluidStack("fluidmilk", 1000);
 
-            GTValues.RA.stdBuilder().circuit(1).fluidInputs(Materials.Milk.getFluid(1000))
+            GTValues.RA.stdBuilder().circuit(1)
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Milk, FluidShapes.fluidLiquid, 1000))
                     .fluidOutputs(fluidMilk.copy()).duration(5 * SECONDS).eut(2).addTo(distilleryRecipes);
 
             GTValues.RA.stdBuilder().circuit(1).fluidInputs(fluidMilk.copy())
-                    .fluidOutputs(Materials.Milk.getFluid(1000)).duration(5 * SECONDS).eut(2).addTo(distilleryRecipes);
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Milk, FluidShapes.fluidLiquid, 1000))
+                    .duration(5 * SECONDS).eut(2).addTo(distilleryRecipes);
         }
     }
 }

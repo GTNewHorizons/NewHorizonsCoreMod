@@ -41,17 +41,21 @@ import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.railcraft.RailcraftHelper;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.enums.materials.CellShapes;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import mods.railcraft.api.crafting.RailcraftCraftingManager;
@@ -899,7 +903,7 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 4),
                 "paneGlass",
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeLarge, 1),
                 "paneGlass",
                 ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Railcraft.ID, "detector", 1, 8),
@@ -916,12 +920,12 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 8),
                 ItemList.Electric_Pump_LV.get(1L),
                 "paneGlass",
-                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, TEBlockShapes.pipeLarge, 1),
                 "paneGlass");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 6),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.cableGt01, 1),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
@@ -938,7 +942,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 10),
                 "plateRedAlloy",
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.cableGt01, 1),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 1, 8),
@@ -962,18 +966,18 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 0),
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt04, 1),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
                 "plateRedAlloy",
                 "plateSteel",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt04, 1),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 4),
                 "plateBronze",
-                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.wireGt04, 1),
                 "plateBronze",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10),
@@ -1633,8 +1637,8 @@ public class ScriptRailcraft implements IScriptLoader {
                 'i',
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3));
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.Creosote.getCells(1)).metadata(FUEL_VALUE, 8)
-                .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GTRecipeConstants.Fuel);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Creosote, CellShapes.cell, 1))
+                .metadata(FUEL_VALUE, 8).metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GTRecipeConstants.Fuel);
 
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.rail", 8, 0));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.rail", 6, 0));
@@ -1885,61 +1889,58 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Forestry.ID, "waxCast", 1, wildcard),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0),
-                new Object[] { "abc", "def", "ghi", 'a',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'b',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L), 'f',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
+                new Object[] { "abc", "def", "ghi", 'a', MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1),
+                        'b', MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 1), 'c',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1), 'd',
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, 1), 'e',
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1), 'f',
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 1), 'g',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1), 'h',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 1), 'i',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1) });
         RecipeManagers.fabricatorManager.addRecipe(
                 getModItem(Forestry.ID, "waxCast", 1, wildcard),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0),
-                new Object[] { "abc", "def", "ghi", 'a',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'b',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L), 'f',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
+                new Object[] { "abc", "def", "ghi", 'a', MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1),
+                        'b', MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 1), 'c',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1), 'd',
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, 1), 'e',
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 1), 'f',
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 1), 'g',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1), 'h',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 1), 'i',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1) });
         RecipeManagers.fabricatorManager.addRecipe(
                 getModItem(Forestry.ID, "waxCast", 1, wildcard),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0),
-                new Object[] { "abc", "def", "ghi", 'a',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'b',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
+                new Object[] { "abc", "def", "ghi", 'a', MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1),
+                        'b', MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 1), 'c',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1), 'd',
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, 1), 'e',
                         NHItemList.ChargedCertusQuartzDust.get(), 'f',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 1), 'g',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1), 'h',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 1), 'i',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1) });
         RecipeManagers.fabricatorManager.addRecipe(
                 getModItem(Forestry.ID, "waxCast", 1, wildcard),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0),
-                new Object[] { "abc", "def", "ghi", 'a',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'b',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 1L), 'f',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
+                new Object[] { "abc", "def", "ghi", 'a', MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1),
+                        'b', MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 1), 'c',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1), 'd',
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, 1), 'e',
+                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 1), 'f',
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 1), 'g',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1), 'h',
+                        MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 1), 'i',
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.dust, 1) });
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 7))
-                .itemOutputs(Materials.Marble.getDust(1)).duration(8 * SECONDS).eut(4).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Marble, Shapes.dust, 1)).duration(8 * SECONDS).eut(4)
+                .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "torch", 1, 0), getModItem(Railcraft.ID, "slab", 2, 28))
                 .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 0)).duration(10 * SECONDS).eut(2)
@@ -1985,27 +1986,19 @@ public class ScriptRailcraft implements IScriptLoader {
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 5, 1)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 5L),
-                        NHItemList.MoldHelmet.get(0))
+                .itemInputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 5), NHItemList.MoldHelmet.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 8L),
-                        NHItemList.MoldChestplate.get(0))
+                .itemInputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 8), NHItemList.MoldChestplate.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.plate", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 7L),
-                        NHItemList.MoldLeggings.get(0))
+                .itemInputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 7), NHItemList.MoldLeggings.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.legs", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
-                        NHItemList.MoldBoots.get(0))
+                .itemInputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 4), NHItemList.MoldBoots.get(0))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.boots", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
@@ -2070,52 +2063,54 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "machine.alpha", 1, 14),
                 GTModHandler.RecipeBits.BUFFERED,
 
-                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.Iron), 'S', ItemList.IC2_Resin.get(1L) });
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.ingredient(Materials.Wood), 'I',
+                        OrePrefixes.stick.ingredient(Materials.Iron), 'S', ItemList.IC2_Resin.get(1L) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 2, 14),
                 GTModHandler.RecipeBits.BUFFERED,
 
-                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.Iron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.ingredient(Materials.Wood), 'I',
+                        OrePrefixes.stick.ingredient(Materials.Iron), 'S',
+                        OrePrefixes.dust.ingredient(Materials.Rubber) });
         GTModHandler.addCraftingRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 4, 14),
                 GTModHandler.RecipeBits.BUFFERED,
 
-                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.get(Materials.Wood), 'I',
-                        OrePrefixes.stick.get(Materials.CastIron), 'S', OrePrefixes.dust.get(Materials.Rubber) });
+                new Object[] { "PPP", "IhI", "PSP", 'P', OrePrefixes.plank.ingredient(Materials.Wood), 'I',
+                        OrePrefixes.stick.ingredient(Materials.CastIron), 'S',
+                        OrePrefixes.dust.ingredient(Materials.Rubber) });
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 1))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 1L, 14))
-                .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS)).duration(10 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 1 * HALF_INGOTS))
+                .duration(10 * SECONDS).eut(8).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.CastIron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2))
+                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 2))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 2L, 14))
-                .fluidInputs(Materials.Glue.getFluid(1 * HALF_INGOTS)).duration(10 * SECONDS).eut(8)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 1 * HALF_INGOTS))
+                .duration(10 * SECONDS).eut(8).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 4))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 4))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 4L, 14))
-                .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Rubber, FluidShapes.fluidMolten, 1 * INGOTS))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.CastIron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 8))
+                        MaterialLibAPI.getStack(Materials.CastIron, Shapes.stick, 1),
+                        MaterialLibAPI.getStack(Materials.Wood, TEBlockShapes.frameGt, 8))
                 .itemOutputs(GTModHandler.getModItem(Railcraft.ID, "machine.alpha", 8L, 14))
-                .fluidInputs(Materials.Rubber.getMolten(1 * INGOTS)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Rubber, FluidShapes.fluidMolten, 1 * INGOTS))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2146,8 +2141,10 @@ public class ScriptRailcraft implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8))
                 .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0))
                 .itemOutputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0)).duration(5 * SECONDS).eut(24)
                 .addTo(hammerRecipes);
@@ -2161,14 +2158,14 @@ public class ScriptRailcraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Diamond, Shapes.lens, 1)),
                         getModItem(Railcraft.ID, "firestone.raw", 1, 0))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.cut", 1, 0)).duration(8 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Firestone, Shapes.lens, 1)),
                         getModItem(Railcraft.ID, "firestone.raw", 1, 0))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.cut", 1, 0)).duration(2 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
@@ -2192,15 +2189,15 @@ public class ScriptRailcraft implements IScriptLoader {
                 'b',
                 "dyeRed",
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'd',
                 "dyeRed",
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'f',
                 "dyeRed",
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'h',
                 "dyeRed",
                 'i',

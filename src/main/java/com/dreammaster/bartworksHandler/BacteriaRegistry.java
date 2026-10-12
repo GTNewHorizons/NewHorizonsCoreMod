@@ -4,43 +4,6 @@ import static bartworks.API.BioObjectAdder.regenerateBioFluids;
 import static bartworks.API.recipe.BartWorksRecipeMaps.bacterialVatRecipes;
 import static bartworks.API.recipe.BartWorksRecipeMaps.bioLabRecipes;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Materials.Aluminium;
-import static gregtech.api.enums.Materials.AntimonyTrioxide;
-import static gregtech.api.enums.Materials.Ash;
-import static gregtech.api.enums.Materials.BioMediumRaw;
-import static gregtech.api.enums.Materials.Bismuth;
-import static gregtech.api.enums.Materials.Boron;
-import static gregtech.api.enums.Materials.Creosote;
-import static gregtech.api.enums.Materials.FermentedBacterialSludge;
-import static gregtech.api.enums.Materials.FermentedBiomass;
-import static gregtech.api.enums.Materials.Fluorine;
-import static gregtech.api.enums.Materials.GrowthMediumRaw;
-import static gregtech.api.enums.Materials.Helium;
-import static gregtech.api.enums.Materials.InfinityCatalyst;
-import static gregtech.api.enums.Materials.Lithium;
-import static gregtech.api.enums.Materials.MysteriousCrystal;
-import static gregtech.api.enums.Materials.NaquadahEnriched;
-import static gregtech.api.enums.Materials.Naquadria;
-import static gregtech.api.enums.Materials.Oil;
-import static gregtech.api.enums.Materials.OilHeavy;
-import static gregtech.api.enums.Materials.Osmium;
-import static gregtech.api.enums.Materials.Oxygen;
-import static gregtech.api.enums.Materials.Plutonium;
-import static gregtech.api.enums.Materials.RadoxCracked;
-import static gregtech.api.enums.Materials.RadoxGas;
-import static gregtech.api.enums.Materials.RadoxHeavy;
-import static gregtech.api.enums.Materials.RadoxLight;
-import static gregtech.api.enums.Materials.RadoxSuperHeavy;
-import static gregtech.api.enums.Materials.RadoxSuperLight;
-import static gregtech.api.enums.Materials.Redstone;
-import static gregtech.api.enums.Materials.Saltpeter;
-import static gregtech.api.enums.Materials.Silver;
-import static gregtech.api.enums.Materials.Titanium;
-import static gregtech.api.enums.Materials.Tritanium;
-import static gregtech.api.enums.Materials.Uranium;
-import static gregtech.api.enums.Materials.Water;
-import static gregtech.api.enums.Materials.Xenoxene;
-import static gregtech.api.enums.Materials.XenoxeneDiluted;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -73,15 +36,19 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.API.enums.BioCultureEnum;
 import bartworks.util.BWUtil;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Sievert;
 import gregtech.loaders.postload.recipes.beamcrafter.BeamCrafterMetadata;
 
@@ -97,24 +64,29 @@ public class BacteriaRegistry {
 
     private void runAdditionalFuelRecipes() {
         // XenoxRecycleRecipe
-        GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(1)).fluidInputs(Materials.XenoxeneDiluted.getFluid(1000))
-                .fluidOutputs(Xenoxene.getFluid(250), RadoxLight.getGas(300)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
+        GTValues.RA.stdBuilder().itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.DilutedXenoxene, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 250),
+                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 300))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
 
         // LightRadox + Nq -> Enriched Naquadah condensation
-        GTValues.RA.stdBuilder().itemInputs(Materials.Naquadah.getDust(1))
-                .itemOutputs(Materials.NaquadahEnriched.getDust(3)).outputChances(10000)
-                .fluidInputs(RadoxLight.getGas(2000)).requiresLowGravity().duration(17 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Naquadah, Shapes.dust, 1))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.dust, 3)).outputChances(10000)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 2000))
+                .requiresLowGravity().duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
 
         // super heavy -> heavy radox conversion
-        GTValues.RA.stdBuilder().itemOutputs().fluidInputs(RadoxSuperHeavy.getFluid(1000))
-                .fluidOutputs(RadoxHeavy.getFluid(2000)).duration(50 * MINUTES).eut(TierEU.RECIPE_UV)
-                .addTo(centrifugeRecipes);
+        GTValues.RA.stdBuilder().itemOutputs()
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SuperHeavyRadox, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, 2000))
+                .duration(50 * MINUTES).eut(TierEU.RECIPE_UV).addTo(centrifugeRecipes);
 
         // heavy radox + Nq+ -> Nq*
-        GTValues.RA.stdBuilder().itemInputs(Materials.NaquadahEnriched.getDust(1))
-                .itemOutputs(Materials.Naquadria.getDust(3)).outputChances(10000).fluidInputs(RadoxHeavy.getFluid(4000))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.dust, 1))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Naquadria, Shapes.dust, 3)).outputChances(10000)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, 4000))
                 .requiresLowGravity().duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM)
                 .addTo(autoclaveRecipes);
 
@@ -122,92 +94,122 @@ public class BacteriaRegistry {
 
     private void runGTRecipes() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaClog", 64)).circuit(24)
-                .itemOutputs(Ash.getDust(8)).fluidInputs(Materials.Xenoxene.getFluid(1000))
-                .fluidOutputs(Materials.RadoxRaw.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
-                .addTo(pyrolyseRecipes, industrialCokeOvenRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 8))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RawRadox, FluidShapes.fluidLiquid, 1000))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).addTo(pyrolyseRecipes, industrialCokeOvenRecipes);
 
-        GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(5)).fluidInputs(Materials.RadoxRaw.getFluid(5000))
+        GTValues.RA.stdBuilder().itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 5))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RawRadox, FluidShapes.fluidLiquid, 5000))
                 .fluidOutputs(
-                        OilHeavy.getFluid(600),
-                        Oil.getFluid(300),
-                        Creosote.getFluid(1000),
-                        Water.getFluid(1400),
-                        FermentedBacterialSludge.getFluid(50),
-                        FermentedBiomass.getFluid(50),
-                        RadoxSuperHeavy.getFluid(100),
-                        RadoxHeavy.getFluid(150),
-                        XenoxeneDiluted.getFluid(50),
-                        RadoxLight.getGas(300),
-                        RadoxSuperLight.getGas(500))
+                        MaterialLibAPI.getFluidStack(Materials.OilHeavy, FluidShapes.fluidLiquid, 600),
+                        MaterialLibAPI.getFluidStack(Materials.Oil, FluidShapes.fluidLiquid, 300),
+                        MaterialLibAPI.getFluidStack(Materials.Creosote, FluidShapes.fluidLiquid, 1000),
+                        GTUtility.getWater(1400),
+                        MaterialLibAPI.getFluidStack(Materials.FermentedBacterialSludge, FluidShapes.fluidLiquid, 50),
+                        MaterialLibAPI.getFluidStack(Materials.FermentedBiomass, FluidShapes.fluidLiquid, 50),
+                        MaterialLibAPI.getFluidStack(Materials.SuperHeavyRadox, FluidShapes.fluidLiquid, 100),
+                        MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, 150),
+                        MaterialLibAPI.getFluidStack(Materials.DilutedXenoxene, FluidShapes.fluidLiquid, 50),
+                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 300),
+                        MaterialLibAPI.getFluidStack(Materials.SuperLightRadox, FluidShapes.fluidGas, 500))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(distillationTowerRecipes);
 
-        GTValues.RA.stdBuilder().circuit(24).fluidInputs(RadoxSuperLight.getGas(100), Silver.getPlasma(1))
-                .fluidOutputs(RadoxCracked.getGas(100)).duration(25 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(crackingRecipes);
+        GTValues.RA.stdBuilder().circuit(24)
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.SuperLightRadox, FluidShapes.fluidGas, 100),
+                        MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, 1))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.CrackedRadox, FluidShapes.fluidGas, 100))
+                .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(crackingRecipes);
 
-        GTValues.RA.stdBuilder().itemOutputs(Ash.getDust(1)).fluidInputs(RadoxCracked.getGas(1000))
-                .fluidOutputs(RadoxGas.getGas(100), RadoxLight.getGas(200)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(distillationTowerRecipes);
+        GTValues.RA.stdBuilder().itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CrackedRadox, FluidShapes.fluidGas, 1000))
+                .fluidOutputs(
+                        MaterialLibAPI.getFluidStack(Materials.RadoxGas, FluidShapes.fluidGas, 100),
+                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 200))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
 
         // Ti & O Plasma Recipes
-        GTValues.RA.stdBuilder().fluidInputs(Aluminium.getMolten(144), Fluorine.getGas(144))
-                .fluidOutputs(Titanium.getPlasma(144)).duration(8 * SECONDS).eut(49_152)
-                .metadata(FUSION_THRESHOLD, 180_000_000L).addTo(fusionRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.Aluminium, FluidShapes.fluidMolten, 144),
+                        MaterialLibAPI.getFluidStack(Materials.Fluorine, FluidShapes.fluidGas, 144))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Titanium, FluidShapes.fluidPlasma, 144))
+                .duration(8 * SECONDS).eut(49_152).metadata(FUSION_THRESHOLD, 180_000_000L).addTo(fusionRecipes);
 
-        GTValues.RA.stdBuilder().fluidInputs(Helium.getPlasma(144), Lithium.getMolten(144))
-                .fluidOutputs(Boron.getPlasma(144)).duration(12 * SECONDS).eut(10_240)
-                .metadata(FUSION_THRESHOLD, 50_000_000L).addTo(fusionRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.Helium, FluidShapes.fluidPlasma, 144),
+                        MaterialLibAPI.getFluidStack(Materials.Lithium, FluidShapes.fluidMolten, 144))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Boron, FluidShapes.fluidPlasma, 144))
+                .duration(12 * SECONDS).eut(10_240).metadata(FUSION_THRESHOLD, 50_000_000L).addTo(fusionRecipes);
 
-        GTValues.RA.stdBuilder().fluidInputs(Boron.getPlasma(144), Lithium.getMolten(144))
-                .fluidOutputs(Oxygen.getPlasma(144)).duration(12 * SECONDS).eut(49_152)
-                .metadata(FUSION_THRESHOLD, 180_000_000L).addTo(fusionRecipes);
+        GTValues.RA.stdBuilder()
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.Boron, FluidShapes.fluidPlasma, 144),
+                        MaterialLibAPI.getFluidStack(Materials.Lithium, FluidShapes.fluidMolten, 144))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidPlasma, 144))
+                .duration(12 * SECONDS).eut(49_152).metadata(FUSION_THRESHOLD, 180_000_000L).addTo(fusionRecipes);
 
         GTValues.RA.stdBuilder().circuit(2)
-                .fluidInputs(RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L))
-                .fluidOutputs(Materials.RadoxPolymer.getMolten(720L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.RadoxGas, FluidShapes.fluidGas, 2160),
+                        MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidPlasma, 7500),
+                        MaterialLibAPI.getFluidStack(Materials.Titanium, FluidShapes.fluidPlasma, 100))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 720))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(multiblockChemicalReactorRecipes);
 
         runAdditionalFuelRecipes();
     }
 
     private void bacterialVatRecipes() {
-        GTValues.RA.stdBuilder().itemInputs(AntimonyTrioxide.getDust(16), Osmium.getDust(16))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialLibAPI.getStack(Materials.AntimonyTrioxide, Shapes.dust, 16),
+                        MaterialLibAPI.getStack(Materials.Osmium, Shapes.dust, 16))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.XenoxeneXenoxsis.bioCulture))
-                .fluidInputs(Oil.getFluid(20)).fluidOutputs(Xenoxene.getFluid(20)).duration(3 * MINUTES)
-                .eut(TierEU.RECIPE_UEV).metadata(GLASS, 8)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), false)).addTo(bacterialVatRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oil, FluidShapes.fluidLiquid, 20))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 20))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_UEV).metadata(GLASS, 8)
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.NaquadahEnriched), false))
+                .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Chip_Stemcell.get(64L),
                         getModItem(GalaxySpace.ID, "item.UnknowCrystal", 16),
                         NHItemList.TCetiESeaweedExtract.get(4),
-                        Tritanium.getDust(4))
+                        MaterialLibAPI.getStack(Materials.Tritanium, Shapes.dust, 4))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.DerivanturCellulaEvolutionis.bioCulture))
-                .fluidInputs(GrowthMediumRaw.getFluid(8)).fluidOutputs(BioMediumRaw.getFluid(2)).duration(3 * MINUTES)
-                .eut(TierEU.RECIPE_LuV).metadata(GLASS, 6)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), true)).addTo(bacterialVatRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GrowthMediumRaw, FluidShapes.fluidLiquid, 8))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.BioMediumRaw, FluidShapes.fluidLiquid, 2))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_LuV).metadata(GLASS, 6)
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Plutonium), true))
+                .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Chip_Stemcell.get(16L),
                         getModItem(GalaxySpace.ID, "item.UnknowCrystal", 16),
                         NHItemList.TCetiESeaweedExtract.get(8),
-                        InfinityCatalyst.getDustTiny(4))
+                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dustTiny, 4))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.CellulaBiologicumEvolutione.bioCulture))
-                .fluidInputs(GrowthMediumRaw.getFluid(5)).fluidOutputs(BioMediumRaw.getFluid(5)).duration(3 * MINUTES)
-                .eut(TierEU.RECIPE_ZPM).metadata(GLASS, 7)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), true)).addTo(bacterialVatRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GrowthMediumRaw, FluidShapes.fluidLiquid, 5))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.BioMediumRaw, FluidShapes.fluidLiquid, 5))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_ZPM).metadata(GLASS, 7)
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.NaquadahEnriched), true))
+                .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Chip_Biocell.get(8L),
                         NHItemList.TCetiESeaweedExtract.get(16),
-                        InfinityCatalyst.getDust(4))
+                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dust, 4))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.CellulaBiologicumEvolutione.bioCulture))
-                .fluidInputs(GrowthMediumRaw.getFluid(5)).fluidOutputs(BioMediumRaw.getFluid(10)).duration(3 * MINUTES)
-                .eut(TierEU.RECIPE_UV).metadata(GLASS, 8)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Naquadria), true)).requiresCleanRoom()
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GrowthMediumRaw, FluidShapes.fluidLiquid, 5))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.BioMediumRaw, FluidShapes.fluidLiquid, 10))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).metadata(GLASS, 8)
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Naquadria), true)).requiresCleanRoom()
                 .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Genetics.ID, "misc", 2, 4))
@@ -216,101 +218,115 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 2)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).metadata(GLASS, 4).addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MysteriousCrystal.getDust(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniGrowthMedium.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(8L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 4)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV).metadata(GLASS, 5)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Bismuth), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Bismuth), false))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDustTiny(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dustTiny, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniGrowthMedium.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(16L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 8)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_IV).metadata(GLASS, 5)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Uranium), false))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDust(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dust, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniGrowthMedium.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(16L * 9L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 8 * 9))
                 .duration(9 * (7 * SECONDS + 10 * TICKS)).eut(TierEU.RECIPE_IV).metadata(GLASS, 5)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Uranium), false))
+                .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 4, 0))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniBacteria.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(4L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 2)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).metadata(GLASS, 4)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Bismuth), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Bismuth), false))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MysteriousCrystal.getDust(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniBacteria.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(8L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 4)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_EV).metadata(GLASS, 5)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Uranium), false))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDustTiny(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dustTiny, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniBacteria.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(16L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 8)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).metadata(GLASS, 6)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Plutonium), false))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDust(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dust, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniBacteria.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(16L * 9L))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 8 * 9)).duration(9 * 15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).metadata(GLASS, 6)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Plutonium), false))
+                .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MarsStoneDust.get(16))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(4L))
                 .fluidOutputs(FluidRegistry.getFluidStack("bacterialsludge", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV).metadata(GLASS, 5)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Bismuth), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Bismuth), false))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MysteriousCrystal.getDust(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(8L))
                 .fluidOutputs(FluidRegistry.getFluidStack("bacterialsludge", 2)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_IV).metadata(GLASS, 6)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Uranium), false))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDustTiny(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dustTiny, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(16L))
                 .fluidOutputs(FluidRegistry.getFluidStack("bacterialsludge", 4)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).metadata(GLASS, 7)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), true)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Plutonium), true))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDust(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dust, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(16L * 9L))
                 .fluidOutputs(FluidRegistry.getFluidStack("bacterialsludge", 4 * 9)).duration(9 * 30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).metadata(GLASS, 7)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), true)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Plutonium), true))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MysteriousCrystal.getDust(4))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 4))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.MutagenBacteriaASpatio.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(4L)).fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_IV).metadata(GLASS, 6)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Uranium), false))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDustTiny(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dustTiny, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.MutagenBacteriaASpatio.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(8L)).fluidOutputs(FluidRegistry.getFluidStack("mutagen", 2))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LuV).metadata(GLASS, 7)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), true)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Plutonium), true))
+                .addTo(bacterialVatRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDust(1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dust, 1))
                 .special(BioCultureEnum.getPetriDish(BioCultureEnum.MutagenBacteriaASpatio.bioCulture))
                 .fluidInputs(GTModHandler.getDistilledWater(8L * 9L))
                 .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 2 * 9)).duration(9 * MINUTES)
                 .eut(TierEU.RECIPE_LuV).metadata(GLASS, 7)
-                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), true)).addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Materials.Plutonium), true))
+                .addTo(bacterialVatRecipes);
 
         // TheVat - BacVat
 
@@ -331,7 +347,10 @@ public class BacteriaRegistry {
                     .fluidOutputs(FluidRegistry.getFluidStack("hootch", 20)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_EV).metadata(GLASS, 2).addTo(bacterialVatRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.blaze_powder, 4), Redstone.getDust(4))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Items.blaze_powder, 4),
+                            MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 4))
                     .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniBacteria.bioCulture))
                     .fluidInputs(FluidRegistry.getFluidStack("hootch", 10))
                     .fluidOutputs(FluidRegistry.getFluidStack("fire_water", 10)).duration(30 * SECONDS)
@@ -350,7 +369,10 @@ public class BacteriaRegistry {
                     .fluidOutputs(FluidRegistry.getFluidStack("cloud_seed", 20)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_EV).metadata(GLASS, 2).addTo(bacterialVatRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.clay, 4), Saltpeter.getDust(4))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.clay, 4),
+                            MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 4))
                     .special(BioCultureEnum.getPetriDish(BioCultureEnum.BinniBacteria.bioCulture))
                     .fluidInputs(FluidRegistry.getFluidStack("cloud_seed", 20))
                     .fluidOutputs(FluidRegistry.getFluidStack("cloud_seed_concentrated", 20)).duration(30 * SECONDS)
@@ -399,17 +421,19 @@ public class BacteriaRegistry {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), ItemList.Circuit_Chip_Stemcell.get(1L))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.DerivanturCellulaEvolutionis.bioCulture))
-                .outputChances(7_50).fluidInputs(GrowthMediumRaw.getFluid(1000)).duration(2 * MINUTES)
-                .eut(TierEU.RECIPE_ZPM).requiresCleanRoom().addTo(bioLabRecipes);
+                .outputChances(7_50)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GrowthMediumRaw, FluidShapes.fluidLiquid, 1000))
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_ZPM).requiresCleanRoom().addTo(bioLabRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), ItemList.Circuit_Chip_Biocell.get(1L))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.CellulaBiologicumEvolutione.bioCulture))
-                .outputChances(7_50).fluidInputs(Materials.BioMediumRaw.getFluid(1000)).duration(3 * MINUTES)
-                .eut(TierEU.RECIPE_UV).requiresCleanRoom().addTo(bioLabRecipes);
+                .outputChances(7_50)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.BioMediumRaw, FluidShapes.fluidLiquid, 1000))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).requiresCleanRoom().addTo(bioLabRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), getModItem(Genetics.ID, "misc", 1, 4))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.BinniGrowthMedium.bioCulture))
-                .outputChances(50_00).fluidInputs(Water.getFluid(4000)).duration(7 * SECONDS + 10 * TICKS)
+                .outputChances(50_00).fluidInputs(GTUtility.getWater(4000)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), getModItem(Genetics.ID, "misc", 1, 4))
@@ -422,7 +446,10 @@ public class BacteriaRegistry {
                 .outputChances(90_00).fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 1000))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), MysteriousCrystal.getDust(4))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.EmptyPetriDish.get(1),
+                        MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 4))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.BinniGrowthMedium.bioCulture))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 500)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV).addTo(bioLabRecipes);
@@ -433,12 +460,18 @@ public class BacteriaRegistry {
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), MysteriousCrystal.getDust(4))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.EmptyPetriDish.get(1),
+                        MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 4))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.BinniBacteria.bioCulture)).outputChances(80_00)
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 500)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).requiresCleanRoom().addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), InfinityCatalyst.getDustTiny(1))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.EmptyPetriDish.get(1),
+                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dustTiny, 1))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.BinniBacteria.bioCulture))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 250)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).requiresCleanRoom().addTo(bioLabRecipes);
@@ -448,22 +481,34 @@ public class BacteriaRegistry {
                 .outputChances(30_00).fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), MysteriousCrystal.getDust(16))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.EmptyPetriDish.get(1),
+                        MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 16))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture))
                 .outputChances(50_00).fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 500))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_IV).requiresCleanRoom().addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), InfinityCatalyst.getDustTiny(4))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.EmptyPetriDish.get(1),
+                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dustTiny, 4))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.CorynebacteriumSludgeMarsensis.bioCulture))
                 .outputChances(75_00).fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 250))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).requiresCleanRoom().addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), MysteriousCrystal.getDust(16))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.EmptyPetriDish.get(1),
+                        MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 16))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.MutagenBacteriaASpatio.bioCulture))
                 .outputChances(15_00).fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_LuV).requiresCleanRoom().addTo(bioLabRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.EmptyPetriDish.get(1), InfinityCatalyst.getDustTiny(4))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.EmptyPetriDish.get(1),
+                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dustTiny, 4))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.MutagenBacteriaASpatio.bioCulture))
                 .outputChances(30_00).fluidInputs(FluidRegistry.getFluidStack("mutagen", 500)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_ZPM).requiresCleanRoom().addTo(bioLabRecipes);
@@ -472,7 +517,7 @@ public class BacteriaRegistry {
     private void beamCrafterRecipes() {
         GTValues.RA.stdBuilder()
                 .itemInputs(BioCultureEnum.getPetriDish(BioCultureEnum.BarnadafisArboriatoris.bioCulture))
-                .fluidInputs(Materials.Xenoxene.getFluid(250L))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 250))
                 .itemOutputs(BioCultureEnum.getPetriDish(BioCultureEnum.XenoxeneXenoxsis.bioCulture))
                 .metadata(
                         BEAMCRAFTER_METADATA,

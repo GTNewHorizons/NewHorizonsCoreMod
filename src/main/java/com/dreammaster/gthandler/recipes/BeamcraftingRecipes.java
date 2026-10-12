@@ -9,12 +9,14 @@ import static gtnhlanth.common.beamline.Particle.GRAVITON;
 import static gtnhlanth.common.beamline.Particle.WBOSON;
 import static gtnhlanth.common.beamline.Particle.ZBOSON;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.loaders.postload.recipes.beamcrafter.BeamCrafterMetadata;
 
 public class BeamcraftingRecipes implements Runnable {
@@ -27,8 +29,10 @@ public class BeamcraftingRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Wafer_APIC.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SpaceTime, 1))
-                .fluidInputs(Materials.Creon.getMolten(576L), Materials.Mellion.getMolten(576L))
+                        MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.dust, 1))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.Creon, FluidShapes.fluidMolten, 576),
+                        MaterialLibAPI.getFluidStack(Materials.Mellion, FluidShapes.fluidMolten, 576))
                 .itemOutputs(ItemList.Circuit_Wafer_ZPIC.get(1))
                 .metadata(
                         BEAMCRAFTER_METADATA,
@@ -39,8 +43,8 @@ public class BeamcraftingRecipes implements Runnable {
         if (ExtraUtilities.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1L))
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.ingot, 1),
+                            MaterialLibAPI.getStack(Materials.Diamond, Shapes.gem, 1))
                     .itemOutputs(getModItem(ExtraUtilities.ID, "unstableingot", 1, 2))
                     .metadata(
                             BEAMCRAFTER_METADATA,

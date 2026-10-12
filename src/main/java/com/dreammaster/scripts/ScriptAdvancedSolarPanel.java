@@ -14,13 +14,15 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
@@ -129,7 +131,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
+                        MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 1),
                         getModItem(Minecraft.ID, "glowstone", 4, 0))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
@@ -146,13 +148,13 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 2))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3))
-                .fluidInputs(Materials.Sunnarium.getMolten(144L)).duration(7 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Sunnarium, FluidShapes.fluidMolten, 144))
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 1))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2))
-                .fluidInputs(Materials.Sunnarium.getMolten(144L)).duration(38 * TICKS).eut(TierEU.RECIPE_ZPM)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Sunnarium, FluidShapes.fluidMolten, 144))
+                .duration(38 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
 
     }
 }

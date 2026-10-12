@@ -19,11 +19,14 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
 import gregtech.api.objects.OreDictItemStack;
 
 public class ForgeHammerRecipes implements Runnable {
@@ -50,9 +53,11 @@ public class ForgeHammerRecipes implements Runnable {
 
         // Uncompressed coal variants
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCharcoal.get(1))
-                .itemOutputs(Materials.Charcoal.getBlocks(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.get(1)).itemOutputs(Materials.Coal.getBlocks(9))
-                .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Charcoal, BlockShapes.block, 9)).duration(15 * SECONDS)
+                .eut(2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.get(1))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Coal, BlockShapes.block, 9)).duration(15 * SECONDS)
+                .eut(2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.get(1))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
 
@@ -151,12 +156,12 @@ public class ForgeHammerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(8))
-                .fluidInputs(Materials.Grade7PurifiedWater.getFluid(100L)).duration(chip_duration_ticks)
-                .eut(chip_eu_per_tick).addTo(hammerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Grade7PurifiedWater, FluidShapes.fluidLiquid, 100))
+                .duration(chip_duration_ticks).eut(chip_eu_per_tick).addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(12))
-                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(100L)).duration(chip_duration_ticks / 2)
-                .eut(chip_eu_per_tick).addTo(hammerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, 100))
+                .duration(chip_duration_ticks / 2).eut(chip_eu_per_tick).addTo(hammerRecipes);
     }
 }

@@ -20,18 +20,19 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import bartworks.system.material.WerkstoffLoader;
-import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialParts;
+import gregtech.api.material.MaterialUtils;
+import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class CentrifugeRecipes implements Runnable {
 
@@ -41,463 +42,481 @@ public class CentrifugeRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(1)
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 4L))
-                .outputChances(8000, 10000, 10000).fluidOutputs(Materials.Pollution.getFluid(100))
+                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 4))
+                .outputChances(8000, 10000, 10000)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, 100))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(2)
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 8L))
-                .outputChances(9000, 10000, 10000).fluidOutputs(Materials.Pollution.getFluid(250))
+                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 8),
+                        MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 8))
+                .outputChances(9000, 10000, 10000)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, 250))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(3)
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 12L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 12L))
-                .fluidOutputs(Materials.Pollution.getFluid(500)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(centrifugeRecipes);
+                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 12),
+                        MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 12))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, 500))
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdsorptionFilterDirty.get()).circuit(4)
                 .itemOutputs(
                         NHItemList.AdsorptionFilterCasing.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 16L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 16L))
-                .fluidOutputs(Materials.Pollution.getFluid(1000)).duration(60 * SECONDS).eut(TierEU.RECIPE_IV)
-                .addTo(centrifugeRecipes);
+                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 16),
+                        MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 16))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Pollution, FluidShapes.fluidLiquid, 1000))
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().circuit(1)
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 5L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 3L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rutile, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumOxide, 1L))
-                .outputChances(10000, 10000, 9000, 7500, 5000, 2500).fluidInputs(Materials.RedMud.getFluid(1000L))
-                .fluidOutputs(Materials.Water.getFluid(500L)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
+                        MaterialLibAPI.getStack(Materials.BandedIron, Shapes.dust, 5),
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 3),
+                        MaterialLibAPI.getStack(Materials.Alumina, Shapes.dust, 2),
+                        MaterialLibAPI.getStack(Materials.Rutile, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.SodiumOxide, Shapes.dust, 1))
+                .outputChances(10000, 10000, 9000, 7500, 5000, 2500)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RedMud, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(GTUtility.getWater(500L)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.fire_charge, 1, 0))
                 .itemOutputs(
                         new ItemStack(Items.blaze_powder, 1, 0),
                         new ItemStack(Items.gunpowder, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L))
+                        MaterialLibAPI.getStack(Materials.Coal, Shapes.dust, 1))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MoonStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Manganese, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Olivine, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RareEarth, 4L),
-                        WerkstoffLoader.PTMetallicPowder.get(OrePrefixes.dust, 8),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungstate, 4L))
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Manganese, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Olivine, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.RareEarth, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.PlatinumMetallicPowder, Shapes.dust, 8),
+                        MaterialLibAPI.getStack(Materials.Tungstate, Shapes.dust, 4))
                 .outputChances(5000, 2000, 1000, 750, 500, 250).duration(2 * MINUTES + 42 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MarsStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 4L),
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 8))
+                        MaterialLibAPI.getStack(Materials.BandedIron, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Magnesium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Alumina, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 8))
                 .outputChances(5000, 3000, 1000, 750, 500, 250).duration(2 * MINUTES + 1 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.PhobosStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Molybdenite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Desh, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 4L))
+                        MaterialLibAPI.getStack(Materials.BandedIron, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Bauxite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Molybdenite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Desh, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Uranium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Plutonium, Shapes.dust, 4))
                 .outputChances(5000, 2500, 1000, 750, 500, 150).duration(2 * MINUTES + 1 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeimosStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Magnesite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Pitchblende, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cooperite, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neodymium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungstate, 4L))
-                .outputChances(5000, 3000, 1000, 750, 650, 350).fluidOutputs(Materials.SulfuricAcid.getFluid(1800L))
+                        MaterialLibAPI.getStack(Materials.Magnesite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Pitchblende, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Cooperite, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Neodymium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Tungstate, Shapes.dust, 4))
+                .outputChances(5000, 3000, 1000, 750, 650, 350)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.SulfuricAcid, FluidShapes.fluidLiquid, 1800))
                 .duration(2 * MINUTES + 1 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AsteroidsStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lead, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 4L),
-                        WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 8))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Lead, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Ruby, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Chrome, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, 8))
                 .outputChances(5000, 3000, 1000, 750, 500, 150).duration(5 * MINUTES + 24 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CeresStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeteoricIron, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Beryllium, 9L),
-                        WerkstoffLoader.PTMetallicPowder.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 4L),
-                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
+                        MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Beryllium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.PlatinumMetallicPowder, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Tungsten, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.NaquadahOxideMixture, Shapes.dust, 8))
                 .outputChances(5000, 2500, 1000, 750, 500, 150).duration(5 * MINUTES + 24 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.EuropaIceDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Oriharukon, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Barium, 4L),
-                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
-                .outputChances(5000, 2500, 1250, 750, 500, 150).fluidOutputs(Materials.Oxygen.getGas(1800L))
+                        MaterialLibAPI.getStack(Materials.Ledox, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Lazurite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Oriharukon, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Barium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.NaquadahOxideMixture, Shapes.dust, 8))
+                .outputChances(5000, 2500, 1250, 750, 500, 150)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 1800))
                 .duration(5 * MINUTES + 24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.EuropaStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Barium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 4L))
-                .outputChances(5000, 3000, 1000, 750, 500, 300).fluidOutputs(Materials.Nitrogen.getGas(3600L))
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Ledox, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Sodalite, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Barium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Uranium, Shapes.dust, 4))
+                .outputChances(5000, 3000, 1000, 750, 500, 300)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Nitrogen, FluidShapes.fluidGas, 3600))
                 .duration(5 * MINUTES + 24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.GanymedeStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chromite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Galena, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 4L),
-                        WerkstoffLoader.PDMetallicPowder.get(OrePrefixes.dust, 8))
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Chromite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Galena, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Uranium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.PalladiumMetallicPowder, Shapes.dust, 8))
                 .outputChances(5000, 3000, 1000, 750, 600, 250).duration(5 * MINUTES + 24 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CallistoStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Galena, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Topaz, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlueTopaz, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lithium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 4L))
+                        MaterialLibAPI.getStack(Materials.CallistoIce, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Galena, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Topaz, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.BlueTopaz, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Lithium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Tungsten, Shapes.dust, 4))
                 .outputChances(5000, 3000, 1000, 900, 750, 250).duration(5 * MINUTES + 24 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.IoStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tantalite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Jasper, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedGold, 4L),
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 8))
-                .outputChances(5000, 3000, 1000, 750, 500, 250).fluidOutputs(Materials.SulfuricGas.getGas(3600L))
+                        MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Tantalite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Tungsten, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Jasper, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.InfusedGold, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 8))
+                .outputChances(5000, 3000, 1000, 750, 500, 250)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.SulfuricGas, FluidShapes.fluidGas, 3600))
                 .duration(3 * MINUTES + 36 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.VenusStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quantium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mytryl, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mithril, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 4L))
-                .outputChances(10000, 3000, 1000, 750, 500, 250).fluidOutputs(Materials.CarbonDioxide.getGas(18000L))
+                        MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Quantium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Mytryl, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Mithril, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Draconium, Shapes.dust, 4))
+                .outputChances(10000, 3000, 1000, 750, 500, 250)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, 18000))
                 .duration(3 * MINUTES + 36 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MercuryStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Vanadium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungstate, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Jade, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 4L))
-                .outputChances(5000, 3000, 1000, 750, 500, 250).fluidOutputs(Materials.Helium3.getGas(1800L))
-                .duration(3 * MINUTES + 36 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
+                        MaterialLibAPI.getStack(Materials.Vanadium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Tungstate, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Draconium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Jade, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.dust, 4))
+                .outputChances(5000, 3000, 1000, 750, 500, 250)
+                .fluidOutputs(MaterialUtils.gas(Materials.Helium3, 1800L)).duration(3 * MINUTES + 36 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MercuryCoreDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungstate, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Jade, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 4L))
-                .outputChances(5000, 3000, 1000, 750, 500, 250).fluidOutputs(Materials.Helium.getGas(9000L))
+                        MaterialLibAPI.getStack(Materials.Ilmenite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Tungstate, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Draconium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Jade, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.dust, 4))
+                .outputChances(5000, 3000, 1000, 750, 500, 250)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Helium, FluidShapes.fluidGas, 9000))
                 .duration(3 * MINUTES + 36 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.EnceladusIceDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 9L),
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L),
-                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
-                .outputChances(5000, 3000, 1000, 750, 400, 200).fluidOutputs(Materials.Oxygen.getGas(5400L))
+                        MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Chrome, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.Ledox, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Trinium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.NaquadahOxideMixture, Shapes.dust, 8))
+                .outputChances(5000, 3000, 1000, 750, 400, 200)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 5400))
                 .duration(8 * MINUTES + 6 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.EnceladusStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 9L),
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
-                        WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L),
-                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
-                .outputChances(5000, 3000, 1000, 1000, 400, 100).fluidOutputs(Materials.Nitrogen.getGas(5400L))
+                        MaterialLibAPI.getStack(Materials.Chrome, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Trinium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.NaquadahOxideMixture, Shapes.dust, 8))
+                .outputChances(5000, 3000, 1000, 1000, 400, 100)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Nitrogen, FluidShapes.fluidGas, 5400))
                 .duration(8 * MINUTES + 6 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TitanStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 9L),
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
-                        WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L))
-                .outputChances(5000, 2500, 1000, 900, 500, 200).fluidOutputs(Materials.Methane.getGas(3600L))
+                        MaterialLibAPI.getStack(Materials.Nickel, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.Emerald, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Gallium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Trinium, Shapes.dust, 4))
+                .outputChances(5000, 2500, 1000, 900, 500, 200)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Methane, FluidShapes.fluidGas, 3600))
                 .duration(8 * MINUTES + 6 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.OberonStoneDust.get(36))
                 .itemOutputs(
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
-                        WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 18),
-                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L))
-                .outputChances(4000, 2000, 800, 300, 150, 150).fluidOutputs(Materials.Argon.getGas(1800L))
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.NaquadahOxideMixture, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.Uranium235, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Plutonium241, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Trinium, Shapes.dust, 4))
+                .outputChances(4000, 2000, 800, 300, 150, 150)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Argon, FluidShapes.fluidGas, 1800))
                 .duration(8 * MINUTES + 6 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MirandaStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 9L),
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Desh, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 4L),
-                        WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 8))
-                .outputChances(4000, 2000, 1000, 750, 500, 350).fluidOutputs(Materials.Argon.getGas(1800L))
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Tetrahedrite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.Desh, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Chrome, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, 8))
+                .outputChances(4000, 2000, 1000, 750, 500, 350)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Argon, FluidShapes.fluidGas, 1800))
                 .duration(8 * MINUTES + 6 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TritonStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neodymium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RareEarth, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 4L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Neodymium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.RareEarth, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Niobium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Yttrium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Gallium, Shapes.dust, 4))
                 .outputChances(5000, 3000, 1000, 750, 500, 350).duration(5 * MINUTES + 2 * SECONDS + 8 * TICKS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.ProteusStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uraninite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Adamantium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 4L))
-                .outputChances(5000, 2500, 1000, 750, 500, 350).fluidOutputs(Materials.Radon.getGas(360L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Uraninite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Adamantium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Uranium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Plutonium, Shapes.dust, 4))
+                .outputChances(5000, 2500, 1000, 750, 500, 350)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, 360))
                 .duration(5 * MINUTES + 2 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.PlutoIceDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thorium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 4L),
-                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
+                        MaterialLibAPI.getStack(Materials.Thorium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Uranium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Plutonium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Ledox, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.NaquadahOxideMixture, Shapes.dust, 8))
                 .outputChances(5000, 2500, 1250, 750, 500, 400).duration(10 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.PlutoStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thorium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetYellow, 4L),
-                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 8))
+                        MaterialLibAPI.getStack(Materials.Thorium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Uranium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.GarnetRed, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.GarnetYellow, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.NaquadahOxideMixture, Shapes.dust, 8))
                 .outputChances(5000, 2500, 850, 500, 500, 300).duration(10 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MakeMakeStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetYellow, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 4L))
+                        MaterialLibAPI.getStack(Materials.GarnetRed, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.GarnetYellow, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Gallium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Yttrium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Niobium, Shapes.dust, 4))
                 .outputChances(2500, 2500, 1000, 750, 500, 350).duration(10 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HaumeaStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedGold, 9L),
-                        GGMaterial.naquadahEarth.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lanthanum, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Caesium, 4L),
-                        WerkstoffMaterialPool.CeriumRichMixture.get(OrePrefixes.dust, 8))
+                        MaterialLibAPI.getStack(Materials.InfusedGold, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.NaquadahOxideMixture, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Lanthanum, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Caesium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.CeriumRichMixture, Shapes.dust, 8))
                 .outputChances(5000, 2500, 850, 750, 500, 450).duration(10 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CentauriASurfaceDust.get(36))
                 .itemOutputs(
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 18),
-                        GGMaterial.enrichedNaquadahEarth.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 9L),
-                        WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 8),
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.EnrichedNaquadahOxideMixture, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.Draconium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 8),
                         getModItem(Avaritia.ID, "Resource", 36, 2),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 4L))
-                .outputChances(5000, 3000, 1000, 1000, 100, 50).fluidOutputs(Materials.Mercury.getFluid(3600L))
+                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dust, 4))
+                .outputChances(5000, 3000, 1000, 1000, 100, 50)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, 3600))
                 .duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CentauriAStoneDust.get(36))
                 .itemOutputs(
-                        WerkstoffLoader.IrOsLeachResidue.get(OrePrefixes.dust, 18),
-                        GGMaterial.enrichedNaquadahEarth.get(OrePrefixes.dust, 18),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 4L),
+                        MaterialLibAPI.getStack(Materials.RarestMetalResidue, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.EnrichedNaquadahOxideMixture, Shapes.dust, 18),
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.dust, 4),
                         getModItem(Avaritia.ID, "Resource", 36, 2),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tartarite, 1L))
-                .outputChances(5000, 2000, 500, 2500, 150, 80).fluidOutputs(Materials.Mercury.getFluid(7200L))
+                        MaterialLibAPI.getStack(Materials.Tartarite, Shapes.dust, 1))
+                .outputChances(5000, 2000, 500, 2500, 150, 80)
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Mercury, FluidShapes.fluidLiquid, 7200))
                 .duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.VegaBStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 4L),
-                        GGMaterial.naquadriaEarth.get(OrePrefixes.dust, 8),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DraconiumAwakened, 4L))
+                        MaterialLibAPI.getStack(Materials.Uranium235, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Plutonium241, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Europium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.NaquadriaOxideMixture, Shapes.dust, 8),
+                        MaterialLibAPI.getStack(Materials.DraconiumAwakened, Shapes.dust, 4))
                 .outputChances(5000, 3000, 1500, 800, 500, 50).duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS)
                 .eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BarnardaEStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 4L))
+                        MaterialLibAPI.getStack(Materials.Niobium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Yttrium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Gallium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Unstable, Shapes.dust, 4))
                 .outputChances(2500, 2000, 1500, 750, 250, 250).duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS)
                 .eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.BarnardaFStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Niobium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 4L))
+                        MaterialLibAPI.getStack(Materials.Gallium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Yttrium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Niobium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Unstable, Shapes.dust, 4))
                 .outputChances(2500, 2000, 1500, 750, 250, 250).duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS)
                 .eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TCetiEStoneDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L))
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Apatite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Bedrockium, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Draconium, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.InfinityCatalyst, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Trinium, Shapes.dust, 4))
                 .outputChances(5000, 2500, 1000, 750, 150, 50).duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS)
                 .eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.CokeOvenBrickDust.get(4))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 2L))
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dust, 2))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.AdvancedCokeOvenBrickDust.get(36)).circuit(2)
                 .itemOutputs(
                         NHItemList.CokeOvenBrickDust.get(36),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 36L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Brick, 4L))
+                        MaterialLibAPI.getStack(Materials.Netherrack, Shapes.dust, 36),
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Brick, Shapes.dust, 4))
                 .outputChances(10000, 9000, 7500, 6500).duration(60 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopGrass", 1, 0))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L))
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dustSmall, 1))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 0))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L))
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dustSmall, 1))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 1))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L))
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dustSmall, 1))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 2))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L))
+                        MaterialLibAPI.getStack(Materials.Flint, Shapes.dustSmall, 1))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 3))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L))
+                        MaterialLibAPI.getStack(Materials.Flint, Shapes.dustSmall, 1))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopGrass", 1, 2))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.QuartzSand, 1L))
+                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dustSmall, 1))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 4))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.QuartzSand, 1L))
+                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dustSmall, 1))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "newBopDirt", 1, 5))
                 .itemOutputs(
                         new ItemStack(Blocks.dirt, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.QuartzSand, 1L))
+                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dustSmall, 1))
                 .outputChances(10000, 3300).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "driedDirt", 1, 0))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L),
+                        MaterialLibAPI.getStack(Materials.Clay, Shapes.dustSmall, 1),
                         new ItemStack(Blocks.sand, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L))
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1))
                 .outputChances(9000, 5000, 277).duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockEldritch", 1, 4))
@@ -544,24 +563,24 @@ public class CentrifugeRecipes implements Runnable {
                         NHItemList.ProteusStoneDust.get())
                 .outputChances(10000, 9000, 7500).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dust, 9))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cassiterite, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L))
+                        MaterialLibAPI.getStack(Materials.Stone, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Quartzite, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Cassiterite, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.SiliconDioxide, Shapes.dust, 1))
                 .outputChances(9000, 3000, 2000, 1500, 1000, 750).duration(1 * MINUTES + 48 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust.get(Materials.DeepIron), 4L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.DeepIron, Shapes.dust, 4))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 3L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 1L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 3),
+                        MaterialLibAPI.getStack(Materials.Trinium, Shapes.dust, 1))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 1L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.dust, 1))
                 .itemOutputs(
                         getModItem(Avaritia.ID, "Resource", 1, 2),
                         getModItem(Avaritia.ID, "Resource", 1, 2),
@@ -572,16 +591,16 @@ public class CentrifugeRecipes implements Runnable {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0)).duration(15 * SECONDS).eut(4)
                 .addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrotine, 8L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Electrotine, Shapes.dust, 8))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrum, 1L))
+                        MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.dust, 1))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(5L))
-                .itemOutputs(Materials.Oxygen.getCells(1), ItemList.Cell_Empty.get(4L))
-                .fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS)
-                .eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(10L))
+                .itemOutputs(MaterialParts.requireCell(Materials.Oxygen, 1), ItemList.Cell_Empty.get(9L))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Nitrogen, FluidShapes.fluidGas, 3900))
+                .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(centrifugeRecipes);
 
         if (PamsHarvestCraft.isModLoaded()) {
 
@@ -595,55 +614,65 @@ public class CentrifugeRecipes implements Runnable {
             // Centrifuge
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
-                    .fluidOutputs(Materials.Glue.getFluid(50)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 2))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 50))
+                    .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.slime_ball, 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 2L))
-                    .fluidOutputs(Materials.Glue.getFluid(50)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 2))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 50))
+                    .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 8L))
-                    .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Rubber, Shapes.dust, 8))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 200))
+                    .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 8L))
-                    .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 8))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 200))
+                    .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 8L))
-                    .fluidOutputs(Materials.Glue.getFluid(200)).duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 8))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 200))
+                    .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0))
                     .itemOutputs(
                             new ItemStack(Blocks.dirt, 1, 32767),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 1L),
+                            MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 1),
                             getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
-                    .outputChances(10000, 10000, 1000).fluidOutputs(Materials.Glue.getFluid(25)).duration(15 * SECONDS)
-                    .eut(5).addTo(centrifugeRecipes);
+                    .outputChances(10000, 10000, 1000)
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 25))
+                    .duration(15 * SECONDS).eut(5).addTo(centrifugeRecipes);
 
         }
 
         if (Gendustry.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(NHItemList.FieryBloodDrop.get())
-                    .fluidOutputs(Materials.FierySteel.getFluid(10L)).duration(12 * TICKS).eut(TierEU.RECIPE_HV)
-                    .addTo(centrifugeRecipes);
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.FierySteel, FluidShapes.fluidLiquid, 10))
+                    .duration(12 * TICKS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
         }
         if (Forestry.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeCombs", 1, 9))
                     .itemOutputs(
                             getModItem(Forestry.ID, "beeswax", 1, 0),
-                            WerkstoffLoader.IrLeachResidue.get(OrePrefixes.dust, 2))
+                            MaterialLibAPI.getStack(Materials.IridiumMetalResidue, Shapes.dust, 2))
                     .outputChances(10000, 11).duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
             GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.INDIUM, 8)).circuit(2)
-                    .fluidInputs(GGMaterial.thoriumBasedLiquidFuelDepleted.getFluidOrGas(1000))
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials.ThoriumBasedLiquidFuelDepleted,
+                                    FluidShapes.fluidLiquid,
+                                    1000))
                     .itemOutputs(
-                            WerkstoffLoader.Thorium232.get(OrePrefixes.dust, 64),
-                            WerkstoffLoader.Thorium232.get(OrePrefixes.dust, 16),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Praseodymium, 64),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Praseodymium, 32),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Boron, 2),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 12))
+                            MaterialLibAPI.getStack(Materials.Thorium232, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Thorium232, Shapes.dust, 16),
+                            MaterialLibAPI.getStack(Materials.Praseodymium, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Praseodymium, Shapes.dust, 32),
+                            MaterialLibAPI.getStack(Materials.Boron, Shapes.dust, 2),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, 12))
                     .outputChances(10000, 8000, 10000, 8000, 3000, 5000).duration(1 * MINUTES + 15 * SECONDS)
                     .eut(TierEU.RECIPE_EV / 2).addTo(centrifugeRecipes);
         }

@@ -2,16 +2,17 @@ package com.dreammaster.TwilightForest;
 
 import net.minecraft.world.World;
 
-import gregtech.api.enums.Materials;
+import com.ruling_0.materiallib.api.Material;
+
 import gregtech.api.enums.StoneType;
 import gregtech.common.ores.OreManager;
 import twilightforest.world.TFGenCaveStalactite;
 
 class GregtechStalactite extends TFGenCaveStalactite {
 
-    private final Materials material;
+    private final Material material;
 
-    public GregtechStalactite(Materials material, float size, int maxLength, int minHeight) {
+    public GregtechStalactite(Material material, float size, int maxLength, int minHeight) {
         super(null, size, maxLength, minHeight);
         this.material = material;
     }

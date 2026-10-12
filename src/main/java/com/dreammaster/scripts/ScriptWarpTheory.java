@@ -22,12 +22,14 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -100,7 +102,8 @@ public class ScriptWarpTheory implements IScriptLoader {
                 'b',
                 new ItemStack(Items.potionitem), // Water bottle
                 'p',
-                Materials.InfusedEntropy.getDust(1), // Perditio crystal dust
+                // Perditio crystal dust
+                MaterialLibAPI.getStack(Materials.InfusedEntropy, Shapes.dust, 1),
                 'g',
                 new ItemStack(Items.ghast_tear));
         TCHelper.addResearchPage(
@@ -146,13 +149,13 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(ThaumicBases.ID, "resource", 1, 5),
                 getModItem(CropsNH.ID, "berry", 1, 2),
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0),
-                OrePrefixes.cell.get(Materials.LifeEssence),
+                OrePrefixes.cell.ingredient(Materials.lifeessence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 36),
                 getModItem(ThaumicBases.ID, "resource", 1, 5),
                 getModItem(CropsNH.ID, "berry", 1, 2),
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0),
-                OrePrefixes.cell.get(Materials.LifeEssence),
+                OrePrefixes.cell.ingredient(Materials.lifeessence),
                 getModItem(BloodMagic.ID, "magicales", 1, 0),
                 getModItem(Witchery.ID, "ingredient", 1, 36));
         TCHelper.addResearchPage(
@@ -179,15 +182,15 @@ public class ScriptWarpTheory implements IScriptLoader {
                 new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.EXCHANGE, 32).add(Aspect.MAGIC, 16)
                         .add(Aspect.HEAL, 16),
                 getModItem(Minecraft.ID, "nether_star", 1, 0),
-                OrePrefixes.ingot.get(Materials.Ichorium),
+                OrePrefixes.ingot.ingredient(Materials.Ichorium),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10),
-                OrePrefixes.lens.get(Materials.Diamond),
+                OrePrefixes.lens.ingredient(Materials.Diamond),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Minecraft.ID, "ghast_tear", 1, 0),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11),
-                OrePrefixes.lens.get(Materials.Diamond),
+                OrePrefixes.lens.ingredient(Materials.Diamond),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10));
         TCHelper.addResearchPage(
                 "PURETEAR",
@@ -204,19 +207,19 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.MAGIC, 64).add(Aspect.EXCHANGE, 32),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0),
                 getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
-                OrePrefixes.ingot.get(Materials.Ichorium),
+                OrePrefixes.screw.ingredient(Materials.Thaumium),
+                OrePrefixes.gemFlawless.ingredient(Materials.Diamond),
+                OrePrefixes.ingot.ingredient(Materials.Ichorium),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.screw.get(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Gold),
+                OrePrefixes.screw.ingredient(Materials.Thaumium),
                 getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0),
-                OrePrefixes.screw.get(Materials.Thaumium),
-                OrePrefixes.gemFlawless.get(Materials.Diamond),
+                OrePrefixes.screw.ingredient(Materials.Thaumium),
+                OrePrefixes.gemFlawless.ingredient(Materials.Diamond),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
-                OrePrefixes.ingot.get(Materials.Ichorium),
-                OrePrefixes.plate.get(Materials.Gold),
-                OrePrefixes.screw.get(Materials.Thaumium));
+                OrePrefixes.ingot.ingredient(Materials.Ichorium),
+                OrePrefixes.plate.ingredient(Materials.Gold),
+                OrePrefixes.screw.ingredient(Materials.Thaumium));
         TCHelper.setResearchAspects(
                 "warptheory.amulet",
                 new AspectList().add(Aspect.ELDRITCH, 15).add(Aspect.AURA, 15).add(Aspect.ENERGY, 12)
@@ -239,10 +242,10 @@ public class ScriptWarpTheory implements IScriptLoader {
                 getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0),
                 getModItem(OpenBlocks.ID, "sprinkler", 1, 0),
-                OrePrefixes.pipeTiny.get(Materials.Neutronium),
+                OrePrefixes.pipeTiny.ingredient(Materials.Neutronium),
                 getModItem(OpenBlocks.ID, "xpshower", 1, 0),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3),
-                OrePrefixes.plateSuperdense.get(Materials.Ichorium));
+                OrePrefixes.plateSuperdense.ingredient(Materials.Ichorium));
         TCHelper.setResearchAspects(
                 "warptheory.portableshower",
                 new AspectList().add(TCAspects.AEQUALITAS.getAspect(), 5).add(TCAspects.PRIMORDIUM.getAspect(), 5)

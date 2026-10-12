@@ -26,17 +26,18 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptBloodArsenal implements IScriptLoader {
 
@@ -593,7 +594,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.BloodInfusedIron, 1L),
+                MaterialLibAPI.getStack(Materials.BloodInfusedIron, Shapes.ingot, 1),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0),
                 3,
                 6000,
@@ -626,7 +627,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodArsenal.ID, "blood_diamond", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.gemExquisite, 1),
                 4,
                 12000,
                 20,
@@ -735,8 +736,10 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 6, 0))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(2 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.dimensionallyshiftedsuperfluid, FluidShapes.fluidLiquid, 1))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 1, 0))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_stick", 2, 0)).duration(20)
                 .eut(TierEU.RECIPE_ULV).addTo(latheRecipes);

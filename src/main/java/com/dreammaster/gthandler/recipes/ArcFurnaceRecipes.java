@@ -12,22 +12,22 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.material.MaterialsElements;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ArcFurnaceRecipes implements Runnable {
 
     @Override
     public void run() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.nugget, 2))
                 .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 0))
@@ -36,14 +36,15 @@ public class ArcFurnaceRecipes implements Runnable {
 
         // red sand
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1))
-                .itemOutputs(
-                        new ItemStack(Blocks.glass, 2),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1))
+                .itemOutputs(new ItemStack(Blocks.glass, 2), MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                 .duration(1 * SECONDS).eut(TierEU.RECIPE_MV).addTo(UniversalArcFurnace);
 
         // Awful dimensionally transcendent residue recipe for mk5 fusion pre-dtpf (mostly a meme)
         GTValues.RA.stdBuilder().itemInputs(ItemRefer.Radioactive_Waste.get(64))
-                .fluidInputs(Materials.ExcitedDTEC.getFluid(1000L)).fluidOutputs(Materials.DTR.getFluid(50L))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.DimensionallyTranscendentResidue, FluidShapes.fluidLiquid, 50))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV / 2).addTo(arcFurnaceRecipes);
 
         if (GalacticraftAmunRa.isModLoaded()) {
@@ -51,19 +52,20 @@ public class ArcFurnaceRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(ItemList.ZPM.get(1))
                     .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahAlloy, 8L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.DraconiumAwakened, 32L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 32L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Dilithium, 32L),
-                            GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Ichorium, 16L),
-                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 64L),
+                            MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.dust, 8),
+                            MaterialLibAPI.getStack(Materials.DraconiumAwakened, Shapes.dust, 32),
+                            MaterialLibAPI.getStack(Materials.Firestone, Shapes.plate, 32),
+                            MaterialLibAPI.getStack(Materials.Dilithium, Shapes.dust, 32),
+                            MaterialLibAPI.getStack(Materials.Ichorium, Shapes.itemCasing, 16),
+                            MaterialLibAPI.getStack(Materials.Ardite, Shapes.plateDense, 64),
                             getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4, 3),
                             NHItemList.ChaoticDust.get(2),
                             getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 26))
                     .outputChances(5000, 5000, 5000, 5000, 5000, 3000, 2000, 500, 250)
-                    .fluidInputs(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144))
-                    .fluidOutputs(Materials.Tungsten.getMolten(144)).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
-                    .addTo(arcFurnaceRecipes);
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(Materials.CelestialTungsten, FluidShapes.fluidMolten, 144))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Tungsten, FluidShapes.fluidMolten, 144))
+                    .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(arcFurnaceRecipes);
         }
     }
 }

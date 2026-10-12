@@ -28,16 +28,18 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.material.MaterialUtils;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -174,28 +176,32 @@ public class ScriptTwilightForest implements IScriptLoader {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
+                            MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 4),
                             getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0))
                     .itemOutputs(getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0))
-                    .fluidInputs(Materials.Iron.getMolten(16)).duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Iron, FluidShapes.fluidMolten, 16))
+                    .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
+                            MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 4),
                             getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0))
                     .itemOutputs(getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0))
-                    .fluidInputs(Materials.Copper.getMolten(16)).duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Copper, FluidShapes.fluidMolten, 16))
+                    .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(TwilightForest.ID, "tile.TFWoodSlab", 4, i),
-                            GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                            MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                     .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 4, 0))
-                    .fluidInputs(Materials.Iron.getMolten(16)).duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Iron, FluidShapes.fluidMolten, 16))
+                    .duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(TwilightForest.ID, "tile.TFWoodSlab", 4, i),
-                            GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                            MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                     .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 6, 0))
-                    .fluidInputs(Materials.Steel.getMolten(16)).duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 16))
+                    .duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
         }
 
         GTValues.RA.stdBuilder()
@@ -301,7 +307,7 @@ public class ScriptTwilightForest implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steeleaf, 1L),
+                        MaterialLibAPI.getStack(Materials.Steeleaf, Shapes.dust, 1),
                         ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.steeleafIngot", 1, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(alloySmelterRecipes);
@@ -333,14 +339,16 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         getModItem(TwilightForest.ID, "item.tfFeather", 1, 0),
                         getModItem(TwilightForest.ID, "item.torchberries", 1, 0))
-                .fluidInputs(Materials.Glowstone.getMolten(144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Glowstone, FluidShapes.fluidMolten, 144))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.magicMapFocus", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(ZTones.ID, "auroraBlock", 1, 0), NHItemList.StonePlate.get(16))
                 .itemOutputs(getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 16, 0))
-                .fluidInputs(Materials.Helium3.getGas(1600), Materials.Helium.getGas(16000)).duration(3 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
+                .fluidInputs(
+                        MaterialUtils.gas(Materials.Helium3, 1600),
+                        MaterialLibAPI.getFluidStack(Materials.Helium, FluidShapes.fluidGas, 16000))
+                .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerNonCellRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
