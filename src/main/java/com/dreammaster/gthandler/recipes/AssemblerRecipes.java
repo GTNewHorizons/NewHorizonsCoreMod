@@ -2856,7 +2856,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
                         Materials.HSSG.getPlates(2),
                         MaterialsAlloy.INCONEL_690.getPlate(4))
-                .circuit(1).itemOutputs(ItemList.TensionResistantMachineCasing.get(1).duration(10 * SECONDS))
+                .circuit(1).itemOutputs(ItemList.TensionResistantMachineCasing.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Extruder Machine Casing
