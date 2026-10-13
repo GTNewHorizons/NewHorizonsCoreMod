@@ -801,13 +801,13 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Exotic Board
         GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 6)
                 .itemInputs(CircuitComponent.BoardExotic.getFakeStack(1))
-                .itemOutputs(CircuitComponent.ProcessedBoardExotic.getFakeStack(1)).duration(22 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedBoardExotic.getFakeStack(1)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_UIV).addTo(nanochipBoardProcessorRecipes);
 
         // Exotic Board fake recipe
         GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardExotic.getFakeStack(1))
                 .fluidInputs(Materials.ExcitedDTEC.getFluid(0)).fluidOutputs(Materials.DTEC.getFluid(0))
-                .itemOutputs(CircuitComponent.ProcessedBoardExotic.getFakeStack(1)).duration(22 * SECONDS)
+                .itemOutputs(CircuitComponent.ProcessedBoardExotic.getFakeStack(1)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_UIV).addTo(nanochipBoardProcessorRecipes);
 
         // Quantum Board
@@ -883,20 +883,20 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     1 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
 
-            // APIC
-            addSimpleProcessingRecipe(
-                    CircuitComponent.ChipAttoPIC,
-                    Materials.DimensionallyShiftedSuperfluid.getFluid(10),
-                    CircuitComponent.ProcessedChipAttoPIC,
-                    TierEU.RECIPE_UMV,
-                    5 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
             // FPIC
             addSimpleProcessingRecipe(
                     CircuitComponent.ChipFPIC,
                     Materials.DimensionallyShiftedSuperfluid.getFluid(10),
                     CircuitComponent.ProcessedChipFPIC,
+                    TierEU.RECIPE_UIV,
+                    5 * SECONDS,
+                    RecipeMaps.nanochipCuttingChamber);
+
+            // APIC
+            addSimpleProcessingRecipe(
+                    CircuitComponent.ChipAttoPIC,
+                    Materials.DimensionallyShiftedSuperfluid.getFluid(10),
+                    CircuitComponent.ProcessedChipAttoPIC,
                     TierEU.RECIPE_UMV,
                     5 * SECONDS,
                     RecipeMaps.nanochipCuttingChamber);
@@ -2605,13 +2605,13 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // Exotic //
         // ======= //
 
-        // Ideal ratio: 50% matrix, 50% non-matrix
+        // Ideal ratio: 60% matrix, 40% non-matrix
         // Measured from UHV-normalized NAC recipe times, one level deep, per 1 Exotic Mainframe
 
-        // Non-matrix (~12,774s UHV):
+        // Non-matrix (~8,294s UHV):
         // - FPIC chip:              8   (cutting)       -> 5s UMV ea.
-        // - Atto PIC chip:          8   (cutting)       -> 5s UMV ea.
-        // - Exotic board:           8   (board)         -> 22s UIV ea.
+        // - Atto PIC chip:          8   (cutting)       -> 5s UIV ea.
+        // - Exotic board:           8   (board)         -> 2s UIV ea.
         // - Living bio chip:        16  (bio)           -> 32s UEV ea.
         // - Living crystal chip:    64  (bio)           -> 16s UHV ea.
         // - Superconductor:         32 uiv (split)      -> 2s UIV ea. (or 16 umv -> 4s UIV ea.)
@@ -2627,14 +2627,13 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // - Exotic Supercomputer  -> 100s UIV (x2)
         // - Exotic Mainframe      -> 200s UIV (x1)
 
-        // Not counted: Degenerate Cache Matrix (Neutronium Compressor) and
-        // Energised Tesseract (Laser Engraver), both made outside the NAC
+        // Not counted: Energised Tesseract (Laser Engraver)
 
         // Exotic Processor
         addAssemblyMatrixRecipe(
                 Arrays.asList(
                         new CircuitComponentStack(CircuitComponent.QuantumEntangledComputationUnit, 1),
-                        new CircuitComponentStack(CircuitComponent.DegenerateCacheMatrix, 1),
+                        new CircuitComponentStack(CircuitComponent.SingularityTolerantCacheMatrix, 1),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDCapacitor, 16),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDDiode, 16),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDResistor, 16),

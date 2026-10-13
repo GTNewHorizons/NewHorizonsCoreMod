@@ -434,12 +434,6 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(100 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
-            // Degenerate Cache Matrix
-            GTValues.RA.stdBuilder().itemInputs(ItemList.SingularityTolerantCacheMatrix.get(1))
-                    .fluidInputs(Materials.Neutronium.getMolten(576L))
-                    .itemOutputs(ItemList.DegenerateCacheMatrix.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UIV)
-                    .metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
-
             // Iron Singularity
             GTValues.RA.stdBuilder().fluidInputs(Materials.Iron.getMolten(9455616L))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1, 0)).duration(1 * TICKS)
