@@ -786,6 +786,18 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemOutputs(CircuitComponent.ProcessedBoardOptical.getFakeStack(1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipBoardProcessorRecipes);
 
+        // Pico Board
+        GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 5)
+                .itemInputs(CircuitComponent.BoardPico.getFakeStack(1))
+                .itemOutputs(CircuitComponent.CleansedBoardPico.getFakeStack(1)).duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).addTo(nanochipBoardProcessorRecipes);
+
+        // Pico Board fake recipe
+        GTValues.RA.stdBuilder().fake().itemInputs(CircuitComponent.BoardPico.getFakeStack(1))
+                .fluidInputs(Materials.UUMatter.getFluid(0)).fluidOutputs(Materials.UUAmplifier.getFluid(0))
+                .itemOutputs(CircuitComponent.CleansedBoardPico.getFakeStack(1)).duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).addTo(nanochipBoardProcessorRecipes);
+
         // Exotic Board
         GTValues.RA.stdBuilder().hidden().metadata(BoardProcessingModuleFluidKey.INSTANCE, 6)
                 .itemInputs(CircuitComponent.BoardExotic.getFakeStack(1))
@@ -1192,6 +1204,16 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 .itemOutputs(CircuitComponent.ProcessedAdvancedMainframeCasing.getFakeStack(1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(RecipeMaps.nanochipEncasementWrapper);
 
+        // Pico
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CircuitComponent.ProcessedFoilRadoxPolymer.getFakeStack(16),
+                        CircuitComponent.ProcessedFrameboxCelestialTungsten.getFakeStack(2),
+                        CircuitComponent.ScrewAstralTitanium.getFakeStack(4),
+                        CircuitComponent.CasingUEVSuperconductor.getFakeStack(1))
+                .itemOutputs(CircuitComponent.ProcessedPicoCircuitCasing.getFakeStack(1)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).addTo(RecipeMaps.nanochipEncasementWrapper);
+
         // Quantum
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1219,6 +1241,15 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         CircuitComponent.CasingBlackDwarfMatter.getFakeStack(2))
                 .itemOutputs(CircuitComponent.ProcessedPlanckCircuitCasing.getFakeStack(1)).duration(7 * SECONDS)
                 .eut(TierEU.RECIPE_MAX).addTo(RecipeMaps.nanochipEncasementWrapper);
+
+        // Pico CPU
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CircuitComponent.OpticalMainframeRack.getFakeStack(1),
+                        CircuitComponent.ProcessedPlateRhugnor.getFakeStack(2),
+                        CircuitComponent.ProcessedChipAttoPIC.getFakeStack(8))
+                .fluidInputs(Materials.Space.getMolten(250)).itemOutputs(CircuitComponent.PicoCPU.getFakeStack(1))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(nanochipEncasementWrapper);
 
         // Quantum CPU
         GTValues.RA.stdBuilder()
@@ -1305,6 +1336,14 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                 TierEU.RECIPE_UXV,
                 4 * SECONDS,
                 nanochipEtchingArray);
+
+        // Optical Mainframe Rack
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CircuitComponent.OpticalMainframe.getFakeStack(2),
+                        CircuitComponent.ScrewEnrichedNaquadahAlloy.getFakeStack(2))
+                .itemOutputs(CircuitComponent.OpticalMainframeRack.getFakeStack(1)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).addTo(nanochipEtchingArray);
 
         // Exotic Mainframe Rack
         GTValues.RA.stdBuilder()
@@ -1509,6 +1548,19 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                     .itemOutputs(CircuitComponent.ProcessedPlateHexanite.getFakeStack(1)).eut(TierEU.RECIPE_UV)
                     .duration(1 * SECONDS).addTo(nanochipPartProcessorRecipes);
         }
+
+        // Pico Board
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CircuitComponent.ProcessedOpticalSMDInductor.getFakeStack(16),
+                        CircuitComponent.ProcessedOpticalSMDCapacitor.getFakeStack(16),
+                        CircuitComponent.ProcessedOpticalSMDResistor.getFakeStack(16),
+                        CircuitComponent.ProcessedOpticalSMDTransistor.getFakeStack(16),
+                        CircuitComponent.ProcessedOpticalSMDDiode.getFakeStack(16),
+                        CircuitComponent.ProcessedBoardOptical.getFakeStack(2))
+                .fluidInputs(Materials.Kevlar.getMolten(1 * INGOTS))
+                .itemOutputs(CircuitComponent.BoardPico.getFakeStack(1)).duration(40 * SECONDS).eut(TierEU.RECIPE_UMV)
+                .addTo(nanochipPartProcessorRecipes);
 
         // Quantum Board
         GTValues.RA.stdBuilder()
@@ -2357,6 +2409,51 @@ public class ScriptNanochipRecipes implements IScriptLoader {
         // ======= //
         // Special //
         // ======= //
+
+        // Pico
+
+        // Ideal ratio: 80% matrix, 20% non-matrix
+        // 9 non-matrix needed (assuming two board modules for the two different fluids)
+        // Ideal distribution: 2.22% per non-matrix module
+        // Goal: 250,000s UHV total
+
+        // Non-matrix:
+        // ~5,555s UHV each
+        // - Pico encasement:     1 (encasement) -> 40s UMV
+        // - Pico cpu:            1 (encasement) -> 40s UMV
+        // - Cleansed pico board: 2 (board)      -> 40s UMV ea.
+        // - Optical board:       4 (board)      -> (fixed) 30s UEV ea.
+        // - Pico board:          2 (part prep)  -> 40s UMV
+        // - Optical rack:        1 (etching)    -> 20s UXV
+        // - Atto pic:            8 (cutting)    -> 10s UMV ea.
+
+        // Matrix:
+        // ~200,000s UHV
+        // - Pico -> 200s MAX
+
+        // Note on old NAC balance: old total time 260,000s UHV
+
+        addAssemblyMatrixRecipe(
+                Arrays.asList(
+                        new CircuitComponentStack(CircuitComponent.ProcessedPicoCircuitCasing, 1),
+                        new CircuitComponentStack(CircuitComponent.CleansedBoardPico, 2),
+                        new CircuitComponentStack(CircuitComponent.PicoCPU, 1),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDInductor, 32),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDCapacitor, 32),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDResistor, 32),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDTransistor, 32),
+                        new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDDiode, 32),
+                        new CircuitComponentStack(CircuitComponent.ProcessedWireProtoHalkonite, 64),
+                        new CircuitComponentStack(CircuitComponent.ProcessedBoltTranscendentMetal, 32),
+                        new CircuitComponentStack(CircuitComponent.ProcessedWireInfinity, 8)),
+                Arrays.asList(
+                        MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(16 * INGOTS),
+                        Materials.UUMatter.getFluid(8000),
+                        GGMaterial.preciousMetalAlloy.getMolten(8 * INGOTS)),
+                CircuitComponent.PicoCircuit,
+                200 * SECONDS,
+                TierEU.RECIPE_MAX,
+                VoltageIndex.UEV);
 
         // Quantum
 
