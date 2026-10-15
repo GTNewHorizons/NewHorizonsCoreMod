@@ -39,10 +39,7 @@ public class ArcFurnaceRecipes implements Runnable {
                 .itemOutputs(
                         new ItemStack(Blocks.glass, 2),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1))
-                .outputChances(10000,1111)
-                .duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_MV)
-                .addTo(UniversalArcFurnace);
+                .outputChances(10000, 1111).duration(1 * SECONDS).eut(TierEU.RECIPE_MV).addTo(UniversalArcFurnace);
 
         // Awful dimensionally transcendent residue recipe for mk5 fusion pre-dtpf (mostly a meme)
         GTValues.RA.stdBuilder().itemInputs(ItemRefer.Radioactive_Waste.get(64))

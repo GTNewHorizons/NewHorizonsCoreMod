@@ -30,20 +30,16 @@ public class ScriptBinniesMods implements IScriptLoader {
     @Override
     public void loadRecipes() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1L))
-                .outputChances(1111)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1L)).outputChances(1111)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 3))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L))
-                .outputChances(1111)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L)).outputChances(1111)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L))
-                .outputChances(1111)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L)).outputChances(1111)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 5))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L))
-                .outputChances(1111)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L)).outputChances(1111)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
     }
