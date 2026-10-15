@@ -1018,6 +1018,15 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.string, 3, 0)).circuit(1)
                 .itemOutputs(new ItemStack(Blocks.wool, 1, 0)).duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
 
+        // Powderbarrel
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 4),
+                        new ItemStack(Items.string, 1))
+                .itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.CarbonPartHelmet.get(),
