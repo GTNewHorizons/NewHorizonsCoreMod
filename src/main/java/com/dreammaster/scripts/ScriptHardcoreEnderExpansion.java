@@ -513,8 +513,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungstate, 1L))
-                .outputChances(5625, 8625, 1875)
-                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
+                .outputChances(5625, 8625, 1875).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))

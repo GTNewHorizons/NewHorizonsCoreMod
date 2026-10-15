@@ -499,8 +499,7 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemInputs(
                         NHItemList.RawPicoWafer.get(),
                         Materials.MysteriousCrystal.getDust(2),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 1L).copy()
-                                .splitStack(0),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 1L).copy().splitStack(0),
                         NHItemList.TCetiESeaweedExtract.get(1))
                 .itemOutputs(NHItemList.PicoWafer.get()).fluidInputs(Materials.Neutronium.getMolten(144L))
                 .duration(2 * MINUTES + 30 * SECONDS).eut((GTValues.V[9] - (GTValues.V[9] / 10)))
