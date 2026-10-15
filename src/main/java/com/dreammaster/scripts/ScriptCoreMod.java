@@ -889,9 +889,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
                 .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
                 .addTo(brewingRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Uranium235, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
-                .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 1L))
+                .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 6750))
+                .fluidOutputs(Materials.EnrichedBacterialSludge.getFluid(6750)).duration(57 * SECONDS + 12 * TICKS).eut(4)
                 .addTo(brewingRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0))
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2))

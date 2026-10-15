@@ -1060,9 +1060,9 @@ public class ScriptEFR implements IScriptLoader {
                 .eut(28).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Blocks.red_flower, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.NetherStar, 2L))
-                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0)).duration(20 * SECONDS)
+                        new ItemStack(Blocks.red_flower, 9, 0),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 2L))
+                .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 9, 0)).duration(180 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()

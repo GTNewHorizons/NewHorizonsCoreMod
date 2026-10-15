@@ -234,9 +234,7 @@ public class CompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sunnarium, 1L))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 9)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9, 9))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
