@@ -1018,6 +1018,15 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.string, 3, 0)).circuit(1)
                 .itemOutputs(new ItemStack(Blocks.wool, 1, 0)).duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
 
+        // Powderbarrel
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 4),
+                        new ItemStack(Items.string, 1))
+                .itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.CarbonPartHelmet.get(),
@@ -2597,10 +2606,10 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialsAlloy.LEAGRISIUM.getGear(2),
-                        ItemList.Hull_IV.get(1),
+                        ItemList.Casing_RobustTungstenSteel.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
                         GregtechItemList.Gregtech_Computer_Cube.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
                         ItemList.Robot_Arm_IV.get(1),
                         ItemList.Field_Generator_IV.get(1))
                 .itemOutputs(ItemList.AdvancedImplosionCompressor.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_IV)
