@@ -1163,12 +1163,12 @@ public class DTPFRecipes implements Runnable {
             // Quantum anomaly
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GregtechItemList.Laser_Lens_Special.get(2),
+                            GregtechItemList.Laser_Lens_Special.get(1),
                             ItemList.StableBosonContainmentUnit.get(1),
                             NHItemList.MysteriousCrystalLens.get(0),
                             ItemRefer.HiC_T5.get(0))
                     .fluidInputs(Materials.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
-                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(8), ItemList.StableEmptyContainmentUnit.get(1))
+                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4))
                     .duration(10 * SECONDS).fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
                     .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
