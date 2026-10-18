@@ -1168,8 +1168,8 @@ public class DTPFRecipes implements Runnable {
                             NHItemList.MysteriousCrystalLens.get(0),
                             ItemRefer.HiC_T5.get(0))
                     .fluidInputs(Materials.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
-                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4))
-                    .duration(10 * SECONDS).fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
+                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
+                    .fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
                     .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
         }
