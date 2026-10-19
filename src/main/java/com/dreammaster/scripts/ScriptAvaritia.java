@@ -137,6 +137,17 @@ public class ScriptAvaritia implements IScriptLoader {
                 "screwDiamond",
                 "plateDiamond",
                 "screwDiamond");
+        addShapedRecipe(
+                getModItem(Avaritia.ID, "Resource", 1, 0),
+                "screwManaDiamond",
+                "plateManaDiamond",
+                "screwManaDiamond",
+                "plateManaDiamond",
+                BlockList.TungstenSteelBars.get(),
+                "plateManaDiamond",
+                "screwManaDiamond",
+                "plateManaDiamond",
+                "screwManaDiamond");
 
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Neutron_Collector", 1, 0));
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0));
@@ -976,6 +987,12 @@ public class ScriptAvaritia implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
                         BlockList.StainlessSteelBars.get())
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ManaDiamond, 4L),
+                        BlockList.TungstenSteelBars.get())
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 3))
