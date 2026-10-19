@@ -138,7 +138,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 "plateDiamond",
                 "screwDiamond");
         addShapedRecipe(
-                getModItem(Avaritia.ID, "Resource", 1, 0),
+                getModItem(Avaritia.ID, "Resource", 4, 0),
                 "screwManaDiamond",
                 "plateManaDiamond",
                 "screwManaDiamond",
@@ -993,7 +993,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.ManaDiamond, 4L),
                         BlockList.TungstenSteelBars.get())
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 4, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 3))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 2)).outputChances(10000).duration(15 * SECONDS)
