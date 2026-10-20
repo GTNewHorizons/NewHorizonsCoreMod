@@ -144,7 +144,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "brick", 1, 0));
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials.Plastic, Shapes.stickLong, 1),
+                MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.stickLong, 1),
                 "stickPlastic",
                 "craftingToolHardHammer",
                 "stickPlastic");
@@ -696,7 +696,7 @@ public class ScriptGregtech implements IScriptLoader {
                 CustomItemList.SpacetimeCompressionFieldGeneratorTier8.get(1));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 2)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.RubberRaw, Shapes.dust, 2)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Empty.get(1L),
@@ -1223,7 +1223,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5)).outputChances(10000)
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, 36))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_LV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.PotassiumHydroxideGT5U, Shapes.dust, 3))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.PotassiumHydroxide, Shapes.dust, 3))
                 .circuit(1).itemOutputs(MaterialLibAPI.getStack(Materials.Saltpeter, Shapes.dust, 5))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.NitricAcid, FluidShapes.fluidLiquid, 5000))
                 .fluidOutputs(GTModHandler.getSteam(16000)).duration(10).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
@@ -1407,8 +1407,8 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 18)).circuit(1)
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1)).duration(20).eut(24)
                 .addTo(benderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.stick, 2))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.stickLong, 1)).duration(20)
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.stick, 2))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.stickLong, 1)).duration(20)
                 .eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Rubber, Shapes.stick, 2))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Rubber, Shapes.stickLong, 1)).duration(20)

@@ -15,16 +15,16 @@ public class CrackingRecipes implements Runnable {
     public void run() {
         GTValues.RA.stdBuilder().circuit(24)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 100),
+                        MaterialLibAPI.getFluidStack(Materials.RadoxLight, FluidShapes.fluidGas, 100),
                         MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, 1))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.SuperLightRadox, FluidShapes.fluidGas, 50))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RadoxSuperLight, FluidShapes.fluidGas, 50))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(crackingRecipes);
 
         GTValues.RA.stdBuilder().circuit(24)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, 100),
+                        MaterialLibAPI.getFluidStack(Materials.RadoxHeavy, FluidShapes.fluidLiquid, 100),
                         MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, 1))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 20))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RadoxLight, FluidShapes.fluidGas, 20))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(crackingRecipes);
     }
 }

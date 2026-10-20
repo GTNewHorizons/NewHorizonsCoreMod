@@ -113,7 +113,7 @@ public class AutoclaveRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Hypogen, Shapes.dust, 1))
                 .itemOutputs(ItemList.Circuit_Wafer_Bioware.get(1L)).outputChances(10000)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.BiohMediumSterilized, FluidShapes.fluidLiquid, 8_000))
+                        MaterialLibAPI.getFluidStack(Materials.BioMediumSterilized, FluidShapes.fluidLiquid, 8_000))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(autoclaveRecipes);
 
     }

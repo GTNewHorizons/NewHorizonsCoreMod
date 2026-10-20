@@ -411,7 +411,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                                     .getFluidStack(Materials.StyreneButadieneRubber, FluidShapes.fluidMolten, 108))
                     .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable).circuit(24).itemOutputs(AE2_ME_Covered_Cable)
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 72))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 72))
                     .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -426,7 +426,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             AE2_ME_Glass_Cable,
                             MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dustSmall, 1))
                     .itemOutputs(AE2_ME_Covered_Cable)
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 36))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 36))
                     .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -441,7 +441,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             AE2_ME_Glass_Cable,
                             MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dustSmall, 1))
                     .itemOutputs(AE2_ME_Covered_Cable)
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 36))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 36))
                     .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -457,7 +457,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
                             MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dust, 1))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 144))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 144))
                     .duration(25 * SECONDS).eut(TierEU.RECIPE_MV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -473,7 +473,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
                             MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dust, 1))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 144))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 144))
                     .duration(25 * SECONDS).eut(TierEU.RECIPE_MV).addTo(aeCables);
 
             // Dense Covered Cable
@@ -485,7 +485,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
             GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                     .circuit(24).itemOutputs(AE2_ME_Dense_Covered_Cable)
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 144))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 144))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -500,7 +500,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
                             MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dustSmall, 1))
                     .itemOutputs(AE2_ME_Dense_Covered_Cable)
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 72))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 72))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -515,7 +515,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
                             MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dustSmall, 1))
                     .itemOutputs(AE2_ME_Dense_Covered_Cable)
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 72))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 72))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -531,7 +531,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
                             MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.dust, 1))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 288))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 288))
                     .duration(35 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -547,7 +547,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
                             MaterialLibAPI.getStack(Materials.Polydimethylsiloxane, Shapes.dust, 1))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 288))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 288))
                     .duration(35 * SECONDS).eut(TierEU.RECIPE_HV).addTo(aeCables);
         }
 
@@ -1875,13 +1875,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35),
                 "circuitPrimitive",
-                MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.dust, 1),
                 "circuitPrimitive",
-                MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.dust, 1),
                 NHItemList.LogicProcessorItemGoldCore.get(),
-                MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.dust, 1),
                 "circuitPrimitive",
-                MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.dust, 1),
                 "circuitPrimitive");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36),
@@ -2433,18 +2433,18 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 1))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 1))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.dust, 1))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 3),
+                        MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.dust, 3),
                         MaterialLibAPI.getStack(Materials.Sodium, Shapes.dust, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.dust, 3),
+                        MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.dust, 3),
                         MaterialLibAPI.getStack(Materials.Sodium, Shapes.dust, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 1000)).duration(35 * SECONDS)
@@ -2456,7 +2456,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.stick, 2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.ChargedCertusQuartz, Shapes.stick, 1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.stick, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.stick, 8))

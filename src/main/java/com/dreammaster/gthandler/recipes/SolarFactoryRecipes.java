@@ -190,7 +190,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Circuit_Chip_PIC.get(2),
                             MaterialLibAPI.getStack(Materials.SuperconductorIV, TEBlockShapes.wireGt01, 6),
                             Circuits.LuV.get(4),
-                            MaterialLibAPI.getStack(Materials.SiliconSolarGrade, Shapes.plate, 12))
+                            MaterialLibAPI.getStack(Materials.SiliconSG, Shapes.plate, 12))
                     .itemOutputs(ItemList.Cover_SolarPanel_EV.get(1))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(Materials.Polybenzimidazole, FluidShapes.fluidMolten, 2 * 144))
@@ -204,7 +204,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Circuit_Chip_HPIC.get(2),
                             MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt01, 6),
                             Circuits.ZPM.get(4),
-                            MaterialLibAPI.getStack(Materials.SiliconSolarGrade, Shapes.plate, 16))
+                            MaterialLibAPI.getStack(Materials.SiliconSG, Shapes.plate, 16))
                     .itemOutputs(ItemList.Cover_SolarPanel_IV.get(1))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(Materials.Polybenzimidazole, FluidShapes.fluidMolten, 4 * 144))
@@ -221,7 +221,7 @@ public class SolarFactoryRecipes implements Runnable {
                             Circuits.UV.get(2),
                             Circuits.ZPM.get(4),
                             getModItem(SuperSolarPanels.ID, "solarsplitter", 2),
-                            MaterialLibAPI.getStack(Materials.SiliconSolarGrade, Shapes.plate, 20))
+                            MaterialLibAPI.getStack(Materials.SiliconSG, Shapes.plate, 20))
                     .itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1))
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(Materials.Polybenzimidazole, FluidShapes.fluidMolten, 6 * 144))
@@ -340,7 +340,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Circuit_Chip_PPIC.get(2),
                             MaterialLibAPI.getStack(Materials.SuperconductorUHV, TEBlockShapes.wireGt01, 32),
                             Circuits.UEV.get(1),
-                            MaterialLibAPI.getStack(Materials.SiliconSolarGrade, Shapes.plateSuperdense, 2),
+                            MaterialLibAPI.getStack(Materials.SiliconSG, Shapes.plateSuperdense, 2),
                             MaterialLibAPI.getStack(Materials.Steeleaf, Shapes.plateSuperdense, 1),
                             getModItem(SuperSolarPanels.ID, "solarsplitter", 4))
                     .itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1))
@@ -399,7 +399,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Robot_Arm_LuV.get(1),
                             ItemList.UHTResistantMesh.get(8),
                             MaterialLibAPI.getStack(Materials.Kevlar, Shapes.plate, 4),
-                            MaterialLibAPI.getStack(Materials.RadoxPoly, Shapes.itemCasing, 1),
+                            MaterialLibAPI.getStack(Materials.RadoxPolymer, Shapes.itemCasing, 1),
                             MaterialLibAPI.getStack(Materials.Glowstone, Shapes.nanite, 2))
                     .itemOutputs(ItemList.SolarSail.get(1))
                     .fluidInputs(

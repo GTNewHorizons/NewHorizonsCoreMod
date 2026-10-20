@@ -533,7 +533,7 @@ public class ScriptMatterManipulator implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Thaumium, Shapes.itemCasing, 8),
                         Circuits.IV.get(2),
                         MaterialLibAPI.getStack(Materials.Mercury, Shapes.gem, 32),
-                        MaterialLibAPI.getStack(Materials.Titaniumonabariumdecacoppereikosaoxid, Shapes.wireFine, 64))
+                        MaterialLibAPI.getStack(Materials.SuperconductorHVBase, Shapes.wireFine, 64))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, INGOTS * 8))
                 .itemOutputs(MMItemList.UpgradePowerEff.get(1)).eut(TierEU.RECIPE_HV).duration(10 * SECONDS)
                 .addTo(RecipeMaps.assemblerRecipes);

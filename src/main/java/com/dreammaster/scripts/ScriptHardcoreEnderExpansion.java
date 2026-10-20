@@ -505,18 +505,18 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_powder", 4, 0))
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.dustSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Endium, Shapes.dustSmall, 1),
                         MaterialLibAPI.getStack(Materials.EnderEye, Shapes.dustTiny, 1),
-                        MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.dustSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Endium, Shapes.dustSmall, 1),
                         MaterialLibAPI.getStack(Materials.EnderEye, Shapes.dustTiny, 1))
                 .outputChances(9000, 8000, 7500, 5000).fluidOutputs(FluidRegistry.getFluidStack("ender", 100))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder()
                 .itemOutputs(
-                        MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Endium, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.EnderEye, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Tungstate, Shapes.dustSmall, 1),
-                        MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.dustSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Endium, Shapes.dustSmall, 1),
                         MaterialLibAPI.getStack(Materials.EnderEye, Shapes.dustSmall, 1))
                 .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -534,19 +534,19 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.plate, 9))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Endium, Shapes.plate, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 500)).duration(3 * MINUTES).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.plate, 9))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Endium, Shapes.plate, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 350)).duration(3 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.plate, 9))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Endium, Shapes.plate, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 150)).duration(1 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0))
-                .itemOutputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.plate, 9))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Endium, Shapes.plate, 9))
                 .fluidInputs(
                         MaterialLibAPI
                                 .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 10))

@@ -1327,7 +1327,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Silicone, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.RubberSilicone, Shapes.plate, 4),
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 4),
                         MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5)).duration(30 * SECONDS)

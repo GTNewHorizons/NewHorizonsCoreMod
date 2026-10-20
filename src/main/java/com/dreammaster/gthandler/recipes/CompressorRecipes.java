@@ -188,7 +188,7 @@ public class CompressorRecipes implements Runnable {
                 .addTo(compressorRecipes);
 
         if (StevesCarts2.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.EnhancedGalgadorian, Shapes.dust, 9))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.GalgadorianEnhanced, Shapes.dust, 9))
                     .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48)).duration(15 * SECONDS).eut(2)
                     .addTo(compressorRecipes);
         }
@@ -324,7 +324,7 @@ public class CompressorRecipes implements Runnable {
         if (!HardcoreEnderExpansion.isModLoaded()) {
             return;
         }
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.ingot, 9))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Endium, Shapes.ingot, 9))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "dry_splinter", 9, 0))

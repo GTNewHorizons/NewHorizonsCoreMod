@@ -57,9 +57,9 @@ public class ScriptSGCraft implements IScriptLoader {
         // spotless:off
 
         ItemStack darkMatterBlock = getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14);
-        ItemStack magmatterBlock = MaterialLibAPI.getStack(Materials.Magmatter, BlockShapes.block, 1);
-        ItemStack magmatterSuperdensePlate = MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plateSuperdense, 1);
-        ItemStack magmatterNanite = MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 1);
+        ItemStack magmatterBlock = MaterialLibAPI.getStack(Materials.MagMatter, BlockShapes.block, 1);
+        ItemStack magmatterSuperdensePlate = MaterialLibAPI.getStack(Materials.MagMatter, Shapes.plateSuperdense, 1);
+        ItemStack magmatterNanite = MaterialLibAPI.getStack(Materials.MagMatter, Shapes.nanite, 1);
         ItemStack umvCap = new ItemStack(Blocks.lscLapotronicEnergyUnit, 1, 10);
 
         ItemStack ringBlock = getModItem(SGCraft.ID, "stargateRing", 1, 0);

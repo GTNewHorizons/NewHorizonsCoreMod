@@ -1741,7 +1741,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.stick, 2))
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.stick, 2))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.canvas", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

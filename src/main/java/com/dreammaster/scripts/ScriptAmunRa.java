@@ -556,7 +556,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Kevlar, Shapes.plate, 7),
                         MaterialLibAPI.getStack(Materials.Kevlar, Shapes.plate, 7),
                         new Object[] { OrePrefixes.screw.ingredient(Materials.Neutronium), 12 })
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 4 * INGOTS))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxPolymer, FluidShapes.fluidMolten, 4 * INGOTS))
                 .itemOutputs(NHItemList.HeavyDutyAlloyIngotT9.get())
                 .metadata(GTRecipeConstants.RESEARCH_ITEM, NHItemList.HeavyDutyPlateTier8.get())
                 .metadata(SCANNING, new Scanning(2 * MINUTES + 20 * SECONDS, TierEU.RECIPE_UV)).duration(15 * SECONDS)

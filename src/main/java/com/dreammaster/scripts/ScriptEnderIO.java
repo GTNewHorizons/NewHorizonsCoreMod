@@ -1355,7 +1355,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.EndSteel, Shapes.plate, 1)).circuit(5)
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 8)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CrudeSteel, Shapes.plate, 1)).circuit(5)
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.ClayCompound, Shapes.plate, 1)).circuit(5)
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.CrystallineAlloy, Shapes.plate, 1))
@@ -1476,7 +1476,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt01, 1),
-                        MaterialLibAPI.getStack(Materials.CrudeSteel, Shapes.plate, 1))
+                        MaterialLibAPI.getStack(Materials.ClayCompound, Shapes.plate, 1))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
@@ -1676,7 +1676,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Silicone, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RubberSilicone, FluidShapes.fluidMolten, 144))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0)).circuit(1)
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1))

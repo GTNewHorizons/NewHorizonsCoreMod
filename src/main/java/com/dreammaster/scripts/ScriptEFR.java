@@ -1336,7 +1336,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(36))
                 .itemOutputs(
                         MaterialLibAPI.getStack(Materials.VolcanicAsh, Shapes.dust, 9),
-                        MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.AshDark, Shapes.dust, 9),
                         MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dust, 9),
                         MaterialLibAPI.getStack(Materials.Pumice, Shapes.dust, 4),
                         MaterialLibAPI.getStack(Materials.PotassiumFeldspar, Shapes.dust, 4),

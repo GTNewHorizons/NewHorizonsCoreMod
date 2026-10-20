@@ -178,7 +178,7 @@ public class ScriptForestry implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0),
-                        MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 6))
+                        MaterialLibAPI.getStack(Materials.RubberRaw, Shapes.dust, 6))
                 .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_ULV)
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()

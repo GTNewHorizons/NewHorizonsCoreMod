@@ -56,7 +56,7 @@ public class ExtractorRecipes implements Runnable {
                     .addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.leaves", 16, 0))
-                    .itemOutputs(MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 1)).duration(15 * SECONDS)
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.RubberRaw, Shapes.dust, 1)).duration(15 * SECONDS)
                     .eut(2).addTo(extractorRecipes);
         }
 

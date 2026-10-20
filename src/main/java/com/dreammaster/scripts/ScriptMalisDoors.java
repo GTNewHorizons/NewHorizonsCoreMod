@@ -152,15 +152,15 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateAnyIron");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "garage_door", 5, 0),
-                MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 1),
                 MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1),
-                MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 1),
                 MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1),
-                MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 1),
                 MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1),
-                MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 1),
                 MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1),
-                MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 1));
+                MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 1));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0),
                 MaterialLibAPI.getStack(Materials.Iron, Shapes.stick, 1),
@@ -997,7 +997,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);

@@ -380,7 +380,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0));
         addShapedRecipe(
-                MaterialLibAPI.getStack(Materials.RawRubber, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.RubberRaw, Shapes.dust, 1),
                 null,
                 null,
                 null,
@@ -938,7 +938,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.FoolsRuby, Shapes.lens, 1)),
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Spinel, Shapes.lens, 1)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard))
                 .itemOutputs(NHItemList.EngravedEnergyChip.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_IV / 2)
                 .addTo(laserEngraverRecipes);

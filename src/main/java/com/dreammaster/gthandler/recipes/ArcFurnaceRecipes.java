@@ -42,9 +42,7 @@ public class ArcFurnaceRecipes implements Runnable {
         // Awful dimensionally transcendent residue recipe for mk5 fusion pre-dtpf (mostly a meme)
         GTValues.RA.stdBuilder().itemInputs(ItemRefer.Radioactive_Waste.get(64))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.ExcitedDTEC, FluidShapes.fluidLiquid, 1000))
-                .fluidOutputs(
-                        MaterialLibAPI
-                                .getFluidStack(Materials.DimensionallyTranscendentResidue, FluidShapes.fluidLiquid, 50))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.DTR, FluidShapes.fluidLiquid, 50))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV / 2).addTo(arcFurnaceRecipes);
 
         if (GalacticraftAmunRa.isModLoaded()) {

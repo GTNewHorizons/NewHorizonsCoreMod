@@ -152,8 +152,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 18),
                 getModItem(Witchery.ID, "ingredient", 1, 18),
                 getModItem(Witchery.ID, "ingredient", 1, 18),
-                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 1),
-                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.AshDark, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.AshDark, Shapes.dust, 1),
                 MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1),
                 MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1));
@@ -3021,12 +3021,12 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0),
                 getModItem(EnderStorage.ID, "enderChest", 1, 0),
                 ItemList.Gravistar.get(1L),
-                OrePrefixes.plate.ingredient(Materials.HeeEndium),
+                OrePrefixes.plate.ingredient(Materials.Endium),
                 ItemList.QuantumEye.get(1L),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 getModItem(Minecraft.ID, "ender_eye", 1, 0),
                 ItemList.QuantumEye.get(1L),
-                OrePrefixes.plate.ingredient(Materials.HeeEndium),
+                OrePrefixes.plate.ingredient(Materials.Endium),
                 ItemList.Gravistar.get(1L));
         TCHelper.addResearchPage(
                 "ENDERSIGIL",

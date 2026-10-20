@@ -313,7 +313,7 @@ public class ImplosionCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Diamond, Shapes.dustSmall, 1))
                     .itemOutputs(
                             getModItem(Translocator.ID, "diamondNugget", 2, 0),
-                            MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dustTiny, 1))
+                            MaterialLibAPI.getStack(Materials.AshDark, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }

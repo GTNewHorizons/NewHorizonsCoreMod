@@ -92,8 +92,7 @@ public class FluidExtractorRecipes implements Runnable {
 
         if (GalacticraftAmunRa.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftAmunRa.ID, "tile.wood1", 8, 1))
-                    .fluidOutputs(
-                            MaterialLibAPI.getFluidStack(Materials.BrightLumipodExtract, FluidShapes.fluidLiquid, 250))
+                    .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.LumipodExtract, FluidShapes.fluidLiquid, 250))
 
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(fluidExtractionRecipes);
         }

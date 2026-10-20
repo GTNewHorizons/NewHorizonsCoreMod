@@ -199,7 +199,7 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Diamond, Shapes.lens, 1)),
                         ItemList.Circuit_Chip_CrystalSoC2.get(1L))
                 .itemOutputs(ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.BiohMediumSterilized, FluidShapes.fluidLiquid, 50))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.BioMediumSterilized, FluidShapes.fluidLiquid, 50))
                 .duration(60 * SECONDS).eut(160_000).requiresCleanRoom().addTo(laserEngraverRecipes);
 
         // GC/GS Wafer
@@ -257,7 +257,7 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemInputs(
                         getModItem(Botania.ID, "livingrock", 1, 0),
                         getModItem(Botania.ID, "bifrostPerm", 1, 0),
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.BotaniaDragonstone, Shapes.lens, 1)))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Dragonstone, Shapes.lens, 1)))
                 .itemOutputs(getModItem(Botania.ID, "shimmerrock", 1, 0)).duration(2 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(laserEngraverRecipes);
 
@@ -265,13 +265,12 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemInputs(
                         getModItem(Botania.ID, "dreamwood", 1, 1),
                         getModItem(Botania.ID, "bifrostPerm", 1, 0),
-                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.BotaniaDragonstone, Shapes.lens, 1)))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Dragonstone, Shapes.lens, 1)))
                 .itemOutputs(getModItem(Botania.ID, "shimmerwoodPlanks", 1, 0)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 
         // Protomatter recipes
-        GTValues.RA.stdBuilder().fluidInputs(
-                MaterialLibAPI.getFluidStack(Materials.DimensionallyTranscendentResidue, FluidShapes.fluidLiquid, 100))
+        GTValues.RA.stdBuilder().fluidInputs(MaterialLibAPI.getFluidStack(Materials.DTR, FluidShapes.fluidLiquid, 100))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Protomatter, FluidShapes.fluidLiquid, 100))
                 .requiresCleanRoom().addTo(laserEngraverRecipes);

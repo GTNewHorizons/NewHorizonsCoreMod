@@ -74,10 +74,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         MaterialLibAPI
                                 .getFluidStack(Materials.AtomicSeparationCatalyst, FluidShapes.fluidMolten, 64 * 144),
                         MaterialLibAPI.getFluidStack(Materials.Tartarite, FluidShapes.fluidMolten, 64 * 144),
-                        MaterialLibAPI.getFluidStack(
-                                Materials.Longasssuperconductornameforuvwire,
-                                FluidShapes.fluidMolten,
-                                64 * 144))
+                        MaterialLibAPI.getFluidStack(Materials.SuperconductorUVBase, FluidShapes.fluidMolten, 64 * 144))
                 .itemOutputs(ItemList.Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
                 .duration(120 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
@@ -100,10 +97,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, 16),
                         ItemList.Sensor_UHV.get(1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.Longasssuperconductornameforuhvwire,
-                                FluidShapes.fluidMolten,
-                                64 * 144),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.SuperconductorUHVBase, FluidShapes.fluidMolten, 64 * 144),
                         MaterialLibAPI.getFluidStack(Materials.Osmiridium, FluidShapes.fluidMolten, 64 * 144),
                         MaterialLibAPI.getFluidStack(Materials.Ledox, FluidShapes.fluidMolten, 64 * 144),
                         MaterialLibAPI.getFluidStack(Materials.CallistoIce, FluidShapes.fluidMolten, 64 * 144))
@@ -129,7 +124,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Chip_Optical.get(4L),
                         ItemList.Optical_Cpu_Containment_Housing.get(4L),
-                        MaterialLibAPI.getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.screw, 8),
+                        MaterialLibAPI.getStack(Materials.SuperconductorUHVBase, Shapes.screw, 8),
                         MaterialLibAPI.getStack(Materials.TengamAttuned, Shapes.screw, 8),
                         MaterialLibAPI.getStack(Materials.DraconiumAwakened, Shapes.wireFine, 8),
                         CustomItemList.DATApipe.get(4L),
@@ -274,10 +269,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                         ItemList.Wrap_OpticalSMDCapacitors.get(8),
                         ItemList.Wrap_OpticalSMDResistors.get(8),
                         ItemList.Wrap_OpticalSMDTransistors.get(8),
-                        MaterialLibAPI.getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.bolt, 2))
+                        MaterialLibAPI.getStack(Materials.MHDCSM, Shapes.bolt, 2))
                 .fluidInputs(
                         new FluidStack(solderUEV, 2880),
-                        MaterialLibAPI.getFluidStack(Materials.Magmatter, FluidShapes.fluidMolten, 576),
+                        MaterialLibAPI.getFluidStack(Materials.MagMatter, FluidShapes.fluidMolten, 576),
                         MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 576))
                 .itemOutputs(ItemList.ZPM3.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -427,7 +422,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Field_Generator_UXV.get(1L),
                             filledUMVCell,
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 1),
+                            MaterialLibAPI.getStack(Materials.MagMatter, Shapes.nanite, 1),
                             MaterialLibAPI.getStack(Materials.Eternity, Shapes.nanite, 1))
                     .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 36864))
                     .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
@@ -459,7 +454,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                             new ItemStack(tfftStorageField, 2, 10),
                             new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                            MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 1),
+                            MaterialLibAPI.getStack(Materials.MagMatter, Shapes.nanite, 1),
                             MaterialLibAPI.getStack(Materials.Eternity, Shapes.nanite, 1))
                     .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Eternity, FluidShapes.fluidMolten, 36864))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))

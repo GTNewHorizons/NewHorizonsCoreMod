@@ -21,7 +21,7 @@ public class LatheRecipes implements Runnable {
                 .itemOutputs(NHItemList.ChromaticLens.get()).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(latheRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.RadoxPoly, Shapes.plate, 1))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.RadoxPolymer, Shapes.plate, 1))
                 .itemOutputs(NHItemList.RadoxPolymerLens.get()).duration(1 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(latheRecipes);
     }

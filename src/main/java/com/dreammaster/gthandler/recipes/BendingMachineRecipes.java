@@ -47,9 +47,9 @@ public class BendingMachineRecipes implements Runnable {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8)).duration(3 * MINUTES)
                 .eut(TierEU.RECIPE_MV * 3 / 4).addTo(benderRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.stickLong, 1)).circuit(1)
-                .itemOutputs(MaterialLibAPI.getStack(Materials.Plastic, Shapes.spring, 1)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.stickLong, 1))
+                .circuit(1).itemOutputs(MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.spring, 1))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
 
         if (GalacticraftCore.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7)).circuit(2)

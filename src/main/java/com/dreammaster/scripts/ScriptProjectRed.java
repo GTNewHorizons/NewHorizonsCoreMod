@@ -1145,13 +1145,13 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5),
-                        MaterialLibAPI.getStack(Materials.FoolsRuby, Shapes.lens, 1))
+                        MaterialLibAPI.getStack(Materials.Spinel, Shapes.lens, 1))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LV).requireMods(ProjectRedCore).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 2),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.stick, 4))
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.stick, 4))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Paper, Shapes.plateQuadruple, 1))
@@ -2409,7 +2409,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0),
-                        MaterialLibAPI.getStack(Materials.Silicone, Shapes.plate, 5))
+                        MaterialLibAPI.getStack(Materials.RubberSilicone, Shapes.plate, 5))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).requireMods(ProjectRedTransmission)
                 .addTo(assemblerRecipes);
@@ -2437,7 +2437,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.ElectrotineWire.get(1),
-                        MaterialLibAPI.getStack(Materials.Silicone, Shapes.plate, 1))
+                        MaterialLibAPI.getStack(Materials.RubberSilicone, Shapes.plate, 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ULV).requireMods(ProjectRedTransmission)
                 .addTo(packagerRecipes);

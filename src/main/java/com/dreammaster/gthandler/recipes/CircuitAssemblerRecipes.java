@@ -843,7 +843,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Neutronium, Shapes.foil, 32))
                 .itemOutputs(ItemList.Circuit_Board_Bio.get(32L))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.BiohMediumSterilized, FluidShapes.fluidLiquid, 16000))
+                        MaterialLibAPI.getFluidStack(Materials.BioMediumSterilized, FluidShapes.fluidLiquid, 16000))
                 .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
 
         // 1k ME Storage Component
@@ -964,7 +964,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_NAND.get(32L),
                         ItemList.Circuit_Chip_Ram.get(4L),
                         MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.wireFine, 16),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 4))
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 4))
                 .itemOutputs(ItemList.Tool_DataStick.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(20 * SECONDS).eut(90).addTo(circuitAssemblerRecipes);
 

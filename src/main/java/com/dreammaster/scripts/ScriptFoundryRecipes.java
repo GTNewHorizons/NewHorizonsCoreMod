@@ -81,10 +81,8 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.FluidRegulator_UHV.get(4),
                         ItemList.Field_Generator_UV.get(1))
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(
-                                Materials.Longasssuperconductornameforuvwire,
-                                FluidShapes.fluidMolten,
-                                INGOTS * 40),
+                        MaterialLibAPI
+                                .getFluidStack(Materials.SuperconductorUVBase, FluidShapes.fluidMolten, INGOTS * 40),
                         MaterialLibAPI.getFluidStack(Materials.TungstenCarbide, FluidShapes.fluidMolten, INGOTS * 40),
                         MaterialLibAPI.getFluidStack(Materials.NaquadahEnriched, FluidShapes.fluidMolten, INGOTS * 40))
                 .itemOutputs(ItemList.Central_Casing_ExoFoundry.get(4)).duration(20 * SECONDS).eut(TierEU.RECIPE_UHV)
@@ -93,7 +91,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
         // Exo-Foundry Inner Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Longasssuperconductornameforuvwire, TEBlockShapes.frameGt, 1),
+                        MaterialLibAPI.getStack(Materials.SuperconductorUVBase, TEBlockShapes.frameGt, 1),
                         ItemList.Naquarite_Universal_Insulator_Foil.get(2),
                         ItemList.Electric_Pump_UV.get(4),
                         new Object[] { Circuits.UV.getIngredient(), 4 },
@@ -262,7 +260,7 @@ public class ScriptFoundryRecipes implements IScriptLoader {
                         ItemList.Timepiece.get(64),
                         MaterialLibAPI.getStack(Materials.Eternity, Shapes.plateSuperdense, 64),
                         ItemList.Black_Hole_Closer.get(64), ItemList.Field_Generator_UXV.get(16),
-                        MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 1), ItemList.ZPM6.get(1),
+                        MaterialLibAPI.getStack(Materials.MagMatter, Shapes.nanite, 1), ItemList.ZPM6.get(1),
                         MaterialLibAPI.getStack(Materials.GravitonShard, Shapes.gem, 1) },
                 new FluidStack[] {
                         MaterialLibAPI.getFluidStack(Materials.RawStarMatter, FluidShapes.fluidLiquid, 4_000_000),

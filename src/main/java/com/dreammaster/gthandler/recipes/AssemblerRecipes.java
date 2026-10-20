@@ -280,12 +280,12 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Polybenzimidazole, Shapes.plate, 1),
                         GTModHandler.getIC2Item("carbonMesh", 1L))
                 .circuit(4).itemOutputs(ItemList.Duct_Tape.get(2L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.AdvancedGlue, FluidShapes.fluidLiquid, 200))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GlueAdvanced, FluidShapes.fluidLiquid, 200))
                 .duration(6 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Hull_LV.get(1), ItemList.Duct_Tape.get(2)).circuit(3)
                 .itemOutputs(ItemList.Hatch_Maintenance.get(1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.AdvancedGlue, FluidShapes.fluidLiquid, 200))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GlueAdvanced, FluidShapes.fluidLiquid, 200))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // 10,30 and 60K NAK Cells
@@ -821,9 +821,8 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI
-                                .getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.plate, 4),
-                        MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plate, 4))
+                        MaterialLibAPI.getStack(Materials.MHDCSM, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.MagMatter, Shapes.plate, 4))
                 .circuit(8).itemOutputs(ItemList.Casing_UXV.get(1L)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
@@ -863,7 +862,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Plastic, TEBlockShapes.pipeLarge, 1),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, TEBlockShapes.pipeLarge, 1),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 8))
                 .circuit(4).itemOutputs(ItemList.Casing_Tank_1.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(assemblerRecipes);
@@ -1459,7 +1458,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, 64)).circuit(2)
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 32))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.AdvancedGlue, FluidShapes.fluidLiquid, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GlueAdvanced, FluidShapes.fluidLiquid, 36))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Wood, Shapes.dust, 64)).circuit(2)
@@ -1527,7 +1526,7 @@ public class AssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             MaterialLibAPI.getStack(Materials.Sugar, Shapes.dust, 1),
-                            MaterialLibAPI.getStack(Materials.Fuel, CellShapes.cell, 1),
+                            MaterialLibAPI.getStack(Materials.Diesel, CellShapes.cell, 1),
                             MaterialLibAPI.getStack(Materials.SulfuricAcid, CellShapes.cell, 1),
                             MaterialLibAPI.getStack(Materials.Acetone, CellShapes.cell, 1),
                             getModItem(PamsHarvestCraft.ID, "pepperoniItem", 1, 0),
@@ -1674,7 +1673,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(IronChests.ID, "BlockIronChest", 1, 0),
                             MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 4))
                     .circuit(1).itemOutputs(getModItem(ExtraUtilities.ID, "filing", 1, 0))
-                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         }
 
@@ -2912,10 +2911,10 @@ public class AssemblerRecipes implements Runnable {
             // Biome Compass
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.plate, 1),
-                            MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.bolt, 1),
-                            MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.screw, 2),
-                            MaterialLibAPI.getStack(Materials.HeeEndium, Shapes.ring, 2),
+                            MaterialLibAPI.getStack(Materials.Endium, Shapes.plate, 1),
+                            MaterialLibAPI.getStack(Materials.Endium, Shapes.bolt, 1),
+                            MaterialLibAPI.getStack(Materials.Endium, Shapes.screw, 2),
+                            MaterialLibAPI.getStack(Materials.Endium, Shapes.ring, 2),
                             MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.bolt, 1),
                             getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0))
                     .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 0)).duration(5 * SECONDS)
@@ -2935,7 +2934,7 @@ public class AssemblerRecipes implements Runnable {
                         Circuits.LV.get(2),
                         MaterialLibAPI.getStack(Materials.Tin, TEBlockShapes.cableGt01, 1),
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.screw, 2))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .itemOutputs(NHItemList.Display.get()).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -3244,7 +3243,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.foil, 2),
                         MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.wireFine, 2))
                 .itemOutputs(tectech.thing.CustomItemList.DATApipe.get(64))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxPolymer, FluidShapes.fluidMolten, 144))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
 
         // Fusion Coil Block
@@ -3429,7 +3428,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_IV.get(1),
-                        MaterialLibAPI.getStack(Materials.TPVAlloy, TEBlockShapes.wireGt04, 4),
+                        MaterialLibAPI.getStack(Materials.TPV, TEBlockShapes.wireGt04, 4),
                         MaterialLibAPI.getStack(Materials.Platinum, TEBlockShapes.cableGt01, 2),
                         Circuits.IV.get(2))
                 .itemOutputs(ItemList.Machine_IV_AlloySmelter.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_EV)
@@ -3912,7 +3911,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 8),
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.foil, 32))
                 .circuit(6).itemOutputs(ItemList.Circuit_Board_Coated_Basic.get(16L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 288))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 288))
                 .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4047,7 +4046,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 4),
                         MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dustSmall, 1))
                 .circuit(4).itemOutputs(ItemList.Circuit_Parts_Diode.get(4L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4071,7 +4070,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 4),
                         ItemList.Circuit_Silicon_Wafer.get(1L))
                 .circuit(4).itemOutputs(ItemList.Circuit_Parts_Diode.get(2L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4095,7 +4094,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 4),
                         ItemList.Circuit_Silicon_Wafer.get(1L))
                 .circuit(4).itemOutputs(ItemList.Circuit_Parts_Diode.get(4L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4103,7 +4102,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Tantalum, Shapes.wireFine, 4),
                         ItemList.Circuit_Silicon_Wafer.get(1L))
                 .circuit(4).itemOutputs(ItemList.Circuit_Parts_Diode.get(8L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4111,7 +4110,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1),
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_Coil.get(2L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4119,7 +4118,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.NickelZincFerrite, Shapes.ring, 1),
                         MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_Coil.get(4L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4127,7 +4126,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 1),
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_Coil.get(4L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4135,31 +4134,31 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.NickelZincFerrite, Shapes.ring, 1),
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_Coil.get(8L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.foil, 1),
                         MaterialLibAPI.getStack(Materials.Tantalum, Shapes.foil, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_Capacitor.get(12L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.foil, 1),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.foil, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_Capacitor.get(8L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.SiliconSolarGrade, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.SiliconSG, Shapes.plate, 1),
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.wireFine, 8))
                 .circuit(2).itemOutputs(ItemList.Circuit_Parts_Transistor.get(6L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4167,7 +4166,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 4),
                         MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dustSmall, 1))
                 .circuit(4).itemOutputs(ItemList.Circuit_Parts_Diode.get(6L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4175,7 +4174,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Tantalum, Shapes.wireFine, 4),
                         MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dustSmall, 1))
                 .circuit(4).itemOutputs(ItemList.Circuit_Parts_Diode.get(16L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // All SMD Component recipes.
@@ -4185,7 +4184,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 4))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_ResistorSMD.get(16L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 288))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 288))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4193,7 +4192,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Carbon, Shapes.dust, 1),
                         MaterialLibAPI.getStack(Materials.Tantalum, Shapes.wireFine, 4))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_ResistorSMD.get(32L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 288))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 288))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4201,7 +4200,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 16),
                         MaterialLibAPI.getStack(Materials.GalliumArsenide, Shapes.dust, 1))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_DiodeSMD.get(64L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 576))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4209,7 +4208,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Gallium, Shapes.foil, 1),
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 8))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_TransistorSMD.get(16L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 288))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 288))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4217,15 +4216,15 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Gallium, Shapes.foil, 1),
                         MaterialLibAPI.getStack(Materials.Tantalum, Shapes.wireFine, 8))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_TransistorSMD.get(32L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 288))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 288))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Silicone, Shapes.foil, 2),
+                        MaterialLibAPI.getStack(Materials.RubberSilicone, Shapes.foil, 2),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.foil, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_CapacitorSMD.get(16L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4233,15 +4232,15 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.foil, 4),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.foil, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_CapacitorSMD.get(24L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Silicone, Shapes.foil, 2),
+                        MaterialLibAPI.getStack(Materials.RubberSilicone, Shapes.foil, 2),
                         MaterialLibAPI.getStack(Materials.Tantalum, Shapes.foil, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_CapacitorSMD.get(32L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4249,7 +4248,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.PolyvinylChloride, Shapes.foil, 4),
                         MaterialLibAPI.getStack(Materials.Tantalum, Shapes.foil, 2))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_CapacitorSMD.get(48L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4257,7 +4256,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Neodymium, Shapes.ring, 1),
                         MaterialLibAPI.getStack(Materials.ConductiveIron, Shapes.wireFine, 8))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(24L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4265,7 +4264,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Neodymium, Shapes.ring, 1),
                         MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 8))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(32L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4273,7 +4272,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Neodymium, Shapes.ring, 1),
                         MaterialLibAPI.getStack(Materials.Tantalum, Shapes.wireFine, 8))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(48L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4281,7 +4280,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Neodymium, Shapes.ring, 1),
                         MaterialLibAPI.getStack(Materials.Iridium, Shapes.wireFine, 8))
                 .circuit(3).itemOutputs(ItemList.Circuit_Parts_InductorSMD.get(64L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // ASMD
@@ -4336,7 +4335,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Netherite, Shapes.foil, 1),
                         MaterialLibAPI.getStack(Materials.Pikyonium64B, Shapes.foil, 4),
-                        MaterialLibAPI.getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.foil, 2),
+                        MaterialLibAPI.getStack(Materials.SuperconductorZPMBase, Shapes.foil, 2),
                         MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt01, 2))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(64L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 288))
@@ -4347,7 +4346,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.foil, 4),
                         MaterialLibAPI.getStack(Materials.ArceusAlloy2B, Shapes.foil, 2),
-                        MaterialLibAPI.getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.SuperconductorZPMBase, Shapes.foil, 1),
                         MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt01, 1))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_TransistorXSMD.get(32L))
                 .fluidInputs((MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 144)))
@@ -4358,7 +4357,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Draconium, Shapes.foil, 4),
                         MaterialLibAPI.getStack(Materials.CinobiteA243, Shapes.foil, 2),
-                        MaterialLibAPI.getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.SuperconductorZPMBase, Shapes.foil, 1),
                         MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt01, 1))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_CapacitorXSMD.get(32L))
                 .fluidInputs((MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 144)))
@@ -4369,7 +4368,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Tritanium, Shapes.foil, 4),
                         MaterialLibAPI.getStack(Materials.LafiumCompound, Shapes.foil, 2),
-                        MaterialLibAPI.getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.foil, 1),
+                        MaterialLibAPI.getStack(Materials.SuperconductorZPMBase, Shapes.foil, 1),
                         MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt01, 1))
                 .circuit(9).itemOutputs(ItemList.Circuit_Parts_DiodeXSMD.get(64L))
                 .fluidInputs((MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 144)))
@@ -4501,7 +4500,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Silver, Shapes.bolt, 4),
                         MaterialLibAPI.getStack(Materials.Manganese, Shapes.foil, 4))
                 .circuit(1).itemOutputs(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 288))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 288))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4509,7 +4508,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.bolt, 4),
                         MaterialLibAPI.getStack(Materials.Manganese, Shapes.foil, 4))
                 .circuit(1).itemOutputs(getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 288))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 288))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4611,7 +4610,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         getModItem(Minecraft.ID, "skull", 1, 0),
                         getModItem(Minecraft.ID, "rotten_flesh", 2, 0),
-                        MaterialLibAPI.getStack(Materials.SiliconSolarGrade, Shapes.plate, 1))
+                        MaterialLibAPI.getStack(Materials.SiliconSG, Shapes.plate, 1))
                 .itemOutputs(getModItem(EnderIO.ID, "itemFrankenSkull", 1, 5))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Soularium, FluidShapes.fluidMolten, 288))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
@@ -5373,7 +5372,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.rotor, 2),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 2))
                 .itemOutputs(getModItem(OpenComputers.ID, "case1", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // case 2
 
@@ -5386,7 +5385,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.rotor, 2),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 2))
                 .itemOutputs(getModItem(OpenComputers.ID, "case2", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // case 3
 
@@ -5399,7 +5398,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.rotor, 2),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 2))
                 .itemOutputs(getModItem(OpenComputers.ID, "case3", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // micro case 1
 
@@ -5410,7 +5409,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 2))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 82))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // mirco case 2
 
@@ -5421,7 +5420,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 26),
                         MaterialLibAPI.getStack(Materials.Titanium, Shapes.itemCasing, 2))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 86))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // drone case 1
 
@@ -5434,7 +5433,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 1),
                         ItemList.Electric_Motor_HV.get(4L))
                 .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 83))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // drone case 2
 
@@ -5447,7 +5446,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Titanium, Shapes.itemCasing, 1),
                         ItemList.Electric_Motor_EV.get(4L))
                 .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 87))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // Card
 
@@ -5463,7 +5462,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "item", 1, 19),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.foil, 4))
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.foil, 4))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         // HDD 1
@@ -5517,7 +5516,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 4),
                         BlockList.SteelBars.get(2))
                 .itemOutputs(getModItem(OpenComputers.ID, "rack", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // adapter block
 
@@ -5528,7 +5527,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         getModItem(OpenComputers.ID, "item", 1, 24))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "adapter", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // assembler
 
@@ -5540,7 +5539,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         ItemList.Robot_Arm_LV.get(3L))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "assembler", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // disassembler
 
@@ -5553,7 +5552,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         ItemList.Robot_Arm_HV.get(2L))
                 .itemOutputs(getModItem(OpenComputers.ID, "disassembler", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // capacitor
 
@@ -5565,7 +5564,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(1L),
                         getModItem(OpenComputers.ID, "cable", 2))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "capacitor", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // charger
 
@@ -5577,7 +5576,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 26),
                         getModItem(OpenComputers.ID, "cable", 2))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "charger", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // diskDrive
 
@@ -5590,7 +5589,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.IronMagnetic, Shapes.stick, 1),
                         MaterialLibAPI.getStack(Materials.Glass, Shapes.lens, 1))
                 .itemOutputs(getModItem(OpenComputers.ID, "diskDrive", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // diskDriver
 
@@ -5602,7 +5601,7 @@ public class AssemblerRecipes implements Runnable {
                         BlockList.SteelBars.get(2),
                         MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 4))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 109))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // geolyzer
 
@@ -5622,12 +5621,12 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(2L),
                         getModItem(OpenComputers.ID, "item", 2, 25),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 2),
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 2),
                         MaterialLibAPI.getStack(Materials.Diamond, Shapes.lens, 1))
                 .circuit(10).itemOutputs(getModItem(OpenComputers.ID, "hologram1", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // hologram2
 
@@ -5635,14 +5634,14 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(2L),
                         getModItem(OpenComputers.ID, "item", 2, 26),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 2),
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 4),
                         MaterialLibAPI.getStack(Materials.Emerald, Shapes.lens, 1),
                         MaterialLibAPI.getStack(Materials.Ruby, Shapes.lens, 1),
                         MaterialLibAPI.getStack(Materials.Sapphire, Shapes.lens, 1))
                 .circuit(10).itemOutputs(getModItem(OpenComputers.ID, "hologram2", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // motionSensor
 
@@ -5650,11 +5649,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         getModItem(OpenComputers.ID, "item", 1, 42),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 2),
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         new ItemStack(Blocks.daylight_detector, 2, 0))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "motionSensor", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // netSplitter
 
@@ -5662,11 +5661,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_LV.get(1L),
                         ItemList.Circuit_Board_Plastic_Advanced.get(2L),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 4),
                         getModItem(OpenComputers.ID, "cable", 3, 0),
                         ItemList.Electric_Piston_LV.get(1L))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "netSplitter", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         // printer
 
@@ -5675,10 +5674,10 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Machine_HV_Printer.get(1L),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         getModItem(OpenComputers.ID, "item", 1, 26),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 4),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "printer", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // powerConverter
 
@@ -5690,7 +5689,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 2),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "powerConverter", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // powerDistributor
 
@@ -5703,7 +5702,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         Circuits.EV.get(2))
                 .itemOutputs(getModItem(OpenComputers.ID, "powerDistributor", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // raid
 
@@ -5713,10 +5712,10 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 43),
                         getModItem(OpenComputers.ID, "item", 2, 1),
                         getModItem(OpenComputers.ID, "item", 1, 25),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 4),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
                 .itemOutputs(getModItem(OpenComputers.ID, "raid", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // redstone
 
@@ -5729,7 +5728,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 66),
                         ItemList.Cover_ActivityDetector.get(1L))
                 .itemOutputs(getModItem(OpenComputers.ID, "redstone", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // relay
 
@@ -5737,12 +5736,12 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_MV.get(1L),
                         ItemList.Circuit_Board_Plastic_Advanced.get(2L),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 2),
                         getModItem(OpenComputers.ID, "item", 1, 13),
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
                 .itemOutputs(getModItem(OpenComputers.ID, "relay", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // waypoint
@@ -5756,7 +5755,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
                 .itemOutputs(getModItem(OpenComputers.ID, "waypoint", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         // cartridge empty
 
@@ -5765,10 +5764,10 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(OpenComputers.ID, "item", 1, 24),
                         ItemList.Circuit_Parts_Transistor.get(2L),
-                        MaterialLibAPI.getStack(Materials.Plastic, TEBlockShapes.pipeTiny, 8),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, TEBlockShapes.pipeTiny, 8),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.bolt, 8))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 94))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 36))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 36))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         // cartridge full
 
@@ -5785,7 +5784,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 1),
                         new ItemStack(Items.string, 8, 0))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 48))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Glue, FluidShapes.fluidLiquid, 576))
@@ -5818,7 +5817,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 18),
                         getModItem(OpenComputers.ID, "item", 9, 96))
                 .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 107))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // Server Tier 1
 
@@ -5830,7 +5829,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         getModItem(OpenComputers.ID, "item", 1, 3))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 45))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // Server Tier 2
 
@@ -5842,7 +5841,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 26),
                         getModItem(OpenComputers.ID, "item", 2, 38))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 46))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // Server Tier 3
 
@@ -5854,7 +5853,7 @@ public class AssemblerRecipes implements Runnable {
                         Circuits.IV.get(1),
                         getModItem(OpenComputers.ID, "item", 2, 39))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 40))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_EV / 2).addTo(assemblerRecipes);
         // Tablet Case Tier 1
 
@@ -5867,7 +5866,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 2, 24),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 4))
                 .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 74))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Tablet Case Tier 2
 
@@ -5880,7 +5879,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 2, 25),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 4))
                 .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 92))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // remote Monitor
 
@@ -5892,7 +5891,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 2, 26),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 41))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Terminal Server
 
@@ -5904,7 +5903,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 4),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.bolt, 16))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 108))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // Open Printers
         // Printer
@@ -5915,7 +5914,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(OpenComputers.ID, "item", 2, 24))
                 .circuit(1).itemOutputs(getModItem(OpenPrinters.ID, "openprinter.printer", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Shredder
 
@@ -5925,7 +5924,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(OpenComputers.ID, "item", 2, 24))
                 .circuit(1).itemOutputs(getModItem(OpenPrinters.ID, "openprinter.shredder", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Paper Roll
 
@@ -5982,7 +5981,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         ItemList.Circuit_Parts_Transistor.get(2L))
                 .circuit(2).itemOutputs(getModItem(OpenSecurity.ID, "magreader", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // RFID Reader
 
@@ -5993,7 +5992,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
                 .circuit(2).itemOutputs(getModItem(OpenSecurity.ID, "rfidreader", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Card writer
 
@@ -6006,7 +6005,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         ItemList.Circuit_Parts_Transistor.get(2L))
                 .itemOutputs(getModItem(OpenSecurity.ID, "rfidwriter", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Alarm
 
@@ -6017,7 +6016,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
                 .circuit(1).itemOutputs(getModItem(OpenSecurity.ID, "alarm", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Entity Detector
 
@@ -6028,7 +6027,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 1),
                         getModItem(OpenComputers.ID, "item", 1, 28))
                 .circuit(1).itemOutputs(getModItem(OpenSecurity.ID, "entitydetector", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Door Controler
 
@@ -6039,7 +6038,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 4))
                 .circuit(1).itemOutputs(getModItem(OpenSecurity.ID, "doorcontroller", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Data Block
 
@@ -6050,7 +6049,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         getModItem(OpenComputers.ID, "cable", 1, 0))
                 .circuit(1).itemOutputs(getModItem(OpenSecurity.ID, "opensecurity.DataBlock", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // swtichable Hub
 
@@ -6061,7 +6060,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "cable", 4, 0),
                         ItemList.Circuit_Parts_Transistor.get(2L))
                 .circuit(1).itemOutputs(getModItem(OpenSecurity.ID, "opensecurity.SwitchableHub", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // kvm Hub
 
@@ -6072,7 +6071,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "cable", 4, 0),
                         ItemList.Circuit_Parts_Transistor.get(2L))
                 .circuit(2).itemOutputs(getModItem(OpenSecurity.ID, "opensecurity.BlockKVM", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // energy turret
 
@@ -6083,7 +6082,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "cable", 4, 0),
                         ItemList.Circuit_Parts_Transistor.get(2L))
                 .circuit(2).itemOutputs(getModItem(OpenSecurity.ID, "energyTurretBlock", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // keypad
 
@@ -6094,7 +6093,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(2L),
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 4))
                 .circuit(2).itemOutputs(getModItem(OpenSecurity.ID, "keypadLock", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // biometric reader
 
@@ -6105,7 +6104,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 2, 24),
                         ItemList.Circuit_Parts_Transistor.get(2L))
                 .circuit(1).itemOutputs(getModItem(OpenSecurity.ID, "biometricScanner", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // magnetic stipe card
 
@@ -6138,7 +6137,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 1),
                         getModItem(OpenComputers.ID, "item", 1, 28))
                 .circuit(2).itemOutputs(getModItem(OpenSecurity.ID, "opensecurity.rfidReaderCard", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Secure Network Card
 
@@ -6148,7 +6147,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         getModItem(OpenComputers.ID, "item", 1, 26))
                 .circuit(1).itemOutputs(getModItem(OpenSecurity.ID, "opensecurity.secureNetworkCard", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         // Secure Door
 
@@ -6220,7 +6219,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 43),
                         getModItem(OpenComputers.ID, "item", 1, 38))
                 .circuit(1).itemOutputs(getModItem(OpenGlasses.ID, "openglassesterminal", 1, 0))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // Open Glasses
 
@@ -6230,7 +6229,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 10),
                         getModItem(OpenComputers.ID, "item", 1, 13))
                 .circuit(1).itemOutputs(getModItem(OpenGlasses.ID, "openglasses", 1, WILDCARD))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
     }
@@ -6632,7 +6631,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(GalacticraftCore.ID, "item.heavyPlating", 4, 0),
                         getModItem(GalacticraftCore.ID, "item.airVent", 1, 0))
                 .circuit(6).itemOutputs(getModItem(GalacticraftCore.ID, "item.engine", 1, 1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Fuel, FluidShapes.fluidLiquid, 1000))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Diesel, FluidShapes.fluidLiquid, 1000))
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -7119,7 +7118,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartAlloy", 4),
-                        MaterialLibAPI.getStack(Materials.SiliconSolarGrade, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.SiliconSG, Shapes.plate, 4),
                         NHItemList.TitaniumIronPlate.get())
                 .circuit(3).itemOutputs(NHItemList.ReinforcedTitaniumIronPlate.get()).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -8357,7 +8356,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.TPVAlloy, TEBlockShapes.wireGt02, 8),
+                        MaterialLibAPI.getStack(Materials.TPV, TEBlockShapes.wireGt02, 8),
                         NHItemList.MicaInsulatorFoil.get(20))
                 .circuit(3).itemOutputs(ItemList.Casing_Coil_TungstenSteel.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Nichrome, FluidShapes.fluidMolten, 144))
@@ -8368,7 +8367,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.HSSG, TEBlockShapes.wireGt02, 8),
                         NHItemList.MicaInsulatorFoil.get(24))
                 .circuit(3).itemOutputs(ItemList.Casing_Coil_HSSG.get(1L))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.TPVAlloy, FluidShapes.fluidMolten, 144))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.TPV, FluidShapes.fluidMolten, 144))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -8815,7 +8814,7 @@ public class AssemblerRecipes implements Runnable {
                                         OreShapes.ore,
                                         OreShapes.variantOf(stoneType.name()),
                                         64))
-                        .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.HydrofluoricAcidGT5U, 10000))
+                        .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.HydrofluoricAcid, 10000))
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("MM"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             }
@@ -8831,7 +8830,7 @@ public class AssemblerRecipes implements Runnable {
                                         OreShapes.ore,
                                         OreShapes.variantOf(stoneType.name()),
                                         64))
-                        .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.HydrofluoricAcidGT5U, 10000))
+                        .circuit(17).fluidInputs(MaterialUtils.fluid(Materials.HydrofluoricAcid, 10000))
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("KB"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             }
@@ -9882,7 +9881,7 @@ public class AssemblerRecipes implements Runnable {
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                             getModItem(OpenComputers.ID, "item", 2, 25),
                             ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                            MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 2))
+                            MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 2))
                     .circuit(1).itemOutputs(getModItem(Computronics.ID, "computronics.portableTapeDrive", 1, 0))
                     .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

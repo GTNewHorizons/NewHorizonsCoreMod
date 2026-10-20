@@ -65,28 +65,28 @@ public class BacteriaRegistry {
     private void runAdditionalFuelRecipes() {
         // XenoxRecycleRecipe
         GTValues.RA.stdBuilder().itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.DilutedXenoxene, FluidShapes.fluidLiquid, 1000))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.XenoxeneDiluted, FluidShapes.fluidLiquid, 1000))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 250),
-                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 300))
+                        MaterialLibAPI.getFluidStack(Materials.RadoxLight, FluidShapes.fluidGas, 300))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
 
         // LightRadox + Nq -> Enriched Naquadah condensation
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Naquadah, Shapes.dust, 1))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.dust, 3)).outputChances(10000)
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 2000))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxLight, FluidShapes.fluidGas, 2000))
                 .requiresLowGravity().duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
 
         // super heavy -> heavy radox conversion
         GTValues.RA.stdBuilder().itemOutputs()
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SuperHeavyRadox, FluidShapes.fluidLiquid, 1000))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, 2000))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxSuperHeavy, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RadoxHeavy, FluidShapes.fluidLiquid, 2000))
                 .duration(50 * MINUTES).eut(TierEU.RECIPE_UV).addTo(centrifugeRecipes);
 
         // heavy radox + Nq+ -> Nq*
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.NaquadahEnriched, Shapes.dust, 1))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Naquadria, Shapes.dust, 3)).outputChances(10000)
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, 4000))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxHeavy, FluidShapes.fluidLiquid, 4000))
                 .requiresLowGravity().duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM)
                 .addTo(autoclaveRecipes);
 
@@ -96,11 +96,11 @@ public class BacteriaRegistry {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "barnardaClog", 64)).circuit(24)
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 8))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Xenoxene, FluidShapes.fluidLiquid, 1000))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RawRadox, FluidShapes.fluidLiquid, 1000))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RadoxRaw, FluidShapes.fluidLiquid, 1000))
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).addTo(pyrolyseRecipes, industrialCokeOvenRecipes);
 
         GTValues.RA.stdBuilder().itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 5))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RawRadox, FluidShapes.fluidLiquid, 5000))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxRaw, FluidShapes.fluidLiquid, 5000))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(Materials.OilHeavy, FluidShapes.fluidLiquid, 600),
                         MaterialLibAPI.getFluidStack(Materials.Oil, FluidShapes.fluidLiquid, 300),
@@ -108,25 +108,25 @@ public class BacteriaRegistry {
                         GTUtility.getWater(1400),
                         MaterialLibAPI.getFluidStack(Materials.FermentedBacterialSludge, FluidShapes.fluidLiquid, 50),
                         MaterialLibAPI.getFluidStack(Materials.FermentedBiomass, FluidShapes.fluidLiquid, 50),
-                        MaterialLibAPI.getFluidStack(Materials.SuperHeavyRadox, FluidShapes.fluidLiquid, 100),
-                        MaterialLibAPI.getFluidStack(Materials.HeavyRadox, FluidShapes.fluidLiquid, 150),
-                        MaterialLibAPI.getFluidStack(Materials.DilutedXenoxene, FluidShapes.fluidLiquid, 50),
-                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 300),
-                        MaterialLibAPI.getFluidStack(Materials.SuperLightRadox, FluidShapes.fluidGas, 500))
+                        MaterialLibAPI.getFluidStack(Materials.RadoxSuperHeavy, FluidShapes.fluidLiquid, 100),
+                        MaterialLibAPI.getFluidStack(Materials.RadoxHeavy, FluidShapes.fluidLiquid, 150),
+                        MaterialLibAPI.getFluidStack(Materials.XenoxeneDiluted, FluidShapes.fluidLiquid, 50),
+                        MaterialLibAPI.getFluidStack(Materials.RadoxLight, FluidShapes.fluidGas, 300),
+                        MaterialLibAPI.getFluidStack(Materials.RadoxSuperLight, FluidShapes.fluidGas, 500))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(distillationTowerRecipes);
 
         GTValues.RA.stdBuilder().circuit(24)
                 .fluidInputs(
-                        MaterialLibAPI.getFluidStack(Materials.SuperLightRadox, FluidShapes.fluidGas, 100),
+                        MaterialLibAPI.getFluidStack(Materials.RadoxSuperLight, FluidShapes.fluidGas, 100),
                         MaterialLibAPI.getFluidStack(Materials.Silver, FluidShapes.fluidPlasma, 1))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.CrackedRadox, FluidShapes.fluidGas, 100))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RadoxCracked, FluidShapes.fluidGas, 100))
                 .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(crackingRecipes);
 
         GTValues.RA.stdBuilder().itemOutputs(MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 1))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CrackedRadox, FluidShapes.fluidGas, 1000))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RadoxCracked, FluidShapes.fluidGas, 1000))
                 .fluidOutputs(
                         MaterialLibAPI.getFluidStack(Materials.RadoxGas, FluidShapes.fluidGas, 100),
-                        MaterialLibAPI.getFluidStack(Materials.LightRadox, FluidShapes.fluidGas, 200))
+                        MaterialLibAPI.getFluidStack(Materials.RadoxLight, FluidShapes.fluidGas, 200))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
 
         // Ti & O Plasma Recipes
@@ -156,7 +156,7 @@ public class BacteriaRegistry {
                         MaterialLibAPI.getFluidStack(Materials.RadoxGas, FluidShapes.fluidGas, 2160),
                         MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidPlasma, 7500),
                         MaterialLibAPI.getFluidStack(Materials.Titanium, FluidShapes.fluidPlasma, 100))
-                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RadoxPoly, FluidShapes.fluidMolten, 720))
+                .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.RadoxPolymer, FluidShapes.fluidMolten, 720))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(multiblockChemicalReactorRecipes);
 
         runAdditionalFuelRecipes();

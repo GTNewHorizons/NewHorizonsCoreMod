@@ -108,7 +108,7 @@ public class GT_Loader_Machines {
                         | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UXV, 'W',
                         OrePrefixes.cableGt16.ingredient(Materials.BlackPlutonium), 'H',
-                        OrePrefixes.plate.ingredient(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'P',
+                        OrePrefixes.plate.ingredient(Materials.MHDCSM), 'P',
                         OrePrefixes.plateDense.ingredient(Materials.Kevlar) });
 
         GTModHandler.addCraftingRecipe(
@@ -1107,14 +1107,14 @@ public class GT_Loader_Machines {
             GTValues.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).circuit(1).itemOutputs(inHatches[aTier - 10])
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials.RadoxPoly,
+                                    Materials.RadoxPolymer,
                                     FluidShapes.fluidMolten,
                                     (int) (2.25 * Math.pow(2, aTier - 9))))
                     .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).circuit(2).itemOutputs(outHatches[aTier - 10])
                     .fluidInputs(
                             MaterialLibAPI.getFluidStack(
-                                    Materials.RadoxPoly,
+                                    Materials.RadoxPolymer,
                                     FluidShapes.fluidMolten,
                                     (int) (2.25 * Math.pow(2, aTier - 9))))
                     .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);

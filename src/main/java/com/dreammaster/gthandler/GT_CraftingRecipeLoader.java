@@ -114,9 +114,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_UXV.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PSP", "SwS", "PSP", 'P',
-                        OrePrefixes.plate.ingredient(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
-                        OrePrefixes.plate.ingredient(Materials.Magmatter) });
+                new Object[] { "PSP", "SwS", "PSP", 'P', OrePrefixes.plate.ingredient(Materials.MHDCSM), 'S',
+                        OrePrefixes.plate.ingredient(Materials.MagMatter) });
 
         // Hull recycling placed here after the casing recipes for proper item data
         MaterialData.addFromInputs(
@@ -319,7 +318,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.Casing_Tank_1.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.ingredient(Materials.Steel), 'I',
-                        OrePrefixes.pipeLarge.ingredient(Materials.Plastic) });
+                        OrePrefixes.pipeLarge.ingredient(Materials.Polyethylene) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_2.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
@@ -824,7 +823,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 ItemList.LATEX.get(1),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "SPS", "CMC", "SPS", 'S',
-                        MaterialLibAPI.getStack(Materials.Silicone, Shapes.plateDense, 1), 'P',
+                        MaterialLibAPI.getStack(Materials.RubberSilicone, Shapes.plateDense, 1), 'P',
                         ItemList.Electric_Pump_HV.get(1L), 'C', Circuits.EV.getIngredient(), 'M',
                         ItemList.Machine_HV_Assembler.get(1) });
 
@@ -1025,8 +1024,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     machinehull = ItemList.Hull_UMV.get(1L);
                     break;
                 default: // UXV
-                    hull = MaterialLibAPI
-                            .getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.plate, 1);
+                    hull = MaterialLibAPI.getStack(Materials.MHDCSM, Shapes.plate, 1);
                     machinehull = ItemList.Hull_UXV.get(1L);
                     break;
             }

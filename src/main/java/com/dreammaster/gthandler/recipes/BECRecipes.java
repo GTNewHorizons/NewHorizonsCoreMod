@@ -76,11 +76,11 @@ public class BECRecipes implements Runnable {
                                 MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.stickLong, 64),
                                 MaterialLibAPI.getStack(Materials.SuperconductorUMVBase, Shapes.stickLong, 64),
                                 MaterialLibAPI.getStack(Materials.Eternity, Shapes.stickLong, 64),
-                                MaterialLibAPI.getStack(Materials.Magmatter, Shapes.stickLong, 64),
+                                MaterialLibAPI.getStack(Materials.MagMatter, Shapes.stickLong, 64),
                                 MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.plateSuperdense, 16),
                                 MaterialLibAPI.getStack(Materials.SuperconductorUMVBase, Shapes.plateSuperdense, 16),
                                 MaterialLibAPI.getStack(Materials.Eternity, Shapes.plateSuperdense, 16),
-                                MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plateSuperdense, 16) },
+                                MaterialLibAPI.getStack(Materials.MagMatter, Shapes.plateSuperdense, 16) },
                         nanites(4, 2, 3, 5, 9, 8, 10, 6, 2, 2, 3, 3, 4, 4, 5, 5),
                         new FluidStack[] { CondensateType.BoundlessCosmicSolder.getEntangled(36000),
                                 CondensateType.QuarkGluonPlasma.getEntangled(100_000),
@@ -153,7 +153,7 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials.TengamPurified, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.Hypogen, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.Quantium, Shapes.plateSuperdense, 64),
-                MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plateSuperdense, 64),
+                MaterialLibAPI.getStack(Materials.MagMatter, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.plateSuperdense, 64), };
 
         final ItemStack[] material2 = new ItemStack[] {
@@ -170,8 +170,7 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials.Infinity, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.plateSuperdense, 64),
-                MaterialLibAPI
-                        .getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.plateSuperdense, 64),
+                MaterialLibAPI.getStack(Materials.MHDCSM, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.Eternity, Shapes.plateSuperdense, 64), };
 
         final ItemStack[] material3 = new ItemStack[] {
@@ -237,17 +236,14 @@ public class BECRecipes implements Runnable {
                         ItemList.CoherencePreservingPlasmaConduit.get(64),
                         MaterialLibAPI.getStack(Materials.Eternity, Shapes.plateSuperdense, 16),
                         MaterialLibAPI.getStack(Materials.Universium, Shapes.plateSuperdense, 8),
-                        MaterialLibAPI.getStack(
-                                Materials.MagnetohydrodynamicallyConstrainedStarMatter,
-                                Shapes.plateSuperdense,
-                                8),
+                        MaterialLibAPI.getStack(Materials.MHDCSM, Shapes.plateSuperdense, 8),
                         MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.plateSuperdense, 16), Circuits.MAX.get(16),
                         ItemList.Sensor_UXV.get(32L), ItemList.Emitter_UXV.get(32L),
                         getModItem(EternalSingularity.ID, "combined_singularity", 64, 15),
                         MaterialLibAPI.getStack(Materials.WhiteDwarfMatter, Shapes.nanite, 32),
                         MaterialLibAPI.getStack(Materials.BlackDwarfMatter, Shapes.nanite, 16),
                         MaterialLibAPI.getStack(Materials.Universium, Shapes.nanite, 8),
-                        MaterialLibAPI.getStack(Materials.Magmatter, Shapes.nanite, 4) },
+                        MaterialLibAPI.getStack(Materials.MagMatter, Shapes.nanite, 4) },
                 nanites(7, 6, 5, 5, 3, 3, 2, 2, 9, 4, 4, 1, 6, 7, 8, 10),
                 new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(1_024_000),
                         CondensateType.PhononMedium.getEntangled(256_000),
@@ -262,16 +258,10 @@ public class BECRecipes implements Runnable {
                 new ItemStack[] { ItemList.FineStructureConstantManipulator.get(64),
                         CustomItemList.astralArrayFabricator.get(4), ItemList.MetaMaterial_WaveFocus4.get(64),
                         MaterialLibAPI.getStack(Materials.Amalgatite, Shapes.gemExquisite, 64),
-                        MaterialLibAPI.getStack(Materials.Magmatter, TEBlockShapes.frameGt, 16),
-                        MaterialLibAPI.getStack(Materials.Magmatter, Shapes.plateSuperdense, 8),
-                        MaterialLibAPI.getStack(
-                                Materials.MagnetohydrodynamicallyConstrainedStarMatter,
-                                Shapes.plateSuperdense,
-                                8),
-                        MaterialLibAPI.getStack(
-                                Materials.MagnetohydrodynamicallyConstrainedStarMatter,
-                                TEBlockShapes.frameGt,
-                                16),
+                        MaterialLibAPI.getStack(Materials.MagMatter, TEBlockShapes.frameGt, 16),
+                        MaterialLibAPI.getStack(Materials.MagMatter, Shapes.plateSuperdense, 8),
+                        MaterialLibAPI.getStack(Materials.MHDCSM, Shapes.plateSuperdense, 8),
+                        MaterialLibAPI.getStack(Materials.MHDCSM, TEBlockShapes.frameGt, 16),
                         ItemList.MetaMaterial_Shielding3.get(64), ItemList.MetaMaterial_Waveguide3.get(64),
                         ItemList.MetaMaterial_EnergyConduit3.get(64),
                         ItemList.MetaMaterial_ElectrograviticValve3.get(64), ItemList.Electric_Piston_UXV.get(64L),
@@ -300,10 +290,9 @@ public class BECRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.WhiteDwarfMatter, Shapes.stickLong, 64),
                         MaterialLibAPI.getStack(Materials.BlackDwarfMatter, Shapes.stickLong, 64),
                         MaterialLibAPI.getStack(Materials.Universium, Shapes.stickLong, 64),
-                        MaterialLibAPI
-                                .getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.stickLong, 64),
+                        MaterialLibAPI.getStack(Materials.MHDCSM, Shapes.stickLong, 64),
                         MaterialLibAPI.getStack(Materials.Eternity, Shapes.stickLong, 64),
-                        MaterialLibAPI.getStack(Materials.Magmatter, Shapes.stickLong, 64) },
+                        MaterialLibAPI.getStack(Materials.MagMatter, Shapes.stickLong, 64) },
                 nanites(1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 10),
                 new FluidStack[] { CondensateType.QuarkGluonPlasma.getEntangled(128_000),
                         CondensateType.PhononMedium.getEntangled(32_000),
@@ -387,8 +376,8 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials.Infinity, Shapes.stickLong, 64),
                 MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.stickLong, 64),
                 MaterialLibAPI.getStack(Materials.SpaceTime, Shapes.stickLong, 64),
-                MaterialLibAPI.getStack(Materials.MagnetohydrodynamicallyConstrainedStarMatter, Shapes.stickLong, 64),
-                MaterialLibAPI.getStack(Materials.Magmatter, Shapes.stickLong, 64), };
+                MaterialLibAPI.getStack(Materials.MHDCSM, Shapes.stickLong, 64),
+                MaterialLibAPI.getStack(Materials.MagMatter, Shapes.stickLong, 64), };
 
         final ItemStack[] boltSD = new ItemStack[] {
                 MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.plateSuperdense, 64),
@@ -399,12 +388,9 @@ public class BECRecipes implements Runnable {
                 MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.plateSuperdense, 64),
-                MaterialLibAPI.getStack(
-                        Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid,
-                        Shapes.plateSuperdense,
-                        64),
-                MaterialLibAPI.getStack(Materials.Tetranaquadahdiindiumhexaplatiumosminid, Shapes.plateSuperdense, 64),
-                MaterialLibAPI.getStack(Materials.Longasssuperconductornameforuhvwire, Shapes.plateSuperdense, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorLuVBase, Shapes.plateSuperdense, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorZPMBase, Shapes.plateSuperdense, 64),
+                MaterialLibAPI.getStack(Materials.SuperconductorUHVBase, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.SuperconductorUEVBase, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.TranscendentMetal, Shapes.plateSuperdense, 64),
                 MaterialLibAPI.getStack(Materials.SuperconductorUMVBase, Shapes.plateSuperdense, 64),

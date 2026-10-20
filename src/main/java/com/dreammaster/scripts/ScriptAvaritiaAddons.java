@@ -244,10 +244,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                             ItemList.Timepiece.get(1))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15))
                     .fluidInputs(
-                            MaterialLibAPI.getFluidStack(
-                                    Materials.MagnetohydrodynamicallyConstrainedStarMatter,
-                                    FluidShapes.fluidMolten,
-                                    288),
+                            MaterialLibAPI.getFluidStack(Materials.MHDCSM, FluidShapes.fluidMolten, 288),
                             MaterialLibAPI.getFluidStack(Materials.ExcitedDTSC, FluidShapes.fluidLiquid, 10000))
                     .fluidOutputs(
                             MaterialLibAPI.getFluidStack(Materials.Hydrogen, FluidShapes.fluidPlasma, 576),

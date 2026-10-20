@@ -87,16 +87,16 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 Materials.MysteriousCrystal,
                 NHItemList.MysteriousCrystalCompressedPlate.get());
         registerOre(OrePrefixes.block, Materials.BlackPlutonium, BlockList.BlackPlutonium.get());
-        registerOre(OrePrefixes.dust, Materials.ChargedCertusQuartz, NHItemList.ChargedCertusQuartzDust.get(1));
-        registerOre(OrePrefixes.plate, Materials.ChargedCertusQuartz, NHItemList.ChargedCertusQuartzPlate.get(1));
-        registerOre(OrePrefixes.stick, Materials.ChargedCertusQuartz, NHItemList.ChargedCertusQuartzRod.get(1));
+        registerOre(OrePrefixes.dust, Materials.CertusQuartzCharged, NHItemList.ChargedCertusQuartzDust.get(1));
+        registerOre(OrePrefixes.plate, Materials.CertusQuartzCharged, NHItemList.ChargedCertusQuartzPlate.get(1));
+        registerOre(OrePrefixes.stick, Materials.CertusQuartzCharged, NHItemList.ChargedCertusQuartzRod.get(1));
         registerOre(
                 OrePrefixes.crystal,
-                Materials.ChargedCertusQuartz,
+                Materials.CertusQuartzCharged,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
         registerOre(
                 OrePrefixes.gem,
-                Materials.ChargedCertusQuartz,
+                Materials.CertusQuartzCharged,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
 
         registerOre(OrePrefixes.stickLong, Materials.Obsidian, NHItemList.LongObsidianRod.get());
@@ -139,14 +139,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 Materials.MeteoricIron,
                 getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 12));
 
-        registerOre(
-                OrePrefixes.ingot,
-                Materials.HeeEndium,
-                getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1, 0));
-        registerOre(
-                OrePrefixes.block,
-                Materials.HeeEndium,
-                getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0));
+        registerOre(OrePrefixes.ingot, Materials.Endium, getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1, 0));
+        registerOre(OrePrefixes.block, Materials.Endium, getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0));
 
         registerOre("oreAdamantium", getModItem(GalaxySpace.ID, "oberonblocks", 1, 3));
         registerOre("oreCobalt", getModItem(GalaxySpace.ID, "phobosblocks", 1, 4));
@@ -202,7 +196,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
         registerOre(OrePrefixes.block, Materials.Galgadorian, getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 1));
         registerOre(
                 OrePrefixes.block,
-                Materials.EnhancedGalgadorian,
+                Materials.GalgadorianEnhanced,
                 getModItem(StevesCarts2.ID, "BlockMetalStorage", 1, 2));
 
         registerOre(OrePrefixes.nugget, Materials.Void, getModItem(Thaumcraft.ID, "ItemNugget", 1, 7));

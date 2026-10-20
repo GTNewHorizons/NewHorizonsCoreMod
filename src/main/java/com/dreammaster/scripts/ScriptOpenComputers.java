@@ -51,10 +51,10 @@ public class ScriptOpenComputers implements IScriptLoader {
                         ItemList.Automation_ChestBuffer_LV.get(1L),
                         getModItem(OpenComputers.ID, "item", 1, 61),
                         getModItem(OpenComputers.ID, "item", 1, 77),
-                        MaterialLibAPI.getStack(Materials.Plastic, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 2),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
                 .circuit(1).itemOutputs(getTransposer(2, 2_560))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 72))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_HV.get(1L))

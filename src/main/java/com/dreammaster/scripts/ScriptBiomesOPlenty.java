@@ -133,7 +133,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                MaterialLibAPI.getStack(Materials.DarkAsh, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.AshDark, Shapes.dust, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1),

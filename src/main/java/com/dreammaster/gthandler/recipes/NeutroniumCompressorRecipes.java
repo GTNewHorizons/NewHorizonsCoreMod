@@ -216,7 +216,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemInputsUnsafe(
                             GTUtility.copyAmountUnsafe(
                                     12345,
-                                    MaterialLibAPI.getStack(Materials.Silicone, Shapes.plateSuperdense, 1)))
+                                    MaterialLibAPI.getStack(Materials.RubberSilicone, Shapes.plateSuperdense, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.rubber.singularity", 1, 2))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()

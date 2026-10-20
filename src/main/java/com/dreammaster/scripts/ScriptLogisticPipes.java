@@ -1138,7 +1138,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         Circuits.LV.get(2),
                         MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt08, 4),
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.bolt, 4))
-                .circuit(24).fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 576))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 2)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -1153,7 +1154,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         Circuits.MV.get(2),
                         MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt08, 2),
                         MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, 4))
-                .circuit(24).fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 576))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3)).duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1166,7 +1168,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         Circuits.MV.get(2),
                         MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt08, 2),
                         MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, 4))
-                .circuit(24).fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 576))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3)).duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1187,7 +1190,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 8),
                         Circuits.MV.get(1),
                         MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt02, 4))
-                .circuit(24).fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 576))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 5)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -1201,7 +1205,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 3),
                         Circuits.MV.get(2))
-                .circuit(24).fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 576))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeBlockRequestTable", 1, 0)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -1265,7 +1270,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         Circuits.HV.get(1),
                         MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 4),
                         MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 4))
-                .circuit(18).fluidInputs(MaterialLibAPI.getFluidStack(Materials.Plastic, FluidShapes.fluidMolten, 144))
+                .circuit(18)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
