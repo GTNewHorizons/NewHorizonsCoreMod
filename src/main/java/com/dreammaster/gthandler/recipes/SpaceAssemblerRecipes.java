@@ -96,10 +96,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 4),
                         ItemList.Emitter_UMV.get(1))
                 .fluidInputs(
-                        Materials.SuperconductorUMVBase.getMolten(64 * 144),
-                        Materials.SixPhasedCopper.getMolten(64 * 144),
-                        Materials.Force.getMolten(64 * 144),
-                        Materials.Cheese.getMolten(64 * 144))
+                        Materials.Creon.getMolten(64 * 144),
+                        Materials.Draconium.getMolten(64 * 144),
+                        Materials.Manyullyn.getMolten(64 * 144),
+                        Materials.SuperconductorUMVBase.getMolten(64 * 144))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32421)).metadata(IGRecipeMaps.MODULE_TIER, 3)
                 .duration(120 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
