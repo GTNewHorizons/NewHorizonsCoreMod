@@ -326,8 +326,8 @@ public class BlastFurnaceRecipes implements Runnable {
                 .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
                 .addTo(BlastFurnaceWithGas);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Orichalcum, 1L))
-                .circuit(11).itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Orichalcum, 1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Orikalkum, 1L))
+                .circuit(11).itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Orikalkum, 1L))
                 .duration(1 * MINUTES + 55 * SECONDS).eut(TierEU.RECIPE_IV).metadata(COIL_HEAT, 6000)
                 .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
                 .addTo(BlastFurnaceWithGas);
