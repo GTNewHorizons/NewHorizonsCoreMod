@@ -104,7 +104,7 @@ public class LetsEncryptAdder {
         } else {
             majorVersion = "1.7";
             minorVersion = 110;
-            LOGGER.info("Regex to parse Java version failed - applying anyway.");
+            LOGGER.warn("Regex to parse Java version failed - applying anyway.");
         }
 
         switch (majorVersion) {
