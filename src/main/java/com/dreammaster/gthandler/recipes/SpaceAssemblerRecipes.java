@@ -100,7 +100,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         Materials.Draconium.getMolten(64 * 144),
                         Materials.Manyullyn.getMolten(64 * 144),
                         Materials.SuperconductorUMVBase.getMolten(64 * 144))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32421)).metadata(IGRecipeMaps.MODULE_TIER, 3)
+                .itemOutputs(ItemList.Supermassive_Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3)
                 .duration(120 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
