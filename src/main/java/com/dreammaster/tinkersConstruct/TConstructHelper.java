@@ -11,7 +11,9 @@ import net.minecraftforge.fluids.FluidStack;
 import gregtech.api.util.GTUtility;
 import mantle.utils.ItemMetaWrapper;
 import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.CastingRecipe;
 import tconstruct.library.crafting.FluidType;
+import tconstruct.library.crafting.LiquidCasting;
 import tconstruct.library.crafting.Smeltery;
 
 public class TConstructHelper {
@@ -24,6 +26,17 @@ public class TConstructHelper {
     public static void removeTableRecipe(ItemStack output) {
         TConstructRegistry.getTableCasting().getCastingRecipes()
                 .removeIf(r -> GTUtility.areStacksEqual(r.output, output, true));
+    }
+
+    public static void replaceCastingOutputs(ItemStack output, ItemStack replacement) {
+        for (LiquidCasting casting : new LiquidCasting[] { TConstructRegistry.getTableCasting(),
+                TConstructRegistry.getBasinCasting() }) {
+            for (CastingRecipe recipe : casting.getCastingRecipes()) {
+                if (GTUtility.areStacksEqual(recipe.output, output, true)) {
+                    recipe.output = GTUtility.copyAmount(recipe.output.stackSize, replacement);
+                }
+            }
+        }
     }
 
     public static void removeSmelterAlloyMix(FluidStack output) {

@@ -15,14 +15,14 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptBotany implements IScriptLoader {
 
@@ -41,7 +41,7 @@ public class ScriptBotany implements IScriptLoader {
         addShapelessRecipe(getModItem(Botany.ID, "database", 1, 0), getModItem(Botany.ID, "database", 1, 0));
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelWood", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
                 "craftingToolHardHammer",
                 null,
                 "craftingToolFile",
@@ -96,21 +96,21 @@ public class ScriptBotany implements IScriptLoader {
                 "stickWood");
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Ash, 1L));
+                MaterialLibAPI.getStack(Materials.Ash, Shapes.dustSmall, 1));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Ash, 1L),
+                MaterialLibAPI.getStack(Materials.Ash, Shapes.dustSmall, 1),
                 getModItem(Botany.ID, "misc", 1, 0));
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1L));
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.dustSmall, 1));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1L),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.dustSmall, 1),
                 getModItem(Botany.ID, "misc", 1, 1));
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 3),
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Sulfur, 1L));
+                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dustSmall, 1));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Sulfur, 1L),
+                MaterialLibAPI.getStack(Materials.Sulfur, Shapes.dustSmall, 1),
                 getModItem(Botany.ID, "misc", 1, 3));
 
         ForestryHelper.removeCarpenterRecipe(getModItem(Botany.ID, "database", 1, 0));
@@ -123,11 +123,11 @@ public class ScriptBotany implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'd',
                 "itemCasingGold",
                 'e',
@@ -135,11 +135,11 @@ public class ScriptBotany implements IScriptLoader {
                 'f',
                 "itemCasingGold",
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
+                MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, 1),
                 'i',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay", 4, 0), getModItem(Forestry.ID, "thermionicTubes", 1, 0))
@@ -287,8 +287,8 @@ public class ScriptBotany implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 4L))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 4))
                 .itemOutputs(getModItem(Botany.ID, "soilMeter", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);

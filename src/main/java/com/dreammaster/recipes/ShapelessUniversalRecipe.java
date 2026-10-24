@@ -17,8 +17,8 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import gregtech.api.interfaces.IItemContainer;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 /**
@@ -79,7 +79,7 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                 this.recipeXY.add(i);
             } else if (value instanceof ItemData) {
                 ItemData data = (ItemData) value;
-                ItemStack itemStack = GTOreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
+                ItemStack itemStack = MaterialParts.stack(data.prefix, data.material.material, 1);
                 if (itemStack == null) {
                     throw new NullPointerException("bad item passed in the recipe");
                 } else {

@@ -26,13 +26,14 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptIronChests implements IScriptLoader {
 
@@ -114,23 +115,23 @@ public class ScriptIronChests implements IScriptLoader {
                 null,
                 "craftingToolScrewdriver",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1),
                 getModItem(Minecraft.ID, "minecart", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(IronChestsMinecarts.ID, "minecart_chest_crystal", 1, 0),
                 null,
                 "craftingToolScrewdriver",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, 1),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 5),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Glass, 1L),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, 1),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, 1),
                 getModItem(Minecraft.ID, "minecart", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Glass, 1L));
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.screw, 1));
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 7),
                 getModItem(Minecraft.ID, "dirt", 1, 0),
@@ -145,156 +146,156 @@ public class ScriptIronChests implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 3),
                 "screwCopper",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "screwCopper",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0),
                 "screwCopper",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "screwCopper",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "plankWood",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 0),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "woodIronUpgrade", 1, 0),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "plankWood",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "copperIronUpgrade", 1, 0),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 4),
                 "screwSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "screwSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "copperSteelUpgrade", 1, 0),
                 "screwSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "screwSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 1),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "ironGoldUpgrade", 1, 0),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "steelGoldUpgrade", 1, 0),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
                 "screwDiamond",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "screwDiamond",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 getModItem(Minecraft.ID, "chest", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "goldDiamondUpgrade", 1, 0),
                 "screwDiamond",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "screwDiamond",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 null,
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 5),
                 "screwGlass",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "screwGlass",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "diamondCrystalUpgrade", 1, 0),
                 "screwGlass",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "screwGlass",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 6),
@@ -312,66 +313,66 @@ public class ScriptIronChests implements IScriptLoader {
                 "screwDiamond",
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 "screwDiamond",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
                 "craftingToolHardHammer",
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "diamondDarkSteelUpgrade", 1, 0),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "crystalDarkSteelUpgrade", 1, 0),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
+                MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "ironSteelUpgrade", 1, 0),
                 "screwSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "screwSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                 "craftingToolScrewdriver");
 
         GTValues.RA.stdBuilder()
@@ -381,91 +382,91 @@ public class ScriptIronChests implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 3)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("plankWood", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 3))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new OreDictItemStack("plankWood", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 3))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "copperIronUpgrade", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 3L))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 4)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "copperSteelUpgrade", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "ironSteelUpgrade", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 3L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 1)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "ironGoldUpgrade", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "steelGoldUpgrade", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 4))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 2)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 2))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "goldDiamondUpgrade", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 4L))
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 4))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 5)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 2L))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 2))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "diamondCrystalUpgrade", 1, 0)).duration(35 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -476,32 +477,32 @@ public class ScriptIronChests implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 2, 7))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "diamondObsidianUpgrade", 1, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(2).itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 9)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(7).itemOutputs(getModItem(IronChests.ID, "diamondDarkSteelUpgrade", 1, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(7).itemOutputs(getModItem(IronChests.ID, "crystalDarkSteelUpgrade", 1, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(7).itemOutputs(getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
     }

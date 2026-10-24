@@ -8,7 +8,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import gregtech.api.enums.Materials;
+import com.ruling_0.materiallib.api.Material;
+
 import gregtech.api.enums.OrePrefixes;
 import tconstruct.library.crafting.Smeltery;
 
@@ -69,7 +70,7 @@ public class MeltingRecipeAdder {
         return this;
     }
 
-    public MeltingRecipeAdder smelteryGroup(OrePrefixes prefix, Materials material) {
-        return smelteryGroup(prefix.get(material).toString());
+    public MeltingRecipeAdder smelteryGroup(OrePrefixes prefix, Material material) {
+        return smelteryGroup(prefix.ingredient(material).toString());
     }
 }

@@ -27,17 +27,22 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.Material;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import bartworks.common.loaders.ItemRegistry;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
+import gregtech.api.material.GTMaterialFlag;
+import gregtech.api.material.MaterialUtils;
 
 public class ScriptLogisticPipes implements IScriptLoader {
 
@@ -65,7 +70,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
     }
 
     // This should ideally be shared somewhere; pending more cleanup/rewrite.
-    private static final Materials[] solderingMaterials = new Materials[] { Materials.SolderingAlloy, Materials.Tin,
+    private static final Material[] solderingMaterials = new Material[] { Materials.SolderingAlloy, Materials.Tin,
             Materials.Lead };
 
     /**
@@ -75,11 +80,13 @@ public class ScriptLogisticPipes implements IScriptLoader {
      * @param baseAmount Amount of soldering alloy to use. Tin is 2x, Lead is 4x this amount.
      * @return FluidStack of the appropriate material and amount.
      */
-    private static FluidStack getSolderingFluid(Materials material, long baseAmount) {
-        if (material.contains(SubTag.SOLDERING_MATERIAL_GOOD)) return material.getMolten(baseAmount);
-        if (material.contains(SubTag.SOLDERING_MATERIAL_BAD)) return material.getMolten(baseAmount * 4);
-        if (material.contains(SubTag.SOLDERING_MATERIAL)) return material.getMolten(baseAmount * 2);
-        return null;
+    private static FluidStack getSolderingFluid(Material material, long baseAmount) {
+        long amount;
+        if (MaterialUtils.hasFlag(material, GTMaterialFlag.SOLDERING_MATERIAL_GOOD)) amount = baseAmount;
+        else if (MaterialUtils.hasFlag(material, GTMaterialFlag.SOLDERING_MATERIAL_BAD)) amount = baseAmount * 4;
+        else if (MaterialUtils.hasFlag(material, GTMaterialFlag.SOLDERING_MATERIAL)) amount = baseAmount * 2;
+        else return null;
+        return MaterialLibAPI.getFluidStack(material, FluidShapes.fluidMolten, (int) amount);
     }
 
     @Override
@@ -91,13 +98,13 @@ public class ScriptLogisticPipes implements IScriptLoader {
     }
 
     private void loadModuleRecipes() {
-        for (Materials solderingMaterial : solderingMaterials) {
+        for (Material solderingMaterial : solderingMaterials) {
             // Blank Module
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 4),
+                            Circuits.ULV.get(1),
+                            MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.wireGt01, 4))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -106,9 +113,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 2),
+                            Circuits.ULV.get(1),
+                            MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.plate, 1),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1)).duration(25 * SECONDS)
@@ -118,9 +125,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 2),
+                            Circuits.ULV.get(1),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.bolt, 8),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 2)).duration(15 * SECONDS)
@@ -130,9 +137,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
+                            MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 1),
+                            Circuits.ULV.get(1),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.bolt, 8),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3)).duration(25 * SECONDS)
@@ -142,9 +149,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 4L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 2L),
+                            MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.plate, 4),
+                            Circuits.ULV.get(2),
+                            MaterialLibAPI.getStack(Materials.Bronze, Shapes.plate, 2),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 4)).duration(20 * SECONDS)
@@ -152,9 +159,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                            MaterialLibAPI.getStack(Materials.RedstoneAlloy, Shapes.plate, 1),
+                            Circuits.ULV.get(2),
+                            MaterialLibAPI.getStack(Materials.Bronze, Shapes.plate, 1),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 4)).duration(30 * SECONDS)
@@ -165,9 +172,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501),
                             ItemList.Robot_Arm_LV.get(1L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 8L))
+                            Circuits.MV.get(2),
+                            MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 1),
+                            MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, 8))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5)).duration(120 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -186,9 +193,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0),
                             ItemList.Electric_Motor_LV.get(1L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
+                            Circuits.ULV.get(1),
+                            MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 1),
+                            MaterialLibAPI.getStack(Materials.Gold, Shapes.bolt, 8),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500)).duration(20 * SECONDS)
@@ -198,10 +205,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9),
-                            GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
+                            MaterialLibAPI.getStack(Materials.Glass, Shapes.lens, 1),
                             ItemList.Conveyor_Module_MV.get(1L),
                             ItemList.Sensor_MV.get(1L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L))
+                            Circuits.MV.get(1))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8)).duration(80 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -211,10 +218,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9),
                             ItemList.Robot_Arm_MV.get(1L),
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.StainlessSteel, 4L),
+                            MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.gearGtSmall, 4),
                             ItemList.Sensor_MV.get(1L),
                             ItemList.Emitter_MV.get(1L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L))
+                            Circuits.MV.get(1))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10)).duration(40 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -224,7 +231,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0),
                             ItemList.Emitter_MV.get(1L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
+                            Circuits.MV.get(1),
                             ItemList.Cover_Crafting.get(5L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
@@ -237,7 +244,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                             getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1),
                             ItemList.Conveyor_Module_LV.get(1L),
                             ItemList.Circuit_Parts_Diode.get(2L),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17)).duration(30 * SECONDS)
@@ -340,7 +347,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.gearGtSmall, 2))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 12)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
@@ -429,22 +436,22 @@ public class ScriptLogisticPipes implements IScriptLoader {
 
     private void loadUpgradeRecipes() {
         // Blank Upgrade
-        for (Materials solderingMaterial : solderingMaterials) {
+        for (Material solderingMaterial : solderingMaterials) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
-                            GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L))
+                            Circuits.ULV.get(1),
+                            MaterialLibAPI.getStack(Materials.Tin, Shapes.foil, 4),
+                            MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 4))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
-                            GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L))
+                            Circuits.ULV.get(1),
+                            MaterialLibAPI.getStack(Materials.Tin, Shapes.foil, 4),
+                            MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 4))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -462,7 +469,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4),
                             ItemList.Electric_Piston_LV.get(1L),
-                            GTOreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
+                            MaterialLibAPI.getStack(Materials.Bronze, Shapes.foil, 2),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33))
                     .circuit(circuit).itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, meta))
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -559,7 +566,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L))
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1))
                     .circuit(circuit).itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, meta))
                     .duration(8 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -651,8 +658,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Electric_Motor_LV.get(1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 8, 20))
-                .fluidInputs(Materials.Lubricant.getFluid(500)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 500))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Advanced Satellite Upgrade
         GTValues.RA.stdBuilder()
@@ -678,7 +685,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4),
                         ItemList.Conveyor_Module_LV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.foil, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 23))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -688,7 +695,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4),
                         ItemList.Robot_Arm_LV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.RedAlloy, 1L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.foil, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 24))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -698,7 +705,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4),
                         getModItem(Minecraft.ID, "wool", 1, wildcard),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Steel, 1L),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.foil, 1),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 26))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 25))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -721,7 +728,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L))
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 1))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 42)).duration(8 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
@@ -739,7 +746,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
+                        Circuits.ULV.get(1),
                         getModItem(Minecraft.ID, "chest", 1, 0),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44))
@@ -747,25 +754,25 @@ public class ScriptLogisticPipes implements IScriptLoader {
     }
 
     private void loadPipeRecipes() {
-        for (Materials solderingMaterial : solderingMaterials) {
+        for (Material solderingMaterial : solderingMaterials) {
             // Basic Logistics Pipe
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0),
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 16))
+                            MaterialLibAPI.getStack(Materials.Gold, Shapes.gearGtSmall, 1),
+                            MaterialLibAPI.getStack(Materials.Diamond, Shapes.gem, 1),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 2),
+                            MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.wireFine, 16))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0))
                     .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0),
-                            GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 1L),
-                            GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedstoneAlloy, 8))
+                            MaterialLibAPI.getStack(Materials.Gold, Shapes.gearGtSmall, 1),
+                            MaterialLibAPI.getStack(Materials.Diamond, Shapes.gem, 1),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 2),
+                            MaterialLibAPI.getStack(Materials.RedstoneAlloy, Shapes.wireFine, 8))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0))
                     .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -777,7 +784,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0),
                         ItemList.Emitter_LV.get(1L),
                         ItemList.Conveyor_Module_LV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 4))
+                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 4))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -855,7 +862,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0),
                         ItemList.Robot_Arm_LV.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 5),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
+                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsSatelliteLogistics", 2, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -871,7 +878,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.plate, 2),
                         getModItem(Minecraft.ID, "chest", 1, 0))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -880,7 +887,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 2),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 3),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 5))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 2, 0))
@@ -888,9 +895,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 4),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 3),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L))
+                        Circuits.LV.get(1))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 6, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -898,7 +905,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 2L),
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.plate, 2),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 0),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk3", 2, 0))
@@ -906,9 +913,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 4L),
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.plate, 4),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L))
+                        Circuits.MV.get(1))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk3", 6, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -916,7 +923,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk3", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Kanthal, 2L),
+                        MaterialLibAPI.getStack(Materials.Kanthal, Shapes.plate, 2),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 4),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 2, 0))
@@ -924,9 +931,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Kanthal, 8L),
+                        MaterialLibAPI.getStack(Materials.Kanthal, Shapes.plate, 8),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L))
+                        Circuits.MV.get(1))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 6, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -934,7 +941,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 2L),
+                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.plate, 2),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 1),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk5", 2, 0))
@@ -942,9 +949,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 6L),
+                        MaterialLibAPI.getStack(Materials.VibrantAlloy, Shapes.plate, 6),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
+                        Circuits.HV.get(1),
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 6))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk5", 12, 0))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -992,7 +999,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Logistics Fluid Basic Pipe
-        for (Materials solderingMaterial : solderingMaterials) {
+        for (Material solderingMaterial : solderingMaterials) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0),
@@ -1046,7 +1053,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0),
                         ItemList.Robot_Arm_LV.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 5),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
+                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 1))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidSatellite", 1, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -1062,37 +1069,37 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Unrouted Transport Pipe
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stickLong, 2),
                         new ItemStack(ItemRegistry.PUMPPARTS, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 2L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 2))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stickLong, 2),
                         getModItem(Railcraft.ID, "glass", 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 8))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stickLong, 2),
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 4, 5),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 8))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ReinforcedGlass, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 16L))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.stickLong, 2),
+                        MaterialLibAPI.getStack(Materials.ReinforcedGlass, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 16))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 64, 0))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.BorosilicateGlass, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 16L))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.stickLong, 2),
+                        MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 16))
                 .circuit(18).itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 64, 0))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
     }
@@ -1100,23 +1107,23 @@ public class ScriptLogisticPipes implements IScriptLoader {
     private void loadMiscRecipes() {
 
         // Logistics Power Junction
-        for (Materials solderingMaterial : solderingMaterials) {
+        for (Material solderingMaterial : solderingMaterials) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Transformer_MV_LV.get(1L),
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
-                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L))
+                            Circuits.LV.get(2),
+                            MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt04, 4),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, 8))
                     .circuit(24).fluidInputs(getSolderingFluid(solderingMaterial, 288))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1)).duration(40 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Transformer_MV_LV.get(1L),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
-                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L))
+                            Circuits.LV.get(2),
+                            MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.cableGt04, 4),
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.screw, 8))
                     .circuit(24).fluidInputs(getSolderingFluid(solderingMaterial, 288))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1)).duration(40 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1127,11 +1134,12 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 4L))
-                .circuit(24).fluidInputs(Materials.Polyethylene.getMolten(576))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.plate, 8),
+                        Circuits.LV.get(2),
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt08, 4),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.bolt, 4))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 2)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -1143,10 +1151,11 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Electric_Piston_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 4L))
-                .circuit(24).fluidInputs(Materials.Polyethylene.getMolten(576))
+                        Circuits.MV.get(2),
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt08, 2),
+                        MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, 4))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3)).duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1156,10 +1165,11 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Electric_Piston_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 4L))
-                .circuit(24).fluidInputs(Materials.Polyethylene.getMolten(576))
+                        Circuits.MV.get(2),
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt08, 2),
+                        MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, 4))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3)).duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1177,10 +1187,11 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0),
                         ItemList.Sensor_MV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Copper, 4L))
-                .circuit(24).fluidInputs(Materials.Polyethylene.getMolten(576))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 8),
+                        Circuits.MV.get(1),
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.cableGt02, 4))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 5)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -1193,20 +1204,21 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(OpenComputers.ID, "keyboard", 1, 0),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 3),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L))
-                .circuit(24).fluidInputs(Materials.Polyethylene.getMolten(576))
+                        Circuits.MV.get(2))
+                .circuit(24)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeBlockRequestTable", 1, 0)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-        for (Materials solderingMaterial : solderingMaterials) {
+        for (Material solderingMaterial : solderingMaterials) {
             // Gold Upgrade Chip
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2L),
+                            MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 2),
                             ItemList.Circuit_Parts_Diode.get(1L),
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 4L))
+                            MaterialLibAPI.getStack(Materials.Steel, Shapes.bolt, 4))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 5)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1215,10 +1227,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L),
+                            MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 2),
                             ItemList.Circuit_Parts_Diode.get(2L),
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 4L))
+                            MaterialLibAPI.getStack(Materials.Platinum, Shapes.bolt, 4))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 6)).duration(40 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -1230,7 +1242,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                             NHItemList.GoldCoreChip.get(1),
                             ItemList.Robot_Arm_MV.get(2L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L))
+                            MaterialLibAPI.getStack(Materials.RedSteel, Shapes.bolt, 16))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 72))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7)).duration(45 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -1242,7 +1254,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                             NHItemList.DiamondCoreChip.get(1),
                             ItemList.Robot_Arm_HV.get(1L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0),
-                            GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L))
+                            MaterialLibAPI.getStack(Materials.RedSteel, Shapes.bolt, 32))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 144))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8)).duration(45 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -1254,11 +1266,12 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
                         NHItemList.Display.get(),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 4L))
-                .circuit(18).fluidInputs(Materials.Polyethylene.getMolten(144))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.plate, 4),
+                        Circuits.HV.get(1),
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 4),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.screw, 4))
+                .circuit(18)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Polyethylene, FluidShapes.fluidMolten, 144))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -1304,19 +1317,21 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Logistics HUD Bow
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Diamond, 1L))
-                .circuit(18).fluidInputs(Materials.Aluminium.getMolten(144))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.bolt, 1),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.stickLong, 1))
+                .circuit(18)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Aluminium, FluidShapes.fluidMolten, 144))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0)).duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Logistics HUD Glass
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L))
-                .circuit(18).fluidInputs(Materials.Aluminium.getMolten(144))
+                        MaterialLibAPI.getStack(Materials.Glass, Shapes.lens, 1),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.ring, 1),
+                        Circuits.MV.get(1))
+                .circuit(18)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Aluminium, FluidShapes.fluidMolten, 144))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 

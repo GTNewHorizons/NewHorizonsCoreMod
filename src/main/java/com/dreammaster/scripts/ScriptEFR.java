@@ -2,9 +2,9 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.createItemStack;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
-import static gregtech.api.enums.Materials.MeatCooked;
-import static gregtech.api.enums.Materials.MeatRaw;
 import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -25,7 +25,6 @@ import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
-import static gregtech.api.util.GTOreDictUnificator.get;
 import static gregtech.api.util.GTRecipeBuilder.BUCKETS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -57,9 +56,9 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.google.common.collect.ImmutableList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
-import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import forestry.core.fluids.Fluids;
@@ -67,15 +66,18 @@ import fox.spiteful.forbidden.DarkAspects;
 import ganymedes01.etfuturum.recipes.SmokerRecipes;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.BlockShapes;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
+import gregtech.api.material.MaterialParts;
 import gregtech.api.objects.OreDictItemStack;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialsOres;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -139,12 +141,11 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "copper_grate", 8),
                 bits,
-                new Object[] { "ABA", "BCB", "ABA", 'A',
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Copper, 1L), 'B',
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GraniteRed, 1L), 'C',
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Copper, 1L) });
+                new Object[] { "ABA", "BCB", "ABA", 'A', MaterialLibAPI.getStack(Materials.Copper, Shapes.stick, 1),
+                        'B', MaterialLibAPI.getStack(Materials.GraniteRed, Shapes.dust, 1), 'C',
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.frameGt, 1) });
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.Copper, 8L)).circuit(8)
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Copper, Shapes.stick, 8)).circuit(8)
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.granitered"), 576))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_grate", 8)).duration(8 * SECONDS).eut(80)
                 .addTo(assemblerRecipes);
@@ -176,14 +177,14 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "wood_slab", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 4))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.iron"), 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "wood_slab", 4, 3),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 4))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 6))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.steel"), 16)).duration(30 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
@@ -256,8 +257,12 @@ public class ScriptEFR implements IScriptLoader {
                 }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
-                        .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
-                        .addTo(cutterRecipes);
+                        .fluidInputs(
+                                MaterialLibAPI.getFluidStack(
+                                        Materials.DimensionallyShiftedSuperfluid,
+                                        FluidShapes.fluidLiquid,
+                                        1))
+                        .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
@@ -286,8 +291,12 @@ public class ScriptEFR implements IScriptLoader {
                 }
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
-                        .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
-                        .addTo(cutterRecipes);
+                        .fluidInputs(
+                                MaterialLibAPI.getFluidStack(
+                                        Materials.DimensionallyShiftedSuperfluid,
+                                        FluidShapes.fluidLiquid,
+                                        1))
+                        .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta))
                         .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 2, outMeta))
                         .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
@@ -309,11 +318,11 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1, 0),
                 bits,
                 new Object[] { "ABA", "BCB", "DBE", 'A', "screwCopper", 'B',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L), 'C', "trapdoorWood", 'D',
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1), 'C', "trapdoorWood", 'D',
                         "craftingToolSaw", 'E', "craftingToolScrewdriver" });
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 4L),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 4),
                         getModItem(Minecraft.ID, "trapdoor", 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_trapdoor", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -328,8 +337,8 @@ public class ScriptEFR implements IScriptLoader {
                         "craftingToolScrewdriver" });
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Copper, 1L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.itemCasing, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_door", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
@@ -368,7 +377,8 @@ public class ScriptEFR implements IScriptLoader {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inName, 1, inMeta))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outName, 1, outMeta))
-                    .fluidInputs(Materials.Acetone.getFluid(16)).duration(5 * SECONDS).eut(4).addTo(UniversalChemical);
+                    .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Acetone, FluidShapes.fluidLiquid, 16))
+                    .duration(5 * SECONDS).eut(4).addTo(UniversalChemical);
         }
 
         // // Tipped Arrows
@@ -445,8 +455,12 @@ public class ScriptEFR implements IScriptLoader {
                             "craftingToolSaw" });
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
-                    .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
-                    .addTo(cutterRecipes);
+                    .fluidInputs(
+                            MaterialLibAPI.getFluidStack(
+                                    Materials.DimensionallyShiftedSuperfluid,
+                                    FluidShapes.fluidLiquid,
+                                    1))
+                    .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
             GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, inParts, 1))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, outParts, 2))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("lubricant"), 1)).duration(25 * TICKS).eut(4)
@@ -491,7 +505,7 @@ public class ScriptEFR implements IScriptLoader {
                     getModItem(EtFuturumRequiem.ID, boatChestType[i], 1),
                     bits,
                     new Object[] { " A ", "BCB", " D ", 'A', "craftingToolScrewdriver", 'B',
-                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L), 'C', "chestWood", 'D',
+                            MaterialLibAPI.getStack(Materials.Wood, Shapes.screw, 1), 'C', "chestWood", 'D',
                             boatType[i] });
         }
 
@@ -500,12 +514,12 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
                 bits,
-                new Object[] { "hPs", "PCP", " P ", 'P', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                        'C', "chestWood" });
+                new Object[] { "hPs", "PCP", " P ", 'P', MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1), 'C',
+                        "chestWood" });
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 2))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -519,107 +533,107 @@ public class ScriptEFR implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 0),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 3))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 1),
                 "screwCopper",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "screwCopper",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
+                MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 3))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 2),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 2)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 3),
                 "screwDiamond",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "screwDiamond",
                 null,
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 null,
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 2))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 3)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 4),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 4)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 5),
                 "screwDiamond",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
                 "screwDiamond",
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 2, 7))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 5)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).addTo(assemblerRecipes);
@@ -627,72 +641,72 @@ public class ScriptEFR implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 7),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plate, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 7)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 8),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 8))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 9),
                 "screwSilver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1),
                 "screwSilver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 2L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 2))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 9)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 10),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolScrewdriver",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                 "craftingToolHardHammer");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 2L))
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 2))
                 .circuit(3).itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 10)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
@@ -700,151 +714,151 @@ public class ScriptEFR implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
                 "screwCopper",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "screwCopper",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "screwIron",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0),
                 "screwSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "screwSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 3L))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0),
                 "screwSilver",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 "screwSilver",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 1L),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 3L))
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 1L))
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "screwGold",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 3L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "steel_barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
                 "screwDiamond",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "screwDiamond",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 4))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 2))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -869,18 +883,18 @@ public class ScriptEFR implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 1),
                 "craftingToolScrewdriver");
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                        MaterialLibAPI.getStack(Materials.DarkSteel, Shapes.plateDouble, 2))
                 .circuit(2).itemOutputs(getModItem(EtFuturumRequiem.ID, "darksteel_barrel", 1, 0))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -899,7 +913,7 @@ public class ScriptEFR implements IScriptLoader {
         // GTValues.RA.stdBuilder()
         // .itemInputs(
         // getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
-        // GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Netherite, 2L)).circuit(2)
+        // MaterialLibAPI.getStack(Materials.Netherite, Shapes.plateDouble, 2)).circuit(2)
         // .itemOutputs(getModItem(EtFuturumRequiem.ID, "netherite_barrel", 1, 0))
         // .duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
         // .addTo(assemblerRecipes);
@@ -920,7 +934,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                         new ItemStack(Blocks.torch, 4),
                         new ItemStack(Blocks.glass_pane, 2, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "lantern", 4, 0)).duration(3 * SECONDS)
@@ -928,7 +942,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(EtFuturumRequiem.ID, "soul_torch", 4, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "soul_lantern", 4, 0)).duration(3 * SECONDS)
@@ -943,8 +957,8 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "blackstone", 1, 0))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "gilded_blackstone", 1, 0))
-                .fluidInputs(Materials.Gold.getMolten(188L)).duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(chemicalBathRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Gold, FluidShapes.fluidMolten, 188))
+                .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
 
         // Smooth Blocks
         GTModHandler.addSmeltingRecipe(
@@ -1074,8 +1088,8 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.round, Materials.Steel, 8L))
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.ring, 8),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.round, 8))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "chain", 16, 0)).duration(20 * SECONDS).eut(28)
                 .addTo(formingPressRecipes);
 
@@ -1086,13 +1100,13 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Blocks.red_flower, 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.NetherStar, 2L))
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dustTiny, 2))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 2L),
+                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.dust, 2),
                         getModItem(EtFuturumRequiem.ID, "nether_wart", 4, 0))
                 .circuit(1).itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
@@ -1141,7 +1155,7 @@ public class ScriptEFR implements IScriptLoader {
                         new ItemStack(Blocks.furnace, 1),
                         getModItem(ZTones.ID, "minicharcoal", 6, 0),
                         getModItem(EtFuturumRequiem.ID, "smooth_stone", 2, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnyIron, 4L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 4))
                 .circuit(6).itemOutputs(getModItem(EtFuturumRequiem.ID, "smoker", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1156,9 +1170,8 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "smithing_table", 1, 0),
                 bits,
-                new Object[] { "TT ", "GG ", "GG ", 'T',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L), 'G',
-                        OrePrefixes.plank.get(Materials.Wood) });
+                new Object[] { "TT ", "GG ", "GG ", 'T', MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 1), 'G',
+                        OrePrefixes.plank.ingredient(Materials.Wood) });
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.magma_cream, 4))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
@@ -1194,9 +1207,9 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Blocks.stone_slab, 1),
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 5L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 3L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L))
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.stick, 5),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.bolt, 3),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 2))
                 .circuit(21).itemOutputs(getModItem(EtFuturumRequiem.ID, "wooden_armorstand", 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1232,17 +1245,15 @@ public class ScriptEFR implements IScriptLoader {
 
         ChiselHelper.addVariationFromStack(
                 "EFRAmethystBlock",
-                GTOreDictUnificator.get(OrePrefixes.block, Materials.Amethyst, 1L));
+                MaterialLibAPI.getStack(Materials.Amethyst, BlockShapes.block, 1));
         ChiselHelper.addVariationFromStack("EFRAmethystBlock", getModItem(EtFuturumRequiem.ID, "amethyst_block", 1));
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Blocks.glass, 2),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 4L))
+                .itemInputs(new ItemStack(Blocks.glass, 2), MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 4))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "tinted_glass", 2)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(alloySmelterRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 2L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Calcite, Shapes.dust, 2))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
@@ -1251,44 +1262,44 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 2L)).duration(8 * SECONDS)
-                .eut(2).addTo(hammerRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Calcite, Shapes.dust, 2)).duration(8 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "leaves", 1, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "pink_petals", 4, 0)).duration(8 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 9L)).duration(8 * SECONDS)
-                .eut(2).addTo(hammerRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 9)).duration(8 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 3L)).duration(8 * SECONDS)
-                .eut(2).addTo(hammerRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 3)).duration(8 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 9L)).duration(13 * SECONDS)
-                .eut(4).addTo(maceratorRecipes);
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 9)).duration(13 * SECONDS).eut(4)
+                .addTo(maceratorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 13L),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 13),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6))
-                .fluidInputs(Materials.Void.getMolten(36)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, 36))
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 3),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.gem, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 3),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
@@ -1296,7 +1307,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 3),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
@@ -1304,7 +1315,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        MaterialLibAPI.getStack(Materials.Amethyst, Shapes.dust, 3),
                         getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
@@ -1329,7 +1340,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MelodicAlloy, 8L),
+                        MaterialLibAPI.getStack(Materials.MelodicAlloy, Shapes.dust, 8),
                         getModItem(Botania.ID, "fertilizer", 3, 0),
                         getModItem(ThaumicBases.ID, "genLeaves", 1, 3))
                 .circuit(24).itemOutputs(getModItem(EtFuturumRequiem.ID, "chorus_flower", 1, 0))
@@ -1349,12 +1360,12 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.VolcanicAsh, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.AshDark, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Pumice, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GraniteBlack, 4L))
+                        MaterialLibAPI.getStack(Materials.VolcanicAsh, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.AshDark, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.QuartzSand, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Pumice, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.PotassiumFeldspar, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.GraniteBlack, Shapes.dust, 4))
                 .outputChances(5000, 2000, 1000, 750, 500, 250).duration(2 * MINUTES)
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
@@ -1373,24 +1384,25 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.get(36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Chlorite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Plagioclase, 9L), // gt
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.MetamorphicMineralMixture, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GarnetRed, 8L), // gt
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Staurolite, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 2L)) // gt
+                        MaterialLibAPI.getStack(Materials.Chlorite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Plagioclase, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.MetamorphicMineralMixture, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.GarnetRed, Shapes.dust, 8),
+                        MaterialLibAPI.getStack(Materials.Staurolite, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Kyanite, Shapes.dust, 2))
                 .duration(1 * MINUTES + 32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(centrifugeRecipes);
 
         OreDictionary.registerOre("dustDeepslate", NHItemList.DeepslateDust.get(1));
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.MetamorphicMineralMixture.getDust(36))
+        GTValues.RA.stdBuilder()
+                .itemInputs(MaterialLibAPI.getStack(Materials.MetamorphicMineralMixture, Shapes.dust, 36))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Epidote, 9L), // gt
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cordierite, 9L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobaltite, 6L), // gt
-                        GTOreDictUnificator.get(WerkstoffLoader.Bismuthinit.get(OrePrefixes.dust, 4)), // bart
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Datolite, 4L),
-                        GTOreDictUnificator.get(MaterialsOres.TITANITE.getDust(4))) // gt++
+                        MaterialLibAPI.getStack(Materials.Epidote, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Cordierite, Shapes.dust, 9),
+                        MaterialLibAPI.getStack(Materials.Cobaltite, Shapes.dust, 6),
+                        MaterialLibAPI.getStack(Materials.Bismuthinite, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Datolite, Shapes.dust, 4),
+                        MaterialLibAPI.getStack(Materials.Titanite, Shapes.dust, 4))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         // Totem of Undying
@@ -1412,18 +1424,18 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.UNDEAD, 100).add(Aspect.FIRE, 150).add(Aspect.GREED, 150)
                         .add(Aspect.HEAL, 200).add(Aspect.MAGIC, 200),
                 getModItem(TinkerConstruct.ID, "heartCanister", 1, 1),
-                OrePrefixes.plate.get(Materials.InfusedGold),
-                OrePrefixes.gemExquisite.get(Materials.Emerald),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
+                OrePrefixes.gemExquisite.ingredient(Materials.Emerald),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0),
-                OrePrefixes.block.get(Materials.InfusedGold),
+                OrePrefixes.block.ingredient(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0),
-                OrePrefixes.plate.get(Materials.InfusedGold),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 5),
-                OrePrefixes.plate.get(Materials.InfusedGold),
+                OrePrefixes.plate.ingredient(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0),
-                OrePrefixes.block.get(Materials.InfusedGold),
+                OrePrefixes.block.ingredient(Materials.InfusedGold),
                 getModItem(ThaumicBases.ID, "oldGold", 1, 0),
-                OrePrefixes.gemExquisite.get(Materials.GreenSapphire));
+                OrePrefixes.gemExquisite.ingredient(Materials.GreenSapphire));
         TCHelper.addResearchPage(
                 "UNDYINGTOTEM",
                 new ResearchPage(
@@ -1446,9 +1458,9 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 8, 0),
                 10,
                 new ItemStack[] { getModItem(ThaumicBases.ID, "thauminiteHelmet", 1, 0),
-                        GTOreDictUnificator.get("dustCrystallinePinkSlime", 1),
+                        MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1),
                         getModItem(ThaumicHorizons.ID, "golemPowder", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.ManaDiamond, 1L),
+                        MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.dust, 1),
                         getModItem(BloodMagic.ID, "magicales", 1, 0) },
                 2);
 
@@ -1477,7 +1489,7 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0),
                 'c',
-                GTOreDictUnificator.get("plateLivingwood", 1),
+                MaterialLibAPI.getStack(Materials.Livingwood, Shapes.plate, 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "barrel", 1, 0));
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -1493,11 +1505,11 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0),
                 'c',
-                GTOreDictUnificator.get("plateLivingwood", 1),
+                MaterialLibAPI.getStack(Materials.Livingwood, Shapes.plate, 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "iron_barrel", 1, 0),
                 'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 2), // Gold
@@ -1511,11 +1523,11 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0),
                 'c',
-                GTOreDictUnificator.get("plateLivingwood", 1),
+                MaterialLibAPI.getStack(Materials.Livingwood, Shapes.plate, 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "gold_barrel", 1, 0),
                 'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 3), // Diamond
@@ -1529,11 +1541,11 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0),
                 'c',
-                GTOreDictUnificator.get("plateLivingrock", 1),
+                MaterialLibAPI.getStack(Materials.Livingrock, Shapes.plate, 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
                 'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 4), // Copper
@@ -1547,11 +1559,11 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0),
                 'c',
-                GTOreDictUnificator.get("plateLivingwood", 1),
+                MaterialLibAPI.getStack(Materials.Livingwood, Shapes.plate, 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0),
                 'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 5), // Silver
@@ -1565,11 +1577,11 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0),
                 'c',
-                GTOreDictUnificator.get("plateLivingwood", 1),
+                MaterialLibAPI.getStack(Materials.Livingwood, Shapes.plate, 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "silver_barrel", 1, 0),
                 'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 6), // Crystal
@@ -1583,11 +1595,11 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0),
                 'c',
-                GTOreDictUnificator.get("plateReinforcedGlass", 1),
+                MaterialLibAPI.getStack(Materials.ReinforcedGlass, Shapes.plate, 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "diamond_barrel", 1, 0),
                 'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getShulkerBox(0, 7), // Obsidian
@@ -1601,11 +1613,11 @@ public class ScriptEFR implements IScriptLoader {
                 'b',
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 1, 0),
                 'c',
-                GTOreDictUnificator.get("plateLivingrock", 1),
+                MaterialLibAPI.getStack(Materials.Livingrock, Shapes.plate, 1),
                 'd',
                 getModItem(EtFuturumRequiem.ID, "obsidian_barrel", 1, 0),
                 'e',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
 
         // Shulker Box Upgrades
 
@@ -1618,9 +1630,9 @@ public class ScriptEFR implements IScriptLoader {
                 "bab",
                 " a ",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1),
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plateDouble, 1),
                 'b',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 0), // Vanilla to Iron
@@ -1630,9 +1642,9 @@ public class ScriptEFR implements IScriptLoader {
                 "bab",
                 " a ",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 'b',
-                GTOreDictUnificator.get("dustCrystallinePinkSlime", 1));
+                MaterialLibAPI.getStack(Materials.CrystallinePinkSlime, Shapes.dust, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 6), // Copper to Iron
@@ -1642,11 +1654,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plateDouble, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1));
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 7), // Copper to Silver
@@ -1656,11 +1668,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 1),
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plateDouble, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1));
+                MaterialLibAPI.getStack(Materials.Copper, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 2), // Iron to Gold
@@ -1670,11 +1682,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1));
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 8), // Silver to Gold
@@ -1684,11 +1696,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plateDouble, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1));
+                MaterialLibAPI.getStack(Materials.Silver, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 3), // Gold to Diamond
@@ -1698,11 +1710,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1));
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 5), // Diamond to Crystal
@@ -1712,11 +1724,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                GTOreDictUnificator.get("plateReinforcedGlass", 1),
+                MaterialLibAPI.getStack(Materials.ReinforcedGlass, Shapes.plate, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box_upgrade", 1, 4), // Diamond to Obsidian
@@ -1726,11 +1738,11 @@ public class ScriptEFR implements IScriptLoader {
                 "bcb",
                 " a ",
                 'a',
-                GTOreDictUnificator.get("plateDenseObsidian", 1),
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1));
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1));
 
         // Shulker Research Pages
 
@@ -1806,7 +1818,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Botania.ID, "manaweaveHelm", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         // Chestplate
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
@@ -1825,7 +1837,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Botania.ID, "manaweaveChest", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         // Leggins
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
@@ -1844,7 +1856,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Botania.ID, "manaweaveLegs", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         // Boots
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
@@ -1863,7 +1875,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Botania.ID, "manaweaveBoots", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         // Pickaxe
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
@@ -1882,7 +1894,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Botania.ID, "manasteelPick", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         // Hoe
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
@@ -1901,7 +1913,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Fether.ID, "quartz_hoe", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         // Shovel
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
@@ -1920,7 +1932,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Botania.ID, "manasteelShovel", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         // Sword
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
@@ -1939,7 +1951,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Botania.ID, "manasteelSword", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         // Axe
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
@@ -1958,7 +1970,7 @@ public class ScriptEFR implements IScriptLoader {
                 'd',
                 getModItem(Botania.ID, "manasteelAxe", 1, 0),
                 'e',
-                get("plateManaDiamond", 1));
+                MaterialLibAPI.getStack(Materials.ManaDiamond, Shapes.plate, 1));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
@@ -2123,7 +2135,7 @@ public class ScriptEFR implements IScriptLoader {
                 .eut(4).addTo(assemblerRecipes);
 
         // Chiseled Red Sandstone
-        for (ItemStack lens : GTOreDictUnificator.getOres("craftingLensRed")) {
+        for (ItemStack lens : OreDictionary.getOres("craftingLensRed")) {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 2), GTUtility.copyAmount(0, lens))
                     .itemOutputs(getModItem(EtFuturumRequiem.ID, "red_sandstone", 1, 1))
@@ -2164,7 +2176,10 @@ public class ScriptEFR implements IScriptLoader {
             SmokerRecipes.smelting().addRecipe(input, FurnaceRecipes.smelting().getSmeltingResult(input), 0);
         }
         // getSmeltingResult for mince meat is null here for some reason, so adding explicitly
-        SmokerRecipes.smelting().addRecipe(MeatRaw.getDust(1), MeatCooked.getDust(1), 0);
+        SmokerRecipes.smelting().addRecipe(
+                MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, 1),
+                MaterialLibAPI.getStack(Materials.MeatCooked, Shapes.dust, 1),
+                0);
 
         // Boat Assembler Recipes
         GTValues.RA.stdBuilder().itemInputs(ItemList.Plank_Oak.get(5)).circuit(5).itemOutputs(new ItemStack(Items.boat))
@@ -2228,8 +2243,8 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.BlankMusicDisc.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
+                        MaterialLibAPI.getStack(Materials.Netherrack, Shapes.dust, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.dust, 1),
                         getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "pigstep_record", 1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
@@ -2249,7 +2264,7 @@ public class ScriptEFR implements IScriptLoader {
                         new OreDictItemStack("dyeRed", 1),
                         new OreDictItemStack("dyeWhite", 1),
                         new ItemStack(Items.chicken, 1, 0))
-                .fluidInputs(Materials.Lava.getFluid(BUCKETS * 1))
+                .fluidInputs(GTUtility.getLava(BUCKETS * 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "lava_chicken_record", 1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
@@ -2285,7 +2300,7 @@ public class ScriptEFR implements IScriptLoader {
                         NHItemList.BlankMusicDisc.get(1),
                         new OreDictItemStack("dyeOrange", 1),
                         new OreDictItemStack("dyeYellow", 1),
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Copper, 1L))
+                        MaterialLibAPI.getStack(Materials.Copper, BlockShapes.block, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "creator_music_box_record", 1)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
@@ -2295,24 +2310,26 @@ public class ScriptEFR implements IScriptLoader {
 
     private static void addCopperOxidationRecipes(@NotNull ItemStack lessOxidized, @NotNull ItemStack moreOxidized) {
         GTValues.RA.stdBuilder().itemInputs(lessOxidized).itemOutputs(moreOxidized)
-                .fluidInputs(Materials.Oxygen.getGas(50), Materials.CarbonDioxide.getGas(100)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 50),
+                        MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, 100))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
 
         // x20 to keep the same ratio as the LCR
         ItemStack singleBlockInput = GTUtility.copyAmount(20, lessOxidized);
         ItemStack singleBlockOutput = GTUtility.copyAmount(20, moreOxidized);
 
-        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, Materials.CarbonDioxide.getCells(2))
-                .itemOutputs(singleBlockOutput, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 2, 0))
-                .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(chemicalReactorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, Materials.Oxygen.getCells(1))
-                .itemOutputs(singleBlockOutput, getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0))
-                .fluidInputs(Materials.CarbonDioxide.getGas(2000L)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(chemicalReactorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, MaterialParts.requireCell(Materials.CarbonDioxide, 2))
+                .itemOutputs(singleBlockOutput, ItemList.Cell_Empty.get(2))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Oxygen, FluidShapes.fluidGas, 1000))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(singleBlockInput, MaterialParts.requireCell(Materials.Oxygen, 1))
+                .itemOutputs(singleBlockOutput, ItemList.Cell_Empty.get(1))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.CarbonDioxide, FluidShapes.fluidGas, 2000))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalReactorRecipes);
         GTValues.RA.stdBuilder().itemInputs(moreOxidized).itemOutputs(lessOxidized)
-                .fluidInputs(Materials.Hydrogen.getGas(100)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(arcFurnaceRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Hydrogen, FluidShapes.fluidGas, 100))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(arcFurnaceRecipes);
     }
 
     private static void addOxidizedCopperTrapdoors() {

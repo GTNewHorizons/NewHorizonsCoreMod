@@ -97,6 +97,10 @@ public class CustomToolTips {
             return mUnlocalizedName;
         }
 
+        public void setUnlocalizedName(String value) {
+            mUnlocalizedName = value;
+        }
+
         public String getToolTip() {
             return mToolTip;
         }
@@ -111,6 +115,11 @@ public class CustomToolTips {
 
         public String getMetaEnd() {
             return mMetaEnd;
+        }
+
+        public void clearMetaRange() {
+            mMetaStart = null;
+            mMetaEnd = null;
         }
 
         public String[] getFormatArgs() {

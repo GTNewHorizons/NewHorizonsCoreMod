@@ -19,13 +19,14 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptWirelessRedstone implements IScriptLoader {
 
@@ -89,7 +90,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 1L),
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.stick, 1),
                         getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0))
                 .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
@@ -152,7 +153,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 3L),
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 3),
                         getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0))
                 .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "tracker", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS)
@@ -162,8 +163,8 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                         getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 2, 0),
                         getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 2, 0))
                 .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "rep", 1, 0))
-                .fluidInputs(Materials.Obsidian.getMolten(1440)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Obsidian, FluidShapes.fluidMolten, 1440))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0),

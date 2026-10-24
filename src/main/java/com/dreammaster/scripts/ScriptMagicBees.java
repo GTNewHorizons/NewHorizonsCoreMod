@@ -29,16 +29,17 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.botania.BotaniaHelper;
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import forestry.api.recipes.RecipeManagers;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import magicbees.api.MagicBeesAPI;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -73,22 +74,22 @@ public class ScriptMagicBees implements IScriptLoader {
     public void loadRecipes() {
 
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedAir, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedAir, Shapes.dustSmall, 1),
                 getModItem(MagicBees.ID, "miscResources", 1, 18));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedWater, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedWater, Shapes.dustSmall, 1),
                 getModItem(MagicBees.ID, "miscResources", 1, 19));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedFire, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedFire, Shapes.dustSmall, 1),
                 getModItem(MagicBees.ID, "miscResources", 1, 20));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedEarth, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.dustSmall, 1),
                 getModItem(MagicBees.ID, "miscResources", 1, 21));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedOrder, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedOrder, Shapes.dustSmall, 1),
                 getModItem(MagicBees.ID, "miscResources", 1, 22));
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedEntropy, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedEntropy, Shapes.dustSmall, 1),
                 getModItem(MagicBees.ID, "miscResources", 1, 23));
         addShapedRecipe(
                 getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0),
@@ -232,7 +233,7 @@ public class ScriptMagicBees implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clock", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Jade, 4L))
+                        MaterialLibAPI.getStack(Materials.Jade, Shapes.gem, 4))
                 .itemOutputs(getModItem(MagicBees.ID, "moonDial", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 576)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -331,7 +332,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 8),
                         getModItem(MagicBees.ID, "miscResources", 1, 2))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 12, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
@@ -339,14 +340,14 @@ public class ScriptMagicBees implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 2, wildcard),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
+                        MaterialLibAPI.getStack(Materials.Apatite, Shapes.dust, 1))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 5, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dust, 8),
+                        MaterialLibAPI.getStack(Materials.Apatite, Shapes.dust, 1))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 10, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
@@ -358,7 +359,7 @@ public class ScriptMagicBees implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CropsNH.ID, "fertilizer", 8, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
+                        MaterialLibAPI.getStack(Materials.Apatite, Shapes.dust, 1))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 30, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
@@ -438,11 +439,11 @@ public class ScriptMagicBees implements IScriptLoader {
                 'f',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.springSmall, 1),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.frameGt, 1),
                 'i',
-                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L));
+                MaterialLibAPI.getStack(Materials.Gold, Shapes.springSmall, 1));
         TCHelper.addResearchPage(
                 "MB_VisAuraProvider",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(MagicBees.ID, "visAuraProvider", 1, 0))));
@@ -460,7 +461,7 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "CONCENTRATEDCOMPOUND",
                 getModItem(MagicBees.ID, "miscResources", 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
+                MaterialLibAPI.getStack(Materials.Apatite, Shapes.gem, 1),
                 new AspectList().add(Aspect.CROP, 6).add(Aspect.CRYSTAL, 3));
         TCHelper.addResearchPage(
                 "CONCENTRATEDCOMPOUND",
@@ -888,21 +889,21 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'g',
                 "craftingToolWireCutter",
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'i',
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
@@ -922,21 +923,21 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.stick, 1),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.stick, 1),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.stick, 1),
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.stick, 1),
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.stick, 1),
                 'g',
                 "craftingToolWireCutter",
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.stick, 1),
                 'i',
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
@@ -957,13 +958,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'd',
                 "craftingToolFile",
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.stick, 1),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                MaterialLibAPI.getStack(Materials.Thaumium, Shapes.plate, 1),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 2),
                 'i',
@@ -985,13 +986,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.stick, 1),
                 'd',
                 "craftingToolFile",
                 'e',
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.stick, 1),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                MaterialLibAPI.getStack(Materials.Void, Shapes.plate, 1),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 16),
                 'i',

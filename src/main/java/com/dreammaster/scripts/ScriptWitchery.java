@@ -32,15 +32,16 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -114,7 +115,7 @@ public class ScriptWitchery implements IScriptLoader {
                         getModItem(Witchery.ID, "ingredient", 9, 130),
                         new ItemStack(Items.magma_cream, 9),
                         new ItemStack(Items.blaze_powder, 9),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L))
+                        MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dust, 1))
                 .circuit(4).itemOutputs(getModItem(Witchery.ID, "ingredient", 18, 130)).duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(mixerRecipes);
 
@@ -122,7 +123,7 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 16),
                 null,
                 null,
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
+                MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, 1),
                 null,
                 null,
                 null,
@@ -130,7 +131,7 @@ public class ScriptWitchery implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
+                MaterialLibAPI.getStack(Materials.Quicklime, Shapes.dust, 1),
                 null,
                 null,
                 getModItem(Witchery.ID, "ingredient", 1, 16),
@@ -295,8 +296,10 @@ public class ScriptWitchery implements IScriptLoader {
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 8, 7))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(12 * TICKS).eut(24)
-                .addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
+                .duration(12 * TICKS).eut(24).addTo(cutterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0), ItemList.Shape_Mold_Bottle.get(0L))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 1, 26)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)

@@ -15,13 +15,14 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptMechworks implements IScriptLoader {
 
@@ -70,13 +71,13 @@ public class ScriptMechworks implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Cobalt, 6L))
+                        MaterialLibAPI.getStack(Materials.Cobalt, Shapes.plate, 6))
                 .itemOutputs(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 3))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1152)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, 1),
                         getModItem(TinkersMechworks.ID, "LengthWire", 1, 0))
                 .circuit(1).itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 256)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
@@ -106,7 +107,7 @@ public class ScriptMechworks implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.stick, 1),
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0),
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0),
                         getModItem(TinkersMechworks.ID, "LengthWire", 64, 0),
@@ -121,7 +122,7 @@ public class ScriptMechworks implements IScriptLoader {
                 .itemOutputs(getModItem(TinkersMechworks.ID, "SignalTerminal", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Brass, 1)).circuit(5)
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Brass, Shapes.ingot, 1)).circuit(5)
                 .itemOutputs(getModItem(TinkersMechworks.ID, "LengthWire", 2, 0)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(wiremillRecipes);
 

@@ -22,7 +22,6 @@ import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.TwilightForest.TwilightForestMajorFeatureOverride;
 import com.dreammaster.amazingtrophies.AchievementHandler;
-import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.berriespp.BPPConverter;
@@ -38,6 +37,7 @@ import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.GT_CustomLoader;
+import com.dreammaster.gthandler.GT_Loader_OreDictionary;
 import com.dreammaster.gthandler.recipes.AssemblingLineRecipes;
 import com.dreammaster.gthandler.recipes.BECRecipes;
 import com.dreammaster.gthandler.recipes.CircuitAssemblyLineRecipes;
@@ -64,6 +64,7 @@ import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.dreammaster.recipes.MaterialPartReplacements;
 import com.dreammaster.recipes.RecipeRemover;
 import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
@@ -76,7 +77,6 @@ import com.google.common.base.Stopwatch;
 import com.gtnewhorizon.gtnhlib.config.ConfigException;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 
-import bartworks.system.material.WerkstoffLoader;
 import betterquesting.api.storage.BQ_Settings;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -99,10 +99,8 @@ import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.util.GTModHandler;
-import gregtech.common.items.MetaGeneratedItem01;
 import gregtech.loaders.postload.recipes.FakeCuttingRecipes;
 
 @Mod(
@@ -155,7 +153,7 @@ public class MainRegistry {
     }
 
     public MainRegistry() {
-        if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
+        if (DetravScannerMod.isModLoaded()) MinecraftForge.EVENT_BUS.register(new ScannerTools());
 
         GregTechAPI.sGTCompleteLoad.add(new CircuitAssemblyLineRecipes());
         GregTechAPI.sGTCompleteLoad.add(new SpaceAssemblerRecipes());
@@ -273,6 +271,8 @@ public class MainRegistry {
         // Register additional OreDictionary Names
         if (CoreModConfig.Modules.OreDictItems) OreDictHandler.register_all();
 
+        GT_Loader_OreDictionary.registerMaterialEntries();
+
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
             TwilightForestMajorFeatureOverride.run();
@@ -375,16 +375,6 @@ public class MainRegistry {
         LOGGER.debug("Add Bacteria Stuff to BartWorks");
         BacteriaRegistry.runAllPostinit();
 
-        LOGGER.debug("Nerf Platinum Metal Cauldron Cleaning");
-        MetaGeneratedItem01
-                .registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
-        MetaGeneratedItem01
-                .registerCauldronCleaningFor(Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
-        MetaGeneratedItem01
-                .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
-        MetaGeneratedItem01
-                .registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
-
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
         if (TinkerConstruct.isModLoaded()) TiCoLoader.doPostInitialization();
@@ -404,11 +394,10 @@ public class MainRegistry {
     public void CompleteLoad(FMLLoadCompleteEvent event) {
         RecipeRemover.run();
         ScriptLoader.run();
+        MaterialPartReplacements.run();
         new DTPFRecipes().run();
         new AssemblingLineRecipes().runLate();
         new BECRecipes().runLate();
-
-        BW_RadHatchMaterial.runRadHatchAdder();
 
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
         if (AmazingTrophies.isModLoaded() && BloodMagic.isModLoaded()

@@ -25,18 +25,19 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialMisc;
-import gtPlusPlus.core.material.MaterialsElements;
 
 public class CircuitAssemblerRecipes implements Runnable {
 
@@ -75,11 +76,11 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2),
+                        Circuits.ZPM.get(2),
                         ItemList.Circuit_Chip_UHPIC.get(4L),
                         ItemList.Circuit_Chip_QuantumCPU.get(2L),
                         ItemList.Circuit_Chip_NanoCPU.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 64))
+                        MaterialLibAPI.getStack(Materials.SuperconductorZPM, TEBlockShapes.wireGt01, 64))
                 .itemOutputs(NHItemList.HighEnergyFlowCircuit.get()).fluidInputs(new FluidStack(solderIndalloy, 288))
                 .requiresCleanRoom().duration(2 * MINUTES).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
 
@@ -89,8 +90,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         ItemList.Circuit_Chip_Simple_SoC.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.bolt, 1),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 1))
                 .itemOutputs(ItemList.NandChipArray.get(1))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * EIGHTH_INGOTS)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -99,8 +100,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         ItemList.Circuit_Chip_Simple_SoC.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.bolt, 1),
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 1))
                 .itemOutputs(ItemList.NandChipArray.get(1))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * EIGHTH_INGOTS)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -109,8 +110,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         ItemList.Circuit_Chip_Simple_SoC.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.bolt, 1),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 1))
                 .itemOutputs(ItemList.NandChipArray.get(2))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * EIGHTH_INGOTS)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -119,8 +120,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         ItemList.Circuit_Chip_Simple_SoC.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.bolt, 1),
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 1))
                 .itemOutputs(ItemList.NandChipArray.get(2))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * EIGHTH_INGOTS)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -129,8 +130,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         ItemList.Circuit_Chip_Simple_SoC.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.bolt, 1),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 1))
                 .itemOutputs(ItemList.NandChipArray.get(4))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * EIGHTH_INGOTS)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
@@ -139,8 +140,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         ItemList.Circuit_Chip_Simple_SoC.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.bolt, 1),
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.wireFine, 1))
                 .itemOutputs(ItemList.NandChipArray.get(4))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * EIGHTH_INGOTS)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
@@ -150,7 +151,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         ItemList.Circuit_Parts_Resistor.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2),
+                        MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt01, 2),
                         ItemList.Circuit_Parts_Vacuum_Tube.get(2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
@@ -162,7 +163,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0),
                         ItemList.Circuit_Parts_Diode.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2))
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 2))
                 .itemOutputs(ItemList.Circuit_Good.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
@@ -173,8 +174,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_ILC.get(1L),
                         ItemList.Circuit_Parts_Resistor.get(2L),
                         ItemList.Circuit_Parts_Diode.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Tin, 2))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 2),
+                        MaterialLibAPI.getStack(Materials.Tin, Shapes.bolt, 2))
                 .itemOutputs(ItemList.Circuit_Basic.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(circuitAssemblerRecipes);
@@ -186,8 +187,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Basic.get(2L),
                         ItemList.Circuit_Parts_Resistor.get(4L),
                         ItemList.Circuit_Parts_Diode.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 4))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 4),
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.bolt, 4))
                 .itemOutputs(ItemList.Circuit_Integrated_Good.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(20 * SECONDS).eut(24)
                 .addTo(circuitAssemblerRecipes);
@@ -198,8 +199,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Basic.get(2L),
                         ItemList.Circuit_Parts_ResistorASMD.get(1L),
                         ItemList.Circuit_Parts_DiodeASMD.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 4))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 4),
+                        MaterialLibAPI.getStack(Materials.Silver, Shapes.bolt, 4))
                 .itemOutputs(ItemList.Circuit_Integrated_Good.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS).eut(24)
                 .addTo(circuitAssemblerRecipes);
@@ -211,8 +212,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_ILC.get(2L),
                         ItemList.Circuit_Chip_Ram.get(2L),
                         ItemList.Circuit_Parts_Transistor.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 8),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.AnnealedCopper, 8))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 8),
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.bolt, 8))
                 .itemOutputs(GTModHandler.getIC2Item("advancedCircuit", 1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -223,8 +224,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_ILC.get(2L),
                         ItemList.Circuit_Chip_Ram.get(2L),
                         ItemList.Circuit_Parts_TransistorASMD.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 8),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.AnnealedCopper, 8))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 8),
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.bolt, 8))
                 .itemOutputs(GTModHandler.getIC2Item("advancedCircuit", 1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -237,7 +238,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Resistor.get(2L),
                         ItemList.Circuit_Parts_Capacitor.get(2L),
                         ItemList.Circuit_Parts_Transistor.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 2))
                 .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(circuitAssemblerRecipes);
@@ -250,7 +251,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Resistor.get(4L),
                         ItemList.Circuit_Parts_Capacitor.get(4L),
                         ItemList.Circuit_Parts_Transistor.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.wireFine, 4))
                 .itemOutputs(ItemList.Circuit_Processor.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(circuitAssemblerRecipes);
@@ -262,7 +263,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_ResistorASMD.get(1L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(1L),
                         ItemList.Circuit_Parts_TransistorASMD.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.wireFine, 4))
                 .itemOutputs(ItemList.Circuit_Processor.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(circuitAssemblerRecipes);
@@ -275,7 +276,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Coil.get(4L),
                         ItemList.Circuit_Parts_Capacitor.get(8L),
                         ItemList.Circuit_Chip_Ram.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 8))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.wireFine, 8))
                 .itemOutputs(ItemList.Circuit_Computer.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
@@ -286,7 +287,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorASMD.get(1L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(2L),
                         ItemList.Circuit_Chip_Ram.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 8))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.wireFine, 8))
                 .itemOutputs(ItemList.Circuit_Computer.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(96).addTo(circuitAssemblerRecipes);
 
@@ -297,8 +298,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Advanced.get(2L),
                         ItemList.Circuit_Parts_Diode.get(4L),
                         ItemList.Circuit_Chip_Ram.get(8L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 16))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 16),
+                        MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, 16))
                 .itemOutputs(ItemList.Circuit_Data.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
@@ -308,32 +309,32 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Advanced.get(2L),
                         ItemList.Circuit_Parts_DiodeASMD.get(1L),
                         ItemList.Circuit_Chip_Ram.get(8L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 16))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 16),
+                        MaterialLibAPI.getStack(Materials.BlueAlloy, Shapes.bolt, 16))
                 .itemOutputs(ItemList.Circuit_Data.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
         // Mainframe
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
+                        MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 2),
                         ItemList.Circuit_Data.get(2),
                         ItemList.Circuit_Parts_Coil.get(12L),
                         ItemList.Circuit_Parts_Capacitor.get(24),
                         ItemList.Circuit_Chip_Ram.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 24))
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.wireGt01, 24))
                 .itemOutputs(ItemList.Circuit_Elite.get(1L)).fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS))
                 .requiresCleanRoom().duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
+                        MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 2),
                         ItemList.Circuit_Data.get(2),
                         ItemList.Circuit_Parts_InductorASMD.get(3L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(4L),
                         ItemList.Circuit_Chip_Ram.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 16))
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.wireGt01, 16))
                 .itemOutputs(ItemList.Circuit_Elite.get(1L)).fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS))
                 .requiresCleanRoom().duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
@@ -345,7 +346,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_ResistorSMD.get(8L),
                         ItemList.Circuit_Parts_CapacitorSMD.get(8L),
                         ItemList.Circuit_Parts_TransistorSMD.get(8L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 8))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 8))
                 .itemOutputs(ItemList.Circuit_Nanoprocessor.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(600).addTo(circuitAssemblerRecipes);
@@ -357,7 +358,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_ResistorASMD.get(2L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(2L),
                         ItemList.Circuit_Parts_TransistorASMD.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 8))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 8))
                 .itemOutputs(ItemList.Circuit_Nanoprocessor.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(5 * SECONDS)
                 .eut(600).addTo(circuitAssemblerRecipes);
@@ -369,7 +370,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorSMD.get(8L),
                         ItemList.Circuit_Parts_CapacitorSMD.get(8L),
                         ItemList.Circuit_Chip_Ram.get(8L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 16))
                 .itemOutputs(ItemList.Circuit_Nanocomputer.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom().duration(20 * SECONDS)
                 .eut(600).addTo(circuitAssemblerRecipes);
@@ -381,7 +382,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorASMD.get(2L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(2L),
                         ItemList.Circuit_Chip_Ram.get(8L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 16))
                 .itemOutputs(ItemList.Circuit_Nanocomputer.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(600).addTo(circuitAssemblerRecipes);
@@ -393,7 +394,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_Ram.get(4L),
                         ItemList.Circuit_Chip_NOR.get(32L),
                         ItemList.Circuit_Chip_NAND.get(64L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 32))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 32))
                 .itemOutputs(ItemList.Tool_DataOrb.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(20 * SECONDS).eut(1200).addTo(circuitAssemblerRecipes);
 
@@ -404,7 +405,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_DiodeSMD.get(8L),
                         ItemList.Circuit_Chip_NOR.get(4L),
                         ItemList.Circuit_Chip_Ram.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 16))
                 .itemOutputs(ItemList.Circuit_Elitenanocomputer.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom().duration(20 * SECONDS)
                 .eut(600).addTo(circuitAssemblerRecipes);
@@ -416,31 +417,31 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_DiodeASMD.get(2L),
                         ItemList.Circuit_Chip_NOR.get(4L),
                         ItemList.Circuit_Chip_Ram.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 16))
                 .itemOutputs(ItemList.Circuit_Elitenanocomputer.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(600).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
+                        MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 2),
                         ItemList.Circuit_Elitenanocomputer.get(2L),
                         ItemList.Circuit_Parts_InductorSMD.get(16L),
                         ItemList.Circuit_Parts_CapacitorSMD.get(32L),
                         ItemList.Circuit_Chip_Ram.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 32))
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.wireGt01, 32))
                 .itemOutputs(ItemList.Circuit_Master.get(1L)).fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS))
                 .requiresCleanRoom().duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
+                        MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 2),
                         ItemList.Circuit_Elitenanocomputer.get(2L),
                         ItemList.Circuit_Parts_InductorASMD.get(4L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(8L),
                         ItemList.Circuit_Chip_Ram.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 32))
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.wireGt01, 32))
                 .itemOutputs(ItemList.Circuit_Master.get(1L)).fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS))
                 .requiresCleanRoom().duration(40 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
         // Quantum Circuits
@@ -452,7 +453,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_NanoCPU.get(1L),
                         ItemList.Circuit_Parts_CapacitorSMD.get(12L),
                         ItemList.Circuit_Parts_TransistorSMD.get(12L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 16))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 16))
                 .itemOutputs(ItemList.Circuit_Quantumprocessor.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(2400).addTo(circuitAssemblerRecipes);
@@ -464,7 +465,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_NanoCPU.get(1L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(3L),
                         ItemList.Circuit_Parts_TransistorASMD.get(3L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 16))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 16))
                 .itemOutputs(ItemList.Circuit_Quantumprocessor.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom().duration(5 * SECONDS)
                 .eut(2400).addTo(circuitAssemblerRecipes);
@@ -476,7 +477,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorSMD.get(12L),
                         ItemList.Circuit_Parts_CapacitorSMD.get(16L),
                         ItemList.Circuit_Chip_Ram.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 24))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 24))
                 .itemOutputs(ItemList.Circuit_Quantumcomputer.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom().duration(20 * SECONDS)
                 .eut(2400).addTo(circuitAssemblerRecipes);
@@ -488,7 +489,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorASMD.get(3L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(4L),
                         ItemList.Circuit_Chip_Ram.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 24))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 24))
                 .itemOutputs(ItemList.Circuit_Quantumcomputer.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(2400).addTo(circuitAssemblerRecipes);
@@ -500,7 +501,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_DiodeSMD.get(8L),
                         ItemList.Circuit_Chip_NOR.get(4L),
                         ItemList.Circuit_Chip_Ram.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 48))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 48))
                 .itemOutputs(ItemList.Circuit_Masterquantumcomputer.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom().duration(20 * SECONDS)
                 .eut(2400).addTo(circuitAssemblerRecipes);
@@ -512,31 +513,31 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_DiodeASMD.get(2L),
                         ItemList.Circuit_Chip_NOR.get(4L),
                         ItemList.Circuit_Chip_Ram.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 48))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 48))
                 .itemOutputs(ItemList.Circuit_Masterquantumcomputer.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(2400).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
+                        MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 2),
                         ItemList.Circuit_Masterquantumcomputer.get(2L),
                         ItemList.Circuit_Parts_InductorSMD.get(24),
                         ItemList.Circuit_Parts_CapacitorSMD.get(48L),
                         ItemList.Circuit_Chip_Ram.get(24),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 48))
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.wireGt01, 48))
                 .itemOutputs(ItemList.Circuit_Quantummainframe.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS)).requiresCleanRoom()
                 .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
+                        MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 2),
                         ItemList.Circuit_Masterquantumcomputer.get(2L),
                         ItemList.Circuit_Parts_InductorASMD.get(6L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(12L),
                         ItemList.Circuit_Chip_Ram.get(24),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 48))
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, TEBlockShapes.wireGt01, 48))
                 .itemOutputs(ItemList.Circuit_Quantummainframe.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS)).requiresCleanRoom().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
@@ -547,8 +548,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         ItemList.Circuit_Chip_SoC.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Copper, 2))
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.wireFine, 2),
+                        MaterialLibAPI.getStack(Materials.Copper, Shapes.bolt, 2))
                 .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom()
                 .duration(2 * SECONDS + 10 * TICKS).eut(600).addTo(circuitAssemblerRecipes);
@@ -557,8 +558,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         ItemList.Circuit_Chip_SoC.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.AnnealedCopper, 4))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.wireFine, 4),
+                        MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.bolt, 4))
                 .itemOutputs(ItemList.Circuit_Processor.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).requiresCleanRoom()
                 .duration(2 * SECONDS + 10 * TICKS).eut(2400).addTo(circuitAssemblerRecipes);
@@ -573,8 +574,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(6),
                         ItemList.Circuit_Chip_SoC2.get(6),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 48),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 48))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 48),
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.bolt, 48))
                 .itemOutputs(ItemList.Circuit_Nanoprocessor.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(9600).addTo(circuitAssemblerRecipes);
@@ -584,8 +585,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(6),
                         ItemList.Circuit_Chip_SoC2.get(6),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 64),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.NiobiumTitanium, 48))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 64),
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.bolt, 48))
                 .itemOutputs(ItemList.Circuit_Quantumprocessor.get(1L))
                 .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(38400).addTo(circuitAssemblerRecipes);
@@ -598,7 +599,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_NanoCPU.get(12),
                         ItemList.Circuit_Parts_CapacitorASMD.get(36),
                         ItemList.Circuit_Parts_TransistorASMD.get(36),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 48))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 48))
                 .itemOutputs(ItemList.Circuit_Crystalprocessor.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom().duration(20 * SECONDS)
                 .eut(9600).addTo(circuitAssemblerRecipes);
@@ -607,8 +608,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(6),
                         ItemList.Circuit_Chip_CrystalSoC.get(6),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 48),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.YttriumBariumCuprate, 48))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 48),
+                        MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.bolt, 48))
                 .itemOutputs(ItemList.Circuit_Crystalprocessor.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(153600).addTo(circuitAssemblerRecipes);
@@ -621,7 +622,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorASMD.get(36),
                         ItemList.Circuit_Parts_CapacitorASMD.get(48),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Crystalcomputer.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom().duration(40 * SECONDS)
                 .eut(9600).addTo(circuitAssemblerRecipes);
@@ -634,7 +635,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_Ram.get(24),
                         ItemList.Circuit_Chip_NOR.get(64),
                         ItemList.Circuit_Chip_NAND.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Ultimatecrystalcomputer.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom()
                 .duration(1 * MINUTES + 20 * SECONDS).eut(9600).addTo(circuitAssemblerRecipes);
@@ -642,12 +643,12 @@ public class CircuitAssemblerRecipes implements Runnable {
         // Crystal Mainframe
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 12),
+                        MaterialLibAPI.getStack(Materials.Aluminium, TEBlockShapes.frameGt, 12),
                         ItemList.Circuit_Ultimatecrystalcomputer.get(2),
                         ItemList.Circuit_Parts_InductorASMD.get(48),
                         ItemList.Circuit_Parts_CapacitorASMD.get(64),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 64))
+                        MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt01, 64))
                 .itemOutputs(ItemList.Circuit_Crystalmainframe.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 8 * INGOTS)).requiresCleanRoom()
                 .duration(2 * MINUTES + 40 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
@@ -660,7 +661,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_NanoCPU.get(6),
                         ItemList.Circuit_Parts_CapacitorASMD.get(48),
                         ItemList.Circuit_Parts_TransistorASMD.get(48),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 48))
+                        MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.wireFine, 48))
                 .itemOutputs(ItemList.Circuit_Neuroprocessor.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom().duration(40 * SECONDS)
                 .eut(38400).addTo(circuitAssemblerRecipes);
@@ -672,7 +673,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_NanoCPU.get(6),
                         ItemList.Circuit_Parts_CapacitorXSMD.get(12),
                         ItemList.Circuit_Parts_TransistorXSMD.get(12),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 48))
+                        MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.wireFine, 48))
                 .itemOutputs(ItemList.Circuit_Neuroprocessor.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom().duration(5 * SECONDS)
                 .eut(153600).addTo(circuitAssemblerRecipes);
@@ -681,8 +682,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Wetware_Extreme.get(6),
                         ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(6),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 48),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.CosmicNeutronium, 48))
+                        MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.wireFine, 48),
+                        MaterialLibAPI.getStack(Materials.CosmicNeutronium, Shapes.bolt, 48))
                 .itemOutputs(ItemList.Circuit_Neuroprocessor.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(614400).addTo(circuitAssemblerRecipes);
@@ -695,7 +696,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorASMD.get(48),
                         ItemList.Circuit_Parts_CapacitorASMD.get(64),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 64))
+                        MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Wetwarecomputer.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom().duration(1 * MINUTES)
                 .eut(38400).addTo(circuitAssemblerRecipes);
@@ -707,7 +708,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorXSMD.get(12),
                         ItemList.Circuit_Parts_CapacitorXSMD.get(18),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 64))
+                        MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Wetwarecomputer.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom()
                 .duration(7 * SECONDS + 8 * TICKS).eut(153600).addTo(circuitAssemblerRecipes);
@@ -720,7 +721,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_DiodeASMD.get(48),
                         ItemList.Circuit_Chip_NOR.get(64),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 64))
+                        MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Wetwaresupercomputer.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom().duration(2 * MINUTES)
                 .eut(38400).addTo(circuitAssemblerRecipes);
@@ -732,7 +733,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_DiodeXSMD.get(12),
                         ItemList.Circuit_Chip_NOR.get(64),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 64))
+                        MaterialLibAPI.getStack(Materials.YttriumBariumCuprate, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Wetwaresupercomputer.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom().duration(15 * SECONDS)
                 .eut(153600).addTo(circuitAssemblerRecipes);
@@ -745,7 +746,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_NanoCPU.get(12),
                         ItemList.Circuit_Parts_CapacitorASMD.get(64),
                         ItemList.Circuit_Parts_TransistorASMD.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom().duration(1 * MINUTES)
                 .eut(153600).addTo(circuitAssemblerRecipes);
@@ -757,7 +758,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_NanoCPU.get(12),
                         ItemList.Circuit_Parts_CapacitorXSMD.get(18),
                         ItemList.Circuit_Parts_TransistorXSMD.get(18),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 2 * INGOTS)).requiresCleanRoom()
                 .duration(7 * SECONDS + 8 * TICKS).eut(614400).addTo(circuitAssemblerRecipes);
@@ -766,8 +767,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Bio_Ultra.get(6),
                         ItemList.Circuit_Parts_Chip_Bioware.get(6),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64),
-                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getBolt(48))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 64),
+                        MaterialLibAPI.getStack(Materials.ChromaticGlass, Shapes.bolt, 48))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(1)).fluidInputs(new FluidStack(solderUEV, 4 * INGOTS))
                 .requiresCleanRoom().duration(15 * SECONDS).eut(2457600).addTo(circuitAssemblerRecipes);
 
@@ -779,7 +780,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorASMD.get(64),
                         ItemList.Circuit_Parts_CapacitorASMD.get(64),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Biowarecomputer.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom()
                 .duration(1 * MINUTES + 20 * SECONDS).eut(153600).addTo(circuitAssemblerRecipes);
@@ -791,7 +792,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_InductorXSMD.get(18),
                         ItemList.Circuit_Parts_CapacitorXSMD.get(24),
                         ItemList.Circuit_Chip_Ram.get(64),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 64))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 64))
                 .itemOutputs(ItemList.Circuit_Biowarecomputer.get(1))
                 .fluidInputs(new FluidStack(solderIndalloy, 4 * INGOTS)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(614400).addTo(circuitAssemblerRecipes);
@@ -804,10 +805,12 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_CapacitorXSMD.get(64),
                         ItemList.Circuit_Parts_DiodeXSMD.get(64),
                         tectech.thing.CustomItemList.DATApipe.get(24),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.EnrichedHolmium, 64))
+                        MaterialLibAPI.getStack(Materials.EnrichedHolmium, Shapes.bolt, 64))
                 .itemOutputs(ItemList.Circuit_OpticalProcessor.get(1L))
-                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(8 * INGOTS)).requiresCleanRoom()
-                .duration(80 * SECONDS).eut(614400).addTo(circuitAssemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 8 * INGOTS))
+                .requiresCleanRoom().duration(80 * SECONDS).eut(614400).addTo(circuitAssemblerRecipes);
     }
 
     @Override
@@ -822,11 +825,12 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_PetriDish.get(1L),
                         ItemList.Electric_Pump_LuV.get(1L),
                         ItemList.Sensor_IV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 16L))
+                        Circuits.IV.get(1),
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.foil, 16))
                 .itemOutputs(ItemList.Circuit_Board_Wetware.get(16L))
-                .fluidInputs(Materials.GrowthMediumSterilized.getFluid(4000L)).requiresCleanRoom()
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.GrowthMediumSterilized, FluidShapes.fluidLiquid, 4000))
+                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
         // Bio Board
 
         GTValues.RA.stdBuilder()
@@ -835,16 +839,17 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_PetriDish.get(8L),
                         ItemList.Electric_Pump_UV.get(1L),
                         ItemList.Sensor_LuV.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 32L))
+                        Circuits.UV.get(1),
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.foil, 32))
                 .itemOutputs(ItemList.Circuit_Board_Bio.get(32L))
-                .fluidInputs(Materials.BioMediumSterilized.getFluid(16000L)).requiresCleanRoom().duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.BioMediumSterilized, FluidShapes.fluidLiquid, 16000))
+                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
 
         // 1k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        Circuits.ULV.get(2),
                         NHItemList.ChargedCertusQuartzDust.get(2),
                         NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Basic.get(1))
@@ -854,8 +859,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         // 4k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        Circuits.LV.get(4),
+                        Circuits.ULV.get(16),
                         NHItemList.LogicProcessorItemGoldCore.get(),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
                 .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36))
@@ -865,8 +870,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         // 16k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        Circuits.MV.get(4),
+                        Circuits.LV.get(16),
                         NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
                 .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37))
@@ -876,8 +881,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         // 64k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        Circuits.HV.get(4),
+                        Circuits.MV.get(16),
                         NHItemList.EngineeringProcessorItemDiamondCore.get(),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
                 .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38))
@@ -887,7 +892,7 @@ public class CircuitAssemblerRecipes implements Runnable {
         // 2^3 Spatial Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        Materials.Glowstone.getPlates(2),
+                        MaterialLibAPI.getStack(Materials.Glowstone, Shapes.plate, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get())
                 .circuit(1).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32))
@@ -897,8 +902,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         // 16^3 Spatial Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        Materials.EnderPearl.getPlates(4),
-                        Materials.Glowstone.getPlates(16),
+                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Glowstone, Shapes.plate, 16),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get(2))
                 .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33))
@@ -908,8 +913,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         // 128^3 Spatial Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        Materials.EnderEye.getPlates(4),
-                        Materials.EnderPearl.getPlates(16),
+                        MaterialLibAPI.getStack(Materials.EnderEye, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.EnderPearl, Shapes.plate, 16),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 9), // fluix pearl
                         NHItemList.EngineeringProcessorSpatialPulsatingCore.get(4))
                 .circuit(2).itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34))
@@ -921,9 +926,8 @@ public class CircuitAssemblerRecipes implements Runnable {
 
         // Rocket Circuits
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(RocketMaterial[0], GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1)).circuit(1)
-                .itemOutputs(RocketChip[0]).fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS)).requiresCleanRoom()
+        GTValues.RA.stdBuilder().itemInputs(RocketMaterial[0], Circuits.EV.get(1)).circuit(1).itemOutputs(RocketChip[0])
+                .fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS)).requiresCleanRoom()
                 .duration(7 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
         for (int i = 2; i < 9; ++i) {
@@ -932,11 +936,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .setTagCompound(GTUtility.getNBTContainingShort(new NBTTagCompound(), "rocket_tier", (short) i));
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            RocketMaterial[(i - 1)],
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
-                            DataStickWScheme.splitStack(0))
-                    .circuit(1).itemOutputs(RocketChip[(i - 1)]).fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS))
+                    .itemInputs(RocketMaterial[(i - 1)], Circuits.IV.get(1), DataStickWScheme.splitStack(0)).circuit(1)
+                    .itemOutputs(RocketChip[(i - 1)]).fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS))
                     .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[(i - 2)])
                     .addTo(circuitAssemblerRecipes);
         }
@@ -947,10 +948,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                     GTUtility.getNBTContainingShort(new NBTTagCompound(), "rocket_tier", (short) (i + 100)));
             int rocketTier = Math.min(i + 2, 3);
             GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            RocketMaterial[rocketTier - 1],
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
-                            DataStickWScheme.splitStack(0))
+                    .itemInputs(RocketMaterial[rocketTier - 1], Circuits.IV.get(1), DataStickWScheme.splitStack(0))
                     .circuit(Math.max(i + 1, 2)).itemOutputs(ExtraChips[i])
                     .fluidInputs(SubstituteFluidStack.soldering(2 * INGOTS)).requiresCleanRoom()
                     .duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[rocketTier - 2])
@@ -965,8 +963,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_CPU.get(2L),
                         ItemList.Circuit_Chip_NAND.get(32L),
                         ItemList.Circuit_Chip_Ram.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 4))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.wireFine, 16),
+                        MaterialLibAPI.getStack(Materials.Polyethylene, Shapes.plate, 4))
                 .itemOutputs(ItemList.Tool_DataStick.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(20 * SECONDS).eut(90).addTo(circuitAssemblerRecipes);
 
@@ -978,8 +976,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_PIC.get(4L),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(24L),
                         ItemList.Circuit_Chip_NanoCPU.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Platinum, 8))
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.wireFine, 16),
+                        MaterialLibAPI.getStack(Materials.Platinum, Shapes.plate, 8))
                 .itemOutputs(ItemList.Energy_LapotronicOrb.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom()
                 .duration(25 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_EV / 2).addTo(circuitAssemblerRecipes);
@@ -990,8 +988,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_HPIC.get(4L),
                         ItemList.Energy_LapotronicOrb.get(8L),
                         ItemList.Circuit_Chip_QuantumCPU.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 16))
+                        MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.wireFine, 16),
+                        MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.plate, 16))
                 .itemOutputs(ItemList.Energy_LapotronicOrb2.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).requiresCleanRoom()
                 .duration(51 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_IV / 2).addTo(circuitAssemblerRecipes);
@@ -1000,8 +998,8 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8))
+                        Circuits.LV.get(1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.wireFine, 8))
                 .circuit(2).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
                 .requireMods(StevesCarts2).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -1010,7 +1008,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9),
-                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 16))
                 .circuit(2).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).duration(20 * SECONDS)
                 .requireMods(StevesCarts2).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
@@ -1026,11 +1024,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .eut(TierEU.RECIPE_MV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
         // CU
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Parts_Transistor.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
-                .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 28))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_Transistor.get(4L), Circuits.MV.get(1)).circuit(1)
+                .itemOutputs(getModItem(OpenComputers.ID, "item", 1, 28))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
@@ -1052,8 +1047,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         getModItem(OpenComputers.ID, "item", 8, 27),
                         getModItem(OpenComputers.ID, "item", 1, 28),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L))
+                        Circuits.MV.get(1),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 1))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 29))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).duration(10 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1063,8 +1058,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         getModItem(OpenComputers.ID, "item", 12, 27),
                         getModItem(OpenComputers.ID, "item", 2, 28),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L))
+                        Circuits.HV.get(1),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 1))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 42))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).duration(10 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1074,8 +1069,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         getModItem(OpenComputers.ID, "item", 16, 27),
                         getModItem(OpenComputers.ID, "item", 4, 28),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L))
+                        Circuits.EV.get(1),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 1))
                 .circuit(3).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 43))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).duration(10 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1122,7 +1117,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 13),
                         getModItem(OpenComputers.ID, "item", 1, 48),
                         getModItem(OpenComputers.ID, "item", 1, 26),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        MaterialLibAPI.getStack(Materials.Obsidian, Shapes.plate, 1),
                         getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, 14))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 44))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).duration(20 * SECONDS)
@@ -1133,8 +1128,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         getModItem(OpenComputers.ID, "item", 32, 27),
                         getModItem(OpenComputers.ID, "item", 4, 28),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L))
+                        Circuits.EV.get(1),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 1))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 101))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
@@ -1144,8 +1139,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemInputs(
                         getModItem(OpenComputers.ID, "item", 64, 27),
                         getModItem(OpenComputers.ID, "item", 8, 28),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 1L))
+                        Circuits.IV.get(1),
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 1))
                 .circuit(3).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 102))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS)).duration(10 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -1156,7 +1151,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(OpenComputers.ID, "item", 1, 24),
                         ItemList.Circuit_Parts_Transistor.get(6L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1))
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.foil, 1))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "eeprom", 1, 0))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1168,7 +1163,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         ItemList.Circuit_Chip_Ram.get(16L),
                         getModItem(OpenComputers.ID, "item", 2, 24),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 16))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 1))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV / 2).addTo(circuitAssemblerRecipes);
@@ -1179,7 +1174,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         ItemList.Circuit_Chip_Ram.get(32L),
                         getModItem(OpenComputers.ID, "item", 4, 24),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 16))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 50))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1190,7 +1185,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         ItemList.Circuit_Chip_Ram.get(64L),
                         getModItem(OpenComputers.ID, "item", 2, 25),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 16))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 2))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV / 2).addTo(circuitAssemblerRecipes);
@@ -1202,7 +1197,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_Ram.get(64L),
                         ItemList.Circuit_Chip_NAND.get(16L),
                         getModItem(OpenComputers.ID, "item", 4, 25),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 16))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 3))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -1214,7 +1209,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_Ram.get(64L),
                         ItemList.Circuit_Chip_NAND.get(32L),
                         getModItem(OpenComputers.ID, "item", 2, 26),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 16))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 38))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_EV / 2).addTo(circuitAssemblerRecipes);
@@ -1226,7 +1221,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Chip_Ram.get(64L),
                         ItemList.Circuit_Chip_NAND.get(64L),
                         getModItem(OpenComputers.ID, "item", 4, 26),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 16))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 39))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
@@ -1235,9 +1230,9 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
+                        Circuits.MV.get(1),
                         ItemList.Circuit_Parts_Transistor.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 4))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 24))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1245,9 +1240,9 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
+                        Circuits.MV.get(1),
                         ItemList.Circuit_Parts_TransistorASMD.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 4L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 4))
                 .circuit(3).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 24))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(7 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1256,9 +1251,9 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                        Circuits.HV.get(1),
                         ItemList.Circuit_Parts_Transistor.get(8L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 8L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 8))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 25))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV / 2).requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
@@ -1266,9 +1261,9 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                        Circuits.HV.get(1),
                         ItemList.Circuit_Parts_TransistorASMD.get(2L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 8L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 8))
                 .circuit(3).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 25))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(7 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV / 2).addTo(circuitAssemblerRecipes);
@@ -1277,9 +1272,9 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                        Circuits.EV.get(1),
                         ItemList.Circuit_Parts_Transistor.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 16))
                 .circuit(2).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 26))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -1287,9 +1282,9 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
+                        Circuits.EV.get(1),
                         ItemList.Circuit_Parts_TransistorASMD.get(4L),
-                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 16L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.foil, 16))
                 .circuit(3).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 26))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(7 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -1300,7 +1295,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 33),
                         getModItem(OpenComputers.ID, "cable", 2, 0),
                         getModItem(OpenComputers.ID, "item", 1, 26),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.bolt, 8))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 11))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1312,7 +1307,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 66),
                         ItemList.Emitter_HV.get(1L),
                         ItemList.Sensor_HV.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
+                        Circuits.HV.get(2))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 117))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1382,7 +1377,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 33),
                         getModItem(OpenComputers.ID, "item", 1, 24),
                         getModItem(OpenComputers.ID, "item", 4, 27),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.bolt, 8))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 104))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1393,7 +1388,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 33),
                         getModItem(OpenComputers.ID, "item", 1, 25),
                         getModItem(OpenComputers.ID, "item", 1, 29),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 16L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.bolt, 16))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 105))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS).eut(156)
                 .requireMods(OpenComputers).addTo(circuitAssemblerRecipes);
@@ -1404,7 +1399,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 1, 33),
                         getModItem(OpenComputers.ID, "item", 1, 26),
                         getModItem(OpenComputers.ID, "item", 1, 42),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 32L))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.bolt, 32))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 106))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(15 * SECONDS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
@@ -1415,7 +1410,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(OpenComputers.ID, "item", 2, 24),
                         getModItem(OpenComputers.ID, "item", 1, 28),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 4L))
+                        MaterialLibAPI.getStack(Materials.RedAlloy, Shapes.bolt, 4))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 70))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -1427,7 +1422,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 2, 25),
                         getModItem(OpenComputers.ID, "item", 4, 28),
                         getModItem(OpenComputers.ID, "item", 1, 2),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 8))
+                        MaterialLibAPI.getStack(Materials.Electrum, Shapes.bolt, 8))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 71))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV / 2).addTo(circuitAssemblerRecipes);
@@ -1439,7 +1434,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         getModItem(OpenComputers.ID, "item", 2, 26),
                         getModItem(OpenComputers.ID, "item", 8, 28),
                         getModItem(OpenComputers.ID, "item", 1, 38),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Diamond, 16))
+                        MaterialLibAPI.getStack(Materials.Diamond, Shapes.bolt, 16))
                 .circuit(1).itemOutputs(getModItem(OpenComputers.ID, "item", 1, 72))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(12 * SECONDS + 10 * TICKS)
                 .requireMods(OpenComputers).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);

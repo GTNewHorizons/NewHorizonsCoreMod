@@ -19,13 +19,14 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.BlockShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import kekztech.common.Blocks;
 import kekztech.common.TileEntities;
 import tectech.thing.CustomItemList;
@@ -56,9 +57,9 @@ public class ScriptSGCraft implements IScriptLoader {
         // spotless:off
 
         ItemStack darkMatterBlock = getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14);
-        ItemStack magmatterBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.MagMatter, 1L);
-        ItemStack magmatterSuperdensePlate = GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.MagMatter, 1L);
-        ItemStack magmatterNanite = GTOreDictUnificator.get(OrePrefixes.nanite, Materials.MagMatter, 1L);
+        ItemStack magmatterBlock = MaterialLibAPI.getStack(Materials.MagMatter, BlockShapes.block, 1);
+        ItemStack magmatterSuperdensePlate = MaterialLibAPI.getStack(Materials.MagMatter, Shapes.plateSuperdense, 1);
+        ItemStack magmatterNanite = MaterialLibAPI.getStack(Materials.MagMatter, Shapes.nanite, 1);
         ItemStack umvCap = new ItemStack(Blocks.lscLapotronicEnergyUnit, 1, 10);
 
         ItemStack ringBlock = getModItem(SGCraft.ID, "stargateRing", 1, 0);
@@ -209,8 +210,8 @@ public class ScriptSGCraft implements IScriptLoader {
                 "wpmmmbw--",
                 "wuppmmbw-",
                 "cwwwwwwww",
-                'w', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.WhiteDwarfMatter, 1L),
-                'b', GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackDwarfMatter, 1L),
+                'w', MaterialLibAPI.getStack(Materials.WhiteDwarfMatter, Shapes.plateSuperdense, 1),
+                'b', MaterialLibAPI.getStack(Materials.BlackDwarfMatter, Shapes.plateSuperdense, 1),
                 'm', magmatterSuperdensePlate,
                 'p', ItemList.Electric_Piston_UXV.get(1L),
                 'u', ItemList.ZPM6.get(1L),

@@ -22,16 +22,18 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.SubstituteFluidStack;
-import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -119,7 +121,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 1k Essentia Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        Circuits.ULV.get(2),
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14),
                         NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                         ItemList.Circuit_Board_Coated.get(1L))
@@ -129,8 +131,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 4k Essentia Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        Circuits.LV.get(4),
+                        Circuits.ULV.get(16),
                         NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                         ItemList.Circuit_Board_Coated_Basic.get(1L))
                 .circuit(1).itemOutputs(EssentialComponent4K)
@@ -139,8 +141,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 16k Essentia Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        Circuits.MV.get(4),
+                        Circuits.LV.get(16),
                         NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                         ItemList.Circuit_Board_Phenolic_Good.get(1L))
                 .circuit(1).itemOutputs(EssentialComponent16K)
@@ -149,8 +151,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 64k Essentia Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        Circuits.HV.get(4),
+                        Circuits.MV.get(16),
                         NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L))
                 .circuit(1).itemOutputs(EssentialComponent64K)
@@ -159,8 +161,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 256k Essentia Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                        Circuits.EV.get(4),
+                        Circuits.HV.get(16),
                         NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                 .circuit(1).itemOutputs(EssentialComponent256K)
@@ -169,8 +171,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 1024k Essentia Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
+                        Circuits.IV.get(4),
+                        Circuits.EV.get(16),
                         NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                 .circuit(1).itemOutputs(EssentialComponent1024K)
@@ -179,8 +181,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 4096k Essentia Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
+                        Circuits.LuV.get(4),
+                        Circuits.IV.get(16),
                         NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1))
                 .circuit(1).itemOutputs(EssentialComponent4096K)
@@ -189,8 +191,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 16384k Essentia Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                        Circuits.UV.get(4),
+                        Circuits.LuV.get(16),
                         NHItemList.EngineeringProcessorEssentiaPulsatingCore.get(),
                         ItemList.Circuit_Board_Bio_Ultra.get(1))
                 .circuit(1).itemOutputs(EssentialComponent16384K)
@@ -250,13 +252,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
                 DiffusionCore,
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 getModItem(Thaumcraft.ID, "blockTube", 1, 3),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 CoalescenceCore,
-                OrePrefixes.plate.get(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",
@@ -327,11 +329,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, 1),
                 'b',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, 1),
                 'd',
                 EngProcessor,
                 'e',
@@ -339,11 +341,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'f',
                 CalcProcessor,
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, 1),
                 'h',
                 LogicProcessor,
                 'i',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L));
+                MaterialLibAPI.getStack(Materials.InfusedEarth, Shapes.plate, 1));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANETERM",
                 new AspectList().add(Aspect.TOOL, 15).add(Aspect.CRAFT, 12).add(Aspect.ENERGY, 9)

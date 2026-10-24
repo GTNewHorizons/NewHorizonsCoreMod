@@ -10,6 +10,7 @@ import javax.xml.bind.Unmarshaller;
 
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.auxiliary.MaterialLibNames;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 
@@ -72,6 +73,30 @@ public class CustomFuelsHandler implements IFuelHandler {
         }
     }
 
+    /// Rewrites every `ml:` fuel into its resolved item name.
+    private void ResolveMaterialLibNames(CustomFuels pFuels) {
+        int tResolved = 0;
+        int tInvalid = 0;
+
+        for (CustomFuels.FuelItem ifi : pFuels.getFuelItems()) {
+            if (!MaterialLibNames.isMaterialLibName(ifi.getName())) {
+                continue;
+            }
+
+            String tCanonical = MaterialLibNames.canonicalize(ifi.getName());
+            if (tCanonical == null) {
+                tInvalid++;
+            } else {
+                ifi.setName(tCanonical);
+                tResolved++;
+            }
+        }
+
+        if (tResolved + tInvalid > 0) {
+            MainRegistry.LOGGER.info("CustomFuels: resolved {} MaterialLib entries ({} invalid)", tResolved, tInvalid);
+        }
+    }
+
     public boolean ReloadCustomFuels() {
         boolean tResult = false;
 
@@ -82,6 +107,8 @@ public class CustomFuelsHandler implements IFuelHandler {
             Unmarshaller jaxUnmarsh = tJaxbCtx.createUnmarshaller();
             CustomFuels tNewItemCollection = (CustomFuels) jaxUnmarsh.unmarshal(tConfigFile);
             MainRegistry.LOGGER.debug("Config file has been loaded. Entering Verify state");
+
+            ResolveMaterialLibNames(tNewItemCollection);
 
             _mCustomFuels = tNewItemCollection;
             tResult = true;

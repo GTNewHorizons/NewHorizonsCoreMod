@@ -17,8 +17,11 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
+import com.ruling_0.materiallib.api.BlockMaterialInfo;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
-import gregtech.api.GregTechAPI;
+import gregtech.api.enums.materials.BlockShapes;
+import gregtech.api.enums.materials.Materials;
 
 @Mixin(TileEntityBeacon.class)
 public class MixinTileEntityBeacon extends TileEntity {
@@ -31,7 +34,8 @@ public class MixinTileEntityBeacon extends TileEntity {
             method = "func_146003_y")
     private void dreamcraft$countEternalBlocks(CallbackInfo ci, int i, int j, int k, boolean flag, int l, int i1,
             Block block, @Share("eternalCount") LocalIntRef eternalCount) {
-        if (block == GregTechAPI.sBlockMetal9 && this.worldObj.getBlockMetadata(l, k, i1) == 9) {
+        BlockMaterialInfo info = MaterialLibAPI.lookupBlock(block, this.worldObj.getBlockMetadata(l, k, i1));
+        if (info != null && info.material() == Materials.Eternity && info.shape() == BlockShapes.block) {
             eternalCount.set(eternalCount.get() + 1);
         }
     }

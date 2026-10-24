@@ -19,14 +19,17 @@ import java.util.List;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class ScriptBiblioCraft implements IScriptLoader {
 
@@ -489,7 +492,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "screwGold");
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1),
+                        MaterialLibAPI.getStack(Materials.Gold, Shapes.plate, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioLantern", 4)).duration(3 * SECONDS)
@@ -509,7 +512,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1),
                         new ItemStack(Blocks.glass_pane, 2, 0),
                         getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4))
                 .circuit(1).itemOutputs(getModItem(BiblioCraft.ID, "BiblioIronLantern", 4)).duration(3 * SECONDS)
@@ -713,7 +716,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "springSmallIron",
                 "screwIron",
                 "craftingToolScrewdriver",
-                getMeta01(17809),
+                "plateWood",
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "paper", 1),
                 getModItem(Minecraft.ID, "paper", 1),
@@ -889,9 +892,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
         // --- Frame Sheet
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
-                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4)).fluidInputs(GTUtility.getWater(4))
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
@@ -900,18 +902,20 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 1))
+                .duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
+                .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
         // --- Frame Board
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
-                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4)).fluidInputs(GTUtility.getWater(4))
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
@@ -920,12 +924,15 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Lubricant, FluidShapes.fluidLiquid, 1))
+                .duration(SECONDS + 5 * TICKS).eut(4).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(10 * TICKS).eut(4)
-                .addTo(cutterRecipes);
+                .fluidInputs(
+                        MaterialLibAPI
+                                .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 1))
+                .duration(10 * TICKS).eut(4).addTo(cutterRecipes);
 
     }
 
