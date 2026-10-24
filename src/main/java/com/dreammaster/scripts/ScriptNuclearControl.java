@@ -85,7 +85,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
                 "circuitBasic",
                 "cableGt01RedAlloy",
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0),
+                ItemList.Casing_LV.get(1L),
                 "cableGt01RedAlloy");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 3),
@@ -104,7 +104,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                 getModItem(Minecraft.ID, "stained_glass_pane", 1, 5),
                 ItemList.Cover_Screen.get(1L),
                 "circuitBasic",
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0),
+                ItemList.Casing_LV.get(1L),
                 "circuitBasic",
                 "plateIron",
                 "cableGt01RedAlloy",
@@ -314,7 +314,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         ItemList.Cover_Screen.get(1L),
                         new ItemStack(Blocks.stained_glass_pane, 1, 5),
                         Circuits.LV.get(2),
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0))
+                        ItemList.Casing_LV.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.RedAlloy, FluidShapes.fluidMolten, 72))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4)).duration(20 * SECONDS)
                 .eut(2).addTo(assemblerRecipes);

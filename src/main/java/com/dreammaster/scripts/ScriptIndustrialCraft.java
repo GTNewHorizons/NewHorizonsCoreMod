@@ -1315,7 +1315,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.plate, 4),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 2, 0),
                         getModItem(IndustrialCraft2.ID, "itemPartAlloy", 2, 0),
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0))
+                        ItemList.Casing_LV.get(1L))
                 .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12))
                 .duration(1 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

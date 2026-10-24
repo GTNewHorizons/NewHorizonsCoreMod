@@ -88,27 +88,27 @@ public class ScriptOpenComputers implements IScriptLoader {
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UHV.get(1L))
-                .itemOutputs(getTransposer(1, 20_971_520))
+                .itemOutputs(getTransposer(1, 41_943_040))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Indalloy140, FluidShapes.fluidMolten, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UEV.get(1L))
-                .itemOutputs(getTransposer(1, 41_943_040))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UIV.get(1L))
-                .itemOutputs(getTransposer(1, 83_886_080))
-                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UMV.get(1L))
                 .itemOutputs(getTransposer(1, 167_772_160))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UIV.get(1L))
+                .itemOutputs(getTransposer(1, 671_088_640))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UMV.get(1L))
+                .itemOutputs(getTransposer(1, Integer.MAX_VALUE))
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UXV.get(1L))
-                .itemOutputs(getTransposer(1, 335_544_320))
+                .itemOutputs(getTransposer(1, Integer.MAX_VALUE))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.MutatedLivingSolder, FluidShapes.fluidLiquid, 72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 

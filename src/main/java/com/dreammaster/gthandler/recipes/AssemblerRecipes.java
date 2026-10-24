@@ -1026,6 +1026,15 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.string, 3, 0)).circuit(1)
                 .itemOutputs(new ItemStack(Blocks.wool, 1, 0)).duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
 
+        // Powderbarrel
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 4),
+                        new ItemStack(Items.string, 1))
+                .itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.CarbonPartHelmet.get(),
@@ -2639,10 +2648,10 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Grisium, Shapes.gearGt, 2),
-                        ItemList.Hull_IV.get(1),
+                        ItemList.Casing_RobustTungstenSteel.get(1),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 2, 0),
                         GregtechItemList.Gregtech_Computer_Cube.get(1),
-                        Circuits.IV.get(1),
+                        Circuits.LuV.get(1),
                         ItemList.Robot_Arm_IV.get(1),
                         ItemList.Field_Generator_IV.get(1))
                 .itemOutputs(ItemList.AdvancedImplosionCompressor.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_IV)
@@ -2906,6 +2915,24 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.MaragingSteel250, Shapes.plate, 2))
                 .circuit(1).itemOutputs(ItemList.CasingMixer.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
+
+        // Tension Resistant Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
+                        Materials.HSSG.getPlates(2),
+                        MaterialsAlloy.INCONEL_690.getPlate(4))
+                .circuit(1).itemOutputs(ItemList.TensionResistantMachineCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Extruder Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        Materials.Titanium.getPlates(2),
+                        Materials.TPV.getPlates(4))
+                .circuit(1).itemOutputs(ItemList.ExtruderMachineCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
