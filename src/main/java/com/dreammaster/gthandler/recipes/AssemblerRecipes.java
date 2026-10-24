@@ -1029,8 +1029,8 @@ public class AssemblerRecipes implements Runnable {
         // Powderbarrel
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 4),
+                        MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 4),
+                        MaterialLibAPI.getStack(Materials.Gunpowder, Shapes.dust, 4),
                         new ItemStack(Items.string, 1))
                 .itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -2919,18 +2919,18 @@ public class AssemblerRecipes implements Runnable {
         // Tension Resistant Machine Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
-                        Materials.HSSG.getPlates(2),
-                        MaterialsAlloy.INCONEL_690.getPlate(4))
+                        MaterialLibAPI.getStack(Materials.Titanium, TEBlockShapes.frameGt, 1),
+                        MaterialLibAPI.getStack(Materials.HSSG, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Inconel690, Shapes.plate, 4))
                 .circuit(1).itemOutputs(ItemList.TensionResistantMachineCasing.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Extruder Machine Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
-                        Materials.Titanium.getPlates(2),
-                        Materials.TPV.getPlates(4))
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, TEBlockShapes.frameGt, 1),
+                        MaterialLibAPI.getStack(Materials.Titanium, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.TPV, Shapes.plate, 4))
                 .circuit(1).itemOutputs(ItemList.ExtruderMachineCasing.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 

@@ -1465,7 +1465,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Wheat, Shapes.dust, 1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "riceItem", 1, 0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
+                .itemOutputs(MaterialLibAPI.getStack(Materials.Wheat, Shapes.dust, 1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2))
                 .itemOutputs(MaterialLibAPI.getStack(Materials.MeatRaw, Shapes.dust, 9)).outputChances(10000)
