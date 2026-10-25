@@ -78,6 +78,32 @@ public class SpaceAssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        ItemList.Emitter_UMV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 4),
+                        ItemList.Emitter_UMV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Eternity, 8),
+                        ItemList.Black_Hole_Opener.get(4),
+                        ItemList.Black_Hole_Opener.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Eternity, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Eternity, 8),
+                        ItemList.Black_Hole_Opener.get(4),
+                        ItemList.Black_Hole_Opener.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Eternity, 8),
+                        ItemList.Emitter_UMV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 4),
+                        ItemList.Emitter_UMV.get(1))
+                .fluidInputs(
+                        Materials.Creon.getMolten(64 * 144),
+                        Materials.Draconium.getMolten(64 * 144),
+                        Materials.Manyullyn.getMolten(64 * 144),
+                        Materials.SuperconductorUMVBase.getMolten(64 * 144))
+                .itemOutputs(ItemList.Supermassive_Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3)
+                .duration(120 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         ItemList.Sensor_UHV.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
