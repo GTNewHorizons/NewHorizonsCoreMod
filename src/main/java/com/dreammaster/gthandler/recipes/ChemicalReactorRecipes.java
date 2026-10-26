@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
@@ -171,7 +172,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.EnergeticAlloy, Shapes.foil, 12))
                 .itemOutputs(ItemList.Circuit_Board_Fiberglass_Advanced.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.IronIIIChloride, FluidShapes.fluidLiquid, 1000))
-                .requiresCleanRoom().duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requiresEnvironment(CLEANROOM).duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
@@ -180,7 +181,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.EnergeticAlloy, Shapes.foil, 12))
                 .itemOutputs(ItemList.Circuit_Board_Fiberglass_Advanced.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SodiumPersulfate, FluidShapes.fluidLiquid, 2000))
-                .requiresCleanRoom().duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .requiresEnvironment(CLEANROOM).duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
@@ -189,7 +190,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Palladium, Shapes.foil, 16))
                 .itemOutputs(ItemList.Circuit_Board_Multifiberglass.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SulfuricAcid, FluidShapes.fluidLiquid, 500))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -197,7 +198,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Platinum, Shapes.foil, 8))
                 .itemOutputs(ItemList.Circuit_Board_Multifiberglass_Elite.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.IronIIIChloride, FluidShapes.fluidLiquid, 2000))
-                .requiresCleanRoom().duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -205,7 +206,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.foil, 32))
                 .itemOutputs(ItemList.Circuit_Board_Wetware_Extreme.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.IronIIIChloride, FluidShapes.fluidLiquid, 5000))
-                .requiresCleanRoom().duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .requiresEnvironment(CLEANROOM).duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
@@ -214,7 +215,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Platinum, Shapes.foil, 8))
                 .itemOutputs(ItemList.Circuit_Board_Multifiberglass_Elite.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SodiumPersulfate, FluidShapes.fluidLiquid, 4000))
-                .requiresCleanRoom().duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(2 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -222,7 +223,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.foil, 32))
                 .itemOutputs(ItemList.Circuit_Board_Wetware_Extreme.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SodiumPersulfate, FluidShapes.fluidLiquid, 10000))
-                .requiresCleanRoom().duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .requiresEnvironment(CLEANROOM).duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
@@ -231,7 +232,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Neutronium, Shapes.foil, 24))
                 .itemOutputs(ItemList.Circuit_Board_Bio_Ultra.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.IronIIIChloride, FluidShapes.fluidLiquid, 7500))
-                .requiresCleanRoom().duration(3 * MINUTES).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(3 * MINUTES).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -239,12 +240,12 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Neutronium, Shapes.foil, 24))
                 .itemOutputs(ItemList.Circuit_Board_Bio_Ultra.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SodiumPersulfate, FluidShapes.fluidLiquid, 15000))
-                .requiresCleanRoom().duration(3 * MINUTES).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(3 * MINUTES).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(NHItemList.MutatedEgg.get(), MaterialLibAPI.getStack(Materials.Endium, Shapes.dust, 64))
                 .itemOutputs(NHItemList.EnderEgg.get()).fluidInputs(FluidRegistry.getFluidStack("ender", 1000))
-                .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(60 * MINUTES).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -252,7 +253,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.IndiumGalliumPhosphide, Shapes.dust, 2))
                 .itemOutputs(ItemList.Circuit_Wafer_HPIC.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.VanadiumGallium, FluidShapes.fluidMolten, 288))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -260,7 +261,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.IndiumGalliumPhosphide, Shapes.dust, 8))
                 .itemOutputs(ItemList.Circuit_Wafer_UHPIC.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Naquadah, FluidShapes.fluidMolten, 576))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(60 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -268,7 +269,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.IndiumGalliumPhosphide, Shapes.dust, 64))
                 .itemOutputs(ItemList.Circuit_Wafer_PPIC.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Sunnarium, FluidShapes.fluidMolten, 1440))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -276,13 +277,13 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Iodine, Shapes.dust, 64))
                 .itemOutputs(ItemList.Circuit_Wafer_FPIC.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.InfinityCatalyst, FluidShapes.fluidMolten, 576))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Wafer_CPU.get(1L), GTUtility.copyAmount(16, Ic2Items.carbonFiber))
                 .itemOutputs(ItemList.Circuit_Wafer_NanoCPU.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Glowstone, FluidShapes.fluidMolten, 576))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -290,12 +291,12 @@ public class ChemicalReactorRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.IndiumGalliumPhosphide, Shapes.dust, 1))
                 .itemOutputs(ItemList.Circuit_Wafer_QuantumCPU.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, 50))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NanoCPU.get(1L), ItemList.QuantumEye.get(2L))
                 .itemOutputs(ItemList.Circuit_Wafer_QuantumCPU.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.GalliumArsenide, FluidShapes.fluidMolten, 288))
-                .requiresCleanRoom().duration(45 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
+                .requiresEnvironment(CLEANROOM).duration(45 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.ghast_tear)).circuit(1)
                 .itemOutputs(
@@ -320,7 +321,7 @@ public class ChemicalReactorRecipes implements Runnable {
                             NHItemList.EnderEgg.get(),
                             MaterialLibAPI.getStack(Materials.Draconium, Shapes.dust, 64))
                     .itemOutputs(NHItemList.DraconiumEgg.get())
-                    .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000)).requiresCleanRoom()
+                    .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000)).requiresEnvironment(CLEANROOM)
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_EV / 2).addTo(UniversalChemical);
 
         }
@@ -331,7 +332,8 @@ public class ChemicalReactorRecipes implements Runnable {
                     .itemInputs(NHItemList.DraconiumEgg.get(), getModItem(DraconicEvolution.ID, "dragonHeart", 0, 0))
                     .itemOutputs(new ItemStack(Blocks.dragon_egg, 1, 0))
                     .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Enderium, FluidShapes.fluidMolten, 7 * INGOTS))
-                    .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
+                    .requiresEnvironment(CLEANROOM).duration(60 * MINUTES).eut(TierEU.RECIPE_EV)
+                    .addTo(UniversalChemical);
 
         }
 
@@ -340,13 +342,13 @@ public class ChemicalReactorRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(new ItemStack(Items.spawn_egg, 1, WILDCARD), getModItem(Genetics.ID, "misc", 64, 4))
                     .itemOutputs(NHItemList.TheBigEgg.get())
-                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
+                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresEnvironment(CLEANROOM)
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(Botania.ID, "cocoon", 1, 0), getModItem(Genetics.ID, "misc", 64, 4))
                     .itemOutputs(NHItemList.TheBigEgg.get())
-                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
+                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresEnvironment(CLEANROOM)
                     .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
         }
@@ -355,7 +357,8 @@ public class ChemicalReactorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.TheBigEgg.get(), ItemList.IC2_Uranium_238.get(64))
                     .itemOutputs(NHItemList.MutatedEgg.get()).fluidInputs(FluidRegistry.getFluidStack("mutagen", 1000))
-                    .requiresCleanRoom().duration(60 * MINUTES).eut(TierEU.RECIPE_HV / 2).addTo(UniversalChemical);
+                    .requiresEnvironment(CLEANROOM).duration(60 * MINUTES).eut(TierEU.RECIPE_HV / 2)
+                    .addTo(UniversalChemical);
 
         }
 
@@ -554,7 +557,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         NHItemList.TCetiESeaweedExtract.get(1))
                 .itemOutputs(ItemList.Circuit_Wafer_APIC.get(1L))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.DTR, FluidShapes.fluidLiquid, 1000))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_UEV)
+                .requiresEnvironment(CLEANROOM).duration(60 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(multiblockChemicalReactorRecipes);
 
         if (Forestry.isModLoaded()) {

@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.UniversalSingularities;
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
@@ -441,7 +442,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
                 .circuit(1).itemOutputs(COMPONENT_4).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(circuitAssemblerRecipes);
 
         // 16k ME Storage Component
 
@@ -453,7 +455,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(2),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
                 .circuit(1).itemOutputs(COMPONENT_16).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(circuitAssemblerRecipes);
 
         // 64k ME Storage Component
         GTValues.RA.stdBuilder()
@@ -464,7 +467,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(4),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
                 .circuit(1).itemOutputs(COMPONENT_64).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(circuitAssemblerRecipes);
 
         // 256k ME Storage Component
         GTValues.RA.stdBuilder()
@@ -475,7 +479,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         NHItemList.EngineeringProcessorFluidEmeraldCore.get(1),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                 .circuit(1).itemOutputs(COMPONENT_256).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(circuitAssemblerRecipes);
 
         // 1024k ME Storage Component
         GTValues.RA.stdBuilder()
@@ -486,7 +491,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         NHItemList.EngineeringProcessorFluidEmeraldCore.get(2),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                 .circuit(1).itemOutputs(COMPONENT_1024).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(circuitAssemblerRecipes);
 
         // 4096k ME Storage Component
         GTValues.RA.stdBuilder()
@@ -497,7 +503,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         NHItemList.EngineeringProcessorFluidEmeraldCore.get(4),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1))
                 .circuit(1).itemOutputs(COMPONENT_4096).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(circuitAssemblerRecipes);
 
         // 16384k ME Storage Component
         GTValues.RA.stdBuilder()
@@ -508,7 +515,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         NHItemList.EngineeringProcessorFluidEmeraldCore.get(8),
                         ItemList.Circuit_Board_Bio_Ultra.get(1))
                 .circuit(1).itemOutputs(COMPONENT_16384).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
+                .addTo(circuitAssemblerRecipes);
 
         // Infinite Water Cell
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(

@@ -26,6 +26,7 @@ import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
@@ -1873,7 +1874,8 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemOutputs(createItemStack(EnderIO.ID, "itemBasicCapacitor", 1, 6, "{ench:[0:{id:32s,lvl:5s}]}"))
                 .fluidInputs(
                         MaterialLibAPI.getFluidStack(Materials.SoulInfusedMedium, FluidShapes.fluidLiquid, 144 * 40))
-                .requiresCleanRoom().duration(40 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(circuitAssemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(40 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(circuitAssemblerRecipes);
 
     }
 }

@@ -5,6 +5,7 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -1451,8 +1452,8 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(Botania.ID, "cocoon", 1, 0),
                         getModItem(EtFuturumRequiem.ID, "chorus_flower", 4, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "spawn_egg", 1, 505))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.heeendium"), 4000)).requiresCleanRoom()
-                .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.heeendium"), 4000))
+                .requiresEnvironment(CLEANROOM).duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
 
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(EtFuturumRequiem.ID, "shulker_shell", 8, 0),

@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
@@ -144,7 +145,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         new ItemStack(GCItems.heavyPlatingTier1))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 1))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 576))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case1", 1, 0),
@@ -154,7 +155,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         new ItemStack(MarsItems.marsItemBasic, 1, 3))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 2))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 864))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case1", 1, 0),
@@ -165,7 +166,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         new ItemStack(AsteroidsItems.basicItem))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 3))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 1152))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case2", 1, 0),
@@ -176,7 +177,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         NHItemList.HeavyDutyPlateTier4.get())
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 4))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 1728))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case2", 1, 0),
@@ -187,7 +188,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         NHItemList.HeavyDutyPlateTier5.get())
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 5))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 2304))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case3", 1, 0),
@@ -198,7 +199,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         NHItemList.HeavyDutyPlateTier6.get())
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 6))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 3456))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case3", 1, 0),
@@ -209,7 +210,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         NHItemList.HeavyDutyPlateTier7.get())
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 7))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 4608))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case3", 1, 0),
@@ -220,7 +221,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         NHItemList.HeavyDutyPlateTier8.get())
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 8))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 6912))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case1", 1, 0),
@@ -231,7 +232,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         new ItemStack(GCItems.heavyPlatingTier1))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 100))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 576))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case1", 1, 0),
@@ -242,7 +243,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         new ItemStack(MarsItems.marsItemBasic, 1, 3))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 101))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 864))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenComputers.ID, "case1", 1, 0),
@@ -253,7 +254,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         new ItemStack(AsteroidsItems.basicItem))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 102))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 1152))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         BlockList.NeutroniumPlatedReinforcedStone.get(),
@@ -333,48 +334,48 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
                         NHItemList.SchematicsMoonBuggy.get())
-                .itemOutputs(new ItemStack(GCItems.schematic)).requiresCleanRoom().duration(10 * SECONDS)
+                .itemOutputs(new ItemStack(GCItems.schematic)).requiresEnvironment(CLEANROOM).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier2.get())
-                .itemOutputs(new ItemStack(GCItems.schematic, 1, 1)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(new ItemStack(GCItems.schematic, 1, 1)).requiresEnvironment(CLEANROOM)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier3.get())
-                .itemOutputs(new ItemStack(MarsItems.schematic)).requiresCleanRoom().duration(10 * SECONDS)
+                .itemOutputs(new ItemStack(MarsItems.schematic)).requiresEnvironment(CLEANROOM).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
                         NHItemList.SchematicsCargoRocket.get())
-                .itemOutputs(new ItemStack(MarsItems.schematic, 1, 1)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(new ItemStack(MarsItems.schematic, 1, 1)).requiresEnvironment(CLEANROOM)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0),
                         NHItemList.SchematicsAstroMiner.get())
-                .itemOutputs(new ItemStack(MarsItems.schematic, 1, 2)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(new ItemStack(MarsItems.schematic, 1, 2)).requiresEnvironment(CLEANROOM)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier4.get())
-                .itemOutputs(getGSItem("item.SchematicTier4", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(getGSItem("item.SchematicTier4", 1, 0)).requiresEnvironment(CLEANROOM)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier5.get())
-                .itemOutputs(getGSItem("item.SchematicTier5", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(getGSItem("item.SchematicTier5", 1, 0)).requiresEnvironment(CLEANROOM)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier6.get())
-                .itemOutputs(getGSItem("item.SchematicTier6", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(getGSItem("item.SchematicTier6", 1, 0)).requiresEnvironment(CLEANROOM)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier7.get())
-                .itemOutputs(getGSItem("item.SchematicTier7", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(getGSItem("item.SchematicTier7", 1, 0)).requiresEnvironment(CLEANROOM)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0), NHItemList.SchematicsTier8.get())
-                .itemOutputs(getGSItem("item.SchematicTier8", 1, 0)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .itemOutputs(getGSItem("item.SchematicTier8", 1, 0)).requiresEnvironment(CLEANROOM)
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 
         // Pulverization
         GTValues.RA.stdBuilder().itemInputs(getGSItem("ceresglowstone", 1, 0))
