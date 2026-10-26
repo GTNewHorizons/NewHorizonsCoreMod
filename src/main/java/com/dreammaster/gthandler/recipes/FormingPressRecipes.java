@@ -417,6 +417,19 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
 
+        // Raw Dense Optical CPU Containment Housing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Board_Optical.get(64L),
+                        MaterialsAlloy.BOTMIUM.getPlate(16),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NickelZincFerrite, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 16L),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 1L))
+                .fluidInputs(Materials.BoundlessCosmicSolder.getFluid(100))
+                .itemOutputs(ItemList.Raw_Dense_Optical_Cpu_Containment_Housing.get(1L)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_UIV).addTo(formingPressRecipes);
+
         // Music Discs
 
         if (Avaritia.isModLoaded()) {
