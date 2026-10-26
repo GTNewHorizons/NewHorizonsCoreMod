@@ -11,6 +11,7 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.unpackagerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
@@ -21,6 +22,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -466,6 +468,17 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6))
                     .duration(4500 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COMPRESSION_TIER, 2)
                     .addTo(neutroniumCompressorRecipes);
+
+            // Superdense Optical CPU Containment Housing
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Space.getMolten(100))
+                    .itemInputs(ItemList.Raw_Dense_Optical_Cpu_Containment_Housing.get(1L))
+                    .itemOutputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L)).duration(1 * SECONDS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Unpackage it. Why I wrote it here?
+            GTValues.RA.stdBuilder().itemInputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L))
+                    .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(64L)).duration(1 * SECONDS)
+                    .eut(TierEU.RECIPE_UEV).addTo(unpackagerRecipes);
         }
     }
 }
