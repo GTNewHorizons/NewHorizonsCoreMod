@@ -56,6 +56,7 @@ import static gregtech.api.enums.Mods.VisualProspecting;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OreMixes.getStoneTypesFromMixes;
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
@@ -1375,8 +1376,8 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 4),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 2, 0),
                         MaterialLibAPI.getStack(Materials.Graphite, Shapes.dust, 16))
-                .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1)).requiresCleanRoom()
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1))
+                .requiresEnvironment(CLEANROOM).duration(60 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1384,8 +1385,8 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 4),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 2, 0),
                         MaterialLibAPI.getStack(Materials.Graphite, Shapes.dust, 8))
-                .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1)).requiresCleanRoom()
-                .duration(45 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1))
+                .requiresEnvironment(CLEANROOM).duration(45 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1393,8 +1394,8 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Tin, Shapes.plate, 4),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 2, 0),
                         MaterialLibAPI.getStack(Materials.Graphite, Shapes.dust, 4))
-                .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1)).requiresCleanRoom()
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1))
+                .requiresEnvironment(CLEANROOM).duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1404,7 +1405,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1),
                         getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1))
                 .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1, 0))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1414,7 +1415,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1),
                         getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1))
                 .circuit(1).itemOutputs(getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1, 0))
-                .requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                .requiresEnvironment(CLEANROOM).duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1425,8 +1426,8 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1, 0),
                         getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1, 0),
                         getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1, 0))
-                .circuit(1).itemOutputs(ItemList.Neutron_Reflector.get(1L)).requiresCleanRoom().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(ItemList.Neutron_Reflector.get(1L)).requiresEnvironment(CLEANROOM)
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1437,7 +1438,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 48, 0),
                         MaterialLibAPI.getStack(Materials.Graphite, Shapes.dust, 64),
                         MaterialLibAPI.getStack(Materials.Graphite, Shapes.dust, 32))
-                .circuit(2).itemOutputs(ItemList.Neutron_Reflector.get(1L)).requiresCleanRoom()
+                .circuit(2).itemOutputs(ItemList.Neutron_Reflector.get(1L)).requiresEnvironment(CLEANROOM)
                 .duration(2 * MINUTES + 37 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1450,7 +1451,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Graphite, Shapes.dust, 64),
                         MaterialLibAPI.getStack(Materials.Graphite, Shapes.dust, 64),
                         MaterialLibAPI.getStack(Materials.Graphite, Shapes.dust, 64))
-                .circuit(2).itemOutputs(ItemList.Neutron_Reflector.get(1L)).requiresCleanRoom()
+                .circuit(2).itemOutputs(ItemList.Neutron_Reflector.get(1L)).requiresEnvironment(CLEANROOM)
                 .duration(3 * MINUTES + 7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         // Humongous input hatch
