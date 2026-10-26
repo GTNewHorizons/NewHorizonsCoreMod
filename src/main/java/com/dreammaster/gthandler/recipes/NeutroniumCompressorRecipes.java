@@ -472,12 +472,12 @@ public class NeutroniumCompressorRecipes implements Runnable {
             // Superdense Optical CPU Containment Housing
             GTValues.RA.stdBuilder().fluidInputs(Materials.Space.getMolten(100))
                     .itemInputs(ItemList.Raw_Dense_Optical_Cpu_Containment_Housing.get(1L))
-                    .itemOutputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L)).duration(1 * SECONDS)
+                    .itemOutputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Unpackage it. Why I wrote it here?
             GTValues.RA.stdBuilder().itemInputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L))
-                    .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(64L)).duration(1 * SECONDS)
+                    .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(64L)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_UEV).addTo(unpackagerRecipes);
         }
     }
