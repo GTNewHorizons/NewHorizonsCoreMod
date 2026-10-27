@@ -1,16 +1,15 @@
 package com.dreammaster.ic2;
 
-import gregtech.api.enums.ItemList;
+import java.util.Objects;
+
 import net.minecraft.item.Item;
 
 import com.gtnewhorizons.postea.api.ItemStackReplacementManager;
 
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MetaTileEntityIDs;
 import gregtech.api.enums.Mods;
-import net.minecraft.item.ItemStack;
-
-import java.util.Objects;
 
 public class IC2Converter {
 
@@ -38,7 +37,6 @@ public class IC2Converter {
                 0,
                 Objects.requireNonNull(ItemList.Credit_Copper.get(1L).getItem()),
                 ItemList.Credit_Copper.get(1L).getItemDamage(),
-                true
-        );
+                true);
     }
 }
