@@ -965,6 +965,31 @@ public class ScriptEFR implements IScriptLoader {
                     getModItem(EtFuturumRequiem.ID, colors[i] + "_glazed_terracotta", 1, 0));
         }
 
+        // Concrete Powder and Concrete
+        String[] dyeNames = { "dyeWhite", "dyeOrange", "dyeMagenta", "dyeLightBlue", "dyeYellow", "dyeLime", "dyePink",
+                "dyeGray", "dyeLightGray", "dyeCyan", "dyePurple", "dyeBlue", "dyeBrown", "dyeGreen", "dyeRed",
+                "dyeBlack" };
+
+        for (int i = 0; i < colors.length; i++) {
+            // The vanilla crafting recipe Et Futurum Requiem disables when this mod is loaded
+            addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "concrete_powder", 8, i),
+                    dyeNames[i],
+                    new ItemStack(Blocks.sand, 1, 0),
+                    new ItemStack(Blocks.sand, 1, 0),
+                    new ItemStack(Blocks.sand, 1, 0),
+                    new ItemStack(Blocks.sand, 1, 0),
+                    new ItemStack(Blocks.gravel, 1, 0),
+                    new ItemStack(Blocks.gravel, 1, 0),
+                    new ItemStack(Blocks.gravel, 1, 0),
+                    new ItemStack(Blocks.gravel, 1, 0));
+
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "concrete_powder", 8, i))
+                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 1000))
+                    .itemOutputs(getModItem(EtFuturumRequiem.ID, "concrete", 8, i)).duration(8 * SECONDS).eut(2)
+                    .addTo(mixerRecipes);
+        }
+
         // Beds
         OreDictItemStack plankWood = new OreDictItemStack("plankWood", 2);
 
@@ -1341,6 +1366,10 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "cobbled_deepslate", 1, 0))
                 .itemOutputs(NHItemList.DeepslateDust.get(1)).duration(32 * SECONDS).eut(2).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.get(4))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cobbled_deepslate", 3, 0)).duration(5 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.DeepslateDust.get(36))
                 .itemOutputs(

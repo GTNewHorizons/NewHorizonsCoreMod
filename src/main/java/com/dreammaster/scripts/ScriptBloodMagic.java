@@ -2732,8 +2732,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "GLYPHSTONE",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockStabilityGlyph", 1, 0))));
         ThaumcraftApi.addWarpToResearch("GLYPHSTONE", 3);
-        TCHelper.addResearchPage("GLYPHSTONE", new ResearchPage("tc.research_page.GLYPHSTONE.2"));
         TCHelper.addResearchPage("GLYPHSTONE", new ResearchPage("tc.research_page.GLYPHSTONE.3"));
+        TCHelper.addResearchPage("GLYPHSTONE", new ResearchPage("tc.research_page.GLYPHSTONE.4"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GLYPHSTONE",
                 getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1, 0),
