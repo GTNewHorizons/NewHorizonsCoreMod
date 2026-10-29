@@ -5790,9 +5790,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(TCAspects.RADIO.getAspect(), 3).add(Aspect.METAL, 3).add(Aspect.EXCHANGE, 6)
                         .add(Aspect.CRYSTAL, 10));
         ThaumcraftApi.registerObjectTag(
-                ItemList.IC2_Plutonium.get(1),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Plutonium, 1L),
                 new AspectList().add(TCAspects.RADIO.getAspect(), 3).add(Aspect.METAL, 3));
-        ThaumcraftApi.registerObjectTag(ItemList.IC2_Plutonium_Small.get(1), new AspectList().add(Aspect.METAL, 1));
+
+        ThaumcraftApi.registerObjectTag(
+                GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Plutonium, 1L),
+                new AspectList().add(Aspect.METAL, 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2),
                 new AspectList().add(Aspect.GREED, 4).add(Aspect.ENERGY, 3).add(Aspect.MECHANISM, 2)
