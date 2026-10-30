@@ -33,6 +33,7 @@ import com.dreammaster.chisel.ChiselHelper;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -46,15 +47,15 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                Chisel.ID,
-                EnderStorage.ID,
-                HardcoreEnderExpansion.ID,
-                IronTanks.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID);
+                BiomesOPlenty,
+                Chisel,
+                EnderStorage,
+                HardcoreEnderExpansion,
+                IronTanks,
+                Thaumcraft,
+                TinkerConstruct);
     }
 
     @Override

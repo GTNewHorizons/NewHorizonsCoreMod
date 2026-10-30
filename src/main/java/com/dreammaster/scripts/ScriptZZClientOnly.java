@@ -42,8 +42,8 @@ public class ScriptZZClientOnly implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Forestry.ID, IndustrialCraft2.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Forestry, IndustrialCraft2);
     }
 
     private boolean initialized = false;

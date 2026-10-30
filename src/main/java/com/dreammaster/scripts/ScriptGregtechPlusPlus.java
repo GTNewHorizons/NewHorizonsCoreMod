@@ -49,16 +49,16 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Avaritia.ID,
-                EternalSingularity.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                IronTanks.ID,
-                MagicBees.ID,
-                RemoteIO.ID,
-                Thaumcraft.ID);
+                Avaritia,
+                EternalSingularity,
+                Forestry,
+                IndustrialCraft2,
+                IronTanks,
+                MagicBees,
+                RemoteIO,
+                Thaumcraft);
     }
 
     @Override

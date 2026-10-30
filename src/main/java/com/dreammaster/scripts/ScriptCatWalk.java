@@ -12,6 +12,7 @@ import java.util.List;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.ItemData;
@@ -25,8 +26,8 @@ public class ScriptCatWalk implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Collections.singletonList(CatWalks.ID);
+    public List<Mods> getDependencies() {
+        return Collections.singletonList(CatWalks);
     }
 
     @Override

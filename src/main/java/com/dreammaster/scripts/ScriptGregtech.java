@@ -53,6 +53,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
@@ -71,27 +72,27 @@ public class ScriptGregtech implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                DraconicEvolution.ID,
-                IndustrialCraft2.ID,
-                MCFrames.ID,
-                Natura.ID,
-                OpenBlocks.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedExpansion.ID,
-                ProjectRedTransmission.ID,
-                SGCraft.ID,
-                StructureLib.ID,
-                SuperSolarPanels.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID);
+                AdvancedSolarPanel,
+                AppliedEnergistics2,
+                Avaritia,
+                BiomesOPlenty,
+                BloodArsenal,
+                DraconicEvolution,
+                IndustrialCraft2,
+                MCFrames,
+                Natura,
+                OpenBlocks,
+                PamsHarvestCraft,
+                ProjectRedExpansion,
+                ProjectRedTransmission,
+                SGCraft,
+                StructureLib,
+                SuperSolarPanels,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct);
     }
 
     @Override
@@ -1473,6 +1474,9 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "oatsItem", 1, 0))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "riceItem", 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2))

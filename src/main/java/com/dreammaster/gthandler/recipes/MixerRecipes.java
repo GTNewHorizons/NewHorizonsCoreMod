@@ -43,10 +43,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.fluids.GTPPFluids;
 import gtPlusPlus.core.material.MaterialsElements;
-import gtPlusPlus.core.material.Particle;
 
 public class MixerRecipes implements Runnable {
 
@@ -428,9 +426,9 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Platinum, 1L))
-                .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderiumBase, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Platinum, 2L))
+                .circuit(2).itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderiumBase, 6L))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -858,21 +856,6 @@ public class MixerRecipes implements Runnable {
                 .circuit(1).itemOutputs(NHItemList.BioBall.get()).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(mixerRecipes);
 
-        // TODO: remove for 2.10
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.StableAdhesive.get(64),
-                        ItemList.SuperconductorComposite.get(64),
-                        ItemList.NaquadriaSupersolid.get(64),
-                        ItemList.Timepiece.get(64),
-                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.Z_BOSON)),
-                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.ETA_MESON)),
-                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.LAMBDA)),
-                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
-                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.GravitonShard, 4))
-                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
-                .itemOutputs(NHItemList.StargateCrystalDust.get()).duration(3 * MINUTES).eut(TierEU.RECIPE_UXV)
-                .addTo(mixerRecipes);
         // Stargate-Crystal Dust
         GTValues.RA.stdBuilder()
                 .itemInputs(

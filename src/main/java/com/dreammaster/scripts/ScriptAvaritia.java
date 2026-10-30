@@ -61,6 +61,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
@@ -84,31 +85,31 @@ public class ScriptAvaritia implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                Avaritia.ID,
-                BloodArsenal.ID,
-                BloodMagic.ID,
-                Botania.ID,
-                DraconicEvolution.ID,
-                ElectroMagicTools.ID,
-                EternalSingularity.ID,
-                ExtraUtilities.ID,
-                ForbiddenMagic.ID,
-                Gadomancy.ID,
-                GalaxySpace.ID,
-                GraviSuite.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                ThaumicTinkerer.ID,
-                TinkerConstruct.ID,
-                TinkersGregworks.ID,
-                UniversalSingularities.ID,
-                WitchingGadgets.ID);
+                AdvancedSolarPanel,
+                Avaritia,
+                BloodArsenal,
+                BloodMagic,
+                Botania,
+                DraconicEvolution,
+                ElectroMagicTools,
+                EternalSingularity,
+                ExtraUtilities,
+                ForbiddenMagic,
+                Gadomancy,
+                GalaxySpace,
+                GraviSuite,
+                IndustrialCraft2,
+                MagicBees,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                ThaumicTinkerer,
+                TinkerConstruct,
+                TinkersGregworks,
+                UniversalSingularities,
+                WitchingGadgets);
     }
 
     @Override

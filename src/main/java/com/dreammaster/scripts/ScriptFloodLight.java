@@ -27,8 +27,8 @@ public class ScriptFloodLight implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Mods.FloodLights.ID, Thaumcraft.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Mods.FloodLights, Thaumcraft);
     }
 
     @Override

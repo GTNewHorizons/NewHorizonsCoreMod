@@ -33,6 +33,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -50,15 +51,15 @@ public class ScriptTwilightForest implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                ElectroMagicTools.ID,
-                EtFuturumRequiem.ID,
-                ForbiddenMagic.ID,
-                MagicBees.ID,
-                Thaumcraft.ID,
-                TwilightForest.ID,
-                ZTones.ID);
+                ElectroMagicTools,
+                EtFuturumRequiem,
+                ForbiddenMagic,
+                MagicBees,
+                Thaumcraft,
+                TwilightForest,
+                ZTones);
     }
 
     @Override
@@ -201,21 +202,21 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 64, 0),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 1))
-                .circuit(17).itemOutputs(getModItem(TwilightForest.ID, "tile.TFNagastoneHead", 64, 0))
+                .circuit(20).itemOutputs(getModItem(TwilightForest.ID, "tile.TFNagastoneHead", 64, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 64, 0),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 5))
-                .circuit(17).itemOutputs(getModItem(TwilightForest.ID, "tile.TFMazestone", 64, 0))
+                .circuit(20).itemOutputs(getModItem(TwilightForest.ID, "tile.TFMazestone", 64, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 64, 0),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 6))
-                .circuit(17).itemOutputs(getModItem(TwilightForest.ID, "tile.TFUnderBrick", 64, 0))
+                .circuit(20).itemOutputs(getModItem(TwilightForest.ID, "tile.TFUnderBrick", 64, 0))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "item.arcticFur", 9, 0))

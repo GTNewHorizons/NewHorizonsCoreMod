@@ -17,6 +17,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -31,8 +32,8 @@ public class ScriptOpenComputers implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(HardcoreEnderExpansion.ID, IndustrialCraft2.ID, OpenComputers.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(HardcoreEnderExpansion, IndustrialCraft2, OpenComputers);
     }
 
     private static ItemStack getTransposer(int aAmount, int rate) {
@@ -80,26 +81,26 @@ public class ScriptOpenComputers implements IScriptLoader {
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UHV.get(1L))
-                .itemOutputs(getTransposer(1, 20_971_520)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
+                .itemOutputs(getTransposer(1, 41_943_040)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UEV.get(1L))
-                .itemOutputs(getTransposer(1, 41_943_040))
-                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UIV.get(1L))
-                .itemOutputs(getTransposer(1, 83_886_080))
-                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UMV.get(1L))
                 .itemOutputs(getTransposer(1, 167_772_160))
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UIV.get(1L))
+                .itemOutputs(getTransposer(1, 671_088_640))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UMV.get(1L))
+                .itemOutputs(getTransposer(1, Integer.MAX_VALUE))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UXV.get(1L))
-                .itemOutputs(getTransposer(1, 335_544_320))
+                .itemOutputs(getTransposer(1, Integer.MAX_VALUE))
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
@@ -217,7 +218,7 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'c',
                 "circuitElite",
                 'd',
-                "turbineBladeChrome",
+                "turbineBladeRhodium-PlatedPalladium",
                 'e',
                 "circuitSuperconductor",
                 'f',

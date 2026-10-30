@@ -31,6 +31,7 @@ public class GTNHPauseScreen {
     private static final int BUG_BUTTON_ID = -161518;
     private static final int WIKI_BUTTON_ID = -8998561;
 
+    private GuiButton shareToLANButton;
     private HoverChecker shareToLANButtonHoverChecker;
 
     @SuppressWarnings("unchecked")
@@ -57,9 +58,12 @@ public class GTNHPauseScreen {
         // TODO add credits page
 
         // find the Share To LAN button and attach a tooltip to it
+        shareToLANButton = null;
+        shareToLANButtonHoverChecker = null;
         for (Object element : event.buttonList) {
             if (element instanceof GuiButton button) {
                 if (button.id == 7) {
+                    shareToLANButton = button;
                     shareToLANButtonHoverChecker = new HoverChecker(button, 200);
                 }
             }
@@ -113,7 +117,7 @@ public class GTNHPauseScreen {
     }
 
     private void drawShareToLANButtonTooltip(GuiScreen gui, int x, int y) {
-        if (shareToLANButtonHoverChecker != null && shareToLANButtonHoverChecker.checkHover(x, y)) {
+        if (shareToLANButton != null && shareToLANButtonHoverChecker.checkHover(x, y, shareToLANButton.enabled)) {
             gui.func_146283_a(
                     Arrays.asList(
                             StatCollector.translateToLocal("dreamcraft.pausemenu.sharetolan.tooltip").split("\\\\n")),

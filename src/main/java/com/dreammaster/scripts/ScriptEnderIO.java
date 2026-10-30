@@ -52,6 +52,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -66,26 +67,26 @@ public class ScriptEnderIO implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                Backpack.ID,
-                Botania.ID,
-                BuildCraftFactory.ID,
-                DraconicEvolution.ID,
-                EnderIO.ID,
-                ExtraUtilities.ID,
-                FloodLights.ID,
-                GraviSuite.ID,
-                HardcoreEnderExpansion.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                OpenBlocks.ID,
-                ProjectRedIllumination.ID,
-                ProjectRedIntegration.ID,
-                Thaumcraft.ID,
-                ThaumicExploration.ID);
+                AppliedEnergistics2,
+                Avaritia,
+                Backpack,
+                Botania,
+                BuildCraftFactory,
+                DraconicEvolution,
+                EnderIO,
+                ExtraUtilities,
+                FloodLights,
+                GraviSuite,
+                HardcoreEnderExpansion,
+                IndustrialCraft2,
+                MagicBees,
+                OpenBlocks,
+                ProjectRedIllumination,
+                ProjectRedIntegration,
+                Thaumcraft,
+                ThaumicExploration);
     }
 
     @Override
@@ -1807,7 +1808,6 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(
                         FluidRegistry.getFluidStack("xpjuice", 1728),
                         FluidRegistry.getFluidStack("hell_blood", 100),
-                        FluidRegistry.getFluidStack("putrescine", 250),
                         FluidRegistry.getFluidStack("binnie.growthmedium", 100),
                         FluidRegistry.getFluidStack("vapor_of_levity", 500),
                         FluidRegistry.getFluidStack("cadaverine", 250))

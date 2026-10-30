@@ -31,6 +31,7 @@ import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -53,8 +54,8 @@ public class ScriptFoundryRecipes implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(UniversalSingularities.ID, EternalSingularity.ID, DraconicEvolution.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(UniversalSingularities, EternalSingularity, DraconicEvolution);
     }
 
     @Override
