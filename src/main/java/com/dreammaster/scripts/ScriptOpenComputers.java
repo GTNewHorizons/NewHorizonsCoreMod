@@ -20,14 +20,16 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.VoltageIndex;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class ScriptOpenComputers implements IScriptLoader {
 
-    public static final long[] TRANSPOSER_RATES = { 10_240L, 40_960L, 163_840L, 655_360L, 2_621_440L, 10_485_760L,
-            41_943_040L, 167_772_160L, 671_088_640L, 2_684_354_560L, 10_737_418_240L };
+    private static final long[] TRANSPOSER_RATES = { 0L, 0L, 2_560L, 10_240L, 40_960L, 163_840L, 655_360L, 2_621_440L,
+            10_485_760L, 41_943_040L, 167_772_160L, 671_088_640L, 2_684_354_560L, 10_737_418_240L };
 
     @Override
     public String getScriptName() {
@@ -39,16 +41,18 @@ public class ScriptOpenComputers implements IScriptLoader {
         return Arrays.asList(HardcoreEnderExpansion, IndustrialCraft2, OpenComputers);
     }
 
-    public static ItemStack getTransposer(int aAmount, long aRate) {
-        ItemStack transposer = getModItem(OpenComputers.ID, "transposer", aAmount, 0);
+    public static ItemStack getTransposer(ItemStack baseTransposer, int aAmount, int aTier) {
+        ItemStack transposer = GTUtility.copyAmount(aAmount, baseTransposer);
         transposer.setTagCompound(new NBTTagCompound());
-        transposer.getTagCompound().setLong("oc:fluidTransferRate", aRate);
+        transposer.getTagCompound().setLong("oc:fluidTransferRate", TRANSPOSER_RATES[aTier]);
+        transposer.getTagCompound().setString("oc:tier", GTValues.VN[aTier]);
         return transposer;
     }
 
     @Override
     public void loadRecipes() {
         // Transposers
+        ItemStack baseTransposer = getTransposer(getModItem(OpenComputers.ID, "transposer", 1, 0), 1, VoltageIndex.MV);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Automation_ChestBuffer_LV.get(1L),
@@ -56,58 +60,62 @@ public class ScriptOpenComputers implements IScriptLoader {
                         getModItem(OpenComputers.ID, "item", 1, 77),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polyethylene, 2),
                         getModItem(OpenComputers.ID, "cable", 2, 0))
-                .circuit(1).itemOutputs(getTransposer(2, 2_560)).fluidInputs(Materials.Polyethylene.getMolten(72L))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(GTUtility.copyAmount(2, baseTransposer))
+                .fluidInputs(Materials.Polyethylene.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_HV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[0])).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_HV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.HV))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_EV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[1])).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_EV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.EV))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_IV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[2])).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_IV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.IV))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_LuV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[3]))
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_LuV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.LuV))
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_ZPM.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[4]))
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_ZPM.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.ZPM))
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[5]))
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UV))
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UHV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[6]))
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UHV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UHV))
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UEV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[7]))
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UEV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UEV))
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UIV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[8]))
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UIV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UIV))
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UMV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[9]))
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UMV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UMV))
                 .fluidInputs(Materials.BoundlessCosmicSolder.getFluid(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UXV.get(1L))
-                .itemOutputs(getTransposer(1, TRANSPOSER_RATES[10]))
+        GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UXV.get(1L))
+                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UXV))
                 .fluidInputs(Materials.BoundlessCosmicSolder.getFluid(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 

@@ -13,6 +13,7 @@ import com.dreammaster.scripts.ScriptOpenComputers;
 
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
+import gregtech.api.enums.VoltageIndex;
 
 public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
@@ -26,8 +27,9 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         }
 
         if (OpenComputers.isModLoaded()) {
-            for (long rate : ScriptOpenComputers.TRANSPOSER_RATES) {
-                ItemStack stack = ScriptOpenComputers.getTransposer(1, rate);
+            ItemStack baseTransposer = getModItem(OpenComputers.ID, "transposer", 1, 0);
+            for (int tier = VoltageIndex.MV; tier <= VoltageIndex.UXV; tier++) {
+                ItemStack stack = ScriptOpenComputers.getTransposer(baseTransposer, 1, tier);
                 API.addItemVariant(stack.getItem(), stack);
             }
         }
