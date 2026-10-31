@@ -3,6 +3,9 @@ package com.dreammaster.auxiliary;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagString;
@@ -27,11 +30,11 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         }
 
         if (OpenComputers.isModLoaded()) {
-            ItemStack baseTransposer = getModItem(OpenComputers.ID, "transposer", 1, 0);
+            List<ItemStack> transposers = new ArrayList<>();
             for (int tier = VoltageIndex.MV; tier <= VoltageIndex.UXV; tier++) {
-                ItemStack stack = ScriptOpenComputers.getTransposer(baseTransposer, 1, tier);
-                API.addItemVariant(stack.getItem(), stack);
+                transposers.add(ScriptOpenComputers.getTransposer(1, tier));
             }
+            API.setItemListEntries(transposers.get(0).getItem(), transposers);
         }
 
         MainRegistry.LOGGER.info("Added NEI Config");

@@ -41,8 +41,8 @@ public class ScriptOpenComputers implements IScriptLoader {
         return Arrays.asList(HardcoreEnderExpansion, IndustrialCraft2, OpenComputers);
     }
 
-    public static ItemStack getTransposer(ItemStack baseTransposer, int aAmount, int aTier) {
-        ItemStack transposer = GTUtility.copyAmount(aAmount, baseTransposer);
+    public static ItemStack getTransposer(int aAmount, int aTier) {
+        ItemStack transposer = getModItem(OpenComputers.ID, "transposer", aAmount, 0);
         transposer.setTagCompound(new NBTTagCompound());
         transposer.getTagCompound().setLong("oc:fluidTransferRate", TRANSPOSER_RATES[aTier]);
         transposer.getTagCompound().setString("oc:tier", GTValues.VN[aTier]);
@@ -52,7 +52,7 @@ public class ScriptOpenComputers implements IScriptLoader {
     @Override
     public void loadRecipes() {
         // Transposers
-        ItemStack baseTransposer = getTransposer(getModItem(OpenComputers.ID, "transposer", 1, 0), 1, VoltageIndex.MV);
+        ItemStack baseTransposer = getTransposer(1, VoltageIndex.MV);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Automation_ChestBuffer_LV.get(1L),
@@ -65,57 +65,57 @@ public class ScriptOpenComputers implements IScriptLoader {
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_HV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.HV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.HV)).nbtSensitive()
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_EV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.EV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.EV)).nbtSensitive()
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_IV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.IV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.IV)).nbtSensitive()
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_LuV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.LuV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.LuV)).nbtSensitive()
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_ZPM.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.ZPM)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.ZPM)).nbtSensitive()
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.UV)).nbtSensitive()
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UHV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UHV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.UHV)).nbtSensitive()
                 .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UEV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UEV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.UEV)).nbtSensitive()
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UIV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UIV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.UIV)).nbtSensitive()
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UMV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UMV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.UMV)).nbtSensitive()
                 .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UXV.get(1L))
-                .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UXV)).nbtSensitive()
+                .itemOutputs(getTransposer(1, VoltageIndex.UXV)).nbtSensitive()
                 .fluidInputs(Materials.BoundlessCosmicSolder.getFluid(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
