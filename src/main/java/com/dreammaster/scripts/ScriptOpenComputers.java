@@ -111,8 +111,8 @@ public class ScriptOpenComputers implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UMV.get(1L))
                 .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UMV)).nbtSensitive()
-                .fluidInputs(Materials.BoundlessCosmicSolder.getFluid(72)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(baseTransposer, ItemList.FluidRegulator_UXV.get(1L))
                 .itemOutputs(getTransposer(baseTransposer, 1, VoltageIndex.UXV)).nbtSensitive()
