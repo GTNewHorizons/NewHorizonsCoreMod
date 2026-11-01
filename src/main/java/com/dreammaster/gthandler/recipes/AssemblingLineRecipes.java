@@ -1710,38 +1710,39 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Gravity Stabilization Casing
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                new ItemStack(GregTechAPI.sBlockCasings10, 1, 8),
+                ItemList.Neutronium_Stable_Casing.get(1),
                 128000,
                 1024,
                 2000000,
                 32,
-                new Object[] { new ItemStack(GregTechAPI.sBlockCasings10, 4, 8), ItemList.Emitter_UIV.get(2),
+                new Object[] { ItemList.Neutronium_Stable_Casing.get(4), ItemList.Emitter_UIV.get(2),
                         GregtechItemList.Battery_Gem_4.get(1), // Graviton Anomaly
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ProtoHalkonite, 4),
-                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.ProtoHalkonite, 1),
-                        ItemList.Gravistar.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UIV), 1L },
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.ProtoHalkonite, 2),
+                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getPlateSuperdense(1), ItemList.Gravistar.get(4),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 1L },
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 16), },
-                new FluidStack[] { new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), 9216),
-                        Materials.DimensionallyShiftedSuperfluid.getFluid(2304) },
+                new FluidStack[] { Materials.TranscendentMetal.getMolten(16 * INGOTS),
+                        Materials.DimensionallyShiftedSuperfluid.getFluid(2_000) },
                 ItemRefer.GravityStabilizationCasing.get(4),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
 
         // Magnetic Flux Casing
         TTRecipeAdder.addResearchableAssemblylineRecipe(
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ProtoHalkonite, 1),
+                ItemList.Casing_Electromagnetic_Separator.get(1),
                 128000,
                 1024,
                 2000000,
                 32,
-                new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.ProtoHalkonite, 4),
-                        ItemList.Sensor_UIV.get(2), ItemList.Electromagnet_Tengam.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.ProtoHalkonite, 1),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 1L },
+                new Object[] { ItemList.Casing_Electromagnetic_Separator.get(4), ItemList.Sensor_UIV.get(2),
+                        ItemList.Electromagnet_Tengam.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.ProtoHalkonite, 2),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TengamAttuned, 1),
                         GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.TranscendentMetal, 16),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 1L },
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 16), },
-                new FluidStack[] { Materials.TengamPurified.getMolten(9216),
-                        Materials.TranscendentMetal.getMolten(2304), Materials.SuperCoolant.getFluid(10000) },
+                new FluidStack[] { Materials.TranscendentMetal.getMolten(16 * INGOTS),
+                        Materials.DimensionallyShiftedSuperfluid.getFluid(2_000) },
                 ItemRefer.MagneticFluxCasing.get(4),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UIV);
