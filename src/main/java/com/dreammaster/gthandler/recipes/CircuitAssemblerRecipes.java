@@ -389,7 +389,7 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        ItemList.Circuit_Nanoprocessor.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2),
                         ItemList.Circuit_Chip_Ram.get(4L),
                         ItemList.Circuit_Chip_NOR.get(32L),
                         ItemList.Circuit_Chip_NAND.get(64L),
