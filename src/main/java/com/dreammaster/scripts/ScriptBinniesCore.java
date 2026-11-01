@@ -12,6 +12,7 @@ import com.dreammaster.block.BlockList;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 
 public class ScriptBinniesCore implements IScriptLoader {
 
@@ -21,8 +22,8 @@ public class ScriptBinniesCore implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Collections.singletonList(BinnieCore.ID);
+    public List<Mods> getDependencies() {
+        return Collections.singletonList(BinnieCore);
     }
 
     @Override

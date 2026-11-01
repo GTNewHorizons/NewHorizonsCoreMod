@@ -44,6 +44,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -64,19 +65,19 @@ public class ScriptEMT implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                Avaritia.ID,
-                ElectroMagicTools.ID,
-                ForbiddenMagic.ID,
-                GalacticraftCore.ID,
-                IndustrialCraft2.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                ThaumicEnergistics.ID,
-                TinkerConstruct.ID);
+                AdvancedSolarPanel,
+                Avaritia,
+                ElectroMagicTools,
+                ForbiddenMagic,
+                GalacticraftCore,
+                IndustrialCraft2,
+                ProjectRedIntegration,
+                Railcraft,
+                Thaumcraft,
+                ThaumicEnergistics,
+                TinkerConstruct);
     }
 
     @Override

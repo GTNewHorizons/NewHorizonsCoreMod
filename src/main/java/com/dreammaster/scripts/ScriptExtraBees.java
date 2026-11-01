@@ -25,6 +25,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
@@ -41,15 +42,9 @@ public class ScriptExtraBees implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(
-                ExtraBees.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                PamsHarvestCraft.ID,
-                Thaumcraft.ID);
+    public List<Mods> getDependencies() {
+        return Arrays
+                .asList(ExtraBees, ExtraUtilities, Forestry, IndustrialCraft2, MagicBees, PamsHarvestCraft, Thaumcraft);
     }
 
     @Override

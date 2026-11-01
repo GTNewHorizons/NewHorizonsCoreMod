@@ -21,6 +21,7 @@ import java.util.List;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -34,16 +35,9 @@ public class ScriptJABBA implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(
-                BiomesOPlenty.ID,
-                EnderStorage.ID,
-                ExtraTrees.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                JABBA.ID,
-                Natura.ID,
-                Railcraft.ID);
+    public List<Mods> getDependencies() {
+        return Arrays
+                .asList(BiomesOPlenty, EnderStorage, ExtraTrees, ExtraUtilities, Forestry, JABBA, Natura, Railcraft);
     }
 
     @Override

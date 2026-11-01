@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.LogisticsPipes;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
@@ -416,6 +417,11 @@ public class ChemicalBathRecipes implements Runnable {
                     .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 65))
                     .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 864)).duration(10 * SECONDS)
                     .eut(2).addTo(chemicalBathRecipes);
+        }
+        if (OpenBlocks.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "sponge", 1))
+                    .fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyeyellow", 576))
+                    .itemOutputs(new ItemStack(Blocks.sponge, 1)).duration(100).eut(16).addTo(chemicalBathRecipes);
         }
     }
 }

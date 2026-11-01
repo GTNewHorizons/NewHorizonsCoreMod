@@ -13,6 +13,7 @@ import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -24,8 +25,8 @@ public class ScriptGraviSuite implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(GraviSuite.ID, GraviSuiteNEO.ID, IndustrialCraft2.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(GraviSuite, GraviSuiteNEO, IndustrialCraft2);
     }
 
     @Override

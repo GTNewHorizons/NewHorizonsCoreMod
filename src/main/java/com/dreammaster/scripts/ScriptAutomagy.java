@@ -22,6 +22,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
@@ -38,17 +39,17 @@ public class ScriptAutomagy implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Automagy.ID,
-                BuildCraftFactory.ID,
-                EtFuturumRequiem.ID,
-                Genetics.ID,
-                IndustrialCraft2.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                Thaumcraft.ID);
+                AppliedEnergistics2,
+                Automagy,
+                BuildCraftFactory,
+                EtFuturumRequiem,
+                Genetics,
+                IndustrialCraft2,
+                ProjectRedIntegration,
+                Railcraft,
+                Thaumcraft);
     }
 
     @Override

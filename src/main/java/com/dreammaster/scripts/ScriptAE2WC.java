@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.Mods;
 
 public class ScriptAE2WC implements IScriptLoader {
 
@@ -18,8 +19,8 @@ public class ScriptAE2WC implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(AppliedEnergistics2.ID, Avaritia.ID, AE2WCT.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AppliedEnergistics2, Avaritia, AE2WCT);
     }
 
     @Override

@@ -7,7 +7,6 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.COIL_HEAT;
 
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -23,12 +22,10 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
-import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class DTPFRecipes implements Runnable {
@@ -437,7 +434,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsAlloy.ZERON_100.getScrew(16),
                                 GregtechItemList.Laser_Lens_Special.get(1))
                         .itemOutputs(ItemList.Tesseract.get(16)).fluidInputs(Materials.ExcitedDTSC.getFluid(1000))
-                        .fluidOutputs(Materials.DTR.getFluid(2000)).duration(40 * SECONDS).eut(512_000_000)
+                        .fluidOutputs(Materials.DTR.getFluid(2000)).duration(20 * SECONDS).eut(512_000_000)
                         .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
                 // V2
@@ -464,26 +461,12 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsAlloy.BOTMIUM.getScrew(16),
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1L))
                         .itemOutputs(ItemList.Tesseract.get(4)).fluidInputs(Materials.ExcitedDTRC.getFluid(1000))
-                        .fluidOutputs(Materials.DTR.getFluid(1000 / 2)).duration(40 * SECONDS).eut(32_000_000)
+                        .fluidOutputs(Materials.DTR.getFluid(1000 / 2)).duration(80 * SECONDS).eut(32_000_000)
                         .metadata(COIL_HEAT, infinity_heat).addTo(plasmaForgeRecipes);
             }
 
             if (Avaritia.isModLoaded()) {
                 if (GalacticraftAmunRa.isModLoaded()) {
-                    // TODO: remove for 2.10
-                    GTValues.RA.stdBuilder()
-                            .itemInputs(
-                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.TranscendentMetal, 16),
-                                    getModItem(Avaritia.ID, "Resource", 16, 8),
-                                    GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
-                            .fluidInputs(
-                                    Materials.ExcitedDTEC.getFluid(1797693L),
-                                    Materials.CosmicNeutronium.getMolten(16384 * 144),
-                                    GGMaterial.tairitsu.getMolten(16384 * 144),
-                                    MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
-                            .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14))
-                            .duration(80 * SECONDS).fluidOutputs(Materials.DTR.getFluid(1797693L))
-                            .eut(TierEU.RECIPE_UMV).metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
                     // Dark Matter
                     GTValues.RA.stdBuilder()
                             .itemInputs(
@@ -1182,18 +1165,6 @@ public class DTPFRecipes implements Runnable {
                     .itemInputs(
                             GregtechItemList.Laser_Lens_Special.get(1),
                             ItemList.StableBosonContainmentUnit.get(4),
-                            NHItemList.MysteriousCrystalLens.get(0),
-                            ItemRefer.HiC_T5.get(0))
-                    .fluidInputs(Materials.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
-                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
-                    .fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
-                    .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
-
-            // TODO: remove this old recipe Quantum anomaly
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GregtechItemList.Laser_Lens_Special.get(1),
-                            new ItemStack(Particle.getBaseParticle(Particle.GRAVITON).getItem(), 4),
                             NHItemList.MysteriousCrystalLens.get(0),
                             ItemRefer.HiC_T5.get(0))
                     .fluidInputs(Materials.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))

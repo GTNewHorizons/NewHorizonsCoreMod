@@ -10,6 +10,8 @@ import static gregtech.api.enums.Mods.SleepingBags;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.enums.Mods;
+
 public class ScriptSleepingBags implements IScriptLoader {
 
     @Override
@@ -18,8 +20,8 @@ public class ScriptSleepingBags implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(AdventureBackpack.ID, Backpack.ID, OpenBlocks.ID, SleepingBags.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AdventureBackpack, Backpack, OpenBlocks, SleepingBags);
     }
 
     @Override

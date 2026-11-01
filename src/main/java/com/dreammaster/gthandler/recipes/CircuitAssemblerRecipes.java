@@ -298,7 +298,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Diode.get(4L),
                         ItemList.Circuit_Chip_Ram.get(8L),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 16))
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 16))
                 .itemOutputs(ItemList.Circuit_Data.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
@@ -309,7 +309,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_DiodeASMD.get(1L),
                         ItemList.Circuit_Chip_Ram.get(8L),
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16),
-                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 16))
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 16))
                 .itemOutputs(ItemList.Circuit_Data.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * INGOTS))
                 .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 

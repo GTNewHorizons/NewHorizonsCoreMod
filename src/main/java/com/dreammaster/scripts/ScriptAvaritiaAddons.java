@@ -31,6 +31,7 @@ import fox.spiteful.avaritia.items.LudicrousItems;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
@@ -46,17 +47,17 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                Avaritia.ID,
-                AvaritiaAddons.ID,
-                Botania.ID,
-                EternalSingularity.ID,
-                ForbiddenMagic.ID,
-                IronChests.ID,
-                UniversalSingularities.ID,
-                Witchery.ID);
+                AppliedEnergistics2,
+                Avaritia,
+                AvaritiaAddons,
+                Botania,
+                EternalSingularity,
+                ForbiddenMagic,
+                IronChests,
+                UniversalSingularities,
+                Witchery);
     }
 
     @Override

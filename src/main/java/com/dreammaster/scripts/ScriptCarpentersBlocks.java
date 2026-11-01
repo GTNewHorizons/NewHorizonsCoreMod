@@ -33,8 +33,8 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Mods.CarpentersBlocks.ID, IndustrialCraft2.ID, TinkerConstruct.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Mods.CarpentersBlocks, IndustrialCraft2, TinkerConstruct);
     }
 
     @Override

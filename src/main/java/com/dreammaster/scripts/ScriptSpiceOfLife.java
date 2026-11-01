@@ -11,6 +11,8 @@ import java.util.List;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.enums.Mods;
+
 public class ScriptSpiceOfLife implements IScriptLoader {
 
     @Override
@@ -19,8 +21,8 @@ public class ScriptSpiceOfLife implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(IndustrialCraft2.ID, SpiceOfLife.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(IndustrialCraft2, SpiceOfLife);
     }
 
     @Override

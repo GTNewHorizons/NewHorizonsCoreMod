@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 
 public class ScriptEnderZoo implements IScriptLoader {
@@ -20,8 +21,8 @@ public class ScriptEnderZoo implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Collections.singletonList(EnderZoo.ID);
+    public List<Mods> getDependencies() {
+        return Collections.singletonList(EnderZoo);
     }
 
     @Override

@@ -21,6 +21,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -37,8 +38,8 @@ public class ScriptGadomancy implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(ForbiddenMagic.ID, Gadomancy.ID, Thaumcraft.ID, ThaumicTinkerer.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(ForbiddenMagic, Gadomancy, Thaumcraft, ThaumicTinkerer);
     }
 
     @Override

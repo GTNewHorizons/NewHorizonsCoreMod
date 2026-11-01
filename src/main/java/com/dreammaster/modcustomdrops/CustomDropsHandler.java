@@ -258,7 +258,7 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
                 String tFinalDropID = String.format("%s.%s", tUserID, tDropID);
                 int tFinalAmount = dr.getAmount();
 
-                if (MainRegistry.Rnd.nextInt(100) > dr.getChance()) {
+                if (MainRegistry.Rnd.nextInt(100) >= dr.getChance()) {
                     continue;
                 }
 

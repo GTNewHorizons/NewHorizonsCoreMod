@@ -32,6 +32,7 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -47,16 +48,16 @@ public class ScriptHarvestcraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                ExtraTrees.ID,
-                Forestry.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                MalisisDoors.ID,
-                Natura.ID,
-                PamsHarvestCraft.ID);
+                Backpack,
+                BiomesOPlenty,
+                ExtraTrees,
+                Forestry,
+                IguanaTweaksTinkerConstruct,
+                MalisisDoors,
+                Natura,
+                PamsHarvestCraft);
     }
 
     @Override
