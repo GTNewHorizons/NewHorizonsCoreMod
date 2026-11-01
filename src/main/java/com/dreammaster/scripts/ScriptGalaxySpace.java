@@ -416,7 +416,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         addDecorativeMetalBlockRecipe(8, getGSItem("item.CompressedPlates", 1, 9));
 
         addShapedRecipe(
-                ItemList.PlanetaryGasSiphonCasing.get(1),
+                ItemList.PlanetaryGasSiphonCasing.get(8),
                 "MWM",
                 "CTC",
                 "MWM",
