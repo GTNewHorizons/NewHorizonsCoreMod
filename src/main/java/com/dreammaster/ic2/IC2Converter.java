@@ -35,8 +35,7 @@ public class IC2Converter {
         ItemStackReplacementManager.addSimpleReplacement(
                 IC2_MOD_ID + ":itemCoin",
                 0,
-                Objects.requireNonNull(ItemList.Credit_Greg_Cupronickel.get(1L).getItem()),
-                ItemList.Credit_Greg_Cupronickel.get(1L).getItemDamage(),
+                ItemList.Credit_Greg_Cupronickel.get(1L),
                 true);
     }
 }
