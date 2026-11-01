@@ -223,7 +223,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 0),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -245,7 +245,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 1),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -267,7 +267,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 2),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -289,7 +289,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 3),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -311,7 +311,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 4),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -322,7 +322,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
                 "dustCoal",
                 getModItem(HardcoreEnderExpansion.ID, "living_matter", 1, 0),
-                "dustTinySunnarium",
+                "dustSunnarium",
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
                 "dyeBlack",
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0));
@@ -333,7 +333,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 5),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -342,9 +342,9 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
                 getModItem(HardcoreEnderExpansion.ID, "silverfish_blood", 1, 0),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
-                "dustTinyUranium",
+                "dustUranium",
                 getModItem(HardcoreEnderExpansion.ID, "living_matter", 1, 0),
-                "dustTinyPlutonium",
+                "dustPlutonium",
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
                 getModItem(HardcoreEnderExpansion.ID, "endoplasm", 1, 0),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0));
@@ -355,7 +355,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 6),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -377,7 +377,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 7),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -399,7 +399,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 8),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -408,9 +408,9 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
                 "dustEnderEye",
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
-                "dustTinyGold",
+                "dustGold",
                 getModItem(HardcoreEnderExpansion.ID, "living_matter", 1, 0),
-                "dustTinyGold",
+                "dustGold",
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0),
                 "itemFlint",
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0));
@@ -421,7 +421,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 9),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -443,7 +443,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 null,
                 "dustNetherrack",
                 getModItem(HardcoreEnderExpansion.ID, "curse", 1, 10),
-                "dustTinyNetherStar",
+                "dustNetherStar",
                 null,
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0),
                 null);
@@ -504,20 +504,16 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_powder", 4, 0))
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.EnderEye, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.EnderEye, 1L))
-                .outputChances(9000, 8000, 7500, 5000).fluidOutputs(FluidRegistry.getFluidStack("ender", 100))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L))
+                .outputChances(4500, 1500).fluidOutputs(FluidRegistry.getFluidStack("ender", 100))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder()
                 .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Endium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Tungstate, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Endium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.EnderEye, 1L))
-                .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungstate, 1L))
+                .outputChances(5625, 8625, 1875).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(centrifugeRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard))
