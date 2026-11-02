@@ -1,7 +1,5 @@
 package com.dreammaster.ic2;
 
-import java.util.Objects;
-
 import net.minecraft.item.Item;
 
 import com.gtnewhorizons.postea.api.ItemStackReplacementManager;
@@ -32,10 +30,7 @@ public class IC2Converter {
     }
 
     private static void replaceIC2Credits() {
-        ItemStackReplacementManager.addSimpleReplacement(
-                IC2_MOD_ID + ":itemCoin",
-                0,
-                ItemList.Credit_Greg_Cupronickel.get(1L),
-                true);
+        ItemStackReplacementManager
+                .addSimpleReplacement(IC2_MOD_ID + ":itemCoin", 0, ItemList.Credit_Greg_Cupronickel.get(1L), true);
     }
 }
