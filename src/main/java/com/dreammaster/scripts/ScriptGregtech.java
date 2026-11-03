@@ -231,70 +231,6 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "clay_ball", 1, 0));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Iron, 1L),
-                "nuggetIron",
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Gold, 1L),
-                "nuggetGold",
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Copper, 1L),
-                "nuggetCopper",
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Tin, 1L),
-                "nuggetTin",
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Silver, 1L),
-                "nuggetSilver",
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Lead, 1L),
-                "nuggetLead",
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Zinc, 1L),
-                "nuggetZinc",
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Nickel, 1L),
-                "nuggetNickel",
-                null,
-                null,
-                "craftingToolMortar",
-                null,
-                null);
-        addShapedRecipe(
                 ItemList.Casing_Motor.get(1L),
                 "itemCasingStainlessSteel",
                 "circuitAdvanced",
@@ -1151,18 +1087,6 @@ public class ScriptGregtech implements IScriptLoader {
                         ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
                 .addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 4L),
-                        ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Glass, 9L),
-                        ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2)
-                .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS)
@@ -1443,9 +1367,9 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stick, Materials.EnderEye, 2L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.EnderEye, 1L)).duration(20)
                 .eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "flint", 1, 0))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Flint, 2L))
-                .duration(1 * SECONDS + 12 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "flint", 2, 0))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L))
+                .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Glass, 1L)).duration(10)
                 .eut(TierEU.RECIPE_LV / 2).addTo(hammerRecipes);

@@ -185,7 +185,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Fether.ID, "glow_flower_seeds", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Blaze, 8L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Blaze, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

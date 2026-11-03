@@ -83,12 +83,7 @@ public class ScriptWitchery implements IScriptLoader {
                 null,
                 getModItem(Witchery.ID, "somniancotton", 1, 0),
                 null);
-        addShapelessRecipe(
-                getModItem(Witchery.ID, "ingredient", 2, 130),
-                getModItem(Witchery.ID, "ingredient", 1, 130),
-                getModItem(Minecraft.ID, "magma_cream", 1, 0),
-                getModItem(Minecraft.ID, "blaze_powder", 1, 0),
-                "dustTinyNetherStar");
+
         addShapelessRecipe(
                 getModItem(Witchery.ID, "ingredient", 2, 130),
                 new ItemStack(Items.nether_star, 1),

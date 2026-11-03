@@ -998,9 +998,9 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Salt, 1L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "butterItem", 1, 0)).duration(1 * MINUTES).eut(2)
+                        getModItem(PamsHarvestCraft.ID, "heavycreamItem", 9, 0),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L))
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "butterItem", 9, 0)).duration(9 * MINUTES).eut(2)
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1370,10 +1370,10 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0),
-                        getModItem(PamsHarvestCraft.ID, "vinegarItem", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Salt, 2L))
-                .itemOutputs(getModItem(PamsHarvestCraft.ID, "saladdressingItem", 1, 0)).duration(20 * SECONDS).eut(2)
+                        getModItem(PamsHarvestCraft.ID, "oliveoilItem", 9, 0),
+                        getModItem(PamsHarvestCraft.ID, "vinegarItem", 9, 0),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 2L))
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "saladdressingItem", 9, 0)).duration(3 * MINUTES).eut(2)
                 .addTo(mixerRecipes);
 
     }
