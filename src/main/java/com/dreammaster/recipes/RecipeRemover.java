@@ -423,6 +423,8 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "sand", 1, wildcard));
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "soul_sand", 1, 0));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "heatsand", 1, 0));
+        GTModHandler.removeFurnaceSmelting(getModItem(Fether.ID, "nether_log", 1, wildcard));
+        GTModHandler.removeFurnaceSmelting(getModItem(ExtraTrees.ID, "log", 1, wildcard));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 0));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 1));
         GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 2));
@@ -1263,6 +1265,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "ultimateLappack", 1, 0));
         removeRecipeByOutputDelayed(getModItem(GraviSuiteNEO.ID, "epicLappack", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "resource", 1, 0));
         removeRecipeByOutputDelayed(ItemList.Teleporter.get(1L));

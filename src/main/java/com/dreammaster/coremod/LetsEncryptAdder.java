@@ -86,6 +86,13 @@ public class LetsEncryptAdder {
             return;
         }
 
+        // Java 9+ reports versions like "21.0.7", which the regex below can't parse
+        if (!System.getProperty("java.specification.version", "1.8").startsWith("1.")) {
+            LOGGER.info("Not running as Java version is at least Java 9.");
+            alreadyAdded = true;
+            return;
+        }
+
         String version = System.getProperty("java.version");
         Pattern p = Pattern.compile("^(\\d+\\.\\d+).*?_(\\d+).*");
         Matcher matcher = p.matcher(version);
@@ -97,7 +104,7 @@ public class LetsEncryptAdder {
         } else {
             majorVersion = "1.7";
             minorVersion = 110;
-            LOGGER.info("Regex to parse Java version failed - applying anyway.");
+            LOGGER.warn("Regex to parse Java version failed - applying anyway.");
         }
 
         switch (majorVersion) {

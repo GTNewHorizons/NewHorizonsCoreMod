@@ -471,7 +471,7 @@ public class ScriptForestry implements IScriptLoader {
                 getModItem(Minecraft.ID, "iron_bars", 1, 0),
                 "plateIron",
                 "dyeBlue",
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0),
+                ItemList.Casing_LV.get(1L),
                 "dyeBlue",
                 "gearGtSmallBronze",
                 "chestWood",
