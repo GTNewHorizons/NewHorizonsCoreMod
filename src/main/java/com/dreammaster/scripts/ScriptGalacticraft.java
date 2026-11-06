@@ -45,6 +45,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
+import com.dreammaster.main.MainRegistry;
 
 import codechicken.nei.PositionedStack;
 import cpw.mods.fml.common.Optional;
@@ -2026,7 +2027,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         input2.put(35, RecipeUtil.getChestItemStack(1, 1));
         RecipeUtil.addBuggyBenchRecipe(new ItemStack(GCItems.buggy, 1, 3), input2);
 
-        // NEI Integration
+        if (MainRegistry.isClient()) {
+            buggyNeiRecipes();
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
+    private static void buggyNeiRecipes() {
         NEIGalacticraftConfig instance = new NEIGalacticraftConfig();
         final int x = BuggyRecipeHandler.tX - BuggyRecipeHandler.x;
         final int y = BuggyRecipeHandler.tY - BuggyRecipeHandler.y;
@@ -2173,7 +2180,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         input2.put(21, RecipeUtil.getChestItemStack(1, 1));
         MarsUtil.adCargoRocketRecipe(new ItemStack(MarsItems.spaceship, 1, 13), input2);
 
-        // NEI integration
+        if (MainRegistry.isClient()) {
+            cargoNeiRecipes();
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
+    private static void cargoNeiRecipes() {
         NEIGalacticraftMarsConfig instance = new NEIGalacticraftMarsConfig();
         final ArrayList<PositionedStack> input3 = new ArrayList<>();
         ArrayList<PositionedStack> input4;
@@ -2246,7 +2259,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         GalacticraftRegistry
                 .addAstroMinerRecipe(new NasaWorkbenchRecipe(new ItemStack(AsteroidsItems.astroMiner, 1, 0), input));
 
-        // NEI integration
+        if (MainRegistry.isClient()) {
+            astroMinerNeiRecipes();
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
+    private static void astroMinerNeiRecipes() {
         NEIGalacticraftAsteroidsConfig instance = new NEIGalacticraftAsteroidsConfig();
         ArrayList<PositionedStack> input3 = new ArrayList<>();
         final int x = AstroMinerRecipeHandler.tX - AstroMinerRecipeHandler.x;
