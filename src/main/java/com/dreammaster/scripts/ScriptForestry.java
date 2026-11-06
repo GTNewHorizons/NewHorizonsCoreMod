@@ -253,6 +253,9 @@ public class ScriptForestry implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 2), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().fluidInputs(Materials.Honey.getFluid(1000)).circuit(9)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sugar, 9)).duration(13 * SECONDS)
+                .eut(30).addTo(centrifugeRecipes);
 
         new ResearchItem(
                 "PROVENFRAME",
