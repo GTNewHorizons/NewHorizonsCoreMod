@@ -27,6 +27,7 @@ import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import tectech.thing.CustomItemList;
 
 public class DTPFRecipes implements Runnable {
 
@@ -481,6 +482,21 @@ public class DTPFRecipes implements Runnable {
                             .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14))
                             .duration(80 * SECONDS).fluidOutputs(Materials.DTR.getFluid(1797693L))
                             .eut(TierEU.RECIPE_UMV).metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
+
+                    // Dark Matter, stellar variant
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.Eternity, 16),
+                                    getModItem(Avaritia.ID, "Resource", 16, 8),
+                                    CustomItemList.astralArrayFabricator.get(0))
+                            .fluidInputs(
+                                    Materials.ExcitedDTSC.getFluid(1797693L),
+                                    Materials.CosmicNeutronium.getMolten(65536 * 144),
+                                    GGMaterial.tairitsu.getMolten(65536 * 144),
+                                    Materials.MagMatter.getMolten(4096 * 144))
+                            .itemOutputs(getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 14))
+                            .duration(80 * SECONDS).fluidOutputs(Materials.DTR.getFluid(3595386L))
+                            .eut(TierEU.RECIPE_UXV).metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
                 }
 
                 {
@@ -1171,6 +1187,17 @@ public class DTPFRecipes implements Runnable {
                     .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
                     .fluidOutputs(Materials.DTR.getFluid(92)).eut((int) TierEU.RECIPE_UIV)
                     .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+
+            // Exotic circuit board
+            GTValues.RA.stdBuilder()
+                    .itemInputs(ItemList.Circuit_Board_Exotic_Membrane.get(64), ItemList.DecoherenceLattice.get(16))
+                    .fluidInputs(
+                            Materials.ExcitedDTEC.getFluid(14514),
+                            Materials.QuarkGluonPlasma.getFluid(2304),
+                            Materials.RawStarMatter.getFluid(50))
+                    .itemOutputs(ItemList.Circuit_Board_Exotic.get(64)).fluidOutputs(Materials.DTR.getFluid(14514))
+                    .duration(3 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, eternal_heat)
+                    .addTo(plasmaForgeRecipes);
 
         }
     }
