@@ -926,14 +926,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             // Magmatter
             addSimpleProcessingRecipe(
                     CircuitComponent.FrameboxMagMatter,
-                    Materials.Grade8PurifiedWater.getFluid(500),
-                    CircuitComponent.ProcessedFrameboxMagMatter,
-                    TierEU.RECIPE_UMV,
-                    20 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
-            addSimpleProcessingRecipe(
-                    CircuitComponent.FrameboxMagMatter,
                     Materials.DimensionallyShiftedSuperfluid.getFluid(100),
                     CircuitComponent.ProcessedFrameboxMagMatter,
                     TierEU.RECIPE_UMV,
