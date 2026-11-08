@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -43,7 +42,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
 
     @Override
     public List<Mods> getDependencies() {
-        return Arrays.asList(Forestry, IndustrialCraft2);
+        return Arrays.asList(Forestry);
     }
 
     private boolean initialized = false;
@@ -122,17 +121,6 @@ public class ScriptZZClientOnly implements IScriptLoader {
                             FluidRegistry.getFluidStack("seedoil", 100),
                             getModItem(Minecraft.ID, "paper", 1, 0),
                             ShapedRecipeCustom.createShapedRecipe(
-                                    getModItem(Forestry.ID, "stamps", 1, 0),
-                                    "abc",
-                                    "def",
-                                    "ghi",
-                                    'e',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0))),
-                    new CarpenterRecipe(
-                            10,
-                            FluidRegistry.getFluidStack("seedoil", 100),
-                            getModItem(Minecraft.ID, "paper", 1, 0),
-                            ShapedRecipeCustom.createShapedRecipe(
                                     getModItem(Forestry.ID, "stamps", 1, 1),
                                     "abc",
                                     "def",
@@ -141,19 +129,6 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'h',
                                     ItemList.Credit_Greg_Cupronickel.get(1L))),
-                    new CarpenterRecipe(
-                            10,
-                            FluidRegistry.getFluidStack("seedoil", 100),
-                            getModItem(Minecraft.ID, "paper", 1, 0),
-                            ShapedRecipeCustom.createShapedRecipe(
-                                    getModItem(Forestry.ID, "stamps", 1, 1),
-                                    "abc",
-                                    "def",
-                                    "ghi",
-                                    'e',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'h',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -178,25 +153,6 @@ public class ScriptZZClientOnly implements IScriptLoader {
                             FluidRegistry.getFluidStack("seedoil", 100),
                             getModItem(Minecraft.ID, "paper", 1, 0),
                             ShapedRecipeCustom.createShapedRecipe(
-                                    getModItem(Forestry.ID, "stamps", 1, 2),
-                                    "abc",
-                                    "def",
-                                    "ghi",
-                                    'a',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'c',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'e',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'g',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'i',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0))),
-                    new CarpenterRecipe(
-                            10,
-                            FluidRegistry.getFluidStack("seedoil", 100),
-                            getModItem(Minecraft.ID, "paper", 1, 0),
-                            ShapedRecipeCustom.createShapedRecipe(
                                     getModItem(Forestry.ID, "stamps", 1, 3),
                                     "abc",
                                     "def",
@@ -207,21 +163,6 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     ItemList.Credit_Greg_Silver.get(1L),
                                     'f',
                                     ItemList.Credit_Greg_Cupronickel.get(1L))),
-                    new CarpenterRecipe(
-                            10,
-                            FluidRegistry.getFluidStack("seedoil", 100),
-                            getModItem(Minecraft.ID, "paper", 1, 0),
-                            ShapedRecipeCustom.createShapedRecipe(
-                                    getModItem(Forestry.ID, "stamps", 1, 3),
-                                    "abc",
-                                    "def",
-                                    "ghi",
-                                    'd',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'e',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'f',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -243,27 +184,6 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'i',
                                     ItemList.Credit_Greg_Cupronickel.get(1L))),
-                    new CarpenterRecipe(
-                            10,
-                            FluidRegistry.getFluidStack("seedoil", 100),
-                            getModItem(Minecraft.ID, "paper", 1, 0),
-                            ShapedRecipeCustom.createShapedRecipe(
-                                    getModItem(Forestry.ID, "stamps", 1, 4),
-                                    "abc",
-                                    "def",
-                                    "ghi",
-                                    'a',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'c',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'd',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'f',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'g',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'i',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -289,31 +209,6 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'i',
                                     ItemList.Credit_Greg_Silver.get(1L))),
-                    new CarpenterRecipe(
-                            10,
-                            FluidRegistry.getFluidStack("seedoil", 100),
-                            getModItem(Minecraft.ID, "paper", 1, 0),
-                            ShapedRecipeCustom.createShapedRecipe(
-                                    getModItem(Forestry.ID, "stamps", 1, 5),
-                                    "abc",
-                                    "def",
-                                    "ghi",
-                                    'a',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'b',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'c',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'd',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'f',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'g',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'h',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'i',
-                                    ItemList.Credit_Silver.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -341,33 +236,6 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'i',
                                     ItemList.Credit_Greg_Silver.get(1L))),
-                    new CarpenterRecipe(
-                            10,
-                            FluidRegistry.getFluidStack("seedoil", 100),
-                            getModItem(Minecraft.ID, "paper", 1, 0),
-                            ShapedRecipeCustom.createShapedRecipe(
-                                    getModItem(Forestry.ID, "stamps", 1, 6),
-                                    "abc",
-                                    "def",
-                                    "ghi",
-                                    'a',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'b',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'c',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'd',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'e',
-                                    ItemList.Credit_Gold.get(1L),
-                                    'f',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'g',
-                                    ItemList.Credit_Silver.get(1L),
-                                    'h',
-                                    getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0),
-                                    'i',
-                                    ItemList.Credit_Silver.get(1L)))
 
             };
         }
