@@ -1973,7 +1973,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 4),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Draconium, 1),
-                        ItemList.Hull_MAX.get(1),
+                        ItemList.Hull_UHV.get(1),
                         ItemList.Circuit_Chip_PPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UEV_UHV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3004,7 +3004,7 @@ public class AssemblerRecipes implements Runnable {
         // Neutronium Stabilization Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Casing_MAX.get(1),
+                        ItemList.Casing_UHV.get(1),
                         ItemList.Field_Generator_ZPM.get(1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.NaquadahAlloy, 24))

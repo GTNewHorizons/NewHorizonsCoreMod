@@ -423,7 +423,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { ItemList.Hull_MAX.get(1), new ItemStack(baseItem, 32, 28),
+                new Object[] { ItemList.Hull_UHV.get(1), new ItemStack(baseItem, 32, 28),
                         NHItemList.IrradiantReinforcedNeutroniumPlate.get(64),
                         new ItemStack(GameRegistry.findItem(GalaxySpace.ID, "item.RocketControlComputer"), 4, 8),
                         new Object[] { OrePrefixes.circuit.get(Materials.UHV), 16 }, ItemList.Sensor_UHV.get(8),
