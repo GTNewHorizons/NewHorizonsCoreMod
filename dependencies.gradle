@@ -16,6 +16,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:twilightforest:2.7.44:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.5.4:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.14.119-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:CosmeticArmorReworked:1.1.0-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.4.20:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
