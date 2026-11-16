@@ -29,7 +29,7 @@ public class BrewingMachineRecipes implements Runnable {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Chaff.get(16))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_BioChaff.get(16))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 750)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(brewingRecipes);

@@ -254,7 +254,7 @@ public class ChemicalBathRecipes implements Runnable {
         }
 
         if (Forestry.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(ItemList.Chaff.get(1))
+            GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_BioChaff.get(1))
                     .itemOutputs(
                             getModItem(Forestry.ID, "mulch", 8, 0),
                             getModItem(Forestry.ID, "mulch", 4, 0),

@@ -5868,12 +5868,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemGrinPowder", 1, 0),
                 new AspectList().add(Aspect.POISON, 3).add(Aspect.CROP, 2));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0),
-                new AspectList().add(Aspect.PLANT, 4));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0),
-                new AspectList().add(Aspect.PLANT, 2));
+        ThaumcraftApi.registerObjectTag(ItemList.IC2_Plantball.get(1), new AspectList().add(Aspect.PLANT, 4));
+        ThaumcraftApi.registerObjectTag(ItemList.IC2_BioChaff.get(1), new AspectList().add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0),
                 new AspectList().add(Aspect.ENERGY, 2).add(Aspect.FIRE, 2).add(Aspect.EARTH, 1).add(Aspect.TOOL, 1));
