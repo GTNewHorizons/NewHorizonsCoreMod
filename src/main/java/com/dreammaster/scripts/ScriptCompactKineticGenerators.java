@@ -11,6 +11,7 @@ import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptCompactKineticGenerators implements IScriptLoader {
@@ -21,8 +22,8 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(CompactKineticGenerators.ID, IndustrialCraft2.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(CompactKineticGenerators, IndustrialCraft2);
     }
 
     @Override

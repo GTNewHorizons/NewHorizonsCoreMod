@@ -23,6 +23,7 @@ import static gregtech.api.util.GTRecipeConstants.SCANNING;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -42,12 +43,14 @@ import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.katzenpapst.amunra.block.ARBlocks;
 import de.katzenpapst.amunra.crafting.RecipeHelper;
+import goodgenerator.loader.Loaders;
 import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OreMixes;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -66,20 +69,25 @@ public class ScriptAmunRa implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                GalacticraftAmunRa.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                GraviSuite.ID,
-                IronChests.ID,
-                RandomThings.ID);
+                AdvancedSolarPanel,
+                GalacticraftAmunRa,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                GoodGenerator,
+                GraviSuite,
+                IronChests,
+                RandomThings);
     }
 
     private static ItemStack[] createOreVariants(Materials material, int amount) {
         List<ItemStack> variants = new ArrayList<>();
+        Collections.addAll(variants, OreMixes.getOreVariants(material, amount));
+
+        // still add the following variants, in case the ores got obtained by meteor / void miner / space miner
+
         addOrePrefixVariants(variants, OrePrefixes.ore, material, amount);
         addOrePrefixVariants(variants, OrePrefixes.oreNetherrack, material, amount);
         addOrePrefixVariants(variants, OrePrefixes.oreEndstone, material, amount);
@@ -137,8 +145,7 @@ public class ScriptAmunRa implements IScriptLoader {
 
         final Item baseItem = GameRegistry.findItem(GalacticraftAmunRa.ID, "item.baseItem");
         final Item basicItem = GameRegistry.findItem(GalacticraftCore.ID, "item.basicItem");
-        final Item advancedRadiationProtectionPlate = GameRegistry
-                .findItem(GoodGenerator.ID, "advancedRadiationProtectionPlate");
+        final Item advancedRadiationProtectionPlate = Loaders.advancedRadiationProtectionPlate;
         final Item simpleItem = GameRegistry.findItem(GraviSuite.ID, "itemSimpleItem");
 
         final Fluid mutatedLivingSolder = FluidRegistry.getFluid("molten.mutatedlivingsolder");
@@ -382,7 +389,7 @@ public class ScriptAmunRa implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(simpleItem, 16, 3),
-                        GameRegistry.findItemStack(GoodGenerator.ID, "radiationProtectionPlate", 4),
+                        new ItemStack(Loaders.radiationProtectionPlate, 4),
                         new Object[] { OrePrefixes.circuit.get(Materials.UV), 1 },
                         new Object[] { OrePrefixes.gearGtSmall.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
@@ -417,7 +424,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { ItemList.Hull_MAX.get(1), new ItemStack(baseItem, 32, 28),
+                new Object[] { ItemList.Hull_UHV.get(1), new ItemStack(baseItem, 32, 28),
                         NHItemList.IrradiantReinforcedNeutroniumPlate.get(64),
                         new ItemStack(GameRegistry.findItem(GalaxySpace.ID, "item.RocketControlComputer"), 4, 8),
                         new Object[] { OrePrefixes.circuit.get(Materials.UHV), 16 }, ItemList.Sensor_UHV.get(8),
@@ -455,7 +462,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 2500000,
                 10,
                 new Object[] { new ItemStack(advancedRadiationProtectionPlate, 64),
-                        GameRegistry.findItemStack(GoodGenerator.ID, "FRF_Coil_2", 8),
+                        new ItemStack(Loaders.FRF_Coil_2, 8),
                         new Object[] { OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 8 },
                         ItemList.Emitter_UHV.get(16), ItemList.Field_Generator_UHV.get(8),
                         new ItemStack(baseItem, 4, 27) },

@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import com.indemnity83.irontank.reference.TankType;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 
 public class ScriptIronTankMinecarts implements IScriptLoader {
@@ -26,8 +27,8 @@ public class ScriptIronTankMinecarts implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Railcraft.ID, IronTanks.ID, IronTanksMinecarts.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Railcraft, IronTanks, IronTanksMinecarts);
     }
 
     @Override

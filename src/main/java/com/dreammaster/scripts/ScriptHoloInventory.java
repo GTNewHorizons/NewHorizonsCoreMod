@@ -6,6 +6,8 @@ import static gregtech.api.enums.Mods.HoloInventory;
 import java.util.Collections;
 import java.util.List;
 
+import gregtech.api.enums.Mods;
+
 public class ScriptHoloInventory implements IScriptLoader {
 
     @Override
@@ -14,8 +16,8 @@ public class ScriptHoloInventory implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Collections.singletonList(HoloInventory.ID);
+    public List<Mods> getDependencies() {
+        return Collections.singletonList(HoloInventory);
     }
 
     @Override

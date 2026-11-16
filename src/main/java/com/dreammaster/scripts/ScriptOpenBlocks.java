@@ -38,6 +38,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
@@ -55,23 +56,23 @@ public class ScriptOpenBlocks implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiblioCraft.ID,
-                BuildCraftCore.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                GalacticraftCore.ID,
-                IndustrialCraft2.ID,
-                OpenBlocks.ID,
-                OpenComputers.ID,
-                ProjectBlue.ID,
-                ProjectRedExpansion.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID);
+                Backpack,
+                BiblioCraft,
+                BuildCraftCore,
+                ExtraUtilities,
+                Forestry,
+                GalacticraftCore,
+                IndustrialCraft2,
+                OpenBlocks,
+                OpenComputers,
+                ProjectBlue,
+                ProjectRedExpansion,
+                Railcraft,
+                RandomThings,
+                Thaumcraft,
+                TinkerConstruct);
     }
 
     @Override

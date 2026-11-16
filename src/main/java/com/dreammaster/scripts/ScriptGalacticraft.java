@@ -18,7 +18,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
@@ -46,6 +45,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
+import com.dreammaster.main.MainRegistry;
 
 import codechicken.nei.PositionedStack;
 import cpw.mods.fml.common.Optional;
@@ -86,21 +86,21 @@ public class ScriptGalacticraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AE2FluidCraft.ID,
-                AppliedEnergistics2.ID,
-                BuildCraftTransport.ID,
-                CarpentersBlocks.ID,
-                GalacticraftCore.ID,
-                GalacticraftMars.ID,
-                GalaxySpace.ID,
-                GraviSuite.ID,
-                IndustrialCraft2.ID,
-                IronChests.ID,
-                PamsHarvestCraft.ID,
-                ProjectRedIllumination.ID,
-                TinkersGregworks.ID);
+                AE2FluidCraft,
+                AppliedEnergistics2,
+                BuildCraftTransport,
+                CarpentersBlocks,
+                GalacticraftCore,
+                GalacticraftMars,
+                GalaxySpace,
+                GraviSuite,
+                IndustrialCraft2,
+                IronChests,
+                PamsHarvestCraft,
+                ProjectRedIllumination,
+                TinkersGregworks);
     }
 
     @Override
@@ -1839,8 +1839,8 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void maceratorRecipes() {
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 2, 0)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.MeteoricIron, 2L))
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
     }
 
     private void dungeonBlockRecipes() {
@@ -2027,7 +2027,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         input2.put(35, RecipeUtil.getChestItemStack(1, 1));
         RecipeUtil.addBuggyBenchRecipe(new ItemStack(GCItems.buggy, 1, 3), input2);
 
-        // NEI Integration
+        if (MainRegistry.isClient()) {
+            buggyNeiRecipes();
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
+    private static void buggyNeiRecipes() {
         NEIGalacticraftConfig instance = new NEIGalacticraftConfig();
         final int x = BuggyRecipeHandler.tX - BuggyRecipeHandler.x;
         final int y = BuggyRecipeHandler.tY - BuggyRecipeHandler.y;
@@ -2174,7 +2180,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         input2.put(21, RecipeUtil.getChestItemStack(1, 1));
         MarsUtil.adCargoRocketRecipe(new ItemStack(MarsItems.spaceship, 1, 13), input2);
 
-        // NEI integration
+        if (MainRegistry.isClient()) {
+            cargoNeiRecipes();
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
+    private static void cargoNeiRecipes() {
         NEIGalacticraftMarsConfig instance = new NEIGalacticraftMarsConfig();
         final ArrayList<PositionedStack> input3 = new ArrayList<>();
         ArrayList<PositionedStack> input4;
@@ -2247,7 +2259,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         GalacticraftRegistry
                 .addAstroMinerRecipe(new NasaWorkbenchRecipe(new ItemStack(AsteroidsItems.astroMiner, 1, 0), input));
 
-        // NEI integration
+        if (MainRegistry.isClient()) {
+            astroMinerNeiRecipes();
+        }
+    }
+
+    @Optional.Method(modid = Mods.ModIDs.GALACTICRAFT_CORE)
+    private static void astroMinerNeiRecipes() {
         NEIGalacticraftAsteroidsConfig instance = new NEIGalacticraftAsteroidsConfig();
         ArrayList<PositionedStack> input3 = new ArrayList<>();
         final int x = AstroMinerRecipeHandler.tX - AstroMinerRecipeHandler.x;

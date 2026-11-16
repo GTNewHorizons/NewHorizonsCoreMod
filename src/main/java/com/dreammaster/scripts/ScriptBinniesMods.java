@@ -11,6 +11,7 @@ import java.util.List;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -22,8 +23,8 @@ public class ScriptBinniesMods implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Avaritia.ID, ExtraBees.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Avaritia, ExtraBees);
     }
 
     @Override

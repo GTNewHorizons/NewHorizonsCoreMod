@@ -42,8 +42,8 @@ public class ScriptNatura implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(Mods.Natura.ID, PamsHarvestCraft.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Mods.Natura, PamsHarvestCraft);
     }
 
     @Override
@@ -2523,134 +2523,134 @@ public class ScriptNatura implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 432)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 0), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 0), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 1), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 1), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 2), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 2), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 2)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 3), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 3), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 3)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 4), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 4), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 4)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 5), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 5), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 5)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 6), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 6), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 6)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 7), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 7), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 7)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 8), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 8), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 8)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 9), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 9), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 9)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 10), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 10), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 10)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 11), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 11), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 11)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "planks", 6, 12), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(getModItem(Natura.ID, "planks", 6, 12), getModItem(Minecraft.ID, "book", 3, 0)).circuit(2)
                 .itemOutputs(getModItem(Natura.ID, "Natura.bookshelf", 1, 12)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 0))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.eucalyptus", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.eucalyptus", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 1))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.sakura", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.sakura", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 2))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.ghostwood", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.ghostwood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 3))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.redwood", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.redwood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 4))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.bloodwood", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.bloodwood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 5))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.hopseed", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.hopseed", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 6))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.maple", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.maple", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 7))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.silverbell", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.silverbell", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 8))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.amaranth", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.amaranth", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 9))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.tiger", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.tiger", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 10))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.willow", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.willow", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 11))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.darkwood", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.darkwood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Natura.ID, "planks", 2, 12))
-                .itemOutputs(getModItem(Natura.ID, "fenceGate.fusewood", 1, 0)).duration(15 * SECONDS)
+                .circuit(1).itemOutputs(getModItem(Natura.ID, "fenceGate.fusewood", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

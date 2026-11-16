@@ -12,6 +12,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -24,8 +25,8 @@ public class ScriptTB implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(IndustrialCraft2.ID, Thaumcraft.ID, ThaumicBoots.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(IndustrialCraft2, Thaumcraft, ThaumicBoots);
     }
 
     @Override

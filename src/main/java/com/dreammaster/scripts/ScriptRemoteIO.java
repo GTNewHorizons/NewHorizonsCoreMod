@@ -26,6 +26,7 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -39,18 +40,18 @@ public class ScriptRemoteIO implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                EnderStorage.ID,
-                ExtraUtilities.ID,
-                IndustrialCraft2.ID,
-                ProjectRedIntegration.ID,
-                RandomThings.ID,
-                RemoteIO.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                WirelessRedstoneCBELogic.ID);
+                AppliedEnergistics2,
+                EnderStorage,
+                ExtraUtilities,
+                IndustrialCraft2,
+                ProjectRedIntegration,
+                RandomThings,
+                RemoteIO,
+                Thaumcraft,
+                TinkerConstruct,
+                WirelessRedstoneCBELogic);
     }
 
     @Override

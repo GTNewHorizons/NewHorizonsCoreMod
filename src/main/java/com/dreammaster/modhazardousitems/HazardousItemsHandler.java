@@ -22,11 +22,14 @@ import com.dreammaster.modhazardousitems.HazardousItems.HazardousItem;
 import com.dreammaster.modhazardousitems.cause.HazardCause;
 import com.google.common.collect.EvictingQueue;
 
+import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
 import gregtech.api.hazards.HazardProtection;
+import lain.mods.cos.CosmeticArmorReworked;
 
 /**
  * Eventhandler to apply configured Damage Values to player, if they have certain items in their inventory
@@ -35,6 +38,8 @@ import gregtech.api.hazards.HazardProtection;
  *
  */
 public class HazardousItemsHandler {
+
+    private static final String COSMETIC_ARMOR_MOD_ID = "cosmeticarmorreworked";
 
     private final Random _mRnd = new Random();
     private HazardousItems _mHazardItemsCollection;
@@ -81,7 +86,7 @@ public class HazardousItemsHandler {
         _mTimingQueue.add(tEnd - tStart);
 
         // Should be called once a second...
-        if (tEnd + 1000 > _mLastAverage && _mRunProfiler) {
+        if (tEnd - _mLastAverage > 1000 && _mRunProfiler) {
             // is 250 a good value? I mean, 250ms for ONE LOOP is still pretty insane...
             if (getAverageTiming() > 250) {
                 // lol wut...
@@ -383,6 +388,16 @@ public class HazardousItemsHandler {
         if (ticks % inventoryCheckPeriod != 0) return;
 
         checkInventoryArray(pPlayer.inventory.mainInventory, pPlayer);
+        if (Loader.isModLoaded(COSMETIC_ARMOR_MOD_ID)) {
+            checkCosmeticArmorInventory(pPlayer);
+        }
+    }
+
+    @Optional.Method(modid = COSMETIC_ARMOR_MOD_ID)
+    private void checkCosmeticArmorInventory(EntityPlayer player) {
+        checkInventoryArray(
+                CosmeticArmorReworked.invMan.getCosArmorInventory(player.getUniqueID()).getInventory(),
+                player);
     }
 
     private void doEffects(HazardCause cause, IDamageEffectContainer effectContainer, EntityPlayer player) {

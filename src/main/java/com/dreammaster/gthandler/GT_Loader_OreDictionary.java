@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import static com.dreammaster.main.MainRegistry.LOGGER;
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -34,14 +35,13 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTLog;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOreDictionary implements Runnable {
 
     @Override
     public void run() {
-        GTLog.out.println("Core-Mod: Register OreDict Entries of Non-GT-Items.");
+        LOGGER.debug("NHCore: Register OreDict Entries of Non-GT-Items.");
 
         // Custom Stuff
         GTOreDictUnificator

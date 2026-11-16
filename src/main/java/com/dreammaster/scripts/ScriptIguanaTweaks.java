@@ -7,9 +7,7 @@ import static gregtech.api.enums.Mods.Natura;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.NHItemList;
-
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.Mods;
 
 public class ScriptIguanaTweaks implements IScriptLoader {
 
@@ -19,8 +17,8 @@ public class ScriptIguanaTweaks implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(IguanaTweaksTinkerConstruct.ID, Natura.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(IguanaTweaksTinkerConstruct, Natura);
     }
 
     @Override
@@ -51,11 +49,5 @@ public class ScriptIguanaTweaks implements IScriptLoader {
                 getModItem(Natura.ID, "waterdrop", 1),
                 getModItem(Natura.ID, "waterdrop", 1),
                 getModItem(Natura.ID, "waterdrop", 1));
-
-        /*
-         * oredict so the recipes modified in iguanatweaks will work those are exceptionnally in iguanatweaks because
-         * the items in the recipes are registered at PostInit=
-         */ GTOreDictUnificator.registerOre("toolHeadSawArdite", NHItemList.SawBladeArdite.get());
-        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", NHItemList.SawBladeManyullyn.get());
     }
 }

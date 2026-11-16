@@ -44,6 +44,7 @@ import fox.spiteful.forbidden.DarkAspects;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
@@ -64,19 +65,19 @@ public class ScriptEMT implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AdvancedSolarPanel.ID,
-                Avaritia.ID,
-                ElectroMagicTools.ID,
-                ForbiddenMagic.ID,
-                GalacticraftCore.ID,
-                IndustrialCraft2.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                ThaumicEnergistics.ID,
-                TinkerConstruct.ID);
+                AdvancedSolarPanel,
+                Avaritia,
+                ElectroMagicTools,
+                ForbiddenMagic,
+                GalacticraftCore,
+                IndustrialCraft2,
+                ProjectRedIntegration,
+                Railcraft,
+                Thaumcraft,
+                ThaumicEnergistics,
+                TinkerConstruct);
     }
 
     @Override
@@ -192,7 +193,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "Mjolnir", 1, 0));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "SuperchargedMjolnir", 1, 26, "{charge:10.0d}"));
-        TCHelper.removeArcaneRecipe(ItemList.IC2_Uranium_235_Small.get(7));
+        TCHelper.removeArcaneRecipe(GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Uranium235, 7L));
         TCHelper.removeCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "coal", 16, 0));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "glowstone", 1, 0));
@@ -200,7 +201,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "gold_ingot", 2, 0));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "diamond", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "ShieldFocus", 1, 0));
-        TCHelper.removeInfusionRecipe(ItemList.IC2_Uranium_238.get(2));
+        TCHelper.removeInfusionRecipe(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 2L));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "ShieldBlock", 6, 0));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "EnergyBallFocus", 1, 0));
@@ -2060,18 +2061,20 @@ public class ScriptEMT implements IScriptLoader {
                 5,
                 -4,
                 3,
-                ItemList.IC2_Uranium_235_Small.get(1)).setParentsHidden("ElectricMagicTools").setParents("RESEARCH")
-                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.TinyUranium"))
-                        .registerResearchItem();
+                GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Uranium235, 1L))
+                        .setParentsHidden("ElectricMagicTools").setParents("RESEARCH").setConcealed().setRound()
+                        .setPages(new ResearchPage("tc.research_page.TinyUranium")).registerResearchItem();
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "TinyUranium",
-                ItemList.IC2_Uranium_235_Small.get(7),
+                GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Uranium235, 7L),
                 new AspectList().add(Aspect.AIR, 7).add(Aspect.FIRE, 7).add(Aspect.WATER, 7).add(Aspect.EARTH, 7)
                         .add(Aspect.ORDER, 7).add(Aspect.ENTROPY, 7),
-                ItemList.IC2_Uranium_238.get(1));
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L));
         TCHelper.addResearchPage(
                 "TinyUranium",
-                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.IC2_Uranium_235_Small.get(1))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Uranium235, 1L))));
         TCHelper.orphanResearch("UU-Matter Infusion");
         TCHelper.removeResearch("UU-Matter Infusion");
         new ResearchItem(
@@ -2175,7 +2178,7 @@ public class ScriptEMT implements IScriptLoader {
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
-                ItemList.IC2_Uranium_238.get(1),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15));
         TCHelper.addResearchPage(
@@ -2269,7 +2272,7 @@ public class ScriptEMT implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Minecraft.ID, "diamond", 1, 0))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                ItemList.IC2_Uranium_238.get(2),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 2L),
                 15,
                 new AspectList().add(Aspect.AIR, 24).add(Aspect.WATER, 24).add(Aspect.EARTH, 48).add(Aspect.FIRE, 24)
                         .add(Aspect.ENTROPY, 24).add(Aspect.ORDER, 48),
@@ -2284,14 +2287,16 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15));
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
-                new ResearchPage(TCHelper.findInfusionRecipe(ItemList.IC2_Uranium_238.get(1))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(
+                                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 getModItem(IndustrialCraft2.ID, "itemOreIridium", 2, 0),
                 18,
                 new AspectList().add(Aspect.AIR, 32).add(Aspect.WATER, 32).add(Aspect.EARTH, 64).add(Aspect.FIRE, 32)
                         .add(Aspect.ENTROPY, 32).add(Aspect.ORDER, 64),
-                ItemList.IC2_Uranium_238.get(1),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),

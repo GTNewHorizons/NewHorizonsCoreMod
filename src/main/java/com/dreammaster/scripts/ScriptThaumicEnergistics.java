@@ -27,6 +27,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.SubstituteFluidStack;
@@ -44,17 +45,17 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AppliedEnergistics2.ID,
-                EternalSingularity.ID,
-                Gadomancy.ID,
-                IndustrialCraft2.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicEnergistics.ID,
-                ThaumicInsurgence.ID,
-                TinkerConstruct.ID);
+                AppliedEnergistics2,
+                EternalSingularity,
+                Gadomancy,
+                IndustrialCraft2,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicEnergistics,
+                ThaumicInsurgence,
+                TinkerConstruct);
     }
 
     @Override

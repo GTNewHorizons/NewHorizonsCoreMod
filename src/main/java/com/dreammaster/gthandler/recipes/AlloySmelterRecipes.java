@@ -6,8 +6,8 @@ import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
-import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -232,31 +232,31 @@ public class AlloySmelterRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1)).duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LuV).addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1))
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LuV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 3))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4))
-                .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(alloySmelterRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_ZPM).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().requireMods(AdvancedSolarPanel)
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 1L))
-                .itemOutputs(NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1)).duration(1 * MINUTES + 40 * SECONDS)
+                .itemOutputs(NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_UV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EnrichedNaquadriaSunnariumAlloy.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Neutronium, 1L))
-                .itemOutputs(NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.get(1)).duration(2 * MINUTES)
+                .itemOutputs(NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.get(1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_UHV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 18))
-                .itemOutputs(NHItemList.EnrichedXSunnariumAlloy.get(1)).duration(2 * MINUTES + 20 * SECONDS)
+                .itemOutputs(NHItemList.EnrichedXSunnariumAlloy.get(1)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_UEV).addTo(alloySmelterRecipes);
     }
 

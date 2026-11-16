@@ -13,6 +13,7 @@ import java.util.List;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.forbidden.DarkAspects;
+import gregtech.api.enums.Mods;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -27,9 +28,8 @@ public class ScriptRunicTablet implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays
-                .asList(Automagy.ID, DraconicEvolution.ID, ForbiddenMagic.ID, Thaumcraft.ID, ThaumicExploration.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(Automagy, DraconicEvolution, ForbiddenMagic, Thaumcraft, ThaumicExploration);
     }
 
     @Override

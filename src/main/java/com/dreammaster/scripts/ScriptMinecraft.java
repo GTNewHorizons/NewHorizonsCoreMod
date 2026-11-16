@@ -54,6 +54,7 @@ import com.dreammaster.item.NHItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
@@ -69,36 +70,36 @@ public class ScriptMinecraft implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                Backpack.ID,
-                BiomesOPlenty.ID,
-                BloodArsenal.ID,
-                Botania.ID,
-                CarpentersBlocks.ID,
-                EnderStorage.ID,
-                EtFuturumRequiem.ID,
-                ExtraTrees.ID,
-                ExtraUtilities.ID,
-                Fether.ID,
-                ForbiddenMagic.ID,
-                Forestry.ID,
-                GalacticraftAmunRa.ID,
-                GalaxySpace.ID,
-                HardcoreEnderExpansion.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                IndustrialCraft2.ID,
-                MagicBees.ID,
-                Natura.ID,
-                PamsHarvestCraft.ID,
-                Railcraft.ID,
-                StevesCarts2.ID,
-                TaintedMagic.ID,
-                Thaumcraft.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID,
-                TwilightForest.ID,
-                Witchery.ID);
+                Backpack,
+                BiomesOPlenty,
+                BloodArsenal,
+                Botania,
+                CarpentersBlocks,
+                EnderStorage,
+                EtFuturumRequiem,
+                ExtraTrees,
+                ExtraUtilities,
+                Fether,
+                ForbiddenMagic,
+                Forestry,
+                GalacticraftAmunRa,
+                GalaxySpace,
+                HardcoreEnderExpansion,
+                IguanaTweaksTinkerConstruct,
+                IndustrialCraft2,
+                MagicBees,
+                Natura,
+                PamsHarvestCraft,
+                Railcraft,
+                StevesCarts2,
+                TaintedMagic,
+                Thaumcraft,
+                ThaumicBases,
+                TinkerConstruct,
+                TwilightForest,
+                Witchery);
     }
 
     @Override
@@ -111,8 +112,8 @@ public class ScriptMinecraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 2))
-                .itemOutputs(getModItem(Minecraft.ID, "iron_pickaxe", 1, 0)).duration(4 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .circuit(19).itemOutputs(getModItem(Minecraft.ID, "iron_pickaxe", 1, 0)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Diamond Pickaxe
         GTValues.RA.stdBuilder()
@@ -120,7 +121,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         new OreDictItemStack("stickWood", 2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 2))
-                .itemOutputs(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0)).duration(4 * SECONDS)
+                .circuit(19).itemOutputs(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTModHandler.addSmeltingRecipe(NHItemList.UnfiredClayBrick.get(), getModItem(Minecraft.ID, "brick", 1, 0));
@@ -222,15 +223,11 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 6, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
-                        getModItem(Minecraft.ID, "trapdoor", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 0), getModItem(Minecraft.ID, "trapdoor", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0)).fluidInputs(Materials.Iron.getMolten(16))
                 .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
-                        getModItem(Minecraft.ID, "trapdoor", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 0), getModItem(Minecraft.ID, "trapdoor", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0)).fluidInputs(Materials.Copper.getMolten(16))
                 .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -250,7 +247,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0)).fluidInputs(Materials.Steel.getMolten(16))
                 .duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "planks", 6, wildcard), getModItem(Minecraft.ID, "book", 3, 0))
+                .itemInputs(new OreDictItemStack("plankWood", 6), getModItem(Minecraft.ID, "book", 3, 0)).circuit(1)
                 .itemOutputs(getModItem(Minecraft.ID, "bookshelf", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 1), getModItem(Minecraft.ID, "flint", 2, 0))
@@ -260,8 +257,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Minecraft.ID, "planks", 2, 0))
-                .itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0)).duration(15 * SECONDS).eut(TierEU.RECIPE_ULV)
-                .addTo(assemblerRecipes);
+                .circuit(1).itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new OreDictItemStack("logWood", 2), new OreDictItemStack("plankWood", 2))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -2878,48 +2875,26 @@ public class ScriptMinecraft implements IScriptLoader {
                 "ingotBrickNether");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 "craftingToolScrewdriver",
+                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringAnyIron",
                 "screwAnyIron",
+                "ringAnyIron",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolSaw");
-        addShapedRecipe(
-                getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
-                "craftingToolScrewdriver",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringCopper",
-                "screwCopper",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolSaw");
-        addShapedRecipe(
-                getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringAnyIron",
-                "screwAnyIron",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolScrewdriver");
+                getModItem(Minecraft.ID, "planks", 1, 0));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
+                "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
+                getModItem(Minecraft.ID, "planks", 1, 0),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Minecraft.ID, "planks", 1, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringCopper",
-                "screwCopper",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolScrewdriver");
+                getModItem(Minecraft.ID, "planks", 1, 0));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0),
                 "plateAnyIron",

@@ -45,6 +45,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -59,26 +60,26 @@ public class ScriptDraconicEvolution implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                AvaritiaAddons.ID,
-                BloodArsenal.ID,
-                BloodMagic.ID,
-                Botania.ID,
-                BuildCraftTransport.ID,
-                DraconicEvolution.ID,
-                EnderIO.ID,
-                EtFuturumRequiem.ID,
-                ExtraUtilities.ID,
-                Forestry.ID,
-                IndustrialCraft2.ID,
-                OpenBlocks.ID,
-                OpenComputers.ID,
-                ProjectRedIntegration.ID,
-                Railcraft.ID,
-                Thaumcraft.ID,
-                TinkerConstruct.ID,
-                TinkersGregworks.ID);
+                AvaritiaAddons,
+                BloodArsenal,
+                BloodMagic,
+                Botania,
+                BuildCraftTransport,
+                DraconicEvolution,
+                EnderIO,
+                EtFuturumRequiem,
+                ExtraUtilities,
+                Forestry,
+                IndustrialCraft2,
+                OpenBlocks,
+                OpenComputers,
+                ProjectRedIntegration,
+                Railcraft,
+                Thaumcraft,
+                TinkerConstruct,
+                TinkersGregworks);
     }
 
     @Override

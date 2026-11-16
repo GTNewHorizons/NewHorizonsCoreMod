@@ -22,6 +22,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.chemicalDehydratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
@@ -32,7 +33,6 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.DISSOLUTION_TANK_RATIO;
-import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 import static gtnhlanth.api.recipe.LanthanidesRecipeMaps.dissolutionTankRecipes;
 
 import java.util.Arrays;
@@ -50,6 +50,7 @@ import biomesoplenty.api.content.BOPCBlocks;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
@@ -65,22 +66,22 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
+    public List<Mods> getDependencies() {
         return Arrays.asList(
-                BiomesOPlenty.ID,
-                Botania.ID,
-                Botany.ID,
-                Chisel.ID,
-                Forestry.ID,
-                HardcoreEnderExpansion.ID,
-                IguanaTweaksTinkerConstruct.ID,
-                PamsHarvestCraft.ID,
-                Railcraft.ID,
-                RandomThings.ID,
-                ThaumicBases.ID,
-                TinkerConstruct.ID,
-                Witchery.ID,
-                WitchingGadgets.ID);
+                BiomesOPlenty,
+                Botania,
+                Botany,
+                Chisel,
+                Forestry,
+                HardcoreEnderExpansion,
+                IguanaTweaksTinkerConstruct,
+                PamsHarvestCraft,
+                Railcraft,
+                RandomThings,
+                ThaumicBases,
+                TinkerConstruct,
+                Witchery,
+                WitchingGadgets);
     }
 
     @Override
@@ -642,7 +643,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                     .itemInputs(
                             getModItem(Minecraft.ID, "stick", 2, 0),
                             getModItem(BiomesOPlenty.ID, "planks", 2, woodType.ordinal()))
-                    .itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0))
+                    .circuit(1).itemOutputs(getModItem(BiomesOPlenty.ID, woodType.name() + "FenceGate", 1, 0))
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         }
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "gemOre", 1, 0))

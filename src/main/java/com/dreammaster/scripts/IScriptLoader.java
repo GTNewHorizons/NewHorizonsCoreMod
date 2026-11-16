@@ -13,8 +13,8 @@ import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.recipes.ShapedUniversalRecipe;
 import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.Mods;
 import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
 import gregtech.common.items.MetaGeneratedItem01;
@@ -39,7 +39,7 @@ public interface IScriptLoader {
      *
      * @return a list of string containing the dependencies.
      */
-    List<String> getDependencies();
+    List<Mods> getDependencies();
 
     /**
      * Method to override to implement the recipes in the script
@@ -123,8 +123,8 @@ public interface IScriptLoader {
      * @return a boolean representing if the script is loadable.
      */
     default boolean isScriptLoadable() {
-        for (String dep : getDependencies()) {
-            if (!Loader.isModLoaded(dep)) {
+        for (Mods dep : getDependencies()) {
+            if (!dep.isModLoaded()) {
                 return false;
             }
         }

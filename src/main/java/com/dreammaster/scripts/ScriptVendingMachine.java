@@ -16,6 +16,7 @@ import com.cubefury.vendingmachine.items.VMItems;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
@@ -28,8 +29,8 @@ public class ScriptVendingMachine implements IScriptLoader {
     }
 
     @Override
-    public List<String> getDependencies() {
-        return Arrays.asList(AppliedEnergistics2.ID, VendingMachine.ID);
+    public List<Mods> getDependencies() {
+        return Arrays.asList(AppliedEnergistics2, VendingMachine);
     }
 
     @Override

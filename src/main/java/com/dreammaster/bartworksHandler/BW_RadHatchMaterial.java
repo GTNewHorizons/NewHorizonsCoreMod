@@ -15,7 +15,7 @@ public class BW_RadHatchMaterial {
     public static void runRadHatchAdder() {
 
         for (Material material : Material.mMaterialMap) {
-            if (material == null || material.vRadiationLevel <= 0) {
+            if (material == null || material.radiationLevel <= 0) {
                 continue;
             }
 
