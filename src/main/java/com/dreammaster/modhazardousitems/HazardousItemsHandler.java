@@ -22,12 +22,12 @@ import com.dreammaster.modhazardousitems.HazardousItems.HazardousItem;
 import com.dreammaster.modhazardousitems.cause.HazardCause;
 import com.google.common.collect.EvictingQueue;
 
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
+import gregtech.api.enums.Mods;
 import gregtech.api.hazards.HazardProtection;
 import lain.mods.cos.CosmeticArmorReworked;
 
@@ -38,8 +38,6 @@ import lain.mods.cos.CosmeticArmorReworked;
  *
  */
 public class HazardousItemsHandler {
-
-    private static final String COSMETIC_ARMOR_MOD_ID = "cosmeticarmorreworked";
 
     private final Random _mRnd = new Random();
     private HazardousItems _mHazardItemsCollection;
@@ -388,12 +386,12 @@ public class HazardousItemsHandler {
         if (ticks % inventoryCheckPeriod != 0) return;
 
         checkInventoryArray(pPlayer.inventory.mainInventory, pPlayer);
-        if (Loader.isModLoaded(COSMETIC_ARMOR_MOD_ID)) {
+        if (Mods.CosmeticArmorReworked.isModLoaded()) {
             checkCosmeticArmorInventory(pPlayer);
         }
     }
 
-    @Optional.Method(modid = COSMETIC_ARMOR_MOD_ID)
+    @Optional.Method(modid = Mods.ModIDs.COSMETIC_ARMOR_REWORKED)
     private void checkCosmeticArmorInventory(EntityPlayer player) {
         checkInventoryArray(
                 CosmeticArmorReworked.invMan.getCosArmorInventory(player.getUniqueID()).getInventory(),
