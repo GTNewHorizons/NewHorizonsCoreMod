@@ -38,16 +38,16 @@ public class GT_CustomLoader {
                 Materials.Bedrockium, OrePrefixes.wireGt02.get(Materials.Bedrockium), null, null, "blockGlassUHV",
                 Materials.Neutronium, Materials.Neutronium),
 
-        UEV(OrePrefixes.circuit.get(Materials.UEV), OrePrefixes.wireGt04.get(Materials.Bedrockium), Materials.Draconium,
-                OrePrefixes.wireGt02.get(Materials.Draconium), null, null, "blockGlassUEV", Materials.Bedrockium,
+        UEV(OrePrefixes.circuit.get(Materials.UEV), OrePrefixes.wireGt04.get(Materials.Infinity), Materials.Draconium,
+                OrePrefixes.wireGt02.get(Materials.Draconium), null, null, "blockGlassUEV", Materials.Infinity,
                 Materials.Infinity),
 
         UIV(OrePrefixes.circuit.get(Materials.UIV), OrePrefixes.wireGt08.get(Materials.Bedrockium),
                 Materials.NetherStar, OrePrefixes.wireGt02.get(Materials.NetherStar), null, null, "blockGlassUIV",
-                Materials.CosmicNeutronium, Materials.TranscendentMetal),
+                Materials.TranscendentMetal, Materials.TranscendentMetal),
 
         UMV(OrePrefixes.circuit.get(Materials.UMV), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
-                OrePrefixes.wireGt02.get(Materials.Quantium), null, null, "blockGlassUMV", Materials.TranscendentMetal,
+                OrePrefixes.wireGt02.get(Materials.Quantium), null, null, "blockGlassUMV", Materials.SpaceTime,
                 Materials.SpaceTime);
 
         private Object _mCircuit;

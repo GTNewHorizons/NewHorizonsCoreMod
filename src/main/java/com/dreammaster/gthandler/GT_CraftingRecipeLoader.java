@@ -7,6 +7,7 @@ import static gregtech.api.enums.Materials.Bronze;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
@@ -24,6 +25,7 @@ import static gregtech.api.enums.Mods.OpenPrinters;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.pipeMedium;
 import static gregtech.api.enums.OrePrefixes.screw;
@@ -137,14 +139,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UMV.get(1L),
                 ItemList.Casing_UMV.get(1L),
-                OrePrefixes.wireGt12.get(Materials.Quantium),
-                OrePrefixes.wireGt12.get(Materials.Quantium));
+                OrePrefixes.cableGt12.get(Materials.Quantium),
+                OrePrefixes.cableGt12.get(Materials.Quantium));
 
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UXV.get(1L),
                 ItemList.Casing_UXV.get(1L),
-                OrePrefixes.wireGt16.get(Materials.BlackPlutonium),
-                OrePrefixes.wireGt16.get(Materials.BlackPlutonium));
+                OrePrefixes.cableGt16.get(Materials.BlackPlutonium),
+                OrePrefixes.cableGt16.get(Materials.BlackPlutonium));
 
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
@@ -346,8 +348,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_6.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Chrome), 'I',
-                        OrePrefixes.pipeLarge.get(Materials.TungstenSteel) });
+                new Object[] { "PPP", "PIP", "PPP", 'P', WerkstoffLoader.RhodiumPlatedPalladium.get(OrePrefixes.plate),
+                        'I', OrePrefixes.pipeLarge.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_7.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
@@ -366,7 +368,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Tank_10.get(1L),
                 GTModHandler.RecipeBits.BITS | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium), 'I',
+                new Object[] { "PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Infinity), 'I',
                         OrePrefixes.pipeLarge.get(Materials.MysteriousCrystal) });
 
         GTModHandler.addCraftingRecipe(
@@ -717,14 +719,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         OrePrefixes.plate.get(Materials.StainlessSteel), 'E', OrePrefixes.circuit.get(Materials.EV),
                         'B', ItemList.Electric_Piston_HV });
 
-        // Fluid Shaper to Mass Solidifier
-        // REMOVE AFTER 2.9
-        GTModHandler.addShapelessCraftingRecipe(
-                ItemList.Machine_Mass_Solidifier.get(1),
-                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED
-                        | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { ItemList.Machine_Fluid_Shaper.get(1) });
-
         // Mass Solidifier
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Mass_Solidifier.get(1),
@@ -978,7 +972,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 Materials.NetherStar, // UIV
                 Materials.Quantium, // UMV
                 Materials.BlackPlutonium, // UXV
-                Materials.DraconiumAwakened, // MAX
         };
 
         final long BITSD = GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE;
@@ -992,28 +985,25 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 switch (i) {
                     case 9: // UHV
                         hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 1L);
-                        machinehull = ItemList.Hull_MAX.get(1L);
+                        machinehull = ItemList.Hull_UHV.get(1L);
                         break;
                     case 10: // UEV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 1L);
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L);
                         machinehull = ItemList.Hull_UEV.get(1L);
                         break;
                     case 11: // UIV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 1L);
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 1L);
                         machinehull = ItemList.Hull_UIV.get(1L);
                         break;
                     case 12: // UMV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L);
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 1L);
                         machinehull = ItemList.Hull_UMV.get(1L);
                         break;
-                    case 13: // UXV
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 1L);
+                    default: // UXV
+                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.MHDCSM, 1L);
                         machinehull = ItemList.Hull_UXV.get(1L);
                         break;
-                    default: // MAX
-                        hull = GTOreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 1L);
-                        machinehull = ItemList.Hull_MAXV.get(1L);
-                        break;
+
                 }
 
                 GTModHandler.addCraftingRecipe(
@@ -1026,38 +1016,33 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         ItemRegistry.diode12A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt12 : OrePrefixes.wireGt12, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt12, cable, 1L), 'P', hull, 'C',
+                                machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode8A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt08 : OrePrefixes.wireGt08, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt08, cable, 1L), 'P', hull, 'C',
+                                machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode4A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt04 : OrePrefixes.wireGt04, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt04, cable, 1L), 'P', hull, 'C',
+                                machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode2A[i],
                         BITSD,
                         new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt02 : OrePrefixes.wireGt02, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt02, cable, 1L), 'P', hull, 'C',
+                                machinehull });
                 GTModHandler.addCraftingRecipe(
                         ItemRegistry.diode16A[i],
                         BITSD,
                         new Object[] { "WHW", "DCD", "PDP", 'H', OrePrefixes.componentCircuit.get(Materials.Inductor),
                                 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
-                                GTOreDictUnificator
-                                        .get(i < 13 ? OrePrefixes.cableGt16 : OrePrefixes.wireGt16, cable, 1L),
-                                'P', hull, 'C', machinehull });
+                                GTOreDictUnificator.get(OrePrefixes.cableGt16, cable, 1L), 'P', hull, 'C',
+                                machinehull });
 
             } catch (ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
@@ -2413,45 +2398,374 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         }
 
         if (EtFuturumRequiem.isModLoaded()) {
-            // Cherry
-            GameRegistry.addShapelessRecipe(
-                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
-                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 0));
-
             // Stripped Oak
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 0),
                     getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 0));
+
+            // Oak Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 0),
+                    getModItem(EtFuturumRequiem.ID, "bark", 1, 0));
+
+            // Stripped Oak Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 0),
+                    getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, 0));
 
             // Stripped Spruce
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 1),
                     getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 1));
 
+            // Spruce Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 1),
+                    getModItem(EtFuturumRequiem.ID, "bark", 1, 1));
+
+            // Stripped Spruce Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 1),
+                    getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, 1));
+
             // Stripped Birch
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 2),
                     getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 2));
+
+            // Birch Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 2),
+                    getModItem(EtFuturumRequiem.ID, "bark", 1, 2));
+
+            // Stripped Birch Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 2),
+                    getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, 2));
 
             // Stripped Jungle
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 3),
                     getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 3));
 
+            // Jungle Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "bark", 1, 3));
+
+            // Stripped Jungle Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "wood_stripped", 1, 3));
+
             // Stripped Acacia
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 4),
                     getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 0));
+
+            // Acacia Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 4),
+                    getModItem(EtFuturumRequiem.ID, "bark2", 1, 0));
+
+            // Stripped Acacia Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 4),
+                    getModItem(EtFuturumRequiem.ID, "wood2_stripped", 1, 0));
 
             // Stripped Dark Oak
             GameRegistry.addShapelessRecipe(
                     new ItemStack(Blocks.planks, 4, 5),
                     getModItem(EtFuturumRequiem.ID, "log2_stripped", 1, 1));
 
+            // Dark Oak Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 5),
+                    getModItem(EtFuturumRequiem.ID, "bark2", 1, 1));
+
+            // Stripped Dark Oak Wood
+            GameRegistry.addShapelessRecipe(
+                    new ItemStack(Blocks.planks, 4, 5),
+                    getModItem(EtFuturumRequiem.ID, "wood2_stripped", 1, 1));
+
+            // Cherry
+            GameRegistry.addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 0));
+
             // Stripped Cherry
             GameRegistry.addShapelessRecipe(
                     getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
                     getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2));
+
+            // Cherry Wood
+            GameRegistry.addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 1));
+
+            // Stripped Cherry Wood
+            GameRegistry.addShapelessRecipe(
+                    getModItem(EtFuturumRequiem.ID, "wood_planks", 4, 3),
+                    getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 3));
+
+            if (BiomesOPlenty.isModLoaded()) {
+                // Stripped Sacred Oak
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped", 1, 0));
+
+                // Sacred Oak Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood", 1, 0));
+
+                // Stripped Sacred Oak Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped", 1, 0));
+
+                // Stripped Cherry
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped", 1, 1));
+
+                // Cherry Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood", 1, 1));
+
+                // Stripped Cherry Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped", 1, 1));
+
+                // Stripped Dark
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped", 1, 2));
+
+                // Dark Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood", 1, 2));
+
+                // Stripped Dark Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped", 1, 2));
+
+                // Stripped Fir
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 3),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped", 1, 3));
+
+                // Fir Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 3),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood", 1, 3));
+
+                // Stripped Fir Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 3),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped", 1, 3));
+
+                // Stripped Ethereal
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 4),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 0));
+
+                // Ethereal Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 4),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood2", 1, 0));
+
+                // Stripped Ethereal Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 4),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped2", 1, 0));
+
+                // Stripped Magic
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 5),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 1));
+
+                // Magic Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 5),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood2", 1, 1));
+
+                // Stripped Magic Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 5),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped2", 1, 1));
+
+                // Stripped Mangrove
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 6),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 2));
+
+                // Mangrove Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 6),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood2", 1, 2));
+
+                // Stripped Mangrove Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 6),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped2", 1, 2));
+
+                // Stripped Palm
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 7),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped2", 1, 3));
+
+                // Palm Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 7),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood2", 1, 3));
+
+                // Stripped Palm Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 7),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped2", 1, 3));
+
+                // Stripped Redwood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 8),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped3", 1, 0));
+
+                // Redwood Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 8),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood3", 1, 0));
+
+                // Stripped Redwood Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 8),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped3", 1, 0));
+
+                // Stripped Willow
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 9),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped3", 1, 1));
+
+                // Willow Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 9),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood3", 1, 1));
+
+                // Stripped Willow Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 9),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped3", 1, 1));
+
+                // Stripped Pine
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 11),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped4", 1, 0));
+
+                // Pine Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 11),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood4", 1, 0));
+
+                // Stripped Pine Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 11),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped4", 1, 0));
+
+                // Stripped Hellbark
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 12),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped4", 1, 1));
+
+                // Hellbark Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 12),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood4", 1, 1));
+
+                // Stripped Hellbark Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 12),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped4", 1, 1));
+
+                // Stripped Jacaranda
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 13),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped4", 1, 2));
+
+                // Jacaranda Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 13),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood4", 1, 2));
+
+                // Stripped Jacaranda Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 13),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped4", 1, 2));
+
+                // Stripped Mahogany
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 14),
+                        getModItem(EtFuturumRequiem.ID, "bop_log_stripped4", 1, 3));
+
+                // Mahogany Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 14),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood4", 1, 3));
+
+                // Stripped Mahogany Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(BiomesOPlenty.ID, "planks", 4, 14),
+                        getModItem(EtFuturumRequiem.ID, "bop_wood_stripped4", 1, 3));
+            }
+
+            if (Witchery.isModLoaded()) {
+                // Stripped Rowan
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "witchery_log_stripped", 1, 0));
+
+                // Rowan Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood", 1, 0));
+
+                // Stripped Rowan Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 0),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood_stripped", 1, 0));
+
+                // Stripped Alder
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "witchery_log_stripped", 1, 1));
+
+                // Alder Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood", 1, 1));
+
+                // Stripped Alder Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 1),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood_stripped", 1, 1));
+
+                // Stripped Hawthorn
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "witchery_log_stripped", 1, 2));
+
+                // Hawthorn Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood", 1, 2));
+
+                // Stripped Hawthorn Wood
+                GameRegistry.addShapelessRecipe(
+                        getModItem(Witchery.ID, "witchwood", 4, 2),
+                        getModItem(EtFuturumRequiem.ID, "witchery_wood_stripped", 1, 2));
+            }
         }
 
         GameRegistry.addRecipe(

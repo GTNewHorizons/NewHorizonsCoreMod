@@ -1094,7 +1094,7 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Iron, 6L),
-                        ItemList.IC2_Plutonium.get(3))
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Plutonium, 3L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -1474,6 +1474,9 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "oatsItem", 1, 0))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "riceItem", 1, 0))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2))

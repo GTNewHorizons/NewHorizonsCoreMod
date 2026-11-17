@@ -184,22 +184,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 "craftingToolHardHammer",
                 null);
         addShapedRecipe(
-                NHItemList.SawBladeArdite.get(),
-                "plateArdite",
-                "plateArdite",
-                null,
-                "craftingToolFile",
-                "craftingToolHardHammer",
-                null);
-        addShapedRecipe(
-                NHItemList.SawBladeManyullyn.get(),
-                "plateManyullyn",
-                "plateManyullyn",
-                null,
-                "craftingToolFile",
-                "craftingToolHardHammer",
-                null);
-        addShapedRecipe(
                 NHItemList.SawBladeRuby.get(),
                 "plateRuby",
                 "plateRuby",
@@ -1070,14 +1054,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.IridiumAlloyItemCasing.get(2)).duration(20 * SECONDS).eut(384)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 2, 4), ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeArdite.get()).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(TinkerConstruct.ID, "materials", 2, 5), ItemList.Shape_Extruder_Saw.get(0L))
-                .itemOutputs(NHItemList.SawBladeManyullyn.get()).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 5), ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(extruderRecipes);
@@ -1263,20 +1239,20 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
-                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(4 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
-                .fluidInputs(Materials.Lubricant.getFluid(5)).duration(11 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
                 .fluidInputs(Materials.Water.getFluid(20)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
                 .fluidInputs(GTModHandler.getDistilledWater(15)).duration(22 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
+                .fluidInputs(Materials.Lubricant.getFluid(5)).duration(11 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2))
+                .fluidInputs(Materials.DimensionallyShiftedSuperfluid.getFluid(1)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian))
                 .fluidOutputs(Materials.Obsidian.getMolten(288)).duration(10 * SECONDS + 16 * TICKS).eut(35)
                 .addTo(fluidExtractionRecipes);

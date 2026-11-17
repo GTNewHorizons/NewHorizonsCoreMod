@@ -618,11 +618,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 4),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5));
-        GTModHandler.addCraftingRecipe(
-                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10),
-                GTModHandler.RecipeBits.BUFFERED,
-                new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
-                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F', "fenceWood" });
         Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10),
                 "stickWood",
@@ -648,19 +643,26 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F',
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}") });
+                        getModItem(ExtraTrees.ID, "fence", 1, 1) });
         GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 12),
                 GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F',
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}") });
+                        getModItem(ExtraTrees.ID, "fence", 1, 2) });
         GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13),
                 GTModHandler.RecipeBits.BUFFERED,
                 new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F',
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}") });
+                        getModItem(ExtraTrees.ID, "fence", 1, 3) });
+        // Keep the generic fence recipe after the wood-specific recipes.
+        GTModHandler.addCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10),
+                GTModHandler.RecipeBits.BUFFERED,
+                new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0), 'F', "fenceWood" });
+
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 3),
                 "craftingToolSaw",
@@ -1605,13 +1607,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15));
         TConstructHelper.removeBasinRecipe(getModItem(IndustrialCraft2.ID, "blockMetal", 1, 5));
         TConstructHelper.removeMeltingRecipe(getModItem(Thaumcraft.ID, "ItemNugget", 1, 19));
-        TConstructHelper
-                .getMeltingAdder(
-                        GameRegistry.findBlock("gregtech", "gt.blockmachines"),
-                        1585,
-                        500,
-                        "aluminum.molten",
-                        144)
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("Aluminum"), 150, 144)
                 .add(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1))
@@ -1622,13 +1618,13 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .withAmount(36).add(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Aluminium, 1L));
         Smeltery.addMelting(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
-                GameRegistry.findBlock("minecraft", "sand"),
+                Blocks.sand,
                 0,
                 800,
                 FluidRegistry.getFluidStack("glass.molten", 1000));
         Smeltery.addMelting(
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Electrum, 1L),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                GameRegistry.findBlock(TinkerConstruct.ID, "MetalBlock"),
                 7,
                 400,
                 FluidRegistry.getFluidStack("electrum.molten", 144));
@@ -1833,7 +1829,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .add(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8));
         Smeltery.addMelting(
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 1L),
-                GameRegistry.findBlock("TConstruct", "GravelOre"),
+                GameRegistry.findBlock(TinkerConstruct.ID, "GravelOre"),
                 5,
                 650,
                 FluidRegistry.getFluidStack("cobalt.molten", 144));
@@ -1845,7 +1841,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 200);
         Smeltery.addMelting(
                 getModItem(TinkerConstruct.ID, "materials", 1, 12),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                GameRegistry.findBlock(TinkerConstruct.ID, "MetalBlock"),
                 6,
                 500,
                 FluidRegistry.getFluidStack("aluminum.molten", 144));
@@ -1878,7 +1874,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 250);
         Smeltery.addMelting(
                 getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                GameRegistry.findBlock(TinkerConstruct.ID, "MetalBlock"),
                 10,
                 250,
                 FluidRegistry.getFluidStack("ender", 2250));

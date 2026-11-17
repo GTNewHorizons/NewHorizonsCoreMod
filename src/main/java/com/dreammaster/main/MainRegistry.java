@@ -70,6 +70,7 @@ import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.travellersgear.TGConverter;
+import com.dreammaster.villagenames.VillageNamesConverter;
 import com.dreammaster.witchery.WitcheryPlugin;
 import com.google.common.base.Stopwatch;
 import com.gtnewhorizon.gtnhlib.config.ConfigException;
@@ -393,6 +394,10 @@ public class MainRegistry {
         if (!Loader.isModLoaded(BPPConverter.BPP_MOD_ID)) BPPConverter.doPostInitialization();
 
         if (IndustrialCraft2.isModLoaded()) IC2Converter.doPostInitialization();
+
+        NHCoreModConverter.doPostInitialization();
+
+        VillageNamesConverter.doPostInitialization();
     }
 
     @Mod.EventHandler

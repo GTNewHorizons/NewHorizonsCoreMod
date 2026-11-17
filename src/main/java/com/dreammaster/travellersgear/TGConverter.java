@@ -1,6 +1,7 @@
 package com.dreammaster.travellersgear;
 
 import static com.gtnewhorizons.postea.utility.PosteaUtilities.cleanseNBT;
+import static gregtech.api.enums.Mods.BiblioCraft;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -24,7 +25,7 @@ public class TGConverter {
         NBTTagList items = oldTag.getTagList("Inv", 10);
 
         // These armor stands had recipes to swap between them before. Seems fair to give this one.
-        Item stand = GameRegistry.findItem("BiblioCraft", "Armor Stand");
+        Item stand = GameRegistry.findItem(BiblioCraft.ID, "Armor Stand");
         if (stand != null) {
             NBTTagCompound replacementStand = new NBTTagCompound();
             replacementStand.setByte("Count", (byte) 1);
