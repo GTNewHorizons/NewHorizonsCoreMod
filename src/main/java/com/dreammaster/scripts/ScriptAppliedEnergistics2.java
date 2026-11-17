@@ -2122,11 +2122,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24))
-                .itemOutputs(CoCraftingUnit1x).duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 0))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
