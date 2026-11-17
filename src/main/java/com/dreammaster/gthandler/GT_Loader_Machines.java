@@ -142,7 +142,7 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.MassFabricatorUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_MAX, 'F', ItemList.Field_Generator_UHV, 'C',
+                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_UHV, 'F', ItemList.Field_Generator_UHV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
         GTModHandler.addCraftingRecipe(
@@ -190,7 +190,7 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.ReplicatorUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_MAX, 'F', ItemList.Field_Generator_UHV, 'E',
+                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_UHV, 'F', ItemList.Field_Generator_UHV, 'E',
                         ItemList.Emitter_UHV, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
 
@@ -239,7 +239,7 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.ScannerUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_MAX, 'T', ItemList.Emitter_UHV, 'R',
+                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_UHV, 'T', ItemList.Emitter_UHV, 'R',
                         ItemList.Sensor_UHV, 'C', OrePrefixes.circuit.get(Materials.UEV), 'W',
                         OrePrefixes.cableGt01.get(Materials.Bedrockium) });
 
@@ -347,7 +347,7 @@ public class GT_Loader_Machines {
                 ItemList.BreweryUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
-                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C', OrePrefixes.circuit.get(Materials.UHV),
+                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_UHV, 'C', OrePrefixes.circuit.get(Materials.UHV),
                         'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'Z',
                         new ItemStack(Items.brewing_stand, 1, 32767) });
 
@@ -404,7 +404,7 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.ChemicalReactorUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_MAX, 'R',
+                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_UHV, 'R',
                         OrePrefixes.rotor.get(Materials.Osmiridium), 'P',
                         OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UHV, 'C',
                         OrePrefixes.circuit.get(Materials.UHV), 'W',
@@ -462,7 +462,7 @@ public class GT_Loader_Machines {
                 ItemList.FermenterUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
-                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C', OrePrefixes.circuit.get(Materials.UHV),
+                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_UHV, 'C', OrePrefixes.circuit.get(Materials.UHV),
                         'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
 
         GTModHandler.addCraftingRecipe(
@@ -513,7 +513,7 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidExtractorUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_MAX, 'E', ItemList.Electric_Piston_UHV, 'P',
+                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_UHV, 'E', ItemList.Electric_Piston_UHV, 'P',
                         ItemList.Electric_Pump_UHV, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
@@ -570,7 +570,7 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.FluidHeaterUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_MAX, 'P', ItemList.Electric_Pump_UHV, 'C',
+                new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_UHV, 'P', ItemList.Electric_Pump_UHV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil(), 'R',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
@@ -630,7 +630,7 @@ public class GT_Loader_Machines {
                 ItemList.MixerUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Neutronium), 'M',
-                        ItemList.Electric_Motor_UHV, 'B', ItemList.Hull_MAX, 'C',
+                        ItemList.Electric_Motor_UHV, 'B', ItemList.Hull_UHV, 'C',
                         OrePrefixes.circuit.get(Materials.UHV), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
 
@@ -661,7 +661,7 @@ public class GT_Loader_Machines {
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_UEV_UHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_MAX, 'C',
+                new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_UHV, 'C',
                         OrePrefixes.cableGt01.get(Materials.Draconium), 'B',
                         OrePrefixes.wireGt04.get(Materials.SuperconductorUHV), 'K', ItemList.Circuit_Chip_PPIC });
 
@@ -911,7 +911,7 @@ public class GT_Loader_Machines {
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UHV, 'E', ItemList.Electric_Motor_UHV,
                         'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'M', ItemList.Hull_MAX });
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'M', ItemList.Hull_UHV });
 
         GTModHandler.addCraftingRecipe(
                 ItemList.RockBreakerUEV.get(1L),
@@ -2749,7 +2749,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CentrifugeUHV.get(1L),
-                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_MAX, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_UHV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
@@ -2894,7 +2894,7 @@ public class GT_Loader_Machines {
                 ItemList.CircuitAssemblerUHV.get(1L),
                 GTModHandler.RecipeBits.BITSD | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
                 new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UHV, 'E', ItemList.Emitter_UHV, 'H',
-                        ItemList.Hull_MAX, 'K', ItemList.Conveyor_Module_UHV, 'C',
+                        ItemList.Hull_UHV, 'K', ItemList.Conveyor_Module_UHV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
