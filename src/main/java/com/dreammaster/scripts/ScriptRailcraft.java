@@ -55,6 +55,7 @@ import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import mods.railcraft.api.crafting.RailcraftCraftingManager;
+import mods.railcraft.common.carts.EnumCart;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -1014,6 +1015,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 null,
                 "craftingToolScrewdriver",
                 null);
+        EnumCart.TANK.setContents(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0));
         addShapedRecipe(
                 getModItem(Railcraft.ID, "tool.steel.shears", 1, 0),
                 "plateSteel",
