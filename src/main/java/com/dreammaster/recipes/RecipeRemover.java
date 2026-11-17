@@ -1265,6 +1265,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "ultimateLappack", 1, 0));
         removeRecipeByOutputDelayed(getModItem(GraviSuiteNEO.ID, "epicLappack", 1, wildcard));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0));
+        removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "resource", 1, 0));
         removeRecipeByOutputDelayed(ItemList.Teleporter.get(1L));
