@@ -1018,6 +1018,15 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.string, 3, 0)).circuit(1)
                 .itemOutputs(new ItemStack(Blocks.wool, 1, 0)).duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
 
+        // Powderbarrel
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 4),
+                        new ItemStack(Items.string, 1))
+                .circuit(2).itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         NHItemList.CarbonPartHelmet.get(),
@@ -1964,7 +1973,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 4),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Draconium, 1),
-                        ItemList.Hull_MAX.get(1),
+                        ItemList.Hull_UHV.get(1),
                         ItemList.Circuit_Chip_PPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UEV_UHV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -2597,10 +2606,10 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialsAlloy.LEAGRISIUM.getGear(2),
-                        ItemList.Hull_IV.get(1),
+                        ItemList.Casing_RobustTungstenSteel.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
                         GregtechItemList.Gregtech_Computer_Cube.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
                         ItemList.Robot_Arm_IV.get(1),
                         ItemList.Field_Generator_IV.get(1))
                 .itemOutputs(ItemList.AdvancedImplosionCompressor.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_IV)
@@ -2850,6 +2859,24 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(1).itemOutputs(ItemList.CasingMixer.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
+        // Tension Resistant Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
+                        Materials.HSSG.getPlates(2),
+                        MaterialsAlloy.INCONEL_690.getPlate(4))
+                .circuit(1).itemOutputs(ItemList.TensionResistantMachineCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Extruder Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        Materials.Titanium.getPlates(2),
+                        Materials.TPV.getPlates(4))
+                .circuit(1).itemOutputs(ItemList.ExtruderMachineCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
             GTValues.RA.stdBuilder()
@@ -2977,7 +3004,7 @@ public class AssemblerRecipes implements Runnable {
         // Neutronium Stabilization Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Casing_MAX.get(1),
+                        ItemList.Casing_UHV.get(1),
                         ItemList.Field_Generator_ZPM.get(1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.NaquadahAlloy, 24))

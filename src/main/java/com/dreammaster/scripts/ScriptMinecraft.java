@@ -223,15 +223,11 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 6, 0)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
-                        getModItem(Minecraft.ID, "trapdoor", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 0), getModItem(Minecraft.ID, "trapdoor", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0)).fluidInputs(Materials.Iron.getMolten(16))
                 .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
-                        getModItem(Minecraft.ID, "trapdoor", 1, 0))
+                .itemInputs(getModItem(Minecraft.ID, "planks", 4, 0), getModItem(Minecraft.ID, "trapdoor", 1, 0))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0)).fluidInputs(Materials.Copper.getMolten(16))
                 .duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -2879,48 +2875,26 @@ public class ScriptMinecraft implements IScriptLoader {
                 "ingotBrickNether");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 "craftingToolScrewdriver",
+                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringAnyIron",
                 "screwAnyIron",
+                "ringAnyIron",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolSaw");
-        addShapedRecipe(
-                getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
-                "craftingToolScrewdriver",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringCopper",
-                "screwCopper",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolSaw");
-        addShapedRecipe(
-                getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "trapdoor", 1, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringAnyIron",
-                "screwAnyIron",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolScrewdriver");
+                getModItem(Minecraft.ID, "planks", 1, 0));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "wooden_door", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
+                "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0),
+                getModItem(Minecraft.ID, "planks", 1, 0),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Minecraft.ID, "planks", 1, 0),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 0),
-                "ringCopper",
-                "screwCopper",
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                getModItem(Minecraft.ID, "planks", 1, 0),
-                "craftingToolScrewdriver");
+                getModItem(Minecraft.ID, "planks", 1, 0));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0),
                 "plateAnyIron",

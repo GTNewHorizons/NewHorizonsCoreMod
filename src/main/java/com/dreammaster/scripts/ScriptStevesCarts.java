@@ -1685,8 +1685,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "string", 1, 0), getModItem(Minecraft.ID, "gunpowder", 1, 0))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 43)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(2).addTo(assemblerRecipes);
+                .circuit(4).itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 43))
+                .duration(2 * SECONDS + 10 * TICKS).eut(2).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 7, 0),
@@ -1742,8 +1742,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
         //
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22)).duration(50 * SECONDS)
-                .eut(TierEU.RECIPE_MV).specialValue(1700).addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Reinforced, 1L))
+                .duration(50 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1700).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Galgadorian, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).duration(1 * MINUTES + 40 * SECONDS)
