@@ -18,7 +18,6 @@ import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EnhancedLootBags;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -147,7 +146,6 @@ public class AssemblerRecipes implements Runnable {
         makeGalacticraftRocketRecipes();
         makeIronTanksRecipes();
         makeChiselRecipes();
-        makeLootBagRecipes();
         makeCoinRecipes();
         makeCoilRecipes();
         makeAirFilterRecipes();
@@ -1019,6 +1017,15 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.string, 3, 0)).circuit(1)
                 .itemOutputs(new ItemStack(Blocks.wool, 1, 0)).duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
+
+        // Powderbarrel
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 4),
+                        new ItemStack(Items.string, 1))
+                .circuit(2).itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1966,7 +1973,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 4),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Draconium, 1),
-                        ItemList.Hull_MAX.get(1),
+                        ItemList.Hull_UHV.get(1),
                         ItemList.Circuit_Chip_PPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UEV_UHV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -2599,10 +2606,10 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialsAlloy.LEAGRISIUM.getGear(2),
-                        ItemList.Hull_IV.get(1),
+                        ItemList.Casing_RobustTungstenSteel.get(1),
                         GTOreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
                         GregtechItemList.Gregtech_Computer_Cube.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
                         ItemList.Robot_Arm_IV.get(1),
                         ItemList.Field_Generator_IV.get(1))
                 .itemOutputs(ItemList.AdvancedImplosionCompressor.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_IV)
@@ -2616,7 +2623,16 @@ public class AssemblerRecipes implements Runnable {
                 ItemList.Emitter_UV.get(4),
                 ItemList.Field_Generator_UV.get(1),
                 ItemList.Energy_Module.get(1)).itemOutputs(ItemList.MicroTransmitter_UV.get(1)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+                .circuit(2).eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+
+        // UV Monster Repellator
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hull_UV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 3),
+                        ItemList.Emitter_UV.get(3))
+                .itemOutputs(ItemList.MobRep_UV.get(1)).duration(5 * SECONDS).circuit(3).eut(TierEU.RECIPE_UV)
+                .addTo(assemblerRecipes);
 
         // Industrial Tinted Glass
         ItemStack[] dyes = new ItemStack[] { ItemList.Color_15.get(1), // white
@@ -2843,6 +2859,24 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(1).itemOutputs(ItemList.CasingMixer.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
 
+        // Tension Resistant Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
+                        Materials.HSSG.getPlates(2),
+                        MaterialsAlloy.INCONEL_690.getPlate(4))
+                .circuit(1).itemOutputs(ItemList.TensionResistantMachineCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Extruder Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        Materials.Titanium.getPlates(2),
+                        Materials.TPV.getPlates(4))
+                .circuit(1).itemOutputs(ItemList.ExtruderMachineCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
             GTValues.RA.stdBuilder()
@@ -2970,7 +3004,7 @@ public class AssemblerRecipes implements Runnable {
         // Neutronium Stabilization Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Casing_MAX.get(1),
+                        ItemList.Casing_UHV.get(1),
                         ItemList.Field_Generator_ZPM.get(1),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.NaquadahAlloy, 24))
@@ -7176,6 +7210,30 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Nickel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Brass, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Zinc, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Nickel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Brass, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Nickel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Brass, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1))
+                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Invar, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnyBronze, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Zinc, 1))
@@ -7608,7 +7666,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSG, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSS, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.AnnealedCopper, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7616,7 +7674,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSG, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSS, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7624,7 +7682,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSG, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSS, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.AstralSilver, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 20, 4)).duration(5 * SECONDS)
@@ -7705,7 +7763,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticAlloy, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 1))
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 40, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -7758,79 +7816,6 @@ public class AssemblerRecipes implements Runnable {
                 .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemIngot", 64, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-    }
-
-    private void makeLootBagRecipes() {
-        if (!EnhancedLootBags.isModLoaded()) return;
-
-        final int DURATION = SECONDS * 10;
-
-        // Regular Tiered
-        addLootbagPair(1, 2, 3, 1, TierEU.RECIPE_ULV, DURATION); // Basic -> Steam
-        addLootbagPair(2, 4, 3, 1, TierEU.RECIPE_LV, DURATION); // Steam -> LV
-        addLootbagPair(4, 5, 3, 1, TierEU.RECIPE_MV, DURATION); // LV -> MV
-        addLootbagPair(5, 6, 3, 1, TierEU.RECIPE_HV, DURATION); // MV -> HV
-        addLootbagPair(6, 7, 3, 1, TierEU.RECIPE_EV, DURATION); // HV -> EV
-        addLootbagPair(7, 8, 3, 1, TierEU.RECIPE_IV, DURATION); // EV -> IV
-        addLootbagPair(8, 41, 3, 1, TierEU.RECIPE_LuV, DURATION); // IV -> LuV
-        addLootbagPair(41, 42, 3, 1, TierEU.RECIPE_ZPM, DURATION); // LuV -> ZPM
-        addLootbagPair(42, 43, 3, 1, TierEU.RECIPE_UV, DURATION); // ZPM -> UV
-
-        // Forest Ranger
-        addLootbagPair(19, 20, 3, 1, TierEU.RECIPE_LV, DURATION); // Basic -> Advanced
-        addLootbagPair(20, 21, 3, 1, TierEU.RECIPE_MV, DURATION); // Advanced -> Expert
-
-        // Blood Magic
-        addLootbagPair(16, 17, 3, 1, TierEU.RECIPE_MV, DURATION); // Novice -> Adept
-        addLootbagPair(17, 18, 3, 1, TierEU.RECIPE_MV, DURATION); // Adept -> Master
-
-        // Bees
-        addLootbagPair(25, 26, 3, 1, TierEU.RECIPE_LV, DURATION); // Basic -> Advanced
-        addLootbagPair(26, 27, 3, 1, TierEU.RECIPE_HV, DURATION); // Advanced -> Expert
-
-        // AE2
-        addLootbagPair(37, 38, 3, 1, TierEU.RECIPE_EV, DURATION); // Basic -> Good
-
-        // Space
-        addLootbagPair(22, 23, 3, 1, TierEU.RECIPE_EV, DURATION); // Moon -> Mars
-        addLootbagPair(23, 24, 3, 1, TierEU.RECIPE_EV, DURATION); // Mars -> Asteroids
-
-        // Food
-        addLootbagPair(28, 29, 3, 1, TierEU.RECIPE_LV, DURATION); // Fast Food -> Slow Food
-        addLootbagPair(29, 30, 3, 1, TierEU.RECIPE_LV, DURATION); // Slow Food -> Haute Cuisine
-        addLootbagPair(30, 31, 3, 1, TierEU.RECIPE_LV, DURATION); // Haute Cuisine -> Dessert
-
-        // Transportation
-        addLootbagPair(32, 33, 3, 1, TierEU.RECIPE_LV, DURATION); // Class 3 -> Class 2
-        addLootbagPair(33, 34, 3, 1, TierEU.RECIPE_LV, DURATION); // Class 2 -> Class 1
-
-        // Magic
-        addLootbagPair(9, 10, 3, 1, TierEU.RECIPE_LV, DURATION); // Novice -> Adept
-        addLootbagPair(10, 11, 3, 1, TierEU.RECIPE_MV, DURATION); // Adept -> Master
-        addLootbagPair(11, 12, 3, 1, TierEU.RECIPE_MV, DURATION); // Master -> Grandmaster
-        addLootbagPair(12, 13, 16, 1, TierEU.RECIPE_MV, DURATION); // Grandmaster -> Unique
-
-        // Witchery
-        addLootbagPair(52, 53, 3, 1, TierEU.RECIPE_LV, DURATION); // Novice -> Adept
-        addLootbagPair(53, 54, 3, 1, TierEU.RECIPE_MV, DURATION); // Adept -> Master
-        addLootbagPair(54, 55, 3, 1, TierEU.RECIPE_HV, DURATION); // Master -> Witch
-        addLootbagPair(55, 56, 3, 1, TierEU.RECIPE_HV, DURATION); // Witch -> Daemon
-
-        // HEE
-        addLootbagPair(57, 58, 3, 1, TierEU.RECIPE_HV, DURATION); // Basic -> Advanced
-
-        // CropsNH
-        addLootbagPair(51, 59, 3, 1, TierEU.RECIPE_LV, DURATION); // Farmhand -> Agriculturalist
-    }
-
-    // Assembler recipe registry
-    private void addLootbagPair(int inMeta, int outMeta, int inCount, int outCount, long eut, int duration) {
-        ItemStack inputBag = getModItem(EnhancedLootBags.ID, "lootbag", inCount, inMeta);
-        ItemStack outputBag = getModItem(EnhancedLootBags.ID, "lootbag", outCount, outMeta);
-        if (inputBag != null && outputBag != null) {
-            GTValues.RA.stdBuilder().itemInputs(inputBag).itemOutputs(outputBag).duration(duration).eut((int) eut)
-                    .addTo(assemblerRecipes);
-        }
     }
 
     private void makeCoinRecipes() {
