@@ -25,6 +25,7 @@ import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.FUEL_TYPE;
 import static gregtech.api.util.GTRecipeConstants.FUEL_VALUE;
 
@@ -253,6 +254,9 @@ public class ScriptForestry implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 2), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().fluidInputs(Materials.Honey.getFluid(1000)).circuit(9)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sugar, 9))
+                .duration(12 * SECONDS + 15 * TICKS).eut(30).addTo(centrifugeRecipes);
 
         new ResearchItem(
                 "PROVENFRAME",
