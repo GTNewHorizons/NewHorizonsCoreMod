@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.recipe.RecipeMaps.distillationTowerRecipes;
 import static gregtech.api.recipe.RecipeMaps.distilleryRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -48,9 +47,6 @@ public class DistillationRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.Sodium.getFluid(1000))
                 .fluidOutputs(Materials.SodiumPotassium.getFluid(1000)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(distilleryRecipes);
-
-        GTValues.RA.stdBuilder().circuit(1).fluidInputs(Materials.Biomass.getFluid(40))
-                .fluidOutputs(Materials.Ethanol.getFluid(20)).duration(16 * TICKS).eut(24).addTo(distilleryRecipes);
 
         // unify milk from Automagy
 
