@@ -74,6 +74,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TCAspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.OreDictItemStack;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaGeneratedItem98;
@@ -177,8 +178,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(9000)
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(24).addTo(autoclaveRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS).eut(24)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(10000)
                 .fluidInputs(Materials.Void.getMolten(36)).duration(50 * SECONDS).eut(24).addTo(autoclaveRecipes);
@@ -2340,8 +2341,8 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(20)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -5867,12 +5868,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemGrinPowder", 1, 0),
                 new AspectList().add(Aspect.POISON, 3).add(Aspect.CROP, 2));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0),
-                new AspectList().add(Aspect.PLANT, 4));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0),
-                new AspectList().add(Aspect.PLANT, 2));
+        ThaumcraftApi.registerObjectTag(ItemList.IC2_Plantball.get(1), new AspectList().add(Aspect.PLANT, 4));
+        ThaumcraftApi.registerObjectTag(ItemList.IC2_BioChaff.get(1), new AspectList().add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0),
                 new AspectList().add(Aspect.ENERGY, 2).add(Aspect.FIRE, 2).add(Aspect.EARTH, 1).add(Aspect.TOOL, 1));
