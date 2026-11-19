@@ -19,7 +19,7 @@ dependencies {
     compileOnlyApi("com.github.GTNewHorizons:EnderStorage:1.8.7:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:AppleCore:3.3.13:dev") { transitive = false }
     
-    api(files("../GT5-Unofficial/build/libs/gregtech-5.09.55.26-extrusion-shape-unification.2+2508a6be8d-dirty-dev.jar"))
+    api(files("../GT5-Unofficial/build/libs/gregtech-5.09.55.26-extrusion-shape-unification.5+4bde5c5e93-dev.jar"))
     api("com.github.GTNewHorizons:Yamcl:0.7.5:dev")
     api("com.github.GTNewHorizons:Baubles-Expanded:2.2.25-GTNH:dev")
 
