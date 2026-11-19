@@ -13,7 +13,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptMoldRecycling implements IScriptLoader {
 
@@ -99,15 +98,12 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 ItemList.Shape_Extruder_Saw,
                 ItemList.Shape_Extruder_Rotor,
                 ItemList.Shape_Extruder_Turbine_Blade,
-                ItemList.Shape_Extruder_ToolHeadDrill).forEach(
+                ItemList.Shape_Extruder_ToolHeadDrill,
+                ItemList.Shape_Extruder_Boat,
+                ItemList.Shape_Extruder_Pellet,
+                ItemList.Shape_Extruder_Shaft).forEach(
                         item -> GTOreDictUnificator
                                 .addItemData(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
-        // GT++ Pellet Shape
-        GTOreDictUnificator
-                .addItemData(GregtechItemList.Pellet_Mold.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M));
-        // Boat Shape
-        GTOreDictUnificator
-                .addItemData(NHItemList.ExtruderShapeBoat.get(1), new ItemData(Materials.Steel, 4 * GTValues.M));
         // GGfab Single use molds
         Stream.of(
                 GGItemList.SingleUseFileMold,

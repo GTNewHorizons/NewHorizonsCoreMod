@@ -656,7 +656,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 'e',
                 getModItem(Minecraft.ID, "piston", 1, 0));
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                NHItemList.ExtruderShapeBoat.get(),
+                ItemList.Shape_Extruder_Boat.get(1),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 NHItemList.ShapeBoat.get(),
                 true,

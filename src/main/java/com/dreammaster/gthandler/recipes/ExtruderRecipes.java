@@ -6,6 +6,8 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
@@ -14,7 +16,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 @SuppressWarnings("PointlessArithmeticExpression")
 public class ExtruderRecipes implements Runnable {
@@ -61,45 +62,51 @@ public class ExtruderRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.NetherStar, 1L))
                 .duration(4 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 9L),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
-                .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(extruderRecipes);
+        ItemStack ironIngots = GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 9L);
+        ItemStack shaftShape = ItemList.Shape_Extruder_Shaft.get(0);
+
+        if (ironIngots == null) {
+            throw new IllegalStateException("Missing Cast Iron ingot ItemStack for extruder recipe");
+        }
+        if (shaftShape == null) {
+            throw new IllegalStateException("Missing extruder shaft shape ItemStack");
+        }
+
+        GTValues.RA.stdBuilder().itemInputs(ironIngots, shaftShape).itemOutputs(ItemList.IC2_ShaftIron.get(1L))
+                .duration(32 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CastIron, 9L),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1L),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.CastIron, 1L),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 9L),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.block, Materials.Steel, 1L),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
