@@ -1024,7 +1024,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 4),
                         new ItemStack(Items.string, 1))
-                .itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .circuit(2).itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
