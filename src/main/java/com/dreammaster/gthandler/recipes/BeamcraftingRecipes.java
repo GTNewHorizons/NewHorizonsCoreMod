@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.recipe.RecipeMaps.BEAMCRAFTER_METADATA;
 import static gregtech.api.recipe.RecipeMaps.beamcrafterRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gtnhlanth.common.beamline.Particle.GLUEBALL;
 import static gtnhlanth.common.beamline.Particle.GRAVITON;
 import static gtnhlanth.common.beamline.Particle.WBOSON;
 import static gtnhlanth.common.beamline.Particle.ZBOSON;
@@ -32,8 +33,8 @@ public class BeamcraftingRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Wafer_ZPIC.get(1))
                 .metadata(
                         BEAMCRAFTER_METADATA,
-                        BeamCrafterMetadata.builder().particleID_A(GRAVITON.getId()).particleID_B(GRAVITON.getId())
-                                .amount_A(20).amount_B(20).build())
+                        BeamCrafterMetadata.builder().particleID_A(GRAVITON.getId()).particleID_B(GLUEBALL.getId())
+                                .amount_A(20).amount_B(15).build())
                 .eut(TierEU.RECIPE_UIV).duration(2 * SECONDS).addTo(beamcrafterRecipes);
 
         if (ExtraUtilities.isModLoaded()) {
