@@ -98,7 +98,7 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 ItemList.Shape_Extruder_Saw,
                 ItemList.Shape_Extruder_Rotor,
                 ItemList.Shape_Extruder_Turbine_Blade,
-                ItemList.Shape_Extruder_ToolHeadDrill,
+                ItemList.Shape_Extruder_Drill,
                 ItemList.Shape_Extruder_Boat,
                 ItemList.Shape_Extruder_Pellet,
                 ItemList.Shape_Extruder_Shaft).forEach(
