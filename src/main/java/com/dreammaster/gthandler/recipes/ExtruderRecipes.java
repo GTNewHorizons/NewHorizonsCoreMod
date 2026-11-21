@@ -22,10 +22,6 @@ public class ExtruderRecipes implements Runnable {
 
     @Override
     public void run() {
-        GTValues.RA.stdBuilder()
-                .itemInputs(Materials.BorosilicateGlass.getIngots(1), ItemList.Shape_Extruder_Wire.get(0))
-                .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(8 * SECONDS).eut(96)
-                .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
