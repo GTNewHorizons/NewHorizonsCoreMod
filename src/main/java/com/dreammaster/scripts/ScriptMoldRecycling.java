@@ -13,7 +13,6 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.material.MaterialData;
 import gregtech.api.objects.ItemData;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptMoldRecycling implements IScriptLoader {
 
@@ -76,7 +75,6 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 ItemList.Shape_Extruder_Cell,
                 ItemList.Shape_Extruder_Ring,
                 ItemList.Shape_Extruder_Rod,
-                ItemList.Shape_Extruder_Wire,
                 ItemList.Shape_Extruder_Bolt,
                 ItemList.Shape_Extruder_Ingot,
                 ItemList.Shape_Extruder_Small_Gear,
@@ -98,10 +96,10 @@ public class ScriptMoldRecycling implements IScriptLoader {
                 ItemList.Shape_Extruder_Saw,
                 ItemList.Shape_Extruder_Rotor,
                 ItemList.Shape_Extruder_Turbine_Blade,
-                ItemList.Shape_Extruder_ToolHeadDrill)
+                ItemList.Shape_Extruder_Drill)
                 .forEach(item -> MaterialData.add(item.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M)));
-        // GT++ Pellet Shape
-        MaterialData.add(GregtechItemList.Pellet_Mold.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M));
+        // Pellet Shape
+        MaterialData.add(ItemList.Shape_Extruder_Pellet.get(1L), new ItemData(Materials.Steel, 4 * GTValues.M));
         // Boat Shape
         MaterialData.add(NHItemList.ExtruderShapeBoat.get(1), new ItemData(Materials.Steel, 4 * GTValues.M));
         // GGfab Single use molds

@@ -2051,8 +2051,8 @@ public class ScriptEMT implements IScriptLoader {
                 5,
                 -4,
                 3,
-                MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 1))
-                        .setParentsHidden("ElectricMagicTools").setParents("RESEARCH").setConcealed().setRound()
+                MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 1)).setParentsHidden("ElectricMagicTools")
+                        .setParents("RESEARCH").setConcealed().setRound()
                         .setPages(new ResearchPage("tc.research_page.TinyUranium")).registerResearchItem();
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "TinyUranium",
@@ -2063,8 +2063,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "TinyUranium",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 1))));
+                        TCHelper.findArcaneRecipe(MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 1))));
         TCHelper.orphanResearch("UU-Matter Infusion");
         TCHelper.removeResearch("UU-Matter Infusion");
         new ResearchItem(
@@ -2273,8 +2272,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 1))));
+                        TCHelper.findInfusionRecipe(MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 1))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 getModItem(IndustrialCraft2.ID, "itemOreIridium", 2, 0),

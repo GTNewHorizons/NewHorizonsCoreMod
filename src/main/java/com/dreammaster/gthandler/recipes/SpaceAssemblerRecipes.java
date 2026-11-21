@@ -100,7 +100,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         MaterialLibAPI.getFluidStack(Materials.Creon, FluidShapes.fluidMolten, 64 * 144),
                         MaterialLibAPI.getFluidStack(Materials.Draconium, FluidShapes.fluidMolten, 64 * 144),
                         MaterialLibAPI.getFluidStack(Materials.Manyullyn, FluidShapes.fluidMolten, 64 * 144),
-                        MaterialLibAPI.getFluidStack(Materials.SuperconductorUMVBase, FluidShapes.fluidMolten, 64 * 144))
+                        MaterialLibAPI
+                                .getFluidStack(Materials.SuperconductorUMVBase, FluidShapes.fluidMolten, 64 * 144))
                 .itemOutputs(ItemList.Supermassive_Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3)
                 .duration(120 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 

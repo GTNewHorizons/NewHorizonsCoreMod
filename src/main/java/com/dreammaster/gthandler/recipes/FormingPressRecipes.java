@@ -306,9 +306,9 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(NHItemList.ExtruderShapeBoat.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_ToolHeadDrill.get(0))
-                .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV / 2).addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Drill.get(0))
+                .itemOutputs(ItemList.Shape_Extruder_Drill.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2)
+                .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1), ItemList.Shape_Mold_Ball.get(0L))

@@ -46,8 +46,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.item.NHItemList;
-import com.ruling_0.materiallib.api.MaterialLibAPI;
 import com.dreammaster.main.MainRegistry;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import codechicken.nei.PositionedStack;
 import cpw.mods.fml.common.Optional;

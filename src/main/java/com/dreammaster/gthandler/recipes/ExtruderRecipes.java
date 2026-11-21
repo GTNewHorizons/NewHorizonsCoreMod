@@ -16,20 +16,12 @@ import gregtech.api.enums.materials.BlockShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 @SuppressWarnings("PointlessArithmeticExpression")
 public class ExtruderRecipes implements Runnable {
 
     @Override
     public void run() {
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.ingot, 1),
-                        ItemList.Shape_Extruder_Wire.get(0))
-                .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(8 * SECONDS).eut(96)
-                .addTo(extruderRecipes);
-
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.NetherStar, Shapes.plate, 1),
@@ -68,42 +60,42 @@ public class ExtruderRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Iron, Shapes.ingot, 9),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.CastIron, Shapes.ingot, 9),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Iron, BlockShapes.block, 1),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.CastIron, BlockShapes.block, 1),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Steel, Shapes.ingot, 9),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Steel, BlockShapes.block, 1),
-                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
+                        ItemList.Shape_Extruder_Shaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 

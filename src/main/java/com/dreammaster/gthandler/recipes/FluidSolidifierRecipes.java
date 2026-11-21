@@ -481,7 +481,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeDrillHead.get(1))
-                    .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1))
+                    .itemOutputs(ItemList.Shape_Extruder_Drill.get(1))
                     .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Steel, FluidShapes.fluidMolten, 576))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 

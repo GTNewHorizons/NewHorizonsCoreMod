@@ -58,7 +58,8 @@ public class BrewingMachineRecipes implements Runnable {
                 ItemStack resource = recipe.getResource();
 
                 boolean alreadyHasRecipe = brewingRecipes.containsInput(resource);
-                boolean resultsInBiomass = recipe.getOutput().equals(MaterialLibAPI.getFluid(Materials.Biomass, FluidShapes.fluidLiquid));
+                boolean resultsInBiomass = recipe.getOutput()
+                        .equals(MaterialLibAPI.getFluid(Materials.Biomass, FluidShapes.fluidLiquid));
 
                 if (!alreadyHasRecipe && resultsInBiomass) {
                     int amountIn = recipe.getFermentationValue() * 2;
@@ -66,19 +67,22 @@ public class BrewingMachineRecipes implements Runnable {
 
                     GTValues.RA.stdBuilder().itemInputs(resource)
                             .fluidInputs(FluidRegistry.getFluidStack("water", amountIn))
-                            .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, amountOut))
+                            .fluidOutputs(
+                                    MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, amountOut))
                             .duration(8 * amountOut).eut(3).addTo(brewingRecipes);
 
                     amountOut = (int) (amountOut * 1.5);
 
                     GTValues.RA.stdBuilder().itemInputs(resource)
                             .fluidInputs(FluidRegistry.getFluidStack("juice", amountIn))
-                            .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, amountOut))
+                            .fluidOutputs(
+                                    MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, amountOut))
                             .duration(8 * amountOut).eut(3).addTo(brewingRecipes);
 
                     GTValues.RA.stdBuilder().itemInputs(resource).fluidInputs(
                             MaterialLibAPI.getFluidStack(Materials.Honey, FluidShapes.fluidLiquid, (int) (amountIn)))
-                            .fluidOutputs(MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, amountOut))
+                            .fluidOutputs(
+                                    MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, amountOut))
                             .duration(8 * amountOut).eut(3).addTo(brewingRecipes);
 
                 }

@@ -869,9 +869,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, 288))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
-                .outputChances(3300).fluidInputs(MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, 8))
-                .duration(10 * SECONDS).eut(20)
-                .addTo(autoclaveRecipes);
+                .outputChances(3300)
+                .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Biomass, FluidShapes.fluidLiquid, 8))
+                .duration(10 * SECONDS).eut(20).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Plantball.get(16)).itemOutputs(NHItemList.RawBioFiber.get())
                 .outputChances(5000).fluidInputs(FluidRegistry.getFluidStack("methanol", 8))
                 .duration(7 * SECONDS + 10 * TICKS).eut(20).addTo(autoclaveRecipes);
