@@ -36,6 +36,7 @@ import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchPage;
+import thaumcraft.common.config.ConfigItems;
 
 public class ScriptThaumicEnergistics implements IScriptLoader {
 
@@ -228,12 +229,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.removeCrucibleRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.golem.gear.box", 1, 0));
         TCHelper.removeInfusionRecipe(
-                createItemStack(
-                        ThaumicEnergistics.ID,
-                        "thaumicenergistics.block.arcane.assembler",
-                        1,
-                        0,
-                        "{stored_vis:[0:{amount:1500,key:\"aer\"},1:{amount:1500,key:\"aqua\"},2:{amount:1500,key:\"ignis\"},3:{amount:1500,key:\"ordo\"},4:{amount:1500,key:\"perditio\"},5:{amount:1500,key:\"terra\"}]}"));
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0),
+                true);
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "knowledge.core", 1, 0));
         TCHelper.removeArcaneRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.knowledge.inscriber", 1, 0));
@@ -1219,6 +1216,10 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 new AspectList().add(Aspect.EARTH, 15).add(Aspect.MECHANISM, 12).add(Aspect.METAL, 9)
                         .add(Aspect.MAGIC, 6).add(Aspect.EXCHANGE, 3));
         TCHelper.setResearchComplexity("thaumicenergistics.TETHAUMGBOX", 3);
+        // Match the metadata produced by Thaumcraft's ArcaneSceptreRecipe.
+        int sceptreMetadata = (int) (ConfigItems.WAND_CAP_THAUMIUM.getCraftCost()
+                * ConfigItems.WAND_ROD_SILVERWOOD.getCraftCost()
+                * 1.5F);
         TCHelper.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEARCANEASSEMBLER",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0),
@@ -1230,7 +1231,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         Thaumcraft.ID,
                         "WandCasting",
                         1,
-                        wildcard,
+                        sceptreMetadata,
                         "{aqua:15000,ignis:15000,terra:15000,cap:\"thaumium\",rod:\"silverwood\",ordo:15000,sceptre:1b,perditio:15000,aer:15000}"),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1),
@@ -1357,7 +1358,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.refreshResearchPages("thaumicenergistics.TESTORAGE");
         TCHelper.refreshResearchPages("thaumicenergistics.TEVISINT");
         TCHelper.refreshResearchPages("thaumicenergistics.TETHAUMGBOX");
-        TCHelper.refreshResearchPages("thaumicenergistics.TEARCANEASSEMBLER");
+        TCHelper.refreshResearchPages("thaumicenergistics.TEARCANEASSEMBLER", true);
         TCHelper.refreshResearchPages("thaumicenergistics.TEKNOWLEDGEINSCRIBER");
         TCHelper.refreshResearchPages("thaumicenergistics.TEINFPROV");
         TCHelper.refreshResearchPages("thaumicenergistics.TEADVINFPROV");
