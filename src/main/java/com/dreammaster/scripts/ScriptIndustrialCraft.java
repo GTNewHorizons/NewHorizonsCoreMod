@@ -1381,17 +1381,17 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 8, 0),
-                        NHItemList.ExtruderShapeBoat.get(0))
+                        ItemList.Shape_Extruder_Boat.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Rubber, 4L),
-                        NHItemList.ExtruderShapeBoat.get(0))
+                        ItemList.Shape_Extruder_Boat.get(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "iron_ingot", 8, 0), NHItemList.ExtruderShapeBoat.get(0))
+                .itemInputs(getModItem(Minecraft.ID, "iron_ingot", 8, 0), ItemList.Shape_Extruder_Boat.get(0))
                 .itemOutputs(NHItemList.ElectricBoatHull.get(1)).duration(1 * MINUTES).eut(TierEU.RECIPE_LV)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
