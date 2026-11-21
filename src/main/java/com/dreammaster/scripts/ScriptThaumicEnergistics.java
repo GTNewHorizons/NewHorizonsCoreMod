@@ -1362,7 +1362,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.refreshResearchPages("thaumicenergistics.TESTORAGE");
         TCHelper.refreshResearchPages("thaumicenergistics.TEVISINT");
         TCHelper.refreshResearchPages("thaumicenergistics.TETHAUMGBOX");
-        TCHelper.refreshResearchPages("thaumicenergistics.TEARCANEASSEMBLER");
+        TCHelper.refreshResearchPages("thaumicenergistics.TEARCANEASSEMBLER", true);
         TCHelper.refreshResearchPages("thaumicenergistics.TEKNOWLEDGEINSCRIBER");
         TCHelper.refreshResearchPages("thaumicenergistics.TEINFPROV");
         TCHelper.refreshResearchPages("thaumicenergistics.TEADVINFPROV");

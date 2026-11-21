@@ -187,6 +187,10 @@ public class TCHelper {
     }
 
     public static void refreshResearchPages(final String research) {
+        refreshResearchPages(research, false);
+    }
+
+    public static void refreshResearchPages(final String research, final boolean ignoreInfusionOutputNBT) {
         ResearchItem target = ResearchCategories.getResearch(research);
         if (target == null) {
             MainRegistry.LOGGER.warn("Tried to refresh pages for null Thaumcraft research \"{}\"", research);
@@ -232,7 +236,7 @@ public class TCHelper {
                             if (craft instanceof InfusionRecipe theCraft) {
                                 final Object output = theCraft.getRecipeOutput();
                                 if (output instanceof ItemStack stack
-                                        && GTUtility.areStacksEqual(stack, outputSearched)) {
+                                        && GTUtility.areStacksEqual(stack, outputSearched, ignoreInfusionOutputNBT)) {
                                     pages[x] = new ResearchPage(theCraft);
                                     break;
                                 }
