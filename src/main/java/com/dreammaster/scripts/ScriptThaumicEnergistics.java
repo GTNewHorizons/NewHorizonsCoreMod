@@ -229,12 +229,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.removeCrucibleRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.golem.gear.box", 1, 0));
         TCHelper.removeInfusionRecipe(
-                createItemStack(
-                        ThaumicEnergistics.ID,
-                        "thaumicenergistics.block.arcane.assembler",
-                        1,
-                        0,
-                        "{stored_vis:[0:{amount:1500,key:\"aer\"},1:{amount:1500,key:\"aqua\"},2:{amount:1500,key:\"ignis\"},3:{amount:1500,key:\"ordo\"},4:{amount:1500,key:\"perditio\"},5:{amount:1500,key:\"terra\"}]}"),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0),
                 true);
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "knowledge.core", 1, 0));
         TCHelper.removeArcaneRecipe(
