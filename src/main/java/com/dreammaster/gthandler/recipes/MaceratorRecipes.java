@@ -42,16 +42,16 @@ public class MaceratorRecipes implements Runnable {
                 .itemOutputs(MaterialLibAPI.getStack(Materials.Glass, Shapes.dust, 1)).outputChances(10000)
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_ULV).addTo(maceratorRecipes);
 
-        if (IndustrialCraft2.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 2, 0))
-                    .itemOutputs(
-                            NHItemList.MaceratedPlantmass.get(),
-                            NHItemList.MaceratedPlantmass.get(),
-                            NHItemList.MaceratedPlantmass.get(),
-                            NHItemList.MaceratedPlantmass.get())
-                    .outputChances(10000, 10000, 5000, 2500).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Plantball.get(2))
+                .itemOutputs(
+                        NHItemList.MaceratedPlantmass.get(),
+                        NHItemList.MaceratedPlantmass.get(),
+                        NHItemList.MaceratedPlantmass.get(),
+                        NHItemList.MaceratedPlantmass.get())
+                .outputChances(10000, 10000, 5000, 2500).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(maceratorRecipes);
 
+        if (IndustrialCraft2.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2))
                     .itemOutputs(MaterialLibAPI.getStack(Materials.Steel, Shapes.dust, 1)).outputChances(10000)
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(maceratorRecipes);

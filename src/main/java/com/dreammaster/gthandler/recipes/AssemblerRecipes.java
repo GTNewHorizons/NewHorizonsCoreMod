@@ -1032,7 +1032,7 @@ public class AssemblerRecipes implements Runnable {
                         MaterialLibAPI.getStack(Materials.Wood, Shapes.plate, 4),
                         MaterialLibAPI.getStack(Materials.Gunpowder, Shapes.dust, 4),
                         new ItemStack(Items.string, 1))
-                .itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .circuit(2).itemOutputs(ItemList.Block_Powderbarrel.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1998,7 +1998,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.SuperconductorUHV, TEBlockShapes.wireGt04, 4),
                         MaterialLibAPI.getStack(Materials.Draconium, TEBlockShapes.cableGt01, 1),
-                        ItemList.Hull_MAX.get(1),
+                        ItemList.Hull_UHV.get(1),
                         ItemList.Circuit_Chip_PPIC.get(2))
                 .itemOutputs(ItemList.Transformer_UEV_UHV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
@@ -3062,7 +3062,7 @@ public class AssemblerRecipes implements Runnable {
         // Neutronium Stabilization Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Casing_MAX.get(1),
+                        ItemList.Casing_UHV.get(1),
                         ItemList.Field_Generator_ZPM.get(1),
                         MaterialLibAPI.getStack(Materials.NaquadahAlloy, TEBlockShapes.frameGt, 4),
                         MaterialLibAPI.getStack(Materials.NaquadahAlloy, Shapes.screw, 24))

@@ -75,6 +75,7 @@ import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaGeneratedItem98;
 import gregtech.common.items.MetaGeneratedTool01;
@@ -177,8 +178,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, 1))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(9000)
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(24).addTo(autoclaveRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(100)).duration(1 * MINUTES + 15 * SECONDS).eut(24)
+                .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Amber, Shapes.dust, 1))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6)).outputChances(10000)
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Void, FluidShapes.fluidMolten, 36))
@@ -2341,8 +2342,8 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .fluidInputs(GTModHandler.getDistilledWater(20)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
@@ -5797,15 +5798,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(TCAspects.RADIO.getAspect(), 3).add(Aspect.METAL, 3).add(Aspect.EXCHANGE, 6)
                         .add(Aspect.CRYSTAL, 10));
         ThaumcraftApi.registerObjectTag(
-                ItemList.IC2_Plutonium.get(1),
-                new AspectList().add(TCAspects.RADIO.getAspect(), 3).add(Aspect.METAL, 3));
-        ThaumcraftApi.registerObjectTag(ItemList.IC2_Plutonium_Small.get(1), new AspectList().add(Aspect.METAL, 1));
-        ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2),
                 new AspectList().add(Aspect.GREED, 4).add(Aspect.ENERGY, 3).add(Aspect.MECHANISM, 2)
                         .add(Aspect.CRYSTAL, 3));
         ThaumcraftApi.registerObjectTag(
-                ItemList.IC2_Uranium_235_Small.get(1),
+                MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 1),
                 new AspectList().add(Aspect.METAL, 3).add(TCAspects.RADIO.getAspect(), 3));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0),
@@ -5878,12 +5875,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemGrinPowder", 1, 0),
                 new AspectList().add(Aspect.POISON, 3).add(Aspect.CROP, 2));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0),
-                new AspectList().add(Aspect.PLANT, 4));
-        ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0),
-                new AspectList().add(Aspect.PLANT, 2));
+        ThaumcraftApi.registerObjectTag(ItemList.IC2_Plantball.get(1), new AspectList().add(Aspect.PLANT, 4));
+        ThaumcraftApi.registerObjectTag(ItemList.IC2_BioChaff.get(1), new AspectList().add(Aspect.PLANT, 2));
         ThaumcraftApi.registerObjectTag(
                 getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0),
                 new AspectList().add(Aspect.ENERGY, 2).add(Aspect.FIRE, 2).add(Aspect.EARTH, 1).add(Aspect.TOOL, 1));

@@ -25,6 +25,7 @@ import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.FUEL_TYPE;
 import static gregtech.api.util.GTRecipeConstants.FUEL_VALUE;
 
@@ -48,6 +49,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.materials.CellShapes;
+import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
@@ -253,6 +255,9 @@ public class ScriptForestry implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(MagicBees.ID, "wax", 9, 2), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
+        GTValues.RA.stdBuilder().fluidInputs(MaterialLibAPI.getFluidStack(Materials.Honey, FluidShapes.fluidLiquid, 1000))
+                .circuit(9).itemOutputs(MaterialLibAPI.getStack(Materials.Sugar, Shapes.dust, 9))
+                .duration(12 * SECONDS + 15 * TICKS).eut(30).addTo(centrifugeRecipes);
 
         new ResearchItem(
                 "PROVENFRAME",

@@ -302,9 +302,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .fluidInputs(GTUtility.getWater(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.MysteriousCrystal, Shapes.dust, 1))
-                .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 1000)).duration(2 * MINUTES)
-                .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
+                .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0)).fluidInputs(GTModHandler.getDistilledWater(1000))
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfNanoparticles.get(1))
                 .itemOutputs(ItemList.TaHfCNanofibers.get(5))
                 .fluidInputs(
@@ -426,7 +425,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         addDecorativeMetalBlockRecipe(8, getGSItem("item.CompressedPlates", 1, 9));
 
         addShapedRecipe(
-                ItemList.PlanetaryGasSiphonCasing.get(1),
+                ItemList.PlanetaryGasSiphonCasing.get(8),
                 "MWM",
                 "CTC",
                 "MWM",

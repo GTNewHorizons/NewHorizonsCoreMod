@@ -962,14 +962,6 @@ public class ScriptNanochipRecipes implements IScriptLoader {
             // Magmatter
             addSimpleProcessingRecipe(
                     CircuitComponent.FrameboxMagMatter,
-                    MaterialLibAPI.getFluidStack(Materials.Grade8PurifiedWater, FluidShapes.fluidLiquid, 500),
-                    CircuitComponent.ProcessedFrameboxMagMatter,
-                    TierEU.RECIPE_UMV,
-                    20 * SECONDS,
-                    RecipeMaps.nanochipCuttingChamber);
-
-            addSimpleProcessingRecipe(
-                    CircuitComponent.FrameboxMagMatter,
                     MaterialLibAPI
                             .getFluidStack(Materials.DimensionallyShiftedSuperfluid, FluidShapes.fluidLiquid, 100),
                     CircuitComponent.ProcessedFrameboxMagMatter,
@@ -2033,7 +2025,7 @@ public class ScriptNanochipRecipes implements IScriptLoader {
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDInductor, 3),
                         new CircuitComponentStack(CircuitComponent.ProcessedOpticalSMDCapacitor, 4),
                         new CircuitComponentStack(CircuitComponent.ProcessedChipRAM, 32),
-                        new CircuitComponentStack(CircuitComponent.ProcessedWireYttriumBariumCuprate, 24)),
+                        new CircuitComponentStack(CircuitComponent.ProcessedWireNiobiumTitanium, 24)),
                 Arrays.asList(MaterialLibAPI.getFluidStack(Materials.Indalloy140, FluidShapes.fluidMolten, 9)),
                 CircuitComponent.BiowareAssembly,
                 22 * SECONDS + 10 * TICKS,

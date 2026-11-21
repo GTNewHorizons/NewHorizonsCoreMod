@@ -2127,11 +2127,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24))
-                .itemOutputs(CoCraftingUnit1x).duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 0))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -2447,8 +2442,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         MaterialLibAPI.getStack(Materials.CertusQuartzCharged, Shapes.dust, 3),
                         MaterialLibAPI.getStack(Materials.Sodium, Shapes.dust, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 1))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 1000)).duration(35 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
+                .fluidInputs(GTModHandler.getDistilledWater(1000)).duration(35 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(UniversalChemical);
         GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 8)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);

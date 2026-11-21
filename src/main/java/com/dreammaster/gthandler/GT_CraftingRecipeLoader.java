@@ -726,14 +726,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         OrePrefixes.plate.ingredient(Materials.StainlessSteel), 'E', Circuits.EV.getIngredient(), 'B',
                         ItemList.Electric_Piston_HV });
 
-        // Fluid Shaper to Mass Solidifier
-        // REMOVE AFTER 2.9
-        GTModHandler.addShapelessCraftingRecipe(
-                ItemList.Machine_Mass_Solidifier.get(1),
-                GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.BUFFERED
-                        | GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS,
-                new Object[] { ItemList.Machine_Fluid_Shaper.get(1) });
-
         // Mass Solidifier
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Mass_Solidifier.get(1),
@@ -1009,7 +1001,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             switch (i) {
                 case 9: // UHV
                     hull = MaterialLibAPI.getStack(Materials.Neutronium, Shapes.plate, 1);
-                    machinehull = ItemList.Hull_MAX.get(1L);
+                    machinehull = ItemList.Hull_UHV.get(1L);
                     break;
                 case 10: // UEV
                     hull = MaterialLibAPI.getStack(Materials.Infinity, Shapes.plate, 1);

@@ -59,6 +59,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import mods.railcraft.api.crafting.RailcraftCraftingManager;
+import mods.railcraft.common.carts.EnumCart;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -1018,6 +1019,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 null,
                 "craftingToolScrewdriver",
                 null);
+        EnumCart.TANK.setContents(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0));
         addShapedRecipe(
                 getModItem(Railcraft.ID, "tool.steel.shears", 1, 0),
                 "plateSteel",
@@ -2132,9 +2134,8 @@ public class ScriptRailcraft implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8))
-                .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38)).fluidInputs(GTModHandler.getDistilledWater(3))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8))
                 .itemOutputs(getModItem(Railcraft.ID, "slab", 2, 38))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)

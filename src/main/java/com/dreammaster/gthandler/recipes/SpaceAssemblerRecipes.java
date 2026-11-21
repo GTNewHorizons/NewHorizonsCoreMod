@@ -80,6 +80,32 @@ public class SpaceAssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        ItemList.Emitter_UMV.get(1),
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateSuperdense, 4),
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateSuperdense, 4),
+                        ItemList.Emitter_UMV.get(1),
+                        MaterialLibAPI.getStack(Materials.Eternity, Shapes.plate, 8),
+                        ItemList.Black_Hole_Opener.get(4),
+                        ItemList.Black_Hole_Opener.get(4),
+                        MaterialLibAPI.getStack(Materials.Eternity, Shapes.plate, 8),
+                        MaterialLibAPI.getStack(Materials.Eternity, Shapes.plate, 8),
+                        ItemList.Black_Hole_Opener.get(4),
+                        ItemList.Black_Hole_Opener.get(4),
+                        MaterialLibAPI.getStack(Materials.Eternity, Shapes.plate, 8),
+                        ItemList.Emitter_UMV.get(1),
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateSuperdense, 4),
+                        MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateSuperdense, 4),
+                        ItemList.Emitter_UMV.get(1))
+                .fluidInputs(
+                        MaterialLibAPI.getFluidStack(Materials.Creon, FluidShapes.fluidMolten, 64 * 144),
+                        MaterialLibAPI.getFluidStack(Materials.Draconium, FluidShapes.fluidMolten, 64 * 144),
+                        MaterialLibAPI.getFluidStack(Materials.Manyullyn, FluidShapes.fluidMolten, 64 * 144),
+                        MaterialLibAPI.getFluidStack(Materials.SuperconductorUMVBase, FluidShapes.fluidMolten, 64 * 144))
+                .itemOutputs(ItemList.Supermassive_Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 3)
+                .duration(120 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         ItemList.Sensor_UHV.get(1),
                         MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, 16),
                         MaterialLibAPI.getStack(Materials.Naquadria, Shapes.plateDense, 16),

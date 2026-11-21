@@ -60,6 +60,7 @@ import gregtech.api.enums.materials.FluidShapes;
 import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.OreShapes;
 import gregtech.api.enums.materials.Shapes;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.OreDictUtils;
@@ -437,7 +438,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { ItemList.Hull_MAX.get(1), new ItemStack(baseItem, 32, 28),
+                new Object[] { ItemList.Hull_UHV.get(1), new ItemStack(baseItem, 32, 28),
                         NHItemList.IrradiantReinforcedNeutroniumPlate.get(64),
                         new ItemStack(GameRegistry.findItem(GalaxySpace.ID, "item.RocketControlComputer"), 4, 8),
                         new Object[] { Circuits.UHV.getIngredient(), 16 }, ItemList.Sensor_UHV.get(8),
@@ -607,8 +608,8 @@ public class ScriptAmunRa implements IScriptLoader {
                 .itemOutputs(slab).duration(1 * SECONDS + 5 * TICKS).eut(eut).addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(GTUtility.getWater(4)).itemOutputs(slab)
                 .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3))
-                .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
+        GTValues.RA.stdBuilder().itemInputs(input).fluidInputs(GTModHandler.getDistilledWater(3)).itemOutputs(slab)
+                .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
     }
 
 }

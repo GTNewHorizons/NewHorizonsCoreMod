@@ -183,7 +183,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "Mjolnir", 1, 0));
         TCHelper.removeInfusionRecipe(
                 createItemStack(ElectroMagicTools.ID, "SuperchargedMjolnir", 1, 26, "{charge:10.0d}"));
-        TCHelper.removeArcaneRecipe(ItemList.IC2_Uranium_235_Small.get(7));
+        TCHelper.removeArcaneRecipe(MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 7));
         TCHelper.removeCrucibleRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "coal", 16, 0));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "glowstone", 1, 0));
@@ -191,7 +191,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "gold_ingot", 2, 0));
         TCHelper.removeInfusionRecipe(getModItem(Minecraft.ID, "diamond", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "ShieldFocus", 1, 0));
-        TCHelper.removeInfusionRecipe(ItemList.IC2_Uranium_238.get(2));
+        TCHelper.removeInfusionRecipe(MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 2));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "ShieldBlock", 6, 0));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1, 0));
         TCHelper.removeInfusionRecipe(getModItem(ElectroMagicTools.ID, "EnergyBallFocus", 1, 0));
@@ -2051,18 +2051,20 @@ public class ScriptEMT implements IScriptLoader {
                 5,
                 -4,
                 3,
-                ItemList.IC2_Uranium_235_Small.get(1)).setParentsHidden("ElectricMagicTools").setParents("RESEARCH")
-                        .setConcealed().setRound().setPages(new ResearchPage("tc.research_page.TinyUranium"))
-                        .registerResearchItem();
+                MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 1))
+                        .setParentsHidden("ElectricMagicTools").setParents("RESEARCH").setConcealed().setRound()
+                        .setPages(new ResearchPage("tc.research_page.TinyUranium")).registerResearchItem();
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "TinyUranium",
-                ItemList.IC2_Uranium_235_Small.get(7),
+                MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 7),
                 new AspectList().add(Aspect.AIR, 7).add(Aspect.FIRE, 7).add(Aspect.WATER, 7).add(Aspect.EARTH, 7)
                         .add(Aspect.ORDER, 7).add(Aspect.ENTROPY, 7),
-                ItemList.IC2_Uranium_238.get(1));
+                MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 1));
         TCHelper.addResearchPage(
                 "TinyUranium",
-                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.IC2_Uranium_235_Small.get(1))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                MaterialLibAPI.getStack(Materials.Uranium235, Shapes.nugget, 1))));
         TCHelper.orphanResearch("UU-Matter Infusion");
         TCHelper.removeResearch("UU-Matter Infusion");
         new ResearchItem(
@@ -2165,7 +2167,7 @@ public class ScriptEMT implements IScriptLoader {
                 6,
                 new AspectList().add(Aspect.AIR, 8).add(Aspect.WATER, 8).add(Aspect.EARTH, 16).add(Aspect.FIRE, 8)
                         .add(Aspect.ENTROPY, 8).add(Aspect.ORDER, 16),
-                ItemList.IC2_Uranium_238.get(1),
+                MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 1),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15));
         TCHelper.addResearchPage(
@@ -2255,7 +2257,7 @@ public class ScriptEMT implements IScriptLoader {
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Minecraft.ID, "diamond", 1, 0))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
-                ItemList.IC2_Uranium_238.get(2),
+                MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 2),
                 15,
                 new AspectList().add(Aspect.AIR, 24).add(Aspect.WATER, 24).add(Aspect.EARTH, 48).add(Aspect.FIRE, 24)
                         .add(Aspect.ENTROPY, 24).add(Aspect.ORDER, 48),
@@ -2270,14 +2272,16 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15));
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
-                new ResearchPage(TCHelper.findInfusionRecipe(ItemList.IC2_Uranium_238.get(1))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(
+                                MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 1))));
         TCHelper.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 getModItem(IndustrialCraft2.ID, "itemOreIridium", 2, 0),
                 18,
                 new AspectList().add(Aspect.AIR, 32).add(Aspect.WATER, 32).add(Aspect.EARTH, 64).add(Aspect.FIRE, 32)
                         .add(Aspect.ENTROPY, 32).add(Aspect.ORDER, 64),
-                ItemList.IC2_Uranium_238.get(1),
+                MaterialLibAPI.getStack(Materials.Uranium, Shapes.ingot, 1),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 15),
