@@ -228,7 +228,6 @@ public enum NHItemList {
     EuropaIceDust("EuropaIceDust", SPACE),
     EuropaStoneDust("EuropaStoneDust", SPACE),
     ExtraLargeFuelCanister("ExtraLargeFuelCanister", SPACE),
-    ExtruderShapeBoat("ExtruderShapeBoat", SHAPES),
     FieryBloodDrop("FieryBloodDrop", THAUMCRAFT),
     GanymedeStoneDust("GanymedeStoneDust", SPACE),
     GeneticCircuit("GeneticCircuit", CIRCUITS),

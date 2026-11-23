@@ -356,7 +356,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeBoat.get(1))
-                    .itemOutputs(NHItemList.ExtruderShapeBoat.get(1)).fluidInputs(Materials.Steel.getMolten(576L))
+                    .itemOutputs(ItemList.Shape_Extruder_Boat.get(1)).fluidInputs(Materials.Steel.getMolten(576L))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeCasing.get(1))
@@ -419,9 +419,8 @@ public class FluidSolidifierRecipes implements Runnable {
                     .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.ShapeDrillHead.get(1))
-                    .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1))
-                    .fluidInputs(Materials.Steel.getMolten(576L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
-                    .addTo(fluidSolidifierRecipes);
+                    .itemOutputs(ItemList.Shape_Extruder_Drill.get(1)).fluidInputs(Materials.Steel.getMolten(576L))
+                    .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
             // Hawking Radiation Realignment Focus
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(ItemRegistry.bw_glasses[0], 1, 8))
