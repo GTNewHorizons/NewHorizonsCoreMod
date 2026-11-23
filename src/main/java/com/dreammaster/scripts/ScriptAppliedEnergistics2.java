@@ -15,6 +15,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
@@ -323,7 +324,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         NHItemList.EngineeringProcessorItemEmeraldCore.get(),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
                 .circuit(1).itemOutputs(components[0]).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).requiresEnvironment(CLEANROOM)
+                .addTo(circuitAssemblerRecipes);
         // 1024k
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -332,7 +334,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         NHItemList.EngineeringProcessorItemEmeraldCore.get(),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
                 .circuit(1).itemOutputs(components[1]).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).requiresEnvironment(CLEANROOM)
+                .addTo(circuitAssemblerRecipes);
         // 4096k
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -341,7 +344,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1))
                 .circuit(1).itemOutputs(components[2]).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).requiresEnvironment(CLEANROOM)
+                .addTo(circuitAssemblerRecipes);
         // 16384k
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -350,7 +354,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         NHItemList.EngineeringProcessorItemAdvEmeraldCore.get(),
                         ItemList.Circuit_Board_Bio_Ultra.get(1))
                 .circuit(1).itemOutputs(components[3]).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).requiresCleanRoom().addTo(circuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).requiresEnvironment(CLEANROOM)
+                .addTo(circuitAssemblerRecipes);
 
         // Advanced Crafting Storage
         ItemStack[] storage = new ItemStack[] {

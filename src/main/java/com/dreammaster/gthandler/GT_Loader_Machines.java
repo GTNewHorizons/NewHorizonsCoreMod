@@ -4,6 +4,7 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.GTValues.VP;
 import static gregtech.api.enums.Mods.CookingForBlockheads;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -941,7 +942,7 @@ public class GT_Loader_Machines {
             GTValues.RA.stdBuilder()
                     .itemInputs(getModItem(PamsHarvestCraft.ID, "toastItem", 1, 0), ItemList.Shape_Slicer_Flat.get(0L))
                     .itemOutputs(getModItem(CookingForBlockheads.ID, "toast", 1, 0)).duration(20 * TICKS)
-                    .eut(TierEU.RECIPE_EV).requiresCleanRoom().addTo(cutterRecipes);
+                    .eut(TierEU.RECIPE_EV).requiresEnvironment(CLEANROOM).addTo(cutterRecipes);
         }
         GTModHandler.addCraftingRecipe(
                 ItemList.Transformer_HA_UEV_UHV.get(1L),
