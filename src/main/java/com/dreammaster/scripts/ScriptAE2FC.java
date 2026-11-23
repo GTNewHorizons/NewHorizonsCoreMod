@@ -24,21 +24,21 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.SubstituteFluidStack;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTModHandler.RecipeBits;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptAE2FC implements IScriptLoader {
@@ -81,11 +81,11 @@ public class ScriptAE2FC implements IScriptLoader {
                 OreDictionary.WILDCARD_VALUE);
         final ItemStack BUCKET = new ItemStack(Items.bucket, 1);
         final ItemStack IRON_BAR = new ItemStack(Blocks.iron_bars, 1);
-        final ItemStack IRON_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L);
-        final ItemStack LAPIS_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L);
-        final ItemStack NIOBIUM_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1L);
-        final ItemStack NETHER_QUARTZ_PLATE = GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
-        final ItemStack LAPIS_SCREW = GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
+        final ItemStack IRON_PLATE = MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 1);
+        final ItemStack LAPIS_PLATE = MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 1);
+        final ItemStack NIOBIUM_PLATE = MaterialLibAPI.getStack(Materials.NiobiumTitanium, Shapes.plate, 1);
+        final ItemStack NETHER_QUARTZ_PLATE = MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 1);
+        final ItemStack LAPIS_SCREW = MaterialLibAPI.getStack(Materials.Lapis, Shapes.screw, 1);
         final ItemStack FLUID_CORE_1 = NHItemList.EngineeringProcessorFluidDiamondCore.get();
         final ItemStack FLUID_CORE_2 = NHItemList.EngineeringProcessorFluidEmeraldCore.get();
         final ItemStack FISH = getModItem(Minecraft.ID, "fish", 1, 0);
@@ -165,8 +165,8 @@ public class ScriptAE2FC implements IScriptLoader {
                 0);
         final ItemStack AE2FC_ENERGY_CARD = getModItem(AE2FluidCraft.ID, "energy_card", 1, 0);
 
-        final ItemStack nitinolPlate = MaterialsAlloy.NITINOL_60.getPlate(2);
-        final ItemStack zeronPlate = MaterialsAlloy.ZERON_100.getPlate(2);
+        final ItemStack nitinolPlate = MaterialLibAPI.getStack(Materials.Nitinol60, Shapes.plate, 2);
+        final ItemStack zeronPlate = MaterialLibAPI.getStack(Materials.Zeron100, Shapes.plate, 2);
 
         // AE2FC_FLUID_STORAGE_HOUSING
         GTModHandler.addCraftingRecipe(
@@ -399,8 +399,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         "craftingToolScrewdriver"));
 
         // Fluid Storage Bus
-        GTValues.RA.stdBuilder()
-                .itemInputs(AE2_STORAGE_BUS, GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
+        GTValues.RA.stdBuilder().itemInputs(AE2_STORAGE_BUS, MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 3))
                 .itemOutputs(AE2FC_FLUID_STORAGE_BUS).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -425,7 +424,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        Circuits.ULV.get(2),
                         NHItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
@@ -436,8 +435,8 @@ public class ScriptAE2FC implements IScriptLoader {
         // 4k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        Circuits.LV.get(4),
+                        Circuits.ULV.get(16),
                         ItemList.Electric_Pump_LV.get(2),
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(1),
                         ItemList.Circuit_Board_Coated_Basic.get(1))
@@ -448,8 +447,8 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        Circuits.MV.get(4),
+                        Circuits.LV.get(16),
                         ItemList.Electric_Pump_MV.get(1),
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(2),
                         ItemList.Circuit_Board_Phenolic_Good.get(1))
@@ -459,8 +458,8 @@ public class ScriptAE2FC implements IScriptLoader {
         // 64k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        Circuits.HV.get(4),
+                        Circuits.MV.get(16),
                         ItemList.Electric_Pump_MV.get(2),
                         NHItemList.EngineeringProcessorFluidDiamondCore.get(4),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1))
@@ -470,8 +469,8 @@ public class ScriptAE2FC implements IScriptLoader {
         // 256k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                        Circuits.EV.get(4),
+                        Circuits.HV.get(16),
                         ItemList.Electric_Pump_HV.get(1),
                         NHItemList.EngineeringProcessorFluidEmeraldCore.get(1),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1))
@@ -481,8 +480,8 @@ public class ScriptAE2FC implements IScriptLoader {
         // 1024k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
+                        Circuits.IV.get(4),
+                        Circuits.EV.get(16),
                         ItemList.Electric_Pump_HV.get(2),
                         NHItemList.EngineeringProcessorFluidEmeraldCore.get(2),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1))
@@ -492,8 +491,8 @@ public class ScriptAE2FC implements IScriptLoader {
         // 4096k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
+                        Circuits.LuV.get(4),
+                        Circuits.IV.get(16),
                         ItemList.Electric_Pump_EV.get(1),
                         NHItemList.EngineeringProcessorFluidEmeraldCore.get(4),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1))
@@ -503,8 +502,8 @@ public class ScriptAE2FC implements IScriptLoader {
         // 16384k ME Storage Component
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                        Circuits.UV.get(4),
+                        Circuits.LuV.get(16),
                         ItemList.Electric_Pump_EV.get(2),
                         NHItemList.EngineeringProcessorFluidEmeraldCore.get(8),
                         ItemList.Circuit_Board_Bio_Ultra.get(1))
@@ -745,7 +744,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CELL_1,
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.screw, 2),
                         AE2_ME_CHEST,
                         AE2_ENERGY_CELL)
                 .itemOutputs(AE2FC_PORTABLE_CELL).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
@@ -769,10 +768,10 @@ public class ScriptAE2FC implements IScriptLoader {
         // DEFECTIVE SINGULARITY CELL
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.screw, 2),
+                        MaterialLibAPI.getStack(Materials.CertusQuartz, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.TungstenSteel, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 1),
                         AE2_SINGULARITY)
                 .circuit(2).itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
@@ -780,10 +779,10 @@ public class ScriptAE2FC implements IScriptLoader {
         // ME FLUID EXPORT BUS
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.screw, 2),
                         AE2_CORE_FOM,
                         ItemList.Electric_Piston_LV.get(1))
                 .circuit(2).itemOutputs(AE2FC_EXPORTBUS).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -792,10 +791,10 @@ public class ScriptAE2FC implements IScriptLoader {
         // ME FLUID IMPORT BUS
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.plate, 1),
+                        MaterialLibAPI.getStack(Materials.NetherQuartz, Shapes.plate, 2),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.screw, 2),
                         AE2_CORE_ANN,
                         ItemList.Electric_Piston_LV.get(1))
                 .circuit(2).itemOutputs(AE2FC_IMPORTBUS).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -805,7 +804,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(3, AE2_QUARTZ_GLASS),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.screw, 2),
                         AE2_CORE_FOM,
                         AE2FC_EXPORTBUS)
                 .circuit(2).itemOutputs(AE2FC_FORMATION_PLANE).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -815,7 +814,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(3, AE2_QUARTZ_GLASS),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        MaterialLibAPI.getStack(Materials.Lapis, Shapes.screw, 2),
                         AE2_CORE_ANN,
                         AE2FC_IMPORTBUS)
                 .circuit(2).itemOutputs(AE2FC_ANNIHILATION_PLANE).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)

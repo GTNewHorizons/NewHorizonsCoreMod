@@ -1,9 +1,11 @@
 package com.dreammaster.gthandler;
 
-import gregtech.api.enums.Materials;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class GT_Loader_Materials {
 
@@ -13,27 +15,29 @@ public class GT_Loader_Materials {
 
     private void registerMaterialRecipes() {
         GTModHandler.addShapelessCraftingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 3),
+                MaterialLibAPI.getStack(Materials.Alumite, Shapes.dust, 3),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Zinc),
-                        OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Zinc),
-                        OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Steel),
-                        OrePrefixes.dust.get(Materials.Steel), OrePrefixes.dust.get(Materials.Obsidian),
-                        OrePrefixes.dust.get(Materials.Obsidian) });
+                new Object[] { OrePrefixes.dust.ingredient(Materials.Zinc), OrePrefixes.dust.ingredient(Materials.Zinc),
+                        OrePrefixes.dust.ingredient(Materials.Zinc), OrePrefixes.dust.ingredient(Materials.Zinc),
+                        OrePrefixes.dust.ingredient(Materials.Zinc), OrePrefixes.dust.ingredient(Materials.Steel),
+                        OrePrefixes.dust.ingredient(Materials.Steel), OrePrefixes.dust.ingredient(Materials.Obsidian),
+                        OrePrefixes.dust.ingredient(Materials.Obsidian) });
 
         GTModHandler.addShapelessCraftingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.FerriteMixture, 5L),
+                MaterialLibAPI.getStack(Materials.FerriteMixture, Shapes.dust, 5),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { OrePrefixes.dust.get(Materials.Nickel), OrePrefixes.dust.get(Materials.Zinc),
-                        OrePrefixes.dust.get(Materials.Iron), OrePrefixes.dust.get(Materials.Iron),
-                        OrePrefixes.dust.get(Materials.Iron), OrePrefixes.dust.get(Materials.Iron) });
+                new Object[] { OrePrefixes.dust.ingredient(Materials.Nickel),
+                        OrePrefixes.dust.ingredient(Materials.Zinc), OrePrefixes.dust.ingredient(Materials.Iron),
+                        OrePrefixes.dust.ingredient(Materials.Iron), OrePrefixes.dust.ingredient(Materials.Iron),
+                        OrePrefixes.dust.ingredient(Materials.Iron) });
 
         GTModHandler.addShapelessCraftingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.BorosilicateGlass, 7L),
+                MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.dust, 7),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { OrePrefixes.dust.get(Materials.Boron), OrePrefixes.dust.get(Materials.Glass),
-                        OrePrefixes.dust.get(Materials.Glass), OrePrefixes.dust.get(Materials.Glass),
-                        OrePrefixes.dust.get(Materials.Glass), OrePrefixes.dust.get(Materials.Glass),
-                        OrePrefixes.dust.get(Materials.Glass), OrePrefixes.dust.get(Materials.Glass) });
+                new Object[] { OrePrefixes.dust.ingredient(Materials.Boron),
+                        OrePrefixes.dust.ingredient(Materials.Glass), OrePrefixes.dust.ingredient(Materials.Glass),
+                        OrePrefixes.dust.ingredient(Materials.Glass), OrePrefixes.dust.ingredient(Materials.Glass),
+                        OrePrefixes.dust.ingredient(Materials.Glass), OrePrefixes.dust.ingredient(Materials.Glass),
+                        OrePrefixes.dust.ingredient(Materials.Glass) });
     }
 }

@@ -15,12 +15,13 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.ADDITIVE_AMOUNT;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.BlockShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ImplosionCompressorRecipes implements Runnable {
 
@@ -28,102 +29,95 @@ public class ImplosionCompressorRecipes implements Runnable {
     public void run() {
         if (GalaxySpace.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.compressed, Materials.Aluminium, 2L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 8))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.compressed, Materials.Bronze, 2L))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 10))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(NHItemList.RawSDHCAlloy.get())
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedSDHD120", 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.StainlessSteel, 1L))
+                            MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 5).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Coal, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Coal, BlockShapes.block, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedCoal", 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.BlackPlutonium, 1L))
+                    .itemInputs(MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.plateTriple, 1))
                     .itemOutputs(
                             NHItemList.BlackPlutoniumCompressedPlate.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Adamantium, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Adamantium, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Cobalt, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Cobalt, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 1),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Duralumin, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Duralumin, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 2),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Lead, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Lead, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 3),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Magnesium, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Magnesium, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 4),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Mithril, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Mithril, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 5),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Nickel, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Nickel, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 6),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Oriharukon, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Oriharukon, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 7),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Platinum, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Platinum, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 8),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Tungsten, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Tungsten, Shapes.plateTriple, 1))
                     .itemOutputs(
                             getModItem(GalaxySpace.ID, "item.CompressedPlates", 1, 9),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
 
         }
@@ -132,13 +126,13 @@ public class ImplosionCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 6))
                     .itemOutputs(
                             NHItemList.TitaniumDualCompressedPlates.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.null", 2, 5))
                     .itemOutputs(
                             NHItemList.DeshDualCompressedPlates.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }
@@ -146,25 +140,25 @@ public class ImplosionCompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.IceCompressedPlate.get(2))
                 .itemOutputs(
                         NHItemList.IceDualCompressedPlates.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.QuantinumCompressedPlate.get(2))
                 .itemOutputs(
                         NHItemList.QuantinumDualCompressedPlates.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MytrylCompressedPlate.get(2))
                 .itemOutputs(
                         NHItemList.MytrylDualCompressedPlates.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MysteriousCrystalCompressedPlate.get(2))
                 .itemOutputs(
                         NHItemList.MysteriousCrystalDualCompressedPlates.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                        MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         if (GalacticraftCore.isModLoaded()) {
@@ -172,31 +166,31 @@ public class ImplosionCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 9))
                     .itemOutputs(
                             NHItemList.SteelDualCompressedPlates.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7))
                     .itemOutputs(
                             NHItemList.TinDualCompressedPlates.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6))
                     .itemOutputs(
                             NHItemList.CopperDualCompressedPlates.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 11))
                     .itemOutputs(
                             NHItemList.IronDualCompressedPlates.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 2, 1))
                     .itemOutputs(
                             NHItemList.MeteoricIronDualCompressedPlates.get(),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
+                            MaterialLibAPI.getStack(Materials.Ash, Shapes.dustTiny, 2))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }
@@ -204,25 +198,25 @@ public class ImplosionCompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyAlloyIngotT5.get())
                 .itemOutputs(
                         NHItemList.HeavyDutyPlateTier5.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Europium, 5L))
+                        MaterialLibAPI.getStack(Materials.Europium, Shapes.dustTiny, 5))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 40).addTo(implosionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyAlloyIngotT6.get())
                 .itemOutputs(
                         NHItemList.HeavyDutyPlateTier6.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Tritanium, 6L))
+                        MaterialLibAPI.getStack(Materials.Tritanium, Shapes.dustTiny, 6))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 48).addTo(implosionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyAlloyIngotT7.get())
                 .itemOutputs(
                         NHItemList.HeavyDutyPlateTier7.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Neutronium, 7L))
+                        MaterialLibAPI.getStack(Materials.Neutronium, Shapes.dustTiny, 7))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 56).addTo(implosionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(NHItemList.HeavyDutyAlloyIngotT8.get())
                 .itemOutputs(
                         NHItemList.HeavyDutyPlateTier8.get(),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.BlackPlutonium, 8L))
+                        MaterialLibAPI.getStack(Materials.BlackPlutonium, Shapes.dustTiny, 8))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 64).addTo(implosionRecipes);
 
         // Avaritia recipes
@@ -316,10 +310,10 @@ public class ImplosionCompressorRecipes implements Runnable {
 
         if (Translocator.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Diamond, 1L))
+            GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Diamond, Shapes.dustSmall, 1))
                     .itemOutputs(
                             getModItem(Translocator.ID, "diamondNugget", 2, 0),
-                            GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.AshDark, 1L))
+                            MaterialLibAPI.getStack(Materials.AshDark, Shapes.dustTiny, 1))
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }
@@ -341,8 +335,8 @@ public class ImplosionCompressorRecipes implements Runnable {
         }
 
         // Nether Star Dust -> Gem EIC recipe
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 4))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 3)).duration(25)
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.NetherStar, Shapes.dust, 4))
+                .itemOutputs(MaterialLibAPI.getStack(Materials.NetherStar, Shapes.gem, 3)).duration(25)
                 .eut(TierEU.RECIPE_UEV).addTo(electricImplosionCompressorRecipes);
     }
 }

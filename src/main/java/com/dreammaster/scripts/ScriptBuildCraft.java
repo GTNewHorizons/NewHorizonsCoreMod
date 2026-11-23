@@ -34,15 +34,16 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.objects.OreDictItemStack;
-import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 public class ScriptBuildCraft implements IScriptLoader {
@@ -97,26 +98,26 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "gearInvar");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipestructurecobblestone", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                NHItemList.CobbleStoneRod.get(1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                NHItemList.CobbleStoneRod.get(1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
                 getModItem(Minecraft.ID, "gravel", 1, 0),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                NHItemList.CobbleStoneRod.get(1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1));
+                NHItemList.CobbleStoneRod.get(1));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowercobblestone", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                NHItemList.CobbleStoneRod.get(1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                NHItemList.CobbleStoneRod.get(1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
                 "wireGt01Tin",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
+                NHItemList.CobbleStoneRod.get(1),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1));
+                NHItemList.CobbleStoneRod.get(1));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0),
                 getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0),
@@ -460,13 +461,13 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "glass", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 2))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5),
-                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.ring, 2))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_ULV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "paper", 8, 0)).circuit(8)
@@ -476,7 +477,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4L))
+                        MaterialLibAPI.getStack(Materials.StainlessSteel, Shapes.plate, 4))
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -522,27 +523,27 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1))
+                        Circuits.HV.get(1))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsemerald", 8, 0))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 2),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.gearGtSmall, 1),
+                        MaterialLibAPI.getStack(Materials.Iron, Shapes.itemCasing, 2),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
+                        MaterialLibAPI.getStack(Materials.Emerald, Shapes.plate, 1),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 4L))
+                        GTUtility.copyAmount(0, MaterialLibAPI.getStack(Materials.Firestone, Shapes.lens, 1)),
+                        MaterialLibAPI.getStack(Materials.Firestone, Shapes.plate, 4))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(laserEngraverRecipes);
 

@@ -7,10 +7,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import com.ruling_0.materiallib.api.Material;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
+import gregtech.api.enums.materials.FluidShapes;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 
@@ -48,7 +52,7 @@ public class DTPFCalculator {
      * 
      * @param material The material to generate dtpf recipes for
      */
-    public DTPFCalculator calculateGenericEBFBasedRecipe(Materials material) {
+    public DTPFCalculator calculateGenericEBFBasedRecipe(Material material) {
         determineEBFParams(material);
         determineFreezerParams(material);
         calculateBaseDTPFPowerConsumption();
@@ -75,9 +79,9 @@ public class DTPFCalculator {
     /**
      * Finds the material's respective EBF recipe and calculates what it would look like when using Oganesson.
      */
-    private void determineEBFParams(Materials material) {
+    private void determineEBFParams(Material material) {
         ArrayList<GTRecipe> foundEBFRecipes = new ArrayList<>();
-        ItemStack input = material.getDust(1);
+        ItemStack input = MaterialLibAPI.getStack(material, Shapes.dust, 1);
         if (customInput != null) {
             input = customInput;
         }
@@ -88,11 +92,12 @@ public class DTPFCalculator {
             }
         }
         // Determine oganesson recipe stats
+        FluidStack radon = MaterialLibAPI.getFluidStack(Materials.Radon, FluidShapes.fluidGas, 1000);
         for (GTRecipe recipe : foundEBFRecipes) {
             if (recipe.mFluidInputs.length == 0) {
                 ebfDuration = (long) Math.max(1, recipe.mDuration * 0.3);
                 ebfEUpertick = recipe.mEUt;
-            } else if (recipe.mFluidInputs[0].isFluidEqual(Materials.Radon.getGas(1000L))) {
+            } else if (recipe.mFluidInputs[0].isFluidEqual(radon)) {
                 ebfDuration = (long) Math.max(1, recipe.mDuration / 0.7 * 0.3);
                 ebfEUpertick = recipe.mEUt;
                 break;
@@ -104,11 +109,12 @@ public class DTPFCalculator {
     /**
      * Finds the material's respective vacuum freezer recipe.
      */
-    private void determineFreezerParams(Materials material) {
+    private void determineFreezerParams(Material material) {
+        if (!material.hasShape(Shapes.ingotHot)) return;
+        ItemStack hotIngot = MaterialLibAPI.getStack(material, Shapes.ingotHot, 1);
         // Find correct freezer recipe
         for (GTRecipe recipe : freezerRecipes) {
-            if (recipe.mInputs.length != 0 && GTUtility
-                    .areStacksEqual(GTOreDictUnificator.get(OrePrefixes.ingotHot, material, 1L), recipe.mInputs[0])) {
+            if (recipe.mInputs.length != 0 && GTUtility.areStacksEqual(hotIngot, recipe.mInputs[0])) {
                 // There's only one freezer recipe per material
                 freezerDuration = recipe.mDuration;
                 freezerEUpertick = recipe.mEUt;

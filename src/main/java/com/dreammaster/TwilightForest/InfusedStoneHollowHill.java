@@ -2,7 +2,7 @@ package com.dreammaster.TwilightForest;
 
 import java.util.Random;
 
-import gregtech.api.enums.Materials;
+import gregtech.api.enums.materials.Materials;
 import twilightforest.world.TFGenCaveStalactite;
 
 public class InfusedStoneHollowHill {

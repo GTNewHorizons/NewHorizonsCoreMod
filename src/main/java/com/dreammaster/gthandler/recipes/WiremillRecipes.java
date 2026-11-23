@@ -9,30 +9,30 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 import gregtech.api.util.GTRecipeRegistrator;
 
 public class WiremillRecipes implements Runnable {
 
     @Override
     public void run() {
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MeteoricIron, 1L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.MeteoricIron, Shapes.stickLong, 1))
                 .itemOutputs(NHItemList.MeteoricIronString.get(4)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(wiremillRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Tungsten, 1L))
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.Tungsten, Shapes.stickLong, 1))
                 .itemOutputs(NHItemList.TungstenString.get(4)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV / 2)
                 .addTo(wiremillRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getIngots(1)).circuit(3)
-                .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(wiremillRecipes);
+        GTValues.RA.stdBuilder().itemInputs(MaterialLibAPI.getStack(Materials.BorosilicateGlass, Shapes.ingot, 1))
+                .circuit(3).itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
 
         GTRecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
 

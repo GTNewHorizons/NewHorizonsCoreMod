@@ -10,12 +10,13 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.enums.materials.TEBlockShapes;
 
 public class ScriptGraviSuite implements IScriptLoader {
 
@@ -36,9 +37,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
-                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
+                MaterialLibAPI.getStack(Materials.SuperconductorIV, TEBlockShapes.wireGt01, 1),
+                MaterialLibAPI.getStack(Materials.SuperconductorIV, TEBlockShapes.wireGt01, 1),
+                MaterialLibAPI.getStack(Materials.SuperconductorIV, TEBlockShapes.wireGt01, 1),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0));
@@ -47,9 +48,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorLuV, 1L),
+                MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt12, 1),
                 "plateRhodium-PlatedPalladium",
-                GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorLuV, 1L),
+                MaterialLibAPI.getStack(Materials.SuperconductorLuV, TEBlockShapes.wireGt12, 1),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0));
@@ -59,7 +60,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1),
                 ItemList.Reactor_Coolant_NaK_3.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 1),
+                MaterialLibAPI.getStack(Materials.CallistoIce, Shapes.plate, 1),
                 ItemList.Reactor_Coolant_NaK_3.get(1L),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0),
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),
@@ -70,7 +71,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1),
                 ItemList.Reactor_Coolant_He_3.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 1),
+                MaterialLibAPI.getStack(Materials.CallistoIce, Shapes.plate, 1),
                 ItemList.Reactor_Coolant_He_3.get(1L),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0),
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1),

@@ -11,9 +11,9 @@ import java.util.List;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.materials.Materials;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 
@@ -43,13 +43,13 @@ public class ScriptTB implements IScriptLoader {
                         .add(Aspect.MAGIC, 16).add(Aspect.FLIGHT, 8).add(Aspect.TRAVEL, 16),
                 getModItem(ThaumicBoots.ID, "item.ItemElectricVoid", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, wildcard),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
                 ItemList.Electric_Motor_HV.get(1L),
-                OrePrefixes.wireGt04.get(Materials.Electrum),
+                OrePrefixes.wireGt04.ingredient(Materials.Electrum),
                 getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard),
-                OrePrefixes.wireGt04.get(Materials.Electrum),
+                OrePrefixes.wireGt04.ingredient(Materials.Electrum),
                 ItemList.Electric_Motor_HV.get(1L),
-                OrePrefixes.plate.get(Materials.Thaumium));
+                OrePrefixes.plate.ingredient(Materials.Thaumium));
 
         // Nano -> Quantum
         TCHelper.addInfusionCraftingRecipe(
@@ -60,15 +60,15 @@ public class ScriptTB implements IScriptLoader {
                         .add(Aspect.MAGIC, 24).add(Aspect.FLIGHT, 16).add(Aspect.TRAVEL, 24).add(Aspect.AIR, 8),
                 getModItem(ThaumicBoots.ID, "item.ItemNanoVoid", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, wildcard),
-                OrePrefixes.plate.get(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 ItemList.Electric_Motor_EV.get(1L),
-                OrePrefixes.wireGt08.get(Materials.Titanium),
+                OrePrefixes.wireGt08.ingredient(Materials.Titanium),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                OrePrefixes.wireGt08.get(Materials.Titanium),
+                OrePrefixes.wireGt08.ingredient(Materials.Titanium),
                 ItemList.Electric_Motor_EV.get(1L),
-                OrePrefixes.plate.get(Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Void));
 
         // Meteor
 
@@ -81,13 +81,13 @@ public class ScriptTB implements IScriptLoader {
                         .add(Aspect.MAGIC, 16).add(Aspect.FLIGHT, 8).add(Aspect.TRAVEL, 16),
                 getModItem(ThaumicBoots.ID, "item.ItemElectricMeteor", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, wildcard),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
                 ItemList.Electric_Motor_HV.get(1L),
-                OrePrefixes.wireGt04.get(Materials.Electrum),
+                OrePrefixes.wireGt04.ingredient(Materials.Electrum),
                 getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard),
-                OrePrefixes.wireGt04.get(Materials.Electrum),
+                OrePrefixes.wireGt04.ingredient(Materials.Electrum),
                 ItemList.Electric_Motor_HV.get(1L),
-                OrePrefixes.plate.get(Materials.Thaumium));
+                OrePrefixes.plate.ingredient(Materials.Thaumium));
 
         // Nano -> Quantum
         TCHelper.addInfusionCraftingRecipe(
@@ -98,15 +98,15 @@ public class ScriptTB implements IScriptLoader {
                         .add(Aspect.MAGIC, 24).add(Aspect.FLIGHT, 16).add(Aspect.TRAVEL, 24).add(Aspect.AIR, 8),
                 getModItem(ThaumicBoots.ID, "item.ItemNanoMeteor", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, wildcard),
-                OrePrefixes.plate.get(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 ItemList.Electric_Motor_EV.get(1L),
-                OrePrefixes.wireGt08.get(Materials.Titanium),
+                OrePrefixes.wireGt08.ingredient(Materials.Titanium),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                OrePrefixes.wireGt08.get(Materials.Titanium),
+                OrePrefixes.wireGt08.ingredient(Materials.Titanium),
                 ItemList.Electric_Motor_EV.get(1L),
-                OrePrefixes.plate.get(Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Void));
 
         // Comet
 
@@ -119,13 +119,13 @@ public class ScriptTB implements IScriptLoader {
                         .add(Aspect.MAGIC, 16).add(Aspect.FLIGHT, 8).add(Aspect.TRAVEL, 16),
                 getModItem(ThaumicBoots.ID, "item.ItemElectricComet", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, wildcard),
-                OrePrefixes.plate.get(Materials.Thaumium),
+                OrePrefixes.plate.ingredient(Materials.Thaumium),
                 ItemList.Electric_Motor_HV.get(1L),
-                OrePrefixes.wireGt04.get(Materials.Electrum),
+                OrePrefixes.wireGt04.ingredient(Materials.Electrum),
                 getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard),
-                OrePrefixes.wireGt04.get(Materials.Electrum),
+                OrePrefixes.wireGt04.ingredient(Materials.Electrum),
                 ItemList.Electric_Motor_HV.get(1L),
-                OrePrefixes.plate.get(Materials.Thaumium));
+                OrePrefixes.plate.ingredient(Materials.Thaumium));
 
         // Nano -> Quantum
         TCHelper.addInfusionCraftingRecipe(
@@ -136,15 +136,15 @@ public class ScriptTB implements IScriptLoader {
                         .add(Aspect.MAGIC, 24).add(Aspect.FLIGHT, 16).add(Aspect.TRAVEL, 24).add(Aspect.AIR, 8),
                 getModItem(ThaumicBoots.ID, "item.ItemNanoComet", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, wildcard),
-                OrePrefixes.plate.get(Materials.Void),
+                OrePrefixes.plate.ingredient(Materials.Void),
                 ItemList.Electric_Motor_EV.get(1L),
-                OrePrefixes.wireGt08.get(Materials.Titanium),
+                OrePrefixes.wireGt08.ingredient(Materials.Titanium),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0),
-                OrePrefixes.wireGt08.get(Materials.Titanium),
+                OrePrefixes.wireGt08.ingredient(Materials.Titanium),
                 ItemList.Electric_Motor_EV.get(1L),
-                OrePrefixes.plate.get(Materials.Void));
+                OrePrefixes.plate.ingredient(Materials.Void));
 
     }
 }

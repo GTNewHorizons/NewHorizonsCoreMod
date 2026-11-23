@@ -4,7 +4,7 @@ import static twilightforest.world.TFGenCaveStalactite.glowstone;
 
 import java.util.Random;
 
-import gregtech.api.enums.Materials;
+import gregtech.api.enums.materials.Materials;
 import twilightforest.world.TFGenCaveStalactite;
 
 public class ClassicTfHollowHill {

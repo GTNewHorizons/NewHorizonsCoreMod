@@ -7,15 +7,16 @@ import static gregtech.api.util.GTRecipeConstants.COIL_HEAT;
 
 import net.minecraftforge.fluids.FluidStack;
 
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
+import gregtech.api.util.GTUtility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GTBees;
 import gtPlusPlus.core.fluids.GTPPFluids;
-import gtPlusPlus.core.material.MaterialsElements;
 
 public class VacuumFurnaceRecipes implements Runnable {
 
@@ -31,31 +32,31 @@ public class VacuumFurnaceRecipes implements Runnable {
                             GTBees.combs.getStackForType(CombType.INDIUM, 64))
                     .circuit(2)
                     .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 64L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 64L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 52L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 64L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 56L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 64L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 64L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 64L),
-                            MaterialsElements.getInstance().GERMANIUM.getDust(15))
+                            MaterialLibAPI.getStack(Materials.Zinc, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Zinc, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Zinc, Shapes.dust, 52),
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 56),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Germanium, Shapes.dust, 15))
                     .fluidInputs(new FluidStack(GTPPFluids.SphaleriteFlotationFroth, 4000))
-                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), Materials.Water.getFluid(2000))
+                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), GTUtility.getWater(2000))
                     .eut((int) TierEU.RECIPE_LuV).metadata(COIL_HEAT, 5500).duration(2 * MINUTES)
                     .addTo(vacuumFurnaceRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTBees.combs.getStackForType(CombType.INDIUM, 40)).circuit(2)
                     .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 64L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 64L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 52L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 64L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 56L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cadmium, 50L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 30L))
+                            MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Copper, Shapes.dust, 52),
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 64),
+                            MaterialLibAPI.getStack(Materials.Iron, Shapes.dust, 56),
+                            MaterialLibAPI.getStack(Materials.Cadmium, Shapes.dust, 50),
+                            MaterialLibAPI.getStack(Materials.Indium, Shapes.dust, 30))
                     .fluidInputs(new FluidStack(GTPPFluids.ChalcopyriteFlotationFroth, 4000))
-                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), Materials.Water.getFluid(2000))
+                    .fluidOutputs(new FluidStack(GTPPFluids.RedMud, 2000), GTUtility.getWater(2000))
                     .eut((int) TierEU.RECIPE_IV).metadata(COIL_HEAT, 4500).duration(2 * MINUTES)
                     .addTo(vacuumFurnaceRecipes);
         }

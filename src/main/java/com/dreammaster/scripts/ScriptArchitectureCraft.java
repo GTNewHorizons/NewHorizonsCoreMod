@@ -8,10 +8,11 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.enums.Materials;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
+
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptArchitectureCraft implements IScriptLoader {
 
@@ -90,7 +91,7 @@ public class ScriptArchitectureCraft implements IScriptLoader {
         addShapelessRecipe(getModItem(ArchitectureCraft.ID, "sawblade", 1), "toolHeadBuzzSawAnyIron");
 
         addShapelessRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadBuzzSaw, Materials.Iron, 1L),
+                MaterialLibAPI.getStack(Materials.Iron, Shapes.toolHeadBuzzSaw, 1),
                 getModItem(ArchitectureCraft.ID, "sawblade", 1));
     }
 }

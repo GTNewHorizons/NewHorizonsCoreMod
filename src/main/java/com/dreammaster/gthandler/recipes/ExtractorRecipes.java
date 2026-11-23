@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.SGCraft;
@@ -12,29 +11,22 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ExtractorRecipes implements Runnable {
 
     @Override
     public void run() {
-        if (IndustrialCraft2.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1, WILDCARD))
-                    .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(extractorRecipes);
-        }
-
         if (GalaxySpace.isModLoaded() && SGCraft.isModLoaded()) {
             for (int i = 0; i < 6; ++i) {
 
@@ -64,8 +56,8 @@ public class ExtractorRecipes implements Runnable {
                     .addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "slime.leaves", 16, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RubberRaw, 1L))
-                    .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.RubberRaw, Shapes.dust, 1)).duration(15 * SECONDS)
+                    .eut(2).addTo(extractorRecipes);
         }
 
         if (BiomesOPlenty.isModLoaded()) {
@@ -103,43 +95,43 @@ public class ExtractorRecipes implements Runnable {
         if (Natura.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 1, 5))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "floraleavesnocolor", 4, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 15))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Redstone, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 2, 7))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Gunpowder, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Leaves", 8, 3))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Gunpowder, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 2, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Gunpowder, Shapes.dust, 1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 2, 4))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L)).duration(5 * SECONDS)
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Bone, Shapes.dust, 1)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "floraleavesnocolor", 4, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L)).duration(5 * SECONDS)
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Bone, Shapes.dust, 1)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 2, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L)).duration(5 * SECONDS)
+                    .itemOutputs(MaterialLibAPI.getStack(Materials.Bone, Shapes.dust, 1)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Glowshroom", 2, 0))

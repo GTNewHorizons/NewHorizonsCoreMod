@@ -21,15 +21,16 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.item.NHItemList;
+import com.ruling_0.materiallib.api.MaterialLibAPI;
 
 import forestry.api.recipes.RecipeManagers;
+import gregtech.api.enums.Circuits;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.enums.materials.Materials;
+import gregtech.api.enums.materials.Shapes;
 
 public class ScriptGenetics implements IScriptLoader {
 
@@ -178,23 +179,23 @@ public class ScriptGenetics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.screw, 1),
                 'b',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'c',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.screw, 1),
                 'd',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'e',
                 "circuitData",
                 'f',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'g',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.screw, 1),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'i',
-                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L));
+                MaterialLibAPI.getStack(Materials.EnderEye, Shapes.screw, 1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 4320),
@@ -218,7 +219,7 @@ public class ScriptGenetics implements IScriptLoader {
                 'g',
                 getModItem(Genetics.ID, "misc", 1, 9),
                 'h',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                MaterialLibAPI.getStack(Materials.Diamond, Shapes.plate, 1),
                 'i',
                 getModItem(Genetics.ID, "misc", 1, 9));
         RecipeManagers.carpenterManager.addRecipe(
@@ -251,7 +252,7 @@ public class ScriptGenetics implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 8))
+                        MaterialLibAPI.getStack(Materials.Aluminium, Shapes.itemCasing, 8))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0)).duration(1 * MINUTES).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -270,10 +271,7 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 7))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 576)).duration(10 * SECONDS).eut(96)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "chipsets", 1, 1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "chipsets", 1, 1), Circuits.HV.get(2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
