@@ -468,17 +468,17 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.circuit2.singularity", 1, 6))
                     .duration(4500 * SECONDS).eut(TierEU.RECIPE_UXV).metadata(COMPRESSION_TIER, 2)
                     .addTo(neutroniumCompressorRecipes);
-
-            // Superdense Optical CPU Containment Housing
-            GTValues.RA.stdBuilder().fluidInputs(Materials.Space.getMolten(100))
-                    .itemInputs(ItemList.Raw_Dense_Optical_Cpu_Containment_Housing.get(1L))
-                    .itemOutputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
-
-            // Unpackage it. Why I wrote it here?
-            GTValues.RA.stdBuilder().itemInputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L))
-                    .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(64L)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV).addTo(unpackagerRecipes);
         }
+
+        // Superdense Optical CPU Containment Housing
+        GTValues.RA.stdBuilder().fluidInputs(Materials.Space.getMolten(100))
+                .itemInputs(ItemList.Raw_Dense_Optical_Cpu_Containment_Housing.get(1L))
+                .itemOutputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+        // Unpackage Superdense Optical CPU Containment Housing
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Superdense_Optical_Cpu_Containment_Housing.get(1L))
+                .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(64L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(unpackagerRecipes);
     }
 }
