@@ -187,6 +187,10 @@ public class TCHelper {
     }
 
     public static void refreshResearchPages(final String research) {
+        refreshResearchPages(research, false);
+    }
+
+    public static void refreshResearchPages(final String research, final boolean ignoreNBT) {
         ResearchItem target = ResearchCategories.getResearch(research);
         if (target == null) {
             MainRegistry.LOGGER.warn("Tried to refresh pages for null Thaumcraft research \"{}\"", research);
@@ -199,7 +203,7 @@ public class TCHelper {
                     final ItemStack outputSearched = recipe.getRecipeOutput();
                     for (IRecipe theCraft : CraftingManager.getInstance().getRecipeList()) {
                         final ItemStack output = theCraft.getRecipeOutput();
-                        if (output != null && GTUtility.areStacksEqual(output, outputSearched)) {
+                        if (output != null && GTUtility.areStacksEqual(output, outputSearched, ignoreNBT)) {
                             pages[x] = new ResearchPage(theCraft);
                             break;
                         }
@@ -209,7 +213,7 @@ public class TCHelper {
                     for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
                         if (craft instanceof IArcaneRecipe arcaneRecipe) {
                             final ItemStack output = arcaneRecipe.getRecipeOutput();
-                            if (output != null && GTUtility.areStacksEqual(output, outputSearched)) {
+                            if (output != null && GTUtility.areStacksEqual(output, outputSearched, ignoreNBT)) {
                                 pages[x] = new ResearchPage(arcaneRecipe);
                                 break;
                             }
@@ -220,7 +224,7 @@ public class TCHelper {
                     for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
                         if (craft instanceof CrucibleRecipe crucibleRecipe) {
                             final ItemStack output = crucibleRecipe.getRecipeOutput();
-                            if (output != null && GTUtility.areStacksEqual(output, outputSearched)) {
+                            if (output != null && GTUtility.areStacksEqual(output, outputSearched, ignoreNBT)) {
                                 pages[x] = new ResearchPage(crucibleRecipe);
                                 break;
                             }
@@ -232,7 +236,7 @@ public class TCHelper {
                             if (craft instanceof InfusionRecipe theCraft) {
                                 final Object output = theCraft.getRecipeOutput();
                                 if (output instanceof ItemStack stack
-                                        && GTUtility.areStacksEqual(stack, outputSearched)) {
+                                        && GTUtility.areStacksEqual(stack, outputSearched, ignoreNBT)) {
                                     pages[x] = new ResearchPage(theCraft);
                                     break;
                                 }
@@ -341,12 +345,16 @@ public class TCHelper {
         });
     }
 
-    @SuppressWarnings("unchecked")
     public static void removeInfusionRecipe(final ItemStack output) {
+        removeInfusionRecipe(output, false);
+    }
+
+    @SuppressWarnings("unchecked")
+    public static void removeInfusionRecipe(final ItemStack output, final boolean ignoreNBT) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof InfusionRecipe infusionRecipe) {
                 final Object object = infusionRecipe.getRecipeOutput();
-                return object instanceof ItemStack stack && GTUtility.areStacksEqual(stack, output);
+                return object instanceof ItemStack stack && GTUtility.areStacksEqual(stack, output, ignoreNBT);
             }
             return false;
         });
