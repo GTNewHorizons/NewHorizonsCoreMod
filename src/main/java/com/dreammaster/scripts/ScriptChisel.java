@@ -244,12 +244,12 @@ public class ScriptChisel implements IScriptLoader {
 
         ChiselHelper.addGroup("diamond_block");
         ChiselHelper.addVariationFromStack("diamond_block", getModItem(Minecraft.ID, "diamond_block", 1, 0));
-        for (int i = 1; i <= 12; i++) {
+        for (int i = 1; i <= 15; i++) {
             ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, i));
         }
         ChiselHelper.addGroup("gold_block");
         ChiselHelper.addVariationFromStack("gold_block", getModItem(Minecraft.ID, "gold_block", 1, 0));
-        for (int i = 1; i <= 14; i++) {
+        for (int i = 1; i <= 15; i++) {
             ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, i));
         }
         for (int i = 0; i <= 5; i++) {
