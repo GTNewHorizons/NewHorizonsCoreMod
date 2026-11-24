@@ -1532,6 +1532,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 2));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 4));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 5));
+        TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10));
         TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.ore, Materials.Cobalt, 1L));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 1));
         TConstructHelper.removeMeltingRecipe(getModItem(GalaxySpace.ID, "phobosblocks", 1, 4));
