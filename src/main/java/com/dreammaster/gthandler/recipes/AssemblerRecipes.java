@@ -6130,7 +6130,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                        GTModHandler.getIC2Item("reactorCoolantSimple", 1L, 1),
+                        ItemList.Reactor_Coolant_He_1.get(1),
                         getModItem(OpenComputers.ID, "item", 1, 24))
                 .circuit(1).itemOutputs(getModItem(OpenSecurity.ID, "opensecurity.cooldownUpgrade", 1, 0))
                 .fluidInputs(Materials.Redstone.getMolten(72L)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV / 2)
