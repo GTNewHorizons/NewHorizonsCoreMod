@@ -35,6 +35,7 @@ public class TConstructHelper {
         Smeltery.getSmeltingList().remove(wrap);
         Smeltery.getTemperatureList().remove(wrap);
         Smeltery.getRenderIndex().remove(wrap);
+        Smeltery.removeFromSmeltingGroup(wrap);
     }
 
     public static MeltingRecipeAdder getMeltingAdder(Block renderBlock, int renderBlockMeta, int meltingTemperature,
