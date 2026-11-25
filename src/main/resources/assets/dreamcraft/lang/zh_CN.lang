@@ -119,7 +119,6 @@ item.ShapeWire.name=铸形(导线)
 item.ShapeRotor.name=铸形(转子)
 item.ShapeSmallGear.name=铸形(小型齿轮)
 item.ShapeTurbineBlade.name=铸形(涡轮扇叶)
-item.ExtruderShapeBoat.name=模头(船)
 item.ElectricBoatHull.name=电动船船体
 item.Nothing.name=你什么都没得到
 item.HeavyDutyAlloyIngotT4.name=重型合金锭 T4
