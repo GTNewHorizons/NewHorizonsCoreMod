@@ -1533,15 +1533,17 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 4));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 5));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10));
-        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.ore, Materials.Cobalt, 1L));
-        TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 1));
+        for (ItemStack cobaltOre : GTOreDictUnificator.getOres(OrePrefixes.ore, Materials.Cobalt)) {
+            TConstructHelper.removeMeltingRecipe(cobaltOre);
+        }
         TConstructHelper.removeMeltingRecipe(getModItem(GalaxySpace.ID, "phobosblocks", 1, 4));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "GravelOre", 1, 5));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 39));
         TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L));
         TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L));
-        TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 2));
-        TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.ore, Materials.Ardite, 1L));
+        for (ItemStack arditeOre : GTOreDictUnificator.getOres(OrePrefixes.ore, Materials.Ardite)) {
+            TConstructHelper.removeMeltingRecipe(arditeOre);
+        }
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 38));
         TConstructHelper.removeMeltingRecipe(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ardite, 1L));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 29));
