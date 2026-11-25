@@ -139,9 +139,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 "itemCasingTitanium",
                 "lensRuby",
                 "itemCasingTitanium",
-                getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1),
+                ItemList.Reactor_Coolant_He_1.get(1),
                 ItemList.Emitter_HV.get(1L),
-                getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1),
+                ItemList.Reactor_Coolant_He_1.get(1),
                 "plateAlloyAdvanced",
                 "plateAlloyAdvanced",
                 "plateAlloyAdvanced");
