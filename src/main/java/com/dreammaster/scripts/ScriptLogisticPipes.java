@@ -223,7 +223,6 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0),
-                            ItemList.Emitter_MV.get(1L),
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             ItemList.Cover_Crafting.get(5L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30))
@@ -1229,7 +1228,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5),
                             NHItemList.GoldCoreChip.get(1),
                             ItemList.Robot_Arm_MV.get(2L),
-                            getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 72))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7)).duration(45 * SECONDS)
@@ -1241,7 +1240,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7),
                             NHItemList.DiamondCoreChip.get(1),
                             ItemList.Robot_Arm_HV.get(1L),
-                            getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L))
                     .circuit(18).fluidInputs(getSolderingFluid(solderingMaterial, 144))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8)).duration(45 * SECONDS)
