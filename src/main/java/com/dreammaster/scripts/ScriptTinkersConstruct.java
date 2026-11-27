@@ -1710,6 +1710,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         addOresForMaterial(Materials.BrownLimonite, melterStacksIron);
         addOresForMaterial(Materials.YellowLimonite, melterStacksIron);
         addOresForMaterial(Materials.BandedIron, melterStacksIron);
+        addOresForMaterial(Materials.BasalticMineralSand, melterStacksIron);
         addOresForMaterial(Materials.GraniticMineralSand, melterStacksIron);
         addOresForMaterial(Materials.Magnetite, melterStacksIron);
         addOresForMaterial(Materials.Pyrite, melterStacksIron);
