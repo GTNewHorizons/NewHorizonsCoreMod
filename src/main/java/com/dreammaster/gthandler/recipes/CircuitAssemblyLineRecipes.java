@@ -4,7 +4,6 @@ import static bartworks.API.recipe.BartWorksRecipeMaps.circuitAssemblyLineRecipe
 import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.GTValues.RA;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.util.GTRecipeBuilder.EIGHTH_INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.HALF_INGOTS;
@@ -255,7 +254,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
         RA.stdBuilder()
                 .itemInputs(
                         ItemList.Wrap_GoodCircuitBoards.get(1),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 32, 0),
+                        ItemList.Circuit_BasicElectronic.get(32),
                         ItemList.Wrap_SMDDiodes.get(2),
                         MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt16, 2))
                 .itemOutputs(ItemList.Circuit_Good.get(16))
@@ -263,7 +262,7 @@ public class CircuitAssemblyLineRecipes implements Runnable {
                         MaterialLibAPI
                                 .getFluidStack(Materials.SolderingAlloy, FluidShapes.fluidMolten, 1 * HALF_INGOTS))
                 .special(ItemList.CircuitImprint_GoodElectronicCircuit.get(0)).eut(TierEU.RECIPE_LV)
-                .duration(3 * MINUTES).requireMods(IndustrialCraft2).addTo(circuitAssemblyLineRecipes);
+                .duration(3 * MINUTES).addTo(circuitAssemblyLineRecipes);
 
         // Integrated Processor
         RA.stdBuilder()
