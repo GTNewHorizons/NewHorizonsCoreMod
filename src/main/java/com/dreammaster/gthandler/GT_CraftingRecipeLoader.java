@@ -70,7 +70,6 @@ import gregtech.common.items.ItemGTToolbox;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
 import gtneioreplugin.util.DimensionHelper;
-import ic2.core.Ic2Items;
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingRecipeLoader implements Runnable {
 
@@ -532,8 +531,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Good.get(1, o),
                 new Object[] { "PAP", "CBC", "DCD", 'D', ItemList.Circuit_Parts_Diode.get(1, o), 'C',
-                        Ic2Items.electronicCircuit, 'A', MaterialLibAPI.getStack(Materials.Steel, Shapes.itemCasing, 1),
-                        'P', MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 1), 'B',
+                        ItemList.Circuit_BasicElectronic.get(1, o), 'A',
+                        MaterialLibAPI.getStack(Materials.Steel, Shapes.itemCasing, 1), 'P',
+                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 1), 'B',
                         ItemList.Circuit_Board_Phenolic_Good.get(1, o) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Phenolic_Good.get(1, o),
@@ -1715,7 +1715,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     new Object[] { "LFB", "MCM", "WTW", 'L',
                             getModItem(Computronics.ID, "computronics.colorfulLamp", 1, 0), 'F',
                             getModItem(Railcraft.ID, "machine.epsilon", 1, 0), 'B', ItemList.Casing_SolidSteel, 'M',
-                            ItemList.Electric_Motor_MV, 'C', GTModHandler.getIC2Item("coil", 1L), 'W',
+                            ItemList.Electric_Motor_MV, 'C', ItemList.LV_Coil.get(1L), 'W',
                             ItemList.Component_Minecart_Wheels_Steel, 'T', new ItemStack(Items.minecart, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "cart.bore", 1, 0),

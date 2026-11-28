@@ -5679,7 +5679,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "blockMetal", 1, 5),
                 new AspectList().add(Aspect.METAL, 18).add(Aspect.ORDER, 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0),
+                ItemList.Circuit_Integrated_Advanced.get(1),
                 new AspectList().add(Aspect.CRAFT, 9).add(Aspect.ORDER, 7).add(Aspect.MECHANISM, 6).add(Aspect.TOOL, 5)
                         .add(Aspect.METAL, 5).add(Aspect.LIGHT, 4));
         ThaumcraftApi.registerObjectTag(
@@ -5777,7 +5777,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12),
                 new AspectList().add(Aspect.METAL, 18).add(Aspect.ORDER, 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
                 new AspectList().add(Aspect.METAL, 17).add(Aspect.CRAFT, 3).add(Aspect.TOOL, 2)
                         .add(TCAspects.MAGNETO.getAspect(), 1));
         ThaumcraftApi.registerObjectTag(

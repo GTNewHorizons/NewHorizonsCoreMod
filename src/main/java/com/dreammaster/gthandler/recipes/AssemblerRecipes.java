@@ -2375,7 +2375,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         MaterialLibAPI.getStack(Materials.Gold, TEBlockShapes.cableGt04, 1),
                         Circuits.HV.get(2),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 5, 0),
+                        ItemList.LV_Coil.get(5),
                         ItemList.Transformer_HV_MV.get(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -5301,7 +5301,7 @@ public class AssemblerRecipes implements Runnable {
                         alveary,
                         getModItem(Forestry.ID, "thermionicTubes", 4, 7),
                         BlockList.SteelBars.get(),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 3),
+                        ItemList.LV_Coil.get(3),
                         ItemList.Electric_Motor_MV.get(1L))
                 .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 4))
                 .fluidInputs(MaterialLibAPI.getFluidStack(Materials.Honey, FluidShapes.fluidLiquid, 5000))

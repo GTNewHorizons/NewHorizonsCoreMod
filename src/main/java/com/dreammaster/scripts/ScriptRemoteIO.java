@@ -85,9 +85,9 @@ public class ScriptRemoteIO implements IScriptLoader {
                 ItemList.Electric_Pump_EV.get(1L));
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
+                ItemList.LV_Coil.get(1),
+                ItemList.LV_Coil.get(1),
                 ItemList.Electric_Pump_EV.get(1L),
                 ItemList.Casing_HV.get(1L),
                 ItemList.Electric_Pump_EV.get(1L),

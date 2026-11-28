@@ -4,7 +4,6 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.StevesCarts2;
@@ -36,7 +35,6 @@ import gregtech.api.enums.materials.Materials;
 import gregtech.api.enums.materials.Shapes;
 import gregtech.api.enums.materials.TEBlockShapes;
 import gregtech.api.objects.SubstituteFluidStack;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTUtility;
 
 public class CircuitAssemblerRecipes implements Runnable {
@@ -153,7 +151,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Resistor.get(2L),
                         MaterialLibAPI.getStack(Materials.RedAlloy, TEBlockShapes.wireGt01, 2),
                         ItemList.Circuit_Parts_Vacuum_Tube.get(2L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0))
+                .itemOutputs(ItemList.Circuit_BasicElectronic.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(circuitAssemblerRecipes);
 
@@ -161,7 +159,7 @@ public class CircuitAssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0),
+                        ItemList.Circuit_BasicElectronic.get(2L),
                         ItemList.Circuit_Parts_Diode.get(2L),
                         MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 2))
                 .itemOutputs(ItemList.Circuit_Good.get(1L)).fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS))
@@ -214,7 +212,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(4L),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 8),
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.bolt, 8))
-                .itemOutputs(GTModHandler.getIC2Item("advancedCircuit", 1L))
+                .itemOutputs(ItemList.Circuit_Integrated_Advanced.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
@@ -226,7 +224,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_TransistorASMD.get(1L),
                         MaterialLibAPI.getStack(Materials.Electrum, Shapes.wireFine, 8),
                         MaterialLibAPI.getStack(Materials.AnnealedCopper, Shapes.bolt, 8))
-                .itemOutputs(GTModHandler.getIC2Item("advancedCircuit", 1L))
+                .itemOutputs(ItemList.Circuit_Integrated_Advanced.get(1L))
                 .fluidInputs(SubstituteFluidStack.soldering(1 * HALF_INGOTS)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 

@@ -730,7 +730,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 15),
                 getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
                 getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1),
                 "pipeMediumSteel",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 6),
@@ -740,12 +740,12 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
+                ItemList.LV_Coil.get(1),
+                ItemList.LV_Coil.get(1),
+                ItemList.LV_Coil.get(1),
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
                 "circuitAdvanced",
                 "cableGt04Gold",
                 "circuitAdvanced");
@@ -1107,12 +1107,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        MaterialLibAPI.getStack(Materials.SteelMagnetic, Shapes.stick, 1),
-                        MaterialLibAPI.getStack(Materials.Copper, TEBlockShapes.wireGt01, 16))
-                .circuit(3).itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         getModItem(Minecraft.ID, "coal_block", 1, 0),
                         getModItem(IndustrialCraft2.ID, "itemPartCoalBlock", 8, 0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0)).duration(1 * MINUTES)
@@ -1166,7 +1160,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_LV / 2).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(Circuits.LV.get(1), getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0))
+        GTValues.RA.stdBuilder().itemInputs(Circuits.LV.get(1), ItemList.LV_Coil.get(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 1))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);

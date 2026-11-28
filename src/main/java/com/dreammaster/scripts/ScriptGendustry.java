@@ -157,7 +157,7 @@ public class ScriptGendustry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Gendustry.ID, "ClimateModule", 1, 0),
                 GTBees.combs.getStackForType(CombType.IRIDIUM),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
                 GTBees.combs.getStackForType(CombType.URANIUM),
                 "stickPalladium",
                 "rotorOsmium",
