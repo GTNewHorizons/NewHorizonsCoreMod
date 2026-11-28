@@ -4,6 +4,7 @@ import static com.dreammaster.scripts.IngredientFactory.getModItem;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -18,6 +19,7 @@ import java.util.List;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.ItemList;
@@ -666,6 +668,11 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.addResearchPage(
                 "NITORLIGHT",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Automagy.ID, "blockTranslucent", 1, 0))));
+        if (Chisel.isModLoaded()) {
+            ChiselHelper.addGroup("nitorLightAutomagy");
+            ChiselHelper.addVariationFromStack("nitorLightAutomagy", getModItem(Automagy.ID, "blockTranslucent", 1, 0));
+            ChiselHelper.addVariationFromStack("nitorLightAutomagy", getModItem(Automagy.ID, "blockTranslucent", 1, 1));
+        }
         TCHelper.clearPages("ENCHANT_FISHING");
         TCHelper.addResearchPage("ENCHANT_FISHING", new ResearchPage("Automagy.research_page.ENCHANT_FISHING.1"));
         ThaumcraftApi.addInfusionEnchantmentRecipe(
