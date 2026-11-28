@@ -1715,7 +1715,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     new Object[] { "LFB", "MCM", "WTW", 'L',
                             getModItem(Computronics.ID, "computronics.colorfulLamp", 1, 0), 'F',
                             getModItem(Railcraft.ID, "machine.epsilon", 1, 0), 'B', ItemList.Casing_SolidSteel, 'M',
-                            ItemList.Electric_Motor_MV, 'C', GTModHandler.getIC2Item("coil", 1L), 'W',
+                            ItemList.Electric_Motor_MV, 'C', ItemList.LV_Coil.get(1L), 'W',
                             ItemList.Component_Minecart_Wheels_Steel, 'T', new ItemStack(Items.minecart, 1, 0) });
             GTModHandler.addCraftingRecipe(
                     getModItem(Railcraft.ID, "cart.bore", 1, 0),

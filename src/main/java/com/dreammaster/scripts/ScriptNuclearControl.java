@@ -82,7 +82,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                 getModItem(Minecraft.ID, "noteblock", 1, 0),
                 "plateIron",
                 "circuitBasic",
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
                 "circuitBasic",
                 "cableGt01RedAlloy",
                 ItemList.Casing_LV.get(1L),

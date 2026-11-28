@@ -1328,23 +1328,17 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 2)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, 4))
+                .itemInputs(ItemList.LV_Coil.get(2), MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, 4))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, 4))
+                .itemInputs(ItemList.LV_Coil.get(2), MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, 4))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0),
-                        MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, 4))
+                .itemInputs(ItemList.LV_Coil.get(2), MaterialLibAPI.getStack(Materials.Iron, Shapes.wireFine, 4))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);

@@ -1965,9 +1965,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateTitanium",
                 "gemFluix",
                 "plateTitanium",
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
                 ItemList.Machine_EV_Press.get(1L),
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0),
+                ItemList.LV_Coil.get(1),
                 "plateTitanium",
                 "gemFluix",
                 "plateTitanium");
